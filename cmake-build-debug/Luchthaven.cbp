@@ -8,101 +8,124 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/uauser/CLionProjects/Luchthaven/cmake-build-debug"/>
+				<Option working_dir="F:/CLionProjects/Luchthaven/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/uauser/CLionProjects/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/uauser/CLionProjects/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/uauser/CLionProjects/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/uauser/CLionProjects/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="edit_cache">
-				<Option working_dir="/home/uauser/CLionProjects/Luchthaven/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/uauser/CLionProjects/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/uauser/CLionProjects/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/uauser/CLionProjects/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/uauser/CLionProjects/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;F:/CLionProjects/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;F:/CLionProjects/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;F:/CLionProjects/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;F:/CLionProjects/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/uauser/CLionProjects/Luchthaven/cmake-build-debug"/>
+				<Option working_dir="F:/CLionProjects/Luchthaven/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/uauser/CLionProjects/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/uauser/CLionProjects/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/uauser/CLionProjects/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/uauser/CLionProjects/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;F:/CLionProjects/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;F:/CLionProjects/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;F:/CLionProjects/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;F:/CLionProjects/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Luchthaven">
-				<Option output="/home/uauser/CLionProjects/Luchthaven/cmake-build-debug/Luchthaven" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/uauser/CLionProjects/Luchthaven/cmake-build-debug"/>
+				<Option output="F:/CLionProjects/Luchthaven/cmake-build-debug/Luchthaven.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="F:/CLionProjects/Luchthaven/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-					<Add directory="/usr/include/c++/7"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
-					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/mingw32"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/backward"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/uauser/CLionProjects/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 Luchthaven"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/uauser/CLionProjects/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/uauser/CLionProjects/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/uauser/CLionProjects/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;F:/CLionProjects/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 Luchthaven"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;F:/CLionProjects/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;F:/CLionProjects/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;F:/CLionProjects/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Luchthaven/fast">
-				<Option output="/home/uauser/CLionProjects/Luchthaven/cmake-build-debug/Luchthaven" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/uauser/CLionProjects/Luchthaven/cmake-build-debug"/>
+				<Option output="F:/CLionProjects/Luchthaven/cmake-build-debug/Luchthaven.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="F:/CLionProjects/Luchthaven/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-					<Add directory="/usr/include/c++/7"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
-					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/mingw32"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/backward"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/uauser/CLionProjects/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 Luchthaven/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/uauser/CLionProjects/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/uauser/CLionProjects/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/uauser/CLionProjects/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;F:/CLionProjects/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 Luchthaven/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;F:/CLionProjects/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;F:/CLionProjects/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;F:/CLionProjects/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="F:/CLionProjects/Luchthaven/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;F:/CLionProjects/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;F:/CLionProjects/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;F:/CLionProjects/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;F:/CLionProjects/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/uauser/CLionProjects/Luchthaven/main.cpp">
+		<Unit filename="F:/CLionProjects/Luchthaven/Airplane.cpp">
 			<Option target="Luchthaven"/>
 		</Unit>
-		<Unit filename="/home/uauser/CLionProjects/Luchthaven/tinystr.cpp">
+		<Unit filename="F:/CLionProjects/Luchthaven/Airplane.h">
 			<Option target="Luchthaven"/>
 		</Unit>
-		<Unit filename="/home/uauser/CLionProjects/Luchthaven/tinystr.h">
+		<Unit filename="F:/CLionProjects/Luchthaven/Airport.cpp">
 			<Option target="Luchthaven"/>
 		</Unit>
-		<Unit filename="/home/uauser/CLionProjects/Luchthaven/tinyxml.cpp">
+		<Unit filename="F:/CLionProjects/Luchthaven/Airport.h">
 			<Option target="Luchthaven"/>
 		</Unit>
-		<Unit filename="/home/uauser/CLionProjects/Luchthaven/tinyxml.h">
+		<Unit filename="F:/CLionProjects/Luchthaven/LuchthavenXML.cpp">
 			<Option target="Luchthaven"/>
 		</Unit>
-		<Unit filename="/home/uauser/CLionProjects/Luchthaven/tinyxmlerror.cpp">
+		<Unit filename="F:/CLionProjects/Luchthaven/LuchthavenXML.h">
 			<Option target="Luchthaven"/>
 		</Unit>
-		<Unit filename="/home/uauser/CLionProjects/Luchthaven/CMakeLists.txt">
+		<Unit filename="F:/CLionProjects/Luchthaven/Runway.cpp">
+			<Option target="Luchthaven"/>
+		</Unit>
+		<Unit filename="F:/CLionProjects/Luchthaven/Runway.h">
+			<Option target="Luchthaven"/>
+		</Unit>
+		<Unit filename="F:/CLionProjects/Luchthaven/main.cpp">
+			<Option target="Luchthaven"/>
+		</Unit>
+		<Unit filename="F:/CLionProjects/Luchthaven/tinystr.cpp">
+			<Option target="Luchthaven"/>
+		</Unit>
+		<Unit filename="F:/CLionProjects/Luchthaven/tinystr.h">
+			<Option target="Luchthaven"/>
+		</Unit>
+		<Unit filename="F:/CLionProjects/Luchthaven/tinyxml.cpp">
+			<Option target="Luchthaven"/>
+		</Unit>
+		<Unit filename="F:/CLionProjects/Luchthaven/tinyxml.h">
+			<Option target="Luchthaven"/>
+		</Unit>
+		<Unit filename="F:/CLionProjects/Luchthaven/tinyxmlerror.cpp">
+			<Option target="Luchthaven"/>
+		</Unit>
+		<Unit filename="F:/CLionProjects/Luchthaven/tinyxmlparser.cpp">
+			<Option target="Luchthaven"/>
+		</Unit>
+		<Unit filename="F:/CLionProjects/Luchthaven/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

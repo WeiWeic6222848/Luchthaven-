@@ -4,10 +4,15 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/uauser/CLionProjects/Luchthaven/main.cpp" "/home/uauser/CLionProjects/Luchthaven/cmake-build-debug/CMakeFiles/Luchthaven.dir/main.cpp.o"
-  "/home/uauser/CLionProjects/Luchthaven/tinystr.cpp" "/home/uauser/CLionProjects/Luchthaven/cmake-build-debug/CMakeFiles/Luchthaven.dir/tinystr.cpp.o"
-  "/home/uauser/CLionProjects/Luchthaven/tinyxml.cpp" "/home/uauser/CLionProjects/Luchthaven/cmake-build-debug/CMakeFiles/Luchthaven.dir/tinyxml.cpp.o"
-  "/home/uauser/CLionProjects/Luchthaven/tinyxmlerror.cpp" "/home/uauser/CLionProjects/Luchthaven/cmake-build-debug/CMakeFiles/Luchthaven.dir/tinyxmlerror.cpp.o"
+  "F:/CLionProjects/Luchthaven/Airplane.cpp" "F:/CLionProjects/Luchthaven/cmake-build-debug/CMakeFiles/Luchthaven.dir/Airplane.cpp.obj"
+  "F:/CLionProjects/Luchthaven/Airport.cpp" "F:/CLionProjects/Luchthaven/cmake-build-debug/CMakeFiles/Luchthaven.dir/Airport.cpp.obj"
+  "F:/CLionProjects/Luchthaven/LuchthavenXML.cpp" "F:/CLionProjects/Luchthaven/cmake-build-debug/CMakeFiles/Luchthaven.dir/LuchthavenXML.cpp.obj"
+  "F:/CLionProjects/Luchthaven/Runway.cpp" "F:/CLionProjects/Luchthaven/cmake-build-debug/CMakeFiles/Luchthaven.dir/Runway.cpp.obj"
+  "F:/CLionProjects/Luchthaven/main.cpp" "F:/CLionProjects/Luchthaven/cmake-build-debug/CMakeFiles/Luchthaven.dir/main.cpp.obj"
+  "F:/CLionProjects/Luchthaven/tinystr.cpp" "F:/CLionProjects/Luchthaven/cmake-build-debug/CMakeFiles/Luchthaven.dir/tinystr.cpp.obj"
+  "F:/CLionProjects/Luchthaven/tinyxml.cpp" "F:/CLionProjects/Luchthaven/cmake-build-debug/CMakeFiles/Luchthaven.dir/tinyxml.cpp.obj"
+  "F:/CLionProjects/Luchthaven/tinyxmlerror.cpp" "F:/CLionProjects/Luchthaven/cmake-build-debug/CMakeFiles/Luchthaven.dir/tinyxmlerror.cpp.obj"
+  "F:/CLionProjects/Luchthaven/tinyxmlparser.cpp" "F:/CLionProjects/Luchthaven/cmake-build-debug/CMakeFiles/Luchthaven.dir/tinyxmlparser.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
