@@ -1,0 +1,1 @@
+/usr/bin/c++   -g   CMakeFiles/Luchthaven.dir/main.cpp.o CMakeFiles/Luchthaven.dir/tinystr.cpp.o CMakeFiles/Luchthaven.dir/tinyxml.cpp.o CMakeFiles/Luchthaven.dir/tinyxmlerror.cpp.o  -o Luchthaven 
