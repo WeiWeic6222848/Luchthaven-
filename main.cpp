@@ -1,6 +1,7 @@
 #include <iostream>
+#include "LuchthavenXML.h"
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    LuchthavenXML("test.xml");
     return 0;
 }

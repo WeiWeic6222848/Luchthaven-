@@ -8,38 +8,38 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/uauser/CLionProjects/Luchthaven/cmake-build-debug"/>
+				<Option working_dir="/home/uauser/Desktop/Luchthaven--master/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/uauser/CLionProjects/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/uauser/CLionProjects/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/uauser/CLionProjects/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/uauser/CLionProjects/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/uauser/Desktop/Luchthaven--master/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/uauser/Desktop/Luchthaven--master/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/uauser/Desktop/Luchthaven--master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/uauser/Desktop/Luchthaven--master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/uauser/CLionProjects/Luchthaven/cmake-build-debug"/>
+				<Option working_dir="/home/uauser/Desktop/Luchthaven--master/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/uauser/CLionProjects/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/uauser/CLionProjects/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/uauser/CLionProjects/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/uauser/CLionProjects/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/uauser/Desktop/Luchthaven--master/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/uauser/Desktop/Luchthaven--master/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/uauser/Desktop/Luchthaven--master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/uauser/Desktop/Luchthaven--master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/uauser/CLionProjects/Luchthaven/cmake-build-debug"/>
+				<Option working_dir="/home/uauser/Desktop/Luchthaven--master/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/uauser/CLionProjects/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/uauser/CLionProjects/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/uauser/CLionProjects/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/uauser/CLionProjects/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/uauser/Desktop/Luchthaven--master/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/uauser/Desktop/Luchthaven--master/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/uauser/Desktop/Luchthaven--master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/uauser/Desktop/Luchthaven--master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Luchthaven">
-				<Option output="/home/uauser/CLionProjects/Luchthaven/cmake-build-debug/Luchthaven" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/uauser/CLionProjects/Luchthaven/cmake-build-debug"/>
+				<Option output="/home/uauser/Desktop/Luchthaven--master/cmake-build-debug/Luchthaven" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/uauser/Desktop/Luchthaven--master/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -54,15 +54,15 @@
 					<Add directory="/usr/include/c++/7/backward"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/uauser/CLionProjects/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 Luchthaven"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/uauser/CLionProjects/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/uauser/CLionProjects/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/uauser/CLionProjects/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/uauser/Desktop/Luchthaven--master/cmake-build-debug/Makefile&quot;  VERBOSE=1 Luchthaven"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/uauser/Desktop/Luchthaven--master/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/uauser/Desktop/Luchthaven--master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/uauser/Desktop/Luchthaven--master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Luchthaven/fast">
-				<Option output="/home/uauser/CLionProjects/Luchthaven/cmake-build-debug/Luchthaven" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/uauser/CLionProjects/Luchthaven/cmake-build-debug"/>
+				<Option output="/home/uauser/Desktop/Luchthaven--master/cmake-build-debug/Luchthaven" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/uauser/Desktop/Luchthaven--master/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -77,32 +77,59 @@
 					<Add directory="/usr/include/c++/7/backward"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/uauser/CLionProjects/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 Luchthaven/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/uauser/CLionProjects/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/uauser/CLionProjects/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/uauser/CLionProjects/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/uauser/Desktop/Luchthaven--master/cmake-build-debug/Makefile&quot;  VERBOSE=1 Luchthaven/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/uauser/Desktop/Luchthaven--master/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/uauser/Desktop/Luchthaven--master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/uauser/Desktop/Luchthaven--master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/uauser/CLionProjects/Luchthaven/main.cpp">
+		<Unit filename="/home/uauser/Desktop/Luchthaven--master/Airplane.cpp">
 			<Option target="Luchthaven"/>
 		</Unit>
-		<Unit filename="/home/uauser/CLionProjects/Luchthaven/tinystr.cpp">
+		<Unit filename="/home/uauser/Desktop/Luchthaven--master/Airplane.h">
 			<Option target="Luchthaven"/>
 		</Unit>
-		<Unit filename="/home/uauser/CLionProjects/Luchthaven/tinystr.h">
+		<Unit filename="/home/uauser/Desktop/Luchthaven--master/Airport.cpp">
 			<Option target="Luchthaven"/>
 		</Unit>
-		<Unit filename="/home/uauser/CLionProjects/Luchthaven/tinyxml.cpp">
+		<Unit filename="/home/uauser/Desktop/Luchthaven--master/Airport.h">
 			<Option target="Luchthaven"/>
 		</Unit>
-		<Unit filename="/home/uauser/CLionProjects/Luchthaven/tinyxml.h">
+		<Unit filename="/home/uauser/Desktop/Luchthaven--master/LuchthavenXML.cpp">
 			<Option target="Luchthaven"/>
 		</Unit>
-		<Unit filename="/home/uauser/CLionProjects/Luchthaven/tinyxmlerror.cpp">
+		<Unit filename="/home/uauser/Desktop/Luchthaven--master/LuchthavenXML.h">
 			<Option target="Luchthaven"/>
 		</Unit>
-		<Unit filename="/home/uauser/CLionProjects/Luchthaven/CMakeLists.txt">
+		<Unit filename="/home/uauser/Desktop/Luchthaven--master/Runway.cpp">
+			<Option target="Luchthaven"/>
+		</Unit>
+		<Unit filename="/home/uauser/Desktop/Luchthaven--master/Runway.h">
+			<Option target="Luchthaven"/>
+		</Unit>
+		<Unit filename="/home/uauser/Desktop/Luchthaven--master/main.cpp">
+			<Option target="Luchthaven"/>
+		</Unit>
+		<Unit filename="/home/uauser/Desktop/Luchthaven--master/tinystr.cpp">
+			<Option target="Luchthaven"/>
+		</Unit>
+		<Unit filename="/home/uauser/Desktop/Luchthaven--master/tinystr.h">
+			<Option target="Luchthaven"/>
+		</Unit>
+		<Unit filename="/home/uauser/Desktop/Luchthaven--master/tinyxml.cpp">
+			<Option target="Luchthaven"/>
+		</Unit>
+		<Unit filename="/home/uauser/Desktop/Luchthaven--master/tinyxml.h">
+			<Option target="Luchthaven"/>
+		</Unit>
+		<Unit filename="/home/uauser/Desktop/Luchthaven--master/tinyxmlerror.cpp">
+			<Option target="Luchthaven"/>
+		</Unit>
+		<Unit filename="/home/uauser/Desktop/Luchthaven--master/tinyxmlparser.cpp">
+			<Option target="Luchthaven"/>
+		</Unit>
+		<Unit filename="/home/uauser/Desktop/Luchthaven--master/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

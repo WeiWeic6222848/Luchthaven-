@@ -48,10 +48,10 @@ RM = /opt/clion-2016.3.2/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/uauser/CLionProjects/Luchthaven
+CMAKE_SOURCE_DIR = /home/uauser/Desktop/Luchthaven--master
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/uauser/CLionProjects/Luchthaven/cmake-build-debug
+CMAKE_BINARY_DIR = /home/uauser/Desktop/Luchthaven--master/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/uauser/CLionProjects/Luchthaven/cmake-build-debug/CMakeFiles /home/uauser/CLionProjects/Luchthaven/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/uauser/Desktop/Luchthaven--master/cmake-build-debug/CMakeFiles /home/uauser/Desktop/Luchthaven--master/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/uauser/CLionProjects/Luchthaven/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/uauser/Desktop/Luchthaven--master/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -122,6 +122,114 @@ Luchthaven: cmake_check_build_system
 Luchthaven/fast:
 	$(MAKE) -f CMakeFiles/Luchthaven.dir/build.make CMakeFiles/Luchthaven.dir/build
 .PHONY : Luchthaven/fast
+
+Airplane.o: Airplane.cpp.o
+
+.PHONY : Airplane.o
+
+# target to build an object file
+Airplane.cpp.o:
+	$(MAKE) -f CMakeFiles/Luchthaven.dir/build.make CMakeFiles/Luchthaven.dir/Airplane.cpp.o
+.PHONY : Airplane.cpp.o
+
+Airplane.i: Airplane.cpp.i
+
+.PHONY : Airplane.i
+
+# target to preprocess a source file
+Airplane.cpp.i:
+	$(MAKE) -f CMakeFiles/Luchthaven.dir/build.make CMakeFiles/Luchthaven.dir/Airplane.cpp.i
+.PHONY : Airplane.cpp.i
+
+Airplane.s: Airplane.cpp.s
+
+.PHONY : Airplane.s
+
+# target to generate assembly for a file
+Airplane.cpp.s:
+	$(MAKE) -f CMakeFiles/Luchthaven.dir/build.make CMakeFiles/Luchthaven.dir/Airplane.cpp.s
+.PHONY : Airplane.cpp.s
+
+Airport.o: Airport.cpp.o
+
+.PHONY : Airport.o
+
+# target to build an object file
+Airport.cpp.o:
+	$(MAKE) -f CMakeFiles/Luchthaven.dir/build.make CMakeFiles/Luchthaven.dir/Airport.cpp.o
+.PHONY : Airport.cpp.o
+
+Airport.i: Airport.cpp.i
+
+.PHONY : Airport.i
+
+# target to preprocess a source file
+Airport.cpp.i:
+	$(MAKE) -f CMakeFiles/Luchthaven.dir/build.make CMakeFiles/Luchthaven.dir/Airport.cpp.i
+.PHONY : Airport.cpp.i
+
+Airport.s: Airport.cpp.s
+
+.PHONY : Airport.s
+
+# target to generate assembly for a file
+Airport.cpp.s:
+	$(MAKE) -f CMakeFiles/Luchthaven.dir/build.make CMakeFiles/Luchthaven.dir/Airport.cpp.s
+.PHONY : Airport.cpp.s
+
+LuchthavenXML.o: LuchthavenXML.cpp.o
+
+.PHONY : LuchthavenXML.o
+
+# target to build an object file
+LuchthavenXML.cpp.o:
+	$(MAKE) -f CMakeFiles/Luchthaven.dir/build.make CMakeFiles/Luchthaven.dir/LuchthavenXML.cpp.o
+.PHONY : LuchthavenXML.cpp.o
+
+LuchthavenXML.i: LuchthavenXML.cpp.i
+
+.PHONY : LuchthavenXML.i
+
+# target to preprocess a source file
+LuchthavenXML.cpp.i:
+	$(MAKE) -f CMakeFiles/Luchthaven.dir/build.make CMakeFiles/Luchthaven.dir/LuchthavenXML.cpp.i
+.PHONY : LuchthavenXML.cpp.i
+
+LuchthavenXML.s: LuchthavenXML.cpp.s
+
+.PHONY : LuchthavenXML.s
+
+# target to generate assembly for a file
+LuchthavenXML.cpp.s:
+	$(MAKE) -f CMakeFiles/Luchthaven.dir/build.make CMakeFiles/Luchthaven.dir/LuchthavenXML.cpp.s
+.PHONY : LuchthavenXML.cpp.s
+
+Runway.o: Runway.cpp.o
+
+.PHONY : Runway.o
+
+# target to build an object file
+Runway.cpp.o:
+	$(MAKE) -f CMakeFiles/Luchthaven.dir/build.make CMakeFiles/Luchthaven.dir/Runway.cpp.o
+.PHONY : Runway.cpp.o
+
+Runway.i: Runway.cpp.i
+
+.PHONY : Runway.i
+
+# target to preprocess a source file
+Runway.cpp.i:
+	$(MAKE) -f CMakeFiles/Luchthaven.dir/build.make CMakeFiles/Luchthaven.dir/Runway.cpp.i
+.PHONY : Runway.cpp.i
+
+Runway.s: Runway.cpp.s
+
+.PHONY : Runway.s
+
+# target to generate assembly for a file
+Runway.cpp.s:
+	$(MAKE) -f CMakeFiles/Luchthaven.dir/build.make CMakeFiles/Luchthaven.dir/Runway.cpp.s
+.PHONY : Runway.cpp.s
 
 main.o: main.cpp.o
 
@@ -231,6 +339,33 @@ tinyxmlerror.cpp.s:
 	$(MAKE) -f CMakeFiles/Luchthaven.dir/build.make CMakeFiles/Luchthaven.dir/tinyxmlerror.cpp.s
 .PHONY : tinyxmlerror.cpp.s
 
+tinyxmlparser.o: tinyxmlparser.cpp.o
+
+.PHONY : tinyxmlparser.o
+
+# target to build an object file
+tinyxmlparser.cpp.o:
+	$(MAKE) -f CMakeFiles/Luchthaven.dir/build.make CMakeFiles/Luchthaven.dir/tinyxmlparser.cpp.o
+.PHONY : tinyxmlparser.cpp.o
+
+tinyxmlparser.i: tinyxmlparser.cpp.i
+
+.PHONY : tinyxmlparser.i
+
+# target to preprocess a source file
+tinyxmlparser.cpp.i:
+	$(MAKE) -f CMakeFiles/Luchthaven.dir/build.make CMakeFiles/Luchthaven.dir/tinyxmlparser.cpp.i
+.PHONY : tinyxmlparser.cpp.i
+
+tinyxmlparser.s: tinyxmlparser.cpp.s
+
+.PHONY : tinyxmlparser.s
+
+# target to generate assembly for a file
+tinyxmlparser.cpp.s:
+	$(MAKE) -f CMakeFiles/Luchthaven.dir/build.make CMakeFiles/Luchthaven.dir/tinyxmlparser.cpp.s
+.PHONY : tinyxmlparser.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -240,6 +375,18 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Luchthaven"
+	@echo "... Airplane.o"
+	@echo "... Airplane.i"
+	@echo "... Airplane.s"
+	@echo "... Airport.o"
+	@echo "... Airport.i"
+	@echo "... Airport.s"
+	@echo "... LuchthavenXML.o"
+	@echo "... LuchthavenXML.i"
+	@echo "... LuchthavenXML.s"
+	@echo "... Runway.o"
+	@echo "... Runway.i"
+	@echo "... Runway.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
@@ -252,6 +399,9 @@ help:
 	@echo "... tinyxmlerror.o"
 	@echo "... tinyxmlerror.i"
 	@echo "... tinyxmlerror.s"
+	@echo "... tinyxmlparser.o"
+	@echo "... tinyxmlparser.i"
+	@echo "... tinyxmlparser.s"
 .PHONY : help
 
 
