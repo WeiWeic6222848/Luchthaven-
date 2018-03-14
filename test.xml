@@ -1,4 +1,4 @@
-<Root>
+<AirportSim>
 <AIRPORT>
 <name>Antwerp International Airport</name>
 <iata>ANR</iata>
@@ -15,4 +15,4 @@
 <model>Cessna 340</model>
 <status>Approaching</status>
 </AIRPLANE>
-</Root>
+</AirportSim>

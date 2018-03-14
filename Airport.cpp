@@ -4,15 +4,19 @@
 
 #include "Airport.h"
 
-Airport::Airport(const string &number, const string &iata, const string &callsign, int gates, int passengers) : number(
-        number), iata(iata), callsign(callsign), gates(gates), passengers(passengers) {}
+Airport::Airport(const string &name, const string &iata, const string &callsign, int gates, int passengers) : name(name), iata(iata), callsign(callsign),  passengers(passengers)
+{
+    for (int i = 1; i < gates+1; ++i) {
+        Airport::gates[i]= nullptr;
+    }
+}
 
 void Airport::addrunway(Runway *runway) {
     runways.push_back(runway);
 }
 
-const string &Airport::getNumber() const {
-    return number;
+const string &Airport::getName() const {
+    return name;
 }
 
 const string &Airport::getIata() const {
@@ -21,10 +25,6 @@ const string &Airport::getIata() const {
 
 const string &Airport::getCallsign() const {
     return callsign;
-}
-
-int Airport::getGates() const {
-    return gates;
 }
 
 int Airport::getPassengers() const {

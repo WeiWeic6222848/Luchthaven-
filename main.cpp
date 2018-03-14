@@ -1,7 +1,7 @@
 #include <iostream>
-#include "LuchthavenXML.h"
+#include "Airportsim.h"
 
 int main() {
-    LuchthavenXML("test.xml");
+    Airportsim a("test.xml");
     return 0;
 }
