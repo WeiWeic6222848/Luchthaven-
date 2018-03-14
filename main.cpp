@@ -3,5 +3,4 @@
 
 int main() {
     Airportsim a("test.xml");
-    return 0;
 }

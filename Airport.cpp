@@ -36,4 +36,3 @@ const vector<Runway *> &Airport::getRunways() const {
 }
 
 Airport::Airport() {}
-
