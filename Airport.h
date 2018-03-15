@@ -6,35 +6,45 @@
 #define LUCHTHAVEN_AIRPORT_H
 
 #include <vector>
+#include <map>
 #include "string"
 #include "Runway.h"
 using namespace std;
 
+class Airplane;
+
+
 class Airport {
 private:
-    string number;
+    string name;
     string iata;
     string callsign;
-    int gates;
+    map<int,Airplane*> gates;
     int passengers=0;
     vector<Runway*> runways;
+    vector<Airplane*> approachingplanes;
+    vector<Airplane*> leavingplanes;
 public:
     Airport();
 
-    Airport(const string &number, const string &iata, const string &callsign, int gates, int passengers);
+    Airport(const string &name, const string &iata, const string &callsign, int gates, int passengers);
     void addrunway(Runway* runway);
 
-    const string &getNumber() const;
+    const string &getName() const;
 
     const string &getIata() const;
 
     const string &getCallsign() const;
 
-    int getGates() const;
-
     int getPassengers() const;
 
     const vector<Runway *> &getRunways() const;
+
+    Runway* findfreerunway();
+
+    int findfreegates() const;
+
+    void parkAirplane(int gate,Airplane* airplane);
 };
 
 

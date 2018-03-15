@@ -6,7 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/uauser/Desktop/Luchthaven--master/Airplane.cpp" "/home/uauser/Desktop/Luchthaven--master/cmake-build-debug/CMakeFiles/Luchthaven.dir/Airplane.cpp.o"
   "/home/uauser/Desktop/Luchthaven--master/Airport.cpp" "/home/uauser/Desktop/Luchthaven--master/cmake-build-debug/CMakeFiles/Luchthaven.dir/Airport.cpp.o"
-  "/home/uauser/Desktop/Luchthaven--master/LuchthavenXML.cpp" "/home/uauser/Desktop/Luchthaven--master/cmake-build-debug/CMakeFiles/Luchthaven.dir/LuchthavenXML.cpp.o"
+  "/home/uauser/Desktop/Luchthaven--master/Airportsim.cpp" "/home/uauser/Desktop/Luchthaven--master/cmake-build-debug/CMakeFiles/Luchthaven.dir/Airportsim.cpp.o"
   "/home/uauser/Desktop/Luchthaven--master/Runway.cpp" "/home/uauser/Desktop/Luchthaven--master/cmake-build-debug/CMakeFiles/Luchthaven.dir/Runway.cpp.o"
   "/home/uauser/Desktop/Luchthaven--master/main.cpp" "/home/uauser/Desktop/Luchthaven--master/cmake-build-debug/CMakeFiles/Luchthaven.dir/main.cpp.o"
   "/home/uauser/Desktop/Luchthaven--master/tinystr.cpp" "/home/uauser/Desktop/Luchthaven--master/cmake-build-debug/CMakeFiles/Luchthaven.dir/tinystr.cpp.o"

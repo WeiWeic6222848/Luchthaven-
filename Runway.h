@@ -13,12 +13,20 @@ class Airport;
 
 class Runway {
     string name;
-    Airport* where;
+    Airport* where= nullptr;
     Airplane* currentairplane= nullptr;
 public:
     Runway(const string &name, Airport *where);
 
     Runway(const string &name);
+
+    Runway();
+
+    const string &getName() const;
+
+    Airport *Where() const;
+
+    Airplane *getCurrentairplane() const;
 };
 
 

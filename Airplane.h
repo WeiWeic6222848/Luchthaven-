@@ -17,6 +17,22 @@ public:
     Airplane(const string &status, const string &number, const string &callsign,
              const string &model, int passengerCapacity=10, int passenger=10, int fuel=100);
 
+    const string &getStatus() const;
+
+    Airplane();
+
+    int getPassenger() const;
+
+    int getFuel() const;
+
+    const string &getNumber() const;
+
+    const string &getCallsign() const;
+
+    const string &getModel() const;
+
+    int getPassengerCapacity() const;
+
 private:
     string number;
     string callsign;

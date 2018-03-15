@@ -177,32 +177,32 @@ Airport.cpp.s:
 	$(MAKE) -f CMakeFiles/Luchthaven.dir/build.make CMakeFiles/Luchthaven.dir/Airport.cpp.s
 .PHONY : Airport.cpp.s
 
-LuchthavenXML.o: LuchthavenXML.cpp.o
+Airportsim.o: Airportsim.cpp.o
 
-.PHONY : LuchthavenXML.o
+.PHONY : Airportsim.o
 
 # target to build an object file
-LuchthavenXML.cpp.o:
-	$(MAKE) -f CMakeFiles/Luchthaven.dir/build.make CMakeFiles/Luchthaven.dir/LuchthavenXML.cpp.o
-.PHONY : LuchthavenXML.cpp.o
+Airportsim.cpp.o:
+	$(MAKE) -f CMakeFiles/Luchthaven.dir/build.make CMakeFiles/Luchthaven.dir/Airportsim.cpp.o
+.PHONY : Airportsim.cpp.o
 
-LuchthavenXML.i: LuchthavenXML.cpp.i
+Airportsim.i: Airportsim.cpp.i
 
-.PHONY : LuchthavenXML.i
+.PHONY : Airportsim.i
 
 # target to preprocess a source file
-LuchthavenXML.cpp.i:
-	$(MAKE) -f CMakeFiles/Luchthaven.dir/build.make CMakeFiles/Luchthaven.dir/LuchthavenXML.cpp.i
-.PHONY : LuchthavenXML.cpp.i
+Airportsim.cpp.i:
+	$(MAKE) -f CMakeFiles/Luchthaven.dir/build.make CMakeFiles/Luchthaven.dir/Airportsim.cpp.i
+.PHONY : Airportsim.cpp.i
 
-LuchthavenXML.s: LuchthavenXML.cpp.s
+Airportsim.s: Airportsim.cpp.s
 
-.PHONY : LuchthavenXML.s
+.PHONY : Airportsim.s
 
 # target to generate assembly for a file
-LuchthavenXML.cpp.s:
-	$(MAKE) -f CMakeFiles/Luchthaven.dir/build.make CMakeFiles/Luchthaven.dir/LuchthavenXML.cpp.s
-.PHONY : LuchthavenXML.cpp.s
+Airportsim.cpp.s:
+	$(MAKE) -f CMakeFiles/Luchthaven.dir/build.make CMakeFiles/Luchthaven.dir/Airportsim.cpp.s
+.PHONY : Airportsim.cpp.s
 
 Runway.o: Runway.cpp.o
 
@@ -381,9 +381,9 @@ help:
 	@echo "... Airport.o"
 	@echo "... Airport.i"
 	@echo "... Airport.s"
-	@echo "... LuchthavenXML.o"
-	@echo "... LuchthavenXML.i"
-	@echo "... LuchthavenXML.s"
+	@echo "... Airportsim.o"
+	@echo "... Airportsim.i"
+	@echo "... Airportsim.s"
 	@echo "... Runway.o"
 	@echo "... Runway.i"
 	@echo "... Runway.s"

@@ -153,28 +153,28 @@ CMakeFiles/Luchthaven.dir/tinyxmlerror.cpp.o.provides: CMakeFiles/Luchthaven.dir
 CMakeFiles/Luchthaven.dir/tinyxmlerror.cpp.o.provides.build: CMakeFiles/Luchthaven.dir/tinyxmlerror.cpp.o
 
 
-CMakeFiles/Luchthaven.dir/LuchthavenXML.cpp.o: CMakeFiles/Luchthaven.dir/flags.make
-CMakeFiles/Luchthaven.dir/LuchthavenXML.cpp.o: ../LuchthavenXML.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/uauser/Desktop/Luchthaven--master/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Luchthaven.dir/LuchthavenXML.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luchthaven.dir/LuchthavenXML.cpp.o -c /home/uauser/Desktop/Luchthaven--master/LuchthavenXML.cpp
+CMakeFiles/Luchthaven.dir/Airportsim.cpp.o: CMakeFiles/Luchthaven.dir/flags.make
+CMakeFiles/Luchthaven.dir/Airportsim.cpp.o: ../Airportsim.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/uauser/Desktop/Luchthaven--master/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Luchthaven.dir/Airportsim.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luchthaven.dir/Airportsim.cpp.o -c /home/uauser/Desktop/Luchthaven--master/Airportsim.cpp
 
-CMakeFiles/Luchthaven.dir/LuchthavenXML.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Luchthaven.dir/LuchthavenXML.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/uauser/Desktop/Luchthaven--master/LuchthavenXML.cpp > CMakeFiles/Luchthaven.dir/LuchthavenXML.cpp.i
+CMakeFiles/Luchthaven.dir/Airportsim.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Luchthaven.dir/Airportsim.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/uauser/Desktop/Luchthaven--master/Airportsim.cpp > CMakeFiles/Luchthaven.dir/Airportsim.cpp.i
 
-CMakeFiles/Luchthaven.dir/LuchthavenXML.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Luchthaven.dir/LuchthavenXML.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/uauser/Desktop/Luchthaven--master/LuchthavenXML.cpp -o CMakeFiles/Luchthaven.dir/LuchthavenXML.cpp.s
+CMakeFiles/Luchthaven.dir/Airportsim.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Luchthaven.dir/Airportsim.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/uauser/Desktop/Luchthaven--master/Airportsim.cpp -o CMakeFiles/Luchthaven.dir/Airportsim.cpp.s
 
-CMakeFiles/Luchthaven.dir/LuchthavenXML.cpp.o.requires:
+CMakeFiles/Luchthaven.dir/Airportsim.cpp.o.requires:
 
-.PHONY : CMakeFiles/Luchthaven.dir/LuchthavenXML.cpp.o.requires
+.PHONY : CMakeFiles/Luchthaven.dir/Airportsim.cpp.o.requires
 
-CMakeFiles/Luchthaven.dir/LuchthavenXML.cpp.o.provides: CMakeFiles/Luchthaven.dir/LuchthavenXML.cpp.o.requires
-	$(MAKE) -f CMakeFiles/Luchthaven.dir/build.make CMakeFiles/Luchthaven.dir/LuchthavenXML.cpp.o.provides.build
-.PHONY : CMakeFiles/Luchthaven.dir/LuchthavenXML.cpp.o.provides
+CMakeFiles/Luchthaven.dir/Airportsim.cpp.o.provides: CMakeFiles/Luchthaven.dir/Airportsim.cpp.o.requires
+	$(MAKE) -f CMakeFiles/Luchthaven.dir/build.make CMakeFiles/Luchthaven.dir/Airportsim.cpp.o.provides.build
+.PHONY : CMakeFiles/Luchthaven.dir/Airportsim.cpp.o.provides
 
-CMakeFiles/Luchthaven.dir/LuchthavenXML.cpp.o.provides.build: CMakeFiles/Luchthaven.dir/LuchthavenXML.cpp.o
+CMakeFiles/Luchthaven.dir/Airportsim.cpp.o.provides.build: CMakeFiles/Luchthaven.dir/Airportsim.cpp.o
 
 
 CMakeFiles/Luchthaven.dir/Runway.cpp.o: CMakeFiles/Luchthaven.dir/flags.make
@@ -279,7 +279,7 @@ Luchthaven_OBJECTS = \
 "CMakeFiles/Luchthaven.dir/tinystr.cpp.o" \
 "CMakeFiles/Luchthaven.dir/tinyxml.cpp.o" \
 "CMakeFiles/Luchthaven.dir/tinyxmlerror.cpp.o" \
-"CMakeFiles/Luchthaven.dir/LuchthavenXML.cpp.o" \
+"CMakeFiles/Luchthaven.dir/Airportsim.cpp.o" \
 "CMakeFiles/Luchthaven.dir/Runway.cpp.o" \
 "CMakeFiles/Luchthaven.dir/Airplane.cpp.o" \
 "CMakeFiles/Luchthaven.dir/Airport.cpp.o" \
@@ -292,7 +292,7 @@ Luchthaven: CMakeFiles/Luchthaven.dir/main.cpp.o
 Luchthaven: CMakeFiles/Luchthaven.dir/tinystr.cpp.o
 Luchthaven: CMakeFiles/Luchthaven.dir/tinyxml.cpp.o
 Luchthaven: CMakeFiles/Luchthaven.dir/tinyxmlerror.cpp.o
-Luchthaven: CMakeFiles/Luchthaven.dir/LuchthavenXML.cpp.o
+Luchthaven: CMakeFiles/Luchthaven.dir/Airportsim.cpp.o
 Luchthaven: CMakeFiles/Luchthaven.dir/Runway.cpp.o
 Luchthaven: CMakeFiles/Luchthaven.dir/Airplane.cpp.o
 Luchthaven: CMakeFiles/Luchthaven.dir/Airport.cpp.o
@@ -311,7 +311,7 @@ CMakeFiles/Luchthaven.dir/requires: CMakeFiles/Luchthaven.dir/main.cpp.o.require
 CMakeFiles/Luchthaven.dir/requires: CMakeFiles/Luchthaven.dir/tinystr.cpp.o.requires
 CMakeFiles/Luchthaven.dir/requires: CMakeFiles/Luchthaven.dir/tinyxml.cpp.o.requires
 CMakeFiles/Luchthaven.dir/requires: CMakeFiles/Luchthaven.dir/tinyxmlerror.cpp.o.requires
-CMakeFiles/Luchthaven.dir/requires: CMakeFiles/Luchthaven.dir/LuchthavenXML.cpp.o.requires
+CMakeFiles/Luchthaven.dir/requires: CMakeFiles/Luchthaven.dir/Airportsim.cpp.o.requires
 CMakeFiles/Luchthaven.dir/requires: CMakeFiles/Luchthaven.dir/Runway.cpp.o.requires
 CMakeFiles/Luchthaven.dir/requires: CMakeFiles/Luchthaven.dir/Airplane.cpp.o.requires
 CMakeFiles/Luchthaven.dir/requires: CMakeFiles/Luchthaven.dir/Airport.cpp.o.requires

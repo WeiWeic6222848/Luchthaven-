@@ -6,5 +6,19 @@
 
 Runway::Runway(const string &name) : name(name) {currentairplane= nullptr;}
 
-Runway::Runway(const string &name, Airport *where) : name(name), where(where) {}
+Runway::Runway(const string &name, Airport *where) : name(name), where(where) {currentairplane= nullptr;}
+
+const string &Runway::getName() const {
+    return name;
+}
+
+Airport *Runway::Where() const {
+    return where;
+}
+
+Airplane *Runway::getCurrentairplane() const {
+    return currentairplane;
+}
+
+Runway::Runway() {}
 

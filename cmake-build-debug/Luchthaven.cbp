@@ -96,10 +96,10 @@
 		<Unit filename="/home/uauser/Desktop/Luchthaven--master/Airport.h">
 			<Option target="Luchthaven"/>
 		</Unit>
-		<Unit filename="/home/uauser/Desktop/Luchthaven--master/LuchthavenXML.cpp">
+		<Unit filename="/home/uauser/Desktop/Luchthaven--master/Airportsim.cpp">
 			<Option target="Luchthaven"/>
 		</Unit>
-		<Unit filename="/home/uauser/Desktop/Luchthaven--master/LuchthavenXML.h">
+		<Unit filename="/home/uauser/Desktop/Luchthaven--master/Airportsim.h">
 			<Option target="Luchthaven"/>
 		</Unit>
 		<Unit filename="/home/uauser/Desktop/Luchthaven--master/Runway.cpp">
