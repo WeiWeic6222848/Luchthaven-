@@ -20,6 +20,17 @@ int stoi(const string &value){
 }
 
 
+void Airportsim::removeairport(Airport& airport) {
+    for (unsigned int i = 0; i < Airports.size(); ++i) {
+        if (&airport==&Airports[i]){
+            airport.cleanup();
+            Airports.erase(Airports.begin()+i);
+            break;
+        }
+    }
+}
+
+
 void Airportsim::addsourcefile(const string &filename) {
     TiXmlDocument XMLfile;
     int errors=0;
@@ -70,10 +81,9 @@ void Airportsim::addsourcefile(const string &filename) {
                     string airportname=childelement->FirstChildElement("airport")->GetText();
                     bool airportfound=false;
                     for (unsigned int i = 0; i < Airports.size(); ++i) {
-                        Airport air=Airports[i];
-                        if(air.getIata()==airportname){
-                            Runway* runway=new Runway(name,&air);
-                            air.addrunway(runway);
+                        if(Airports[i].getIata()==airportname){
+                            Runway* runway=new Runway(name,&Airports[i]);
+                            Airports[i].addrunway(runway);
                             Runways.push_back(runway);
                             airportfound=true;
                         }
@@ -90,7 +100,7 @@ void Airportsim::addsourcefile(const string &filename) {
                     string callsign=childelement->FirstChildElement("callsign")->GetText();
                     string model=childelement->FirstChildElement("model")->GetText();
                     string status=childelement->FirstChildElement("status")->GetText();
-                    if(status!="approaching "&&status!="stand at gate"){
+                    if(status!="Approaching"&&status!="Stand at gate"){
                         cerr<<"Airplane status of " + number+" is not correct"<<endl;
                         cerr<<airport.getName()<<" got removed from airportslist beacause of inconsistency"<<endl;
                         errors++;
@@ -128,7 +138,7 @@ void Airportsim::addsourcefile(const string &filename) {
                             continue;
                         }
                     }
-                    Airplane a(status,number,callsign,model,passengercapacity,passenger,fuel);
+                    Airplane a(status,passenger,fuel,number,callsign,model,passengercapacity);
                     Airplanes.push_back(a);
 
                     if (status=="standing at gate"){
@@ -167,45 +177,46 @@ void Airportsim::addsourcefile(const string &filename) {
         cout<<filename +" read with " <<errors<< " errors"<<endl;
     }
     for (unsigned int j = 0; j < Airports.size(); ++j) {
-        Airport air=Airports[j];
-        if (air.getRunways().empty()) {
-            cerr<<air.getName()<<" has no runway or a wrong amount of runway."<<endl;
-            cerr<<air.getName()<<" got removed from airportslist beacause of inconsistency"<<endl;
-            delete air;
+        if (Airports[j].getRunways().empty()) {
+            cerr<<Airports[j].getName()<<" has no runway or a wrong amount of runway."<<endl;
+            cerr<<Airports[j].getName()<<" got removed from airportslist beacause of inconsistency"<<endl;
+            removeairport(Airports[j]);
         }
     }
     return;
 }
 
-const Airport &Airportsim::findairport(const string &iata) {
-    for(Airport air:Airports){
-        if(air.getIata()==iata){
-            return air;
+const Airport* Airportsim::findairport(const string &iata) {
+    for (unsigned int j = 0; j < Airports.size(); ++j) {
+        if(Airports[j].getIata()==iata){
+            return &Airports[j];
         }
     }
     cerr<<"no airport found with iata "+iata;
-    return Airport();
+    return NULL;
 }
 
-const Airplane &Airportsim::findairplane(const string &number) {
-    for (Airplane plane:Airplanes){
-        if(plane.getNumber()==number){
-            return plane;
+const Airplane *Airportsim::findairplane(const string &number) {
+    for (unsigned int j = 0; j < Airplanes.size(); ++j) {
+        if(Airplanes[j].getNumber()==number){
+            return &Airplanes[j];
         }
     }
     cerr<<"no airplane found with number "+number;
-    return Airplane();
+    return NULL;
 }
 
-const Runway &Airportsim::findrunway(const string &number, const string &iata) {
-    const Airport air=findairport(iata);
-    for (Runway* run:air.getRunways()) {
-        if(run->getName()==number){
-            return *run;
+const Runway *Airportsim::findrunway(const string &number, const string &iata) {
+    const Airport* air=findairport(iata);
+    ENSURE(air!=NULL,"cannot find the giving airport with iata");
+    for (unsigned int i = 0; i < air->getRunways().size(); ++i) {
+        if (air->getRunways()[i]->getName()==number){
+            return air->getRunways()[i];
         }
     }
-    cerr<<"no runway found inside "+air.getName();
-    return Runway();
+    cerr<<"no runway found inside "+air->getName();
+    return NULL;
 }
 
 Airportsim::Airportsim() {}
+

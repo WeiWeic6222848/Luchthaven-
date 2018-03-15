@@ -8,7 +8,7 @@
 Airport::Airport(const string &name, const string &iata, const string &callsign, int gates, int passengers) : name(name), iata(iata), callsign(callsign),  passengers(passengers)
 {
     for (int i = 1; i < gates+1; ++i) {
-        Airport::gates[i]= nullptr;
+        Airport::gates[i]= NULL;
     }
 }
 
@@ -39,19 +39,19 @@ const vector<Runway *> &Airport::getRunways() const {
 Airport::Airport() {}
 
 Runway *Airport::findfreerunway() {
-    for (Runway* run:runways) {
-        if (run->getCurrentairplane()== nullptr){
-            return run;
+    for (unsigned int i = 0; i < runways.size(); ++i) {
+        if(runways[i]->getCurrentairplane()==NULL){
+            return runways[i];
         }
     }
     cout<<"all runways buzy"<<endl;
-    return nullptr;
+    return NULL;
 }
 
 int Airport::findfreegates() const {
-    for (auto gate:gates){
-        if (gate.second == nullptr){
-            return gate.first;
+    for (unsigned int i = 1; i < gates.size()+1; ++i) {
+        if(gates.at(i)==NULL){
+            return i;
         }
     }
     cerr<<"all gates buzy"<<endl;
@@ -59,7 +59,7 @@ int Airport::findfreegates() const {
 }
 
 void Airport::parkAirplane(int gate, Airplane *airplane) {
-    if(gate<1||gate>gates.size()){
+    if(gate<1||gate>(int)gates.size()){
         cerr<<"invalid gate assigned";
         return;
     }
@@ -67,6 +67,12 @@ void Airport::parkAirplane(int gate, Airplane *airplane) {
 }
 
 Airport::~Airport() {
+    for (unsigned int i = 0; i < runways.size(); ++i) {
+        delete(runways[i]);
+    }
+}
+
+void Airport::cleanup() {
     for (unsigned int i = 0; i < runways.size(); ++i) {
         delete(runways[i]);
     }

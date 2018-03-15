@@ -15,14 +15,15 @@ class Airportsim{
     vector<Airport> Airports;
     vector<Airplane> Airplanes;
     vector<Runway*> Runways;
+    void removeairport(Airport& airport);
 public:
     Airportsim();
 
     Airportsim(const string& filename);
     void addsourcefile(const string &filename);
-    const Airport& findairport(const string& iata);
-    const Airplane& findairplane(const string& number);
-    const Runway& findrunway(const string&number,const string& iata);
+    const Airport* findairport(const string& iata);
+    const Airplane* findairplane(const string& number);
+    const Runway* findrunway(const string&number,const string& iata);
 };
 
 

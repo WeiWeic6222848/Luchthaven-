@@ -4,11 +4,6 @@
 
 #include "Airplane.h"
 
-Airplane::Airplane(const string &status, const string &number, const string &callsign,
-                   const string &model, int passengerCapacity, int passenger, int fuel) :fuel(fuel), number(number), callsign(callsign), model(model), passengerCapacity(passengerCapacity),passenger(passenger),status(status) {
-
-}
-
 const string &Airplane::getStatus() const {
     return status;
 }
@@ -38,3 +33,8 @@ int Airplane::getPassengerCapacity() const {
 }
 
 Airplane::Airplane() {}
+
+Airplane::Airplane(const string &status, int passenger, int fuel, const string &number, const string &callsign,
+                   const string &model, int passengerCapacity) : status(status), passenger(passenger), fuel(fuel),
+                                                                 number(number), callsign(callsign), model(model),
+                                                                 passengerCapacity(passengerCapacity) {}

@@ -47,6 +47,8 @@ public:
     void parkAirplane(int gate,Airplane* airplane);
 
     virtual ~Airport();
+
+    void cleanup();
 };
 
 
