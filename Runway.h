@@ -13,8 +13,8 @@ class Airport;
 
 class Runway {
     string name;
-    Airport* where= nullptr;
-    Airplane* currentairplane= nullptr;
+    Airport* where= NULL;
+    Airplane* currentairplane= NULL;
 public:
     Runway(const string &name, Airport *where);
 

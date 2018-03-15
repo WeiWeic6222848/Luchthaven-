@@ -20,7 +20,7 @@ private:
     string iata;
     string callsign;
     map<int,Airplane*> gates;
-    int passengers=0;
+    int passengers;
     vector<Runway*> runways;
     vector<Airplane*> approachingplanes;
     vector<Airplane*> leavingplanes;
@@ -45,6 +45,8 @@ public:
     int findfreegates() const;
 
     void parkAirplane(int gate,Airplane* airplane);
+
+    virtual ~Airport();
 };
 
 

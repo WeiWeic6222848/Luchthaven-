@@ -48,10 +48,10 @@ RM = /home/c6222848/Downloads/clion-2017.3.3/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/c6222848/Desktop/Luchthaven_windows
+CMAKE_SOURCE_DIR = /home/c6222848/Desktop/Luchthaven
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/c6222848/Desktop/Luchthaven_windows/cmake-build-debug
+CMAKE_BINARY_DIR = /home/c6222848/Desktop/Luchthaven/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/c6222848/Desktop/Luchthaven_windows/cmake-build-debug/CMakeFiles /home/c6222848/Desktop/Luchthaven_windows/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/c6222848/Desktop/Luchthaven/cmake-build-debug/CMakeFiles /home/c6222848/Desktop/Luchthaven/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/c6222848/Desktop/Luchthaven_windows/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/c6222848/Desktop/Luchthaven/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,17 +111,30 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Luchthaven
+# Target rules for targets named Airport_simulator_debug
 
 # Build rule for target.
-Luchthaven: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Luchthaven
-.PHONY : Luchthaven
+Airport_simulator_debug: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Airport_simulator_debug
+.PHONY : Airport_simulator_debug
 
 # fast build rule for target.
-Luchthaven/fast:
-	$(MAKE) -f CMakeFiles/Luchthaven.dir/build.make CMakeFiles/Luchthaven.dir/build
-.PHONY : Luchthaven/fast
+Airport_simulator_debug/fast:
+	$(MAKE) -f CMakeFiles/Airport_simulator_debug.dir/build.make CMakeFiles/Airport_simulator_debug.dir/build
+.PHONY : Airport_simulator_debug/fast
+
+#=============================================================================
+# Target rules for targets named Airport_simulator
+
+# Build rule for target.
+Airport_simulator: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Airport_simulator
+.PHONY : Airport_simulator
+
+# fast build rule for target.
+Airport_simulator/fast:
+	$(MAKE) -f CMakeFiles/Airport_simulator.dir/build.make CMakeFiles/Airport_simulator.dir/build
+.PHONY : Airport_simulator/fast
 
 Airplane.o: Airplane.cpp.o
 
@@ -129,7 +142,8 @@ Airplane.o: Airplane.cpp.o
 
 # target to build an object file
 Airplane.cpp.o:
-	$(MAKE) -f CMakeFiles/Luchthaven.dir/build.make CMakeFiles/Luchthaven.dir/Airplane.cpp.o
+	$(MAKE) -f CMakeFiles/Airport_simulator_debug.dir/build.make CMakeFiles/Airport_simulator_debug.dir/Airplane.cpp.o
+	$(MAKE) -f CMakeFiles/Airport_simulator.dir/build.make CMakeFiles/Airport_simulator.dir/Airplane.cpp.o
 .PHONY : Airplane.cpp.o
 
 Airplane.i: Airplane.cpp.i
@@ -138,7 +152,8 @@ Airplane.i: Airplane.cpp.i
 
 # target to preprocess a source file
 Airplane.cpp.i:
-	$(MAKE) -f CMakeFiles/Luchthaven.dir/build.make CMakeFiles/Luchthaven.dir/Airplane.cpp.i
+	$(MAKE) -f CMakeFiles/Airport_simulator_debug.dir/build.make CMakeFiles/Airport_simulator_debug.dir/Airplane.cpp.i
+	$(MAKE) -f CMakeFiles/Airport_simulator.dir/build.make CMakeFiles/Airport_simulator.dir/Airplane.cpp.i
 .PHONY : Airplane.cpp.i
 
 Airplane.s: Airplane.cpp.s
@@ -147,7 +162,8 @@ Airplane.s: Airplane.cpp.s
 
 # target to generate assembly for a file
 Airplane.cpp.s:
-	$(MAKE) -f CMakeFiles/Luchthaven.dir/build.make CMakeFiles/Luchthaven.dir/Airplane.cpp.s
+	$(MAKE) -f CMakeFiles/Airport_simulator_debug.dir/build.make CMakeFiles/Airport_simulator_debug.dir/Airplane.cpp.s
+	$(MAKE) -f CMakeFiles/Airport_simulator.dir/build.make CMakeFiles/Airport_simulator.dir/Airplane.cpp.s
 .PHONY : Airplane.cpp.s
 
 Airport.o: Airport.cpp.o
@@ -156,7 +172,8 @@ Airport.o: Airport.cpp.o
 
 # target to build an object file
 Airport.cpp.o:
-	$(MAKE) -f CMakeFiles/Luchthaven.dir/build.make CMakeFiles/Luchthaven.dir/Airport.cpp.o
+	$(MAKE) -f CMakeFiles/Airport_simulator_debug.dir/build.make CMakeFiles/Airport_simulator_debug.dir/Airport.cpp.o
+	$(MAKE) -f CMakeFiles/Airport_simulator.dir/build.make CMakeFiles/Airport_simulator.dir/Airport.cpp.o
 .PHONY : Airport.cpp.o
 
 Airport.i: Airport.cpp.i
@@ -165,7 +182,8 @@ Airport.i: Airport.cpp.i
 
 # target to preprocess a source file
 Airport.cpp.i:
-	$(MAKE) -f CMakeFiles/Luchthaven.dir/build.make CMakeFiles/Luchthaven.dir/Airport.cpp.i
+	$(MAKE) -f CMakeFiles/Airport_simulator_debug.dir/build.make CMakeFiles/Airport_simulator_debug.dir/Airport.cpp.i
+	$(MAKE) -f CMakeFiles/Airport_simulator.dir/build.make CMakeFiles/Airport_simulator.dir/Airport.cpp.i
 .PHONY : Airport.cpp.i
 
 Airport.s: Airport.cpp.s
@@ -174,7 +192,8 @@ Airport.s: Airport.cpp.s
 
 # target to generate assembly for a file
 Airport.cpp.s:
-	$(MAKE) -f CMakeFiles/Luchthaven.dir/build.make CMakeFiles/Luchthaven.dir/Airport.cpp.s
+	$(MAKE) -f CMakeFiles/Airport_simulator_debug.dir/build.make CMakeFiles/Airport_simulator_debug.dir/Airport.cpp.s
+	$(MAKE) -f CMakeFiles/Airport_simulator.dir/build.make CMakeFiles/Airport_simulator.dir/Airport.cpp.s
 .PHONY : Airport.cpp.s
 
 Airportsim.o: Airportsim.cpp.o
@@ -183,7 +202,8 @@ Airportsim.o: Airportsim.cpp.o
 
 # target to build an object file
 Airportsim.cpp.o:
-	$(MAKE) -f CMakeFiles/Luchthaven.dir/build.make CMakeFiles/Luchthaven.dir/Airportsim.cpp.o
+	$(MAKE) -f CMakeFiles/Airport_simulator_debug.dir/build.make CMakeFiles/Airport_simulator_debug.dir/Airportsim.cpp.o
+	$(MAKE) -f CMakeFiles/Airport_simulator.dir/build.make CMakeFiles/Airport_simulator.dir/Airportsim.cpp.o
 .PHONY : Airportsim.cpp.o
 
 Airportsim.i: Airportsim.cpp.i
@@ -192,7 +212,8 @@ Airportsim.i: Airportsim.cpp.i
 
 # target to preprocess a source file
 Airportsim.cpp.i:
-	$(MAKE) -f CMakeFiles/Luchthaven.dir/build.make CMakeFiles/Luchthaven.dir/Airportsim.cpp.i
+	$(MAKE) -f CMakeFiles/Airport_simulator_debug.dir/build.make CMakeFiles/Airport_simulator_debug.dir/Airportsim.cpp.i
+	$(MAKE) -f CMakeFiles/Airport_simulator.dir/build.make CMakeFiles/Airport_simulator.dir/Airportsim.cpp.i
 .PHONY : Airportsim.cpp.i
 
 Airportsim.s: Airportsim.cpp.s
@@ -201,7 +222,8 @@ Airportsim.s: Airportsim.cpp.s
 
 # target to generate assembly for a file
 Airportsim.cpp.s:
-	$(MAKE) -f CMakeFiles/Luchthaven.dir/build.make CMakeFiles/Luchthaven.dir/Airportsim.cpp.s
+	$(MAKE) -f CMakeFiles/Airport_simulator_debug.dir/build.make CMakeFiles/Airport_simulator_debug.dir/Airportsim.cpp.s
+	$(MAKE) -f CMakeFiles/Airport_simulator.dir/build.make CMakeFiles/Airport_simulator.dir/Airportsim.cpp.s
 .PHONY : Airportsim.cpp.s
 
 Runway.o: Runway.cpp.o
@@ -210,7 +232,8 @@ Runway.o: Runway.cpp.o
 
 # target to build an object file
 Runway.cpp.o:
-	$(MAKE) -f CMakeFiles/Luchthaven.dir/build.make CMakeFiles/Luchthaven.dir/Runway.cpp.o
+	$(MAKE) -f CMakeFiles/Airport_simulator_debug.dir/build.make CMakeFiles/Airport_simulator_debug.dir/Runway.cpp.o
+	$(MAKE) -f CMakeFiles/Airport_simulator.dir/build.make CMakeFiles/Airport_simulator.dir/Runway.cpp.o
 .PHONY : Runway.cpp.o
 
 Runway.i: Runway.cpp.i
@@ -219,7 +242,8 @@ Runway.i: Runway.cpp.i
 
 # target to preprocess a source file
 Runway.cpp.i:
-	$(MAKE) -f CMakeFiles/Luchthaven.dir/build.make CMakeFiles/Luchthaven.dir/Runway.cpp.i
+	$(MAKE) -f CMakeFiles/Airport_simulator_debug.dir/build.make CMakeFiles/Airport_simulator_debug.dir/Runway.cpp.i
+	$(MAKE) -f CMakeFiles/Airport_simulator.dir/build.make CMakeFiles/Airport_simulator.dir/Runway.cpp.i
 .PHONY : Runway.cpp.i
 
 Runway.s: Runway.cpp.s
@@ -228,7 +252,8 @@ Runway.s: Runway.cpp.s
 
 # target to generate assembly for a file
 Runway.cpp.s:
-	$(MAKE) -f CMakeFiles/Luchthaven.dir/build.make CMakeFiles/Luchthaven.dir/Runway.cpp.s
+	$(MAKE) -f CMakeFiles/Airport_simulator_debug.dir/build.make CMakeFiles/Airport_simulator_debug.dir/Runway.cpp.s
+	$(MAKE) -f CMakeFiles/Airport_simulator.dir/build.make CMakeFiles/Airport_simulator.dir/Runway.cpp.s
 .PHONY : Runway.cpp.s
 
 main.o: main.cpp.o
@@ -237,7 +262,8 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) -f CMakeFiles/Luchthaven.dir/build.make CMakeFiles/Luchthaven.dir/main.cpp.o
+	$(MAKE) -f CMakeFiles/Airport_simulator_debug.dir/build.make CMakeFiles/Airport_simulator_debug.dir/main.cpp.o
+	$(MAKE) -f CMakeFiles/Airport_simulator.dir/build.make CMakeFiles/Airport_simulator.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -246,7 +272,8 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) -f CMakeFiles/Luchthaven.dir/build.make CMakeFiles/Luchthaven.dir/main.cpp.i
+	$(MAKE) -f CMakeFiles/Airport_simulator_debug.dir/build.make CMakeFiles/Airport_simulator_debug.dir/main.cpp.i
+	$(MAKE) -f CMakeFiles/Airport_simulator.dir/build.make CMakeFiles/Airport_simulator.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -255,7 +282,8 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) -f CMakeFiles/Luchthaven.dir/build.make CMakeFiles/Luchthaven.dir/main.cpp.s
+	$(MAKE) -f CMakeFiles/Airport_simulator_debug.dir/build.make CMakeFiles/Airport_simulator_debug.dir/main.cpp.s
+	$(MAKE) -f CMakeFiles/Airport_simulator.dir/build.make CMakeFiles/Airport_simulator.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 tinystr.o: tinystr.cpp.o
@@ -264,7 +292,8 @@ tinystr.o: tinystr.cpp.o
 
 # target to build an object file
 tinystr.cpp.o:
-	$(MAKE) -f CMakeFiles/Luchthaven.dir/build.make CMakeFiles/Luchthaven.dir/tinystr.cpp.o
+	$(MAKE) -f CMakeFiles/Airport_simulator_debug.dir/build.make CMakeFiles/Airport_simulator_debug.dir/tinystr.cpp.o
+	$(MAKE) -f CMakeFiles/Airport_simulator.dir/build.make CMakeFiles/Airport_simulator.dir/tinystr.cpp.o
 .PHONY : tinystr.cpp.o
 
 tinystr.i: tinystr.cpp.i
@@ -273,7 +302,8 @@ tinystr.i: tinystr.cpp.i
 
 # target to preprocess a source file
 tinystr.cpp.i:
-	$(MAKE) -f CMakeFiles/Luchthaven.dir/build.make CMakeFiles/Luchthaven.dir/tinystr.cpp.i
+	$(MAKE) -f CMakeFiles/Airport_simulator_debug.dir/build.make CMakeFiles/Airport_simulator_debug.dir/tinystr.cpp.i
+	$(MAKE) -f CMakeFiles/Airport_simulator.dir/build.make CMakeFiles/Airport_simulator.dir/tinystr.cpp.i
 .PHONY : tinystr.cpp.i
 
 tinystr.s: tinystr.cpp.s
@@ -282,7 +312,8 @@ tinystr.s: tinystr.cpp.s
 
 # target to generate assembly for a file
 tinystr.cpp.s:
-	$(MAKE) -f CMakeFiles/Luchthaven.dir/build.make CMakeFiles/Luchthaven.dir/tinystr.cpp.s
+	$(MAKE) -f CMakeFiles/Airport_simulator_debug.dir/build.make CMakeFiles/Airport_simulator_debug.dir/tinystr.cpp.s
+	$(MAKE) -f CMakeFiles/Airport_simulator.dir/build.make CMakeFiles/Airport_simulator.dir/tinystr.cpp.s
 .PHONY : tinystr.cpp.s
 
 tinyxml.o: tinyxml.cpp.o
@@ -291,7 +322,8 @@ tinyxml.o: tinyxml.cpp.o
 
 # target to build an object file
 tinyxml.cpp.o:
-	$(MAKE) -f CMakeFiles/Luchthaven.dir/build.make CMakeFiles/Luchthaven.dir/tinyxml.cpp.o
+	$(MAKE) -f CMakeFiles/Airport_simulator_debug.dir/build.make CMakeFiles/Airport_simulator_debug.dir/tinyxml.cpp.o
+	$(MAKE) -f CMakeFiles/Airport_simulator.dir/build.make CMakeFiles/Airport_simulator.dir/tinyxml.cpp.o
 .PHONY : tinyxml.cpp.o
 
 tinyxml.i: tinyxml.cpp.i
@@ -300,7 +332,8 @@ tinyxml.i: tinyxml.cpp.i
 
 # target to preprocess a source file
 tinyxml.cpp.i:
-	$(MAKE) -f CMakeFiles/Luchthaven.dir/build.make CMakeFiles/Luchthaven.dir/tinyxml.cpp.i
+	$(MAKE) -f CMakeFiles/Airport_simulator_debug.dir/build.make CMakeFiles/Airport_simulator_debug.dir/tinyxml.cpp.i
+	$(MAKE) -f CMakeFiles/Airport_simulator.dir/build.make CMakeFiles/Airport_simulator.dir/tinyxml.cpp.i
 .PHONY : tinyxml.cpp.i
 
 tinyxml.s: tinyxml.cpp.s
@@ -309,7 +342,8 @@ tinyxml.s: tinyxml.cpp.s
 
 # target to generate assembly for a file
 tinyxml.cpp.s:
-	$(MAKE) -f CMakeFiles/Luchthaven.dir/build.make CMakeFiles/Luchthaven.dir/tinyxml.cpp.s
+	$(MAKE) -f CMakeFiles/Airport_simulator_debug.dir/build.make CMakeFiles/Airport_simulator_debug.dir/tinyxml.cpp.s
+	$(MAKE) -f CMakeFiles/Airport_simulator.dir/build.make CMakeFiles/Airport_simulator.dir/tinyxml.cpp.s
 .PHONY : tinyxml.cpp.s
 
 tinyxmlerror.o: tinyxmlerror.cpp.o
@@ -318,7 +352,8 @@ tinyxmlerror.o: tinyxmlerror.cpp.o
 
 # target to build an object file
 tinyxmlerror.cpp.o:
-	$(MAKE) -f CMakeFiles/Luchthaven.dir/build.make CMakeFiles/Luchthaven.dir/tinyxmlerror.cpp.o
+	$(MAKE) -f CMakeFiles/Airport_simulator_debug.dir/build.make CMakeFiles/Airport_simulator_debug.dir/tinyxmlerror.cpp.o
+	$(MAKE) -f CMakeFiles/Airport_simulator.dir/build.make CMakeFiles/Airport_simulator.dir/tinyxmlerror.cpp.o
 .PHONY : tinyxmlerror.cpp.o
 
 tinyxmlerror.i: tinyxmlerror.cpp.i
@@ -327,7 +362,8 @@ tinyxmlerror.i: tinyxmlerror.cpp.i
 
 # target to preprocess a source file
 tinyxmlerror.cpp.i:
-	$(MAKE) -f CMakeFiles/Luchthaven.dir/build.make CMakeFiles/Luchthaven.dir/tinyxmlerror.cpp.i
+	$(MAKE) -f CMakeFiles/Airport_simulator_debug.dir/build.make CMakeFiles/Airport_simulator_debug.dir/tinyxmlerror.cpp.i
+	$(MAKE) -f CMakeFiles/Airport_simulator.dir/build.make CMakeFiles/Airport_simulator.dir/tinyxmlerror.cpp.i
 .PHONY : tinyxmlerror.cpp.i
 
 tinyxmlerror.s: tinyxmlerror.cpp.s
@@ -336,7 +372,8 @@ tinyxmlerror.s: tinyxmlerror.cpp.s
 
 # target to generate assembly for a file
 tinyxmlerror.cpp.s:
-	$(MAKE) -f CMakeFiles/Luchthaven.dir/build.make CMakeFiles/Luchthaven.dir/tinyxmlerror.cpp.s
+	$(MAKE) -f CMakeFiles/Airport_simulator_debug.dir/build.make CMakeFiles/Airport_simulator_debug.dir/tinyxmlerror.cpp.s
+	$(MAKE) -f CMakeFiles/Airport_simulator.dir/build.make CMakeFiles/Airport_simulator.dir/tinyxmlerror.cpp.s
 .PHONY : tinyxmlerror.cpp.s
 
 tinyxmlparser.o: tinyxmlparser.cpp.o
@@ -345,7 +382,8 @@ tinyxmlparser.o: tinyxmlparser.cpp.o
 
 # target to build an object file
 tinyxmlparser.cpp.o:
-	$(MAKE) -f CMakeFiles/Luchthaven.dir/build.make CMakeFiles/Luchthaven.dir/tinyxmlparser.cpp.o
+	$(MAKE) -f CMakeFiles/Airport_simulator_debug.dir/build.make CMakeFiles/Airport_simulator_debug.dir/tinyxmlparser.cpp.o
+	$(MAKE) -f CMakeFiles/Airport_simulator.dir/build.make CMakeFiles/Airport_simulator.dir/tinyxmlparser.cpp.o
 .PHONY : tinyxmlparser.cpp.o
 
 tinyxmlparser.i: tinyxmlparser.cpp.i
@@ -354,7 +392,8 @@ tinyxmlparser.i: tinyxmlparser.cpp.i
 
 # target to preprocess a source file
 tinyxmlparser.cpp.i:
-	$(MAKE) -f CMakeFiles/Luchthaven.dir/build.make CMakeFiles/Luchthaven.dir/tinyxmlparser.cpp.i
+	$(MAKE) -f CMakeFiles/Airport_simulator_debug.dir/build.make CMakeFiles/Airport_simulator_debug.dir/tinyxmlparser.cpp.i
+	$(MAKE) -f CMakeFiles/Airport_simulator.dir/build.make CMakeFiles/Airport_simulator.dir/tinyxmlparser.cpp.i
 .PHONY : tinyxmlparser.cpp.i
 
 tinyxmlparser.s: tinyxmlparser.cpp.s
@@ -363,7 +402,8 @@ tinyxmlparser.s: tinyxmlparser.cpp.s
 
 # target to generate assembly for a file
 tinyxmlparser.cpp.s:
-	$(MAKE) -f CMakeFiles/Luchthaven.dir/build.make CMakeFiles/Luchthaven.dir/tinyxmlparser.cpp.s
+	$(MAKE) -f CMakeFiles/Airport_simulator_debug.dir/build.make CMakeFiles/Airport_simulator_debug.dir/tinyxmlparser.cpp.s
+	$(MAKE) -f CMakeFiles/Airport_simulator.dir/build.make CMakeFiles/Airport_simulator.dir/tinyxmlparser.cpp.s
 .PHONY : tinyxmlparser.cpp.s
 
 # Help Target
@@ -374,7 +414,8 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... Luchthaven"
+	@echo "... Airport_simulator_debug"
+	@echo "... Airport_simulator"
 	@echo "... Airplane.o"
 	@echo "... Airplane.i"
 	@echo "... Airplane.s"

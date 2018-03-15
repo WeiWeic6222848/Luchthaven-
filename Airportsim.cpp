@@ -5,13 +5,22 @@
 #include <iostream>
 #include <string>
 #include "Airportsim.h"
+#include "DesignByContract.h"
 
 Airportsim::Airportsim(const string& filename) {
     addsourcefile(filename);
 }
 
-void Airportsim::addsourcefile(const string &filename) {
+int stoi(const string &value){
+    int temp=atoi(value.c_str());
+    if(temp==0&&value!="0"){
+        throw "stoi failed beacause the giving string is not a digit";
+    }
+    return temp;
+}
 
+
+void Airportsim::addsourcefile(const string &filename) {
     TiXmlDocument XMLfile;
     int errors=0;
     int aprroaching=0;
@@ -54,14 +63,15 @@ void Airportsim::addsourcefile(const string &filename) {
                 return;
             }
 
-            for (TiXmlElement* childelement=Root->FirstChildElement();childelement!= nullptr;childelement=childelement->NextSiblingElement()){ string Elementname=childelement->Value();
+            for (TiXmlElement* childelement=Root->FirstChildElement();childelement!= NULL;childelement=childelement->NextSiblingElement()){ string Elementname=childelement->Value();
                 if(Elementname=="AIRPORT"){}
                 else if (Elementname=="RUNWAY"&&childelement->FirstChildElement("name")&&childelement->FirstChildElement("airport")){
                     string name=childelement->FirstChildElement("name")->GetText();
-                    string airport=childelement->FirstChildElement("airport")->GetText();
+                    string airportname=childelement->FirstChildElement("airport")->GetText();
                     bool airportfound=false;
-                    for (Airport air:Airports) {
-                        if(air.getIata()==airport){
+                    for (unsigned int i = 0; i < Airports.size(); ++i) {
+                        Airport air=Airports[i];
+                        if(air.getIata()==airportname){
                             Runway* runway=new Runway(name,&air);
                             air.addrunway(runway);
                             Runways.push_back(runway);
@@ -69,7 +79,8 @@ void Airportsim::addsourcefile(const string &filename) {
                         }
                     }
                     if(!(airportfound)){
-                        cerr<<"cannot find airpont:"<<airport<<" for the runway with name:"<<name<<endl;
+                        cerr<<"cannot find airpont: "<<airportname<<" for the runway with name:"<<name<<endl;
+                        cerr<<airport.getName()<<" got removed from airportslist beacause of inconsistency"<<endl;
                         errors++;
                         break;
                     }
@@ -81,6 +92,7 @@ void Airportsim::addsourcefile(const string &filename) {
                     string status=childelement->FirstChildElement("status")->GetText();
                     if(status!="approaching "&&status!="stand at gate"){
                         cerr<<"Airplane status of " + number+" is not correct"<<endl;
+                        cerr<<airport.getName()<<" got removed from airportslist beacause of inconsistency"<<endl;
                         errors++;
                         break;
                     }
@@ -123,7 +135,8 @@ void Airportsim::addsourcefile(const string &filename) {
                         int gateforairplane=airport.findfreegates();
                         passenger=0;
                         if(gateforairplane==-1){
-                            cerr<<"Airport not consistent"<<endl;
+                            cerr<<airport.getName()<<" has more airplanes at gates than it's gate"<<endl;
+                            cerr<<airport.getName()<<" got removed from airportslist beacause of inconsistency"<<endl;
                             break;
                         }
                         else{
@@ -133,6 +146,11 @@ void Airportsim::addsourcefile(const string &filename) {
                     else{
                         if(aprroaching==0){
                             aprroaching++;
+                        }
+                        else{
+                            cerr<<airport.getName()<<" has more than one airplane approaching"<<endl;
+                            cerr<<airport.getName()<<" got removed from airportslist beacause of inconsistency"<<endl;
+                            break;
                         }
                     }
                 }
@@ -146,7 +164,15 @@ void Airportsim::addsourcefile(const string &filename) {
     if(errors==0){
         cout<<filename +" read no error"<<endl;
     }else{
-        cout<<filename +" read with "+ to_string(errors) +" errors"<<endl;
+        cout<<filename +" read with " <<errors<< " errors"<<endl;
+    }
+    for (unsigned int j = 0; j < Airports.size(); ++j) {
+        Airport air=Airports[j];
+        if (air.getRunways().empty()) {
+            cerr<<air.getName()<<" has no runway or a wrong amount of runway."<<endl;
+            cerr<<air.getName()<<" got removed from airportslist beacause of inconsistency"<<endl;
+            delete air;
+        }
     }
     return;
 }

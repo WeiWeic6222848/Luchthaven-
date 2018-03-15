@@ -8,42 +8,43 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/c6222848/Desktop/Luchthaven_windows/cmake-build-debug"/>
+				<Option working_dir="/home/c6222848/Desktop/Luchthaven/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j2 -f &quot;/home/c6222848/Desktop/Luchthaven_windows/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/c6222848/Desktop/Luchthaven_windows/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j2 -f &quot;/home/c6222848/Desktop/Luchthaven_windows/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j2 -f &quot;/home/c6222848/Desktop/Luchthaven_windows/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/c6222848/Desktop/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/c6222848/Desktop/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/c6222848/Desktop/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/c6222848/Desktop/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/c6222848/Desktop/Luchthaven_windows/cmake-build-debug"/>
+				<Option working_dir="/home/c6222848/Desktop/Luchthaven/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j2 -f &quot;/home/c6222848/Desktop/Luchthaven_windows/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/c6222848/Desktop/Luchthaven_windows/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j2 -f &quot;/home/c6222848/Desktop/Luchthaven_windows/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j2 -f &quot;/home/c6222848/Desktop/Luchthaven_windows/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/c6222848/Desktop/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/c6222848/Desktop/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/c6222848/Desktop/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/c6222848/Desktop/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/c6222848/Desktop/Luchthaven_windows/cmake-build-debug"/>
+				<Option working_dir="/home/c6222848/Desktop/Luchthaven/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j2 -f &quot;/home/c6222848/Desktop/Luchthaven_windows/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/c6222848/Desktop/Luchthaven_windows/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j2 -f &quot;/home/c6222848/Desktop/Luchthaven_windows/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j2 -f &quot;/home/c6222848/Desktop/Luchthaven_windows/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/c6222848/Desktop/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/c6222848/Desktop/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/c6222848/Desktop/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/c6222848/Desktop/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="Luchthaven">
-				<Option output="/home/c6222848/Desktop/Luchthaven_windows/cmake-build-debug/Luchthaven" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/c6222848/Desktop/Luchthaven_windows/cmake-build-debug"/>
+			<Target title="Airport_simulator_debug">
+				<Option output="/home/c6222848/Desktop/Luchthaven/cmake-build-debug/Airport_simulator_debug" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/c6222848/Desktop/Luchthaven/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add directory="/home/c6222848/Desktop/Luchthaven/gtest/include"/>
 					<Add directory="/usr/include/c++/5"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
 					<Add directory="/usr/include/c++/5/backward"/>
@@ -54,19 +55,20 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j2 -f &quot;/home/c6222848/Desktop/Luchthaven_windows/cmake-build-debug/Makefile&quot;  VERBOSE=1 Luchthaven"/>
-					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/c6222848/Desktop/Luchthaven_windows/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j2 -f &quot;/home/c6222848/Desktop/Luchthaven_windows/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j2 -f &quot;/home/c6222848/Desktop/Luchthaven_windows/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/c6222848/Desktop/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 Airport_simulator_debug"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/c6222848/Desktop/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/c6222848/Desktop/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/c6222848/Desktop/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="Luchthaven/fast">
-				<Option output="/home/c6222848/Desktop/Luchthaven_windows/cmake-build-debug/Luchthaven" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/c6222848/Desktop/Luchthaven_windows/cmake-build-debug"/>
+			<Target title="Airport_simulator_debug/fast">
+				<Option output="/home/c6222848/Desktop/Luchthaven/cmake-build-debug/Airport_simulator_debug" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/c6222848/Desktop/Luchthaven/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add directory="/home/c6222848/Desktop/Luchthaven/gtest/include"/>
 					<Add directory="/usr/include/c++/5"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
 					<Add directory="/usr/include/c++/5/backward"/>
@@ -77,66 +79,125 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j2 -f &quot;/home/c6222848/Desktop/Luchthaven_windows/cmake-build-debug/Makefile&quot;  VERBOSE=1 Luchthaven/fast"/>
-					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/c6222848/Desktop/Luchthaven_windows/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j2 -f &quot;/home/c6222848/Desktop/Luchthaven_windows/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j2 -f &quot;/home/c6222848/Desktop/Luchthaven_windows/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/c6222848/Desktop/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 Airport_simulator_debug/fast"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/c6222848/Desktop/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/c6222848/Desktop/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/c6222848/Desktop/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Airport_simulator">
+				<Option output="/home/c6222848/Desktop/Luchthaven/cmake-build-debug/Airport_simulator" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/c6222848/Desktop/Luchthaven/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/c6222848/Desktop/Luchthaven/gtest/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/c6222848/Desktop/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 Airport_simulator"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/c6222848/Desktop/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/c6222848/Desktop/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/c6222848/Desktop/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Airport_simulator/fast">
+				<Option output="/home/c6222848/Desktop/Luchthaven/cmake-build-debug/Airport_simulator" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/c6222848/Desktop/Luchthaven/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/c6222848/Desktop/Luchthaven/gtest/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/c6222848/Desktop/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 Airport_simulator/fast"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/c6222848/Desktop/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/c6222848/Desktop/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/c6222848/Desktop/Luchthaven/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/c6222848/Desktop/Luchthaven_windows/Airplane.cpp">
-			<Option target="Luchthaven"/>
+		<Unit filename="/home/c6222848/Desktop/Luchthaven/Airplane.cpp">
+			<Option target="Airport_simulator_debug"/>
+			<Option target="Airport_simulator"/>
 		</Unit>
-		<Unit filename="/home/c6222848/Desktop/Luchthaven_windows/Airplane.h">
-			<Option target="Luchthaven"/>
+		<Unit filename="/home/c6222848/Desktop/Luchthaven/Airplane.h">
+			<Option target="Airport_simulator_debug"/>
+			<Option target="Airport_simulator"/>
 		</Unit>
-		<Unit filename="/home/c6222848/Desktop/Luchthaven_windows/Airport.cpp">
-			<Option target="Luchthaven"/>
+		<Unit filename="/home/c6222848/Desktop/Luchthaven/Airport.cpp">
+			<Option target="Airport_simulator_debug"/>
+			<Option target="Airport_simulator"/>
 		</Unit>
-		<Unit filename="/home/c6222848/Desktop/Luchthaven_windows/Airport.h">
-			<Option target="Luchthaven"/>
+		<Unit filename="/home/c6222848/Desktop/Luchthaven/Airport.h">
+			<Option target="Airport_simulator_debug"/>
+			<Option target="Airport_simulator"/>
 		</Unit>
-<<<<<<< HEAD
-		<Unit filename="/home/uauser/Desktop/Luchthaven--master/Airportsim.cpp">
-			<Option target="Luchthaven"/>
+		<Unit filename="/home/c6222848/Desktop/Luchthaven/Airportsim.cpp">
+			<Option target="Airport_simulator_debug"/>
+			<Option target="Airport_simulator"/>
 		</Unit>
-		<Unit filename="/home/uauser/Desktop/Luchthaven--master/Airportsim.h">
-=======
-		<Unit filename="/home/c6222848/Desktop/Luchthaven_windows/Airportsim.cpp">
-			<Option target="Luchthaven"/>
+		<Unit filename="/home/c6222848/Desktop/Luchthaven/Airportsim.h">
+			<Option target="Airport_simulator_debug"/>
+			<Option target="Airport_simulator"/>
 		</Unit>
-		<Unit filename="/home/c6222848/Desktop/Luchthaven_windows/Airportsim.h">
->>>>>>> d8f048e019c69c93912694b0ee96c969b7e86062
-			<Option target="Luchthaven"/>
+		<Unit filename="/home/c6222848/Desktop/Luchthaven/DesignByContract.h">
+			<Option target="Airport_simulator"/>
 		</Unit>
-		<Unit filename="/home/c6222848/Desktop/Luchthaven_windows/Runway.cpp">
-			<Option target="Luchthaven"/>
+		<Unit filename="/home/c6222848/Desktop/Luchthaven/Runway.cpp">
+			<Option target="Airport_simulator_debug"/>
+			<Option target="Airport_simulator"/>
 		</Unit>
-		<Unit filename="/home/c6222848/Desktop/Luchthaven_windows/Runway.h">
-			<Option target="Luchthaven"/>
+		<Unit filename="/home/c6222848/Desktop/Luchthaven/Runway.h">
+			<Option target="Airport_simulator_debug"/>
+			<Option target="Airport_simulator"/>
 		</Unit>
-		<Unit filename="/home/c6222848/Desktop/Luchthaven_windows/main.cpp">
-			<Option target="Luchthaven"/>
+		<Unit filename="/home/c6222848/Desktop/Luchthaven/main.cpp">
+			<Option target="Airport_simulator_debug"/>
+			<Option target="Airport_simulator"/>
 		</Unit>
-		<Unit filename="/home/c6222848/Desktop/Luchthaven_windows/tinystr.cpp">
-			<Option target="Luchthaven"/>
+		<Unit filename="/home/c6222848/Desktop/Luchthaven/tinystr.cpp">
+			<Option target="Airport_simulator_debug"/>
+			<Option target="Airport_simulator"/>
 		</Unit>
-		<Unit filename="/home/c6222848/Desktop/Luchthaven_windows/tinystr.h">
-			<Option target="Luchthaven"/>
+		<Unit filename="/home/c6222848/Desktop/Luchthaven/tinystr.h">
+			<Option target="Airport_simulator_debug"/>
+			<Option target="Airport_simulator"/>
 		</Unit>
-		<Unit filename="/home/c6222848/Desktop/Luchthaven_windows/tinyxml.cpp">
-			<Option target="Luchthaven"/>
+		<Unit filename="/home/c6222848/Desktop/Luchthaven/tinyxml.cpp">
+			<Option target="Airport_simulator_debug"/>
+			<Option target="Airport_simulator"/>
 		</Unit>
-		<Unit filename="/home/c6222848/Desktop/Luchthaven_windows/tinyxml.h">
-			<Option target="Luchthaven"/>
+		<Unit filename="/home/c6222848/Desktop/Luchthaven/tinyxml.h">
+			<Option target="Airport_simulator_debug"/>
+			<Option target="Airport_simulator"/>
 		</Unit>
-		<Unit filename="/home/c6222848/Desktop/Luchthaven_windows/tinyxmlerror.cpp">
-			<Option target="Luchthaven"/>
+		<Unit filename="/home/c6222848/Desktop/Luchthaven/tinyxmlerror.cpp">
+			<Option target="Airport_simulator_debug"/>
+			<Option target="Airport_simulator"/>
 		</Unit>
-		<Unit filename="/home/c6222848/Desktop/Luchthaven_windows/tinyxmlparser.cpp">
-			<Option target="Luchthaven"/>
+		<Unit filename="/home/c6222848/Desktop/Luchthaven/tinyxmlparser.cpp">
+			<Option target="Airport_simulator_debug"/>
+			<Option target="Airport_simulator"/>
 		</Unit>
-		<Unit filename="/home/c6222848/Desktop/Luchthaven_windows/CMakeLists.txt">
+		<Unit filename="/home/c6222848/Desktop/Luchthaven/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

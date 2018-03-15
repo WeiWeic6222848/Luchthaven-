@@ -65,3 +65,9 @@ void Airport::parkAirplane(int gate, Airplane *airplane) {
     }
     gates[gate]=airplane;
 }
+
+Airport::~Airport() {
+    for (unsigned int i = 0; i < runways.size(); ++i) {
+        delete(runways[i]);
+    }
+}

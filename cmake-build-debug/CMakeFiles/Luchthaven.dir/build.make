@@ -43,10 +43,10 @@ RM = /home/c6222848/Downloads/clion-2017.3.3/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/c6222848/Desktop/Luchthaven_windows
+CMAKE_SOURCE_DIR = /home/c6222848/Desktop/Luchthaven
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/c6222848/Desktop/Luchthaven_windows/cmake-build-debug
+CMAKE_BINARY_DIR = /home/c6222848/Desktop/Luchthaven/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Luchthaven.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/Luchthaven.dir/flags.make
 
 CMakeFiles/Luchthaven.dir/main.cpp.o: CMakeFiles/Luchthaven.dir/flags.make
 CMakeFiles/Luchthaven.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/c6222848/Desktop/Luchthaven_windows/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Luchthaven.dir/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luchthaven.dir/main.cpp.o -c /home/c6222848/Desktop/Luchthaven_windows/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/c6222848/Desktop/Luchthaven/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Luchthaven.dir/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luchthaven.dir/main.cpp.o -c /home/c6222848/Desktop/Luchthaven/main.cpp
 
 CMakeFiles/Luchthaven.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Luchthaven.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/c6222848/Desktop/Luchthaven_windows/main.cpp > CMakeFiles/Luchthaven.dir/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/c6222848/Desktop/Luchthaven/main.cpp > CMakeFiles/Luchthaven.dir/main.cpp.i
 
 CMakeFiles/Luchthaven.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Luchthaven.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/c6222848/Desktop/Luchthaven_windows/main.cpp -o CMakeFiles/Luchthaven.dir/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/c6222848/Desktop/Luchthaven/main.cpp -o CMakeFiles/Luchthaven.dir/main.cpp.s
 
 CMakeFiles/Luchthaven.dir/main.cpp.o.requires:
 
@@ -83,16 +83,16 @@ CMakeFiles/Luchthaven.dir/main.cpp.o.provides.build: CMakeFiles/Luchthaven.dir/m
 
 CMakeFiles/Luchthaven.dir/tinystr.cpp.o: CMakeFiles/Luchthaven.dir/flags.make
 CMakeFiles/Luchthaven.dir/tinystr.cpp.o: ../tinystr.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/c6222848/Desktop/Luchthaven_windows/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Luchthaven.dir/tinystr.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luchthaven.dir/tinystr.cpp.o -c /home/c6222848/Desktop/Luchthaven_windows/tinystr.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/c6222848/Desktop/Luchthaven/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Luchthaven.dir/tinystr.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luchthaven.dir/tinystr.cpp.o -c /home/c6222848/Desktop/Luchthaven/tinystr.cpp
 
 CMakeFiles/Luchthaven.dir/tinystr.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Luchthaven.dir/tinystr.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/c6222848/Desktop/Luchthaven_windows/tinystr.cpp > CMakeFiles/Luchthaven.dir/tinystr.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/c6222848/Desktop/Luchthaven/tinystr.cpp > CMakeFiles/Luchthaven.dir/tinystr.cpp.i
 
 CMakeFiles/Luchthaven.dir/tinystr.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Luchthaven.dir/tinystr.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/c6222848/Desktop/Luchthaven_windows/tinystr.cpp -o CMakeFiles/Luchthaven.dir/tinystr.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/c6222848/Desktop/Luchthaven/tinystr.cpp -o CMakeFiles/Luchthaven.dir/tinystr.cpp.s
 
 CMakeFiles/Luchthaven.dir/tinystr.cpp.o.requires:
 
@@ -107,16 +107,16 @@ CMakeFiles/Luchthaven.dir/tinystr.cpp.o.provides.build: CMakeFiles/Luchthaven.di
 
 CMakeFiles/Luchthaven.dir/tinyxml.cpp.o: CMakeFiles/Luchthaven.dir/flags.make
 CMakeFiles/Luchthaven.dir/tinyxml.cpp.o: ../tinyxml.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/c6222848/Desktop/Luchthaven_windows/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Luchthaven.dir/tinyxml.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luchthaven.dir/tinyxml.cpp.o -c /home/c6222848/Desktop/Luchthaven_windows/tinyxml.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/c6222848/Desktop/Luchthaven/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Luchthaven.dir/tinyxml.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luchthaven.dir/tinyxml.cpp.o -c /home/c6222848/Desktop/Luchthaven/tinyxml.cpp
 
 CMakeFiles/Luchthaven.dir/tinyxml.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Luchthaven.dir/tinyxml.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/c6222848/Desktop/Luchthaven_windows/tinyxml.cpp > CMakeFiles/Luchthaven.dir/tinyxml.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/c6222848/Desktop/Luchthaven/tinyxml.cpp > CMakeFiles/Luchthaven.dir/tinyxml.cpp.i
 
 CMakeFiles/Luchthaven.dir/tinyxml.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Luchthaven.dir/tinyxml.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/c6222848/Desktop/Luchthaven_windows/tinyxml.cpp -o CMakeFiles/Luchthaven.dir/tinyxml.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/c6222848/Desktop/Luchthaven/tinyxml.cpp -o CMakeFiles/Luchthaven.dir/tinyxml.cpp.s
 
 CMakeFiles/Luchthaven.dir/tinyxml.cpp.o.requires:
 
@@ -131,16 +131,16 @@ CMakeFiles/Luchthaven.dir/tinyxml.cpp.o.provides.build: CMakeFiles/Luchthaven.di
 
 CMakeFiles/Luchthaven.dir/tinyxmlerror.cpp.o: CMakeFiles/Luchthaven.dir/flags.make
 CMakeFiles/Luchthaven.dir/tinyxmlerror.cpp.o: ../tinyxmlerror.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/c6222848/Desktop/Luchthaven_windows/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Luchthaven.dir/tinyxmlerror.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luchthaven.dir/tinyxmlerror.cpp.o -c /home/c6222848/Desktop/Luchthaven_windows/tinyxmlerror.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/c6222848/Desktop/Luchthaven/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Luchthaven.dir/tinyxmlerror.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luchthaven.dir/tinyxmlerror.cpp.o -c /home/c6222848/Desktop/Luchthaven/tinyxmlerror.cpp
 
 CMakeFiles/Luchthaven.dir/tinyxmlerror.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Luchthaven.dir/tinyxmlerror.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/c6222848/Desktop/Luchthaven_windows/tinyxmlerror.cpp > CMakeFiles/Luchthaven.dir/tinyxmlerror.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/c6222848/Desktop/Luchthaven/tinyxmlerror.cpp > CMakeFiles/Luchthaven.dir/tinyxmlerror.cpp.i
 
 CMakeFiles/Luchthaven.dir/tinyxmlerror.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Luchthaven.dir/tinyxmlerror.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/c6222848/Desktop/Luchthaven_windows/tinyxmlerror.cpp -o CMakeFiles/Luchthaven.dir/tinyxmlerror.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/c6222848/Desktop/Luchthaven/tinyxmlerror.cpp -o CMakeFiles/Luchthaven.dir/tinyxmlerror.cpp.s
 
 CMakeFiles/Luchthaven.dir/tinyxmlerror.cpp.o.requires:
 
@@ -155,29 +155,16 @@ CMakeFiles/Luchthaven.dir/tinyxmlerror.cpp.o.provides.build: CMakeFiles/Luchthav
 
 CMakeFiles/Luchthaven.dir/Airportsim.cpp.o: CMakeFiles/Luchthaven.dir/flags.make
 CMakeFiles/Luchthaven.dir/Airportsim.cpp.o: ../Airportsim.cpp
-<<<<<<< HEAD
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/uauser/Desktop/Luchthaven--master/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Luchthaven.dir/Airportsim.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luchthaven.dir/Airportsim.cpp.o -c /home/uauser/Desktop/Luchthaven--master/Airportsim.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/c6222848/Desktop/Luchthaven/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Luchthaven.dir/Airportsim.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luchthaven.dir/Airportsim.cpp.o -c /home/c6222848/Desktop/Luchthaven/Airportsim.cpp
 
 CMakeFiles/Luchthaven.dir/Airportsim.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Luchthaven.dir/Airportsim.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/uauser/Desktop/Luchthaven--master/Airportsim.cpp > CMakeFiles/Luchthaven.dir/Airportsim.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/c6222848/Desktop/Luchthaven/Airportsim.cpp > CMakeFiles/Luchthaven.dir/Airportsim.cpp.i
 
 CMakeFiles/Luchthaven.dir/Airportsim.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Luchthaven.dir/Airportsim.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/uauser/Desktop/Luchthaven--master/Airportsim.cpp -o CMakeFiles/Luchthaven.dir/Airportsim.cpp.s
-=======
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/c6222848/Desktop/Luchthaven_windows/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Luchthaven.dir/Airportsim.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luchthaven.dir/Airportsim.cpp.o -c /home/c6222848/Desktop/Luchthaven_windows/Airportsim.cpp
-
-CMakeFiles/Luchthaven.dir/Airportsim.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Luchthaven.dir/Airportsim.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/c6222848/Desktop/Luchthaven_windows/Airportsim.cpp > CMakeFiles/Luchthaven.dir/Airportsim.cpp.i
-
-CMakeFiles/Luchthaven.dir/Airportsim.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Luchthaven.dir/Airportsim.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/c6222848/Desktop/Luchthaven_windows/Airportsim.cpp -o CMakeFiles/Luchthaven.dir/Airportsim.cpp.s
->>>>>>> d8f048e019c69c93912694b0ee96c969b7e86062
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/c6222848/Desktop/Luchthaven/Airportsim.cpp -o CMakeFiles/Luchthaven.dir/Airportsim.cpp.s
 
 CMakeFiles/Luchthaven.dir/Airportsim.cpp.o.requires:
 
@@ -192,16 +179,16 @@ CMakeFiles/Luchthaven.dir/Airportsim.cpp.o.provides.build: CMakeFiles/Luchthaven
 
 CMakeFiles/Luchthaven.dir/Runway.cpp.o: CMakeFiles/Luchthaven.dir/flags.make
 CMakeFiles/Luchthaven.dir/Runway.cpp.o: ../Runway.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/c6222848/Desktop/Luchthaven_windows/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Luchthaven.dir/Runway.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luchthaven.dir/Runway.cpp.o -c /home/c6222848/Desktop/Luchthaven_windows/Runway.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/c6222848/Desktop/Luchthaven/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Luchthaven.dir/Runway.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luchthaven.dir/Runway.cpp.o -c /home/c6222848/Desktop/Luchthaven/Runway.cpp
 
 CMakeFiles/Luchthaven.dir/Runway.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Luchthaven.dir/Runway.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/c6222848/Desktop/Luchthaven_windows/Runway.cpp > CMakeFiles/Luchthaven.dir/Runway.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/c6222848/Desktop/Luchthaven/Runway.cpp > CMakeFiles/Luchthaven.dir/Runway.cpp.i
 
 CMakeFiles/Luchthaven.dir/Runway.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Luchthaven.dir/Runway.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/c6222848/Desktop/Luchthaven_windows/Runway.cpp -o CMakeFiles/Luchthaven.dir/Runway.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/c6222848/Desktop/Luchthaven/Runway.cpp -o CMakeFiles/Luchthaven.dir/Runway.cpp.s
 
 CMakeFiles/Luchthaven.dir/Runway.cpp.o.requires:
 
@@ -216,16 +203,16 @@ CMakeFiles/Luchthaven.dir/Runway.cpp.o.provides.build: CMakeFiles/Luchthaven.dir
 
 CMakeFiles/Luchthaven.dir/Airplane.cpp.o: CMakeFiles/Luchthaven.dir/flags.make
 CMakeFiles/Luchthaven.dir/Airplane.cpp.o: ../Airplane.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/c6222848/Desktop/Luchthaven_windows/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Luchthaven.dir/Airplane.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luchthaven.dir/Airplane.cpp.o -c /home/c6222848/Desktop/Luchthaven_windows/Airplane.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/c6222848/Desktop/Luchthaven/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Luchthaven.dir/Airplane.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luchthaven.dir/Airplane.cpp.o -c /home/c6222848/Desktop/Luchthaven/Airplane.cpp
 
 CMakeFiles/Luchthaven.dir/Airplane.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Luchthaven.dir/Airplane.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/c6222848/Desktop/Luchthaven_windows/Airplane.cpp > CMakeFiles/Luchthaven.dir/Airplane.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/c6222848/Desktop/Luchthaven/Airplane.cpp > CMakeFiles/Luchthaven.dir/Airplane.cpp.i
 
 CMakeFiles/Luchthaven.dir/Airplane.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Luchthaven.dir/Airplane.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/c6222848/Desktop/Luchthaven_windows/Airplane.cpp -o CMakeFiles/Luchthaven.dir/Airplane.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/c6222848/Desktop/Luchthaven/Airplane.cpp -o CMakeFiles/Luchthaven.dir/Airplane.cpp.s
 
 CMakeFiles/Luchthaven.dir/Airplane.cpp.o.requires:
 
@@ -240,16 +227,16 @@ CMakeFiles/Luchthaven.dir/Airplane.cpp.o.provides.build: CMakeFiles/Luchthaven.d
 
 CMakeFiles/Luchthaven.dir/Airport.cpp.o: CMakeFiles/Luchthaven.dir/flags.make
 CMakeFiles/Luchthaven.dir/Airport.cpp.o: ../Airport.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/c6222848/Desktop/Luchthaven_windows/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Luchthaven.dir/Airport.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luchthaven.dir/Airport.cpp.o -c /home/c6222848/Desktop/Luchthaven_windows/Airport.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/c6222848/Desktop/Luchthaven/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Luchthaven.dir/Airport.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luchthaven.dir/Airport.cpp.o -c /home/c6222848/Desktop/Luchthaven/Airport.cpp
 
 CMakeFiles/Luchthaven.dir/Airport.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Luchthaven.dir/Airport.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/c6222848/Desktop/Luchthaven_windows/Airport.cpp > CMakeFiles/Luchthaven.dir/Airport.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/c6222848/Desktop/Luchthaven/Airport.cpp > CMakeFiles/Luchthaven.dir/Airport.cpp.i
 
 CMakeFiles/Luchthaven.dir/Airport.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Luchthaven.dir/Airport.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/c6222848/Desktop/Luchthaven_windows/Airport.cpp -o CMakeFiles/Luchthaven.dir/Airport.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/c6222848/Desktop/Luchthaven/Airport.cpp -o CMakeFiles/Luchthaven.dir/Airport.cpp.s
 
 CMakeFiles/Luchthaven.dir/Airport.cpp.o.requires:
 
@@ -264,16 +251,16 @@ CMakeFiles/Luchthaven.dir/Airport.cpp.o.provides.build: CMakeFiles/Luchthaven.di
 
 CMakeFiles/Luchthaven.dir/tinyxmlparser.cpp.o: CMakeFiles/Luchthaven.dir/flags.make
 CMakeFiles/Luchthaven.dir/tinyxmlparser.cpp.o: ../tinyxmlparser.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/c6222848/Desktop/Luchthaven_windows/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Luchthaven.dir/tinyxmlparser.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luchthaven.dir/tinyxmlparser.cpp.o -c /home/c6222848/Desktop/Luchthaven_windows/tinyxmlparser.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/c6222848/Desktop/Luchthaven/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Luchthaven.dir/tinyxmlparser.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luchthaven.dir/tinyxmlparser.cpp.o -c /home/c6222848/Desktop/Luchthaven/tinyxmlparser.cpp
 
 CMakeFiles/Luchthaven.dir/tinyxmlparser.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Luchthaven.dir/tinyxmlparser.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/c6222848/Desktop/Luchthaven_windows/tinyxmlparser.cpp > CMakeFiles/Luchthaven.dir/tinyxmlparser.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/c6222848/Desktop/Luchthaven/tinyxmlparser.cpp > CMakeFiles/Luchthaven.dir/tinyxmlparser.cpp.i
 
 CMakeFiles/Luchthaven.dir/tinyxmlparser.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Luchthaven.dir/tinyxmlparser.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/c6222848/Desktop/Luchthaven_windows/tinyxmlparser.cpp -o CMakeFiles/Luchthaven.dir/tinyxmlparser.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/c6222848/Desktop/Luchthaven/tinyxmlparser.cpp -o CMakeFiles/Luchthaven.dir/tinyxmlparser.cpp.s
 
 CMakeFiles/Luchthaven.dir/tinyxmlparser.cpp.o.requires:
 
@@ -312,7 +299,7 @@ Luchthaven: CMakeFiles/Luchthaven.dir/Airport.cpp.o
 Luchthaven: CMakeFiles/Luchthaven.dir/tinyxmlparser.cpp.o
 Luchthaven: CMakeFiles/Luchthaven.dir/build.make
 Luchthaven: CMakeFiles/Luchthaven.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/c6222848/Desktop/Luchthaven_windows/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable Luchthaven"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/c6222848/Desktop/Luchthaven/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable Luchthaven"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Luchthaven.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -337,6 +324,6 @@ CMakeFiles/Luchthaven.dir/clean:
 .PHONY : CMakeFiles/Luchthaven.dir/clean
 
 CMakeFiles/Luchthaven.dir/depend:
-	cd /home/c6222848/Desktop/Luchthaven_windows/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/c6222848/Desktop/Luchthaven_windows /home/c6222848/Desktop/Luchthaven_windows /home/c6222848/Desktop/Luchthaven_windows/cmake-build-debug /home/c6222848/Desktop/Luchthaven_windows/cmake-build-debug /home/c6222848/Desktop/Luchthaven_windows/cmake-build-debug/CMakeFiles/Luchthaven.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/c6222848/Desktop/Luchthaven/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/c6222848/Desktop/Luchthaven /home/c6222848/Desktop/Luchthaven /home/c6222848/Desktop/Luchthaven/cmake-build-debug /home/c6222848/Desktop/Luchthaven/cmake-build-debug /home/c6222848/Desktop/Luchthaven/cmake-build-debug/CMakeFiles/Luchthaven.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/Luchthaven.dir/depend
 
