@@ -27,8 +27,18 @@ CMakeFiles/Airport_simulator.dir/main.cpp.o: ../Airport.h
 CMakeFiles/Airport_simulator.dir/main.cpp.o: ../Airportsim.h
 CMakeFiles/Airport_simulator.dir/main.cpp.o: ../Runway.h
 CMakeFiles/Airport_simulator.dir/main.cpp.o: ../main.cpp
+CMakeFiles/Airport_simulator.dir/main.cpp.o: ../output_system.h
 CMakeFiles/Airport_simulator.dir/main.cpp.o: ../tinystr.h
 CMakeFiles/Airport_simulator.dir/main.cpp.o: ../tinyxml.h
+
+CMakeFiles/Airport_simulator.dir/output_system.cpp.o: ../Airplane.h
+CMakeFiles/Airport_simulator.dir/output_system.cpp.o: ../Airport.h
+CMakeFiles/Airport_simulator.dir/output_system.cpp.o: ../Airportsim.h
+CMakeFiles/Airport_simulator.dir/output_system.cpp.o: ../Runway.h
+CMakeFiles/Airport_simulator.dir/output_system.cpp.o: ../output_system.cpp
+CMakeFiles/Airport_simulator.dir/output_system.cpp.o: ../output_system.h
+CMakeFiles/Airport_simulator.dir/output_system.cpp.o: ../tinystr.h
+CMakeFiles/Airport_simulator.dir/output_system.cpp.o: ../tinyxml.h
 
 CMakeFiles/Airport_simulator.dir/tinystr.cpp.o: ../tinystr.cpp
 CMakeFiles/Airport_simulator.dir/tinystr.cpp.o: ../tinystr.h

@@ -6,79 +6,95 @@
 
 #IncludeRegexTransform: 
 
-/home/c6222848/Desktop/Luchthaven/Airplane.cpp
+/home/tristan/CLionProjects/Luchthaven--master/Airplane.cpp
 Airplane.h
-/home/c6222848/Desktop/Luchthaven/Airplane.h
+/home/tristan/CLionProjects/Luchthaven--master/Airplane.h
 
-/home/c6222848/Desktop/Luchthaven/Airplane.h
+/home/tristan/CLionProjects/Luchthaven--master/Airplane.h
 string
-/home/c6222848/Desktop/Luchthaven/string
+/home/tristan/CLionProjects/Luchthaven--master/string
+iostream
+-
 
-/home/c6222848/Desktop/Luchthaven/Airport.cpp
+/home/tristan/CLionProjects/Luchthaven--master/Airport.cpp
 iostream
 -
 Airport.h
-/home/c6222848/Desktop/Luchthaven/Airport.h
+/home/tristan/CLionProjects/Luchthaven--master/Airport.h
 
-/home/c6222848/Desktop/Luchthaven/Airport.h
+/home/tristan/CLionProjects/Luchthaven--master/Airport.h
 vector
 -
 map
 -
 string
-/home/c6222848/Desktop/Luchthaven/string
+/home/tristan/CLionProjects/Luchthaven--master/string
 Runway.h
-/home/c6222848/Desktop/Luchthaven/Runway.h
+/home/tristan/CLionProjects/Luchthaven--master/Runway.h
 
-/home/c6222848/Desktop/Luchthaven/Airportsim.cpp
+/home/tristan/CLionProjects/Luchthaven--master/Airportsim.cpp
 iostream
 -
 string
 -
 Airportsim.h
-/home/c6222848/Desktop/Luchthaven/Airportsim.h
+/home/tristan/CLionProjects/Luchthaven--master/Airportsim.h
 DesignByContract.h
-/home/c6222848/Desktop/Luchthaven/DesignByContract.h
+/home/tristan/CLionProjects/Luchthaven--master/DesignByContract.h
+fstream
+/home/tristan/CLionProjects/Luchthaven--master/fstream
 
-/home/c6222848/Desktop/Luchthaven/Airportsim.h
+/home/tristan/CLionProjects/Luchthaven--master/Airportsim.h
 vector
-/home/c6222848/Desktop/Luchthaven/vector
+/home/tristan/CLionProjects/Luchthaven--master/vector
 Airport.h
-/home/c6222848/Desktop/Luchthaven/Airport.h
+/home/tristan/CLionProjects/Luchthaven--master/Airport.h
 tinyxml.h
-/home/c6222848/Desktop/Luchthaven/tinyxml.h
+/home/tristan/CLionProjects/Luchthaven--master/tinyxml.h
 
-/home/c6222848/Desktop/Luchthaven/DesignByContract.h
+/home/tristan/CLionProjects/Luchthaven--master/DesignByContract.h
 assert.h
 -
 
-/home/c6222848/Desktop/Luchthaven/Runway.cpp
+/home/tristan/CLionProjects/Luchthaven--master/Runway.cpp
 Runway.h
-/home/c6222848/Desktop/Luchthaven/Runway.h
+/home/tristan/CLionProjects/Luchthaven--master/Runway.h
 
-/home/c6222848/Desktop/Luchthaven/Runway.h
+/home/tristan/CLionProjects/Luchthaven--master/Runway.h
 string
-/home/c6222848/Desktop/Luchthaven/string
+/home/tristan/CLionProjects/Luchthaven--master/string
 Airplane.h
-/home/c6222848/Desktop/Luchthaven/Airplane.h
+/home/tristan/CLionProjects/Luchthaven--master/Airplane.h
 
-/home/c6222848/Desktop/Luchthaven/main.cpp
+/home/tristan/CLionProjects/Luchthaven--master/main.cpp
 iostream
 -
 Airportsim.h
-/home/c6222848/Desktop/Luchthaven/Airportsim.h
+/home/tristan/CLionProjects/Luchthaven--master/Airportsim.h
+output_system.h
+/home/tristan/CLionProjects/Luchthaven--master/output_system.h
 
-/home/c6222848/Desktop/Luchthaven/tinystr.cpp
+/home/tristan/CLionProjects/Luchthaven--master/output_system.cpp
+output_system.h
+/home/tristan/CLionProjects/Luchthaven--master/output_system.h
+
+/home/tristan/CLionProjects/Luchthaven--master/output_system.h
+fstream
+-
+Airportsim.h
+/home/tristan/CLionProjects/Luchthaven--master/Airportsim.h
+
+/home/tristan/CLionProjects/Luchthaven--master/tinystr.cpp
 tinystr.h
-/home/c6222848/Desktop/Luchthaven/tinystr.h
+/home/tristan/CLionProjects/Luchthaven--master/tinystr.h
 
-/home/c6222848/Desktop/Luchthaven/tinystr.h
+/home/tristan/CLionProjects/Luchthaven--master/tinystr.h
 assert.h
 -
 string.h
 -
 
-/home/c6222848/Desktop/Luchthaven/tinyxml.cpp
+/home/tristan/CLionProjects/Luchthaven--master/tinyxml.cpp
 ctype.h
 -
 sstream
@@ -86,9 +102,9 @@ sstream
 iostream
 -
 tinyxml.h
-/home/c6222848/Desktop/Luchthaven/tinyxml.h
+/home/tristan/CLionProjects/Luchthaven--master/tinyxml.h
 
-/home/c6222848/Desktop/Luchthaven/tinyxml.h
+/home/tristan/CLionProjects/Luchthaven--master/tinyxml.h
 ctype.h
 -
 stdio.h
@@ -106,19 +122,19 @@ iostream
 sstream
 -
 tinystr.h
-/home/c6222848/Desktop/Luchthaven/tinystr.h
+/home/tristan/CLionProjects/Luchthaven--master/tinystr.h
 
-/home/c6222848/Desktop/Luchthaven/tinyxmlerror.cpp
+/home/tristan/CLionProjects/Luchthaven--master/tinyxmlerror.cpp
 tinyxml.h
-/home/c6222848/Desktop/Luchthaven/tinyxml.h
+/home/tristan/CLionProjects/Luchthaven--master/tinyxml.h
 
-/home/c6222848/Desktop/Luchthaven/tinyxmlparser.cpp
+/home/tristan/CLionProjects/Luchthaven--master/tinyxmlparser.cpp
 ctype.h
 -
 stddef.h
 -
 tinyxml.h
-/home/c6222848/Desktop/Luchthaven/tinyxml.h
+/home/tristan/CLionProjects/Luchthaven--master/tinyxml.h
 windows.h
 -
 

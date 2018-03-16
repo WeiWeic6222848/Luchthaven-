@@ -77,3 +77,14 @@ void Airport::cleanup() {
         delete(runways[i]);
     }
 }
+
+const map<int, Airplane *> &Airport::getGates() const {
+    return gates;
+}
+
+std::ostream& operator<<(std::ostream& output,Airport& airport){
+    output<<"Airport: "<<airport.getName()<<" ("<<airport.getIata()<<")"<<endl;
+    output<<" -> gates: "<<airport.gates.size()<<endl;
+    output<<" -> runways: "<<airport.runways.size()<<endl;
+    return output;
+}

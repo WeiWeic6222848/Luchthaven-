@@ -6,6 +6,7 @@
 #define LUCHTHAVEN_AIRPLANE_H
 
 #include "string"
+#include <iostream>
 using namespace std;
 
 class Airplane {
@@ -32,6 +33,10 @@ public:
     const string &getModel() const;
 
     int getPassengerCapacity() const;
+
+    void setStatus(const string &status);
+
+    friend std::ostream& operator<<(std::ostream& output,Airplane& airport);
 
 private:
     string number;

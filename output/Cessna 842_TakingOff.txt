@@ -1,0 +1,9 @@
+Cessna 842 is standing at Gate gate nummer
+Cessna 842 is taxiing to runway 11R
+Cessna 842 is taking off at Antwerp International Airport on runway 11R
+Cessna 842 ascended to 1.000 ft.
+Cessna 842 ascended to 2.000 ft.
+Cessna 842 ascended to 3.000 ft.
+Cessna 842 ascended to 4.000 ft.
+Cessna 842 ascended to 5.000 ft.
+Cessna 842 has left Antwerp International Airport

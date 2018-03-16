@@ -4,15 +4,15 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/c6222848/Desktop/Luchthaven/Airplane.cpp" "/home/c6222848/Desktop/Luchthaven/cmake-build-debug/CMakeFiles/Airport_simulator_debug.dir/Airplane.cpp.o"
-  "/home/c6222848/Desktop/Luchthaven/Airport.cpp" "/home/c6222848/Desktop/Luchthaven/cmake-build-debug/CMakeFiles/Airport_simulator_debug.dir/Airport.cpp.o"
-  "/home/c6222848/Desktop/Luchthaven/Airportsim.cpp" "/home/c6222848/Desktop/Luchthaven/cmake-build-debug/CMakeFiles/Airport_simulator_debug.dir/Airportsim.cpp.o"
-  "/home/c6222848/Desktop/Luchthaven/Runway.cpp" "/home/c6222848/Desktop/Luchthaven/cmake-build-debug/CMakeFiles/Airport_simulator_debug.dir/Runway.cpp.o"
-  "/home/c6222848/Desktop/Luchthaven/main.cpp" "/home/c6222848/Desktop/Luchthaven/cmake-build-debug/CMakeFiles/Airport_simulator_debug.dir/main.cpp.o"
-  "/home/c6222848/Desktop/Luchthaven/tinystr.cpp" "/home/c6222848/Desktop/Luchthaven/cmake-build-debug/CMakeFiles/Airport_simulator_debug.dir/tinystr.cpp.o"
-  "/home/c6222848/Desktop/Luchthaven/tinyxml.cpp" "/home/c6222848/Desktop/Luchthaven/cmake-build-debug/CMakeFiles/Airport_simulator_debug.dir/tinyxml.cpp.o"
-  "/home/c6222848/Desktop/Luchthaven/tinyxmlerror.cpp" "/home/c6222848/Desktop/Luchthaven/cmake-build-debug/CMakeFiles/Airport_simulator_debug.dir/tinyxmlerror.cpp.o"
-  "/home/c6222848/Desktop/Luchthaven/tinyxmlparser.cpp" "/home/c6222848/Desktop/Luchthaven/cmake-build-debug/CMakeFiles/Airport_simulator_debug.dir/tinyxmlparser.cpp.o"
+  "/home/tristan/CLionProjects/Luchthaven--master/Airplane.cpp" "/home/tristan/CLionProjects/Luchthaven--master/cmake-build-debug/CMakeFiles/Airport_simulator_debug.dir/Airplane.cpp.o"
+  "/home/tristan/CLionProjects/Luchthaven--master/Airport.cpp" "/home/tristan/CLionProjects/Luchthaven--master/cmake-build-debug/CMakeFiles/Airport_simulator_debug.dir/Airport.cpp.o"
+  "/home/tristan/CLionProjects/Luchthaven--master/Airportsim.cpp" "/home/tristan/CLionProjects/Luchthaven--master/cmake-build-debug/CMakeFiles/Airport_simulator_debug.dir/Airportsim.cpp.o"
+  "/home/tristan/CLionProjects/Luchthaven--master/Runway.cpp" "/home/tristan/CLionProjects/Luchthaven--master/cmake-build-debug/CMakeFiles/Airport_simulator_debug.dir/Runway.cpp.o"
+  "/home/tristan/CLionProjects/Luchthaven--master/main.cpp" "/home/tristan/CLionProjects/Luchthaven--master/cmake-build-debug/CMakeFiles/Airport_simulator_debug.dir/main.cpp.o"
+  "/home/tristan/CLionProjects/Luchthaven--master/tinystr.cpp" "/home/tristan/CLionProjects/Luchthaven--master/cmake-build-debug/CMakeFiles/Airport_simulator_debug.dir/tinystr.cpp.o"
+  "/home/tristan/CLionProjects/Luchthaven--master/tinyxml.cpp" "/home/tristan/CLionProjects/Luchthaven--master/cmake-build-debug/CMakeFiles/Airport_simulator_debug.dir/tinyxml.cpp.o"
+  "/home/tristan/CLionProjects/Luchthaven--master/tinyxmlerror.cpp" "/home/tristan/CLionProjects/Luchthaven--master/cmake-build-debug/CMakeFiles/Airport_simulator_debug.dir/tinyxmlerror.cpp.o"
+  "/home/tristan/CLionProjects/Luchthaven--master/tinyxmlparser.cpp" "/home/tristan/CLionProjects/Luchthaven--master/cmake-build-debug/CMakeFiles/Airport_simulator_debug.dir/tinyxmlparser.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

@@ -38,6 +38,8 @@ public:
 
     int getPassengers() const;
 
+    const map<int, Airplane *> &getGates() const;
+
     const vector<Runway *> &getRunways() const;
 
     Runway* findfreerunway();
@@ -49,6 +51,9 @@ public:
     virtual ~Airport();
 
     void cleanup();
+
+    friend std::ostream& operator<<(std::ostream& output,Airport& airport);
+
 };
 
 

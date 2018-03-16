@@ -24,6 +24,12 @@ public:
     const Airport* findairport(const string& iata);
     const Airplane* findairplane(const string& number);
     const Runway* findrunway(const string&number,const string& iata);
+
+    const vector<Airport> &getAirports() const;
+    const vector<Airplane> &getAirplanes() const;
+
+    void landing(Airplane& aproaching, Airport& airport);
+    void takingOff(Airplane& aproaching, Airport& airport);
 };
 
 

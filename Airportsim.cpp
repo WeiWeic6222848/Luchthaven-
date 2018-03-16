@@ -6,6 +6,7 @@
 #include <string>
 #include "Airportsim.h"
 #include "DesignByContract.h"
+#include "fstream"
 
 Airportsim::Airportsim(const string& filename) {
     addsourcefile(filename);
@@ -219,4 +220,56 @@ const Runway *Airportsim::findrunway(const string &number, const string &iata) {
 }
 
 Airportsim::Airportsim() {}
+
+const vector<Airport> &Airportsim::getAirports() const {
+    return Airports;
+}
+
+const vector<Airplane> &Airportsim::getAirplanes() const {
+    return Airplanes;
+}
+void Airportsim::landing( Airplane& aproaching, Airport& airport) {
+    if(aproaching.getStatus()=="Approaching"){
+        ofstream outputfile;
+        string filename="../output/"+aproaching.getCallsign()+"_Landing.txt";
+        outputfile.open(filename.data(),ios::out);
+        outputfile<<aproaching.getCallsign()<<" is approaching "<<airport.getName()<<" at 10.000 ft."<<endl;
+        int gate=airport.findfreegates();
+        Runway* runway=airport.findfreerunway();
+        for(int i=9;i>0;i--){
+            outputfile<<aproaching.getCallsign()<<" descended to "<<i<<".000 ft."<<endl;
+        }
+        runway->setCurrentairplane(&aproaching);
+        outputfile<<aproaching.getCallsign()<<" is landing at "<<airport.getName()<<" on runway "<<runway->getName()<<endl;
+        outputfile<<aproaching.getCallsign()<<" has landed at "<<airport.getName()<<" on runway "<<runway->getName()<<endl;
+        airport.parkAirplane(gate,&aproaching);
+        outputfile<<aproaching.getCallsign()<<" is taxiing to Gate "<<gate<<endl;
+        runway->setCurrentairplane(NULL);
+        outputfile<<aproaching.getCallsign()<<" is standing at Gate "<<gate<<endl;
+        aproaching.setStatus("Standing at gate");
+        outputfile.close();
+    }
+}
+void Airportsim::takingOff(Airplane& aproaching, Airport& airport){
+    if(aproaching.getStatus()=="Standing at gate"){
+        ofstream outputfile;
+        string filename="../output/"+aproaching.getCallsign()+"_TakingOff.txt";
+        outputfile.open(filename.data(),ios::out);
+        outputfile<<aproaching.getCallsign()<<" is standing at Gate"<<" gate nummer"<<endl; //nummer huidige gate toegevoegd functie nodig
+        Runway* runway=airport.findfreerunway();
+        runway->setCurrentairplane(&aproaching);
+        //gate moet vrij komen
+        outputfile<<aproaching.getCallsign()<<" is taxiing to runway "<<runway->getName()<<endl;
+        outputfile<<aproaching.getCallsign()<<" is taking off at "<<airport.getName()<<" on runway "<<runway->getName()<<endl;
+        for(int i=1;i<6;i++){
+            outputfile<<aproaching.getCallsign()<<" ascended to "<<i<<".000 ft."<<endl;
+        }
+        runway->setCurrentairplane(NULL);
+        aproaching.setStatus("Approaching");
+        outputfile<<aproaching.getCallsign()<<" has left "<<airport.getName();
+        outputfile.close();
+
+
+    }
+}
 
