@@ -10,7 +10,7 @@
 
 class output_system {
 public:
-    void writeToFile(Airportsim simulator);
+    void writeToFile(Airportsim& simulator);
 };
 
 

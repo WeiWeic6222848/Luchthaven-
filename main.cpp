@@ -3,14 +3,11 @@
 #include "output_system.h"
 int main(int argc, char const* argv[])
 {
-    Airportsim airport=Airportsim();
-    for (int i = 1; i < argc; ++i) {
-        airport.addsourcefile(argv[i]);
-    };
-    Airplane a=airport.getAirplanes()[0];
-    Airport b=airport.getAirports()[0];
-    airport.landing(a,b);
-    airport.takingOff(a,b);
+    Airportsim airport(argc,argv);
+    Airplane* a=airport.getAirplanes()[0];
+    Airport* b=airport.getAirports()[0];
+    airport.landing(*a,*b);
+    airport.takingOff(*a,*b);
     output_system op;
     op.writeToFile(airport);
 

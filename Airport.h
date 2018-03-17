@@ -12,7 +12,7 @@
 using namespace std;
 
 class Airplane;
-
+class Runway;
 
 class Airport {
 private:
@@ -24,6 +24,11 @@ private:
     vector<Runway*> runways;
     vector<Airplane*> approachingplanes;
     vector<Airplane*> leavingplanes;
+    Airport* _InitCheck;
+
+
+    friend std::ostream& operator<<(std::ostream& output,Airport& airport);
+
 public:
     Airport();
 
@@ -52,8 +57,11 @@ public:
 
     void cleanup();
 
-    friend std::ostream& operator<<(std::ostream& output,Airport& airport);
+    bool ProperInitialized() const;
 
+    bool operator==(const Airport &rhs) const;
+
+    bool operator!=(const Airport &rhs) const;
 };
 
 

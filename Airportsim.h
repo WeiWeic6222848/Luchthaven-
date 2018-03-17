@@ -12,12 +12,12 @@
 using namespace std;
 
 class Airportsim{
-    vector<Airport> Airports;
-    vector<Airplane> Airplanes;
-    vector<Runway*> Runways;
-    void removeairport(Airport& airport);
+    vector<Airport*> Airports;
+    vector<Airplane*> Airplanes;
+    void removeairport(Airport* airport);
+    Airportsim* _InitCheck;
 public:
-    Airportsim();
+    Airportsim(int argc,char const* argv[]);
 
     Airportsim(const string& filename);
     void addsourcefile(const string &filename);
@@ -25,11 +25,12 @@ public:
     const Airplane* findairplane(const string& number);
     const Runway* findrunway(const string&number,const string& iata);
 
-    const vector<Airport> &getAirports() const;
-    const vector<Airplane> &getAirplanes() const;
+    const vector<Airport*> &getAirports() const;
+    const vector<Airplane*> &getAirplanes() const;
 
     void landing(Airplane& aproaching, Airport& airport);
     void takingOff(Airplane& aproaching, Airport& airport);
+    bool ProperInitialized()const;
 };
 
 

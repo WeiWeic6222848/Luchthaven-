@@ -7,6 +7,7 @@
 
 #include "string"
 #include "Airplane.h"
+#include "Airport.h"
 using namespace std;
 
 class Airport;
@@ -15,6 +16,7 @@ class Runway {
     string name;
     Airport* where= NULL;
     Airplane* currentairplane= NULL;
+    Runway* _InitCheck;
 public:
     Runway(const string &name, Airport *where);
 
@@ -27,6 +29,12 @@ public:
     Airport *Where() const;
 
     Airplane *getCurrentairplane() const;
+
+    void setCurrentairplane(Airplane *currentairplane);
+
+    ~Runway();
+
+    bool ProperInitialized()const;
 };
 
 

@@ -1,7 +1,2 @@
-Airport: Antwerp International Airport (ANR)
- -> gates: 10
- -> runways: 1
-
-Airplane: Cessna 842 (N11842)
- -> model: Cessna 340
-
+0x179a090
+0x179a490

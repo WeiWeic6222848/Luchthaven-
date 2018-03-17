@@ -9,11 +9,13 @@
 #include <iostream>
 using namespace std;
 
+
 class Airplane {
 public:
     string status;
     int passenger;
     int fuel;
+    Airplane* _initcheck=NULL;
 
     Airplane(const string &status, int passenger, int fuel, const string &number, const string &callsign,
              const string &model, int passengerCapacity);
@@ -37,6 +39,9 @@ public:
     void setStatus(const string &status);
 
     friend std::ostream& operator<<(std::ostream& output,Airplane& airport);
+
+    bool ProperInitialized() const;
+
 
 private:
     string number;
