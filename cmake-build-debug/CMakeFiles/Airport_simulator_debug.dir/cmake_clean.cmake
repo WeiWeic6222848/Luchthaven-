@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Airport_simulator_debug.dir/main.cpp.o"
+  "CMakeFiles/Airport_simulator_debug.dir/test.cpp.o"
   "CMakeFiles/Airport_simulator_debug.dir/tinystr.cpp.o"
   "CMakeFiles/Airport_simulator_debug.dir/tinyxml.cpp.o"
   "CMakeFiles/Airport_simulator_debug.dir/tinyxmlerror.cpp.o"
@@ -8,6 +8,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Airport_simulator_debug.dir/Airplane.cpp.o"
   "CMakeFiles/Airport_simulator_debug.dir/Airport.cpp.o"
   "CMakeFiles/Airport_simulator_debug.dir/tinyxmlparser.cpp.o"
+  "CMakeFiles/Airport_simulator_debug.dir/output_system.cpp.o"
+  "CMakeFiles/Airport_simulator_debug.dir/fileexist.cpp.o"
   "Airport_simulator_debug.pdb"
   "Airport_simulator_debug"
 )

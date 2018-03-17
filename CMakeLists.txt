@@ -16,7 +16,7 @@ link_directories(gtest/lib)
 set(RELEASE_SOURCE_FILES main.cpp tinystr.cpp tinystr.h tinyxml.cpp tinyxml.h tinyxmlerror.cpp Airportsim.cpp Airportsim.h Runway.cpp Runway.h Airplane.cpp Airplane.h Airport.cpp Airport.h tinyxmlparser.cpp DesignByContract.h output_system.cpp output_system.h fileexist.cpp)
 
 # Set source files for DEBUG target
-set(DEBUG_SOURCE_FILES main.cpp tinystr.cpp tinystr.h tinyxml.cpp tinyxml.h tinyxmlerror.cpp Airportsim.cpp Airportsim.h Runway.cpp Runway.h Airplane.cpp Airplane.h Airport.cpp Airport.h tinyxmlparser.cpp)
+set(DEBUG_SOURCE_FILES test.cpp tinystr.cpp tinystr.h tinyxml.cpp tinyxml.h tinyxmlerror.cpp Airportsim.cpp Airportsim.h Runway.cpp Runway.h Airplane.cpp Airplane.h Airport.cpp Airport.h tinyxmlparser.cpp DesignByContract.h output_system.cpp output_system.h fileexist.cpp)
 
 # Create RELEASE target
 add_executable(Airport_simulator ${RELEASE_SOURCE_FILES})

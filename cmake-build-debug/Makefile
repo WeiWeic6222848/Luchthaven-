@@ -262,6 +262,7 @@ fileexist.o: fileexist.cpp.o
 
 # target to build an object file
 fileexist.cpp.o:
+	$(MAKE) -f CMakeFiles/Airport_simulator_debug.dir/build.make CMakeFiles/Airport_simulator_debug.dir/fileexist.cpp.o
 	$(MAKE) -f CMakeFiles/Airport_simulator.dir/build.make CMakeFiles/Airport_simulator.dir/fileexist.cpp.o
 .PHONY : fileexist.cpp.o
 
@@ -271,6 +272,7 @@ fileexist.i: fileexist.cpp.i
 
 # target to preprocess a source file
 fileexist.cpp.i:
+	$(MAKE) -f CMakeFiles/Airport_simulator_debug.dir/build.make CMakeFiles/Airport_simulator_debug.dir/fileexist.cpp.i
 	$(MAKE) -f CMakeFiles/Airport_simulator.dir/build.make CMakeFiles/Airport_simulator.dir/fileexist.cpp.i
 .PHONY : fileexist.cpp.i
 
@@ -280,6 +282,7 @@ fileexist.s: fileexist.cpp.s
 
 # target to generate assembly for a file
 fileexist.cpp.s:
+	$(MAKE) -f CMakeFiles/Airport_simulator_debug.dir/build.make CMakeFiles/Airport_simulator_debug.dir/fileexist.cpp.s
 	$(MAKE) -f CMakeFiles/Airport_simulator.dir/build.make CMakeFiles/Airport_simulator.dir/fileexist.cpp.s
 .PHONY : fileexist.cpp.s
 
@@ -289,7 +292,6 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) -f CMakeFiles/Airport_simulator_debug.dir/build.make CMakeFiles/Airport_simulator_debug.dir/main.cpp.o
 	$(MAKE) -f CMakeFiles/Airport_simulator.dir/build.make CMakeFiles/Airport_simulator.dir/main.cpp.o
 .PHONY : main.cpp.o
 
@@ -299,7 +301,6 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) -f CMakeFiles/Airport_simulator_debug.dir/build.make CMakeFiles/Airport_simulator_debug.dir/main.cpp.i
 	$(MAKE) -f CMakeFiles/Airport_simulator.dir/build.make CMakeFiles/Airport_simulator.dir/main.cpp.i
 .PHONY : main.cpp.i
 
@@ -309,7 +310,6 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) -f CMakeFiles/Airport_simulator_debug.dir/build.make CMakeFiles/Airport_simulator_debug.dir/main.cpp.s
 	$(MAKE) -f CMakeFiles/Airport_simulator.dir/build.make CMakeFiles/Airport_simulator.dir/main.cpp.s
 .PHONY : main.cpp.s
 
@@ -319,6 +319,7 @@ output_system.o: output_system.cpp.o
 
 # target to build an object file
 output_system.cpp.o:
+	$(MAKE) -f CMakeFiles/Airport_simulator_debug.dir/build.make CMakeFiles/Airport_simulator_debug.dir/output_system.cpp.o
 	$(MAKE) -f CMakeFiles/Airport_simulator.dir/build.make CMakeFiles/Airport_simulator.dir/output_system.cpp.o
 .PHONY : output_system.cpp.o
 
@@ -328,6 +329,7 @@ output_system.i: output_system.cpp.i
 
 # target to preprocess a source file
 output_system.cpp.i:
+	$(MAKE) -f CMakeFiles/Airport_simulator_debug.dir/build.make CMakeFiles/Airport_simulator_debug.dir/output_system.cpp.i
 	$(MAKE) -f CMakeFiles/Airport_simulator.dir/build.make CMakeFiles/Airport_simulator.dir/output_system.cpp.i
 .PHONY : output_system.cpp.i
 
@@ -337,8 +339,36 @@ output_system.s: output_system.cpp.s
 
 # target to generate assembly for a file
 output_system.cpp.s:
+	$(MAKE) -f CMakeFiles/Airport_simulator_debug.dir/build.make CMakeFiles/Airport_simulator_debug.dir/output_system.cpp.s
 	$(MAKE) -f CMakeFiles/Airport_simulator.dir/build.make CMakeFiles/Airport_simulator.dir/output_system.cpp.s
 .PHONY : output_system.cpp.s
+
+test.o: test.cpp.o
+
+.PHONY : test.o
+
+# target to build an object file
+test.cpp.o:
+	$(MAKE) -f CMakeFiles/Airport_simulator_debug.dir/build.make CMakeFiles/Airport_simulator_debug.dir/test.cpp.o
+.PHONY : test.cpp.o
+
+test.i: test.cpp.i
+
+.PHONY : test.i
+
+# target to preprocess a source file
+test.cpp.i:
+	$(MAKE) -f CMakeFiles/Airport_simulator_debug.dir/build.make CMakeFiles/Airport_simulator_debug.dir/test.cpp.i
+.PHONY : test.cpp.i
+
+test.s: test.cpp.s
+
+.PHONY : test.s
+
+# target to generate assembly for a file
+test.cpp.s:
+	$(MAKE) -f CMakeFiles/Airport_simulator_debug.dir/build.make CMakeFiles/Airport_simulator_debug.dir/test.cpp.s
+.PHONY : test.cpp.s
 
 tinystr.o: tinystr.cpp.o
 
@@ -491,6 +521,9 @@ help:
 	@echo "... output_system.o"
 	@echo "... output_system.i"
 	@echo "... output_system.s"
+	@echo "... test.o"
+	@echo "... test.i"
+	@echo "... test.s"
 	@echo "... tinystr.o"
 	@echo "... tinystr.i"
 	@echo "... tinystr.s"
