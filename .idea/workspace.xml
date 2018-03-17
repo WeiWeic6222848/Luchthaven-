@@ -13,10 +13,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a0199424-4a47-4ec9-b5e9-c608c8e0c004" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/Airportsim.cpp" afterPath="$PROJECT_DIR$/Airportsim.cpp" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Airport_simulator_debug" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator_debug.dir/test.cpp.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/test.cpp" afterPath="$PROJECT_DIR$/test.cpp" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Airport_simulator" afterPath="$PROJECT_DIR$/cmake-build-debug/Airport_simulator" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator.dir/Airportsim.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator.dir/Airportsim.cpp.o" />
+      <change beforePath="$PROJECT_DIR$/output/Info.txt" afterPath="$PROJECT_DIR$/output/Info.txt" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -49,10 +48,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
+            <state relative-caret-position="252">
               <caret line="14" column="37" lean-forward="false" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
               <folding />
             </state>
@@ -93,7 +92,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Airportsim.cpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Airportsim.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Airportsim.cpp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="138">
@@ -230,8 +229,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Airport_simulator_debug">
-    <configuration name="Airport_simulator" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="test.xml" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Luchthaven" TARGET_NAME="Airport_simulator" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Luchthaven" RUN_TARGET_NAME="Airport_simulator_debug">
+  <component name="RunManager" selected="Application.Airport_simulator">
+    <configuration name="Airport_simulator" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="test.xml" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Luchthaven" TARGET_NAME="Airport_simulator" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Luchthaven" RUN_TARGET_NAME="Airport_simulator">
       <envs />
     </configuration>
     <configuration name="Airport_simulator_debug" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Luchthaven" TARGET_NAME="Airport_simulator_debug" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Luchthaven" RUN_TARGET_NAME="Airport_simulator_debug">
@@ -268,12 +267,12 @@
       <workItem from="1521146144435" duration="3552000" />
       <workItem from="1521237442184" duration="1183000" />
       <workItem from="1521288726300" duration="4799000" />
-      <workItem from="1521314165863" duration="2467000" />
+      <workItem from="1521314165863" duration="2570000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17411000" />
+    <option name="totallyTimeSpent" value="17514000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1855" height="987" extended-state="6" />
@@ -285,7 +284,7 @@
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2965235" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4631101" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4631101" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -693,14 +692,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="14" column="37" lean-forward="false" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/output_system.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
@@ -736,6 +727,14 @@
           <folding>
             <element signature="e#40#59#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="14" column="37" lean-forward="false" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
+          <folding />
         </state>
       </provider>
     </entry>
