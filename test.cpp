@@ -15,16 +15,15 @@ public:
 
 protected:
     virtual void SetUp(){
+
     }
 
     virtual void TearDown(){
 
     }
-
 };
 
 TEST_F(Airporttest, Readingfiletest){
-    simulator.addsourcefile("test.xml");
     EXPECT_TRUE(simulator.ProperInitialized());
 }
 

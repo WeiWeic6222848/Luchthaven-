@@ -58,7 +58,6 @@ void Airportsim::addsourcefile(const string &filename) {
                     string iata=airportelement->FirstChildElement("iata")->GetText();
                     string callsign=airportelement->FirstChildElement("callsign")->GetText();
                     int gates;
-                    cout<<airportelement->FirstChildElement("gates")->GetText();
                     try{gates=stoi(airportelement->FirstChildElement("gates")->GetText());}
                     catch(...){
                         cerr<< "Airport with name "+name+" has a number of gate which isn't a integer"<<endl;
