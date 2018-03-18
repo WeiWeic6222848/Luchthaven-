@@ -62,6 +62,11 @@ public:
     bool operator==(const Airport &rhs) const;
 
     bool operator!=(const Airport &rhs) const;
+
+    int getGateFromAirplane(Airplane* plane);
+
+    void setGates(int gate,Airplane& plane);
+    void freeGate(int  gate);
 };
 
 

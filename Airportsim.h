@@ -31,6 +31,7 @@ public:
     void landing(Airplane& aproaching, Airport& airport);
     void takingOff(Airplane& aproaching, Airport& airport);
     bool ProperInitialized()const;
+    void AirplaneAtGate(Airplane& plane,Airport& airport);
 };
 
 

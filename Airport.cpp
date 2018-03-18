@@ -129,3 +129,20 @@ bool Airport::operator==(const Airport &rhs) const {
 bool Airport::operator!=(const Airport &rhs) const {
     return !(rhs == *this);
 }
+
+int Airport::getGateFromAirplane(Airplane* plane){
+    for(unsigned int i=1;i<=gates.size();i++){
+        if(gates[i]->getNumber()==plane->getNumber()){
+            return i;
+        }
+    }
+
+    return -1;
+}
+
+void Airport::setGates(int  gate, Airplane& plane) {
+    gates[gate]=&plane;
+}
+void Airport::freeGate(int  gate){
+    gates[gate]=NULL;
+}

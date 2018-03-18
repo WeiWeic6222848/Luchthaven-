@@ -270,10 +270,11 @@ void Airportsim::takingOff(Airplane& aproaching, Airport& airport){
     ofstream outputfile;
     string filename="../output/"+aproaching.getCallsign()+"_TakingOff.txt";
     outputfile.open(filename.data(),ios::out);
-    outputfile<<aproaching.getCallsign()<<" is standing at Gate"<<" gate nummer"<<endl; //nummer huidige gate toegevoegd functie nodig
+    int gate=airport.getGateFromAirplane(&aproaching);
+    outputfile<<aproaching.getCallsign()<<" is standing at Gate "<<gate<<endl;
     Runway* runway=airport.findfreerunway();
     runway->setCurrentairplane(&aproaching);
-    //gate moet vrij komen
+    airport.freeGate(gate);
     outputfile<<aproaching.getCallsign()<<" is taxiing to runway "<<runway->getName()<<endl;
     outputfile<<aproaching.getCallsign()<<" is taking off at "<<airport.getName()<<" on runway "<<runway->getName()<<endl;
     for(int i=1;i<6;i++){
@@ -284,6 +285,19 @@ void Airportsim::takingOff(Airplane& aproaching, Airport& airport){
     outputfile<<aproaching.getCallsign()<<" has left "<<airport.getName();
     outputfile.close();
     ENSURE(fileExist(filename),"takingOff postcondition failed");
+}
+
+void Airportsim::AirplaneAtGate(Airplane& plane,Airport& airport){
+    REQUIRE(ProperInitialized(),"Airportsim object wasn't initialized when calling AirplaneAtGate");
+    ofstream outputfile;
+    string filename="../output/"+plane.getCallsign()+"_AtGate.txt";
+    outputfile.open(filename.data(),ios::out);
+    if(plane.getStatus()=="Standing at gate"){
+        outputfile<<plane.getPassenger()<<" passengers exited "<<plane.getCallsign()<<" at gate "<<airport.getGateFromAirplane(&plane)<<" of "<<airport.getName()<<endl;
+        outputfile<<plane.getCallsign()<<" has been checked for technical malfunctions"<<endl;
+        outputfile<<plane.getCallsign()<<" has been refueled"<<endl;
+        outputfile<<plane.getPassenger()<<" passengers boarded "<<plane.getCallsign()<<" at gate "<<airport.getGateFromAirplane(&plane)<<" of "<<airport.getName()<<endl;
+    }
 }
 
 bool Airportsim::ProperInitialized() const{
