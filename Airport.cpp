@@ -122,8 +122,10 @@ int Airport::getGateFromAirplane(Airplane* plane){
     REQUIRE(plane->ProperInitialized(),"Airplane plane wasn't initialized when calling getGateFromAirplane");
     REQUIRE(ProperInitialized(),"Airport wasn't initialized when calling getGateFromAirplane");
     for(unsigned int i=1;i<=gates.size();i++){
-        if(gates[i]->getNumber()==plane->getNumber()){
-            return i;
+        if(gates[i]!=NULL){
+            if(gates[i]->getNumber()==plane->getNumber()){
+                return i;
+            }
         }
     }
 

@@ -6,8 +6,10 @@
 #include "gtest/gtest.h"
 #include "Airportsim.h"
 #include "output_system.h"
+#include "algorithm"
 #include "DesignByContract.h"
 
+int stoi(const string& string);
 
 bool FileCompare(const std::string leftFileName, const std::string rightFileName) {
     ifstream leftFile, rightFile;
@@ -107,6 +109,52 @@ TEST_F(Airporttest, Outputtest){
     EXPECT_TRUE(FileCompare("../output/Cessna 842_Landing.txt","../testoutput/Juist_Cessna 842_Landing.txt"));
     EXPECT_TRUE(FileCompare("../output/Cessna 842_TakingOff.txt","../testoutput/Juist_Cessna 842_TakingOff.txt"));
     EXPECT_TRUE(FileCompare("../output/Info.txt","../testoutput/Juist_Info.txt"));
+}
+TEST_F(Airporttest, dyingtest){
+    EXPECT_DEATH(simulator.getAirports()[0]->parkAirplane(100,simulator.getAirplanes()[0]),"");
+    EXPECT_DEATH(simulator.takingOff(*simulator.getAirplanes()[0],*simulator.getAirports()[0]),"");
+}
+
+TEST_F(Airporttest, airplaneclassgeneraltest){
+    EXPECT_TRUE(simulator.getAirplanes()[0]->ProperInitialized());
+    simulator.getAirplanes()[0]->setStatus("Standing at Gate");
+    EXPECT_TRUE(simulator.getAirplanes()[0]->getStatus()=="Standing at Gate");
+    simulator.getAirplanes()[0]->setStatus("Approaching");
+    EXPECT_TRUE(simulator.getAirplanes()[0]->getStatus()=="Approaching");
+    //other states yet to be defined
+}
+
+TEST_F(Airporttest, airportclassgeneraltest){
+    EXPECT_TRUE(simulator.getAirports()[0]->ProperInitialized());
+    simulator.getAirplanes()[0]->setStatus("Standing at Gate");
+    Runway* i=new Runway("abc",simulator.getAirports()[0]);
+    simulator.getAirports()[0]->addrunway(i);
+    EXPECT_TRUE(find(simulator.getAirports()[0]->getRunways().begin(),simulator.getAirports()[0]->getRunways().end(),i)!=simulator.getAirports()[0]->getRunways().end());
+    simulator.getAirplanes()[0]->setStatus("Approaching");
+    EXPECT_TRUE(simulator.getAirplanes()[0]->getStatus()=="Approaching");
+    EXPECT_TRUE(simulator.getAirports()[0]->findfreegates()==1);
+    EXPECT_TRUE(simulator.getAirports()[0]->findfreerunway()==simulator.getAirports()[0]->getRunways()[0]);
+    simulator.getAirports()[0]->parkAirplane(1,simulator.getAirplanes()[0]);
+    EXPECT_TRUE(simulator.getAirports()[0]->getGateFromAirplane(simulator.getAirplanes()[0])==1);
+    simulator.getAirports()[0]->freeGate(1);
+    EXPECT_TRUE(simulator.getAirports()[0]->getGateFromAirplane(simulator.getAirplanes()[0])==-1);
+    EXPECT_TRUE(simulator.getAirports()[0]->getGates().begin().operator*().second==NULL);
+    //other states yet to be defined
+}
+
+
+TEST(Stoi_general_Test,general){
+    EXPECT_TRUE(stoi("5")==5);
+    EXPECT_TRUE(stoi("500")==500);
+    EXPECT_FALSE(stoi("55822558888")==55822558888);//overflow
+    EXPECT_TRUE(stoi("123456789")==123456789);
+}
+
+TEST(Stoi_dying_Test,dying){
+    EXPECT_ANY_THROW(stoi("a"));
+    EXPECT_ANY_THROW(stoi(""));
+    EXPECT_ANY_THROW(stoi("q1aa"));
+    EXPECT_ANY_THROW(stoi("1238855a"));
 }
 
 int main(int argc, char **argv){

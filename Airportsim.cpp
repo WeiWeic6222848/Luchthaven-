@@ -16,10 +16,20 @@ Airportsim::Airportsim(const string& filename) {
     ENSURE(ProperInitialized(),"This airportsim object failed to initialize properly");
 }
 
+
+/**
+ * @param value a string of only digits
+ * @return the int value of that string, logically
+ */
 int stoi(const string &value){
+    for (unsigned int i = 0; i < value.size(); ++i) {
+        if(!(isdigit(value[i]))){
+            throw "stoi failed beacause the giving string contains something else that digits\n";
+        }
+    }
     int temp=atoi(value.c_str());
     if(temp==0&&value!="0"){
-        throw "stoi failed beacause the giving string is not a digit";
+        throw "stoi failed beacause the giving string is not a digit\n";
     }
     return temp;
 }
