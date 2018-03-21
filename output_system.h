@@ -10,6 +10,11 @@
 
 class output_system {
 public:
+/**
+ * REQUIRE(simulator.ProperInitialized(),"airportsimulator wasn't initialized when calling writeToFile");
+ * ENSURE(fileExist("../output/Info.txt"),"writeToFile postcondition failed");
+ * @param simulator the airsim to output
+ */
     void writeToFile(Airportsim& simulator);
 };
 

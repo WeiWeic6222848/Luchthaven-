@@ -52,8 +52,6 @@ std::ostream& operator<<(std::ostream& output,Airplane& airplane){
     return output;
 }
 
-Airplane::Airplane() {}
-
 Airplane::Airplane(const string &status, int passenger, int fuel, const string &number, const string &callsign,
                    const string &model, int passengerCapacity) : status(status), passenger(passenger), fuel(fuel),
                                                                  number(number), callsign(callsign), model(model),

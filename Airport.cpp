@@ -51,7 +51,6 @@ const vector<Runway *> &Airport::getRunways() const {
     return runways;
 }
 
-Airport::Airport() {}
 
 Runway *Airport::findfreerunway() {
 
@@ -77,23 +76,20 @@ int Airport::findfreegates() const {
     return -1;
 }
 
-void Airport::parkAirplane(int gate, Airplane *airplane) {
+void Airport::parkAirplane(unsigned int gate, Airplane *airplane) {
 
     REQUIRE(ProperInitialized(),"Airport wasn't initialized when calling parkAirplane");
-    if(gate<1||gate>(int)gates.size()){
-        cerr<<"invalid gate assigned";
-        return;
-    }
+    REQUIRE(gate<gates.size()&&gate>=1,"The giving gate number must be valid");
+    REQUIRE(gates[gate]==NULL,"The giving gate must be empty");
     gates[gate]=airplane;
     ENSURE(gates[gate]==airplane,"parkAirplane postcondition failed");
 }
 
 Airport::~Airport() {
     REQUIRE(ProperInitialized(),"Airport wasn't initialized when calling destructor");
-    /*
     for (unsigned int i = 0; i < runways.size(); ++i) {
         delete(runways[i]);
-    }*/
+    }
 }
 
 void Airport::cleanup() {
@@ -111,7 +107,7 @@ const map<int, Airplane *> &Airport::getGates() const {
 }
 
 std::ostream& operator<<(std::ostream& output,Airport& airport){
-    REQUIRE(airport.ProperInitialized(),"Airport wasn't initialized when calling cleanup");
+    REQUIRE(airport.ProperInitialized(),"Airport wasn't initialized when getting output");
     output<<"Airport: "<<airport.getName()<<" ("<<airport.getIata()<<")"<<endl;
     output<<" -> gates: "<<airport.gates.size()<<endl;
     output<<" -> runways: "<<airport.runways.size()<<endl;
@@ -122,15 +118,9 @@ bool Airport::ProperInitialized() const {
     return _InitCheck==this;
 }
 
-bool Airport::operator==(const Airport &rhs) const {
-    return _InitCheck == rhs._InitCheck;
-}
-
-bool Airport::operator!=(const Airport &rhs) const {
-    return !(rhs == *this);
-}
-
 int Airport::getGateFromAirplane(Airplane* plane){
+    REQUIRE(plane->ProperInitialized(),"Airplane plane wasn't initialized when calling getGateFromAirplane");
+    REQUIRE(ProperInitialized(),"Airport wasn't initialized when calling getGateFromAirplane");
     for(unsigned int i=1;i<=gates.size();i++){
         if(gates[i]->getNumber()==plane->getNumber()){
             return i;
@@ -140,9 +130,28 @@ int Airport::getGateFromAirplane(Airplane* plane){
     return -1;
 }
 
+/*
 void Airport::setGates(int  gate, Airplane& plane) {
+    REQUIRE(ProperInitialized(),"Airport wasn't initialized when calling setGates");
     gates[gate]=&plane;
+    ENSURE(gates[gate]==&plane,"setGate postcondition failed");
 }
+ */
+
 void Airport::freeGate(int  gate){
+    REQUIRE(ProperInitialized(),"Airport wasn't initialized when calling freeGate");
     gates[gate]=NULL;
+    ENSURE(gates[gate]==NULL,"freeGate postcondition failed");
+}
+
+void Airport::addAirplane(Airplane *plane) {
+    REQUIRE(ProperInitialized(),"Airport wasn't initialized when calling addAirplane");
+    REQUIRE(find(relatedplanes.begin(),relatedplanes.end(),plane)==relatedplanes.end(),"The giving plane shouldn't be related to the airport already");
+    relatedplanes.push_back(plane);
+    ENSURE(find(relatedplanes.begin(),relatedplanes.end(),plane)!=relatedplanes.end(),"addAirplanes postcondition failed");
+}
+
+const vector<Airplane *> &Airport::getRelatedplanes() const {
+    REQUIRE(ProperInitialized(),"Airport wasn't initialized when calling getRelatedplanes");
+    return relatedplanes;
 }

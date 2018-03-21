@@ -1,6 +1,6 @@
-/opt/clion-2017.3/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/tristan/CLionProjects/Luchthaven--master
--- The C compiler identification is GNU 7.2.0
--- The CXX compiler identification is GNU 7.2.0
+/home/c6222848/Downloads/clion-2017.3.3/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/c6222848/Desktop/Luchthaven
+-- The C compiler identification is GNU 5.3.1
+-- The CXX compiler identification is GNU 5.3.1
 -- Check for working C compiler: /usr/bin/cc
 -- Check for working C compiler: /usr/bin/cc -- works
 -- Detecting C compiler ABI info
@@ -15,4 +15,4 @@
 -- Detecting CXX compile features - done
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/tristan/CLionProjects/Luchthaven--master/cmake-build-debug
+-- Build files have been written to: /home/c6222848/Desktop/Luchthaven/cmake-build-debug

@@ -173,6 +173,7 @@ void Airportsim::addsourcefile(const string &filename) {
                             break;
                         }
                     }
+                    airport->addAirplane(a);
                 }
                 else{
                     cerr<<"element "+ Elementname+" is not recongized by the airsim system, skipping"<<endl;
@@ -221,7 +222,10 @@ const Airplane *Airportsim::findairplane(const string &number) {
 const Runway *Airportsim::findrunway(const string &number, const string &iata) {
     REQUIRE(ProperInitialized(),"Airportsim object wasn't initialized when calling findrunway");
     const Airport* air=findairport(iata);
-    ENSURE(air!=NULL,"cannot find the giving airport with iata");
+    if (air==NULL){
+        cerr<<"cannot find the giving airport with iata "+iata;
+        return NULL;
+    }
     for (unsigned int i = 0; i < air->getRunways().size(); ++i) {
         if (air->getRunways()[i]->getName()==number){
             return air->getRunways()[i];
@@ -260,7 +264,7 @@ void Airportsim::landing(Airplane& aproaching,Airport& airport) {
     outputfile<<aproaching.getCallsign()<<" is taxiing to Gate "<<gate<<endl;
     runway->setCurrentairplane(NULL);
     outputfile<<aproaching.getCallsign()<<" is standing at Gate "<<gate<<endl;
-    aproaching.setStatus("Standing at gate");
+    aproaching.setStatus("Just landed");
     outputfile.close();
     ENSURE(fileExist(filename),"landing postcondition failed");
 }
@@ -298,6 +302,7 @@ void Airportsim::AirplaneAtGate(Airplane& plane,Airport& airport){
         outputfile<<plane.getCallsign()<<" has been refueled"<<endl;
         outputfile<<plane.getPassenger()<<" passengers boarded "<<plane.getCallsign()<<" at gate "<<airport.getGateFromAirplane(&plane)<<" of "<<airport.getName()<<endl;
     }
+    ENSURE(fileExist(filename),"AirplaneAtGate postcondition failed");
 }
 
 bool Airportsim::ProperInitialized() const{
@@ -309,5 +314,41 @@ Airportsim::Airportsim(int argc, const char **argv) {
     for (int i = 1; i < argc; ++i) {
         addsourcefile(argv[i]);
     };
+    ENSURE(ProperInitialized(),"Airportsim object failed to initialize properly");
 }
 
+Airportsim::~Airportsim() {
+    REQUIRE(ProperInitialized(),"Airportsim object wasn't initialized when calling Destructor");
+    for (unsigned int i = 0; i < Airports.size(); ++i) {
+        delete Airports[i];
+    }
+    for (unsigned int j = 0; j < Airplanes.size(); ++j) {
+        delete Airplanes[j];
+    }
+}
+
+/* future functions
+void Airportsim::Simulate() {
+    REQUIRE(ProperInitialized(),"Airportsim object wasn't initialized when calling Destructor");
+    for (unsigned int i = 0; i < Airports.size(); ++i) {
+        vector<Airplane*> planestoloop=Airports[i]->getRelatedplanes();
+        for (int j = 0; j < planestoloop.size(); ++j) {
+            string status=planestoloop[j]->getStatus();
+            if(status=="Approaching"){
+                landing(*planestoloop[j],*Airports[i]);
+            }
+            else if(status=="Standing at gate"){
+                //do something useful like above
+            }
+            else if(status=="Just landed"){
+
+            }
+            else if(status=="Leaving"){
+
+            }
+        }
+    }
+
+}
+
+*/

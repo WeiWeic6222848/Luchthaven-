@@ -5,11 +5,6 @@
 #include "Runway.h"
 #include "DesignByContract.h"
 
-Runway::Runway(const string &name) : name(name) {
-    currentairplane= NULL;
-    _InitCheck=this;
-    ENSURE(ProperInitialized(),"Runway object failed to initialize properly");
-}
 
 Runway::Runway(const string &name, Airport *where) : name(name), where(where) {
     currentairplane= NULL;
@@ -33,7 +28,6 @@ Airplane *Runway::getCurrentairplane() const {
     return currentairplane;
 }
 
-Runway::Runway() {}
 
 void Runway::setCurrentairplane(Airplane *currentairplane) {
 
@@ -42,9 +36,6 @@ void Runway::setCurrentairplane(Airplane *currentairplane) {
     ENSURE(getCurrentairplane()==currentairplane,"setCurrentairplane postcondition failed");
 }
 
-Runway::~Runway() {
-
-}
 
 bool Runway::ProperInitialized() const{
     return _InitCheck==this;
