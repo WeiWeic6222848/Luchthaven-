@@ -264,7 +264,7 @@ void Airportsim::landing(Airplane& aproaching,Airport& airport) {
     outputfile<<aproaching.getCallsign()<<" is taxiing to Gate "<<gate<<endl;
     runway->setCurrentairplane(NULL);
     outputfile<<aproaching.getCallsign()<<" is standing at Gate "<<gate<<endl;
-    aproaching.setStatus("Just landed");
+    aproaching.setStatus("Standing at gate");
     outputfile.close();
     ENSURE(fileExist(filename),"landing postcondition failed");
 }
