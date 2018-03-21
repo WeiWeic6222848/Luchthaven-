@@ -1,9 +1,45 @@
 //
 // Created by c6222848 on 3/17/18.
 //
+#include <fstream>
 #include "iostream"
 #include "gtest/gtest.h"
 #include "Airportsim.h"
+#include "output_system.h"
+#include "DesignByContract.h"
+
+
+bool FileCompare(const std::string leftFileName, const std::string rightFileName) {
+    ifstream leftFile, rightFile;
+    char leftRead, rightRead;
+    bool result;
+
+    // Open the two files.
+    leftFile.open(leftFileName.c_str());
+    if (!leftFile.is_open()) {
+        return false;
+    };
+    rightFile.open(rightFileName.c_str());
+    if (!rightFile.is_open()) {
+        leftFile.close();
+        return false;
+    };
+
+    result = true; // files exist and are open; assume equality unless a counterexamples shows up.
+    while (result && leftFile.good() && rightFile.good()) {
+        leftFile.get(leftRead);
+        rightFile.get(rightRead);
+        result = (leftRead == rightRead);
+    };
+    if (result) {
+        // last read was still equal; are we at the end of both files ?
+        result = (!leftFile.good()) && (!rightFile.good());
+    };
+
+    leftFile.close();
+    rightFile.close();
+    return result;
+}
 
 using namespace std;
 
@@ -58,6 +94,19 @@ TEST_F(Airporttest, ModelPlaneTest){
 }
 TEST_F(Airporttest, StatusPlaneTest){
     EXPECT_TRUE(simulator.getAirplanes()[0]->getStatus()=="Approaching");
+}
+TEST_F(Airporttest, Outputtest){
+    Airplane* a=simulator.getAirplanes()[0];
+    Airport* b=simulator.getAirports()[0];
+    simulator.landing(*a,*b);
+    simulator.AirplaneAtGate(*a,*b);
+    simulator.takingOff(*a,*b);
+    output_system op;
+    op.writeToFile(simulator);
+    EXPECT_TRUE(FileCompare("../output/Cessna 842_AtGate.txt","../testoutput/Juist_Cessna 842_AtGate.txt"));
+    EXPECT_TRUE(FileCompare("../output/Cessna 842_Landing.txt","../testoutput/Juist_Cessna 842_Landing.txt"));
+    EXPECT_TRUE(FileCompare("../output/Cessna 842_TakingOff.txt","../testoutput/Juist_Cessna 842_TakingOff.txt"));
+    EXPECT_TRUE(FileCompare("../output/Info.txt","../testoutput/Juist_Info.txt"));
 }
 
 int main(int argc, char **argv){

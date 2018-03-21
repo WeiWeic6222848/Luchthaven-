@@ -1,0 +1,14 @@
+Cessna 842 is approaching Antwerp International Airport at 10.000 ft.
+Cessna 842 descended to 9.000 ft.
+Cessna 842 descended to 8.000 ft.
+Cessna 842 descended to 7.000 ft.
+Cessna 842 descended to 6.000 ft.
+Cessna 842 descended to 5.000 ft.
+Cessna 842 descended to 4.000 ft.
+Cessna 842 descended to 3.000 ft.
+Cessna 842 descended to 2.000 ft.
+Cessna 842 descended to 1.000 ft.
+Cessna 842 is landing at Antwerp International Airport on runway 11R
+Cessna 842 has landed at Antwerp International Airport on runway 11R
+Cessna 842 is taxiing to Gate 1
+Cessna 842 is standing at Gate 1
