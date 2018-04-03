@@ -19,7 +19,6 @@ int Airplane::getPassenger() const {
 }
 
 int Airplane::getFuel() const {
-
     REQUIRE(ProperInitialized(),"Airplane wasn't initialized when calling getFuel");
     //ENSURE(fuel!=NULL,"returning a null object fuel");
     return fuel;
@@ -57,6 +56,12 @@ Airplane::Airplane(const string &status, int passenger, int fuel, const string &
                                                                  number(number), callsign(callsign), model(model),
                                                                  passengerCapacity(passengerCapacity) {
     _initcheck=this;
+    if (status=="Approaching"){
+        height=10000;
+    }
+    else{
+        height=0;
+    }
     ENSURE(ProperInitialized(),"this airplane object failed to Initialize properly");
 }
 
@@ -68,4 +73,15 @@ void Airplane::setStatus(const string &status) {
 
 bool Airplane::ProperInitialized() const {
     return _initcheck==this;
+}
+
+bool Airplane::dalen() {
+    REQUIRE(height>=1000,"vliegtuig is te laag!");
+    height-=1000;
+    return true;
+}
+
+bool Airplane::stijgen() {
+    //REQUIRE(signal)
+    return true;
 }

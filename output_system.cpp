@@ -4,8 +4,8 @@
 
 #include "output_system.h"
 #include "DesignByContract.h"
+#include "AirportUtils.h"
 
-bool fileExist(const string&filename);
 
 void output_system::writeToFile(Airportsim &simulator) {
     REQUIRE(simulator.ProperInitialized(),"airportsimulator wasn't initialized when calling writeToFile");

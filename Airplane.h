@@ -16,6 +16,7 @@ public:
     int passenger;
     int fuel;
     Airplane* _initcheck=NULL;
+    int height;
 
 /**
  * ENSURE(ProperInitialized(),"this airplane object failed to Initialize properly");
@@ -85,6 +86,10 @@ public:
  * @return Boolean value of whether or not this object is being initialized and not being copied from other object;
  */
     bool ProperInitialized() const;
+
+    bool dalen();
+
+    bool stijgen();
 
 
 private:

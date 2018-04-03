@@ -38,6 +38,24 @@ string
 Runway.h
 /home/c6222848/Desktop/Luchthaven/Runway.h
 
+/home/c6222848/Desktop/Luchthaven/AirportUtils.cpp
+fstream
+-
+cstdlib
+-
+string
+/home/c6222848/Desktop/Luchthaven/string
+AirportUtils.h
+/home/c6222848/Desktop/Luchthaven/AirportUtils.h
+AirportsimImporter.h
+/home/c6222848/Desktop/Luchthaven/AirportsimImporter.h
+
+/home/c6222848/Desktop/Luchthaven/AirportUtils.h
+string
+/home/c6222848/Desktop/Luchthaven/string
+AirportsimImporter.h
+/home/c6222848/Desktop/Luchthaven/AirportsimImporter.h
+
 /home/c6222848/Desktop/Luchthaven/Airportsim.cpp
 iostream
 -
@@ -51,6 +69,8 @@ fstream
 /home/c6222848/Desktop/Luchthaven/fstream
 algorithm
 /home/c6222848/Desktop/Luchthaven/algorithm
+AirportUtils.h
+/home/c6222848/Desktop/Luchthaven/AirportUtils.h
 
 /home/c6222848/Desktop/Luchthaven/Airportsim.h
 vector
@@ -60,9 +80,23 @@ Airport.h
 tinyxml.h
 /home/c6222848/Desktop/Luchthaven/tinyxml.h
 
+/home/c6222848/Desktop/Luchthaven/AirportsimImporter.cpp
+DesignByContract.h
+/home/c6222848/Desktop/Luchthaven/DesignByContract.h
+AirportUtils.h
+/home/c6222848/Desktop/Luchthaven/AirportUtils.h
+
+/home/c6222848/Desktop/Luchthaven/AirportsimImporter.h
+ostream
+-
+Airportsim.h
+/home/c6222848/Desktop/Luchthaven/Airportsim.h
+
 /home/c6222848/Desktop/Luchthaven/DesignByContract.h
 assert.h
 -
+
+/home/c6222848/Desktop/Luchthaven/ImportTest.cpp
 
 /home/c6222848/Desktop/Luchthaven/Runway.cpp
 Runway.h
@@ -78,25 +112,23 @@ Airplane.h
 Airport.h
 /home/c6222848/Desktop/Luchthaven/Airport.h
 
-/home/c6222848/Desktop/Luchthaven/fileexist.cpp
-fstream
--
-string
-/home/c6222848/Desktop/Luchthaven/string
-
 /home/c6222848/Desktop/Luchthaven/main.cpp
-iostream
--
+fstream
+/home/c6222848/Desktop/Luchthaven/fstream
 Airportsim.h
 /home/c6222848/Desktop/Luchthaven/Airportsim.h
 output_system.h
 /home/c6222848/Desktop/Luchthaven/output_system.h
+AirportUtils.h
+/home/c6222848/Desktop/Luchthaven/AirportUtils.h
 
 /home/c6222848/Desktop/Luchthaven/output_system.cpp
 output_system.h
 /home/c6222848/Desktop/Luchthaven/output_system.h
 DesignByContract.h
 /home/c6222848/Desktop/Luchthaven/DesignByContract.h
+AirportUtils.h
+/home/c6222848/Desktop/Luchthaven/AirportUtils.h
 
 /home/c6222848/Desktop/Luchthaven/output_system.h
 fstream

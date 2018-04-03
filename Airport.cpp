@@ -16,10 +16,10 @@ Airport::Airport(const string &name, const string &iata, const string &callsign,
     ENSURE(ProperInitialized(),"This airport object failed to Initialize properly");
 }
 
-void Airport::addrunway(Runway *runway) {
+void Airport::addRunway(Runway *runway) {
     REQUIRE(ProperInitialized(),"Airport wasn't initialized when calling addrunway");
     runways.push_back(runway);
-    ENSURE(find(runways.begin(),runways.end(),runway)!=runways.end(),"addrunway postcondition failed");
+    ENSURE(find(getRunways().begin(),getRunways().end(),runway)!=runways.end(),"addrunway postcondition failed");
 }
 
 const string &Airport::getName() const {
@@ -52,7 +52,7 @@ const vector<Runway *> &Airport::getRunways() const {
 }
 
 
-Runway *Airport::findfreerunway() {
+Runway *Airport::findFreeRunway(){
 
     REQUIRE(ProperInitialized(),"Airport wasn't initialized when calling findfreerunway");
     for (unsigned int i = 0; i < runways.size(); ++i) {
@@ -64,7 +64,7 @@ Runway *Airport::findfreerunway() {
     return NULL;
 }
 
-int Airport::findfreegates() const {
+int Airport::findFreeGates() const {
 
     REQUIRE(ProperInitialized(),"Airport wasn't initialized when calling findfreegates");
     for (unsigned int i = 1; i < gates.size()+1; ++i) {

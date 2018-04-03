@@ -50,7 +50,7 @@ public:
  * ENSURE(find(runways.begin(),runways.end(),runway)!=runways.end(),"addrunway postcondition failed");
  * @param runway the pointer to a pre-initialized runway which will be added to addrunway
  */
-    void addrunway(Runway* runway);
+    void addRunway(Runway* runway);
 
 /**
  * REQUIRE(ProperInitialized(),"Airport wasn't initialized when calling getName");
@@ -92,13 +92,13 @@ public:
  * REQUIRE(ProperInitialized(),"Airport wasn't initialized when calling findfreerunway");
  * @return a runway pointer which doesn't have any airplanes
  */
-    Runway* findfreerunway();
+    Runway* findFreeRunway();
 
 /**
  * REQUIRE(ProperInitialized(),"Airport wasn't initialized when calling findfreegates");
  * @return a number of gate which doesn't have any airplanes
  */
-    int findfreegates() const;
+    int findFreeGates() const;
 
 /**
  * REQUIRE(ProperInitialized(),"Airport wasn't initialized when calling parkAirplane");

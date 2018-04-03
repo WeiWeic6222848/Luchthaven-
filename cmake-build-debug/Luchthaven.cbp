@@ -150,6 +150,14 @@
 			<Option target="Airport_simulator_debug"/>
 			<Option target="Airport_simulator"/>
 		</Unit>
+		<Unit filename="/home/c6222848/Desktop/Luchthaven/AirportUtils.cpp">
+			<Option target="Airport_simulator_debug"/>
+			<Option target="Airport_simulator"/>
+		</Unit>
+		<Unit filename="/home/c6222848/Desktop/Luchthaven/AirportUtils.h">
+			<Option target="Airport_simulator_debug"/>
+			<Option target="Airport_simulator"/>
+		</Unit>
 		<Unit filename="/home/c6222848/Desktop/Luchthaven/Airportsim.cpp">
 			<Option target="Airport_simulator_debug"/>
 			<Option target="Airport_simulator"/>
@@ -158,8 +166,17 @@
 			<Option target="Airport_simulator_debug"/>
 			<Option target="Airport_simulator"/>
 		</Unit>
+		<Unit filename="/home/c6222848/Desktop/Luchthaven/AirportsimImporter.cpp">
+			<Option target="Airport_simulator"/>
+		</Unit>
+		<Unit filename="/home/c6222848/Desktop/Luchthaven/AirportsimImporter.h">
+			<Option target="Airport_simulator"/>
+		</Unit>
 		<Unit filename="/home/c6222848/Desktop/Luchthaven/DesignByContract.h">
 			<Option target="Airport_simulator_debug"/>
+			<Option target="Airport_simulator"/>
+		</Unit>
+		<Unit filename="/home/c6222848/Desktop/Luchthaven/ImportTest.cpp">
 			<Option target="Airport_simulator"/>
 		</Unit>
 		<Unit filename="/home/c6222848/Desktop/Luchthaven/Runway.cpp">
@@ -167,10 +184,6 @@
 			<Option target="Airport_simulator"/>
 		</Unit>
 		<Unit filename="/home/c6222848/Desktop/Luchthaven/Runway.h">
-			<Option target="Airport_simulator_debug"/>
-			<Option target="Airport_simulator"/>
-		</Unit>
-		<Unit filename="/home/c6222848/Desktop/Luchthaven/fileexist.cpp">
 			<Option target="Airport_simulator_debug"/>
 			<Option target="Airport_simulator"/>
 		</Unit>

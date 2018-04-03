@@ -9,21 +9,24 @@
 #include "Airport.h"
 #include "tinyxml.h"
 
+class AirportsimImporter;
+
 using namespace std;
 
 class Airportsim{
     vector<Airport*> Airports;
     vector<Airplane*> Airplanes;
 
+    Airportsim* _InitCheck;
+
+public:
+
 /**
  * REQUIRE(ProperInitialized(),"Airportsim object wasn't initialized when calling removeairport");
  * ENSURE(find(Airports.begin(),Airports.end(),airport)==Airports.end(),"removeairport postcondition failed");
  * @param airport airport to remove from airportslist
  */
-    void removeairport(Airport* airport);
-
-    Airportsim* _InitCheck;
-public:
+    void removeAirport(Airport* airport);
 
 /**
  * ENSURE(ProperInitialized(),"Airportsim object failed to initialize properly");
@@ -43,21 +46,21 @@ public:
  * REQUIRE(fileExist(filename),"Giving filename must exist when calling addsourcefile");
  * @param filename xmlfilename to read
  */
-    void addsourcefile(const string &filename);
+    void addSourcefile(const string &filename);
 
 /**
  * REQUIRE(ProperInitialized(),"Airportsim object wasn't initialized when calling findairport");
  * @param iata unique iata of the airport to find
  * @return the found airport or NULL if not found
  */
-    const Airport* findairport(const string& iata);
+    const Airport* findAirport(const string& iata);
 
 /**
  * REQUIRE(ProperInitialized(),"Airportsim object wasn't initialized when calling findairplane");
  * @param number unique number of the airplane to find
  * @return the found airplane or NULL if not found
  */
-    const Airplane* findairplane(const string& number);
+    const Airplane* findAirplane(const string& number);
 
 /**
  * REQUIRE(ProperInitialized(),"Airportsim object wasn't initialized when calling findrunway");
@@ -65,7 +68,7 @@ public:
  * @param iata unique iata of the airport that the runway is at;
  * @return the found runway or NULL if either airport or runway is not found
  */
-    const Runway* findrunway(const string&number,const string& iata);
+    const Runway* findRunway(const string&number,const string& iata);
 
 /**
  * REQUIRE(ProperInitialized(),"Airportsim object wasn't initialized when calling getAirports");
@@ -109,13 +112,18 @@ public:
  * @param plane plane to get prepared
  * @param airport where is this airplane standing.
  */
-    void AirplaneAtGate(Airplane& plane,Airport& airport);
+    void airplaneAtGate(Airplane& plane,Airport& airport);
 
 /**
  * REQUIRE(ProperInitialized(),"Airportsim object wasn't initialized when calling Destructor");
  */
     virtual ~Airportsim();
 
+    void addAirport(Airport* airport);
+
+    void addAirplane(Airplane* airplane);
+
+    Airportsim();
     //future functions
     //void Simulate();
 };

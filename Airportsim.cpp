@@ -8,11 +8,12 @@
 #include "DesignByContract.h"
 #include "fstream"
 #include "algorithm"
-bool fileExist(const string&filename);
+#include "AirportUtils.h"
+
 
 Airportsim::Airportsim(const string& filename) {
     _InitCheck=this;
-    addsourcefile(filename);
+    addSourcefile(filename);
     ENSURE(ProperInitialized(),"This airportsim object failed to initialize properly");
 }
 
@@ -21,21 +22,8 @@ Airportsim::Airportsim(const string& filename) {
  * @param value a string of only digits
  * @return the int value of that string, logically
  */
-int stoi(const string &value){
-    for (unsigned int i = 0; i < value.size(); ++i) {
-        if(!(isdigit(value[i]))){
-            throw "stoi failed beacause the giving string contains something else that digits\n";
-        }
-    }
-    int temp=atoi(value.c_str());
-    if(temp==0&&value!="0"){
-        throw "stoi failed beacause the giving string is not a digit\n";
-    }
-    return temp;
-}
 
-
-void Airportsim::removeairport(Airport* airport) {
+void Airportsim::removeAirport(Airport* airport) {
     REQUIRE(ProperInitialized(),"Airportsim object wasn't initialized when calling removeairport");
     for (unsigned int i = 0; i < Airports.size(); ++i) {
         if (airport==Airports[i]){
@@ -48,10 +36,10 @@ void Airportsim::removeairport(Airport* airport) {
 }
 
 
-void Airportsim::addsourcefile(const string &filename) {
+void Airportsim::addSourcefile(const string &filename) {
     REQUIRE(ProperInitialized(),"Airportsim object wasn't initialized when calling addsourcefile");
     REQUIRE(fileExist(filename),"Giving filename must exist when calling addsourcefile");
-    TiXmlDocument XMLfile;
+    /*TiXmlDocument XMLfile;
     int errors=0;
     int aprroaching=0;
     XMLfile.LoadFile(filename.c_str());
@@ -104,7 +92,7 @@ void Airportsim::addsourcefile(const string &filename) {
                     for (unsigned int i = 0; i < Airports.size(); ++i) {
                         if(Airports[i]->getIata()==airportname){
                             Runway* runway=new Runway(name,Airports[i]);
-                            Airports[i]->addrunway(runway);
+                            Airports[i]->addRunway(runway);
                             airportfound=true;
                         }
                     }
@@ -162,7 +150,7 @@ void Airportsim::addsourcefile(const string &filename) {
                     Airplanes.push_back(a);
 
                     if (status=="standing at gate"){
-                        int gateforairplane=airport->findfreegates();
+                        int gateforairplane=airport->findFreeGates();
                         passenger=0;
                         if(gateforairplane==-1){
                             cerr<<airport->getName()<<" has more airplanes at gates than it's gate"<<endl;
@@ -201,13 +189,15 @@ void Airportsim::addsourcefile(const string &filename) {
         if (Airports[j]->getRunways().empty()) {
             cerr<<Airports[j]->getName()<<" has no runway or a wrong amount of runway."<<endl;
             cerr<<Airports[j]->getName()<<" got removed from airportslist beacause of inconsistency"<<endl;
-            removeairport(Airports[j]);
+            removeAirport(Airports[j]);
         }
     }
-    return;
+    return;*/
+    AirportsimImporter::importAirportsim(filename.c_str(),cerr,*this);
+    cerr<<endl;
 }
 
-const Airport* Airportsim::findairport(const string &iata) {
+const Airport* Airportsim::findAirport(const string &iata) {
     REQUIRE(ProperInitialized(),"Airportsim object wasn't initialized when calling findairport");
     for (unsigned int j = 0; j < Airports.size(); ++j) {
         if(Airports[j]->getIata()==iata){
@@ -218,7 +208,7 @@ const Airport* Airportsim::findairport(const string &iata) {
     return NULL;
 }
 
-const Airplane *Airportsim::findairplane(const string &number) {
+const Airplane *Airportsim::findAirplane(const string &number) {
     REQUIRE(ProperInitialized(),"Airportsim object wasn't initialized when calling findairplane");
     for (unsigned int j = 0; j < Airplanes.size(); ++j) {
         if(Airplanes[j]->getNumber()==number){
@@ -229,9 +219,9 @@ const Airplane *Airportsim::findairplane(const string &number) {
     return NULL;
 }
 
-const Runway *Airportsim::findrunway(const string &number, const string &iata) {
+const Runway *Airportsim::findRunway(const string &number, const string &iata) {
     REQUIRE(ProperInitialized(),"Airportsim object wasn't initialized when calling findrunway");
-    const Airport* air=findairport(iata);
+    const Airport* air=findAirport(iata);
     if (air==NULL){
         cerr<<"cannot find the giving airport with iata "+iata;
         return NULL;
@@ -262,8 +252,8 @@ void Airportsim::landing(Airplane& aproaching,Airport& airport) {
     string filename="../output/"+aproaching.getCallsign()+"_Landing.txt";
     outputfile.open(filename.data(),ios::out);
     outputfile<<aproaching.getCallsign()<<" is approaching "<<airport.getName()<<" at 10.000 ft."<<endl;
-    int gate=airport.findfreegates();
-    Runway* runway=airport.findfreerunway();
+    int gate=airport.findFreeGates();
+    Runway* runway=airport.findFreeRunway();
     for(int i=9;i>0;i--){
         outputfile<<aproaching.getCallsign()<<" descended to "<<i<<".000 ft."<<endl;
     }
@@ -286,7 +276,7 @@ void Airportsim::takingOff(Airplane& aproaching, Airport& airport){
     outputfile.open(filename.data(),ios::out);
     int gate=airport.getGateFromAirplane(&aproaching);
     outputfile<<aproaching.getCallsign()<<" is standing at Gate "<<gate<<endl;
-    Runway* runway=airport.findfreerunway();
+    Runway* runway=airport.findFreeRunway();
     runway->setCurrentairplane(&aproaching);
     airport.freeGate(gate);
     outputfile<<aproaching.getCallsign()<<" is taxiing to runway "<<runway->getName()<<endl;
@@ -301,7 +291,7 @@ void Airportsim::takingOff(Airplane& aproaching, Airport& airport){
     ENSURE(fileExist(filename),"takingOff postcondition failed");
 }
 
-void Airportsim::AirplaneAtGate(Airplane& plane,Airport& airport){
+void Airportsim::airplaneAtGate(Airplane& plane,Airport& airport){
     REQUIRE(ProperInitialized(),"Airportsim object wasn't initialized when calling AirplaneAtGate");
     ofstream outputfile;
     string filename="../output/"+plane.getCallsign()+"_AtGate.txt";
@@ -322,7 +312,7 @@ bool Airportsim::ProperInitialized() const{
 Airportsim::Airportsim(int argc, const char **argv) {
     _InitCheck=this;
     for (int i = 1; i < argc; ++i) {
-        addsourcefile(argv[i]);
+        addSourcefile(argv[i]);
     };
     ENSURE(ProperInitialized(),"Airportsim object failed to initialize properly");
 }
@@ -336,6 +326,18 @@ Airportsim::~Airportsim() {
         delete Airplanes[j];
     }
 }
+
+void Airportsim::addAirport(Airport *airport) {
+    Airports.push_back(airport);
+}
+
+void Airportsim::addAirplane(Airplane *airplane) {
+    Airplanes.push_back(airplane);
+}
+
+Airportsim::Airportsim() {_InitCheck=this;}
+
+
 
 /* future functions
 void Airportsim::Simulate() {

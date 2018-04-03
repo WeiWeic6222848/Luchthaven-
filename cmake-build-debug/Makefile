@@ -196,6 +196,36 @@ Airport.cpp.s:
 	$(MAKE) -f CMakeFiles/Airport_simulator.dir/build.make CMakeFiles/Airport_simulator.dir/Airport.cpp.s
 .PHONY : Airport.cpp.s
 
+AirportUtils.o: AirportUtils.cpp.o
+
+.PHONY : AirportUtils.o
+
+# target to build an object file
+AirportUtils.cpp.o:
+	$(MAKE) -f CMakeFiles/Airport_simulator_debug.dir/build.make CMakeFiles/Airport_simulator_debug.dir/AirportUtils.cpp.o
+	$(MAKE) -f CMakeFiles/Airport_simulator.dir/build.make CMakeFiles/Airport_simulator.dir/AirportUtils.cpp.o
+.PHONY : AirportUtils.cpp.o
+
+AirportUtils.i: AirportUtils.cpp.i
+
+.PHONY : AirportUtils.i
+
+# target to preprocess a source file
+AirportUtils.cpp.i:
+	$(MAKE) -f CMakeFiles/Airport_simulator_debug.dir/build.make CMakeFiles/Airport_simulator_debug.dir/AirportUtils.cpp.i
+	$(MAKE) -f CMakeFiles/Airport_simulator.dir/build.make CMakeFiles/Airport_simulator.dir/AirportUtils.cpp.i
+.PHONY : AirportUtils.cpp.i
+
+AirportUtils.s: AirportUtils.cpp.s
+
+.PHONY : AirportUtils.s
+
+# target to generate assembly for a file
+AirportUtils.cpp.s:
+	$(MAKE) -f CMakeFiles/Airport_simulator_debug.dir/build.make CMakeFiles/Airport_simulator_debug.dir/AirportUtils.cpp.s
+	$(MAKE) -f CMakeFiles/Airport_simulator.dir/build.make CMakeFiles/Airport_simulator.dir/AirportUtils.cpp.s
+.PHONY : AirportUtils.cpp.s
+
 Airportsim.o: Airportsim.cpp.o
 
 .PHONY : Airportsim.o
@@ -226,6 +256,60 @@ Airportsim.cpp.s:
 	$(MAKE) -f CMakeFiles/Airport_simulator.dir/build.make CMakeFiles/Airport_simulator.dir/Airportsim.cpp.s
 .PHONY : Airportsim.cpp.s
 
+AirportsimImporter.o: AirportsimImporter.cpp.o
+
+.PHONY : AirportsimImporter.o
+
+# target to build an object file
+AirportsimImporter.cpp.o:
+	$(MAKE) -f CMakeFiles/Airport_simulator.dir/build.make CMakeFiles/Airport_simulator.dir/AirportsimImporter.cpp.o
+.PHONY : AirportsimImporter.cpp.o
+
+AirportsimImporter.i: AirportsimImporter.cpp.i
+
+.PHONY : AirportsimImporter.i
+
+# target to preprocess a source file
+AirportsimImporter.cpp.i:
+	$(MAKE) -f CMakeFiles/Airport_simulator.dir/build.make CMakeFiles/Airport_simulator.dir/AirportsimImporter.cpp.i
+.PHONY : AirportsimImporter.cpp.i
+
+AirportsimImporter.s: AirportsimImporter.cpp.s
+
+.PHONY : AirportsimImporter.s
+
+# target to generate assembly for a file
+AirportsimImporter.cpp.s:
+	$(MAKE) -f CMakeFiles/Airport_simulator.dir/build.make CMakeFiles/Airport_simulator.dir/AirportsimImporter.cpp.s
+.PHONY : AirportsimImporter.cpp.s
+
+ImportTest.o: ImportTest.cpp.o
+
+.PHONY : ImportTest.o
+
+# target to build an object file
+ImportTest.cpp.o:
+	$(MAKE) -f CMakeFiles/Airport_simulator.dir/build.make CMakeFiles/Airport_simulator.dir/ImportTest.cpp.o
+.PHONY : ImportTest.cpp.o
+
+ImportTest.i: ImportTest.cpp.i
+
+.PHONY : ImportTest.i
+
+# target to preprocess a source file
+ImportTest.cpp.i:
+	$(MAKE) -f CMakeFiles/Airport_simulator.dir/build.make CMakeFiles/Airport_simulator.dir/ImportTest.cpp.i
+.PHONY : ImportTest.cpp.i
+
+ImportTest.s: ImportTest.cpp.s
+
+.PHONY : ImportTest.s
+
+# target to generate assembly for a file
+ImportTest.cpp.s:
+	$(MAKE) -f CMakeFiles/Airport_simulator.dir/build.make CMakeFiles/Airport_simulator.dir/ImportTest.cpp.s
+.PHONY : ImportTest.cpp.s
+
 Runway.o: Runway.cpp.o
 
 .PHONY : Runway.o
@@ -255,36 +339,6 @@ Runway.cpp.s:
 	$(MAKE) -f CMakeFiles/Airport_simulator_debug.dir/build.make CMakeFiles/Airport_simulator_debug.dir/Runway.cpp.s
 	$(MAKE) -f CMakeFiles/Airport_simulator.dir/build.make CMakeFiles/Airport_simulator.dir/Runway.cpp.s
 .PHONY : Runway.cpp.s
-
-fileexist.o: fileexist.cpp.o
-
-.PHONY : fileexist.o
-
-# target to build an object file
-fileexist.cpp.o:
-	$(MAKE) -f CMakeFiles/Airport_simulator_debug.dir/build.make CMakeFiles/Airport_simulator_debug.dir/fileexist.cpp.o
-	$(MAKE) -f CMakeFiles/Airport_simulator.dir/build.make CMakeFiles/Airport_simulator.dir/fileexist.cpp.o
-.PHONY : fileexist.cpp.o
-
-fileexist.i: fileexist.cpp.i
-
-.PHONY : fileexist.i
-
-# target to preprocess a source file
-fileexist.cpp.i:
-	$(MAKE) -f CMakeFiles/Airport_simulator_debug.dir/build.make CMakeFiles/Airport_simulator_debug.dir/fileexist.cpp.i
-	$(MAKE) -f CMakeFiles/Airport_simulator.dir/build.make CMakeFiles/Airport_simulator.dir/fileexist.cpp.i
-.PHONY : fileexist.cpp.i
-
-fileexist.s: fileexist.cpp.s
-
-.PHONY : fileexist.s
-
-# target to generate assembly for a file
-fileexist.cpp.s:
-	$(MAKE) -f CMakeFiles/Airport_simulator_debug.dir/build.make CMakeFiles/Airport_simulator_debug.dir/fileexist.cpp.s
-	$(MAKE) -f CMakeFiles/Airport_simulator.dir/build.make CMakeFiles/Airport_simulator.dir/fileexist.cpp.s
-.PHONY : fileexist.cpp.s
 
 main.o: main.cpp.o
 
@@ -506,15 +560,21 @@ help:
 	@echo "... Airport.o"
 	@echo "... Airport.i"
 	@echo "... Airport.s"
+	@echo "... AirportUtils.o"
+	@echo "... AirportUtils.i"
+	@echo "... AirportUtils.s"
 	@echo "... Airportsim.o"
 	@echo "... Airportsim.i"
 	@echo "... Airportsim.s"
+	@echo "... AirportsimImporter.o"
+	@echo "... AirportsimImporter.i"
+	@echo "... AirportsimImporter.s"
+	@echo "... ImportTest.o"
+	@echo "... ImportTest.i"
+	@echo "... ImportTest.s"
 	@echo "... Runway.o"
 	@echo "... Runway.i"
 	@echo "... Runway.s"
-	@echo "... fileexist.o"
-	@echo "... fileexist.i"
-	@echo "... fileexist.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

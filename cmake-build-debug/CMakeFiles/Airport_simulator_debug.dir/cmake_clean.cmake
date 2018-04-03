@@ -9,7 +9,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Airport_simulator_debug.dir/Airport.cpp.o"
   "CMakeFiles/Airport_simulator_debug.dir/tinyxmlparser.cpp.o"
   "CMakeFiles/Airport_simulator_debug.dir/output_system.cpp.o"
-  "CMakeFiles/Airport_simulator_debug.dir/fileexist.cpp.o"
+  "CMakeFiles/Airport_simulator_debug.dir/AirportUtils.cpp.o"
   "Airport_simulator_debug.pdb"
   "Airport_simulator_debug"
 )
