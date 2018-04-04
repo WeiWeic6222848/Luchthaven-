@@ -43,6 +43,8 @@ fstream
 -
 cstdlib
 -
+sstream
+-
 string
 /home/c6222848/Desktop/Luchthaven/string
 AirportUtils.h
@@ -77,8 +79,6 @@ vector
 /home/c6222848/Desktop/Luchthaven/vector
 Airport.h
 /home/c6222848/Desktop/Luchthaven/Airport.h
-tinyxml.h
-/home/c6222848/Desktop/Luchthaven/tinyxml.h
 
 /home/c6222848/Desktop/Luchthaven/AirportsimImporter.cpp
 DesignByContract.h
@@ -91,6 +91,8 @@ ostream
 -
 Airportsim.h
 /home/c6222848/Desktop/Luchthaven/Airportsim.h
+tinyxml.h
+/home/c6222848/Desktop/Luchthaven/tinyxml.h
 
 /home/c6222848/Desktop/Luchthaven/DesignByContract.h
 assert.h
@@ -121,6 +123,8 @@ output_system.h
 /home/c6222848/Desktop/Luchthaven/output_system.h
 AirportUtils.h
 /home/c6222848/Desktop/Luchthaven/AirportUtils.h
+sstream
+/home/c6222848/Desktop/Luchthaven/sstream
 
 /home/c6222848/Desktop/Luchthaven/output_system.cpp
 output_system.h

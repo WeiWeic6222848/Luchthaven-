@@ -51,19 +51,6 @@ std::ostream& operator<<(std::ostream& output,Airplane& airplane){
     return output;
 }
 
-Airplane::Airplane(const string &status, int passenger, int fuel, const string &number, const string &callsign,
-                   const string &model, int passengerCapacity) : status(status), passenger(passenger), fuel(fuel),
-                                                                 number(number), callsign(callsign), model(model),
-                                                                 passengerCapacity(passengerCapacity) {
-    _initcheck=this;
-    if (status=="Approaching"){
-        height=10000;
-    }
-    else{
-        height=0;
-    }
-    ENSURE(ProperInitialized(),"this airplane object failed to Initialize properly");
-}
 
 void Airplane::setStatus(const string &status) {
     REQUIRE(ProperInitialized(),"Airplane wasn't initialized when calling setStatus");
@@ -84,4 +71,35 @@ bool Airplane::dalen() {
 bool Airplane::stijgen() {
     //REQUIRE(signal)
     return true;
+}
+
+Airplane::Airplane(const string &status, int passenger, int fuel, int height, const string &number,
+                   const string &callsign, const string &model, const string &type, const string &engine,
+                   const string &size, int passengerCapacity) : status(status), passenger(passenger), fuel(fuel),
+                                                                height(height), number(number), callsign(callsign),
+                                                                model(model), type(type), engine(engine), size(size),
+                                                                passengerCapacity(passengerCapacity) {
+    _initcheck=this;
+    if (status=="Approaching"){
+        height=10000;
+    }
+    else{
+        height=0;
+    }
+    ENSURE(ProperInitialized(),"this airplane object failed to Initialize properly");
+}
+
+Airplane::Airplane(const string &status, int passenger, int fuel, const string &number, const string &callsign,
+                   const string &model, const string &type, const string &engine, const string &size,
+                   int passengerCapacity) : status(status), passenger(passenger), fuel(fuel), number(number),
+                                            callsign(callsign), model(model), type(type), engine(engine), size(size),
+                                            passengerCapacity(passengerCapacity) {
+    _initcheck=this;
+    if (status=="Approaching"){
+        height=10000;
+    }
+    else{
+        height=0;
+    }
+    ENSURE(ProperInitialized(),"this airplane object failed to Initialize properly");
 }

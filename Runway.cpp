@@ -7,9 +7,6 @@
 
 
 Runway::Runway(const string &name, Airport *where) : name(name), where(where) {
-    currentairplane= NULL;
-    _InitCheck=this;
-    ENSURE(ProperInitialized(),"Runway object failed to initialize properly");
 }
 
 const string &Runway::getName() const {
@@ -39,5 +36,19 @@ void Runway::setCurrentairplane(Airplane *currentairplane) {
 
 bool Runway::ProperInitialized() const{
     return _InitCheck==this;
+}
+
+Runway::Runway(const string &name, Airport *where, const string& stringtype, int length) : name(name), where(where),
+                                                                                  length(length) {
+    currentairplane= NULL;
+    _InitCheck=this;
+    if (stringtype=="asphalt"){
+        type=asphalt;
+    }
+    else if (stringtype=="grass"){
+        type=grass;
+    }
+    ENSURE(ProperInitialized(),"Runway object failed to initialize properly");
+
 }
 

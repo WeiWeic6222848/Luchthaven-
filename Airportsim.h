@@ -7,7 +7,6 @@
 
 #include "vector"
 #include "Airport.h"
-#include "tinyxml.h"
 
 class AirportsimImporter;
 

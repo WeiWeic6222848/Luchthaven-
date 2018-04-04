@@ -18,18 +18,6 @@ public:
     Airplane* _initcheck=NULL;
     int height;
 
-/**
- * ENSURE(ProperInitialized(),"this airplane object failed to Initialize properly");
- * @param status the status of airplane in string.
- * @param passenger amount of passenger aboard
- * @param fuel percentage of fuel remaining in integer
- * @param number uniek number of airplane
- * @param callsign callsign of an airplane
- * @param model model of an airplane
- * @param passengerCapacity Maximum amount of passenger aboard
- */
-    Airplane(const string &status, int passenger, int fuel, const string &number, const string &callsign,
-             const string &model, int passengerCapacity);
 
 /**
  * REQUIRE(ProperInitialized(),"Airplane wasn't initialized when calling getStatus");
@@ -92,10 +80,34 @@ public:
     bool stijgen();
 
 
+
+/**
+ * ENSURE(ProperInitialized(),"this airplane object failed to Initialize properly");
+ * @param status the status of airplane in string.
+ * @param passenger amount of passenger aboard
+ * @param fuel percentage of fuel remaining in integer
+ * @param number uniek number of airplane
+ * @param callsign callsign of an airplane
+ * @param model model of an airplane
+ * @param passengerCapacity Maximum amount of passenger aboard
+ */
+    Airplane(const string &status, int passenger, int fuel, int height, const string &number, const string &callsign,
+             const string &model, const string &type, const string &engine, const string &size, int passengerCapacity);
+
 private:
     string number;
     string callsign;
     string model;
+    string type;
+    string engine;
+    string size;
+
+private:
+public:
+    Airplane(const string &status, int passenger, int fuel, const string &number, const string &callsign,
+             const string &model, const string &type, const string &engine, const string &size, int passengerCapacity);
+
+private:
     int passengerCapacity;
 };
 

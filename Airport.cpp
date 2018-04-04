@@ -16,7 +16,7 @@ Airport::Airport(const string &name, const string &iata, const string &callsign,
     ENSURE(ProperInitialized(),"This airport object failed to Initialize properly");
 }
 
-void Airport::addRunway(Runway *runway) {
+void Airport::addRunway(Runway* runway) {
     REQUIRE(ProperInitialized(),"Airport wasn't initialized when calling addrunway");
     runways.push_back(runway);
     ENSURE(find(getRunways().begin(),getRunways().end(),runway)!=runways.end(),"addrunway postcondition failed");

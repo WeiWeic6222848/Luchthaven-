@@ -10,5 +10,5 @@ Cessna 842 descended to 2.000 ft.
 Cessna 842 descended to 1.000 ft.
 Cessna 842 is landing at Antwerp International Airport on runway 11R
 Cessna 842 has landed at Antwerp International Airport on runway 11R
-Cessna 842 is taxiing to Gate 1
-Cessna 842 is standing at Gate 1
+Cessna 842 is taxiing to Gate 3
+Cessna 842 is standing at Gate 3

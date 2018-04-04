@@ -12,11 +12,18 @@ using namespace std;
 
 class Airport;
 
+enum Runwaytype{asphalt,grass};
+
 class Runway {
     string name;
     Airport* where= NULL;
     Airplane* currentairplane= NULL;
     Runway* _InitCheck;
+    Runwaytype type;
+    int length;
+public:
+    Runway(const string &name, Airport *where, const string& type, int length);
+
 public:
 
 /**

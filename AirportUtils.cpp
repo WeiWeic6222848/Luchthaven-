@@ -7,6 +7,7 @@
 
 #include <fstream>
 #include <cstdlib>
+#include <sstream>
 #include "string"
 #include "AirportUtils.h"
 #include "AirportsimImporter.h"
@@ -44,7 +45,7 @@ Esucces LoadAirport(char const* string, ostream& errStream, Airportsim& sim){
 
 Esucces LoadAirport(int argc,char const* argv[],ostream& errStream,Airportsim& sim){
     Esucces status=Success;
-    for (int i = 0; i < argc; ++i) {
+    for (int i = 1; i < argc; ++i) {
 
         Esucces temp=LoadAirport(argv[i],errStream,sim);
         if (status==Success){
@@ -53,9 +54,70 @@ Esucces LoadAirport(int argc,char const* argv[],ostream& errStream,Airportsim& s
         else if (status==PartialImport){
             if (temp==ImportAborted){
                 status=temp;
+                errStream<<"Load has stopped on the file named "<<argv[i]<<endl;
+                return status;
             }
         }
     }
     return status;
+}
+
+Esucces LoadAirport(int argc, const char **argv, Airportsim &sim, bool testing) {
+    Esucces status=Success;
+    stringstream test;
+    for (int i = 1; i < argc; ++i) {
+
+        Esucces temp=LoadAirport(argv[i],test,sim);
+        if (status==Success){
+            status=temp;
+        }
+        else if (status==PartialImport){
+            if (temp==ImportAborted){
+                status=temp;
+            }
+        }
+        if (status==ImportAborted){
+            test<<"Load has stopped on the file named "<<argv[i]<<endl;
+            break;
+        }
+    }
+    if(testing){
+        ofstream ofile("tester.txt");
+        ofile<<test;
+    }
+    else{
+        cout<<test.str();
+    }
+    return status;
+}
+
+bool isRightAirplaneCombination(string type, string engine, string size) {
+    if (engine=="propeller"){
+        if(size=="small"){
+            return type=="emegenry"||type=="private";
+        }
+        else if (size=="medium"){
+            return type=="airline";
+        }
+        else if (size=="large"){
+            return type=="military";
+        }
+        return false;
+    }
+    else if (engine=="jet"){
+        if(size=="small"){
+            return type=="military"||type=="private";
+        }
+        else if (size=="medium"){
+            return type=="airline"||type=="private";
+        }
+        else if (size=="large"){
+            return type=="airline";
+        }
+        return false;
+    }
+    else{
+        return false;
+    }
 }
 
