@@ -14,7 +14,7 @@ const string &Runway::getName() const {
     return name;
 }
 
-Airport *Runway::Where() const {
+Airport *Runway::location() const {
     REQUIRE(ProperInitialized(),"Runway object wasn't initialized when calling Where");
     return where;
 }
@@ -38,8 +38,8 @@ bool Runway::ProperInitialized() const{
     return _InitCheck==this;
 }
 
-Runway::Runway(const string &name, Airport *where, const string& stringtype, int length) : name(name), where(where),
-                                                                                  length(length) {
+Runway::Runway(const string &name, Airport *where, const string& stringtype, int length,Taxiroute route) : name(name), where(where),
+                                                                                  length(length), taxiroute(route){
     currentairplane= NULL;
     _InitCheck=this;
     if (stringtype=="asphalt"){

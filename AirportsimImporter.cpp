@@ -38,7 +38,8 @@ Esucces AirportsimImporter::importAirportsim(const char *inputfilename, std::ost
 
 
 
-        for (TiXmlElement* childelement=Root->FirstChildElement();childelement!= NULL;childelement=childelement->NextSiblingElement()){ string Elementname=childelement->Value();
+        for (TiXmlElement* childelement=Root->FirstChildElement();childelement!= NULL;childelement=childelement->NextSiblingElement()){
+            string Elementname=childelement->Value();
             if(Elementname=="AIRPORT"){
                 numberofAirport++;
                 if (numberofAirport>1){
@@ -152,12 +153,23 @@ Esucces AirportsimImporter::readRunway(TiXmlElement *runwayelement, std::ostream
     string airportname=runwayelement->FirstChildElement("airport")->GetText();
     string typerunway=runwayelement->FirstChildElement("type")->GetText();
     int length;
-
+    Taxiroute taxiroute;
     try{
         length=stoi(runwayelement->FirstChildElement("length")->GetText());
     }catch (...){
         errStream<<"Runway with name "<<name<< " has a length which is not an integer, skipping this element"<<endl;
         return PartialImport;
+    }
+    if (runwayelement->FirstChild("TAXIROUTE")){
+        for (TiXmlElement* routeElement=runwayelement->FirstChildElement("TAXIROUTE")->FirstChildElement(); routeElement !=NULL ; routeElement=routeElement->NextSiblingElement()) {
+            string elemname=routeElement->Value();
+            if (elemname=="taxipoint"){
+                taxiroute.taxipoint.push_back(routeElement->GetText());
+            }
+            else if (elemname=="crossing"){
+                taxiroute.crossing.push_back(routeElement->GetText());
+            }
+        }
     }
 
     bool airportfound=false;
@@ -169,7 +181,7 @@ Esucces AirportsimImporter::readRunway(TiXmlElement *runwayelement, std::ostream
                     return PartialImport;
                 }
             }
-            Runway* runway=new Runway(name,sim.getAirports()[i],typerunway,length);
+            Runway* runway=new Runway(name,sim.getAirports()[i],typerunway,length,taxiroute);
             sim.getAirports()[i]->addRunway(runway);
             airportfound=true;
         }

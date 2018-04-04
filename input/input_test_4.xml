@@ -1,0 +1,46 @@
+<AirportSim>
+<AIRPORT>
+<name>Antwerp International Airport</name>
+<iata>ANR</iata>
+<callsign>Antwerp Tower</callsign>
+<gates>10</gates>
+</AIRPORT>
+<RUNWAY>
+<name>13R</name>
+<airport>ANR</airport>
+<type>asphalt</type>
+<length>1510</length>
+<TAXIROUTE>
+<taxipoint>Alpha</taxipoint>
+<crossing>11R</crossing>
+<taxipoint>Bravo</taxipoint>
+</TAXIROUTE>
+</RUNWAY>
+<RUNWAY>
+<name>13L</name>
+<airport>ANR</airport>
+<type>grass</type>
+<length>1010</length>
+<TAXIROUTE>
+<taxipoint>Alpha</taxipoint>
+</TAXIROUTE>
+</RUNWAY>
+<AIRPLANE>
+    <number>N11843</number>
+    <callsign>Cessna 842</callsign>
+    <model>Cessna 340</model>
+    <type>private</type>
+    <engine>propeller</engine>
+    <size>small</size>
+    <status>Standing at gate</status>
+</AIRPLANE>
+<AIRPLANE>
+    <number>BAW466</number>
+    <callsign>Speedbird 466</callsign>
+    <model>Boeing 747</model>
+    <type>airline</type>
+    <engine>jet</engine>
+    <size>large</size>
+    <status>Standing at gate</status>
+</AIRPLANE>
+</AirportSim>

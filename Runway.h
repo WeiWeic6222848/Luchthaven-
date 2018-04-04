@@ -14,6 +14,12 @@ class Airport;
 
 enum Runwaytype{asphalt,grass};
 
+class Taxiroute{
+public:
+    vector<string> taxipoint;
+    vector<string> crossing;
+};
+
 class Runway {
     string name;
     Airport* where= NULL;
@@ -21,8 +27,9 @@ class Runway {
     Runway* _InitCheck;
     Runwaytype type;
     int length;
+    Taxiroute taxiroute;
 public:
-    Runway(const string &name, Airport *where, const string& type, int length);
+    Runway(const string &name, Airport *where, const string& type, int length,Taxiroute route);
 
 public:
 
@@ -43,7 +50,7 @@ public:
  * REQUIRE(ProperInitialized(),"Runway object wasn't initialized when calling Where");
  * @return the pointer to where this runway is at
  */
-    Airport *Where() const;
+    Airport *location() const;
 
 /**
  * REQUIRE(ProperInitialized(),"Runway object wasn't initialized when calling getCurrentairplane");
