@@ -6,13 +6,6 @@
 #include "DesignByContract.h"
 
 
-Runway::Runway(const string &name, Airport *where) : name(name), where(where) {
-}
-
-const string &Runway::getName() const {
-    REQUIRE(ProperInitialized(),"Runway object wasn't initialized when calling getName");
-    return name;
-}
 
 Airport *Runway::location() const {
     REQUIRE(ProperInitialized(),"Runway object wasn't initialized when calling Where");
@@ -30,6 +23,13 @@ void Runway::setCurrentairplane(Airplane *currentairplane) {
 
     REQUIRE(ProperInitialized(),"Runway object wasn't initialized when calling setCurrentairplane");
     Runway::currentairplane = currentairplane;
+    if(currentairplane!=NULL){
+        setOnuse(true);
+    }
+    else{
+        setOnuse(false);
+        airplanequeueing--;
+    }
     ENSURE(getCurrentairplane()==currentairplane,"setCurrentairplane postcondition failed");
 }
 
@@ -38,8 +38,25 @@ bool Runway::ProperInitialized() const{
     return _InitCheck==this;
 }
 
-Runway::Runway(const string &name, Airport *where, const string& stringtype, int length,Taxiroute route) : name(name), where(where),
-                                                                                  length(length), taxiroute(route){
+
+Taxipoint *Runway::getTaxipoint() const {
+    return taxipoint;
+}
+
+void Runway::setTaxipoint(Taxipoint *taxipoint) {
+    Runway::taxipoint = taxipoint;
+}
+
+Runwaytype Runway::getType() const {
+    return type;
+}
+
+int Runway::getLength() const {
+    return length;
+}
+
+Runway::Runway(const string &name, Airport *where, string stringtype, int length) : Location(name), where(where),
+                                                                                  length(length) {
     currentairplane= NULL;
     _InitCheck=this;
     if (stringtype=="asphalt"){
@@ -48,7 +65,15 @@ Runway::Runway(const string &name, Airport *where, const string& stringtype, int
     else if (stringtype=="grass"){
         type=grass;
     }
+    airplanequeueing=0;
     ENSURE(ProperInitialized(),"Runway object failed to initialize properly");
+}
 
+void Runway::planeQueued() {
+    airplanequeueing++;
+}
+
+int Runway::getAirplanequeueing() const {
+    return airplanequeueing;
 }
 

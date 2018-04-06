@@ -310,6 +310,33 @@ ImportTest.cpp.s:
 	$(MAKE) -f CMakeFiles/Airport_simulator.dir/build.make CMakeFiles/Airport_simulator.dir/ImportTest.cpp.s
 .PHONY : ImportTest.cpp.s
 
+Location.o: Location.cpp.o
+
+.PHONY : Location.o
+
+# target to build an object file
+Location.cpp.o:
+	$(MAKE) -f CMakeFiles/Airport_simulator.dir/build.make CMakeFiles/Airport_simulator.dir/Location.cpp.o
+.PHONY : Location.cpp.o
+
+Location.i: Location.cpp.i
+
+.PHONY : Location.i
+
+# target to preprocess a source file
+Location.cpp.i:
+	$(MAKE) -f CMakeFiles/Airport_simulator.dir/build.make CMakeFiles/Airport_simulator.dir/Location.cpp.i
+.PHONY : Location.cpp.i
+
+Location.s: Location.cpp.s
+
+.PHONY : Location.s
+
+# target to generate assembly for a file
+Location.cpp.s:
+	$(MAKE) -f CMakeFiles/Airport_simulator.dir/build.make CMakeFiles/Airport_simulator.dir/Location.cpp.s
+.PHONY : Location.cpp.s
+
 Runway.o: Runway.cpp.o
 
 .PHONY : Runway.o
@@ -339,6 +366,60 @@ Runway.cpp.s:
 	$(MAKE) -f CMakeFiles/Airport_simulator_debug.dir/build.make CMakeFiles/Airport_simulator_debug.dir/Runway.cpp.s
 	$(MAKE) -f CMakeFiles/Airport_simulator.dir/build.make CMakeFiles/Airport_simulator.dir/Runway.cpp.s
 .PHONY : Runway.cpp.s
+
+Signaltower.o: Signaltower.cpp.o
+
+.PHONY : Signaltower.o
+
+# target to build an object file
+Signaltower.cpp.o:
+	$(MAKE) -f CMakeFiles/Airport_simulator.dir/build.make CMakeFiles/Airport_simulator.dir/Signaltower.cpp.o
+.PHONY : Signaltower.cpp.o
+
+Signaltower.i: Signaltower.cpp.i
+
+.PHONY : Signaltower.i
+
+# target to preprocess a source file
+Signaltower.cpp.i:
+	$(MAKE) -f CMakeFiles/Airport_simulator.dir/build.make CMakeFiles/Airport_simulator.dir/Signaltower.cpp.i
+.PHONY : Signaltower.cpp.i
+
+Signaltower.s: Signaltower.cpp.s
+
+.PHONY : Signaltower.s
+
+# target to generate assembly for a file
+Signaltower.cpp.s:
+	$(MAKE) -f CMakeFiles/Airport_simulator.dir/build.make CMakeFiles/Airport_simulator.dir/Signaltower.cpp.s
+.PHONY : Signaltower.cpp.s
+
+Taxipoint.o: Taxipoint.cpp.o
+
+.PHONY : Taxipoint.o
+
+# target to build an object file
+Taxipoint.cpp.o:
+	$(MAKE) -f CMakeFiles/Airport_simulator.dir/build.make CMakeFiles/Airport_simulator.dir/Taxipoint.cpp.o
+.PHONY : Taxipoint.cpp.o
+
+Taxipoint.i: Taxipoint.cpp.i
+
+.PHONY : Taxipoint.i
+
+# target to preprocess a source file
+Taxipoint.cpp.i:
+	$(MAKE) -f CMakeFiles/Airport_simulator.dir/build.make CMakeFiles/Airport_simulator.dir/Taxipoint.cpp.i
+.PHONY : Taxipoint.cpp.i
+
+Taxipoint.s: Taxipoint.cpp.s
+
+.PHONY : Taxipoint.s
+
+# target to generate assembly for a file
+Taxipoint.cpp.s:
+	$(MAKE) -f CMakeFiles/Airport_simulator.dir/build.make CMakeFiles/Airport_simulator.dir/Taxipoint.cpp.s
+.PHONY : Taxipoint.cpp.s
 
 main.o: main.cpp.o
 
@@ -572,9 +653,18 @@ help:
 	@echo "... ImportTest.o"
 	@echo "... ImportTest.i"
 	@echo "... ImportTest.s"
+	@echo "... Location.o"
+	@echo "... Location.i"
+	@echo "... Location.s"
 	@echo "... Runway.o"
 	@echo "... Runway.i"
 	@echo "... Runway.s"
+	@echo "... Signaltower.o"
+	@echo "... Signaltower.i"
+	@echo "... Signaltower.s"
+	@echo "... Taxipoint.o"
+	@echo "... Taxipoint.i"
+	@echo "... Taxipoint.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

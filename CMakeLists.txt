@@ -13,7 +13,7 @@ include_directories(gtest/include)
 link_directories(gtest/lib)
 
 # Set source files for RELEASE target
-set(RELEASE_SOURCE_FILES main.cpp tinystr.cpp tinystr.h tinyxml.cpp tinyxml.h tinyxmlerror.cpp Airportsim.cpp Airportsim.h Runway.cpp Runway.h Airplane.cpp Airplane.h Airport.cpp Airport.h tinyxmlparser.cpp DesignByContract.h output_system.cpp output_system.h AirportsimImporter.cpp AirportsimImporter.h ImportTest.cpp AirportUtils.h AirportUtils.cpp)
+set(RELEASE_SOURCE_FILES main.cpp tinystr.cpp tinystr.h tinyxml.cpp tinyxml.h tinyxmlerror.cpp Airportsim.cpp Airportsim.h Runway.cpp Runway.h Airplane.cpp Airplane.h Airport.cpp Airport.h tinyxmlparser.cpp DesignByContract.h output_system.cpp output_system.h AirportsimImporter.cpp AirportsimImporter.h ImportTest.cpp AirportUtils.h AirportUtils.cpp Signaltower.cpp Signaltower.h Location.cpp Location.h Taxipoint.cpp Taxipoint.h)
 
 # Set source files for DEBUG target
 set(DEBUG_SOURCE_FILES test.cpp tinystr.cpp tinystr.h tinyxml.cpp tinyxml.h tinyxmlerror.cpp Airportsim.cpp Airportsim.h Runway.cpp Runway.h Airplane.cpp Airplane.h Airport.cpp Airport.h tinyxmlparser.cpp DesignByContract.h output_system.cpp output_system.h AirportUtils.h AirportUtils.cpp)

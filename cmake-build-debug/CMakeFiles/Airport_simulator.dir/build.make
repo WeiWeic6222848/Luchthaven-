@@ -369,6 +369,78 @@ CMakeFiles/Airport_simulator.dir/AirportUtils.cpp.o.provides: CMakeFiles/Airport
 CMakeFiles/Airport_simulator.dir/AirportUtils.cpp.o.provides.build: CMakeFiles/Airport_simulator.dir/AirportUtils.cpp.o
 
 
+CMakeFiles/Airport_simulator.dir/Signaltower.cpp.o: CMakeFiles/Airport_simulator.dir/flags.make
+CMakeFiles/Airport_simulator.dir/Signaltower.cpp.o: ../Signaltower.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/c6222848/Desktop/Luchthaven/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/Airport_simulator.dir/Signaltower.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Airport_simulator.dir/Signaltower.cpp.o -c /home/c6222848/Desktop/Luchthaven/Signaltower.cpp
+
+CMakeFiles/Airport_simulator.dir/Signaltower.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Airport_simulator.dir/Signaltower.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/c6222848/Desktop/Luchthaven/Signaltower.cpp > CMakeFiles/Airport_simulator.dir/Signaltower.cpp.i
+
+CMakeFiles/Airport_simulator.dir/Signaltower.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Airport_simulator.dir/Signaltower.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/c6222848/Desktop/Luchthaven/Signaltower.cpp -o CMakeFiles/Airport_simulator.dir/Signaltower.cpp.s
+
+CMakeFiles/Airport_simulator.dir/Signaltower.cpp.o.requires:
+
+.PHONY : CMakeFiles/Airport_simulator.dir/Signaltower.cpp.o.requires
+
+CMakeFiles/Airport_simulator.dir/Signaltower.cpp.o.provides: CMakeFiles/Airport_simulator.dir/Signaltower.cpp.o.requires
+	$(MAKE) -f CMakeFiles/Airport_simulator.dir/build.make CMakeFiles/Airport_simulator.dir/Signaltower.cpp.o.provides.build
+.PHONY : CMakeFiles/Airport_simulator.dir/Signaltower.cpp.o.provides
+
+CMakeFiles/Airport_simulator.dir/Signaltower.cpp.o.provides.build: CMakeFiles/Airport_simulator.dir/Signaltower.cpp.o
+
+
+CMakeFiles/Airport_simulator.dir/Location.cpp.o: CMakeFiles/Airport_simulator.dir/flags.make
+CMakeFiles/Airport_simulator.dir/Location.cpp.o: ../Location.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/c6222848/Desktop/Luchthaven/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/Airport_simulator.dir/Location.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Airport_simulator.dir/Location.cpp.o -c /home/c6222848/Desktop/Luchthaven/Location.cpp
+
+CMakeFiles/Airport_simulator.dir/Location.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Airport_simulator.dir/Location.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/c6222848/Desktop/Luchthaven/Location.cpp > CMakeFiles/Airport_simulator.dir/Location.cpp.i
+
+CMakeFiles/Airport_simulator.dir/Location.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Airport_simulator.dir/Location.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/c6222848/Desktop/Luchthaven/Location.cpp -o CMakeFiles/Airport_simulator.dir/Location.cpp.s
+
+CMakeFiles/Airport_simulator.dir/Location.cpp.o.requires:
+
+.PHONY : CMakeFiles/Airport_simulator.dir/Location.cpp.o.requires
+
+CMakeFiles/Airport_simulator.dir/Location.cpp.o.provides: CMakeFiles/Airport_simulator.dir/Location.cpp.o.requires
+	$(MAKE) -f CMakeFiles/Airport_simulator.dir/build.make CMakeFiles/Airport_simulator.dir/Location.cpp.o.provides.build
+.PHONY : CMakeFiles/Airport_simulator.dir/Location.cpp.o.provides
+
+CMakeFiles/Airport_simulator.dir/Location.cpp.o.provides.build: CMakeFiles/Airport_simulator.dir/Location.cpp.o
+
+
+CMakeFiles/Airport_simulator.dir/Taxipoint.cpp.o: CMakeFiles/Airport_simulator.dir/flags.make
+CMakeFiles/Airport_simulator.dir/Taxipoint.cpp.o: ../Taxipoint.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/c6222848/Desktop/Luchthaven/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/Airport_simulator.dir/Taxipoint.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Airport_simulator.dir/Taxipoint.cpp.o -c /home/c6222848/Desktop/Luchthaven/Taxipoint.cpp
+
+CMakeFiles/Airport_simulator.dir/Taxipoint.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Airport_simulator.dir/Taxipoint.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/c6222848/Desktop/Luchthaven/Taxipoint.cpp > CMakeFiles/Airport_simulator.dir/Taxipoint.cpp.i
+
+CMakeFiles/Airport_simulator.dir/Taxipoint.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Airport_simulator.dir/Taxipoint.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/c6222848/Desktop/Luchthaven/Taxipoint.cpp -o CMakeFiles/Airport_simulator.dir/Taxipoint.cpp.s
+
+CMakeFiles/Airport_simulator.dir/Taxipoint.cpp.o.requires:
+
+.PHONY : CMakeFiles/Airport_simulator.dir/Taxipoint.cpp.o.requires
+
+CMakeFiles/Airport_simulator.dir/Taxipoint.cpp.o.provides: CMakeFiles/Airport_simulator.dir/Taxipoint.cpp.o.requires
+	$(MAKE) -f CMakeFiles/Airport_simulator.dir/build.make CMakeFiles/Airport_simulator.dir/Taxipoint.cpp.o.provides.build
+.PHONY : CMakeFiles/Airport_simulator.dir/Taxipoint.cpp.o.provides
+
+CMakeFiles/Airport_simulator.dir/Taxipoint.cpp.o.provides.build: CMakeFiles/Airport_simulator.dir/Taxipoint.cpp.o
+
+
 # Object files for target Airport_simulator
 Airport_simulator_OBJECTS = \
 "CMakeFiles/Airport_simulator.dir/main.cpp.o" \
@@ -383,7 +455,10 @@ Airport_simulator_OBJECTS = \
 "CMakeFiles/Airport_simulator.dir/output_system.cpp.o" \
 "CMakeFiles/Airport_simulator.dir/AirportsimImporter.cpp.o" \
 "CMakeFiles/Airport_simulator.dir/ImportTest.cpp.o" \
-"CMakeFiles/Airport_simulator.dir/AirportUtils.cpp.o"
+"CMakeFiles/Airport_simulator.dir/AirportUtils.cpp.o" \
+"CMakeFiles/Airport_simulator.dir/Signaltower.cpp.o" \
+"CMakeFiles/Airport_simulator.dir/Location.cpp.o" \
+"CMakeFiles/Airport_simulator.dir/Taxipoint.cpp.o"
 
 # External object files for target Airport_simulator
 Airport_simulator_EXTERNAL_OBJECTS =
@@ -401,9 +476,12 @@ Airport_simulator: CMakeFiles/Airport_simulator.dir/output_system.cpp.o
 Airport_simulator: CMakeFiles/Airport_simulator.dir/AirportsimImporter.cpp.o
 Airport_simulator: CMakeFiles/Airport_simulator.dir/ImportTest.cpp.o
 Airport_simulator: CMakeFiles/Airport_simulator.dir/AirportUtils.cpp.o
+Airport_simulator: CMakeFiles/Airport_simulator.dir/Signaltower.cpp.o
+Airport_simulator: CMakeFiles/Airport_simulator.dir/Location.cpp.o
+Airport_simulator: CMakeFiles/Airport_simulator.dir/Taxipoint.cpp.o
 Airport_simulator: CMakeFiles/Airport_simulator.dir/build.make
 Airport_simulator: CMakeFiles/Airport_simulator.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/c6222848/Desktop/Luchthaven/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX executable Airport_simulator"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/c6222848/Desktop/Luchthaven/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Linking CXX executable Airport_simulator"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Airport_simulator.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -424,6 +502,9 @@ CMakeFiles/Airport_simulator.dir/requires: CMakeFiles/Airport_simulator.dir/outp
 CMakeFiles/Airport_simulator.dir/requires: CMakeFiles/Airport_simulator.dir/AirportsimImporter.cpp.o.requires
 CMakeFiles/Airport_simulator.dir/requires: CMakeFiles/Airport_simulator.dir/ImportTest.cpp.o.requires
 CMakeFiles/Airport_simulator.dir/requires: CMakeFiles/Airport_simulator.dir/AirportUtils.cpp.o.requires
+CMakeFiles/Airport_simulator.dir/requires: CMakeFiles/Airport_simulator.dir/Signaltower.cpp.o.requires
+CMakeFiles/Airport_simulator.dir/requires: CMakeFiles/Airport_simulator.dir/Location.cpp.o.requires
+CMakeFiles/Airport_simulator.dir/requires: CMakeFiles/Airport_simulator.dir/Taxipoint.cpp.o.requires
 
 .PHONY : CMakeFiles/Airport_simulator.dir/requires
 

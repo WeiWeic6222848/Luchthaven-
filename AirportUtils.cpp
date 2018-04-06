@@ -121,3 +121,25 @@ bool isRightAirplaneCombination(string type, string engine, string size) {
     }
 }
 
+bool airplaneCanLandOnGrass(Airplane *airplane) {
+    return airplane->getEngine()=="propeller"&&airplane->getSize()=="small";
+}
+
+int requiredLengthOfRunway(Airplane *airplane) {
+    string size=airplane->getSize();
+    int length=0;
+    if(size=="small"){
+        length=500;
+    }
+    else if(size=="medium"){
+        length=1000;
+    }
+    else if (size=="large"){
+        length=1500;
+    }
+    if(airplane->getEngine()=="jet"){
+        length*=2;
+    }
+    return length;
+}
+

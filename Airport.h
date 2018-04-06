@@ -9,10 +9,20 @@
 #include <map>
 #include "string"
 #include "Runway.h"
+#include "Signaltower.h"
+#include "Taxipoint.h"
+
 using namespace std;
 
 class Airplane;
 class Runway;
+class Signaltower;
+class Taxipoint;
+
+
+
+
+
 
 class Airport {
 private:
@@ -22,18 +32,14 @@ private:
     map<int,Airplane*> gates;
     int passengers;
     vector<Runway*> runways;
-    vector<Airplane*> relatedplanes;
+    vector<Taxipoint*> taxipoints;
     Airport* _InitCheck;
-
-/**
- * REQUIRE(airport.ProperInitialized(),"Airport wasn't initialized when getting output");
- * @param output the outputstream that this function has to edit
- * @param airport reference to output
- * @return an edited outputstream
- */
-    friend std::ostream& operator<<(std::ostream& output,Airport& airport);
-
+    vector<Airplane*> catched_airplane;
+    Signaltower* tower;
 public:
+    Signaltower &getTower() ;
+
+    friend std::ostream& operator<<(std::ostream& output,Airport& airport);
 
 /**
  * ENSURE(ProperInitialized(),"This airport object failed to Initialize properly");
@@ -80,7 +86,7 @@ public:
  * REQUIRE(ProperInitialized(),"Airport wasn't initialized when calling getGates");
  * @return all the gates information with the current airplane on the gate information
  */
-    const map<int, Airplane *> &getGates() const;
+    //const map<int, Airplane *> &getGates() const;
 
 /**
  * REQUIRE(ProperInitialized(),"Airport wasn't initialized when calling getRunways");
@@ -137,32 +143,27 @@ public:
     int getGateFromAirplane(Airplane* plane);
 
 /**
- * REQUIRE(ProperInitialized(),"Airport wasn't initialized when calling setGates");
- * ENSURE(gates[gate]==&plane,"setGate postcondition failed");
- * has the same functionality as parkAirplaneso it has never been used;
- */
-//   void setGates(int gate,Airplane& plane);
-
-/**
  * REQUIRE(ProperInitialized(),"Airport wasn't initialized when calling freeGate");
  * ENSURE(gates[gate]==NULL,"freeGate postcondition failed");
  * @param gate gate to free
  */
     void freeGate(int  gate);
 
-/**
- * REQUIRE(ProperInitialized(),"Airport wasn't initialized when calling addAirplane");
- * REQUIRE(find(relatedplanes.begin(),relatedplanes.end(),plane)==relatedplanes.end(),"The giving plane shouldn't be related to the airport already");
- * ENSURE(find(relatedplanes.begin(),relatedplanes.end(),plane)!=relatedplanes.end(),"addAirplanes postcondition failed");
- * @param plane plane to add
- */
-    void addAirplane(Airplane* plane);
+    Runway* findRunway (const string& name);
 
-/**
- * REQUIRE(ProperInitialized(),"Airport wasn't initialized when calling getRelatedplanes");
- * @return vector of airplanes related to this airport, needed to simulate
- */
-    const vector<Airplane *> &getRelatedplanes() const;
+    Taxipoint* findTaxipoint (const string& name);
+
+    Runway* findFreeRunway (Airplane* airplane);
+
+    void addTaxipoints(Taxipoint* taxipoint);
+
+    const vector<Taxipoint*> &getTaxipoints() const;
+
+    void receiveSignal(Airplane* airplane,string signal);
+
+    void addPassenger(int a);
+
+    void removePassenger(int a);
 };
 
 

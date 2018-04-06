@@ -179,12 +179,30 @@
 		<Unit filename="/home/c6222848/Desktop/Luchthaven/ImportTest.cpp">
 			<Option target="Airport_simulator"/>
 		</Unit>
+		<Unit filename="/home/c6222848/Desktop/Luchthaven/Location.cpp">
+			<Option target="Airport_simulator"/>
+		</Unit>
+		<Unit filename="/home/c6222848/Desktop/Luchthaven/Location.h">
+			<Option target="Airport_simulator"/>
+		</Unit>
 		<Unit filename="/home/c6222848/Desktop/Luchthaven/Runway.cpp">
 			<Option target="Airport_simulator_debug"/>
 			<Option target="Airport_simulator"/>
 		</Unit>
 		<Unit filename="/home/c6222848/Desktop/Luchthaven/Runway.h">
 			<Option target="Airport_simulator_debug"/>
+			<Option target="Airport_simulator"/>
+		</Unit>
+		<Unit filename="/home/c6222848/Desktop/Luchthaven/Signaltower.cpp">
+			<Option target="Airport_simulator"/>
+		</Unit>
+		<Unit filename="/home/c6222848/Desktop/Luchthaven/Signaltower.h">
+			<Option target="Airport_simulator"/>
+		</Unit>
+		<Unit filename="/home/c6222848/Desktop/Luchthaven/Taxipoint.cpp">
+			<Option target="Airport_simulator"/>
+		</Unit>
+		<Unit filename="/home/c6222848/Desktop/Luchthaven/Taxipoint.h">
 			<Option target="Airport_simulator"/>
 		</Unit>
 		<Unit filename="/home/c6222848/Desktop/Luchthaven/main.cpp">

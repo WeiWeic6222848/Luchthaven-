@@ -4,7 +4,8 @@
 
 #include "Airplane.h"
 #include "DesignByContract.h"
-
+#include "algorithm"
+#include "AirportUtils.h"
 
 const string &Airplane::getStatus() const {
     REQUIRE(ProperInitialized(),"Airplane wasn't initialized when calling getStatus");
@@ -48,6 +49,9 @@ std::ostream& operator<<(std::ostream& output,Airplane& airplane){
     REQUIRE(airplane.ProperInitialized(),"Airplane wasn't initialized when getting output");
     output<<"Airplane: "<<airplane.getCallsign()<<" ("<<airplane.getNumber()<<")"<<std::endl;
     output<<" -> model: "<<airplane.getModel()<<endl;
+    output<<" -> type: "<<airplane.getType()<<endl;
+    output<<" -> engine: "<<airplane.getEngine()<<endl;
+    output<<" -> size: "<<airplane.getSize()<<endl;
     return output;
 }
 
@@ -62,44 +66,135 @@ bool Airplane::ProperInitialized() const {
     return _initcheck==this;
 }
 
-bool Airplane::dalen() {
-    REQUIRE(height>=1000,"vliegtuig is te laag!");
-    height-=1000;
+bool Airplane::fall() {
+    REQUIRE(height >= 1000, "vliegtuig is te laag!");
+    //if(height>stoi(permission)){
+    height -= 1000;
     return true;
+    //}
+    //else{
+        return false;
+    //}
 }
 
-bool Airplane::stijgen() {
+bool Airplane::rise() {
     //REQUIRE(signal)
+    height+=1000;
     return true;
 }
 
-Airplane::Airplane(const string &status, int passenger, int fuel, int height, const string &number,
-                   const string &callsign, const string &model, const string &type, const string &engine,
-                   const string &size, int passengerCapacity) : status(status), passenger(passenger), fuel(fuel),
-                                                                height(height), number(number), callsign(callsign),
-                                                                model(model), type(type), engine(engine), size(size),
-                                                                passengerCapacity(passengerCapacity) {
+void Airplane::setPassenger(int passenger) {
+    Airplane::passenger = passenger;
+}
+
+void Airplane::setFuel(int fuel) {
+    Airplane::fuel = fuel;
+}
+
+int Airplane::getHeight() const {
+    return height;
+}
+
+const string &Airplane::getType() const {
+    return type;
+}
+
+const string &Airplane::getEngine() const {
+    return engine;
+}
+
+const string &Airplane::getSize() const {
+    return size;
+}
+
+Airport *Airplane::getDestination() const {
+    return destination;
+}
+
+void Airplane::setDestination(Airport *destination) {
+    Airplane::destination = destination;
+}
+
+void Airplane::setPermission(string descendingpermission) {
+    Airplane::permission = descendingpermission;
+}
+
+void Airplane::sendSignalApproaching() {
+    destination->receiveSignal(this,"Approaching");
+}
+
+void Airplane::sendSignalLeaving() {
+    destination->receiveSignal(this,"Leaving");
+}
+
+void Airplane::sendSignalTaxiingtoGate() {
+    destination->receiveSignal(this,"ApproachingtoGate");
+}
+
+void Airplane::sendSignalTaxiingtoRunway() {
+    destination->receiveSignal(this,"LeavingtoRunway");
+}
+
+void Airplane::sendSignalEmergency() {
+    destination->receiveSignal(this,"Emergency");
+}
+
+void Airplane::setLocation(Location *location) {
+    Airplane::location = location;
+}
+
+Airplane::Airplane(const string &status, const string &number, const string &callsign, const string &model,
+                   const string &type, const string &engine, const string &size, int passenger, int fuel,
+                   int passengerCapacity, Airport *destination) : number(number), callsign(callsign),
+                                                                  model(model), type(type), engine(engine), size(size),
+                                                                  passenger(passenger), fuel(fuel),
+                                                                  passengerCapacity(passengerCapacity),
+                                                                  destination(destination) {
+    REQUIRE(find(allowedstatus.begin(),allowedstatus.end(),status)!=allowedstatus.end(),"a wrong status string has been passed to the initiator of the airplane");
+    Airplane::status=status;
     _initcheck=this;
     if (status=="Approaching"){
         height=10000;
+        checkprocedure="";
     }
     else{
         height=0;
+        checkprocedure="";
     }
     ENSURE(ProperInitialized(),"this airplane object failed to Initialize properly");
 }
 
-Airplane::Airplane(const string &status, int passenger, int fuel, const string &number, const string &callsign,
-                   const string &model, const string &type, const string &engine, const string &size,
-                   int passengerCapacity) : status(status), passenger(passenger), fuel(fuel), number(number),
-                                            callsign(callsign), model(model), type(type), engine(engine), size(size),
-                                            passengerCapacity(passengerCapacity) {
-    _initcheck=this;
-    if (status=="Approaching"){
-        height=10000;
+const string &Airplane::getPermission() const {
+    return permission;
+}
+
+Location *Airplane::getLocation() const {
+    return location;
+}
+
+Runway *Airplane::getDestinaterunway() const {
+    return destinaterunway;
+}
+
+void Airplane::setDestinaterunway(Runway *destinaterunway) {
+    Airplane::destinaterunway = destinaterunway;
+}
+
+void Airplane::progressCheck() {
+    if(checkprocedure==""){
+        checkprocedure="Technical control";
     }
-    else{
-        height=0;
+    else if(checkprocedure=="Technical control"){
+        checkprocedure="Refueling";
     }
-    ENSURE(ProperInitialized(),"this airplane object failed to Initialize properly");
+    else if(checkprocedure=="Refueling"){
+        checkprocedure="Ready to leave";
+    }
+    else if(checkprocedure=="Ready to leave"){
+        checkprocedure="";
+    }
+}
+
+const string &Airplane::getCheckprocedure() const {
+    return checkprocedure;
 }

@@ -7,45 +7,26 @@
 
 #include "string"
 #include "Airplane.h"
-#include "Airport.h"
+#include "Location.h"
 using namespace std;
 
+class Airplane;
 class Airport;
+class Taxipoint;
 
-enum Runwaytype{asphalt,grass};
+enum Runwaytype{ asphalt,grass};
 
-class Taxiroute{
-public:
-    vector<string> taxipoint;
-    vector<string> crossing;
-};
 
-class Runway {
-    string name;
+class Runway: public Location {
+    Runway* _InitCheck;
     Airport* where= NULL;
     Airplane* currentairplane= NULL;
-    Runway* _InitCheck;
     Runwaytype type;
     int length;
-    Taxiroute taxiroute;
+    Taxipoint* taxipoint=NULL;
+    int airplanequeueing;
 public:
-    Runway(const string &name, Airport *where, const string& type, int length,Taxiroute route);
-
-public:
-
-/**
- * ENSURE(ProperInitialized(),"Runway object failed to initialize properly");
- * @param name unique name of the runway
- * @param where at which airport is this runway
- */
-    Runway(const string &name, Airport *where);
-
-/**
- * REQUIRE(ProperInitialized(),"Runway object wasn't initialized when calling getName");
- * @return the name of this runway
- */
-    const string &getName() const;
-
+    Runway(const string &name, Airport *where, string stringtype, int length);
 /**
  * REQUIRE(ProperInitialized(),"Runway object wasn't initialized when calling Where");
  * @return the pointer to where this runway is at
@@ -70,6 +51,18 @@ public:
  * @return Boolean value of whether or not this object is being initialized and not being copied from other object;
  */
     bool ProperInitialized()const;
+
+    Taxipoint *getTaxipoint() const;
+
+    void setTaxipoint(Taxipoint *taxipoint);
+
+    Runwaytype getType() const;
+
+    int getLength() const;
+
+    void planeQueued();
+
+    int getAirplanequeueing() const;
 };
 
 

@@ -7,18 +7,45 @@
 
 #include "string"
 #include <iostream>
+#include <vector>
+#include "list"
+#include "Airport.h"
+
+class Airport;
+class Location;
+class Runway;
+
 using namespace std;
 
 
+static string allowedstatusprepare[]={"Standing at gate","Approaching","Leaving","Taxiing to runway","Taxiing to gate","jobsdone"};
+static vector<string> allowedstatus(allowedstatusprepare, allowedstatusprepare+sizeof(allowedstatusprepare)/ sizeof(allowedstatusprepare[0]));
+
 class Airplane {
-public:
+private:
+    Airplane* _initcheck=NULL;
     string status;
+    string number;
+    string callsign;
+    string model;
+    string type;
+    string engine;
+    string size;
     int passenger;
     int fuel;
-    Airplane* _initcheck=NULL;
     int height;
+    int passengerCapacity;
+    string permission;
+    Airport* destination=NULL;
+    Location* location=NULL;
+    Runway* destinaterunway=NULL;
+    string checkprocedure;
+public:
+    Runway *getDestinaterunway() const;
 
+    void setDestinaterunway(Runway *destinaterunway);
 
+public:
 /**
  * REQUIRE(ProperInitialized(),"Airplane wasn't initialized when calling getStatus");
  */
@@ -75,40 +102,52 @@ public:
  */
     bool ProperInitialized() const;
 
-    bool dalen();
+    bool fall();
 
-    bool stijgen();
+    bool rise();
 
 
+    int getHeight() const;
 
-/**
- * ENSURE(ProperInitialized(),"this airplane object failed to Initialize properly");
- * @param status the status of airplane in string.
- * @param passenger amount of passenger aboard
- * @param fuel percentage of fuel remaining in integer
- * @param number uniek number of airplane
- * @param callsign callsign of an airplane
- * @param model model of an airplane
- * @param passengerCapacity Maximum amount of passenger aboard
- */
-    Airplane(const string &status, int passenger, int fuel, int height, const string &number, const string &callsign,
-             const string &model, const string &type, const string &engine, const string &size, int passengerCapacity);
+    const string &getType() const;
 
-private:
-    string number;
-    string callsign;
-    string model;
-    string type;
-    string engine;
-    string size;
+    const string &getEngine() const;
 
-private:
-public:
-    Airplane(const string &status, int passenger, int fuel, const string &number, const string &callsign,
-             const string &model, const string &type, const string &engine, const string &size, int passengerCapacity);
+    const string &getSize() const;
 
-private:
-    int passengerCapacity;
+    void setPermission(string descendingpermission);
+
+    void setPassenger(int passenger);
+
+    void setFuel(int fuel);
+
+    Airplane(const string &status, const string &number, const string &callsign, const string &model,
+             const string &type, const string &engine, const string &size, int passenger, int fuel,
+             int passengerCapacity, Airport *destination);
+
+    Airport *getDestination() const;
+
+    const string &getPermission() const;
+
+    Location *getLocation() const;
+
+    void setDestination(Airport *destination);
+
+    void setLocation(Location *location);
+
+    void sendSignalApproaching();
+
+    void sendSignalLeaving();
+
+    void sendSignalTaxiingtoGate();
+
+    void sendSignalTaxiingtoRunway();
+
+    void sendSignalEmergency();
+
+    void progressCheck();
+
+    const string &getCheckprocedure() const;
 };
 
 

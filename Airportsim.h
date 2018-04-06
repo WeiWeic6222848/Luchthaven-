@@ -52,14 +52,14 @@ public:
  * @param iata unique iata of the airport to find
  * @return the found airport or NULL if not found
  */
-    const Airport* findAirport(const string& iata);
+    Airport* findAirport(const string& iata);
 
 /**
  * REQUIRE(ProperInitialized(),"Airportsim object wasn't initialized when calling findairplane");
  * @param number unique number of the airplane to find
  * @return the found airplane or NULL if not found
  */
-    const Airplane* findAirplane(const string& number);
+    Airplane* findAirplane(const string& number);
 
 /**
  * REQUIRE(ProperInitialized(),"Airportsim object wasn't initialized when calling findrunway");
@@ -67,7 +67,8 @@ public:
  * @param iata unique iata of the airport that the runway is at;
  * @return the found runway or NULL if either airport or runway is not found
  */
-    const Runway* findRunway(const string&number,const string& iata);
+
+    Runway* findRunway(const string&number,const string& iata);
 
 /**
  * REQUIRE(ProperInitialized(),"Airportsim object wasn't initialized when calling getAirports");
@@ -88,7 +89,7 @@ public:
  * @param aproaching the landing airplane
  * @param airport the airport to land
  */
-    void landing(Airplane& aproaching, Airport& airport);
+    void landing(Airplane& approaching, Airport& airport);
 
 /**
  * REQUIRE(ProperInitialized(),"Airportsim object wasn't initialized when calling takingOff");
@@ -97,7 +98,7 @@ public:
  * @param aproaching the leaving airplane
  * @param airport the airport to leave
  */
-    void takingOff(Airplane& aproaching, Airport& airport);
+    void takingOff(Airplane& leaving, Airport& airport);
 
 /**
  *
@@ -124,7 +125,18 @@ public:
 
     Airportsim();
     //future functions
-    //void Simulate();
+    void Simulate();
+
+    void landingstep(Airplane& approaching, Airport& airport);
+
+    void airplaneAtGatestep(Airplane& plane,Airport& airport);
+
+    void taxiingToGatestep(Airplane& taxiingplane,Airport& airport);
+
+    void taxiingToRunwaystep(Airplane& taxiingplane,Airport& airport);
+
+    void leavingstep(Airplane& leaving, Airport& airport);
+
 };
 
 

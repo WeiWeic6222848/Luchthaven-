@@ -16,4 +16,6 @@ Esucces LoadAirport(char const* string, ostream& errStream, Airportsim& sim);
 Esucces LoadAirport(int argc,char const* argv[],ostream& errStream,Airportsim& sim);
 Esucces LoadAirport(int argc,char const* argv[],Airportsim& sim,bool testing=false);
 bool isRightAirplaneCombination(string type, string engine, string size);
+bool airplaneCanLandOnGrass(Airplane* airplane);
+int requiredLengthOfRunway(Airplane* airplane);
 #endif //LUCHTHAVEN_AIRPORTUTILS_H

@@ -153,23 +153,13 @@ Esucces AirportsimImporter::readRunway(TiXmlElement *runwayelement, std::ostream
     string airportname=runwayelement->FirstChildElement("airport")->GetText();
     string typerunway=runwayelement->FirstChildElement("type")->GetText();
     int length;
-    Taxiroute taxiroute;
+    Taxipoint* pointofthisrunway= NULL;
+    Airport* airportofthisrunway;
     try{
         length=stoi(runwayelement->FirstChildElement("length")->GetText());
     }catch (...){
         errStream<<"Runway with name "<<name<< " has a length which is not an integer, skipping this element"<<endl;
         return PartialImport;
-    }
-    if (runwayelement->FirstChild("TAXIROUTE")){
-        for (TiXmlElement* routeElement=runwayelement->FirstChildElement("TAXIROUTE")->FirstChildElement(); routeElement !=NULL ; routeElement=routeElement->NextSiblingElement()) {
-            string elemname=routeElement->Value();
-            if (elemname=="taxipoint"){
-                taxiroute.taxipoint.push_back(routeElement->GetText());
-            }
-            else if (elemname=="crossing"){
-                taxiroute.crossing.push_back(routeElement->GetText());
-            }
-        }
     }
 
     bool airportfound=false;
@@ -181,15 +171,56 @@ Esucces AirportsimImporter::readRunway(TiXmlElement *runwayelement, std::ostream
                     return PartialImport;
                 }
             }
-            Runway* runway=new Runway(name,sim.getAirports()[i],typerunway,length,taxiroute);
-            sim.getAirports()[i]->addRunway(runway);
             airportfound=true;
+            airportofthisrunway=sim.getAirports()[i];
         }
     }
+
     if(!(airportfound)){
         errStream<<"cannot find airpont: "<<airportname<<" for the runway with name:"<<name<<endl;
         errStream<<airport->getName()<<" got removed from airportslist beacause of inconsistency"<<endl;
         return ImportAborted;
+    }
+    else{
+        Runway* runway=new Runway(name,airportofthisrunway,typerunway,length);
+
+
+        //**************************************************************************** Taxipoint reading********************************************//
+        if (runwayelement->FirstChild("TAXIROUTE")){
+            TiXmlElement* routeelement=runwayelement->FirstChildElement("TAXIROUTE");
+            if(routeelement->LastChild("taxipoint")){
+                pointofthisrunway=new Taxipoint(routeelement->LastChild("taxipoint")->ToElement()->GetText(),runway);
+            }
+            else{
+                errStream<<"TAXIROUTE of runway "<<name<< " doesn't contain any taxipoint!"<<endl;
+                delete(runway);
+                return PartialImport;
+            }
+            if (routeelement->FirstChildElement()->GetText()!=pointofthisrunway->getName()){
+                for (TiXmlElement* locationElement=routeelement->FirstChildElement(); locationElement !=routeelement->LastChild("taxipoint")->ToElement() ; locationElement=locationElement->NextSiblingElement()) {
+                    string elemname=locationElement->Value();
+                    if(elemname=="crossing"){
+                        Location* location=airportofthisrunway->findRunway(locationElement->GetText());
+                        pointofthisrunway->addCrossingToRoute(location);
+                    }
+                    else if (elemname=="taxipoint"){
+                        Location* location=airportofthisrunway->findTaxipoint(locationElement->GetText());
+                        pointofthisrunway->addCrossingToRoute(location);
+                    }
+                }
+            }
+            pointofthisrunway->setRunwayonpoint(runway);
+            airportofthisrunway->addTaxipoints(pointofthisrunway);
+            runway->setTaxipoint(pointofthisrunway);
+            for (unsigned int i = 0; i < pointofthisrunway->getRoute().size(); ++i) {
+                runway->addCrossingToRoute(pointofthisrunway->getRoute()[i]);
+            }
+            runway->addCrossingToRoute(pointofthisrunway);
+        }
+        //**************************************************************************** Taxipoint reading********************************************//
+
+
+        airportofthisrunway->addRunway(runway);
     }
     return Success;
 }
@@ -247,7 +278,7 @@ Esucces AirportsimImporter::readAirplane(TiXmlElement *airplaneelement, std::ost
             return PartialImport;
         }
     }
-    Airplane* a=new Airplane(status,passenger,fuel,number,callsign,model,type,engine,size,passengercapacity);
+    Airplane* a=new Airplane(status,number,callsign,model,type,engine,size,passenger,fuel,passengercapacity,airport);
     sim.addAirplane(a);
 
     if (status=="Standing at gate"){
@@ -262,7 +293,15 @@ Esucces AirportsimImporter::readAirplane(TiXmlElement *airplaneelement, std::ost
             airport->parkAirplane(gateforairplane,a);
         }
     }
-    airport->addAirplane(a);
+
     return Success;
 }
+
+Esucces AirportsimImporter::readTaxiroute(TiXmlElement *routeelement, std::ostream &errStream, Runway &runway,
+                                          Airport *&airport) {
+
+    return Success;
+}
+
+
 
