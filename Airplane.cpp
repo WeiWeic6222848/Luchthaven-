@@ -119,24 +119,24 @@ void Airplane::setPermission(string descendingpermission) {
     Airplane::permission = descendingpermission;
 }
 
-void Airplane::sendSignalApproaching() {
-    destination->receiveSignal(this,"Approaching");
+bool Airplane::sendSignalApproaching() {
+    return destination->receiveSignal(this,"Approaching");
 }
 
-void Airplane::sendSignalLeaving() {
-    destination->receiveSignal(this,"Leaving");
+bool Airplane::sendSignalLeaving() {
+    return destination->receiveSignal(this,"Leaving");
 }
 
-void Airplane::sendSignalTaxiingtoGate() {
-    destination->receiveSignal(this,"ApproachingtoGate");
+bool Airplane::sendSignalTaxiingtoGate() {
+    return destination->receiveSignal(this,"ApproachingtoGate");
 }
 
-void Airplane::sendSignalTaxiingtoRunway() {
-    destination->receiveSignal(this,"LeavingtoRunway");
+bool Airplane::sendSignalTaxiingtoRunway() {
+    return destination->receiveSignal(this,"LeavingtoRunway");
 }
 
-void Airplane::sendSignalEmergency() {
-    destination->receiveSignal(this,"Emergency");
+bool Airplane::sendSignalEmergency() {
+    return destination->receiveSignal(this,"Emergency");
 }
 
 void Airplane::setLocation(Location *location) {
@@ -197,4 +197,16 @@ void Airplane::progressCheck() {
 
 const string &Airplane::getCheckprocedure() const {
     return checkprocedure;
+}
+
+Location *Airplane::getNextLocation() const {
+    return nextLocation;
+}
+
+void Airplane::setNextLocation(Location *nextLocation) {
+    Airplane::nextLocation = nextLocation;
+}
+
+bool Airplane::sendSignalPushBack() {
+    return destination->receiveSignal(this,"Push back");
 }

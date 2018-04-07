@@ -41,8 +41,6 @@ algorithm
 /home/c6222848/Desktop/Luchthaven/algorithm
 AirportUtils.h
 /home/c6222848/Desktop/Luchthaven/AirportUtils.h
-math.h
-/home/c6222848/Desktop/Luchthaven/math.h
 
 /home/c6222848/Desktop/Luchthaven/Airport.h
 vector
@@ -57,6 +55,8 @@ Signaltower.h
 /home/c6222848/Desktop/Luchthaven/Signaltower.h
 Taxipoint.h
 /home/c6222848/Desktop/Luchthaven/Taxipoint.h
+Gate.h
+/home/c6222848/Desktop/Luchthaven/Gate.h
 
 /home/c6222848/Desktop/Luchthaven/AirportUtils.cpp
 fstream
@@ -118,6 +118,14 @@ tinyxml.h
 assert.h
 -
 
+/home/c6222848/Desktop/Luchthaven/Gate.cpp
+Gate.h
+/home/c6222848/Desktop/Luchthaven/Gate.h
+
+/home/c6222848/Desktop/Luchthaven/Gate.h
+Location.h
+/home/c6222848/Desktop/Luchthaven/Location.h
+
 /home/c6222848/Desktop/Luchthaven/ImportTest.cpp
 
 /home/c6222848/Desktop/Luchthaven/Location.cpp
@@ -145,6 +153,8 @@ Location.h
 /home/c6222848/Desktop/Luchthaven/Location.h
 
 /home/c6222848/Desktop/Luchthaven/Signaltower.cpp
+fstream
+-
 Signaltower.h
 /home/c6222848/Desktop/Luchthaven/Signaltower.h
 algorithm
@@ -157,6 +167,8 @@ vector
 /home/c6222848/Desktop/Luchthaven/vector
 Airport.h
 /home/c6222848/Desktop/Luchthaven/Airport.h
+fstream
+/home/c6222848/Desktop/Luchthaven/fstream
 
 /home/c6222848/Desktop/Luchthaven/Taxipoint.cpp
 Taxipoint.h

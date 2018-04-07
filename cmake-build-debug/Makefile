@@ -283,6 +283,33 @@ AirportsimImporter.cpp.s:
 	$(MAKE) -f CMakeFiles/Airport_simulator.dir/build.make CMakeFiles/Airport_simulator.dir/AirportsimImporter.cpp.s
 .PHONY : AirportsimImporter.cpp.s
 
+Gate.o: Gate.cpp.o
+
+.PHONY : Gate.o
+
+# target to build an object file
+Gate.cpp.o:
+	$(MAKE) -f CMakeFiles/Airport_simulator.dir/build.make CMakeFiles/Airport_simulator.dir/Gate.cpp.o
+.PHONY : Gate.cpp.o
+
+Gate.i: Gate.cpp.i
+
+.PHONY : Gate.i
+
+# target to preprocess a source file
+Gate.cpp.i:
+	$(MAKE) -f CMakeFiles/Airport_simulator.dir/build.make CMakeFiles/Airport_simulator.dir/Gate.cpp.i
+.PHONY : Gate.cpp.i
+
+Gate.s: Gate.cpp.s
+
+.PHONY : Gate.s
+
+# target to generate assembly for a file
+Gate.cpp.s:
+	$(MAKE) -f CMakeFiles/Airport_simulator.dir/build.make CMakeFiles/Airport_simulator.dir/Gate.cpp.s
+.PHONY : Gate.cpp.s
+
 ImportTest.o: ImportTest.cpp.o
 
 .PHONY : ImportTest.o
@@ -650,6 +677,9 @@ help:
 	@echo "... AirportsimImporter.o"
 	@echo "... AirportsimImporter.i"
 	@echo "... AirportsimImporter.s"
+	@echo "... Gate.o"
+	@echo "... Gate.i"
+	@echo "... Gate.s"
 	@echo "... ImportTest.o"
 	@echo "... ImportTest.i"
 	@echo "... ImportTest.s"

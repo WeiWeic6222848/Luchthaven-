@@ -18,4 +18,5 @@ Esucces LoadAirport(int argc,char const* argv[],Airportsim& sim,bool testing=fal
 bool isRightAirplaneCombination(string type, string engine, string size);
 bool airplaneCanLandOnGrass(Airplane* airplane);
 int requiredLengthOfRunway(Airplane* airplane);
+string to_string(int integer);
 #endif //LUCHTHAVEN_AIRPORTUTILS_H

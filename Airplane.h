@@ -38,6 +38,13 @@ private:
     string permission;
     Airport* destination=NULL;
     Location* location=NULL;
+    Location* nextLocation=NULL;
+public:
+    Location *getNextLocation() const;
+
+    void setNextLocation(Location *nextLocation);
+
+private:
     Runway* destinaterunway=NULL;
     string checkprocedure;
 public:
@@ -135,15 +142,17 @@ public:
 
     void setLocation(Location *location);
 
-    void sendSignalApproaching();
+    bool sendSignalApproaching();
 
-    void sendSignalLeaving();
+    bool sendSignalLeaving();
 
-    void sendSignalTaxiingtoGate();
+    bool sendSignalTaxiingtoGate();
 
-    void sendSignalTaxiingtoRunway();
+    bool sendSignalTaxiingtoRunway();
 
-    void sendSignalEmergency();
+    bool sendSignalEmergency();
+
+    bool sendSignalPushBack();
 
     void progressCheck();
 

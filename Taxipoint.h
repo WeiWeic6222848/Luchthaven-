@@ -24,6 +24,10 @@ public:
     void addPlanesWaiting(Airplane* airplane);
 
     const vector<Airplane *> &getPlanesWaitingForRunway() const;
+
+    bool isTaxipoint();
+
+    virtual ~Taxipoint();
 };
 
 #endif //LUCHTHAVEN_TAXIPOINT_H

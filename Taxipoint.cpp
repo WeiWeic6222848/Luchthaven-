@@ -23,3 +23,11 @@ const vector<Airplane *> &Taxipoint::getPlanesWaitingForRunway() const {
     return planesWaitingForRunway;
 }
 
+bool Taxipoint::isTaxipoint() {
+    return true;
+}
+
+Taxipoint::~Taxipoint() {
+
+}
+

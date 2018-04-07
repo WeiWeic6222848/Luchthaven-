@@ -9,6 +9,7 @@
 #include "Airplane.h"
 #include "vector"
 #include "Airport.h"
+#include "fstream"
 using namespace std;
 
 class Airplane;
@@ -24,11 +25,14 @@ private:
     Airport* airport;
     vector<Airplane*> allflyingplanes();
     vector<Airplane*> allgroundplanes();
+    ofstream file;
+    int time;
 public:
     Signaltower(Airport *airport);
 
-    void receiveSignal(Airplane* airplane,string signal);
+    bool receiveSignal(Airplane* airplane,string signal);
     void regulateApproachingplanes();
+    bool permissionLeavingGate(Airplane* airplane);
     void regulateTaxiingtoGate();
     void regulateTaxiingtorunway();
 };

@@ -15,7 +15,8 @@ using namespace std;
 class Airportsim{
     vector<Airport*> Airports;
     vector<Airplane*> Airplanes;
-
+    vector<Airplane*> AirplanesFlying;
+    vector<Airplane*> Allplanes;
     Airportsim* _InitCheck;
 
 public:

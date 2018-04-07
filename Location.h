@@ -32,6 +32,12 @@ public:
     const string &getName() const;
 
     const vector<Location *> &getRoute() const;
+
+    virtual bool isRunway();
+
+    virtual bool isGate();
+
+    virtual bool isTaxipoint();
 };
 
 

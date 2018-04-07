@@ -37,3 +37,15 @@ const vector<Location *> &Location::getRoute() const {
     return route;
 }
 
+bool Location::isRunway() {
+    return false;
+}
+
+bool Location::isGate() {
+    return false;
+}
+
+bool Location::isTaxipoint() {
+    return false;
+}
+

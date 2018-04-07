@@ -282,9 +282,9 @@ Esucces AirportsimImporter::readAirplane(TiXmlElement *airplaneelement, std::ost
     sim.addAirplane(a);
 
     if (status=="Standing at gate"){
-        int gateforairplane=airport->findFreeGates();
+        Gate* gateforairplane=airport->findFreeGates();
         passenger=0;
-        if(gateforairplane==-1){
+        if(gateforairplane==NULL){
             errStream<<airport->getName()<<" has more airplanes at gates than it's gate"<<endl;
             errStream<<airport->getName()<<" got removed from airportslist beacause of inconsistency"<<endl;
             return ImportAborted;

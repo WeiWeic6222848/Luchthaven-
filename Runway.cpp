@@ -77,3 +77,31 @@ int Runway::getAirplanequeueing() const {
     return airplanequeueing;
 }
 
+Airplane *Runway::getPlaneAtEnd() const {
+    return planeAtEnd;
+}
+
+void Runway::setPlaneAtEnd(Airplane *planeAtEnd) {
+    Runway::planeAtEnd = planeAtEnd;
+}
+
+Airplane *Runway::getPlaneAtbegin() const {
+    return planeAtbegin;
+}
+
+void Runway::setPlaneAtbegin(Airplane *planeAtbegin) {
+    Runway::planeAtbegin = planeAtbegin;
+}
+
+bool Runway::isRunway() {
+    return true;
+}
+
+void Runway::planeLeaved() {
+    airplanequeueing--;
+}
+
+Runway::~Runway() {
+
+}
+

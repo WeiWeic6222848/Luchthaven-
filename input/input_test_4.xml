@@ -25,19 +25,7 @@
 <taxipoint>Bravo</taxipoint>
 </TAXIROUTE>
 </RUNWAY>
-    <RUNWAY>
-        <name>12L</name>
-        <airport>ANR</airport>
-        <type>asphalt</type>
-        <length>3510</length>
-        <TAXIROUTE>
-            <taxipoint>Alpha</taxipoint>
-            <crossing>11R</crossing>
-            <taxipoint>Bravo</taxipoint>
-            <crossing>11L</crossing>
-            <taxipoint>Aurora</taxipoint>
-        </TAXIROUTE>
-    </RUNWAY>
+
     <AIRPLANE>
         <number>BAW466</number>
         <callsign>Speedbird 466</callsign>
@@ -54,7 +42,94 @@
     <type>private</type>
     <engine>propeller</engine>
     <size>small</size>
-    <status>Standing at gate</status>
+    <status>Approaching</status>
 </AIRPLANE>
 
+    <AIRPLANE>
+        <number>N11848</number>
+        <callsign>Cessna 849</callsign>
+        <model>Cessna 345</model>
+        <type>private</type>
+        <engine>propeller</engine>
+        <size>small</size>
+        <status>Approaching</status>
+    </AIRPLANE>
+
+    <AIRPLANE>
+        <number>N1184</number>
+        <callsign>Cessna 846</callsign>
+        <model>Cessna 345</model>
+        <type>private</type>
+        <engine>propeller</engine>
+        <size>small</size>
+        <status>Approaching</status>
+    </AIRPLANE>
+    <AIRPLANE>
+        <number>N118</number>
+        <callsign>Cessna 847</callsign>
+        <model>Cessna 345</model>
+        <type>private</type>
+        <engine>propeller</engine>
+        <size>small</size>
+        <status>Approaching</status>
+    </AIRPLANE>
+    <AIRPLANE>
+        <number>N11</number>
+        <callsign>Cessna 848</callsign>
+        <model>Cessna 345</model>
+        <type>private</type>
+        <engine>propeller</engine>
+        <size>small</size>
+        <status>Approaching</status>
+    </AIRPLANE>
+
+    <AIRPLANE>
+        <number>N1</number>
+        <callsign>Cessna 8</callsign>
+        <model>Cessna 345</model>
+        <type>private</type>
+        <engine>propeller</engine>
+        <size>small</size>
+        <status>Standing at gate</status>
+    </AIRPLANE>
+
+    <AIRPLANE>
+        <number>N12</number>
+        <callsign>Cessna 84</callsign>
+        <model>Cessna 345</model>
+        <type>private</type>
+        <engine>propeller</engine>
+        <size>small</size>
+        <status>Standing at gate</status>
+    </AIRPLANE>
+
+    <AIRPLANE>
+        <number>AA</number>
+        <callsign>Cessna </callsign>
+        <model>Cessna 345</model>
+        <type>private</type>
+        <engine>propeller</engine>
+        <size>small</size>
+        <status>Standing at gate</status>
+    </AIRPLANE>
+
+    <AIRPLANE>
+        <number>AB</number>
+        <callsign>Csna </callsign>
+        <model>Cessna 345</model>
+        <type>private</type>
+        <engine>propeller</engine>
+        <size>small</size>
+        <status>Standing at gate</status>
+    </AIRPLANE>
+
+    <AIRPLANE>
+        <number>AC</number>
+        <callsign>Cssna </callsign>
+        <model>Cessna 345</model>
+        <type>private</type>
+        <engine>propeller</engine>
+        <size>small</size>
+        <status>Standing at gate</status>
+    </AIRPLANE>
 </AirportSim>

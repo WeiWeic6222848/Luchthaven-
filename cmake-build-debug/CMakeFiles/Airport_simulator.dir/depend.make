@@ -8,6 +8,7 @@ CMakeFiles/Airport_simulator.dir/Airplane.cpp.o: ../AirportUtils.h
 CMakeFiles/Airport_simulator.dir/Airplane.cpp.o: ../Airportsim.h
 CMakeFiles/Airport_simulator.dir/Airplane.cpp.o: ../AirportsimImporter.h
 CMakeFiles/Airport_simulator.dir/Airplane.cpp.o: ../DesignByContract.h
+CMakeFiles/Airport_simulator.dir/Airplane.cpp.o: ../Gate.h
 CMakeFiles/Airport_simulator.dir/Airplane.cpp.o: ../Location.h
 CMakeFiles/Airport_simulator.dir/Airplane.cpp.o: ../Runway.h
 CMakeFiles/Airport_simulator.dir/Airplane.cpp.o: ../Signaltower.h
@@ -22,6 +23,7 @@ CMakeFiles/Airport_simulator.dir/Airport.cpp.o: ../AirportUtils.h
 CMakeFiles/Airport_simulator.dir/Airport.cpp.o: ../Airportsim.h
 CMakeFiles/Airport_simulator.dir/Airport.cpp.o: ../AirportsimImporter.h
 CMakeFiles/Airport_simulator.dir/Airport.cpp.o: ../DesignByContract.h
+CMakeFiles/Airport_simulator.dir/Airport.cpp.o: ../Gate.h
 CMakeFiles/Airport_simulator.dir/Airport.cpp.o: ../Location.h
 CMakeFiles/Airport_simulator.dir/Airport.cpp.o: ../Runway.h
 CMakeFiles/Airport_simulator.dir/Airport.cpp.o: ../Signaltower.h
@@ -35,6 +37,7 @@ CMakeFiles/Airport_simulator.dir/AirportUtils.cpp.o: ../AirportUtils.cpp
 CMakeFiles/Airport_simulator.dir/AirportUtils.cpp.o: ../AirportUtils.h
 CMakeFiles/Airport_simulator.dir/AirportUtils.cpp.o: ../Airportsim.h
 CMakeFiles/Airport_simulator.dir/AirportUtils.cpp.o: ../AirportsimImporter.h
+CMakeFiles/Airport_simulator.dir/AirportUtils.cpp.o: ../Gate.h
 CMakeFiles/Airport_simulator.dir/AirportUtils.cpp.o: ../Location.h
 CMakeFiles/Airport_simulator.dir/AirportUtils.cpp.o: ../Runway.h
 CMakeFiles/Airport_simulator.dir/AirportUtils.cpp.o: ../Signaltower.h
@@ -49,6 +52,7 @@ CMakeFiles/Airport_simulator.dir/Airportsim.cpp.o: ../Airportsim.cpp
 CMakeFiles/Airport_simulator.dir/Airportsim.cpp.o: ../Airportsim.h
 CMakeFiles/Airport_simulator.dir/Airportsim.cpp.o: ../AirportsimImporter.h
 CMakeFiles/Airport_simulator.dir/Airportsim.cpp.o: ../DesignByContract.h
+CMakeFiles/Airport_simulator.dir/Airportsim.cpp.o: ../Gate.h
 CMakeFiles/Airport_simulator.dir/Airportsim.cpp.o: ../Location.h
 CMakeFiles/Airport_simulator.dir/Airportsim.cpp.o: ../Runway.h
 CMakeFiles/Airport_simulator.dir/Airportsim.cpp.o: ../Signaltower.h
@@ -63,12 +67,17 @@ CMakeFiles/Airport_simulator.dir/AirportsimImporter.cpp.o: ../Airportsim.h
 CMakeFiles/Airport_simulator.dir/AirportsimImporter.cpp.o: ../AirportsimImporter.cpp
 CMakeFiles/Airport_simulator.dir/AirportsimImporter.cpp.o: ../AirportsimImporter.h
 CMakeFiles/Airport_simulator.dir/AirportsimImporter.cpp.o: ../DesignByContract.h
+CMakeFiles/Airport_simulator.dir/AirportsimImporter.cpp.o: ../Gate.h
 CMakeFiles/Airport_simulator.dir/AirportsimImporter.cpp.o: ../Location.h
 CMakeFiles/Airport_simulator.dir/AirportsimImporter.cpp.o: ../Runway.h
 CMakeFiles/Airport_simulator.dir/AirportsimImporter.cpp.o: ../Signaltower.h
 CMakeFiles/Airport_simulator.dir/AirportsimImporter.cpp.o: ../Taxipoint.h
 CMakeFiles/Airport_simulator.dir/AirportsimImporter.cpp.o: ../tinystr.h
 CMakeFiles/Airport_simulator.dir/AirportsimImporter.cpp.o: ../tinyxml.h
+
+CMakeFiles/Airport_simulator.dir/Gate.cpp.o: ../Gate.cpp
+CMakeFiles/Airport_simulator.dir/Gate.cpp.o: ../Gate.h
+CMakeFiles/Airport_simulator.dir/Gate.cpp.o: ../Location.h
 
 CMakeFiles/Airport_simulator.dir/ImportTest.cpp.o: ../ImportTest.cpp
 
@@ -78,6 +87,7 @@ CMakeFiles/Airport_simulator.dir/Location.cpp.o: ../Location.h
 CMakeFiles/Airport_simulator.dir/Runway.cpp.o: ../Airplane.h
 CMakeFiles/Airport_simulator.dir/Runway.cpp.o: ../Airport.h
 CMakeFiles/Airport_simulator.dir/Runway.cpp.o: ../DesignByContract.h
+CMakeFiles/Airport_simulator.dir/Runway.cpp.o: ../Gate.h
 CMakeFiles/Airport_simulator.dir/Runway.cpp.o: ../Location.h
 CMakeFiles/Airport_simulator.dir/Runway.cpp.o: ../Runway.cpp
 CMakeFiles/Airport_simulator.dir/Runway.cpp.o: ../Runway.h
@@ -86,6 +96,7 @@ CMakeFiles/Airport_simulator.dir/Runway.cpp.o: ../Taxipoint.h
 
 CMakeFiles/Airport_simulator.dir/Signaltower.cpp.o: ../Airplane.h
 CMakeFiles/Airport_simulator.dir/Signaltower.cpp.o: ../Airport.h
+CMakeFiles/Airport_simulator.dir/Signaltower.cpp.o: ../Gate.h
 CMakeFiles/Airport_simulator.dir/Signaltower.cpp.o: ../Location.h
 CMakeFiles/Airport_simulator.dir/Signaltower.cpp.o: ../Runway.h
 CMakeFiles/Airport_simulator.dir/Signaltower.cpp.o: ../Signaltower.cpp
@@ -94,6 +105,7 @@ CMakeFiles/Airport_simulator.dir/Signaltower.cpp.o: ../Taxipoint.h
 
 CMakeFiles/Airport_simulator.dir/Taxipoint.cpp.o: ../Airplane.h
 CMakeFiles/Airport_simulator.dir/Taxipoint.cpp.o: ../Airport.h
+CMakeFiles/Airport_simulator.dir/Taxipoint.cpp.o: ../Gate.h
 CMakeFiles/Airport_simulator.dir/Taxipoint.cpp.o: ../Location.h
 CMakeFiles/Airport_simulator.dir/Taxipoint.cpp.o: ../Runway.h
 CMakeFiles/Airport_simulator.dir/Taxipoint.cpp.o: ../Signaltower.h
@@ -105,6 +117,7 @@ CMakeFiles/Airport_simulator.dir/main.cpp.o: ../Airport.h
 CMakeFiles/Airport_simulator.dir/main.cpp.o: ../AirportUtils.h
 CMakeFiles/Airport_simulator.dir/main.cpp.o: ../Airportsim.h
 CMakeFiles/Airport_simulator.dir/main.cpp.o: ../AirportsimImporter.h
+CMakeFiles/Airport_simulator.dir/main.cpp.o: ../Gate.h
 CMakeFiles/Airport_simulator.dir/main.cpp.o: ../Location.h
 CMakeFiles/Airport_simulator.dir/main.cpp.o: ../Runway.h
 CMakeFiles/Airport_simulator.dir/main.cpp.o: ../Signaltower.h
@@ -120,6 +133,7 @@ CMakeFiles/Airport_simulator.dir/output_system.cpp.o: ../AirportUtils.h
 CMakeFiles/Airport_simulator.dir/output_system.cpp.o: ../Airportsim.h
 CMakeFiles/Airport_simulator.dir/output_system.cpp.o: ../AirportsimImporter.h
 CMakeFiles/Airport_simulator.dir/output_system.cpp.o: ../DesignByContract.h
+CMakeFiles/Airport_simulator.dir/output_system.cpp.o: ../Gate.h
 CMakeFiles/Airport_simulator.dir/output_system.cpp.o: ../Location.h
 CMakeFiles/Airport_simulator.dir/output_system.cpp.o: ../Runway.h
 CMakeFiles/Airport_simulator.dir/output_system.cpp.o: ../Signaltower.h

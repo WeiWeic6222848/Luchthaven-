@@ -238,7 +238,7 @@ const vector<Airport*> &Airportsim::getAirports() const {
 
 const vector<Airplane*> &Airportsim::getAirplanes() const {
     REQUIRE(ProperInitialized(),"Airportsim object wasn't initialized when calling getAirplanes");
-    return Airplanes;
+    return Allplanes;
 }
 void Airportsim::landing(Airplane& approaching,Airport& airport) {
     REQUIRE(ProperInitialized(),"Airportsim object wasn't initialized when calling landing");
@@ -247,7 +247,7 @@ void Airportsim::landing(Airplane& approaching,Airport& airport) {
     string filename="../output/"+approaching.getCallsign()+"_Landing.txt";
     outputfile.open(filename.data(),ios::out);
     outputfile<<approaching.getCallsign()<<" is approaching "<<airport.getName()<<" at 10.000 ft."<<endl;
-    int gate=airport.findFreeGates();
+    Gate* gate=airport.findFreeGates();
     Runway* runway=airport.findFreeRunway(&approaching);
     while (approaching.getHeight()>1000){
         approaching.fall();
@@ -258,9 +258,9 @@ void Airportsim::landing(Airplane& approaching,Airport& airport) {
     runway->setCurrentairplane(&approaching);
     outputfile<<approaching.getCallsign()<<" has landed at "<<airport.getName()<<" on runway "<<runway->getName()<<endl;
     airport.parkAirplane(gate,&approaching);
-    outputfile<<approaching.getCallsign()<<" is taxiing to Gate "<<gate<<endl;
+    outputfile<<approaching.getCallsign()<<" is taxiing to Gate "<<gate->getName()<<endl;
     runway->setCurrentairplane(NULL);
-    outputfile<<approaching.getCallsign()<<" is standing at Gate "<<gate<<endl;
+    outputfile<<approaching.getCallsign()<<" is standing at Gate "<<gate->getName()<<endl;
     approaching.setStatus("Standing at gate");
     outputfile.close();
     ENSURE(fileExist(filename),"landing postcondition failed");
@@ -273,8 +273,8 @@ void Airportsim::takingOff(Airplane& leaving, Airport& airport){
     ofstream outputfile;
     string filename="../output/"+leaving.getCallsign()+"_TakingOff.txt";
     outputfile.open(filename.data(),ios::out);
-    int gate=airport.getGateFromAirplane(&leaving);
-    outputfile<<leaving.getCallsign()<<" is standing at Gate "<<gate<<endl;
+    Gate* gate=airport.getGateFromAirplane(&leaving);
+    outputfile<<leaving.getCallsign()<<" is standing at Gate "<<gate->getName()<<endl;
     Runway* runway=airport.findFreeRunway(&leaving);
     runway->setCurrentairplane(&leaving);
     airport.freeGate(gate);
@@ -332,6 +332,7 @@ void Airportsim::addAirport(Airport *airport) {
 
 void Airportsim::addAirplane(Airplane *airplane) {
     Airplanes.push_back(airplane);
+    Allplanes.push_back(airplane);
 }
 
 Airportsim::Airportsim() {_InitCheck=this;}
@@ -341,8 +342,13 @@ Airportsim::Airportsim() {_InitCheck=this;}
  //future functions
 void Airportsim::Simulate() {
     REQUIRE(ProperInitialized(),"Airportsim object wasn't initialized when calling Destructor");
-     while (!Airplanes.empty()){
+     ofstream file;
+     for (unsigned int k = 0; k < Airports.size(); ++k) {
+         string filename="../output/"+Airports[k]->getIata()+"_Tower.txt";
+         file.open(filename.c_str(),ios::out);
+     }
 
+     while (!Airplanes.empty()){
          vector<int> airplanestoremove;
          for (unsigned int j = 0; j < Airplanes.size(); ++j) {
              string status=Airplanes[j]->getStatus();
@@ -366,7 +372,13 @@ void Airportsim::Simulate() {
              }
          }
          for (unsigned int i = 0; i < airplanestoremove.size(); ++i) {
+             AirplanesFlying.push_back((Airplanes.begin()+airplanestoremove[i]-i).operator*());
              Airplanes.erase(Airplanes.begin()+airplanestoremove[i]-i);
+         }
+         for (unsigned int k = 0; k < Airports.size(); ++k) {
+             Airports[k]->getTower().regulateApproachingplanes();
+             Airports[k]->getTower().regulateTaxiingtoGate();
+             Airports[k]->getTower().regulateTaxiingtorunway();
          }
      }
 
@@ -379,40 +391,39 @@ void Airportsim::landingstep(Airplane &approaching, Airport &airport) {
     ofstream outputfile;
     string filename="../output/"+approaching.getCallsign()+"_Landing.txt";
     outputfile.open(filename.c_str(),ios::app);
-    if (approaching.getHeight()==10000){
-        outputfile<<approaching.getCallsign()<<" is approaching "<<airport.getName()<<" at 10000 ft."<<endl;
-    }
-    //ask permission 5000
-    bool permission5000=true;
-    bool permission3000=true;
-    bool permissionLanding=true;
-
-    if (approaching.getHeight()>5000&&permission5000){
+    if (approaching.getHeight()>5000&&approaching.getPermission()=="5000"){//getting permission
         approaching.fall();
         outputfile<<approaching.getCallsign()<<" descended to "<<approaching.getHeight()<<" ft."<<endl;
     }
-    else if(approaching.getHeight()>3000&&permission3000){
-        //get permission 3000
+    else if(approaching.getHeight()>3000&&approaching.getPermission()=="3000"){
         approaching.fall();
         outputfile<<approaching.getCallsign()<<" descended to "<<approaching.getHeight()<<" ft."<<endl;
     }
-    else if(approaching.getHeight()>1000&&permissionLanding){
+    else if(approaching.getHeight()>1000&&approaching.getPermission()=="0"){
+        //on getting permission landing, a runway will be on use
         approaching.fall();
         outputfile<<approaching.getCallsign()<<" descended to "<<approaching.getHeight()<<" ft."<<endl;
     }
-    else if(approaching.getHeight()==1000&&permissionLanding){
-        approaching.setDestinaterunway(airport.findFreeRunway(&approaching));
+    else if(approaching.getHeight()==1000&&approaching.getPermission()=="0"){
         approaching.fall();
         outputfile<<approaching.getCallsign()<<" is landing at "<<airport.getName()<<" on runway "<<approaching.getDestinaterunway()->getName()<<endl;
     }
     else if (approaching.getHeight()==0){
         outputfile<<approaching.getCallsign()<<" has landed at "<<airport.getName()<<" on runway "<<approaching.getDestinaterunway()->getName()<<endl;
-        approaching.setStatus("Taxiing to gate");
-        approaching.setLocation(approaching.getDestinaterunway()->getTaxipoint());
+        approaching.setLocation(approaching.getDestinaterunway());
+        approaching.getDestinaterunway()->setPlaneAtEnd(&approaching);
         outputfile<<approaching.getCallsign()<<" is taxiing to Gates "<<endl;
-        /*approaching.setLocation(approaching.getDestinaterunway()->getTaxipoint());
-        approaching.getDestinaterunway()->setCurrentairplane(NULL);*/
+        approaching.getDestinaterunway()->setCurrentairplane(NULL);
+        //ask permission
+        approaching.sendSignalTaxiingtoGate();
+        approaching.setStatus("Taxiing to gate");
     }
+    if (approaching.getHeight()==10000&&approaching.getPermission()!="10000"){
+        outputfile<<approaching.getCallsign()<<" is approaching "<<airport.getName()<<" at 10000 ft."<<endl;
+        approaching.sendSignalApproaching();
+        //initial contact;
+    }
+
 
 }
 
@@ -424,7 +435,7 @@ void Airportsim::airplaneAtGatestep(Airplane &plane, Airport &airport) {
         if(plane.getCheckprocedure()==""){
             airport.addPassenger(plane.getPassenger());
             plane.setPassenger(0);
-            outputfile<<plane.getPassenger()<<" passengers exited "<<plane.getCallsign()<<" at gate "<<airport.getGateFromAirplane(&plane)<<" of "<<airport.getName()<<endl;
+            outputfile<<plane.getPassenger()<<" passengers exited "<<plane.getCallsign()<<" at gate "<<airport.getGateFromAirplane(&plane)->getName()<<" of "<<airport.getName()<<endl;
             plane.progressCheck();
         }
         else if(plane.getCheckprocedure()=="Technical control"){
@@ -436,18 +447,19 @@ void Airportsim::airplaneAtGatestep(Airplane &plane, Airport &airport) {
             plane.progressCheck();
         }
         else if(plane.getCheckprocedure()=="Ready to leave"){
-            Runway* free=airport.findFreeRunway(&plane);
-            if(free){
-                plane.setDestinaterunway(free);
-                outputfile<<plane.getPassenger()<<" passengers boarded "<<plane.getCallsign()<<" at gate "<<airport.getGateFromAirplane(&plane)<<" of "<<airport.getName()<<endl;
+            //ask permission to leave gate;
+            Gate* gate=airport.getGateFromAirplane(&plane);
+            if(gate->getCurrentPlane()==&plane&&plane.sendSignalPushBack()){
+                //leave gate at first time, will get a runway assigned if succes, if not then wait one more round.
+                outputfile<<plane.getPassenger()<<" passengers boarded "<<plane.getCallsign()<<" at gate "<<airport.getGateFromAirplane(&plane)->getName()<<" of "<<airport.getName()<<endl;
                 plane.setPassenger(plane.getPassengerCapacity());
+                gate->setPlaneNearGate(&plane);
+                gate->setCurrentPlane(NULL);
+            }
+            if(plane.sendSignalTaxiingtoRunway()){
+                //ask permission, if there is a runway available just go there.
                 plane.setStatus("Taxiing to runway");
-                int gate=airport.getGateFromAirplane(&plane);
-                plane.setLocation(plane.getDestinaterunway()->getRoute()[0]);
-                if(plane.getDestinaterunway()->getRoute()[0]==(plane.getDestinaterunway()->getRoute().end()-1).operator*()){
-                    plane.getDestinaterunway()->getTaxipoint()->addPlanesWaiting(&plane);
-                }
-                outputfile<<plane.getCallsign()<<" is standing at Gate "<<gate<<endl;
+                outputfile<<plane.getCallsign()<<" is standing at Gate "<<gate->getName()<<endl;
                 outputfile<<plane.getCallsign()<<" is taxiing to runway "<<plane.getDestinaterunway()->getName()<<endl;//add here
             }
         }
@@ -458,30 +470,14 @@ void Airportsim::taxiingToGatestep(Airplane &taxiingplane, Airport &airport) {
     ofstream outputfile;
     string filename="../output/"+taxiingplane.getCallsign()+"_Landing.txt";
     outputfile.open(filename.c_str(),ios::app);
-    Location* planelocation=taxiingplane.getLocation();
-    if(!planelocation->getRoute().empty()){
-        Location* nextlocation=(planelocation->getRoute().end()-1).operator*();
-        if(!(nextlocation->isCrossing())&&!(nextlocation->isOnuse())){
-            nextlocation->setCrossing(true);
-            planelocation->setCrossing(false);
-            taxiingplane.setLocation(nextlocation);
-        }
-        else{
-            //plane wait on current location
-        }
-    }
-    else{
-        int freegate=airport.findFreeGates();
-        if(freegate!=-1){
-            airport.parkAirplane(freegate,&taxiingplane);
-            planelocation->setCrossing(false);
-            taxiingplane.setLocation(NULL);
-            outputfile<<taxiingplane.getCallsign()<<" is standing at Gate "<<freegate<<endl;
-            taxiingplane.setStatus("Standing at gate");
-        }
-        else{
-            //plane wait until there is an free gate to park
-        }
+
+    taxiingplane.getLocation()->setCrossing(false);
+    taxiingplane.setLocation(taxiingplane.getNextLocation());
+    taxiingplane.getLocation()->setCrossing(true);
+    if(taxiingplane.getLocation()->isOnuse()&&taxiingplane.getLocation()->isGate()){
+        //only a gate location will be giving under this condition
+        outputfile<<taxiingplane.getCallsign()<<" is standing at Gate "<<taxiingplane.getLocation()->getName()<<endl;
+        taxiingplane.setStatus("Standing at gate");
     }
 }
 
@@ -489,48 +485,44 @@ void Airportsim::taxiingToRunwaystep(Airplane &taxiingplane, Airport &airport) {
     ofstream outputfile;
     string filename="../output/"+taxiingplane.getCallsign()+"_Leaving.txt";
     outputfile.open(filename.c_str(),ios::app);
-    Location* planelocation=taxiingplane.getLocation();
     Runway* destination=taxiingplane.getDestinaterunway();
-    if(planelocation!=(destination->getRoute().end()-1).operator*()){
-        Location* nextlocation=((find(destination->getRoute().begin(),destination->getRoute().end(),planelocation)+1).operator*());
-        if(!(nextlocation->isCrossing())&&!(nextlocation->isOnuse())){
-            nextlocation->setCrossing(true);
-            planelocation->setCrossing(false);
-            taxiingplane.setLocation(nextlocation);
-            if(nextlocation==(destination->getRoute().end()-1).operator*()){
-                taxiingplane.getDestinaterunway()->getTaxipoint()->addPlanesWaiting(&taxiingplane);
-            }
-        }
-        else{
-            //plane wait on current location
-        }
-    }
-    else{
-        Taxipoint* currentlocation=taxiingplane.getDestinaterunway()->getTaxipoint();
-        if(currentlocation->getPlanesWaitingForRunway()[0]==&taxiingplane&&!destination->isOnuse()&&!destination->isCrossing()){
-            taxiingplane.setStatus("Leaving");
-        }
+    taxiingplane.getLocation()->setCrossing(false);
 
-        else{
-            //plane wait until there is an free gate to park
-        }
+    taxiingplane.setLocation(taxiingplane.getNextLocation());
+
+    taxiingplane.getLocation()->setCrossing(true);
+
+    if(taxiingplane.getLocation()==destination){
+        taxiingplane.getLocation()->setCrossing(false);
+        taxiingplane.setNextLocation(NULL);
+        //removing cross marker sinds the plane is no more crossing but at the begin and ready to take off.
+        taxiingplane.setStatus("Leaving");
     }
+
 }
 
 void Airportsim::leavingstep(Airplane &leaving, Airport &airport) {
     ofstream outputfile;
     string filename="../output/"+leaving.getCallsign()+"_Leaving.txt";
     outputfile.open(filename.c_str(),ios::app);
-    bool leavingpermission=true;
-    if(leaving.getHeight()==0&&leavingpermission){
+    //ask leaving permission
+    if (leaving.getHeight()==0&&leaving.getPermission()!="fly"){
+        leaving.sendSignalLeaving();
+    }
+    else if(leaving.getHeight()==0&&leaving.getPermission()=="fly"){
         outputfile<<leaving.getCallsign()<<" is taking off at "<<airport.getName()<<" on runway "<<leaving.getDestinaterunway()->getName()<<endl;
         leaving.rise();
+        leaving.getDestinaterunway()->setCurrentairplane(NULL);
+        leaving.getDestinaterunway()->planeLeaved();
+        leaving.setPermission("");
+        leaving.setDestinaterunway(NULL);
     }
     else if(leaving.getHeight()>5000){
         outputfile<<leaving.getCallsign()<<" has left "<<airport.getName()<<endl;
         leaving.setStatus("jobsdone");
     }
     else if(leaving.getHeight()>=1000){
+        //don't need permission anymore once it has rised;
         outputfile<<leaving.getCallsign()<<" ascended to "<<leaving.getHeight()<<" ft."<<endl;
         leaving.rise();
     }

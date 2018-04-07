@@ -11,6 +11,7 @@
 #include "Runway.h"
 #include "Signaltower.h"
 #include "Taxipoint.h"
+#include "Gate.h"
 
 using namespace std;
 
@@ -18,7 +19,7 @@ class Airplane;
 class Runway;
 class Signaltower;
 class Taxipoint;
-
+class Gate;
 
 
 
@@ -29,7 +30,7 @@ private:
     string name;
     string iata;
     string callsign;
-    map<int,Airplane*> gates;
+    vector<Gate*> gates;
     int passengers;
     vector<Runway*> runways;
     vector<Taxipoint*> taxipoints;
@@ -104,7 +105,7 @@ public:
  * REQUIRE(ProperInitialized(),"Airport wasn't initialized when calling findfreegates");
  * @return a number of gate which doesn't have any airplanes
  */
-    int findFreeGates() const;
+    Gate* findFreeGates() const;
 
 /**
  * REQUIRE(ProperInitialized(),"Airport wasn't initialized when calling parkAirplane");
@@ -114,7 +115,7 @@ public:
  * @param gate the number of gate to park
  * @param airplane the airplane to park
  */
-    void parkAirplane(unsigned int gate,Airplane* airplane);
+    void parkAirplane(Gate* gate,Airplane* airplane);
 
 /**
  * REQUIRE(ProperInitialized(),"Airport wasn't initialized when calling destructor");
@@ -140,14 +141,14 @@ public:
  * @param plane the plane to search
  * @return the gate which this plane is at
  */
-    int getGateFromAirplane(Airplane* plane);
+    Gate* getGateFromAirplane(Airplane* plane);
 
 /**
  * REQUIRE(ProperInitialized(),"Airport wasn't initialized when calling freeGate");
  * ENSURE(gates[gate]==NULL,"freeGate postcondition failed");
  * @param gate gate to free
  */
-    void freeGate(int  gate);
+    void freeGate(Gate*  gate);
 
     Runway* findRunway (const string& name);
 
@@ -159,7 +160,7 @@ public:
 
     const vector<Taxipoint*> &getTaxipoints() const;
 
-    void receiveSignal(Airplane* airplane,string signal);
+    bool receiveSignal(Airplane* airplane,string signal);
 
     void addPassenger(int a);
 

@@ -1,0 +1,102 @@
+[1][AIR]
+Antwerp Tower, Speedbird 466, arriving at Antwerp International Airport
+[1][AIR]
+Antwerp Tower, Cessna 842, arriving at Antwerp International Airport
+[1][AIR]
+Antwerp Tower, Cessna 849, arriving at Antwerp International Airport
+[1][AIR]
+Antwerp Tower, Cessna 846, arriving at Antwerp International Airport
+[1][AIR]
+Antwerp Tower, Cessna 847, arriving at Antwerp International Airport
+[1][AIR]
+Antwerp Tower, Cessna 848, arriving at Antwerp International Airport
+[2][ATC]
+Speedbird 466, radar contact, descend and maintain five thousand feet, squawk <squawk-code>.
+[2][AIR]
+Descend and maintain five thousand feet, squawking <squawk-code>, Speedbird 466
+a
+a
+[7][ATC]
+Speedbird 466, descend and maintain three thousand feet.
+[7][AIR]
+Descend and maintain three thousand feet, Speedbird 466
+[7][ATC]
+Cessna 842, radar contact, descend and maintain five thousand feet, squawk <squawk-code>.
+[7][AIR]
+Descend and maintain five thousand feet, squawking <squawk-code>, Cessna 842
+a
+a
+a
+[9][ATC]
+Speedbird 466, cleared ILS approach runway 11L
+[9][AIR]
+Cleared ILS approach runway 11L, Speedbird 466
+a
+[12][ATC]
+Cessna 842, descend and maintain three thousand feet.
+[12][AIR]
+Descend and maintain three thousand feet, Cessna 842
+[12][ATC]
+Cessna 849, radar contact, descend and maintain five thousand feet, squawk <squawk-code>.
+[12][AIR]
+Descend and maintain five thousand feet, squawking <squawk-code>, Cessna 849
+[14][ATC]
+Cessna 842, cleared ILS approach runway 11R
+[14][AIR]
+Cleared ILS approach runway 11R, Cessna 842
+a
+a
+a
+[17][ATC]
+Cessna 849, descend and maintain three thousand feet.
+[17][AIR]
+Descend and maintain three thousand feet, Cessna 849
+[17][ATC]
+Cessna 846, radar contact, descend and maintain five thousand feet, squawk <squawk-code>.
+[17][AIR]
+Descend and maintain five thousand feet, squawking <squawk-code>, Cessna 846
+a
+[19][ATC]
+Cessna 849, cleared ILS approach runway 11R
+[19][AIR]
+Cleared ILS approach runway 11R, Cessna 849
+[22][ATC]
+Cessna 846, descend and maintain three thousand feet.
+[22][AIR]
+Descend and maintain three thousand feet, Cessna 846
+[22][ATC]
+Cessna 847, radar contact, descend and maintain five thousand feet, squawk <squawk-code>.
+[22][AIR]
+Descend and maintain five thousand feet, squawking <squawk-code>, Cessna 847
+[24][ATC]
+Cessna 846, cleared ILS approach runway 11R
+[24][AIR]
+Cleared ILS approach runway 11R, Cessna 846
+a
+[27][ATC]
+Cessna 847, descend and maintain three thousand feet.
+[27][AIR]
+Descend and maintain three thousand feet, Cessna 847
+[27][ATC]
+Cessna 848, radar contact, descend and maintain five thousand feet, squawk <squawk-code>.
+[27][AIR]
+Descend and maintain five thousand feet, squawking <squawk-code>, Cessna 848
+a
+a
+[29][ATC]
+Cessna 847, cleared ILS approach runway 11L
+[29][AIR]
+Cleared ILS approach runway 11L, Cessna 847
+a
+[32][ATC]
+Cessna 848, descend and maintain three thousand feet.
+[32][AIR]
+Descend and maintain three thousand feet, Cessna 848
+[34][ATC]
+Cessna 848, cleared ILS approach runway 11R
+[34][AIR]
+Cleared ILS approach runway 11R, Cessna 848
+a
+a
+a
+a

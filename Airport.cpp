@@ -8,15 +8,14 @@
 #include "DesignByContract.h"
 #include "algorithm"
 #include "AirportUtils.h"
-#include "math.h"
 
 Airport::Airport(const string &name, const string &iata, const string &callsign, int gates, int passengers) : name(name), iata(iata), callsign(callsign),  passengers(passengers)
 {
+    _InitCheck=this;
     for (int i = 1; i < gates+1; ++i) {
-        Airport::gates[i]= NULL;
+        Airport::gates.push_back(new Gate(to_string(i))) ;
     }
     tower= new Signaltower(this);
-    _InitCheck=this;
     ENSURE(ProperInitialized(),"This airport object failed to Initialize properly");
 }
 
@@ -69,25 +68,26 @@ Runway *Airport::findFreeRunway(){
     return NULL;
 }
 
-int Airport::findFreeGates() const {
+Gate* Airport::findFreeGates() const {
 
     REQUIRE(ProperInitialized(),"Airport wasn't initialized when calling findfreegates");
-    for (unsigned int i = 1; i < gates.size()+1; ++i) {
-        if(gates.at(i)==NULL){
-            return i;
+    for (unsigned int i = 0; i < gates.size(); ++i) {
+        if(!(gates[i]->isOnuse())){
+            return gates[i];
         }
     }
     cerr<<"all gates buzy"<<endl;
-    return -1;
+    return NULL;
 }
 
-void Airport::parkAirplane(unsigned int gate, Airplane *airplane) {
+void Airport::parkAirplane(Gate* gate, Airplane *airplane) {
 
     REQUIRE(ProperInitialized(),"Airport wasn't initialized when calling parkAirplane");
-    REQUIRE(gate<gates.size()&&gate>=1,"The giving gate number must be valid");
-    REQUIRE(gates[gate]==NULL,"The giving gate must be empty");
-    gates[gate]=airplane;
-    ENSURE(gates[gate]==airplane,"parkAirplane postcondition failed");
+    REQUIRE((unsigned int)stoi(gate->getName())<=gates.size(),"The giving gate number must be valid");
+    REQUIRE(gate->getCurrentPlane()==NULL,"The giving gate must be empty");
+    gate->setCurrentPlane(airplane);
+    airplane->setLocation(gate);
+    ENSURE(gate->getCurrentPlane(),"parkAirplane postcondition failed");
 }
 
 Airport::~Airport() {
@@ -123,25 +123,24 @@ bool Airport::ProperInitialized() const {
     return _InitCheck==this;
 }
 
-int Airport::getGateFromAirplane(Airplane* plane){
+Gate* Airport::getGateFromAirplane(Airplane* plane){
     REQUIRE(plane->ProperInitialized(),"Airplane plane wasn't initialized when calling getGateFromAirplane");
     REQUIRE(ProperInitialized(),"Airport wasn't initialized when calling getGateFromAirplane");
-    for(unsigned int i=1;i<=gates.size();i++){
-        if(gates[i]!=NULL){
-            if(gates[i]->getNumber()==plane->getNumber()){
-                return i;
+    for(unsigned int i=0;i<gates.size();i++){
+        if(gates[i]->getCurrentPlane()!=NULL){
+            if(gates[i]->getCurrentPlane()->getNumber()==plane->getNumber()){
+                return gates[i];
             }
         }
     }
-
-    return -1;
+    return NULL;
 }
 
 
-void Airport::freeGate(int  gate){
+void Airport::freeGate(Gate*  gate){
     REQUIRE(ProperInitialized(),"Airport wasn't initialized when calling freeGate");
-    gates[gate]=NULL;
-    ENSURE(gates[gate]==NULL,"freeGate postcondition failed");
+    gate->setCurrentPlane(NULL);
+    ENSURE(gate->getCurrentPlane()==NULL,"freeGate postcondition failed");
 }
 
 
@@ -208,8 +207,8 @@ Signaltower &Airport::getTower(){
     return *tower;
 }
 
-void Airport::receiveSignal(Airplane *airplane, string signal) {
-    tower->receiveSignal(airplane,signal);
+bool Airport::receiveSignal(Airplane *airplane, string signal) {
+    return tower->receiveSignal(airplane,signal);
 }
 
 void Airport::addPassenger(int a) {

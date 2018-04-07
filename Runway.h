@@ -20,10 +20,22 @@ enum Runwaytype{ asphalt,grass};
 class Runway: public Location {
     Runway* _InitCheck;
     Airport* where= NULL;
-    Airplane* currentairplane= NULL;
+    Airplane* currentairplane = NULL;
+    Airplane* planeAtEnd = NULL;
+    Airplane* planeAtbegin = NULL;
     Runwaytype type;
     int length;
     Taxipoint* taxipoint=NULL;
+public:
+    Airplane *getPlaneAtEnd() const;
+
+    void setPlaneAtEnd(Airplane *planeAtEnd);
+
+    Airplane *getPlaneAtbegin() const;
+
+    void setPlaneAtbegin(Airplane *planeAtbegin);
+
+private:
     int airplanequeueing;
 public:
     Runway(const string &name, Airport *where, string stringtype, int length);
@@ -63,6 +75,12 @@ public:
     void planeQueued();
 
     int getAirplanequeueing() const;
+
+    bool isRunway();
+
+    void planeLeaved();
+
+    virtual ~Runway();
 };
 
 
