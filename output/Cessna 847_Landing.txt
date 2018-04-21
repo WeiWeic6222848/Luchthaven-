@@ -8,10 +8,10 @@ Cessna 847 descended to 4000 ft.
 Cessna 847 descended to 3000 ft.
 Cessna 847 descended to 2000 ft.
 Cessna 847 descended to 1000 ft.
-Cessna 847 is landing at Antwerp International Airport on runway 11L
-Cessna 847 has landed at Antwerp International Airport on runway 11L
+Cessna 847 is landing at Antwerp International Airport on runway 11R
+Cessna 847 has landed at Antwerp International Airport on runway 11R
 Cessna 847 is taxiing to Gates 
-Cessna 847 is standing at Gate 3
+Cessna 847 is standing at Gate 1
 Cessna 847 is approaching Antwerp International Airport at 10000 ft.
 Cessna 847 descended to 9000 ft.
 Cessna 847 descended to 8000 ft.
@@ -22,10 +22,10 @@ Cessna 847 descended to 4000 ft.
 Cessna 847 descended to 3000 ft.
 Cessna 847 descended to 2000 ft.
 Cessna 847 descended to 1000 ft.
-Cessna 847 is landing at Antwerp International Airport on runway 11L
-Cessna 847 has landed at Antwerp International Airport on runway 11L
+Cessna 847 is landing at Antwerp International Airport on runway 11R
+Cessna 847 has landed at Antwerp International Airport on runway 11R
 Cessna 847 is taxiing to Gates 
-Cessna 847 is standing at Gate 3
+Cessna 847 is standing at Gate 1
 Cessna 847 is approaching Antwerp International Airport at 10000 ft.
 Cessna 847 descended to 9000 ft.
 Cessna 847 descended to 8000 ft.
@@ -36,11 +36,10 @@ Cessna 847 descended to 4000 ft.
 Cessna 847 descended to 3000 ft.
 Cessna 847 descended to 2000 ft.
 Cessna 847 descended to 1000 ft.
-Cessna 847 is landing at Antwerp International Airport on runway 11L
-Cessna 847 has landed at Antwerp International Airport on runway 11L
+Cessna 847 is landing at Antwerp International Airport on runway 11R
+Cessna 847 has landed at Antwerp International Airport on runway 11R
 Cessna 847 is taxiing to Gates 
-Cessna 847 is standing at Gate 3
-Cessna 847 is approaching Antwerp International Airport at 10000 ft.
+Cessna 847 is standing at Gate 1
 Cessna 847 is approaching Antwerp International Airport at 10000 ft.
 Cessna 847 descended to 9000 ft.
 Cessna 847 descended to 8000 ft.
@@ -51,10 +50,10 @@ Cessna 847 descended to 4000 ft.
 Cessna 847 descended to 3000 ft.
 Cessna 847 descended to 2000 ft.
 Cessna 847 descended to 1000 ft.
-Cessna 847 is landing at Antwerp International Airport on runway 11L
-Cessna 847 has landed at Antwerp International Airport on runway 11L
+Cessna 847 is landing at Antwerp International Airport on runway 11R
+Cessna 847 has landed at Antwerp International Airport on runway 11R
 Cessna 847 is taxiing to Gates 
-Cessna 847 is standing at Gate 3
+Cessna 847 is standing at Gate 1
 Cessna 847 is approaching Antwerp International Airport at 10000 ft.
 Cessna 847 descended to 9000 ft.
 Cessna 847 descended to 8000 ft.
@@ -64,6 +63,11 @@ Cessna 847 descended to 5000 ft.
 Cessna 847 descended to 4000 ft.
 Cessna 847 descended to 3000 ft.
 Cessna 847 descended to 2000 ft.
+Cessna 847 descended to 1000 ft.
+Cessna 847 is landing at Antwerp International Airport on runway 11R
+Cessna 847 has landed at Antwerp International Airport on runway 11R
+Cessna 847 is taxiing to Gates 
+Cessna 847 is standing at Gate 1
 Cessna 847 is approaching Antwerp International Airport at 10000 ft.
 Cessna 847 is approaching Antwerp International Airport at 10000 ft.
 Cessna 847 descended to 9000 ft.
@@ -78,21 +82,7 @@ Cessna 847 descended to 1000 ft.
 Cessna 847 is landing at Antwerp International Airport on runway 11R
 Cessna 847 has landed at Antwerp International Airport on runway 11R
 Cessna 847 is taxiing to Gates 
-Cessna 847 is standing at Gate 4
-Cessna 847 is approaching Antwerp International Airport at 10000 ft.
-Cessna 847 descended to 9000 ft.
-Cessna 847 descended to 8000 ft.
-Cessna 847 descended to 7000 ft.
-Cessna 847 descended to 6000 ft.
-Cessna 847 descended to 5000 ft.
-Cessna 847 descended to 4000 ft.
-Cessna 847 descended to 3000 ft.
-Cessna 847 descended to 2000 ft.
-Cessna 847 descended to 1000 ft.
-Cessna 847 is landing at Antwerp International Airport on runway 11L
-Cessna 847 has landed at Antwerp International Airport on runway 11L
-Cessna 847 is taxiing to Gates 
-Cessna 847 is standing at Gate 3
+Cessna 847 is standing at Gate 1
 Cessna 847 is approaching Antwerp International Airport at 10000 ft.
 Cessna 847 descended to 9000 ft.
 Cessna 847 descended to 8000 ft.
@@ -106,21 +96,7 @@ Cessna 847 descended to 1000 ft.
 Cessna 847 is landing at Antwerp International Airport on runway 11R
 Cessna 847 has landed at Antwerp International Airport on runway 11R
 Cessna 847 is taxiing to Gates 
-Cessna 847 is standing at Gate 4
-Cessna 847 is approaching Antwerp International Airport at 10000 ft.
-Cessna 847 descended to 9000 ft.
-Cessna 847 descended to 8000 ft.
-Cessna 847 descended to 7000 ft.
-Cessna 847 descended to 6000 ft.
-Cessna 847 descended to 5000 ft.
-Cessna 847 descended to 4000 ft.
-Cessna 847 descended to 3000 ft.
-Cessna 847 descended to 2000 ft.
-Cessna 847 descended to 1000 ft.
-Cessna 847 is landing at Antwerp International Airport on runway 11L
-Cessna 847 has landed at Antwerp International Airport on runway 11L
-Cessna 847 is taxiing to Gates 
-Cessna 847 is standing at Gate 2
+Cessna 847 is standing at Gate 1
 Cessna 847 is approaching Antwerp International Airport at 10000 ft.
 Cessna 847 descended to 9000 ft.
 Cessna 847 descended to 8000 ft.
@@ -134,35 +110,7 @@ Cessna 847 descended to 1000 ft.
 Cessna 847 is landing at Antwerp International Airport on runway 11R
 Cessna 847 has landed at Antwerp International Airport on runway 11R
 Cessna 847 is taxiing to Gates 
-Cessna 847 is standing at Gate 4
-Cessna 847 is approaching Antwerp International Airport at 10000 ft.
-Cessna 847 descended to 9000 ft.
-Cessna 847 descended to 8000 ft.
-Cessna 847 descended to 7000 ft.
-Cessna 847 descended to 6000 ft.
-Cessna 847 descended to 5000 ft.
-Cessna 847 descended to 4000 ft.
-Cessna 847 descended to 3000 ft.
-Cessna 847 descended to 2000 ft.
-Cessna 847 descended to 1000 ft.
-Cessna 847 is landing at Antwerp International Airport on runway 11L
-Cessna 847 has landed at Antwerp International Airport on runway 11L
-Cessna 847 is taxiing to Gates 
-Cessna 847 is standing at Gate 5
-Cessna 847 is approaching Antwerp International Airport at 10000 ft.
-Cessna 847 descended to 9000 ft.
-Cessna 847 descended to 8000 ft.
-Cessna 847 descended to 7000 ft.
-Cessna 847 descended to 6000 ft.
-Cessna 847 descended to 5000 ft.
-Cessna 847 descended to 4000 ft.
-Cessna 847 descended to 3000 ft.
-Cessna 847 descended to 2000 ft.
-Cessna 847 descended to 1000 ft.
-Cessna 847 is landing at Antwerp International Airport on runway 11L
-Cessna 847 has landed at Antwerp International Airport on runway 11L
-Cessna 847 is taxiing to Gates 
-Cessna 847 is standing at Gate 2
+Cessna 847 is standing at Gate 1
 Cessna 847 is approaching Antwerp International Airport at 10000 ft.
 Cessna 847 descended to 9000 ft.
 Cessna 847 descended to 8000 ft.
@@ -176,7 +124,7 @@ Cessna 847 descended to 1000 ft.
 Cessna 847 is landing at Antwerp International Airport on runway 11R
 Cessna 847 has landed at Antwerp International Airport on runway 11R
 Cessna 847 is taxiing to Gates 
-Cessna 847 is standing at Gate 4
+Cessna 847 is standing at Gate 1
 Cessna 847 is approaching Antwerp International Airport at 10000 ft.
 Cessna 847 descended to 9000 ft.
 Cessna 847 descended to 8000 ft.
@@ -187,21 +135,7 @@ Cessna 847 descended to 4000 ft.
 Cessna 847 descended to 3000 ft.
 Cessna 847 descended to 2000 ft.
 Cessna 847 descended to 1000 ft.
-Cessna 847 is landing at Antwerp International Airport on runway 11L
-Cessna 847 has landed at Antwerp International Airport on runway 11L
+Cessna 847 is landing at Antwerp International Airport on runway 11R
+Cessna 847 has landed at Antwerp International Airport on runway 11R
 Cessna 847 is taxiing to Gates 
-Cessna 847 is standing at Gate 2
-Cessna 847 is approaching Antwerp International Airport at 10000 ft.
-Cessna 847 descended to 9000 ft.
-Cessna 847 descended to 8000 ft.
-Cessna 847 descended to 7000 ft.
-Cessna 847 descended to 6000 ft.
-Cessna 847 descended to 5000 ft.
-Cessna 847 descended to 4000 ft.
-Cessna 847 descended to 3000 ft.
-Cessna 847 descended to 2000 ft.
-Cessna 847 descended to 1000 ft.
-Cessna 847 is landing at Antwerp International Airport on runway 11L
-Cessna 847 has landed at Antwerp International Airport on runway 11L
-Cessna 847 is taxiing to Gates 
-Cessna 847 is standing at Gate 2
+Cessna 847 is standing at Gate 1

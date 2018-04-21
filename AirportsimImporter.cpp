@@ -291,6 +291,7 @@ Esucces AirportsimImporter::readAirplane(TiXmlElement *airplaneelement, std::ost
         }
         else{
             airport->parkAirplane(gateforairplane,a);
+            a->setLocation(gateforairplane);
         }
     }
 

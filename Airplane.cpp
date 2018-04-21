@@ -199,14 +199,15 @@ const string &Airplane::getCheckprocedure() const {
     return checkprocedure;
 }
 
-Location *Airplane::getNextLocation() const {
-    return nextLocation;
-}
-
-void Airplane::setNextLocation(Location *nextLocation) {
-    Airplane::nextLocation = nextLocation;
-}
 
 bool Airplane::sendSignalPushBack() {
     return destination->receiveSignal(this,"Push back");
+}
+
+const vector<Location *> &Airplane::getInstruction() const {
+    return instruction;
+}
+
+void Airplane::setInstruction(const vector<Location *> &instruction) {
+    Airplane::instruction = instruction;
 }

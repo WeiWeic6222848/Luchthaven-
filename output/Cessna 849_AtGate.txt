@@ -1,21 +1,3 @@
-0 passengers exited Cessna 849 at gate 2 of Antwerp International Airport
-Cessna 849 has been checked for technical malfunctions
-Cessna 849 has been refueled
-0 passengers boarded Cessna 849 at gate 2 of Antwerp International Airport
-Cessna 849 is standing at Gate 2
-Cessna 849 is taxiing to runway 12L
-0 passengers exited Cessna 849 at gate 2 of Antwerp International Airport
-Cessna 849 has been checked for technical malfunctions
-Cessna 849 has been refueled
-0 passengers boarded Cessna 849 at gate 2 of Antwerp International Airport
-Cessna 849 is standing at Gate 2
-Cessna 849 is taxiing to runway 12L
-0 passengers exited Cessna 849 at gate 2 of Antwerp International Airport
-Cessna 849 has been checked for technical malfunctions
-Cessna 849 has been refueled
-0 passengers boarded Cessna 849 at gate 2 of Antwerp International Airport
-Cessna 849 is standing at Gate 2
-Cessna 849 is taxiing to runway 12L
 0 passengers exited Cessna 849 at gate 1 of Antwerp International Airport
 Cessna 849 has been checked for technical malfunctions
 Cessna 849 has been refueled
@@ -33,93 +15,46 @@ Cessna 849 has been checked for technical malfunctions
 Cessna 849 has been refueled
 0 passengers boarded Cessna 849 at gate 1 of Antwerp International Airport
 Cessna 849 is standing at Gate 1
-Cessna 849 is taxiing to runway 11L
-0 passengers exited Cessna 849 at gate 1 of Antwerp International Airport
-Cessna 849 has been checked for technical malfunctions
-Cessna 849 has been refueled
-0 passengers boarded Cessna 849 at gate 1 of Antwerp International Airport
-Cessna 849 is standing at Gate 1
-Cessna 849 is taxiing to runway 11L
-0 passengers exited Cessna 849 at gate 1 of Antwerp International Airport
-Cessna 849 has been checked for technical malfunctions
-Cessna 849 has been refueled
-0 passengers boarded Cessna 849 at gate 1 of Antwerp International Airport
-Cessna 849 is standing at Gate 1
-Cessna 849 is taxiing to runway 11L
-0 passengers exited Cessna 849 at gate 1 of Antwerp International Airport
-Cessna 849 has been checked for technical malfunctions
-Cessna 849 has been refueled
-Cessna 849 is standing at Gate 1
-Cessna 849 is taxiing to runway 11L
-0 passengers exited Cessna 849 at gate 1 of Antwerp International Airport
-Cessna 849 has been checked for technical malfunctions
-Cessna 849 has been refueled
-Cessna 849 is standing at Gate 1
-Cessna 849 is taxiing to runway 11L
-0 passengers exited Cessna 849 at gate 1 of Antwerp International Airport
-Cessna 849 has been checked for technical malfunctions
-Cessna 849 has been refueled
-Cessna 849 is standing at Gate 1
-Cessna 849 is taxiing to runway 11L
-0 passengers exited Cessna 849 at gate 1 of Antwerp International Airport
-Cessna 849 has been checked for technical malfunctions
-Cessna 849 has been refueled
-Cessna 849 is standing at Gate 1
-Cessna 849 is taxiing to runway 11L
-0 passengers exited Cessna 849 at gate 1 of Antwerp International Airport
-Cessna 849 has been checked for technical malfunctions
-Cessna 849 has been refueled
-0 passengers exited Cessna 849 at gate 2 of Antwerp International Airport
-Cessna 849 has been checked for technical malfunctions
-Cessna 849 has been refueled
-Cessna 849 is standing at Gate 2
 Cessna 849 is taxiing to runway 11R
 0 passengers exited Cessna 849 at gate 1 of Antwerp International Airport
 Cessna 849 has been checked for technical malfunctions
 Cessna 849 has been refueled
+0 passengers boarded Cessna 849 at gate 1 of Antwerp International Airport
 Cessna 849 is standing at Gate 1
-Cessna 849 is taxiing to runway 11L
-0 passengers exited Cessna 849 at gate 3 of Antwerp International Airport
-Cessna 849 has been checked for technical malfunctions
-Cessna 849 has been refueled
-Cessna 849 is standing at Gate 3
-Cessna 849 is taxiing to runway 11L
+Cessna 849 is taxiing to runway 11R
 0 passengers exited Cessna 849 at gate 1 of Antwerp International Airport
 Cessna 849 has been checked for technical malfunctions
 Cessna 849 has been refueled
 0 passengers boarded Cessna 849 at gate 1 of Antwerp International Airport
 Cessna 849 is standing at Gate 1
-Cessna 849 is taxiing to runway 11L
-0 passengers exited Cessna 849 at gate 3 of Antwerp International Airport
-Cessna 849 has been checked for technical malfunctions
-Cessna 849 has been refueled
-Cessna 849 is standing at Gate 3
-Cessna 849 is taxiing to runway 11L
-0 passengers exited Cessna 849 at gate 3 of Antwerp International Airport
-Cessna 849 has been checked for technical malfunctions
-Cessna 849 has been refueled
-Cessna 849 is standing at Gate 3
-Cessna 849 is taxiing to runway 11L
+Cessna 849 is taxiing to runway 11R
 0 passengers exited Cessna 849 at gate 1 of Antwerp International Airport
 Cessna 849 has been checked for technical malfunctions
 Cessna 849 has been refueled
 0 passengers boarded Cessna 849 at gate 1 of Antwerp International Airport
 Cessna 849 is standing at Gate 1
-Cessna 849 is taxiing to runway 11L
-0 passengers exited Cessna 849 at gate 3 of Antwerp International Airport
-Cessna 849 has been checked for technical malfunctions
-Cessna 849 has been refueled
-Cessna 849 is standing at Gate 3
-Cessna 849 is taxiing to runway 11L
+Cessna 849 is taxiing to runway 11R
 0 passengers exited Cessna 849 at gate 1 of Antwerp International Airport
 Cessna 849 has been checked for technical malfunctions
 Cessna 849 has been refueled
 0 passengers boarded Cessna 849 at gate 1 of Antwerp International Airport
 Cessna 849 is standing at Gate 1
-Cessna 849 is taxiing to runway 11L
+Cessna 849 is taxiing to runway 11R
 0 passengers exited Cessna 849 at gate 1 of Antwerp International Airport
 Cessna 849 has been checked for technical malfunctions
 Cessna 849 has been refueled
 0 passengers boarded Cessna 849 at gate 1 of Antwerp International Airport
 Cessna 849 is standing at Gate 1
-Cessna 849 is taxiing to runway 11L
+Cessna 849 is taxiing to runway 11R
+0 passengers exited Cessna 849 at gate 1 of Antwerp International Airport
+Cessna 849 has been checked for technical malfunctions
+Cessna 849 has been refueled
+0 passengers boarded Cessna 849 at gate 1 of Antwerp International Airport
+Cessna 849 is standing at Gate 1
+Cessna 849 is taxiing to runway 11R
+0 passengers exited Cessna 849 at gate 1 of Antwerp International Airport
+Cessna 849 has been checked for technical malfunctions
+Cessna 849 has been refueled
+0 passengers boarded Cessna 849 at gate 1 of Antwerp International Airport
+Cessna 849 is standing at Gate 1
+Cessna 849 is taxiing to runway 11R

@@ -86,7 +86,6 @@ void Airport::parkAirplane(Gate* gate, Airplane *airplane) {
     REQUIRE((unsigned int)stoi(gate->getName())<=gates.size(),"The giving gate number must be valid");
     REQUIRE(gate->getCurrentPlane()==NULL,"The giving gate must be empty");
     gate->setCurrentPlane(airplane);
-    airplane->setLocation(gate);
     ENSURE(gate->getCurrentPlane(),"parkAirplane postcondition failed");
 }
 

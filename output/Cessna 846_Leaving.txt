@@ -1,25 +1,4 @@
-Cessna 846 is taking off at Antwerp International Airport on runway 11L
-Cessna 846 ascended to 1000 ft.
-Cessna 846 ascended to 2000 ft.
-Cessna 846 ascended to 3000 ft.
-Cessna 846 ascended to 4000 ft.
-Cessna 846 ascended to 5000 ft.
-Cessna 846 has left Antwerp International Airport
-Cessna 846 is taking off at Antwerp International Airport on runway 11L
-Cessna 846 ascended to 1000 ft.
-Cessna 846 ascended to 2000 ft.
-Cessna 846 ascended to 3000 ft.
-Cessna 846 ascended to 4000 ft.
-Cessna 846 ascended to 5000 ft.
-Cessna 846 has left Antwerp International Airport
-Cessna 846 is taking off at Antwerp International Airport on runway 11L
-Cessna 846 ascended to 1000 ft.
-Cessna 846 ascended to 2000 ft.
-Cessna 846 ascended to 3000 ft.
-Cessna 846 ascended to 4000 ft.
-Cessna 846 ascended to 5000 ft.
-Cessna 846 has left Antwerp International Airport
-Cessna 846 is taking off at Antwerp International Airport on runway 11L
+Cessna 846 is taking off at Antwerp International Airport on runway 11R
 Cessna 846 ascended to 1000 ft.
 Cessna 846 ascended to 2000 ft.
 Cessna 846 ascended to 3000 ft.
@@ -33,14 +12,7 @@ Cessna 846 ascended to 3000 ft.
 Cessna 846 ascended to 4000 ft.
 Cessna 846 ascended to 5000 ft.
 Cessna 846 has left Antwerp International Airport
-Cessna 846 is taking off at Antwerp International Airport on runway 11L
-Cessna 846 ascended to 1000 ft.
-Cessna 846 ascended to 2000 ft.
-Cessna 846 ascended to 3000 ft.
-Cessna 846 ascended to 4000 ft.
-Cessna 846 ascended to 5000 ft.
-Cessna 846 has left Antwerp International Airport
-Cessna 846 is taking off at Antwerp International Airport on runway 11L
+Cessna 846 is taking off at Antwerp International Airport on runway 11R
 Cessna 846 ascended to 1000 ft.
 Cessna 846 ascended to 2000 ft.
 Cessna 846 ascended to 3000 ft.
@@ -54,14 +26,7 @@ Cessna 846 ascended to 3000 ft.
 Cessna 846 ascended to 4000 ft.
 Cessna 846 ascended to 5000 ft.
 Cessna 846 has left Antwerp International Airport
-Cessna 846 is taking off at Antwerp International Airport on runway 11L
-Cessna 846 ascended to 1000 ft.
-Cessna 846 ascended to 2000 ft.
-Cessna 846 ascended to 3000 ft.
-Cessna 846 ascended to 4000 ft.
-Cessna 846 ascended to 5000 ft.
-Cessna 846 has left Antwerp International Airport
-Cessna 846 is taking off at Antwerp International Airport on runway 11L
+Cessna 846 is taking off at Antwerp International Airport on runway 11R
 Cessna 846 ascended to 1000 ft.
 Cessna 846 ascended to 2000 ft.
 Cessna 846 ascended to 3000 ft.
@@ -75,7 +40,14 @@ Cessna 846 ascended to 3000 ft.
 Cessna 846 ascended to 4000 ft.
 Cessna 846 ascended to 5000 ft.
 Cessna 846 has left Antwerp International Airport
-Cessna 846 is taking off at Antwerp International Airport on runway 11L
+Cessna 846 is taking off at Antwerp International Airport on runway 11R
+Cessna 846 ascended to 1000 ft.
+Cessna 846 ascended to 2000 ft.
+Cessna 846 ascended to 3000 ft.
+Cessna 846 ascended to 4000 ft.
+Cessna 846 ascended to 5000 ft.
+Cessna 846 has left Antwerp International Airport
+Cessna 846 is taking off at Antwerp International Airport on runway 11R
 Cessna 846 ascended to 1000 ft.
 Cessna 846 ascended to 2000 ft.
 Cessna 846 ascended to 3000 ft.

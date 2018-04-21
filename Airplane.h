@@ -38,11 +38,11 @@ private:
     string permission;
     Airport* destination=NULL;
     Location* location=NULL;
-    Location* nextLocation=NULL;
+    vector<Location*> instruction;
 public:
-    Location *getNextLocation() const;
+    const vector<Location *> &getInstruction() const;
 
-    void setNextLocation(Location *nextLocation);
+    void setInstruction(const vector<Location *> &instruction);
 
 private:
     Runway* destinaterunway=NULL;

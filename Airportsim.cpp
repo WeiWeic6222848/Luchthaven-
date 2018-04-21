@@ -472,8 +472,11 @@ void Airportsim::taxiingToGatestep(Airplane &taxiingplane, Airport &airport) {
     outputfile.open(filename.c_str(),ios::app);
 
     taxiingplane.getLocation()->setCrossing(false);
-    taxiingplane.setLocation(taxiingplane.getNextLocation());
-    taxiingplane.getLocation()->setCrossing(true);
+    vector<Location*> instruction=taxiingplane.getInstruction();
+    taxiingplane.setLocation((find(instruction.begin(),instruction.end(),taxiingplane.getLocation())+1).operator*());
+    //if(taxiingplane.getLocation()==taxiingplane.getInstruction()[taxiingplane.getInstruction().size()-1]){
+        //hold short
+    //}
     if(taxiingplane.getLocation()->isOnuse()&&taxiingplane.getLocation()->isGate()){
         //only a gate location will be giving under this condition
         outputfile<<taxiingplane.getCallsign()<<" is standing at Gate "<<taxiingplane.getLocation()->getName()<<endl;
@@ -486,15 +489,13 @@ void Airportsim::taxiingToRunwaystep(Airplane &taxiingplane, Airport &airport) {
     string filename="../output/"+taxiingplane.getCallsign()+"_Leaving.txt";
     outputfile.open(filename.c_str(),ios::app);
     Runway* destination=taxiingplane.getDestinaterunway();
+
     taxiingplane.getLocation()->setCrossing(false);
-
-    taxiingplane.setLocation(taxiingplane.getNextLocation());
-
-    taxiingplane.getLocation()->setCrossing(true);
+    vector<Location*> instruction=taxiingplane.getInstruction();
+    taxiingplane.setLocation((find(instruction.begin(),instruction.end(),taxiingplane.getLocation())+1).operator*());
 
     if(taxiingplane.getLocation()==destination){
         taxiingplane.getLocation()->setCrossing(false);
-        taxiingplane.setNextLocation(NULL);
         //removing cross marker sinds the plane is no more crossing but at the begin and ready to take off.
         taxiingplane.setStatus("Leaving");
     }

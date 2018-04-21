@@ -35,6 +35,16 @@ public:
     bool permissionLeavingGate(Airplane* airplane);
     void regulateTaxiingtoGate();
     void regulateTaxiingtorunway();
+
+    void makeInstructionToGate(Airplane* airplane);
+    void makeInstructionToRunway(Airplane* airplane);
+    /*
+    void sendSignalPermission5000(Airplane* airplane);
+    void sendSignalPermission3000(Airplane* airplane);
+    void sendSignalPermissionLanding(Airplane* airplane);
+    void sendSignalPermissionLeaving(Airplane* airplane);
+    void sendSignalWaiting(Airplane* airplane);
+     */
 };
 
 
