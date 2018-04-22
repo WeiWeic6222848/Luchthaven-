@@ -37,6 +37,7 @@ private:
     int passengerCapacity;
     string permission;
     Airport* destination=NULL;
+    Airport* currentAirport=NULL;
     Location* location=NULL;
     vector<Location*> instruction;
 public:
@@ -157,6 +158,8 @@ public:
     void progressCheck();
 
     const string &getCheckprocedure() const;
+
+    void resetCheckProcedure();
 };
 
 

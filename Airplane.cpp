@@ -191,7 +191,7 @@ void Airplane::progressCheck() {
         checkprocedure="Ready to leave";
     }
     else if(checkprocedure=="Ready to leave"){
-        checkprocedure="";
+        checkprocedure="Ready to leave";
     }
 }
 
@@ -211,3 +211,8 @@ const vector<Location *> &Airplane::getInstruction() const {
 void Airplane::setInstruction(const vector<Location *> &instruction) {
     Airplane::instruction = instruction;
 }
+
+void Airplane::resetCheckProcedure() {
+    checkprocedure="";
+}
+

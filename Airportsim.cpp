@@ -456,9 +456,15 @@ void Airportsim::airplaneAtGatestep(Airplane &plane, Airport &airport) {
                 gate->setPlaneNearGate(&plane);
                 gate->setCurrentPlane(NULL);
             }
+            else{
+                plane.setDestinaterunway(NULL);
+            }
             if(plane.sendSignalTaxiingtoRunway()){
+
+                plane.resetCheckProcedure();
                 //ask permission, if there is a runway available just go there.
                 plane.setStatus("Taxiing to runway");
+                gate->setPlaneNearGate(NULL);
                 outputfile<<plane.getCallsign()<<" is standing at Gate "<<gate->getName()<<endl;
                 outputfile<<plane.getCallsign()<<" is taxiing to runway "<<plane.getDestinaterunway()->getName()<<endl;//add here
             }
@@ -489,16 +495,25 @@ void Airportsim::taxiingToRunwaystep(Airplane &taxiingplane, Airport &airport) {
     string filename="../output/"+taxiingplane.getCallsign()+"_Leaving.txt";
     outputfile.open(filename.c_str(),ios::app);
     Runway* destination=taxiingplane.getDestinaterunway();
-
-    taxiingplane.getLocation()->setCrossing(false);
     vector<Location*> instruction=taxiingplane.getInstruction();
-    taxiingplane.setLocation((find(instruction.begin(),instruction.end(),taxiingplane.getLocation())+1).operator*());
 
-    if(taxiingplane.getLocation()==destination){
-        taxiingplane.getLocation()->setCrossing(false);
+
+    if(taxiingplane.getLocation()==destination&&taxiingplane.getDestinaterunway()->getPlaneAtbegin()==&taxiingplane){
         //removing cross marker sinds the plane is no more crossing but at the begin and ready to take off.
         taxiingplane.setStatus("Leaving");
+        return;
     }
+    else if(taxiingplane.getLocation()==destination){
+        instruction.clear();
+        instruction.push_back(taxiingplane.getLocation());
+        instruction.push_back(taxiingplane.getLocation());
+        taxiingplane.setInstruction(instruction);
+        return;
+    }
+
+    taxiingplane.setLocation((find(instruction.begin(),instruction.end(),taxiingplane.getLocation())+1).operator*());
+
+
 
 }
 
@@ -514,6 +529,9 @@ void Airportsim::leavingstep(Airplane &leaving, Airport &airport) {
         outputfile<<leaving.getCallsign()<<" is taking off at "<<airport.getName()<<" on runway "<<leaving.getDestinaterunway()->getName()<<endl;
         leaving.rise();
         leaving.getDestinaterunway()->setCurrentairplane(NULL);
+        if(leaving.getDestinaterunway()->getPlaneAtbegin()==&leaving){
+            leaving.getDestinaterunway()->setPlaneAtbegin(NULL);
+        }
         leaving.getDestinaterunway()->planeLeaved();
         leaving.setPermission("");
         leaving.setDestinaterunway(NULL);

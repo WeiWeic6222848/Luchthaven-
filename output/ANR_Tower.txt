@@ -14,25 +14,95 @@ Antwerp Tower, Cessna 848, arriving at Antwerp International Airport
 Speedbird 466, radar contact, descend and maintain five thousand feet, squawk <squawk-code>.
 [2][AIR]
 Descend and maintain five thousand feet, squawking <squawk-code>, Speedbird 466
-[5][ATC]
+[4][AIR]
+Antwerp Tower, Cessna 8, requesting IFR clearancy to Antwerp Tower
+[4][ATC]
+Cessna 8, Antwerp Tower, cleared to Antwerp Tower , maintain five thousand, expect flight level one zero zero - ten minutes afterdeparture, squawk <SQUAWK CODE>
+[4][AIR]
+Cleared to Antwerp Tower , initial altitude five thousand, expecting one zero zero in ten, squawking <SQUAWK CODE> ,Cessna 8
+[4][AIR]
+Antwerp Tower, Cessna 8 at gate 1, requesting pushback
+[4][ATC]
+Cessna 8, Antwerp Tower, pushback approved.
+[4][AIR]
+Pushback approved, Cessna 8
+[4][AIR]
+Cessna 8 is ready to taxi.
+[4][ATC]
 Cessna 8, Taxi to runway 11R via Alpha.
-[5][AIR]
+[4][AIR]
 Taxi to runway 11R via Alpha, Antwerp Tower
-[5][ATC]
+[4][AIR]
+Antwerp Tower, Cessna 84, requesting IFR clearancy to Antwerp Tower
+[4][ATC]
+Cessna 84, Antwerp Tower, cleared to Antwerp Tower , maintain five thousand, expect flight level one zero zero - ten minutes afterdeparture, squawk <SQUAWK CODE>
+[4][AIR]
+Cleared to Antwerp Tower , initial altitude five thousand, expecting one zero zero in ten, squawking <SQUAWK CODE> ,Cessna 84
+[4][AIR]
+Antwerp Tower, Cessna 84 at gate 2, requesting pushback
+[4][ATC]
+Cessna 84, Antwerp Tower, pushback approved.
+[4][AIR]
+Pushback approved, Cessna 84
+[4][AIR]
+Cessna 84 is ready to taxi.
+[4][ATC]
 Cessna 84, Taxi to holdpoint 11R via Alpha.
-[5][AIR]
+[4][AIR]
 Taxi to holdpoint 11R via Alpha, Antwerp Tower
-[5][ATC]
+[4][AIR]
+Antwerp Tower, Cessna, requesting IFR clearancy to Antwerp Tower
+[4][ATC]
+Cessna, Antwerp Tower, cleared to Antwerp Tower , maintain five thousand, expect flight level one zero zero - ten minutes afterdeparture, squawk <SQUAWK CODE>
+[4][AIR]
+Cleared to Antwerp Tower , initial altitude five thousand, expecting one zero zero in ten, squawking <SQUAWK CODE> ,Cessna
+[4][AIR]
+Antwerp Tower, Cessna at gate 3, requesting pushback
+[4][ATC]
+Cessna, Antwerp Tower, pushback approved.
+[4][AIR]
+Pushback approved, Cessna
+[4][AIR]
+Cessna is ready to taxi.
+[4][ATC]
 Cessna, Taxi to runway 11R via Alpha.
-[5][AIR]
+[4][AIR]
 Taxi to runway 11R via Alpha, Antwerp Tower
-[5][ATC]
+[4][AIR]
+Antwerp Tower, Csna, requesting IFR clearancy to Antwerp Tower
+[4][ATC]
+Csna, Antwerp Tower, cleared to Antwerp Tower , maintain five thousand, expect flight level one zero zero - ten minutes afterdeparture, squawk <SQUAWK CODE>
+[4][AIR]
+Cleared to Antwerp Tower , initial altitude five thousand, expecting one zero zero in ten, squawking <SQUAWK CODE> ,Csna
+[4][AIR]
+Antwerp Tower, Csna at gate 4, requesting pushback
+[4][ATC]
+Csna, Antwerp Tower, pushback approved.
+[4][AIR]
+Pushback approved, Csna
+[4][AIR]
+Csna is ready to taxi.
+[4][ATC]
 Csna, Taxi to holdpoint 11R via Alpha.
-[5][AIR]
+[4][AIR]
 Taxi to holdpoint 11R via Alpha, Antwerp Tower
-[5][ATC]
+[4][AIR]
+Antwerp Tower, Cssna, requesting IFR clearancy to Antwerp Tower
+[4][ATC]
+Cssna, Antwerp Tower, cleared to Antwerp Tower , maintain five thousand, expect flight level one zero zero - ten minutes afterdeparture, squawk <SQUAWK CODE>
+[4][AIR]
+Cleared to Antwerp Tower , initial altitude five thousand, expecting one zero zero in ten, squawking <SQUAWK CODE> ,Cssna
+[4][AIR]
+Antwerp Tower, Cssna at gate 5, requesting pushback
+[4][ATC]
+Cssna, Antwerp Tower, pushback approved.
+[4][AIR]
+Pushback approved, Cssna
+[4][AIR]
+Cssna is ready to taxi.
+[4][ATC]
 Cssna, Taxi to runway 11R via Alpha.
-[5][AIR]
+[4][AIR]
 Taxi to runway 11R via Alpha, Antwerp Tower
 [7][ATC]
 Speedbird 466, descend and maintain three thousand feet.
@@ -43,29 +113,113 @@ Cessna 842, radar contact, descend and maintain five thousand feet, squawk <squa
 [7][AIR]
 Descend and maintain five thousand feet, squawking <squawk-code>, Cessna 842
 [7][AIR]
+Antwerp Tower, Cessna 8, holding short at 11R
+[7][ATC]
+Cessna 8, runway 11R cleared for take-off.
+[7][AIR]
+runway 11R cleared for take-off, Cessna 8
+[7][AIR]
 Antwerp Tower, Cessna 84, Hold short at 11R
 [7][ATC]
-Cessna 84, Cleared to Cross runway 11R
+Cessna 84, Hold more at11R.
 [7][AIR]
-Cessna 84, Cleared to Cross runway 11R
+Antwerp Tower, Cessna, holding short at 11R
 [7][ATC]
-Cessna 84, Taxi to runway 11L via Bravo.
+Cessna, hold position
 [7][AIR]
-Taxi to runway 11L via Bravo, Antwerp Tower
+Hold position, Antwerp Tower
 [7][AIR]
 Antwerp Tower, Csna, Hold short at 11R
 [7][ATC]
-Csna, Cleared to Cross runway 11R
+Csna, Hold more at11R.
 [7][AIR]
-Csna, Cleared to Cross runway 11R
+Antwerp Tower, Cssna, holding short at 11R
 [7][ATC]
-Csna, Taxi to runway 11L via Bravo.
+Cssna, hold position
 [7][AIR]
-Taxi to runway 11L via Bravo, Antwerp Tower
+Hold position, Antwerp Tower
+[8][AIR]
+Antwerp Tower, Cessna 84, Hold short at 11R
+[8][ATC]
+Cessna 84, Hold more at11R.
+[8][AIR]
+Antwerp Tower, Cessna, holding short at 11R
+[8][ATC]
+Cessna, hold position
+[8][AIR]
+Hold position, Antwerp Tower
+[8][AIR]
+Antwerp Tower, Csna, Hold short at 11R
+[8][ATC]
+Csna, Hold more at11R.
+[8][AIR]
+Antwerp Tower, Cssna, holding short at 11R
+[8][ATC]
+Cssna, hold position
+[8][AIR]
+Hold position, Antwerp Tower
 [9][ATC]
 Speedbird 466, cleared ILS approach runway 11L
 [9][AIR]
 Cleared ILS approach runway 11L, Speedbird 466
+[9][AIR]
+Antwerp Tower, Cessna 84, Hold short at 11R
+[9][ATC]
+Cessna 84, Cleared to Cross runway 11R
+[9][AIR]
+Cessna 84, Cleared to Cross runway 11R
+[9][ATC]
+Cessna 84, Taxi to runway 11L via Bravo.
+[9][AIR]
+Taxi to runway 11L via Bravo, Antwerp Tower
+[9][AIR]
+Antwerp Tower, Cessna, holding short at 11R
+[9][ATC]
+Cessna, runway 11R cleared for take-off.
+[9][AIR]
+runway 11R cleared for take-off, Cessna
+[9][AIR]
+Antwerp Tower, Csna, Hold short at 11R
+[9][ATC]
+Csna, Hold more at11R.
+[9][AIR]
+Antwerp Tower, Cssna, holding short at 11R
+[9][ATC]
+Cssna, hold position
+[9][AIR]
+Hold position, Antwerp Tower
+[10][AIR]
+Antwerp Tower, Csna, Hold short at 11R
+[10][ATC]
+Csna, Hold more at11R.
+[10][AIR]
+Antwerp Tower, Cssna, holding short at 11R
+[10][ATC]
+Cssna, hold position
+[10][AIR]
+Hold position, Antwerp Tower
+[11][AIR]
+Antwerp Tower, Cessna 84, holding short at 11L
+[11][ATC]
+Cessna 84, hold position
+[11][AIR]
+Hold position, Antwerp Tower
+[11][AIR]
+Antwerp Tower, Csna, Hold short at 11R
+[11][ATC]
+Csna, Cleared to Cross runway 11R
+[11][AIR]
+Csna, Cleared to Cross runway 11R
+[11][ATC]
+Csna, Taxi to runway 11L via Bravo.
+[11][AIR]
+Taxi to runway 11L via Bravo, Antwerp Tower
+[11][AIR]
+Antwerp Tower, Cssna, holding short at 11R
+[11][ATC]
+Cssna, runway 11R cleared for take-off.
+[11][AIR]
+runway 11R cleared for take-off, Cssna
 [12][ATC]
 Cessna 842, descend and maintain three thousand feet.
 [12][AIR]
@@ -74,24 +228,54 @@ Descend and maintain three thousand feet, Cessna 842
 Cessna 849, radar contact, descend and maintain five thousand feet, squawk <squawk-code>.
 [12][AIR]
 Descend and maintain five thousand feet, squawking <squawk-code>, Cessna 849
-[13][ATC]
+[12][AIR]
+Antwerp Tower, Cessna 84, holding short at 11L
+[12][ATC]
+Cessna 84, hold position
+[12][AIR]
+Hold position, Antwerp Tower
+[12][AIR]
+Antwerp Tower, Speedbird 466, Runway 11L Vacated
+[12][ATC]
 Speedbird 466, Taxi to holdpoint 11R via Bravo.
-[13][AIR]
+[12][AIR]
 Taxi to holdpoint 11R via Bravo, Antwerp Tower
+[13][AIR]
+Antwerp Tower, Cessna 84, holding short at 11L
+[13][ATC]
+Cessna 84, runway 11L cleared for take-off.
+[13][AIR]
+runway 11L cleared for take-off, Cessna 84
+[13][AIR]
+Antwerp Tower, Csna, holding short at 11L
+[13][ATC]
+Csna, hold position
+[13][AIR]
+Hold position, Antwerp Tower
 [14][ATC]
 Cessna 842, cleared ILS approach runway 11R
 [14][AIR]
 Cleared ILS approach runway 11R, Cessna 842
+[14][AIR]
+Antwerp Tower, Csna, holding short at 11L
+[14][ATC]
+Csna, hold position
+[14][AIR]
+Hold position, Antwerp Tower
 [15][AIR]
 Antwerp Tower, Speedbird 466, Hold short at 11R
 [15][ATC]
-Speedbird 466, Cleared to Cross runway 11R
+Speedbird 466, Hold more at11R.
 [15][AIR]
-Speedbird 466, Cleared to Cross runway 11R
+Antwerp Tower, Csna, holding short at 11L
 [15][ATC]
-Speedbird 466, Taxi to gate 1 via Alpha.
+Csna, runway 11L cleared for take-off.
 [15][AIR]
-Taxi to gate 1 via Alpha, Antwerp Tower
+runway 11L cleared for take-off, Csna
+[16][AIR]
+Antwerp Tower, Speedbird 466, Hold short at 11R
+[16][ATC]
+Speedbird 466, Hold more at11R.
 [17][ATC]
 Cessna 849, descend and maintain three thousand feet.
 [17][AIR]
@@ -100,18 +284,30 @@ Descend and maintain three thousand feet, Cessna 849
 Cessna 846, radar contact, descend and maintain five thousand feet, squawk <squawk-code>.
 [17][AIR]
 Descend and maintain five thousand feet, squawking <squawk-code>, Cessna 846
+[17][AIR]
+Antwerp Tower, Speedbird 466, Hold short at 11R
+[17][ATC]
+Speedbird 466, Hold more at11R.
+[17][AIR]
+Antwerp Tower, Cessna 842, Runway 11R Vacated
+[17][ATC]
+Cessna 842, Taxi to gate 1 via Alpha.
+[17][AIR]
+Taxi to gate 1 via Alpha, Antwerp Tower
+[18][AIR]
+Antwerp Tower, Speedbird 466, Hold short at 11R
 [18][ATC]
-Cessna 842, Taxi to gate 2 via Alpha.
+Speedbird 466, Cleared to Cross runway 11R
+[18][AIR]
+Cleared to Cross runway 11R, Speedbird 466
+[18][ATC]
+Speedbird 466, Taxi to gate 2 via Alpha.
 [18][AIR]
 Taxi to gate 2 via Alpha, Antwerp Tower
 [19][ATC]
 Cessna 849, cleared ILS approach runway 11R
 [19][AIR]
 Cleared ILS approach runway 11R, Cessna 849
-[21][ATC]
-Speedbird 466, Taxi to holdpoint 11R via Alpha.
-[21][AIR]
-Taxi to holdpoint 11R via Alpha, Antwerp Tower
 [22][ATC]
 Cessna 846, descend and maintain three thousand feet.
 [22][AIR]
@@ -120,28 +316,62 @@ Descend and maintain three thousand feet, Cessna 846
 Cessna 847, radar contact, descend and maintain five thousand feet, squawk <squawk-code>.
 [22][AIR]
 Descend and maintain five thousand feet, squawking <squawk-code>, Cessna 847
+[22][AIR]
+Antwerp Tower, Cessna 849, Runway 11R Vacated
+[22][ATC]
+Cessna 849, Taxi to gate 3 via Alpha.
+[22][AIR]
+Taxi to gate 3 via Alpha, Antwerp Tower
+[23][AIR]
+Antwerp Tower, Speedbird 466, requesting IFR clearancy to Antwerp Tower
 [23][ATC]
-Cessna 849, Taxi to gate 1 via Alpha.
+Speedbird 466, Antwerp Tower, cleared to Antwerp Tower , maintain five thousand, expect flight level one zero zero - ten minutes afterdeparture, squawk <SQUAWK CODE>
 [23][AIR]
-Taxi to gate 1 via Alpha, Antwerp Tower
+Cleared to Antwerp Tower , initial altitude five thousand, expecting one zero zero in ten, squawking <SQUAWK CODE> ,Speedbird 466
 [23][AIR]
-Antwerp Tower, Speedbird 466, Hold short at 11R
+Antwerp Tower, Speedbird 466 at gate 2, requesting pushback
 [23][ATC]
-Speedbird 466, Cleared to Cross runway 11R
+Speedbird 466, Antwerp Tower, pushback approved.
 [23][AIR]
-Speedbird 466, Cleared to Cross runway 11R
+Pushback approved, Speedbird 466
+[23][AIR]
+Speedbird 466 is ready to taxi.
 [23][ATC]
-Speedbird 466, Taxi to runway 11L via Bravo.
+Speedbird 466, Taxi to holdpoint 11R via Alpha.
 [23][AIR]
-Taxi to runway 11L via Bravo, Antwerp Tower
+Taxi to holdpoint 11R via Alpha, Antwerp Tower
+[23][AIR]
+Antwerp Tower, Cessna 842, requesting IFR clearancy to Antwerp Tower
+[23][ATC]
+Cessna 842, Antwerp Tower, cleared to Antwerp Tower , maintain five thousand, expect flight level one zero zero - ten minutes afterdeparture, squawk <SQUAWK CODE>
+[23][AIR]
+Cleared to Antwerp Tower , initial altitude five thousand, expecting one zero zero in ten, squawking <SQUAWK CODE> ,Cessna 842
+[23][AIR]
+Antwerp Tower, Cessna 842 at gate 1, requesting pushback
+[23][ATC]
+Cessna 842, Antwerp Tower, pushback approved.
+[23][AIR]
+Pushback approved, Cessna 842
+[23][AIR]
+Cessna 842 is ready to taxi.
+[23][ATC]
+Cessna 842, Taxi to runway 11R via Alpha.
+[23][AIR]
+Taxi to runway 11R via Alpha, Antwerp Tower
 [24][ATC]
 Cessna 846, cleared ILS approach runway 11R
 [24][AIR]
 Cleared ILS approach runway 11R, Cessna 846
-[24][ATC]
-Cessna 842, Taxi to runway 11R via Alpha.
-[24][AIR]
-Taxi to runway 11R via Alpha, Antwerp Tower
+[26][AIR]
+Antwerp Tower, Speedbird 466, Hold short at 11R
+[26][ATC]
+Speedbird 466, Hold more at11R.
+[26][AIR]
+Antwerp Tower, Cessna 842, holding short at 11R
+[26][ATC]
+Cessna 842, hold position
+[26][AIR]
+Hold position, Antwerp Tower
 [27][ATC]
 Cessna 847, descend and maintain three thousand feet.
 [27][AIR]
@@ -150,43 +380,309 @@ Descend and maintain three thousand feet, Cessna 847
 Cessna 848, radar contact, descend and maintain five thousand feet, squawk <squawk-code>.
 [27][AIR]
 Descend and maintain five thousand feet, squawking <squawk-code>, Cessna 848
-[28][ATC]
-Cessna 846, Taxi to gate 2 via Alpha.
+[27][AIR]
+Antwerp Tower, Speedbird 466, Hold short at 11R
+[27][ATC]
+Speedbird 466, Hold more at11R.
+[27][AIR]
+Antwerp Tower, Cessna 842, holding short at 11R
+[27][ATC]
+Cessna 842, hold position
+[27][AIR]
+Hold position, Antwerp Tower
+[27][AIR]
+Antwerp Tower, Cessna 846, Runway 11R Vacated
+[27][ATC]
+Cessna 846, Taxi to gate 1 via Alpha.
+[27][AIR]
+Taxi to gate 1 via Alpha, Antwerp Tower
 [28][AIR]
-Taxi to gate 2 via Alpha, Antwerp Tower
+Antwerp Tower, Speedbird 466, Hold short at 11R
+[28][ATC]
+Speedbird 466, Cleared to Cross runway 11R
+[28][AIR]
+Speedbird 466, Cleared to Cross runway 11R
+[28][ATC]
+Speedbird 466, Taxi to runway 11L via Bravo.
+[28][AIR]
+Taxi to runway 11L via Bravo, Antwerp Tower
+[28][AIR]
+Antwerp Tower, Cessna 842, holding short at 11R
+[28][ATC]
+Cessna 842, runway 11R cleared for take-off.
+[28][AIR]
+runway 11R cleared for take-off, Cessna 842
+[28][AIR]
+Antwerp Tower, Cessna 849, requesting IFR clearancy to Antwerp Tower
+[28][ATC]
+Cessna 849, Antwerp Tower, cleared to Antwerp Tower , maintain five thousand, expect flight level one zero zero - ten minutes afterdeparture, squawk <SQUAWK CODE>
+[28][AIR]
+Cleared to Antwerp Tower , initial altitude five thousand, expecting one zero zero in ten, squawking <SQUAWK CODE> ,Cessna 849
+[28][AIR]
+Antwerp Tower, Cessna 849 at gate 3, requesting pushback
+[28][ATC]
+Cessna 849, Antwerp Tower, pushback approved.
+[28][AIR]
+Pushback approved, Cessna 849
+[28][AIR]
+Cessna 849 is ready to taxi.
+[28][ATC]
+Cessna 849, Taxi to holdpoint 11R via Alpha.
+[28][AIR]
+Taxi to holdpoint 11R via Alpha, Antwerp Tower
 [29][ATC]
-Cessna 847, cleared ILS approach runway 11R
+Cessna 847, cleared ILS approach runway 11L
 [29][AIR]
-Cleared ILS approach runway 11R, Cessna 847
-[29][ATC]
-Cessna 849, Taxi to runway 11R via Alpha.
-[29][AIR]
-Taxi to runway 11R via Alpha, Antwerp Tower
+Cleared ILS approach runway 11L, Cessna 847
+[30][AIR]
+Antwerp Tower, Speedbird 466, holding short at 11L
+[30][ATC]
+Speedbird 466, hold position
+[30][AIR]
+Hold position, Antwerp Tower
+[31][AIR]
+Antwerp Tower, Speedbird 466, holding short at 11L
+[31][ATC]
+Speedbird 466, hold position
+[31][AIR]
+Hold position, Antwerp Tower
+[31][AIR]
+Antwerp Tower, Cessna 849, Hold short at 11R
+[31][ATC]
+Cessna 849, Cleared to Cross runway 11R
+[31][AIR]
+Cessna 849, Cleared to Cross runway 11R
+[31][ATC]
+Cessna 849, Taxi to runway 11L via Bravo.
+[31][AIR]
+Taxi to runway 11L via Bravo, Antwerp Tower
 [32][ATC]
 Cessna 848, descend and maintain three thousand feet.
 [32][AIR]
 Descend and maintain three thousand feet, Cessna 848
-[33][ATC]
-Cessna 847, Taxi to gate 1 via Alpha.
+[32][AIR]
+Antwerp Tower, Speedbird 466, holding short at 11L
+[32][ATC]
+Speedbird 466, hold position
+[32][AIR]
+Hold position, Antwerp Tower
+[32][AIR]
+Antwerp Tower, Cessna 847, Runway 11L Vacated
+[32][ATC]
+Cessna 847, Taxi to holdpoint 11R via Bravo.
+[32][AIR]
+Taxi to holdpoint 11R via Bravo, Antwerp Tower
 [33][AIR]
+Antwerp Tower, Speedbird 466, holding short at 11L
+[33][ATC]
+Speedbird 466, runway 11L cleared for take-off.
+[33][AIR]
+runway 11L cleared for take-off, Speedbird 466
+[33][AIR]
+Antwerp Tower, Cessna 849, holding short at 11L
+[33][ATC]
+Cessna 849, hold position
+[33][AIR]
+Hold position, Antwerp Tower
+[33][AIR]
+Cessna 846 is ready to taxi.
+[34][ATC]
+Cessna 848, hold south on the one eighty radial, expect further clearance at 35
+[34][AIR]
+Hold south on the one eighty radial, Cessna 848
+[34][AIR]
+Antwerp Tower, Cessna 849, holding short at 11L
+[34][ATC]
+Cessna 849, hold position
+[34][AIR]
+Hold position, Antwerp Tower
+[34][AIR]
+Antwerp Tower, Cessna 846, requesting IFR clearancy to Antwerp Tower
+[34][ATC]
+Cessna 846, Antwerp Tower, cleared to Antwerp Tower , maintain five thousand, expect flight level one zero zero - ten minutes afterdeparture, squawk <SQUAWK CODE>
+[34][AIR]
+Cleared to Antwerp Tower , initial altitude five thousand, expecting one zero zero in ten, squawking <SQUAWK CODE> ,Cessna 846
+[34][AIR]
+Antwerp Tower, Cessna 846 at gate 1, requesting pushback
+[34][ATC]
+Cessna 846, Antwerp Tower, pushback approved.
+[34][AIR]
+Pushback approved, Cessna 846
+[34][AIR]
+Cessna 846 is ready to taxi.
+[34][ATC]
+Cessna 846, Taxi to holdpoint 11R via Alpha.
+[34][AIR]
+Taxi to holdpoint 11R via Alpha, Antwerp Tower
+[35][ATC]
+Cessna 848, cleared ILS approach runway 11L
+[35][AIR]
+Cleared ILS approach runway 11L, Cessna 848
+[35][AIR]
+Antwerp Tower, Cessna 847, Hold short at 11R
+[35][ATC]
+Cessna 847, Hold more at11R.
+[35][AIR]
+Antwerp Tower, Cessna 849, holding short at 11L
+[35][ATC]
+Cessna 849, hold position
+[35][AIR]
+Hold position, Antwerp Tower
+[36][AIR]
+Antwerp Tower, Cessna 847, Hold short at 11R
+[36][ATC]
+Cessna 847, Cleared to Cross runway 11R
+[36][AIR]
+Cleared to Cross runway 11R, Cessna 847
+[36][ATC]
+Cessna 847, Taxi to gate 1 via Alpha.
+[36][AIR]
 Taxi to gate 1 via Alpha, Antwerp Tower
-[34][ATC]
-Cessna 848, cleared ILS approach runway 11R
-[34][AIR]
-Cleared ILS approach runway 11R, Cessna 848
-[34][ATC]
-Cessna 846, Taxi to runway 11R via Alpha.
-[34][AIR]
-Taxi to runway 11R via Alpha, Antwerp Tower
-[38][ATC]
-Cessna 848, Taxi to gate 2 via Alpha.
+[36][AIR]
+Antwerp Tower, Cessna 849, holding short at 11L
+[36][ATC]
+Cessna 849, hold position
+[36][AIR]
+Hold position, Antwerp Tower
+[37][AIR]
+Antwerp Tower, Cessna 849, holding short at 11L
+[37][ATC]
+Cessna 849, hold position
+[37][AIR]
+Hold position, Antwerp Tower
+[37][AIR]
+Antwerp Tower, Cessna 846, Hold short at 11R
+[37][ATC]
+Cessna 846, Cleared to Cross runway 11R
+[37][AIR]
+Cessna 846, Cleared to Cross runway 11R
+[37][ATC]
+Cessna 846, Taxi to runway 11L via Bravo.
+[37][AIR]
+Taxi to runway 11L via Bravo, Antwerp Tower
 [38][AIR]
-Taxi to gate 2 via Alpha, Antwerp Tower
-[39][ATC]
-Cessna 847, Taxi to runway 11R via Alpha.
+Antwerp Tower, Cessna 849, holding short at 11L
+[38][ATC]
+Cessna 849, hold position
+[38][AIR]
+Hold position, Antwerp Tower
+[38][AIR]
+Antwerp Tower, Cessna 848, Runway 11L Vacated
+[38][ATC]
+Cessna 848, Taxi to holdpoint 11R via Bravo.
+[38][AIR]
+Taxi to holdpoint 11R via Bravo, Antwerp Tower
 [39][AIR]
-Taxi to runway 11R via Alpha, Antwerp Tower
-[44][ATC]
-Cessna 848, Taxi to runway 11R via Alpha.
-[44][AIR]
-Taxi to runway 11R via Alpha, Antwerp Tower
+Antwerp Tower, Cessna 849, holding short at 11L
+[39][ATC]
+Cessna 849, runway 11L cleared for take-off.
+[39][AIR]
+runway 11L cleared for take-off, Cessna 849
+[39][AIR]
+Antwerp Tower, Cessna 846, holding short at 11L
+[39][ATC]
+Cessna 846, hold position
+[39][AIR]
+Hold position, Antwerp Tower
+[40][AIR]
+Antwerp Tower, Cessna 846, holding short at 11L
+[40][ATC]
+Cessna 846, hold position
+[40][AIR]
+Hold position, Antwerp Tower
+[41][AIR]
+Antwerp Tower, Cessna 848, Hold short at 11R
+[41][ATC]
+Cessna 848, Hold more at11R.
+[41][AIR]
+Antwerp Tower, Cessna 846, holding short at 11L
+[41][ATC]
+Cessna 846, runway 11L cleared for take-off.
+[41][AIR]
+runway 11L cleared for take-off, Cessna 846
+[41][AIR]
+Cessna 847 is ready to taxi.
+[42][AIR]
+Antwerp Tower, Cessna 848, Hold short at 11R
+[42][ATC]
+Cessna 848, Cleared to Cross runway 11R
+[42][AIR]
+Cleared to Cross runway 11R, Cessna 848
+[42][ATC]
+Cessna 848, Taxi to gate 2 via Alpha.
+[42][AIR]
+Taxi to gate 2 via Alpha, Antwerp Tower
+[42][AIR]
+Antwerp Tower, Cessna 847, requesting IFR clearancy to Antwerp Tower
+[42][ATC]
+Cessna 847, Antwerp Tower, cleared to Antwerp Tower , maintain five thousand, expect flight level one zero zero - ten minutes afterdeparture, squawk <SQUAWK CODE>
+[42][AIR]
+Cleared to Antwerp Tower , initial altitude five thousand, expecting one zero zero in ten, squawking <SQUAWK CODE> ,Cessna 847
+[42][AIR]
+Antwerp Tower, Cessna 847 at gate 1, requesting pushback
+[42][ATC]
+Cessna 847, Antwerp Tower, pushback approved.
+[42][AIR]
+Pushback approved, Cessna 847
+[42][AIR]
+Cessna 847 is ready to taxi.
+[42][ATC]
+Cessna 847, Taxi to holdpoint 11R via Alpha.
+[42][AIR]
+Taxi to holdpoint 11R via Alpha, Antwerp Tower
+[45][AIR]
+Antwerp Tower, Cessna 847, Hold short at 11R
+[45][ATC]
+Cessna 847, Cleared to Cross runway 11R
+[45][AIR]
+Cessna 847, Cleared to Cross runway 11R
+[45][ATC]
+Cessna 847, Taxi to runway 11L via Bravo.
+[45][AIR]
+Taxi to runway 11L via Bravo, Antwerp Tower
+[47][AIR]
+Antwerp Tower, Cessna 847, holding short at 11L
+[47][ATC]
+Cessna 847, runway 11L cleared for take-off.
+[47][AIR]
+runway 11L cleared for take-off, Cessna 847
+[47][AIR]
+Cessna 848 is ready to taxi.
+[48][AIR]
+Antwerp Tower, Cessna 848, requesting IFR clearancy to Antwerp Tower
+[48][ATC]
+Cessna 848, Antwerp Tower, cleared to Antwerp Tower , maintain five thousand, expect flight level one zero zero - ten minutes afterdeparture, squawk <SQUAWK CODE>
+[48][AIR]
+Cleared to Antwerp Tower , initial altitude five thousand, expecting one zero zero in ten, squawking <SQUAWK CODE> ,Cessna 848
+[48][AIR]
+Antwerp Tower, Cessna 848 at gate 2, requesting pushback
+[48][ATC]
+Cessna 848, Antwerp Tower, pushback approved.
+[48][AIR]
+Pushback approved, Cessna 848
+[48][AIR]
+Cessna 848 is ready to taxi.
+[48][ATC]
+Cessna 848, Taxi to holdpoint 11R via Alpha.
+[48][AIR]
+Taxi to holdpoint 11R via Alpha, Antwerp Tower
+[51][AIR]
+Antwerp Tower, Cessna 848, Hold short at 11R
+[51][ATC]
+Cessna 848, Hold more at11R.
+[52][AIR]
+Antwerp Tower, Cessna 848, Hold short at 11R
+[52][ATC]
+Cessna 848, Cleared to Cross runway 11R
+[52][AIR]
+Cessna 848, Cleared to Cross runway 11R
+[52][ATC]
+Cessna 848, Taxi to runway 11L via Bravo.
+[52][AIR]
+Taxi to runway 11L via Bravo, Antwerp Tower
+[54][AIR]
+Antwerp Tower, Cessna 848, holding short at 11L
+[54][ATC]
+Cessna 848, runway 11L cleared for take-off.
+[54][AIR]
+runway 11L cleared for take-off, Cessna 848

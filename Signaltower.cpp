@@ -22,21 +22,38 @@ bool Signaltower::receiveSignal(Airplane *airplane, string signal) {
         return true;
     }
     else if(signal=="Leaving"){
+
         if(!(airplane->getDestinaterunway()->isCrossing())){
+
+            file<<"["<<time<<"]"<<"[ATC]"<<endl;
+            file<<airplane->getCallsign()<<", runway "<<airplane->getDestinaterunway()->getName()<<" cleared for take-off."<<endl;
+            file<<"["<<time<<"]"<<"[AIR]"<<endl;
+            file<<"runway "<<airplane->getDestinaterunway()->getName()<<" cleared for take-off."<<airplane->getCallsign()<<endl;
+
             airplane->getDestinaterunway()->setCurrentairplane(airplane);
             airplane->getDestinaterunway()->setPlaneAtbegin(NULL);
             airplane->setPermission("fly");
             return true;
         }
+
         return false;
     }
     else if(signal=="ApproachingtoGate"){
+        file<<"["<<time<<"]"<<"[AIR]"<<endl;
+        file<<airport->getCallsign()<<", " <<airplane->getCallsign()<<", "<<"Runway " <<airplane->getLocation()->getName()<<" Vacated"<<endl;
+
         taxiingtogate.push_back(airplane);
+        makeInstructionToGate(airplane);
         return true;
     }
     else if(signal=="LeavingtoRunway"){
+        file<<"["<<time<<"]"<<"[AIR]"<<endl;
+        file<<airplane->getCallsign()<<" is ready to taxi."<<endl;
+
+
         if(airplane->getDestinaterunway()!=NULL){
             taxiingtorunway.push_back(airplane);
+            makeInstructionToRunway(airplane);
             return true;
         }
         return false;
@@ -48,9 +65,29 @@ bool Signaltower::receiveSignal(Airplane *airplane, string signal) {
     else if(signal=="Push back"){
         Runway* destinaterunway=airport->findFreeRunway(airplane);
         if(destinaterunway){
+            file<<"["<<time<<"]"<<"[AIR]"<<endl;
+            file<<airport->getCallsign()<<", "<<airplane->getCallsign()<<", requesting IFR clearancy to "<<airplane->getDestination()->getCallsign()<<endl;
+            file<<"["<<time<<"]"<<"[ATC]"<<endl;
+            file<<airplane->getCallsign()<<", "<<airport->getCallsign()<<", cleared to "<<airplane->getDestination()->getCallsign()<<" , maintain "
+                    "five thousand, expect flight level one zero zero - ten minutes after"
+                    "departure, squawk"<<" <SQUAWK CODE>"<<endl;
+            file<<"["<<time<<"]"<<"[AIR]"<<endl;
+            file<<"Cleared to "<<airplane->getDestination()->getCallsign()<<" , initial altitude five thousand, expecting one zero zero in ten, squawking"<< " <SQUAWK CODE> ,"<<airplane->getCallsign()<<endl;
+
+
+            file<<"["<<time<<"]"<<"[AIR]"<<endl;
+            file<<airport->getCallsign()<<", "<<airplane->getCallsign()<<" at gate "<<airplane->getLocation()->getName()<<", requesting pushback"<<endl;
+            file<<"["<<time<<"]"<<"[ATC]"<<endl;
+            file<<airplane->getCallsign()<<", "<<airport->getCallsign()<<", pushback approved."<<endl;
+            file<<"["<<time<<"]"<<"[AIR]"<<endl;
+            file<<"Pushback approved, "<<airplane->getCallsign()<<endl;
+
             airplane->setDestinaterunway(destinaterunway);
             destinaterunway->planeQueued();
             return true;
+        }
+        else{
+
         }
         return false;
     }
@@ -205,7 +242,7 @@ void Signaltower::regulateTaxiingtoGate() {
                     file<<"["<<time<<"]"<<"[AIR]"<<endl;
                     file<<airport->getCallsign()<<", " <<taxiingplane->getCallsign()<<", "<<"Hold short at " <<planelocation->getName()<<endl;
                     nextStop.push_back(planelocation);
-                    if(planelocation->isCrossing()){
+                    if(planelocation->isCrossing()||planelocation->isOnuse()){
                         nextStop.push_back(planelocation);
                         file<<"["<<time<<"]"<<"[ATC]"<<endl;
                         file<<taxiingplane->getCallsign()<<", "<<"Hold more at"<<planelocation->getName()<<"." << endl;
@@ -215,7 +252,7 @@ void Signaltower::regulateTaxiingtoGate() {
                         file<<"["<<time<<"]"<<"[ATC]"<<endl;
                         file<<taxiingplane->getCallsign()<<", "<<"Cleared to Cross runway "<<planelocation->getName() << endl;
                         file<<"["<<time<<"]"<<"[AIR]"<<endl;
-                        file<<taxiingplane->getCallsign()<<", "<<"Cleared to Cross runway "<<planelocation->getName() << endl;
+                        file<<"Cleared to Cross runway "<<planelocation->getName()<<", "<<taxiingplane->getCallsign() << endl;
                         planelocation->setCrossing(true);
                         nextStop.clear();
                         taxiingplane->setInstruction(nextStop);
@@ -297,7 +334,7 @@ void Signaltower::regulateTaxiingtorunway() {
                 file<<"["<<time<<"]"<<"[AIR]"<<endl;
                 file<<airport->getCallsign()<<", " <<taxiingplane->getCallsign()<<", "<<"Hold short at " <<planelocation->getName()<<endl;
                 nextStop.push_back(planelocation);
-                if(planelocation->isCrossing()){
+                if(planelocation->isCrossing()||planelocation->isOnuse()){
                     nextStop.push_back(planelocation);
                     file<<"["<<time<<"]"<<"[ATC]"<<endl;
                     file<<taxiingplane->getCallsign()<<", "<<"Hold more at"<<planelocation->getName()<<"." << endl;
@@ -308,15 +345,55 @@ void Signaltower::regulateTaxiingtorunway() {
                     file<<taxiingplane->getCallsign()<<", "<<"Cleared to Cross runway "<<planelocation->getName() << endl;
                     file<<"["<<time<<"]"<<"[AIR]"<<endl;
                     file<<taxiingplane->getCallsign()<<", "<<"Cleared to Cross runway "<<planelocation->getName() << endl;
+                    taxiingplane->getLocation()->setCrossing(true);
                     nextStop.clear();
                     taxiingplane->setInstruction(nextStop);
                     makeInstructionToRunway(taxiingplane);
                 }
             }
             else if(planelocation==taxiingplane->getDestinaterunway()){
-                vector<Location*> a;
-                taxiingplane->setInstruction(a);
-                planestoremove.push_back(i);
+
+                file<<"["<<time<<"]"<<"[AIR]"<<endl;
+                file<<airport->getCallsign()<<", "<<taxiingplane->getCallsign()<<", holding short at "<<taxiingplane->getLocation()->getName()<<endl;
+
+                Runway* destination=taxiingplane->getDestinaterunway();
+                if(destination->getPlaneAtbegin()==NULL&&!destination->isOnuse()&&!destination->isCrossing()){
+
+                    file<<"["<<time<<"]"<<"[ATC]"<<endl;
+                    file<<taxiingplane->getCallsign()<<", runway "<<taxiingplane->getDestinaterunway()->getName()<<" cleared for take-off."<<endl;
+                    file<<"["<<time<<"]"<<"[AIR]"<<endl;
+                    file<<"runway "<<taxiingplane->getDestinaterunway()->getName()<<" cleared for take-off, "<<taxiingplane->getCallsign()<<endl;
+
+
+                    vector<Location*> a;
+                    taxiingplane->setInstruction(a);
+
+                    taxiingplane->setPermission("fly");
+                    destination->setPlaneAtbegin(taxiingplane);
+                    destination->setCurrentairplane(taxiingplane);
+                    planestoremove.push_back(i);
+                }
+                else if(destination->getPlaneAtbegin()==NULL&&!destination->isOnuse()){
+
+                    file<<"["<<time<<"]"<<"[ATC]"<<endl;
+                    file<<taxiingplane->getCallsign()<<", line up runway "<<taxiingplane->getDestinaterunway()->getName()<<" and wait."<<endl;
+                    file<<"["<<time<<"]"<<"[AIR]"<<endl;
+                    file<<"Line up runway "<<taxiingplane->getDestinaterunway()->getName()<<" and wait."<<taxiingplane->getCallsign()<<endl;
+
+
+                    vector<Location*> a;
+                    taxiingplane->setInstruction(a);
+
+                    destination->setPlaneAtbegin(taxiingplane);
+                    planestoremove.push_back(i);
+                }
+                else{
+
+                    file<<"["<<time<<"]"<<"[ATC]"<<endl;
+                    file<<taxiingplane->getCallsign()<<", hold position"<<endl;
+                    file<<"["<<time<<"]"<<"[AIR]"<<endl;
+                    file<<"Hold position, "<<airport->getCallsign()<<endl;
+                }
             }
         }
         /*
