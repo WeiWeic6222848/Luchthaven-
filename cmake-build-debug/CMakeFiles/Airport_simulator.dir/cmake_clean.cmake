@@ -16,6 +16,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Airport_simulator.dir/Location.cpp.o"
   "CMakeFiles/Airport_simulator.dir/Taxipoint.cpp.o"
   "CMakeFiles/Airport_simulator.dir/Gate.cpp.o"
+  "CMakeFiles/Airport_simulator.dir/Time.cpp.o"
   "Airport_simulator.pdb"
   "Airport_simulator"
 )

@@ -169,6 +169,8 @@ Airport.h
 /home/c6222848/Desktop/Luchthaven/Airport.h
 fstream
 /home/c6222848/Desktop/Luchthaven/fstream
+Time.h
+/home/c6222848/Desktop/Luchthaven/Time.h
 
 /home/c6222848/Desktop/Luchthaven/Taxipoint.cpp
 Taxipoint.h
@@ -179,6 +181,18 @@ Runway.h
 /home/c6222848/Desktop/Luchthaven/Runway.h
 Location.h
 /home/c6222848/Desktop/Luchthaven/Location.h
+
+/home/c6222848/Desktop/Luchthaven/Time.cpp
+Time.h
+/home/c6222848/Desktop/Luchthaven/Time.h
+string
+/home/c6222848/Desktop/Luchthaven/string
+
+/home/c6222848/Desktop/Luchthaven/Time.h
+iostream
+/home/c6222848/Desktop/Luchthaven/iostream
+DesignByContract.h
+/home/c6222848/Desktop/Luchthaven/DesignByContract.h
 
 /home/c6222848/Desktop/Luchthaven/main.cpp
 fstream

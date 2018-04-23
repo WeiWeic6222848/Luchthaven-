@@ -211,6 +211,12 @@
 		<Unit filename="/home/c6222848/Desktop/Luchthaven/Taxipoint.h">
 			<Option target="Airport_simulator"/>
 		</Unit>
+		<Unit filename="/home/c6222848/Desktop/Luchthaven/Time.cpp">
+			<Option target="Airport_simulator"/>
+		</Unit>
+		<Unit filename="/home/c6222848/Desktop/Luchthaven/Time.h">
+			<Option target="Airport_simulator"/>
+		</Unit>
 		<Unit filename="/home/c6222848/Desktop/Luchthaven/main.cpp">
 			<Option target="Airport_simulator"/>
 		</Unit>

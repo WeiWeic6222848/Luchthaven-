@@ -10,7 +10,7 @@ Signaltower::Signaltower(Airport *airport) : airport(airport) {
 
     string filename="../output/"+airport->getIata()+"_Tower.txt";
     file.open(filename.c_str(),ios::app);
-    time=1;
+    time=Time();
 }
 
 bool Signaltower::receiveSignal(Airplane *airplane, string signal) {
@@ -138,7 +138,7 @@ void Signaltower::regulateApproachingplanes() {
             else{
 
                 file<<"["<<time<<"]"<<"[ATC]"<<endl;
-                file<<approachingAirplanes[i]->getCallsign()<<", "<<"hold south on the one eighty radial, expect further clearance at "<<time+1<<endl;
+                file<<approachingAirplanes[i]->getCallsign()<<", "<<"hold south on the one eighty radial, expect further clearance at "<< time++ <<endl;
                 file<<"["<<time<<"]"<<"[AIR]"<<endl;
                 file<<"Hold south on the one eighty radial, "<<approachingAirplanes[i]->getCallsign()<<endl;
 
@@ -180,7 +180,7 @@ void Signaltower::regulateApproachingplanes() {
             else {
 
                 file<<"["<<time<<"]"<<"[ATC]"<<endl;
-                file<<approachingAirplanes[i]->getCallsign()<<", "<<"hold south on the one eighty radial, expect further clearance at "<<time+1<<endl;
+                file<<approachingAirplanes[i]->getCallsign()<<", "<<"hold south on the one eighty radial, expect further clearance at "<<time++<<endl;
                 file<<"["<<time<<"]"<<"[AIR]"<<endl;
                 file<<"Hold south on the one eighty radial, "<<approachingAirplanes[i]->getCallsign()<<endl;
 

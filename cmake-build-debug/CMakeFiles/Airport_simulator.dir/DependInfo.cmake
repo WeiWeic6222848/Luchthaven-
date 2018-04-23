@@ -15,6 +15,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/c6222848/Desktop/Luchthaven/Runway.cpp" "/home/c6222848/Desktop/Luchthaven/cmake-build-debug/CMakeFiles/Airport_simulator.dir/Runway.cpp.o"
   "/home/c6222848/Desktop/Luchthaven/Signaltower.cpp" "/home/c6222848/Desktop/Luchthaven/cmake-build-debug/CMakeFiles/Airport_simulator.dir/Signaltower.cpp.o"
   "/home/c6222848/Desktop/Luchthaven/Taxipoint.cpp" "/home/c6222848/Desktop/Luchthaven/cmake-build-debug/CMakeFiles/Airport_simulator.dir/Taxipoint.cpp.o"
+  "/home/c6222848/Desktop/Luchthaven/Time.cpp" "/home/c6222848/Desktop/Luchthaven/cmake-build-debug/CMakeFiles/Airport_simulator.dir/Time.cpp.o"
   "/home/c6222848/Desktop/Luchthaven/main.cpp" "/home/c6222848/Desktop/Luchthaven/cmake-build-debug/CMakeFiles/Airport_simulator.dir/main.cpp.o"
   "/home/c6222848/Desktop/Luchthaven/output_system.cpp" "/home/c6222848/Desktop/Luchthaven/cmake-build-debug/CMakeFiles/Airport_simulator.dir/output_system.cpp.o"
   "/home/c6222848/Desktop/Luchthaven/tinystr.cpp" "/home/c6222848/Desktop/Luchthaven/cmake-build-debug/CMakeFiles/Airport_simulator.dir/tinystr.cpp.o"

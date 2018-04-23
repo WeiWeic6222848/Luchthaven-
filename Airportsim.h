@@ -9,6 +9,9 @@
 #include "Airport.h"
 
 class AirportsimImporter;
+class Airport;
+class Airplane;
+class Runway;
 
 using namespace std;
 

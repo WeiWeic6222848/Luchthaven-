@@ -352,6 +352,7 @@ void Airportsim::Simulate() {
          vector<int> airplanestoremove;
          for (unsigned int j = 0; j < Airplanes.size(); ++j) {
              string status=Airplanes[j]->getStatus();
+             Airplanes[j]->time();
              if(status=="Approaching"){
                  landingstep(*Airplanes[j],*Airplanes[j]->getDestination());
              }
@@ -399,16 +400,15 @@ void Airportsim::landingstep(Airplane &approaching, Airport &airport) {
         approaching.fall();
         outputfile<<approaching.getCallsign()<<" descended to "<<approaching.getHeight()<<" ft."<<endl;
     }
-    else if(approaching.getHeight()>1000&&approaching.getPermission()=="0"){
+    else if(approaching.getHeight()>=1000&&approaching.getPermission()=="0"){
         //on getting permission landing, a runway will be on use
-        approaching.fall();
         outputfile<<approaching.getCallsign()<<" descended to "<<approaching.getHeight()<<" ft."<<endl;
-    }
-    else if(approaching.getHeight()==1000&&approaching.getPermission()=="0"){
         approaching.fall();
+    }
+    else if(approaching.getHeight()==0&&!approaching.landing()){ ;
         outputfile<<approaching.getCallsign()<<" is landing at "<<airport.getName()<<" on runway "<<approaching.getDestinaterunway()->getName()<<endl;
     }
-    else if (approaching.getHeight()==0){
+    else if (approaching.getHeight()==0&&approaching.landing()){
         outputfile<<approaching.getCallsign()<<" has landed at "<<airport.getName()<<" on runway "<<approaching.getDestinaterunway()->getName()<<endl;
         approaching.setLocation(approaching.getDestinaterunway());
         approaching.getDestinaterunway()->setPlaneAtEnd(&approaching);
@@ -525,7 +525,7 @@ void Airportsim::leavingstep(Airplane &leaving, Airport &airport) {
     if (leaving.getHeight()==0&&leaving.getPermission()!="fly"){
         leaving.sendSignalLeaving();
     }
-    else if(leaving.getHeight()==0&&leaving.getPermission()=="fly"){
+    else if(leaving.getHeight()==0&&leaving.getPermission()=="fly"&&leaving.takeOff()){
         outputfile<<leaving.getCallsign()<<" is taking off at "<<airport.getName()<<" on runway "<<leaving.getDestinaterunway()->getName()<<endl;
         leaving.rise();
         leaving.getDestinaterunway()->setCurrentairplane(NULL);

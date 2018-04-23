@@ -448,6 +448,33 @@ Taxipoint.cpp.s:
 	$(MAKE) -f CMakeFiles/Airport_simulator.dir/build.make CMakeFiles/Airport_simulator.dir/Taxipoint.cpp.s
 .PHONY : Taxipoint.cpp.s
 
+Time.o: Time.cpp.o
+
+.PHONY : Time.o
+
+# target to build an object file
+Time.cpp.o:
+	$(MAKE) -f CMakeFiles/Airport_simulator.dir/build.make CMakeFiles/Airport_simulator.dir/Time.cpp.o
+.PHONY : Time.cpp.o
+
+Time.i: Time.cpp.i
+
+.PHONY : Time.i
+
+# target to preprocess a source file
+Time.cpp.i:
+	$(MAKE) -f CMakeFiles/Airport_simulator.dir/build.make CMakeFiles/Airport_simulator.dir/Time.cpp.i
+.PHONY : Time.cpp.i
+
+Time.s: Time.cpp.s
+
+.PHONY : Time.s
+
+# target to generate assembly for a file
+Time.cpp.s:
+	$(MAKE) -f CMakeFiles/Airport_simulator.dir/build.make CMakeFiles/Airport_simulator.dir/Time.cpp.s
+.PHONY : Time.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -695,6 +722,9 @@ help:
 	@echo "... Taxipoint.o"
 	@echo "... Taxipoint.i"
 	@echo "... Taxipoint.s"
+	@echo "... Time.o"
+	@echo "... Time.i"
+	@echo "... Time.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

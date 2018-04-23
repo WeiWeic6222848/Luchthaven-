@@ -10,6 +10,7 @@
 #include "tinyxml.h"
 
 enum Esucces{ImportAborted,PartialImport,Success};
+class Airportsim;
 
 class AirportsimImporter {
 public:

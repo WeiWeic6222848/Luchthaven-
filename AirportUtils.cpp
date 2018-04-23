@@ -145,6 +145,9 @@ int requiredLengthOfRunway(Airplane *airplane) {
 
 string to_string(int integer) {
     string finalString;
+    if(integer==0){
+        return "0";
+    }
     while(integer!=0){
         int lastdigit=integer-integer/10*10;//using the integer devide rule, e.a. 105/10*10=100.
         finalString.insert(finalString.begin(),'0'+lastdigit);

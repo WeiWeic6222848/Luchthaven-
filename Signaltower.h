@@ -10,10 +10,13 @@
 #include "vector"
 #include "Airport.h"
 #include "fstream"
+#include "Time.h"
+
 using namespace std;
 
 class Airplane;
 class Airport;
+class Time;
 
 class Signaltower {
 private:
@@ -26,7 +29,7 @@ private:
     vector<Airplane*> allflyingplanes();
     vector<Airplane*> allgroundplanes();
     ofstream file;
-    int time;
+    Time time;
 public:
     Signaltower(Airport *airport);
 

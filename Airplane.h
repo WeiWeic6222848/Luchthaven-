@@ -40,6 +40,7 @@ private:
     Airport* currentAirport=NULL;
     Location* location=NULL;
     vector<Location*> instruction;
+    int timeleftforaction;
 public:
     const vector<Location *> &getInstruction() const;
 
@@ -160,6 +161,12 @@ public:
     const string &getCheckprocedure() const;
 
     void resetCheckProcedure();
+
+    void time();
+
+    bool landing();
+
+    bool takeOff();
 };
 
 
