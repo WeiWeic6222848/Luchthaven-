@@ -275,4 +275,8 @@ bool Airplane::takeOff() {
     return false;
 }
 
+int Airplane::getTimeleftforaction() const {
+    return timeleftforaction;
+}
+
 

@@ -32,6 +32,10 @@ private:
     string engine;
     string size;
     int passenger;
+public:
+    int getTimeleftforaction() const;
+
+private:
     int fuel;
     int height;
     int passengerCapacity;

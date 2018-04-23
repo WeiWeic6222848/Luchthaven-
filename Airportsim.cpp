@@ -350,6 +350,7 @@ void Airportsim::Simulate() {
 
      while (!Airplanes.empty()){
          vector<int> airplanestoremove;
+
          for (unsigned int j = 0; j < Airplanes.size(); ++j) {
              string status=Airplanes[j]->getStatus();
              Airplanes[j]->time();
@@ -418,7 +419,7 @@ void Airportsim::landingstep(Airplane &approaching, Airport &airport) {
         approaching.sendSignalTaxiingtoGate();
         approaching.setStatus("Taxiing to gate");
     }
-    if (approaching.getHeight()==10000&&approaching.getPermission()!="10000"){
+    if (approaching.getHeight()==10000&&approaching.getPermission()!="10000"&&approaching.getTimeleftforaction()==-1){
         outputfile<<approaching.getCallsign()<<" is approaching "<<airport.getName()<<" at 10000 ft."<<endl;
         approaching.sendSignalApproaching();
         //initial contact;
@@ -477,9 +478,10 @@ void Airportsim::taxiingToGatestep(Airplane &taxiingplane, Airport &airport) {
     string filename="../output/"+taxiingplane.getCallsign()+"_Landing.txt";
     outputfile.open(filename.c_str(),ios::app);
 
-    taxiingplane.getLocation()->setCrossing(false);
     vector<Location*> instruction=taxiingplane.getInstruction();
-    taxiingplane.setLocation((find(instruction.begin(),instruction.end(),taxiingplane.getLocation())+1).operator*());
+    if(!taxiingplane.getLocation()->isRunway()||!taxiingplane.getLocation()->isCrossing()){
+        taxiingplane.setLocation((find(instruction.begin(),instruction.end(),taxiingplane.getLocation())+1).operator*());
+    }
     //if(taxiingplane.getLocation()==taxiingplane.getInstruction()[taxiingplane.getInstruction().size()-1]){
         //hold short
     //}
@@ -488,6 +490,7 @@ void Airportsim::taxiingToGatestep(Airplane &taxiingplane, Airport &airport) {
         outputfile<<taxiingplane.getCallsign()<<" is standing at Gate "<<taxiingplane.getLocation()->getName()<<endl;
         taxiingplane.setStatus("Standing at gate");
     }
+
 }
 
 void Airportsim::taxiingToRunwaystep(Airplane &taxiingplane, Airport &airport) {
@@ -510,9 +513,9 @@ void Airportsim::taxiingToRunwaystep(Airplane &taxiingplane, Airport &airport) {
         taxiingplane.setInstruction(instruction);
         return;
     }
-
-    taxiingplane.setLocation((find(instruction.begin(),instruction.end(),taxiingplane.getLocation())+1).operator*());
-
+    if(!taxiingplane.getLocation()->isRunway()||!taxiingplane.getLocation()->isCrossing()){
+        taxiingplane.setLocation((find(instruction.begin(),instruction.end(),taxiingplane.getLocation())+1).operator*());
+    }
 
 
 }

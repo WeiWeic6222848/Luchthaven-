@@ -232,7 +232,7 @@ void Signaltower::regulateTaxiingtoGate() {
         Location* planelocation=taxiingplane->getLocation();
         nextStop.clear();
         makeInstructionToGate(taxiingplane);
-        if(planelocation==taxiingplane->getInstruction().begin().operator*()){
+        if(planelocation==taxiingplane->getInstruction().begin().operator*()&&taxiingplane->getInstruction().begin().operator*()!=(taxiingplane->getInstruction().end()-1).operator*()){
             planelocation->setCrossing(false);
         }
         if(planelocation==taxiingplane->getInstruction()[taxiingplane->getInstruction().size()-1]){
@@ -324,7 +324,7 @@ void Signaltower::regulateTaxiingtorunway() {
         Location* planelocation=taxiingplane->getLocation();
         vector<Location*> nextStop;
         makeInstructionToRunway(taxiingplane);
-        if(planelocation==taxiingplane->getInstruction().begin().operator*()){
+        if(planelocation==taxiingplane->getInstruction().begin().operator*()&&taxiingplane->getInstruction().begin().operator*()!=(taxiingplane->getInstruction().end()-1).operator*()){
             planelocation->setCrossing(false);
         }
         if(planelocation==taxiingplane->getInstruction()[taxiingplane->getInstruction().size()-1]){
@@ -345,7 +345,7 @@ void Signaltower::regulateTaxiingtorunway() {
                     file<<taxiingplane->getCallsign()<<", "<<"Cleared to Cross runway "<<planelocation->getName() << endl;
                     file<<"["<<time<<"]"<<"[AIR]"<<endl;
                     file<<taxiingplane->getCallsign()<<", "<<"Cleared to Cross runway "<<planelocation->getName() << endl;
-                    taxiingplane->getLocation()->setCrossing(true);
+                    planelocation->setCrossing(true);
                     nextStop.clear();
                     taxiingplane->setInstruction(nextStop);
                     makeInstructionToRunway(taxiingplane);
