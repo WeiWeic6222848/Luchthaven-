@@ -348,11 +348,13 @@ void Airportsim::Simulate() {
          string filename="../output/"+Airports[k]->getIata()+"_Tower.txt";
          file.open(filename.c_str(),ios::out);
      }
-
      while (!Airplanes.empty()){
          vector<int> airplanestoremove;
 
          for (unsigned int j = 0; j < Airplanes.size(); ++j) {
+             for(unsigned int i=0;i<Airports.size();i++){
+                 generateFloorPlan(*Airports[i],j+1);
+             }
              string status=Airplanes[j]->getStatus();
              if(status=="Approaching"){
                  landingstep(*Airplanes[j],*Airplanes[j]->getDestination());
@@ -373,6 +375,7 @@ void Airportsim::Simulate() {
                  airplanestoremove.push_back(j);
              }
          }
+
          for (unsigned int i = 0; i < airplanestoremove.size(); ++i) {
              AirplanesFlying.push_back((Airplanes.begin()+airplanestoremove[i]-i).operator*());
              Airplanes.erase(Airplanes.begin()+airplanestoremove[i]-i);
@@ -557,6 +560,36 @@ void Airportsim::leavingstep(Airplane &leaving, Airport &airport) {
         outputfile<<leaving.getCallsign()<<" ascended to "<<leaving.getHeight()<<" ft."<<endl;
         leaving.rise();
     }
+
+}
+
+void Airportsim::generateFloorPlan(Airport &vlieghaven, int i) {
+    REQUIRE(vlieghaven.ProperInitialized(), "airport wasn't initialized when calling writeToFile");
+    ofstream outputfile;
+    string filename = "../output/floormap_state_airport[" + vlieghaven.getIata() + "]v"+to_string(i)+".txt";
+    outputfile.open(filename.c_str(), ios::out);
+    for (unsigned int i = 0; i < vlieghaven.getRunways().size(); i++) {
+        Runway *runway = vlieghaven.getRunways()[vlieghaven.getRunways().size() - 1 - i];
+        outputfile << runway->getName() << " | ";
+        if (runway->isOnuse()) {
+            outputfile << "====V=====" << endl;
+        } else {
+            outputfile << "==========" << endl;
+        }
+        outputfile << "TP" << runway->getTaxipoint()->getName()[0] << " | " << endl;
+    }
+    outputfile << "Gates [";
+    for (unsigned int i = 0; i < vlieghaven.getGates().size(); i++) {
+        Gate *gate = vlieghaven.getGates()[i];
+        if (gate->isOnuse()) {
+            outputfile << "V";
+        } else {
+            outputfile << " ";
+        }
+    }
+    outputfile << "]" << endl;
+    outputfile.close();
+    ENSURE(fileExist(filename.c_str()), "writeToFile postcondition failed");
 }
 
 

@@ -7,6 +7,7 @@ using namespace std;
 int main(int argc, char const* argv[])
 {
     Airportsim airport;
+    output_system op;
     LoadAirport(argc,argv,airport,false);
     /*
     Airplane* a=airport.getAirplanes()[0];
@@ -15,7 +16,6 @@ int main(int argc, char const* argv[])
     airport.airplaneAtGate(*a,*b);
     airport.takingOff(*a,*b);*/
     airport.Simulate();
-    output_system op;
     op.writeToFile(airport);
 
 

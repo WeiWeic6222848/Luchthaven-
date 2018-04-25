@@ -165,6 +165,8 @@ public:
     void addPassenger(int a);
 
     void removePassenger(int a);
+
+    const vector<Gate *> &getGates() const;
 };
 
 

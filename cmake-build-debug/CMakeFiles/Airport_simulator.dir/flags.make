@@ -6,5 +6,5 @@ CXX_FLAGS = -Wall -Werror -g   -std=gnu++98
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/c6222848/Desktop/Luchthaven/gtest/include 
+CXX_INCLUDES = -I/home/tristan/CLionProjects/Luchthaven-/gtest/include 
 

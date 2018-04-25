@@ -141,6 +141,7 @@ public:
 
     void leavingstep(Airplane& leaving, Airport& airport);
 
+    void generateFloorPlan(Airport& vlieghaven, int i);
 };
 
 

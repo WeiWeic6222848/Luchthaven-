@@ -218,3 +218,7 @@ void Airport::removePassenger(int a) {
     passengers-=a;
 }
 
+const vector<Gate *> &Airport::getGates() const {
+    return gates;
+}
+
