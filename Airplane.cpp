@@ -69,18 +69,7 @@ bool Airplane::ProperInitialized() const {
 bool Airplane::fall() {
     REQUIRE(height >= 1000, "vliegtuig is te laag!");
     //if(height>stoi(permission)){
-    if(timeleftforaction==-1){
-        if(engine=="propeller"){
-            timeleftforaction=2;
-        }
-        else if(engine=="jet"){
-            timeleftforaction=1;
-        }
-    }
-    else if(timeleftforaction==0){
-        height -= 1000;
-        timeleftforaction=-1;
-    }
+    height -= 1000;
     return true;
     //}
     //else{
@@ -90,18 +79,7 @@ bool Airplane::fall() {
 
 bool Airplane::rise() {
     //REQUIRE(signal)
-    if(timeleftforaction==-1){
-        if(engine=="propeller"){
-            timeleftforaction=2;
-        }
-        else if(engine=="jet"){
-            timeleftforaction=1;
-        }
-    }
-    else if(timeleftforaction==0){
-        height += 1000;
-        timeleftforaction=-1;
-    }
+    height += 1000;
     return true;
 }
 
@@ -138,6 +116,9 @@ void Airplane::setDestination(Airport *destination) {
 }
 
 void Airplane::setPermission(string descendingpermission) {
+    if(descendingpermission!="0"){
+        //...
+    }
     Airplane::permission = descendingpermission;
 }
 
@@ -183,7 +164,6 @@ Airplane::Airplane(const string &status, const string &number, const string &cal
         height=0;
         checkprocedure="";
     }
-    timeleftforaction=-1;
     ENSURE(ProperInitialized(),"this airplane object failed to Initialize properly");
 }
 
@@ -239,44 +219,13 @@ void Airplane::resetCheckProcedure() {
     checkprocedure="";
 }
 
-void Airplane::time() {
-    if(timeleftforaction!=-1){
-        timeleftforaction-=1;
-        if(timeleftforaction<0){
-            timeleftforaction=0;
-        }
-    }
-}
-
 bool Airplane::landing() {
-    if(timeleftforaction==-1){
-        timeleftforaction=2;
-        return false;
-    }
-    else if(timeleftforaction==0){
-        return true;
-    }
-    return false;
+    return true;
 }
 
 bool Airplane::takeOff() {
-    if(timeleftforaction==-1){
-        if(engine=="propeller"){
-            timeleftforaction=3;
-        }
-        else if(engine=="jet"){
-            timeleftforaction=2;
-        }
-        return false;
-    }
-    else if(timeleftforaction==0){
-        return true;
-    }
-    return false;
+    return true;
 }
 
-int Airplane::getTimeleftforaction() const {
-    return timeleftforaction;
-}
 
 

@@ -32,9 +32,6 @@ private:
     string engine;
     string size;
     int passenger;
-public:
-    int getTimeleftforaction() const;
-
 private:
     int fuel;
     int height;
@@ -44,7 +41,7 @@ private:
     Airport* currentAirport=NULL;
     Location* location=NULL;
     vector<Location*> instruction;
-    int timeleftforaction;
+
 public:
     const vector<Location *> &getInstruction() const;
 
@@ -165,8 +162,6 @@ public:
     const string &getCheckprocedure() const;
 
     void resetCheckProcedure();
-
-    void time();
 
     bool landing();
 

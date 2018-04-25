@@ -124,3 +124,21 @@ Cessna has been refueled
 0 passengers boarded Cessna at gate 3 of Antwerp International Airport
 Cessna is standing at Gate 3
 Cessna is taxiing to runway 11R
+0 passengers exited Cessna at gate 3 of Antwerp International Airport
+Cessna has been checked for technical malfunctions
+Cessna has been refueled
+0 passengers boarded Cessna at gate 3 of Antwerp International Airport
+Cessna is standing at Gate 3
+Cessna is taxiing to runway 11R
+0 passengers exited Cessna at gate 3 of Antwerp International Airport
+Cessna has been checked for technical malfunctions
+Cessna has been refueled
+0 passengers boarded Cessna at gate 3 of Antwerp International Airport
+Cessna is standing at Gate 3
+Cessna is taxiing to runway 11R
+0 passengers exited Cessna at gate 3 of Antwerp International Airport
+Cessna has been checked for technical malfunctions
+Cessna has been refueled
+0 passengers boarded Cessna at gate 3 of Antwerp International Airport
+Cessna is standing at Gate 3
+Cessna is taxiing to runway 11R

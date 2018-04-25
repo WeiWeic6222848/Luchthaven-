@@ -341,6 +341,7 @@ Airportsim::Airportsim() {_InitCheck=this;}
 
  //future functions
 void Airportsim::Simulate() {
+
     REQUIRE(ProperInitialized(),"Airportsim object wasn't initialized when calling Destructor");
      ofstream file;
      for (unsigned int k = 0; k < Airports.size(); ++k) {
@@ -353,7 +354,6 @@ void Airportsim::Simulate() {
 
          for (unsigned int j = 0; j < Airplanes.size(); ++j) {
              string status=Airplanes[j]->getStatus();
-             Airplanes[j]->time();
              if(status=="Approaching"){
                  landingstep(*Airplanes[j],*Airplanes[j]->getDestination());
              }
@@ -391,24 +391,33 @@ void Airportsim::landingstep(Airplane &approaching, Airport &airport) {
     REQUIRE(ProperInitialized(),"Airportsim object wasn't initialized when calling landing");
     REQUIRE(approaching.getStatus()=="Approaching","Airplane must has the status of Approaching when calling landing");
     ofstream outputfile;
+
     string filename="../output/"+approaching.getCallsign()+"_Landing.txt";
+
     outputfile.open(filename.c_str(),ios::app);
+
     if (approaching.getHeight()>5000&&approaching.getPermission()=="5000"){//getting permission
         approaching.fall();
         outputfile<<approaching.getCallsign()<<" descended to "<<approaching.getHeight()<<" ft."<<endl;
     }
+
     else if(approaching.getHeight()>3000&&approaching.getPermission()=="3000"){
         approaching.fall();
         outputfile<<approaching.getCallsign()<<" descended to "<<approaching.getHeight()<<" ft."<<endl;
     }
+
     else if(approaching.getHeight()>=1000&&approaching.getPermission()=="0"){
         //on getting permission landing, a runway will be on use
-        outputfile<<approaching.getCallsign()<<" descended to "<<approaching.getHeight()<<" ft."<<endl;
         approaching.fall();
+        if(approaching.getHeight()!=0){
+            outputfile<<approaching.getCallsign()<<" descended to "<<approaching.getHeight()<<" ft."<<endl;
+        }
     }
-    else if(approaching.getHeight()==0&&!approaching.landing()){ ;
+
+    else if(approaching.getHeight()==0&&!approaching.landing()){
         outputfile<<approaching.getCallsign()<<" is landing at "<<airport.getName()<<" on runway "<<approaching.getDestinaterunway()->getName()<<endl;
     }
+
     else if (approaching.getHeight()==0&&approaching.landing()){
         outputfile<<approaching.getCallsign()<<" has landed at "<<airport.getName()<<" on runway "<<approaching.getDestinaterunway()->getName()<<endl;
         approaching.setLocation(approaching.getDestinaterunway());
@@ -419,7 +428,7 @@ void Airportsim::landingstep(Airplane &approaching, Airport &airport) {
         approaching.sendSignalTaxiingtoGate();
         approaching.setStatus("Taxiing to gate");
     }
-    if (approaching.getHeight()==10000&&approaching.getPermission()!="10000"&&approaching.getTimeleftforaction()==-1){
+    if (approaching.getHeight()==10000&&approaching.getPermission()!="10000"){
         outputfile<<approaching.getCallsign()<<" is approaching "<<airport.getName()<<" at 10000 ft."<<endl;
         approaching.sendSignalApproaching();
         //initial contact;
