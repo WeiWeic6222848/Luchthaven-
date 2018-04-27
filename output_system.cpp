@@ -22,4 +22,3 @@ void output_system::writeToFile(Airportsim &simulator) {
     outputfile.close();
     ENSURE(fileExist("../output/Info.txt"),"writeToFile postcondition failed");
 }
-
