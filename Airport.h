@@ -12,6 +12,7 @@
 #include "Signaltower.h"
 #include "Taxipoint.h"
 #include "Gate.h"
+#include "Time.h"
 
 using namespace std;
 
@@ -35,8 +36,13 @@ private:
     vector<Runway*> runways;
     vector<Taxipoint*> taxipoints;
     Airport* _InitCheck;
-    vector<Airplane*> catched_airplane;
     Signaltower* tower;
+    Time currentTime;
+public:
+    const Time &getCurrentTime() const;
+
+    void setCurrentTime(const Time &currentTime);
+
 public:
     Signaltower &getTower() ;
 
@@ -154,7 +160,7 @@ public:
 
     Taxipoint* findTaxipoint (const string& name);
 
-    Runway* findFreeRunway (Airplane* airplane);
+    Runway* findFreeRunway (Airplane* airplane,bool emergency=false);
 
     void addTaxipoints(Taxipoint* taxipoint);
 
@@ -165,6 +171,8 @@ public:
     void addPassenger(int a);
 
     void removePassenger(int a);
+
+    const vector<Gate *> &getGates() const;
 };
 
 

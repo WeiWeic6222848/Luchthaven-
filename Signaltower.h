@@ -16,38 +16,57 @@ using namespace std;
 
 class Airplane;
 class Airport;
-class Time;
+class Runway;
+class Location;
+
 
 class Signaltower {
 private:
     vector<Airplane*> approachingAirplanes;
     vector<Airplane*> leavingAirplanes;
-    vector<Airplane*> taxiingtogate;
-    vector<Airplane*> taxiingtorunway;
     vector<Airplane*> emergency;
+    vector<pair<Airplane*,string> > incomingSignal;
+    vector<pair<Airplane*,string> > regulateSignal;
     Airport* airport;
     vector<Airplane*> allflyingplanes();
-    vector<Airplane*> allgroundplanes();
     ofstream file;
-    Time time;
+    Time currentTime;
+    bool doingNothing;
+    vector<Location*> makeInstructionToGate(Airplane* airplane);
+    vector<Location*> makeInstructionToRunway(Airplane* airplane);
 public:
+    const Time &getCurrentTime() const;
+
+    void setCurrentTime(const Time &currentTime);
+
+    ofstream &getFile();
+
+public:
+
     Signaltower(Airport *airport);
 
     bool receiveSignal(Airplane* airplane,string signal);
     void regulateApproachingplanes();
+    void regulateLeavingplanes();
     bool permissionLeavingGate(Airplane* airplane);
-    void regulateTaxiingtoGate();
-    void regulateTaxiingtorunway();
+    bool sendSignal();
 
-    void makeInstructionToGate(Airplane* airplane);
-    void makeInstructionToRunway(Airplane* airplane);
-    /*
+
+
     void sendSignalPermission5000(Airplane* airplane);
     void sendSignalPermission3000(Airplane* airplane);
-    void sendSignalPermissionLanding(Airplane* airplane);
-    void sendSignalPermissionLeaving(Airplane* airplane);
+    void sendSignalPermissionLanding(Airplane* airplane,Runway* runway);
     void sendSignalWaiting(Airplane* airplane);
-     */
+    void sendSignalClearedToCross(Airplane* airplane);
+    void sendSignalHoldPosition(Airplane* airplane);
+    void sendSignalLineup(Airplane* airplane,bool takeoff=false);
+    void sendInstruction(Airplane*airplane, vector<Location*> Instruction,bool adding=false);
+    void sendSignalIFRclear(Airplane* airplane);
+    void sendSignalPushBack(Airplane* airplane,Runway* runway);
+
+
+    void timeRuns();
+    bool isDoingNothing();
 };
 
 

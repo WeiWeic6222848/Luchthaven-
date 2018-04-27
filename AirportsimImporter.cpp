@@ -201,11 +201,25 @@ Esucces AirportsimImporter::readRunway(TiXmlElement *runwayelement, std::ostream
                     string elemname=locationElement->Value();
                     if(elemname=="crossing"){
                         Location* location=airportofthisrunway->findRunway(locationElement->GetText());
-                        pointofthisrunway->addCrossingToRoute(location);
+                        if(location!=NULL){
+                            pointofthisrunway->addCrossingToRoute(location);
+                        }
+                        else{
+                            errStream<<"Runway "<<name<<" contains an unknown runway in the taxi route! "<< endl;
+                            delete(runway);
+                            return PartialImport;
+                        }
                     }
                     else if (elemname=="taxipoint"){
                         Location* location=airportofthisrunway->findTaxipoint(locationElement->GetText());
-                        pointofthisrunway->addCrossingToRoute(location);
+                        if(location!=NULL){
+                            pointofthisrunway->addCrossingToRoute(location);
+                        }
+                        else{
+                            errStream<<"Runway "<<name<<" contains an unreachable taxipoint in the taxi route! "<< endl;
+                            delete(runway);
+                            return PartialImport;
+                        }
                     }
                 }
             }
@@ -269,7 +283,7 @@ Esucces AirportsimImporter::readAirplane(TiXmlElement *airplaneelement, std::ost
         }
     }
 
-    int fuel=100;
+    int fuel=10000;
     if(airplaneelement->FirstChildElement("fuel")){
         try {
             fuel = stoi(airplaneelement->FirstChildElement("fuel")->GetText());

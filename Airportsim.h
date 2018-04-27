@@ -21,33 +21,33 @@ class Airportsim{
     vector<Airplane*> AirplanesFlying;
     vector<Airplane*> Allplanes;
     Airportsim* _InitCheck;
-
+    Time currentTime;
 public:
 
 /**
  * REQUIRE(ProperInitialized(),"Airportsim object wasn't initialized when calling removeairport");
  * ENSURE(find(Airports.begin(),Airports.end(),airport)==Airports.end(),"removeairport postcondition failed");
- * @param airport airport to remove from airportslist
+ * @param airport airport to remove from airportslist.
  */
     void removeAirport(Airport* airport);
 
 /**
  * ENSURE(ProperInitialized(),"Airportsim object failed to initialize properly");
  * @param argc terminal input
- * @param argv terminal input, multiple name of xmll files to read
+ * @param argv terminal input, multiple name of xmll files to read.
  */
     Airportsim(int argc,char const* argv[]);
 
 /**
  * ENSURE(ProperInitialized(),"This airportsim object failed to initialize properly");
- * @param filename xmlfile to read while initializing
+ * @param filename xmlfile to read while initializing.
  */
     Airportsim(const string& filename);
 
 /**
  * REQUIRE(ProperInitialized(),"Airportsim object wasn't initialized when calling addsourcefile");
  * REQUIRE(fileExist(filename),"Giving filename must exist when calling addsourcefile");
- * @param filename xmlfilename to read
+ * @param filename xmlfilename to read.
  */
     void addSourcefile(const string &filename);
 
@@ -118,6 +118,10 @@ public:
  */
     void airplaneAtGate(Airplane& plane,Airport& airport);
 
+    const Time &getCurrentTime() const;
+
+    void setCurrentTime(const Time &currentTime);
+
 /**
  * REQUIRE(ProperInitialized(),"Airportsim object wasn't initialized when calling Destructor");
  */
@@ -131,6 +135,7 @@ public:
     //future functions
     void Simulate();
 
+
     void landingstep(Airplane& approaching, Airport& airport);
 
     void airplaneAtGatestep(Airplane& plane,Airport& airport);
@@ -141,6 +146,7 @@ public:
 
     void leavingstep(Airplane& leaving, Airport& airport);
 
+    void generateFloorPlan(Airport& vlieghaven, int i);
 };
 
 

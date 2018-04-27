@@ -10,15 +10,17 @@
 #include <vector>
 #include "list"
 #include "Airport.h"
+#include "Time.h"
 
 class Airport;
 class Location;
 class Runway;
+class Time;
 
 using namespace std;
 
 
-static string allowedstatusprepare[]={"Standing at gate","Approaching","Leaving","Taxiing to runway","Taxiing to gate","jobsdone"};
+static string allowedstatusprepare[]={"Standing at gate","Approaching","Leaving","Taxiing to runway","Taxiing to gate","jobsdone","Landed"};
 static vector<string> allowedstatus(allowedstatusprepare, allowedstatusprepare+sizeof(allowedstatusprepare)/ sizeof(allowedstatusprepare[0]));
 
 class Airplane {
@@ -32,15 +34,27 @@ private:
     string engine;
     string size;
     int passenger;
-private:
-    int fuel;
+    int fuelCapacity;
     int height;
     int passengerCapacity;
     string permission;
     Airport* destination=NULL;
-    Airport* currentAirport=NULL;
+    Airport* nextDestination=NULL;
+public:
+    Airport *getNextDestination() const;
+
+    void setNextDestination(Airport *nextDestination);
+
+private:
     Location* location=NULL;
     vector<Location*> instruction;
+    Time currentTime;
+    Time actionDone;
+    bool doingNothing;
+public:
+    const Time &getCurrentTime() const;
+
+    void setCurrentTime(const Time &currentTime);
 
 public:
     const vector<Location *> &getInstruction() const;
@@ -67,9 +81,9 @@ public:
     int getPassenger() const;
 
 /**
- * REQUIRE(ProperInitialized(),"Airplane wasn't initialized when calling getFuel");
+ * REQUIRE(ProperInitialized(),"Airplane wasn't initialized when calling getFuelCapacity");
  */
-    int getFuel() const;
+    int getFuelCapacity() const;
 
 /**
  * REQUIRE(ProperInitialized(),"Airplane wasn't initialized when calling getNumber");
@@ -116,7 +130,6 @@ public:
 
     bool rise();
 
-
     int getHeight() const;
 
     const string &getType() const;
@@ -129,7 +142,7 @@ public:
 
     void setPassenger(int passenger);
 
-    void setFuel(int fuel);
+    void setFuelCapacity(int fuel);
 
     Airplane(const string &status, const string &number, const string &callsign, const string &model,
              const string &type, const string &engine, const string &size, int passenger, int fuel,
@@ -157,6 +170,12 @@ public:
 
     bool sendSignalPushBack();
 
+    bool sendSignalCrossingRunway();
+
+    bool sendSignalAtRunway();
+
+    bool sendSignalIFR();
+
     void progressCheck();
 
     const string &getCheckprocedure() const;
@@ -166,6 +185,25 @@ public:
     bool landing();
 
     bool takeOff();
+
+    bool isDoingNothing();
+
+    bool pushBack();
+
+    void timeRuns();
+
+    bool taxiing();
+
+    bool liningUp();
+
+    bool crossingRunway();
+
+    bool receiveSignal(string signal);
+
+    bool receiveLandingSignal(Runway* runway);
+
+    bool receiveInstruction(vector<Location*> Instruction,bool adding=false);
+
 };
 
 

@@ -43,10 +43,10 @@ RM = /home/c6222848/Downloads/clion-2017.3.3/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/c6222848/Desktop/Luchthaven
+CMAKE_SOURCE_DIR = /home/c6222848/Desktop/Luchthavenbackup
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/c6222848/Desktop/Luchthaven/cmake-build-debug
+CMAKE_BINARY_DIR = /home/c6222848/Desktop/Luchthavenbackup/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Airport_simulator_debug.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/Airport_simulator_debug.dir/flags.make
 
 CMakeFiles/Airport_simulator_debug.dir/test.cpp.o: CMakeFiles/Airport_simulator_debug.dir/flags.make
 CMakeFiles/Airport_simulator_debug.dir/test.cpp.o: ../test.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/c6222848/Desktop/Luchthaven/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Airport_simulator_debug.dir/test.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Airport_simulator_debug.dir/test.cpp.o -c /home/c6222848/Desktop/Luchthaven/test.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/c6222848/Desktop/Luchthavenbackup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Airport_simulator_debug.dir/test.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Airport_simulator_debug.dir/test.cpp.o -c /home/c6222848/Desktop/Luchthavenbackup/test.cpp
 
 CMakeFiles/Airport_simulator_debug.dir/test.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Airport_simulator_debug.dir/test.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/c6222848/Desktop/Luchthaven/test.cpp > CMakeFiles/Airport_simulator_debug.dir/test.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/c6222848/Desktop/Luchthavenbackup/test.cpp > CMakeFiles/Airport_simulator_debug.dir/test.cpp.i
 
 CMakeFiles/Airport_simulator_debug.dir/test.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Airport_simulator_debug.dir/test.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/c6222848/Desktop/Luchthaven/test.cpp -o CMakeFiles/Airport_simulator_debug.dir/test.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/c6222848/Desktop/Luchthavenbackup/test.cpp -o CMakeFiles/Airport_simulator_debug.dir/test.cpp.s
 
 CMakeFiles/Airport_simulator_debug.dir/test.cpp.o.requires:
 
@@ -83,16 +83,16 @@ CMakeFiles/Airport_simulator_debug.dir/test.cpp.o.provides.build: CMakeFiles/Air
 
 CMakeFiles/Airport_simulator_debug.dir/tinystr.cpp.o: CMakeFiles/Airport_simulator_debug.dir/flags.make
 CMakeFiles/Airport_simulator_debug.dir/tinystr.cpp.o: ../tinystr.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/c6222848/Desktop/Luchthaven/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Airport_simulator_debug.dir/tinystr.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Airport_simulator_debug.dir/tinystr.cpp.o -c /home/c6222848/Desktop/Luchthaven/tinystr.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/c6222848/Desktop/Luchthavenbackup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Airport_simulator_debug.dir/tinystr.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Airport_simulator_debug.dir/tinystr.cpp.o -c /home/c6222848/Desktop/Luchthavenbackup/tinystr.cpp
 
 CMakeFiles/Airport_simulator_debug.dir/tinystr.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Airport_simulator_debug.dir/tinystr.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/c6222848/Desktop/Luchthaven/tinystr.cpp > CMakeFiles/Airport_simulator_debug.dir/tinystr.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/c6222848/Desktop/Luchthavenbackup/tinystr.cpp > CMakeFiles/Airport_simulator_debug.dir/tinystr.cpp.i
 
 CMakeFiles/Airport_simulator_debug.dir/tinystr.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Airport_simulator_debug.dir/tinystr.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/c6222848/Desktop/Luchthaven/tinystr.cpp -o CMakeFiles/Airport_simulator_debug.dir/tinystr.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/c6222848/Desktop/Luchthavenbackup/tinystr.cpp -o CMakeFiles/Airport_simulator_debug.dir/tinystr.cpp.s
 
 CMakeFiles/Airport_simulator_debug.dir/tinystr.cpp.o.requires:
 
@@ -107,16 +107,16 @@ CMakeFiles/Airport_simulator_debug.dir/tinystr.cpp.o.provides.build: CMakeFiles/
 
 CMakeFiles/Airport_simulator_debug.dir/tinyxml.cpp.o: CMakeFiles/Airport_simulator_debug.dir/flags.make
 CMakeFiles/Airport_simulator_debug.dir/tinyxml.cpp.o: ../tinyxml.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/c6222848/Desktop/Luchthaven/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Airport_simulator_debug.dir/tinyxml.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Airport_simulator_debug.dir/tinyxml.cpp.o -c /home/c6222848/Desktop/Luchthaven/tinyxml.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/c6222848/Desktop/Luchthavenbackup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Airport_simulator_debug.dir/tinyxml.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Airport_simulator_debug.dir/tinyxml.cpp.o -c /home/c6222848/Desktop/Luchthavenbackup/tinyxml.cpp
 
 CMakeFiles/Airport_simulator_debug.dir/tinyxml.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Airport_simulator_debug.dir/tinyxml.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/c6222848/Desktop/Luchthaven/tinyxml.cpp > CMakeFiles/Airport_simulator_debug.dir/tinyxml.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/c6222848/Desktop/Luchthavenbackup/tinyxml.cpp > CMakeFiles/Airport_simulator_debug.dir/tinyxml.cpp.i
 
 CMakeFiles/Airport_simulator_debug.dir/tinyxml.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Airport_simulator_debug.dir/tinyxml.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/c6222848/Desktop/Luchthaven/tinyxml.cpp -o CMakeFiles/Airport_simulator_debug.dir/tinyxml.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/c6222848/Desktop/Luchthavenbackup/tinyxml.cpp -o CMakeFiles/Airport_simulator_debug.dir/tinyxml.cpp.s
 
 CMakeFiles/Airport_simulator_debug.dir/tinyxml.cpp.o.requires:
 
@@ -131,16 +131,16 @@ CMakeFiles/Airport_simulator_debug.dir/tinyxml.cpp.o.provides.build: CMakeFiles/
 
 CMakeFiles/Airport_simulator_debug.dir/tinyxmlerror.cpp.o: CMakeFiles/Airport_simulator_debug.dir/flags.make
 CMakeFiles/Airport_simulator_debug.dir/tinyxmlerror.cpp.o: ../tinyxmlerror.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/c6222848/Desktop/Luchthaven/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Airport_simulator_debug.dir/tinyxmlerror.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Airport_simulator_debug.dir/tinyxmlerror.cpp.o -c /home/c6222848/Desktop/Luchthaven/tinyxmlerror.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/c6222848/Desktop/Luchthavenbackup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Airport_simulator_debug.dir/tinyxmlerror.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Airport_simulator_debug.dir/tinyxmlerror.cpp.o -c /home/c6222848/Desktop/Luchthavenbackup/tinyxmlerror.cpp
 
 CMakeFiles/Airport_simulator_debug.dir/tinyxmlerror.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Airport_simulator_debug.dir/tinyxmlerror.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/c6222848/Desktop/Luchthaven/tinyxmlerror.cpp > CMakeFiles/Airport_simulator_debug.dir/tinyxmlerror.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/c6222848/Desktop/Luchthavenbackup/tinyxmlerror.cpp > CMakeFiles/Airport_simulator_debug.dir/tinyxmlerror.cpp.i
 
 CMakeFiles/Airport_simulator_debug.dir/tinyxmlerror.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Airport_simulator_debug.dir/tinyxmlerror.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/c6222848/Desktop/Luchthaven/tinyxmlerror.cpp -o CMakeFiles/Airport_simulator_debug.dir/tinyxmlerror.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/c6222848/Desktop/Luchthavenbackup/tinyxmlerror.cpp -o CMakeFiles/Airport_simulator_debug.dir/tinyxmlerror.cpp.s
 
 CMakeFiles/Airport_simulator_debug.dir/tinyxmlerror.cpp.o.requires:
 
@@ -155,16 +155,16 @@ CMakeFiles/Airport_simulator_debug.dir/tinyxmlerror.cpp.o.provides.build: CMakeF
 
 CMakeFiles/Airport_simulator_debug.dir/Airportsim.cpp.o: CMakeFiles/Airport_simulator_debug.dir/flags.make
 CMakeFiles/Airport_simulator_debug.dir/Airportsim.cpp.o: ../Airportsim.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/c6222848/Desktop/Luchthaven/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Airport_simulator_debug.dir/Airportsim.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Airport_simulator_debug.dir/Airportsim.cpp.o -c /home/c6222848/Desktop/Luchthaven/Airportsim.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/c6222848/Desktop/Luchthavenbackup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Airport_simulator_debug.dir/Airportsim.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Airport_simulator_debug.dir/Airportsim.cpp.o -c /home/c6222848/Desktop/Luchthavenbackup/Airportsim.cpp
 
 CMakeFiles/Airport_simulator_debug.dir/Airportsim.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Airport_simulator_debug.dir/Airportsim.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/c6222848/Desktop/Luchthaven/Airportsim.cpp > CMakeFiles/Airport_simulator_debug.dir/Airportsim.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/c6222848/Desktop/Luchthavenbackup/Airportsim.cpp > CMakeFiles/Airport_simulator_debug.dir/Airportsim.cpp.i
 
 CMakeFiles/Airport_simulator_debug.dir/Airportsim.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Airport_simulator_debug.dir/Airportsim.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/c6222848/Desktop/Luchthaven/Airportsim.cpp -o CMakeFiles/Airport_simulator_debug.dir/Airportsim.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/c6222848/Desktop/Luchthavenbackup/Airportsim.cpp -o CMakeFiles/Airport_simulator_debug.dir/Airportsim.cpp.s
 
 CMakeFiles/Airport_simulator_debug.dir/Airportsim.cpp.o.requires:
 
@@ -179,16 +179,16 @@ CMakeFiles/Airport_simulator_debug.dir/Airportsim.cpp.o.provides.build: CMakeFil
 
 CMakeFiles/Airport_simulator_debug.dir/Runway.cpp.o: CMakeFiles/Airport_simulator_debug.dir/flags.make
 CMakeFiles/Airport_simulator_debug.dir/Runway.cpp.o: ../Runway.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/c6222848/Desktop/Luchthaven/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Airport_simulator_debug.dir/Runway.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Airport_simulator_debug.dir/Runway.cpp.o -c /home/c6222848/Desktop/Luchthaven/Runway.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/c6222848/Desktop/Luchthavenbackup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Airport_simulator_debug.dir/Runway.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Airport_simulator_debug.dir/Runway.cpp.o -c /home/c6222848/Desktop/Luchthavenbackup/Runway.cpp
 
 CMakeFiles/Airport_simulator_debug.dir/Runway.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Airport_simulator_debug.dir/Runway.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/c6222848/Desktop/Luchthaven/Runway.cpp > CMakeFiles/Airport_simulator_debug.dir/Runway.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/c6222848/Desktop/Luchthavenbackup/Runway.cpp > CMakeFiles/Airport_simulator_debug.dir/Runway.cpp.i
 
 CMakeFiles/Airport_simulator_debug.dir/Runway.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Airport_simulator_debug.dir/Runway.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/c6222848/Desktop/Luchthaven/Runway.cpp -o CMakeFiles/Airport_simulator_debug.dir/Runway.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/c6222848/Desktop/Luchthavenbackup/Runway.cpp -o CMakeFiles/Airport_simulator_debug.dir/Runway.cpp.s
 
 CMakeFiles/Airport_simulator_debug.dir/Runway.cpp.o.requires:
 
@@ -203,16 +203,16 @@ CMakeFiles/Airport_simulator_debug.dir/Runway.cpp.o.provides.build: CMakeFiles/A
 
 CMakeFiles/Airport_simulator_debug.dir/Airplane.cpp.o: CMakeFiles/Airport_simulator_debug.dir/flags.make
 CMakeFiles/Airport_simulator_debug.dir/Airplane.cpp.o: ../Airplane.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/c6222848/Desktop/Luchthaven/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Airport_simulator_debug.dir/Airplane.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Airport_simulator_debug.dir/Airplane.cpp.o -c /home/c6222848/Desktop/Luchthaven/Airplane.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/c6222848/Desktop/Luchthavenbackup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Airport_simulator_debug.dir/Airplane.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Airport_simulator_debug.dir/Airplane.cpp.o -c /home/c6222848/Desktop/Luchthavenbackup/Airplane.cpp
 
 CMakeFiles/Airport_simulator_debug.dir/Airplane.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Airport_simulator_debug.dir/Airplane.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/c6222848/Desktop/Luchthaven/Airplane.cpp > CMakeFiles/Airport_simulator_debug.dir/Airplane.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/c6222848/Desktop/Luchthavenbackup/Airplane.cpp > CMakeFiles/Airport_simulator_debug.dir/Airplane.cpp.i
 
 CMakeFiles/Airport_simulator_debug.dir/Airplane.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Airport_simulator_debug.dir/Airplane.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/c6222848/Desktop/Luchthaven/Airplane.cpp -o CMakeFiles/Airport_simulator_debug.dir/Airplane.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/c6222848/Desktop/Luchthavenbackup/Airplane.cpp -o CMakeFiles/Airport_simulator_debug.dir/Airplane.cpp.s
 
 CMakeFiles/Airport_simulator_debug.dir/Airplane.cpp.o.requires:
 
@@ -227,16 +227,16 @@ CMakeFiles/Airport_simulator_debug.dir/Airplane.cpp.o.provides.build: CMakeFiles
 
 CMakeFiles/Airport_simulator_debug.dir/Airport.cpp.o: CMakeFiles/Airport_simulator_debug.dir/flags.make
 CMakeFiles/Airport_simulator_debug.dir/Airport.cpp.o: ../Airport.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/c6222848/Desktop/Luchthaven/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Airport_simulator_debug.dir/Airport.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Airport_simulator_debug.dir/Airport.cpp.o -c /home/c6222848/Desktop/Luchthaven/Airport.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/c6222848/Desktop/Luchthavenbackup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Airport_simulator_debug.dir/Airport.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Airport_simulator_debug.dir/Airport.cpp.o -c /home/c6222848/Desktop/Luchthavenbackup/Airport.cpp
 
 CMakeFiles/Airport_simulator_debug.dir/Airport.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Airport_simulator_debug.dir/Airport.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/c6222848/Desktop/Luchthaven/Airport.cpp > CMakeFiles/Airport_simulator_debug.dir/Airport.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/c6222848/Desktop/Luchthavenbackup/Airport.cpp > CMakeFiles/Airport_simulator_debug.dir/Airport.cpp.i
 
 CMakeFiles/Airport_simulator_debug.dir/Airport.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Airport_simulator_debug.dir/Airport.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/c6222848/Desktop/Luchthaven/Airport.cpp -o CMakeFiles/Airport_simulator_debug.dir/Airport.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/c6222848/Desktop/Luchthavenbackup/Airport.cpp -o CMakeFiles/Airport_simulator_debug.dir/Airport.cpp.s
 
 CMakeFiles/Airport_simulator_debug.dir/Airport.cpp.o.requires:
 
@@ -251,16 +251,16 @@ CMakeFiles/Airport_simulator_debug.dir/Airport.cpp.o.provides.build: CMakeFiles/
 
 CMakeFiles/Airport_simulator_debug.dir/tinyxmlparser.cpp.o: CMakeFiles/Airport_simulator_debug.dir/flags.make
 CMakeFiles/Airport_simulator_debug.dir/tinyxmlparser.cpp.o: ../tinyxmlparser.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/c6222848/Desktop/Luchthaven/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Airport_simulator_debug.dir/tinyxmlparser.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Airport_simulator_debug.dir/tinyxmlparser.cpp.o -c /home/c6222848/Desktop/Luchthaven/tinyxmlparser.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/c6222848/Desktop/Luchthavenbackup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Airport_simulator_debug.dir/tinyxmlparser.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Airport_simulator_debug.dir/tinyxmlparser.cpp.o -c /home/c6222848/Desktop/Luchthavenbackup/tinyxmlparser.cpp
 
 CMakeFiles/Airport_simulator_debug.dir/tinyxmlparser.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Airport_simulator_debug.dir/tinyxmlparser.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/c6222848/Desktop/Luchthaven/tinyxmlparser.cpp > CMakeFiles/Airport_simulator_debug.dir/tinyxmlparser.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/c6222848/Desktop/Luchthavenbackup/tinyxmlparser.cpp > CMakeFiles/Airport_simulator_debug.dir/tinyxmlparser.cpp.i
 
 CMakeFiles/Airport_simulator_debug.dir/tinyxmlparser.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Airport_simulator_debug.dir/tinyxmlparser.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/c6222848/Desktop/Luchthaven/tinyxmlparser.cpp -o CMakeFiles/Airport_simulator_debug.dir/tinyxmlparser.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/c6222848/Desktop/Luchthavenbackup/tinyxmlparser.cpp -o CMakeFiles/Airport_simulator_debug.dir/tinyxmlparser.cpp.s
 
 CMakeFiles/Airport_simulator_debug.dir/tinyxmlparser.cpp.o.requires:
 
@@ -275,16 +275,16 @@ CMakeFiles/Airport_simulator_debug.dir/tinyxmlparser.cpp.o.provides.build: CMake
 
 CMakeFiles/Airport_simulator_debug.dir/output_system.cpp.o: CMakeFiles/Airport_simulator_debug.dir/flags.make
 CMakeFiles/Airport_simulator_debug.dir/output_system.cpp.o: ../output_system.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/c6222848/Desktop/Luchthaven/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Airport_simulator_debug.dir/output_system.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Airport_simulator_debug.dir/output_system.cpp.o -c /home/c6222848/Desktop/Luchthaven/output_system.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/c6222848/Desktop/Luchthavenbackup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Airport_simulator_debug.dir/output_system.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Airport_simulator_debug.dir/output_system.cpp.o -c /home/c6222848/Desktop/Luchthavenbackup/output_system.cpp
 
 CMakeFiles/Airport_simulator_debug.dir/output_system.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Airport_simulator_debug.dir/output_system.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/c6222848/Desktop/Luchthaven/output_system.cpp > CMakeFiles/Airport_simulator_debug.dir/output_system.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/c6222848/Desktop/Luchthavenbackup/output_system.cpp > CMakeFiles/Airport_simulator_debug.dir/output_system.cpp.i
 
 CMakeFiles/Airport_simulator_debug.dir/output_system.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Airport_simulator_debug.dir/output_system.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/c6222848/Desktop/Luchthaven/output_system.cpp -o CMakeFiles/Airport_simulator_debug.dir/output_system.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/c6222848/Desktop/Luchthavenbackup/output_system.cpp -o CMakeFiles/Airport_simulator_debug.dir/output_system.cpp.s
 
 CMakeFiles/Airport_simulator_debug.dir/output_system.cpp.o.requires:
 
@@ -299,16 +299,16 @@ CMakeFiles/Airport_simulator_debug.dir/output_system.cpp.o.provides.build: CMake
 
 CMakeFiles/Airport_simulator_debug.dir/AirportUtils.cpp.o: CMakeFiles/Airport_simulator_debug.dir/flags.make
 CMakeFiles/Airport_simulator_debug.dir/AirportUtils.cpp.o: ../AirportUtils.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/c6222848/Desktop/Luchthaven/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Airport_simulator_debug.dir/AirportUtils.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Airport_simulator_debug.dir/AirportUtils.cpp.o -c /home/c6222848/Desktop/Luchthaven/AirportUtils.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/c6222848/Desktop/Luchthavenbackup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Airport_simulator_debug.dir/AirportUtils.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Airport_simulator_debug.dir/AirportUtils.cpp.o -c /home/c6222848/Desktop/Luchthavenbackup/AirportUtils.cpp
 
 CMakeFiles/Airport_simulator_debug.dir/AirportUtils.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Airport_simulator_debug.dir/AirportUtils.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/c6222848/Desktop/Luchthaven/AirportUtils.cpp > CMakeFiles/Airport_simulator_debug.dir/AirportUtils.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/c6222848/Desktop/Luchthavenbackup/AirportUtils.cpp > CMakeFiles/Airport_simulator_debug.dir/AirportUtils.cpp.i
 
 CMakeFiles/Airport_simulator_debug.dir/AirportUtils.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Airport_simulator_debug.dir/AirportUtils.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/c6222848/Desktop/Luchthaven/AirportUtils.cpp -o CMakeFiles/Airport_simulator_debug.dir/AirportUtils.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/c6222848/Desktop/Luchthavenbackup/AirportUtils.cpp -o CMakeFiles/Airport_simulator_debug.dir/AirportUtils.cpp.s
 
 CMakeFiles/Airport_simulator_debug.dir/AirportUtils.cpp.o.requires:
 
@@ -351,7 +351,7 @@ Airport_simulator_debug: CMakeFiles/Airport_simulator_debug.dir/output_system.cp
 Airport_simulator_debug: CMakeFiles/Airport_simulator_debug.dir/AirportUtils.cpp.o
 Airport_simulator_debug: CMakeFiles/Airport_simulator_debug.dir/build.make
 Airport_simulator_debug: CMakeFiles/Airport_simulator_debug.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/c6222848/Desktop/Luchthaven/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable Airport_simulator_debug"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/c6222848/Desktop/Luchthavenbackup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable Airport_simulator_debug"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Airport_simulator_debug.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -378,6 +378,6 @@ CMakeFiles/Airport_simulator_debug.dir/clean:
 .PHONY : CMakeFiles/Airport_simulator_debug.dir/clean
 
 CMakeFiles/Airport_simulator_debug.dir/depend:
-	cd /home/c6222848/Desktop/Luchthaven/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/c6222848/Desktop/Luchthaven /home/c6222848/Desktop/Luchthaven /home/c6222848/Desktop/Luchthaven/cmake-build-debug /home/c6222848/Desktop/Luchthaven/cmake-build-debug /home/c6222848/Desktop/Luchthaven/cmake-build-debug/CMakeFiles/Airport_simulator_debug.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/c6222848/Desktop/Luchthavenbackup/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/c6222848/Desktop/Luchthavenbackup /home/c6222848/Desktop/Luchthavenbackup /home/c6222848/Desktop/Luchthavenbackup/cmake-build-debug /home/c6222848/Desktop/Luchthavenbackup/cmake-build-debug /home/c6222848/Desktop/Luchthavenbackup/cmake-build-debug/CMakeFiles/Airport_simulator_debug.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/Airport_simulator_debug.dir/depend
 

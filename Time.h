@@ -15,11 +15,15 @@ class Time {
 
 
 public:
-    friend std::ostream& operator<<(std::ostream& output,Time& time);
+    Time(int hour, int minute);
+
+    friend std::ostream& operator<<(std::ostream& output,Time time);
 
     Time() {hour=12;minute=0;}
 
-    Time& operator++(int){
+    Time operator++(int){
+        int minute=Time::minute;
+        int hour=Time::hour;
         minute++;
         if(minute==60){
             hour++;
@@ -28,8 +32,35 @@ public:
                 hour=0;
             }
         }
-        return *this;
+        return Time(hour,minute);
     };
+
+    Time operator+(int a){
+
+        int minute=Time::minute;
+        int hour=Time::hour;
+        minute+=a;
+        while(minute>=60){
+            hour++;
+            minute-=60;
+        }
+        while(hour>=24){
+            hour-=24;
+        }
+        return Time(hour,minute);
+    }
+
+    bool operator<(const Time &rhs) const;
+
+    bool operator>(const Time &rhs) const;
+
+    bool operator<=(const Time &rhs) const;
+
+    bool operator>=(const Time &rhs) const;
+
+    bool operator==(const Time &rhs) const;
+
+    bool operator!=(const Time &rhs) const;
 };
 
 

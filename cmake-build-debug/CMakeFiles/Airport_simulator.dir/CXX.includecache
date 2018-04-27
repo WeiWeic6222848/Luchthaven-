@@ -6,59 +6,63 @@
 
 #IncludeRegexTransform: 
 
-/home/c6222848/Desktop/Luchthaven/Airplane.cpp
+/home/c6222848/Desktop/Luchthavenbackup/Airplane.cpp
 Airplane.h
-/home/c6222848/Desktop/Luchthaven/Airplane.h
+/home/c6222848/Desktop/Luchthavenbackup/Airplane.h
 DesignByContract.h
-/home/c6222848/Desktop/Luchthaven/DesignByContract.h
+/home/c6222848/Desktop/Luchthavenbackup/DesignByContract.h
 algorithm
-/home/c6222848/Desktop/Luchthaven/algorithm
+/home/c6222848/Desktop/Luchthavenbackup/algorithm
 AirportUtils.h
-/home/c6222848/Desktop/Luchthaven/AirportUtils.h
+/home/c6222848/Desktop/Luchthavenbackup/AirportUtils.h
 
-/home/c6222848/Desktop/Luchthaven/Airplane.h
+/home/c6222848/Desktop/Luchthavenbackup/Airplane.h
 string
-/home/c6222848/Desktop/Luchthaven/string
+/home/c6222848/Desktop/Luchthavenbackup/string
 iostream
 -
 vector
 -
 list
-/home/c6222848/Desktop/Luchthaven/list
+/home/c6222848/Desktop/Luchthavenbackup/list
 Airport.h
-/home/c6222848/Desktop/Luchthaven/Airport.h
+/home/c6222848/Desktop/Luchthavenbackup/Airport.h
+Time.h
+/home/c6222848/Desktop/Luchthavenbackup/Time.h
 
-/home/c6222848/Desktop/Luchthaven/Airport.cpp
+/home/c6222848/Desktop/Luchthavenbackup/Airport.cpp
 iostream
 -
 limits
 -
 Airport.h
-/home/c6222848/Desktop/Luchthaven/Airport.h
+/home/c6222848/Desktop/Luchthavenbackup/Airport.h
 DesignByContract.h
-/home/c6222848/Desktop/Luchthaven/DesignByContract.h
+/home/c6222848/Desktop/Luchthavenbackup/DesignByContract.h
 algorithm
-/home/c6222848/Desktop/Luchthaven/algorithm
+/home/c6222848/Desktop/Luchthavenbackup/algorithm
 AirportUtils.h
-/home/c6222848/Desktop/Luchthaven/AirportUtils.h
+/home/c6222848/Desktop/Luchthavenbackup/AirportUtils.h
 
-/home/c6222848/Desktop/Luchthaven/Airport.h
+/home/c6222848/Desktop/Luchthavenbackup/Airport.h
 vector
 -
 map
 -
 string
-/home/c6222848/Desktop/Luchthaven/string
+/home/c6222848/Desktop/Luchthavenbackup/string
 Runway.h
-/home/c6222848/Desktop/Luchthaven/Runway.h
+/home/c6222848/Desktop/Luchthavenbackup/Runway.h
 Signaltower.h
-/home/c6222848/Desktop/Luchthaven/Signaltower.h
+/home/c6222848/Desktop/Luchthavenbackup/Signaltower.h
 Taxipoint.h
-/home/c6222848/Desktop/Luchthaven/Taxipoint.h
+/home/c6222848/Desktop/Luchthavenbackup/Taxipoint.h
 Gate.h
-/home/c6222848/Desktop/Luchthaven/Gate.h
+/home/c6222848/Desktop/Luchthavenbackup/Gate.h
+Time.h
+/home/c6222848/Desktop/Luchthavenbackup/Time.h
 
-/home/c6222848/Desktop/Luchthaven/AirportUtils.cpp
+/home/c6222848/Desktop/Luchthavenbackup/AirportUtils.cpp
 fstream
 -
 cstdlib
@@ -66,169 +70,169 @@ cstdlib
 sstream
 -
 string
-/home/c6222848/Desktop/Luchthaven/string
+/home/c6222848/Desktop/Luchthavenbackup/string
 AirportUtils.h
-/home/c6222848/Desktop/Luchthaven/AirportUtils.h
+/home/c6222848/Desktop/Luchthavenbackup/AirportUtils.h
 AirportsimImporter.h
-/home/c6222848/Desktop/Luchthaven/AirportsimImporter.h
+/home/c6222848/Desktop/Luchthavenbackup/AirportsimImporter.h
 
-/home/c6222848/Desktop/Luchthaven/AirportUtils.h
+/home/c6222848/Desktop/Luchthavenbackup/AirportUtils.h
 string
-/home/c6222848/Desktop/Luchthaven/string
+/home/c6222848/Desktop/Luchthavenbackup/string
 AirportsimImporter.h
-/home/c6222848/Desktop/Luchthaven/AirportsimImporter.h
+/home/c6222848/Desktop/Luchthavenbackup/AirportsimImporter.h
 
-/home/c6222848/Desktop/Luchthaven/Airportsim.cpp
+/home/c6222848/Desktop/Luchthavenbackup/Airportsim.cpp
 iostream
 -
 string
 -
 Airportsim.h
-/home/c6222848/Desktop/Luchthaven/Airportsim.h
+/home/c6222848/Desktop/Luchthavenbackup/Airportsim.h
 DesignByContract.h
-/home/c6222848/Desktop/Luchthaven/DesignByContract.h
+/home/c6222848/Desktop/Luchthavenbackup/DesignByContract.h
 fstream
-/home/c6222848/Desktop/Luchthaven/fstream
+/home/c6222848/Desktop/Luchthavenbackup/fstream
 algorithm
-/home/c6222848/Desktop/Luchthaven/algorithm
+/home/c6222848/Desktop/Luchthavenbackup/algorithm
 AirportUtils.h
-/home/c6222848/Desktop/Luchthaven/AirportUtils.h
+/home/c6222848/Desktop/Luchthavenbackup/AirportUtils.h
 
-/home/c6222848/Desktop/Luchthaven/Airportsim.h
+/home/c6222848/Desktop/Luchthavenbackup/Airportsim.h
 vector
-/home/c6222848/Desktop/Luchthaven/vector
+/home/c6222848/Desktop/Luchthavenbackup/vector
 Airport.h
-/home/c6222848/Desktop/Luchthaven/Airport.h
+/home/c6222848/Desktop/Luchthavenbackup/Airport.h
 
-/home/c6222848/Desktop/Luchthaven/AirportsimImporter.cpp
+/home/c6222848/Desktop/Luchthavenbackup/AirportsimImporter.cpp
 DesignByContract.h
-/home/c6222848/Desktop/Luchthaven/DesignByContract.h
+/home/c6222848/Desktop/Luchthavenbackup/DesignByContract.h
 AirportUtils.h
-/home/c6222848/Desktop/Luchthaven/AirportUtils.h
+/home/c6222848/Desktop/Luchthavenbackup/AirportUtils.h
 
-/home/c6222848/Desktop/Luchthaven/AirportsimImporter.h
+/home/c6222848/Desktop/Luchthavenbackup/AirportsimImporter.h
 ostream
 -
 Airportsim.h
-/home/c6222848/Desktop/Luchthaven/Airportsim.h
+/home/c6222848/Desktop/Luchthavenbackup/Airportsim.h
 tinyxml.h
-/home/c6222848/Desktop/Luchthaven/tinyxml.h
+/home/c6222848/Desktop/Luchthavenbackup/tinyxml.h
 
-/home/c6222848/Desktop/Luchthaven/DesignByContract.h
+/home/c6222848/Desktop/Luchthavenbackup/DesignByContract.h
 assert.h
 -
 
-/home/c6222848/Desktop/Luchthaven/Gate.cpp
+/home/c6222848/Desktop/Luchthavenbackup/Gate.cpp
 Gate.h
-/home/c6222848/Desktop/Luchthaven/Gate.h
+/home/c6222848/Desktop/Luchthavenbackup/Gate.h
 
-/home/c6222848/Desktop/Luchthaven/Gate.h
+/home/c6222848/Desktop/Luchthavenbackup/Gate.h
 Location.h
-/home/c6222848/Desktop/Luchthaven/Location.h
+/home/c6222848/Desktop/Luchthavenbackup/Location.h
 
-/home/c6222848/Desktop/Luchthaven/ImportTest.cpp
+/home/c6222848/Desktop/Luchthavenbackup/ImportTest.cpp
 
-/home/c6222848/Desktop/Luchthaven/Location.cpp
+/home/c6222848/Desktop/Luchthavenbackup/Location.cpp
 Location.h
-/home/c6222848/Desktop/Luchthaven/Location.h
+/home/c6222848/Desktop/Luchthavenbackup/Location.h
 
-/home/c6222848/Desktop/Luchthaven/Location.h
+/home/c6222848/Desktop/Luchthavenbackup/Location.h
 vector
 -
 string
-/home/c6222848/Desktop/Luchthaven/string
+/home/c6222848/Desktop/Luchthavenbackup/string
 
-/home/c6222848/Desktop/Luchthaven/Runway.cpp
+/home/c6222848/Desktop/Luchthavenbackup/Runway.cpp
 Runway.h
-/home/c6222848/Desktop/Luchthaven/Runway.h
+/home/c6222848/Desktop/Luchthavenbackup/Runway.h
 DesignByContract.h
-/home/c6222848/Desktop/Luchthaven/DesignByContract.h
+/home/c6222848/Desktop/Luchthavenbackup/DesignByContract.h
 
-/home/c6222848/Desktop/Luchthaven/Runway.h
+/home/c6222848/Desktop/Luchthavenbackup/Runway.h
 string
-/home/c6222848/Desktop/Luchthaven/string
+/home/c6222848/Desktop/Luchthavenbackup/string
 Airplane.h
-/home/c6222848/Desktop/Luchthaven/Airplane.h
+/home/c6222848/Desktop/Luchthavenbackup/Airplane.h
 Location.h
-/home/c6222848/Desktop/Luchthaven/Location.h
+/home/c6222848/Desktop/Luchthavenbackup/Location.h
 
-/home/c6222848/Desktop/Luchthaven/Signaltower.cpp
+/home/c6222848/Desktop/Luchthavenbackup/Signaltower.cpp
 fstream
 -
 Signaltower.h
-/home/c6222848/Desktop/Luchthaven/Signaltower.h
+/home/c6222848/Desktop/Luchthavenbackup/Signaltower.h
 algorithm
-/home/c6222848/Desktop/Luchthaven/algorithm
+/home/c6222848/Desktop/Luchthavenbackup/algorithm
 
-/home/c6222848/Desktop/Luchthaven/Signaltower.h
+/home/c6222848/Desktop/Luchthavenbackup/Signaltower.h
 Airplane.h
-/home/c6222848/Desktop/Luchthaven/Airplane.h
+/home/c6222848/Desktop/Luchthavenbackup/Airplane.h
 vector
-/home/c6222848/Desktop/Luchthaven/vector
+/home/c6222848/Desktop/Luchthavenbackup/vector
 Airport.h
-/home/c6222848/Desktop/Luchthaven/Airport.h
+/home/c6222848/Desktop/Luchthavenbackup/Airport.h
 fstream
-/home/c6222848/Desktop/Luchthaven/fstream
+/home/c6222848/Desktop/Luchthavenbackup/fstream
 Time.h
-/home/c6222848/Desktop/Luchthaven/Time.h
+/home/c6222848/Desktop/Luchthavenbackup/Time.h
 
-/home/c6222848/Desktop/Luchthaven/Taxipoint.cpp
+/home/c6222848/Desktop/Luchthavenbackup/Taxipoint.cpp
 Taxipoint.h
-/home/c6222848/Desktop/Luchthaven/Taxipoint.h
+/home/c6222848/Desktop/Luchthavenbackup/Taxipoint.h
 
-/home/c6222848/Desktop/Luchthaven/Taxipoint.h
+/home/c6222848/Desktop/Luchthavenbackup/Taxipoint.h
 Runway.h
-/home/c6222848/Desktop/Luchthaven/Runway.h
+/home/c6222848/Desktop/Luchthavenbackup/Runway.h
 Location.h
-/home/c6222848/Desktop/Luchthaven/Location.h
+/home/c6222848/Desktop/Luchthavenbackup/Location.h
 
-/home/c6222848/Desktop/Luchthaven/Time.cpp
+/home/c6222848/Desktop/Luchthavenbackup/Time.cpp
 Time.h
-/home/c6222848/Desktop/Luchthaven/Time.h
+/home/c6222848/Desktop/Luchthavenbackup/Time.h
 string
-/home/c6222848/Desktop/Luchthaven/string
+/home/c6222848/Desktop/Luchthavenbackup/string
 
-/home/c6222848/Desktop/Luchthaven/Time.h
+/home/c6222848/Desktop/Luchthavenbackup/Time.h
 iostream
-/home/c6222848/Desktop/Luchthaven/iostream
+/home/c6222848/Desktop/Luchthavenbackup/iostream
 DesignByContract.h
-/home/c6222848/Desktop/Luchthaven/DesignByContract.h
+/home/c6222848/Desktop/Luchthavenbackup/DesignByContract.h
 
-/home/c6222848/Desktop/Luchthaven/main.cpp
+/home/c6222848/Desktop/Luchthavenbackup/main.cpp
 fstream
-/home/c6222848/Desktop/Luchthaven/fstream
+/home/c6222848/Desktop/Luchthavenbackup/fstream
 Airportsim.h
-/home/c6222848/Desktop/Luchthaven/Airportsim.h
+/home/c6222848/Desktop/Luchthavenbackup/Airportsim.h
 output_system.h
-/home/c6222848/Desktop/Luchthaven/output_system.h
+/home/c6222848/Desktop/Luchthavenbackup/output_system.h
 AirportUtils.h
-/home/c6222848/Desktop/Luchthaven/AirportUtils.h
+/home/c6222848/Desktop/Luchthavenbackup/AirportUtils.h
 
-/home/c6222848/Desktop/Luchthaven/output_system.cpp
+/home/c6222848/Desktop/Luchthavenbackup/output_system.cpp
 output_system.h
-/home/c6222848/Desktop/Luchthaven/output_system.h
+/home/c6222848/Desktop/Luchthavenbackup/output_system.h
 DesignByContract.h
-/home/c6222848/Desktop/Luchthaven/DesignByContract.h
+/home/c6222848/Desktop/Luchthavenbackup/DesignByContract.h
 AirportUtils.h
-/home/c6222848/Desktop/Luchthaven/AirportUtils.h
+/home/c6222848/Desktop/Luchthavenbackup/AirportUtils.h
 
-/home/c6222848/Desktop/Luchthaven/output_system.h
+/home/c6222848/Desktop/Luchthavenbackup/output_system.h
 fstream
 -
 Airportsim.h
-/home/c6222848/Desktop/Luchthaven/Airportsim.h
+/home/c6222848/Desktop/Luchthavenbackup/Airportsim.h
 
-/home/c6222848/Desktop/Luchthaven/tinystr.cpp
+/home/c6222848/Desktop/Luchthavenbackup/tinystr.cpp
 tinystr.h
-/home/c6222848/Desktop/Luchthaven/tinystr.h
+/home/c6222848/Desktop/Luchthavenbackup/tinystr.h
 
-/home/c6222848/Desktop/Luchthaven/tinystr.h
+/home/c6222848/Desktop/Luchthavenbackup/tinystr.h
 assert.h
 -
 string.h
 -
 
-/home/c6222848/Desktop/Luchthaven/tinyxml.cpp
+/home/c6222848/Desktop/Luchthavenbackup/tinyxml.cpp
 ctype.h
 -
 sstream
@@ -236,9 +240,9 @@ sstream
 iostream
 -
 tinyxml.h
-/home/c6222848/Desktop/Luchthaven/tinyxml.h
+/home/c6222848/Desktop/Luchthavenbackup/tinyxml.h
 
-/home/c6222848/Desktop/Luchthaven/tinyxml.h
+/home/c6222848/Desktop/Luchthavenbackup/tinyxml.h
 ctype.h
 -
 stdio.h
@@ -256,19 +260,19 @@ iostream
 sstream
 -
 tinystr.h
-/home/c6222848/Desktop/Luchthaven/tinystr.h
+/home/c6222848/Desktop/Luchthavenbackup/tinystr.h
 
-/home/c6222848/Desktop/Luchthaven/tinyxmlerror.cpp
+/home/c6222848/Desktop/Luchthavenbackup/tinyxmlerror.cpp
 tinyxml.h
-/home/c6222848/Desktop/Luchthaven/tinyxml.h
+/home/c6222848/Desktop/Luchthavenbackup/tinyxml.h
 
-/home/c6222848/Desktop/Luchthaven/tinyxmlparser.cpp
+/home/c6222848/Desktop/Luchthavenbackup/tinyxmlparser.cpp
 ctype.h
 -
 stddef.h
 -
 tinyxml.h
-/home/c6222848/Desktop/Luchthaven/tinyxml.h
+/home/c6222848/Desktop/Luchthavenbackup/tinyxml.h
 windows.h
 -
 

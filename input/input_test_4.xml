@@ -83,34 +83,6 @@
     </AIRPLANE>
 
     <AIRPLANE>
-        <number>N1184</number>
-        <callsign>Cessna 846</callsign>
-        <model>Cessna 345</model>
-        <type>private</type>
-        <engine>propeller</engine>
-        <size>small</size>
-        <status>Approaching</status>
-    </AIRPLANE>
-    <AIRPLANE>
-        <number>N118</number>
-        <callsign>Cessna 847</callsign>
-        <model>Cessna 345</model>
-        <type>private</type>
-        <engine>propeller</engine>
-        <size>small</size>
-        <status>Approaching</status>
-    </AIRPLANE>
-    <AIRPLANE>
-        <number>N11</number>
-        <callsign>Cessna 848</callsign>
-        <model>Cessna 345</model>
-        <type>private</type>
-        <engine>propeller</engine>
-        <size>small</size>
-        <status>Approaching</status>
-    </AIRPLANE>
-
-    <AIRPLANE>
         <number>N1</number>
         <callsign>Cessna 8</callsign>
         <model>Cessna 345</model>
@@ -133,26 +105,6 @@
     <AIRPLANE>
         <number>AA</number>
         <callsign>Cessna </callsign>
-        <model>Cessna 345</model>
-        <type>private</type>
-        <engine>propeller</engine>
-        <size>small</size>
-        <status>Standing at gate</status>
-    </AIRPLANE>
-
-    <AIRPLANE>
-        <number>AB</number>
-        <callsign>Csna </callsign>
-        <model>Cessna 345</model>
-        <type>private</type>
-        <engine>propeller</engine>
-        <size>small</size>
-        <status>Standing at gate</status>
-    </AIRPLANE>
-
-    <AIRPLANE>
-        <number>AC</number>
-        <callsign>Cssna </callsign>
         <model>Cessna 345</model>
         <type>private</type>
         <engine>propeller</engine>

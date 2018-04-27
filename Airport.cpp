@@ -131,6 +131,11 @@ Gate* Airport::getGateFromAirplane(Airplane* plane){
                 return gates[i];
             }
         }
+        if(gates[i]->getPlaneNearGate()!=NULL){
+            if(gates[i]->getPlaneNearGate()->getNumber()==plane->getNumber()){
+                return gates[i];
+            }
+        }
     }
     return NULL;
 }
@@ -173,7 +178,7 @@ Taxipoint *Airport::findTaxipoint(const string &name) {
 }
 
 
-Runway *Airport::findFreeRunway(Airplane *airplane) {
+Runway *Airport::findFreeRunway(Airplane *airplane,bool emergency) {
 
     REQUIRE(ProperInitialized(),"Airport wasn't initialized when calling findfreerunway");
     bool grassallowed=airplaneCanLandOnGrass(airplane);
@@ -183,16 +188,33 @@ Runway *Airport::findFreeRunway(Airplane *airplane) {
     if (grassallowed){
         //always using grass first if possible.
         for (unsigned int i = 0; i < runways.size(); ++i) {
-            if(!(runways[i]->isCrossing())&&!(runways[i]->isOnuse())&&runways[i]->getType()==grass&&runways[i]->getLength()>=required&&runways[i]->getAirplanequeueing()<queueingplane){
-                queueingplane=runways[i]->getAirplanequeueing();
-                leastplane=runways[i];
+            if(!emergency){
+                if(/*!(runways[i]->isCrossing())&&!(runways[i]->isOnuse())&&*/runways[i]->getType()==grass&&runways[i]->getLength()>=required&&runways[i]->getAirplanequeueing()<queueingplane){
+                    queueingplane=runways[i]->getAirplanequeueing();
+                    leastplane=runways[i];
+                }
+            }
+            else{
+                if(/*!(runways[i]->isCrossing())&&!(runways[i]->isOnuse())&&*/runways[i]->getType()==grass&&runways[i]->getLength()>=required&&runways[i]->getAirplanequeueing()<queueingplane){
+                    queueingplane=runways[i]->getAirplanequeueing();
+                    leastplane=runways[i];
+                }
             }
         }
     }
     for (unsigned int i = 0; i < runways.size(); ++i) {
-        if(!(runways[i]->isCrossing())&&!(runways[i]->isOnuse())&&runways[i]->getType()!=grass&&runways[i]->getLength()>=required&&runways[i]->getAirplanequeueing()<queueingplane){
-            queueingplane=runways[i]->getAirplanequeueing();
-            leastplane=runways[i];
+        if(!emergency){
+
+            if(/*!(runways[i]->isCrossing())&&!(runways[i]->isOnuse())&&*/runways[i]->getType()!=grass&&runways[i]->getLength()>=required&&runways[i]->getAirplanequeueing()<queueingplane){
+                queueingplane=runways[i]->getAirplanequeueing();
+                leastplane=runways[i];
+            }
+        }
+        else{
+            if(/*!(runways[i]->isCrossing())&&!(runways[i]->isOnuse())&&*/runways[i]->getType()!=grass&&runways[i]->getLength()>=required&&runways[i]->getAirplanequeueing()<queueingplane){
+                queueingplane=runways[i]->getAirplanequeueing();
+                leastplane=runways[i];
+            }
         }
     }
     if (leastplane==NULL){
@@ -216,5 +238,18 @@ void Airport::addPassenger(int a) {
 
 void Airport::removePassenger(int a) {
     passengers-=a;
+}
+
+const Time &Airport::getCurrentTime() const {
+    return currentTime;
+}
+
+void Airport::setCurrentTime(const Time &currentTime) {
+    Airport::currentTime = currentTime;
+}
+
+
+const vector<Gate *> &Airport::getGates() const {
+    return gates;
 }
 
