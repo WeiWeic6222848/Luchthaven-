@@ -254,8 +254,19 @@ void Airplane::setDestinaterunway(Runway *destinaterunway) {
 void Airplane::progressCheck() {
     if(checkprocedure=="Just landed"){
         if(isDoingNothing()){
+            /*
             int totalminute=0.5+passenger*1.0/2;
-            actionDone=currentTime+totalminute;
+            actionDone=currentTime+totalminute;*/
+            if(size=="small"){
+                actionDone=currentTime+5;
+            }
+            else if(size=="medium"){
+                actionDone=currentTime+10;
+            }
+            else if(size=="large"){
+                actionDone=currentTime+15;
+            }
+            doingNothing=false;
         }
         if(actionDone==currentTime) {
             checkprocedure = "Technical control";
@@ -291,9 +302,18 @@ void Airplane::progressCheck() {
         }
     }
     else if(checkprocedure=="Boarding"){
-        if(isDoingNothing()){
-            int totalminute=0.5+passengerCapacity*1.0/2;
-            actionDone=currentTime+totalminute;
+        if(isDoingNothing()){/*
+            int totalminute=0.5+passenger*1.0/2;
+            actionDone=currentTime+totalminute;*/
+            if(size=="small"){
+                actionDone=currentTime+5;
+            }
+            else if(size=="medium"){
+                actionDone=currentTime+10;
+            }
+            else if(size=="large"){
+                actionDone=currentTime+15;
+            }
             doingNothing=false;
         }
         if(actionDone==currentTime) {
@@ -570,15 +590,15 @@ bool Airplane::receiveInstruction(vector<Location *> Instruction, bool adding) {
     else{
         if (Instruction[Instruction.size()-1]->isGate()){
             destination->getTower().getFile()<<"["<<currentTime<<"]"<<"[AIR]"<<endl;
-            destination->getTower().getFile()<<this->getCallsign()<<", "<<"Taxi to gate "<<Instruction[Instruction.size()-1]->getName()<<taxipoints+"." << endl;
+            destination->getTower().getFile()<<"Taxi to gate "<<Instruction[Instruction.size()-1]->getName()<<taxipoints<<", "<<this->getCallsign()<<  endl;
         }
         else if(Instruction[Instruction.size()-1]==this->getDestinaterunway()) {
             destination->getTower().getFile()<<"["<<currentTime<<"]"<<"[AIR]"<<endl;
-            destination->getTower().getFile()<<this->getCallsign()<<", "<<"Taxi to runway "<<Instruction[Instruction.size()-1]->getName()<<taxipoints+"." << endl;
+            destination->getTower().getFile()<<"Taxi to runway "<<Instruction[Instruction.size()-1]->getName()<<taxipoints <<", "<<this->getCallsign()<<  endl;
         }
         else if(Instruction[Instruction.size()-1]!=this->getDestinaterunway()&&Instruction[Instruction.size()-1]->isRunway()) {
-            destination->getTower().getFile()<<"["<<currentTime<<"]"<<"[ATC]"<<endl;
-            destination->getTower().getFile()<<this->getCallsign()<<", "<<"Taxi to holdpoint "<<Instruction[Instruction.size()-1]->getName()<<taxipoints+"." << endl;
+            destination->getTower().getFile()<<"["<<currentTime<<"]"<<"[AIR]"<<endl;
+            destination->getTower().getFile()<<"Taxi to holdpoint "<<Instruction[Instruction.size()-1]->getName()<<taxipoints<<", "<<this->getCallsign()<< endl;
         }
         permission="Taxiing";
     }

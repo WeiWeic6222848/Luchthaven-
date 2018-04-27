@@ -48,10 +48,10 @@ RM = /home/c6222848/Downloads/clion-2017.3.3/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/c6222848/Desktop/Luchthavenbackup
+CMAKE_SOURCE_DIR = /home/c6222848/Desktop/Luchthaven
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/c6222848/Desktop/Luchthavenbackup/cmake-build-debug
+CMAKE_BINARY_DIR = /home/c6222848/Desktop/Luchthaven/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/c6222848/Desktop/Luchthavenbackup/cmake-build-debug/CMakeFiles /home/c6222848/Desktop/Luchthavenbackup/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/c6222848/Desktop/Luchthaven/cmake-build-debug/CMakeFiles /home/c6222848/Desktop/Luchthaven/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/c6222848/Desktop/Luchthavenbackup/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/c6222848/Desktop/Luchthaven/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

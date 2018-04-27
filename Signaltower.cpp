@@ -812,9 +812,9 @@ bool Signaltower::sendSignal() {
             } else if (stringSignal == "IFR clearancy") {
                 //dont see a reason not to
                     sendSignalIFRclear(airplane);
-                if(isDoingNothing()){
-                    erase=true;
-                }
+                    if(isDoingNothing()){
+                        erase=true;
+                    }
                     break;
 
             } else if (stringSignal == "Crossing runway") {
@@ -854,6 +854,9 @@ bool Signaltower::sendSignal() {
     if(erase){
         if(!incomingSignal.empty()){
             incomingSignal.erase(incomingSignal.begin()+index);
+        }
+        else if(incomingSignal.empty()){
+
         }
     }
         return true;
