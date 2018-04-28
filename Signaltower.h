@@ -56,7 +56,7 @@ public:
     void sendSignalPermission5000(Airplane* airplane);
     void sendSignalPermission3000(Airplane* airplane);
     void sendSignalPermissionLanding(Airplane* airplane,Runway* runway);
-    void sendSignalWaiting(Airplane* airplane);
+    bool sendSignalWaiting(Airplane* airplane);
     void sendSignalClearedToCross(Airplane* airplane);
     void sendSignalHoldPosition(Airplane* airplane);
     void sendSignalLineup(Airplane* airplane,bool takeoff=false);

@@ -8,11 +8,11 @@ Airplane: Speedbird 466 (BAW466)
  -> engine: jet
  -> size: large
 
-Airplane: Cessna 842 (N11843)
- -> model: Cessna 340
+Airplane: GOD (N11843)
+ -> model: C 4
  -> type: private
- -> engine: propeller
- -> size: small
+ -> engine: jet
+ -> size: medium
 
 Airplane: Cessna 849 (N11848)
  -> model: Cessna 345
