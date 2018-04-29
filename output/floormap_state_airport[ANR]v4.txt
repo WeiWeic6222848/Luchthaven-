@@ -2,4 +2,4 @@
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [VVV       ]

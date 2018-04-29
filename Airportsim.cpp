@@ -360,6 +360,7 @@ void Airportsim::Simulate() {
      int chillingcounter=0;
 
      int toweraction=0;
+     int update=1;
      while (!Airplanes.empty()){
          airplanestoremove.clear();
          string status;
@@ -367,6 +368,8 @@ void Airportsim::Simulate() {
          //loop through all those planes to get them something to do;
 
          for (unsigned int j = 0; j < Airplanes.size(); ++j) {
+             generateFloorPlan(*getAirports()[0],update);
+             update++;
              alreadypushed=false;
              chillingcounter=0;
              do{
@@ -813,7 +816,15 @@ void Airportsim::generateFloorPlan(Airport &vlieghaven, int i) {
         Runway *runway = vlieghaven.getRunways()[vlieghaven.getRunways().size() - 1 - i];
         outputfile << runway->getName() << " | ";
         if (runway->isOnuse()) {
-            outputfile << "====V=====" << endl;
+            if(runway->getPlaneAtbegin()!=NULL){
+                outputfile << "V=========" << endl;
+            }
+            else if(runway->getPlaneAtEnd()!=NULL){
+                outputfile << "=========V" << endl;
+            }
+            else{
+                outputfile << "====V=====" << endl;
+            }
         } else {
             outputfile << "==========" << endl;
         }
