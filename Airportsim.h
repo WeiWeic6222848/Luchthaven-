@@ -7,6 +7,7 @@
 
 #include "vector"
 #include "Airport.h"
+#include <cmath>
 
 class AirportsimImporter;
 class Airport;
@@ -147,6 +148,8 @@ public:
     void leavingstep(Airplane& leaving, Airport& airport);
 
     void generateFloorPlan(Airport& vlieghaven, int i);
+
+    void writeIni(Airport& airport);
 };
 
 
