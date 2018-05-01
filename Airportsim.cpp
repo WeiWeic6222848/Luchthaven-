@@ -345,6 +345,11 @@ void Airportsim::Simulate() {
     REQUIRE(ProperInitialized(),"Airportsim object wasn't initialized when calling Destructor");
      ofstream file;
      for (unsigned int k = 0; k < Airports.size(); ++k) {
+         string filename="../output/floormap_state_airport["+Airports[k]->getIata()+"].txt";
+         file.open(filename.c_str(),ios::out);
+         file.close();
+     }
+     for (unsigned int k = 0; k < Airports.size(); ++k) {
          string filename="../output/"+Airports[k]->getIata()+"_Tower.txt";
          file.open(filename.c_str(),ios::out);
          file.close();
@@ -360,18 +365,13 @@ void Airportsim::Simulate() {
      int chillingcounter=0;
 
      int toweraction=0;
-     int update=1;
      while (!Airplanes.empty()){
          airplanestoremove.clear();
          string status;
          //while still plane with action = current time;
          //loop through all those planes to get them something to do;
-         //writeIni(*getAirports()[0]);
-         //hier stond createVisual eerst
+
          for (unsigned int j = 0; j < Airplanes.size(); ++j) {
-             //generateFloorPlan(*getAirports()[0],update);
-             createVisual(*getAirports()[0]);
-             update++;
              alreadypushed=false;
              chillingcounter=0;
              do{
@@ -551,7 +551,8 @@ void Airportsim::Simulate() {
                  Airports[k]->getTower().regulateLeavingplanes();
              }
          }*/
-
+         generateFloorPlan(*getAirports()[0]);
+         //createVisual(*getAirports()[0]);
          for (unsigned int i = 0; i < airplanestoremove.size(); ++i) {
              AirplanesFlying.push_back((Airplanes.begin() + airplanestoremove[i] - i).operator*());
              Airplanes.erase(Airplanes.begin() + airplanestoremove[i] - i);
@@ -809,11 +810,12 @@ void Airportsim::setCurrentTime(const Time &currentTime) {
     Airportsim::currentTime = currentTime;
 }
 
-void Airportsim::generateFloorPlan(Airport &vlieghaven, int i) {
+void Airportsim::generateFloorPlan(Airport &vlieghaven) {
     REQUIRE(vlieghaven.ProperInitialized(), "airport wasn't initialized when calling generateFloorPlan");
     ofstream outputfile;
-    string filename = "../output/floormap_state_airport[" + vlieghaven.getIata() + "]v"+to_string(i)+".txt";
-    outputfile.open(filename.c_str(), ios::out);
+    string filename = "../output/floormap_state_airport[" + vlieghaven.getIata() + "]"+".txt";
+    outputfile.open(filename.c_str(), ios::app);
+    outputfile<<getCurrentTime()<<endl;
     for (unsigned int i = 0; i < vlieghaven.getRunways().size(); i++) {
         Runway *runway = vlieghaven.getRunways()[vlieghaven.getRunways().size() - 1 - i];
         outputfile << runway->getName() << " | ";
