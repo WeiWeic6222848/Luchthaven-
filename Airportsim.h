@@ -150,6 +150,8 @@ public:
     void generateFloorPlan(Airport& vlieghaven, int i);
 
     void writeIni(Airport& airport);
+
+    void createVisual(Airport& airport);
 };
 
 

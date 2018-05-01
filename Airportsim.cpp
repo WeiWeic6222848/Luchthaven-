@@ -366,9 +366,11 @@ void Airportsim::Simulate() {
          string status;
          //while still plane with action = current time;
          //loop through all those planes to get them something to do;
-         writeIni(*getAirports()[0]);
+         //writeIni(*getAirports()[0]);
+         //hier stond createVisual eerst
          for (unsigned int j = 0; j < Airplanes.size(); ++j) {
-             generateFloorPlan(*getAirports()[0],update);
+             //generateFloorPlan(*getAirports()[0],update);
+             createVisual(*getAirports()[0]);
              update++;
              alreadypushed=false;
              chillingcounter=0;
@@ -1177,5 +1179,10 @@ void Airportsim::writeIni(Airport &airport) {
         }
     }
     ENSURE(fileExist(filename.c_str()), "writeIni postcondition failed");
+}
+void Airportsim::createVisual(Airport &airport) {
+    writeIni(airport);
+    string filename = "../Engine/./engine ../output/settings_2D_[" + airport.getIata() + "]"+".ini";
+    system(filename.c_str());
 }
 
