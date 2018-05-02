@@ -17,6 +17,8 @@ class Airport;
 class Location;
 class Runway;
 class Time;
+class Airportsim;
+class Signaltower;
 
 using namespace std;
 
@@ -54,6 +56,9 @@ private:
     Runway* destinaterunway=NULL;
     string checkprocedure;
 
+    friend Airportsim;
+    friend Airport;
+    friend Signaltower;
 
 public:
 
@@ -201,6 +206,7 @@ public:
     //all the setters------------------------------------------------------------------------
     /**
      *     REQUIRE(ProperInitialized(),"Airplane wasn't initialized when calling setStatus");
+     *     REQUIRE(find(allowedstatus.begin(),allowedstatus.end(),status)!=allowedstatus.end(),"Airplane's condition is not correct");
      *     ENSURE(getStatus()==status,"setStatus Postcondition failed");
      * @param status string with a certain restriction.
      * Status can only be either Flying, Approaching(landing), Standing at Gate, Just landed or Leaving.
@@ -209,6 +215,8 @@ public:
 
     /**
      *     REQUIRE(ProperInitialized(),"Airplane wasn't initialized when calling setPassenger");
+     *     REQUIRE(passenger>=0,"passenger must be bigger than zero!");
+     *     REQUIRE(passenger<=getPassengerCapacity(),"passenger must be lesser than capacity!");
      *     ENSURE(getPassenger()==passenger,"setPassenger postcondition failed");
      * @param passenger
      */
@@ -216,6 +224,8 @@ public:
 
     /**
      *     REQUIRE(ProperInitialized(),"Airplane wasn't initialized when calling setFuel");
+     *     REQUIRE(fuel>=0,"fuel must be bigger than zero!");
+     *     REQUIRE(fuel<=getFuelCapacity(),"fuel must be lesser than capacity!");
      *     ENSURE(getFuel()==fuel,"setFuel postcondition failed");
      * @param fuel
      */
@@ -223,6 +233,8 @@ public:
 
     /**
      *     REQUIRE(ProperInitialized(),"Airplane wasn't initialized when calling setPassenger");
+     *     REQUIRE(fuel>=0,"fuelcapacity must be bigger than zero!");
+     *     REQUIRE(fuel>=getFuel(),"fuelcapacity must be bigger than fuel!");
      *     ENSURE(getFuelCapacity()==fuel,"setFuelCapacity postcondition failed");
      * @param fuel
      */
@@ -230,7 +242,7 @@ public:
 
     /**
      *     REQUIRE(ProperInitialized(),"Airplane wasn't initialized when calling setPermission");
-     *     ENSURE(getPermission()==descendingpermission,"setFuelCapacity postcondition failed");
+     *     ENSURE(getPermission()==descendingpermission,"setPermission postcondition failed");
      * @param descendingpermission
      */
     void setPermission(string descendingpermission);//planning to remove this part
@@ -310,7 +322,7 @@ public:
 
 
 
-
+private:
     //all valid signals--------------------------------------------------------------------------
     /**
      *     REQUIRE(ProperInitialized(),"Airplane wasn't initialized when sending signal Approaching");

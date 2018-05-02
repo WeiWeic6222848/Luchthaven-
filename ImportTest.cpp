@@ -11,7 +11,7 @@
 #include "AirportUtils.h"
 #include "AirportsimImporter.h"
 
-class AirportImportTest: public ::testing::Test{
+class AirportSimImportTest: public ::testing::Test{
 protected:
     friend class Airportsim;
 
@@ -30,7 +30,7 @@ protected:
 /**
  * input happydayfiles;
  */
-TEST_F(AirportImportTest, InputHappyDay) {
+TEST_F(AirportSimImportTest, InputHappyDay) {
     REQUIRE(DirectoryExists("../inputTest/Happyday"),"Happy day folder must exist");
 
     //settings
@@ -60,7 +60,7 @@ TEST_F(AirportImportTest, InputHappyDay) {
 }
 
 
-TEST_F(AirportImportTest,InputPartialImportRunwayLength) {
+TEST_F(AirportSimImportTest,InputPartialImportRunwayLength) {
     REQUIRE(DirectoryExists("../inputTest/Partial_import/Runway/Length"),"Happy day folder must exist");
 //settings
     int numberOfFilesLength=5;
@@ -92,7 +92,7 @@ TEST_F(AirportImportTest,InputPartialImportRunwayLength) {
     }
 }
 
-TEST_F(AirportImportTest,InputPartialImportRunwayName) {
+TEST_F(AirportSimImportTest,InputPartialImportRunwayName) {
     REQUIRE(DirectoryExists("../inputTest/Partial_import/Runway/EmptyFields"),"Happy day folder must exist");
 //settings
     int numberOfFilesLength=4;
@@ -124,7 +124,7 @@ TEST_F(AirportImportTest,InputPartialImportRunwayName) {
     }
 }
 
-TEST_F(AirportImportTest,InputPartialImportRunwayAlreadyExist) {
+TEST_F(AirportSimImportTest,InputPartialImportRunwayAlreadyExist) {
     REQUIRE(DirectoryExists("../inputTest/Partial_import/Runway/AlreadyExist"),"Happy day folder must exist");
 //settings
     int numberOfFilesLength=5;
@@ -157,7 +157,7 @@ TEST_F(AirportImportTest,InputPartialImportRunwayAlreadyExist) {
 }
 
 
-TEST_F(AirportImportTest,InputPartialImportRunwayType) {
+TEST_F(AirportSimImportTest,InputPartialImportRunwayType) {
     REQUIRE(DirectoryExists("../inputTest/Partial_import/Runway/Type"),"Happy day folder must exist");
 //settings
     int numberOfFilesLength=5;
@@ -190,7 +190,7 @@ TEST_F(AirportImportTest,InputPartialImportRunwayType) {
 }
 
 
-TEST_F(AirportImportTest,InputPartialImportRunwayTaxiroute) {
+TEST_F(AirportSimImportTest,InputPartialImportRunwayTaxiroute) {
     REQUIRE(DirectoryExists("../inputTest/Partial_import/Runway/Taxiroute"),"Happy day folder must exist");
 //settings
     int numberOfFilesLength=5;
@@ -223,7 +223,7 @@ TEST_F(AirportImportTest,InputPartialImportRunwayTaxiroute) {
 }
 
 
-TEST_F(AirportImportTest,InputPartialImportAirportAlreadyExist) {
+TEST_F(AirportSimImportTest,InputPartialImportAirportAlreadyExist) {
     REQUIRE(DirectoryExists("../inputTest/Partial_import/Airport/AlreadyExist"),"Happy day folder must exist");
 //settings
     int numberOfFilesLength=5;
@@ -255,7 +255,7 @@ TEST_F(AirportImportTest,InputPartialImportAirportAlreadyExist) {
     }
 }
 
-TEST_F(AirportImportTest,InputPartialImportAirplaneEmptyField) {
+TEST_F(AirportSimImportTest,InputPartialImportAirplaneEmptyField) {
     REQUIRE(DirectoryExists("../inputTest/Partial_import/Airplane/EmptyField"),"Happy day folder must exist");
 //settings
     int numberOfFilesLength=5;
@@ -288,7 +288,7 @@ TEST_F(AirportImportTest,InputPartialImportAirplaneEmptyField) {
 }
 
 
-TEST_F(AirportImportTest,InputPartialImportAirplaneStatus) {
+TEST_F(AirportSimImportTest,InputPartialImportAirplaneStatus) {
     REQUIRE(DirectoryExists("../inputTest/Partial_import/Airplane/Status"),"Happy day folder must exist");
 //settings
     int numberOfFilesLength=5;
@@ -321,7 +321,7 @@ TEST_F(AirportImportTest,InputPartialImportAirplaneStatus) {
 }
 
 
-TEST_F(AirportImportTest,InputPartialImportAirplaneWrongCombination) {
+TEST_F(AirportSimImportTest,InputPartialImportAirplaneWrongCombination) {
     REQUIRE(DirectoryExists("../inputTest/Partial_import/Airplane/Wrong_Combination"),"Happy day folder must exist");
 //settings
     int numberOfFilesLength=5;
@@ -353,7 +353,7 @@ TEST_F(AirportImportTest,InputPartialImportAirplaneWrongCombination) {
     }
 }
 
-TEST_F(AirportImportTest,InputPartialImportAirplaneAlreadyExist) {
+TEST_F(AirportSimImportTest,InputPartialImportAirplaneAlreadyExist) {
     //only test for one airplane duplicate in the xml.
     REQUIRE(DirectoryExists("../inputTest/Partial_import/Airplane/AlreadyExist"),"Happy day folder must exist");
 //settings
@@ -387,7 +387,7 @@ TEST_F(AirportImportTest,InputPartialImportAirplaneAlreadyExist) {
 }
 
 
-TEST_F(AirportImportTest,InputPartialImportAirplanePassenger) {
+TEST_F(AirportSimImportTest,InputPartialImportAirplanePassenger) {
     //only test for one airplane duplicate in the xml.
     REQUIRE(DirectoryExists("../inputTest/Partial_import/Airplane/Passenger"),"Happy day folder must exist");
 //settings
@@ -421,7 +421,7 @@ TEST_F(AirportImportTest,InputPartialImportAirplanePassenger) {
 }
 
 
-TEST_F(AirportImportTest,InputPartialImportAirplaneFuel) {
+TEST_F(AirportSimImportTest,InputPartialImportAirplaneFuel) {
     //only test for one airplane duplicate in the xml.
     REQUIRE(DirectoryExists("../inputTest/Partial_import/Airplane/Fuel"),"Happy day folder must exist");
 //settings
@@ -455,7 +455,7 @@ TEST_F(AirportImportTest,InputPartialImportAirplaneFuel) {
 }
 
 
-TEST_F(AirportImportTest,InputPartialImportAirplanePassengerCapacity) {
+TEST_F(AirportSimImportTest,InputPartialImportAirplanePassengerCapacity) {
     //only test for one airplane duplicate in the xml.
     REQUIRE(DirectoryExists("../inputTest/Partial_import/Airplane/PassengerCapacity"),"Happy day folder must exist");
 //settings
@@ -489,7 +489,7 @@ TEST_F(AirportImportTest,InputPartialImportAirplanePassengerCapacity) {
 }
 
 
-TEST_F(AirportImportTest,InputPartialImportAirplaneTooMuchPassenger) {
+TEST_F(AirportSimImportTest,InputPartialImportAirplaneTooMuchPassenger) {
     //only test for one airplane duplicate in the xml.
     REQUIRE(DirectoryExists("../inputTest/Partial_import/Airplane/too_much_passenger"),"Happy day folder must exist");
 //settings
@@ -523,7 +523,7 @@ TEST_F(AirportImportTest,InputPartialImportAirplaneTooMuchPassenger) {
 }
 
 
-TEST_F(AirportImportTest,InputImportAbortedAirportEmptyField) {
+TEST_F(AirportSimImportTest,InputImportAbortedAirportEmptyField) {
     //only test for one airplane duplicate in the xml.
     REQUIRE(DirectoryExists("../inputTest/Import_aboarted/Airport_EmptyField"),"Happy day folder must exist");
 //settings
@@ -557,7 +557,7 @@ TEST_F(AirportImportTest,InputImportAbortedAirportEmptyField) {
 }
 
 
-TEST_F(AirportImportTest,InputImportAbortedAirportMissing) {
+TEST_F(AirportSimImportTest,InputImportAbortedAirportMissing) {
     //only test for one airplane duplicate in the xml.
     REQUIRE(DirectoryExists("../inputTest/Import_aboarted/Airport_missing"),"Happy day folder must exist");
 //settings
@@ -591,7 +591,7 @@ TEST_F(AirportImportTest,InputImportAbortedAirportMissing) {
 }
 
 
-TEST_F(AirportImportTest,InputImportAbortedAirportGate) {
+TEST_F(AirportSimImportTest,InputImportAbortedAirportGate) {
     //only test for one airplane duplicate in the xml.
     REQUIRE(DirectoryExists("../inputTest/Import_aboarted/Invalid_Gate"),"Happy day folder must exist");
 //settings
@@ -625,7 +625,7 @@ TEST_F(AirportImportTest,InputImportAbortedAirportGate) {
 }
 
 
-TEST_F(AirportImportTest,InputImportAbortedAirportPassenger) {
+TEST_F(AirportSimImportTest,InputImportAbortedAirportPassenger) {
     //only test for one airplane duplicate in the xml.
     REQUIRE(DirectoryExists("../inputTest/Import_aboarted/Invalid_Passenger"),"Happy day folder must exist");
 //settings
@@ -658,7 +658,7 @@ TEST_F(AirportImportTest,InputImportAbortedAirportPassenger) {
     }
 }
 
-TEST_F(AirportImportTest,InputImportAbortedAirportNoRunway) {
+TEST_F(AirportSimImportTest,InputImportAbortedAirportNoRunway) {
     //only test for one airplane duplicate in the xml.
     REQUIRE(DirectoryExists("../inputTest/Import_aboarted/No_runway"),"Happy day folder must exist");
 //settings
@@ -692,7 +692,7 @@ TEST_F(AirportImportTest,InputImportAbortedAirportNoRunway) {
 }
 
 
-TEST_F(AirportImportTest,InputImportAbortedAirportTooMuchAirplane) {
+TEST_F(AirportSimImportTest,InputImportAbortedAirportTooMuchAirplane) {
     //only test for one airplane duplicate in the xml.
     REQUIRE(DirectoryExists("../inputTest/Import_aboarted/Too_much_airplane"),"Happy day folder must exist");
 //settings
@@ -727,7 +727,7 @@ TEST_F(AirportImportTest,InputImportAbortedAirportTooMuchAirplane) {
 
 
 /*
-TEST_F(AirportImportTest, InputPartialImportRunway) {
+TEST_F(AirportSimImportTest, InputPartialImportRunway) {
     REQUIRE(DirectoryExists("../inputTest/Partial_import/Runway/Length"),"Happy day folder must exist");
     REQUIRE(DirectoryExists("../inputTest/Partial_import/Runway/Airport"),"Happy day folder must exist");
     REQUIRE(DirectoryExists("../inputTest/Partial_import/Runway/Taxiroute"),"Happy day folder must exist");

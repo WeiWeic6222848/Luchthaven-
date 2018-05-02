@@ -286,6 +286,33 @@ AirportsimImporter.cpp.s:
 	$(MAKE) -f CMakeFiles/Airport_simulator.dir/build.make CMakeFiles/Airport_simulator.dir/AirportsimImporter.cpp.s
 .PHONY : AirportsimImporter.cpp.s
 
+DomeinTest.o: DomeinTest.cpp.o
+
+.PHONY : DomeinTest.o
+
+# target to build an object file
+DomeinTest.cpp.o:
+	$(MAKE) -f CMakeFiles/Airport_simulator_debug.dir/build.make CMakeFiles/Airport_simulator_debug.dir/DomeinTest.cpp.o
+.PHONY : DomeinTest.cpp.o
+
+DomeinTest.i: DomeinTest.cpp.i
+
+.PHONY : DomeinTest.i
+
+# target to preprocess a source file
+DomeinTest.cpp.i:
+	$(MAKE) -f CMakeFiles/Airport_simulator_debug.dir/build.make CMakeFiles/Airport_simulator_debug.dir/DomeinTest.cpp.i
+.PHONY : DomeinTest.cpp.i
+
+DomeinTest.s: DomeinTest.cpp.s
+
+.PHONY : DomeinTest.s
+
+# target to generate assembly for a file
+DomeinTest.cpp.s:
+	$(MAKE) -f CMakeFiles/Airport_simulator_debug.dir/build.make CMakeFiles/Airport_simulator_debug.dir/DomeinTest.cpp.s
+.PHONY : DomeinTest.cpp.s
+
 Gate.o: Gate.cpp.o
 
 .PHONY : Gate.o
@@ -722,6 +749,9 @@ help:
 	@echo "... AirportsimImporter.o"
 	@echo "... AirportsimImporter.i"
 	@echo "... AirportsimImporter.s"
+	@echo "... DomeinTest.o"
+	@echo "... DomeinTest.i"
+	@echo "... DomeinTest.s"
 	@echo "... Gate.o"
 	@echo "... Gate.i"
 	@echo "... Gate.s"

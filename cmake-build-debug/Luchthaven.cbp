@@ -178,6 +178,9 @@
 			<Option target="Airport_simulator_debug"/>
 			<Option target="Airport_simulator"/>
 		</Unit>
+		<Unit filename="/home/c6222848/Desktop/Luchthaven-/DomeinTest.cpp">
+			<Option target="Airport_simulator_debug"/>
+		</Unit>
 		<Unit filename="/home/c6222848/Desktop/Luchthaven-/Gate.cpp">
 			<Option target="Airport_simulator_debug"/>
 			<Option target="Airport_simulator"/>

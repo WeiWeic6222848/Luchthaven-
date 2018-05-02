@@ -124,24 +124,31 @@ bool Airplane::ProperInitialized() const {
 //setters
 void Airplane::setStatus(const string &status) {
     REQUIRE(ProperInitialized(),"Airplane wasn't initialized when calling setStatus");
+    REQUIRE(find(allowedstatus.begin(),allowedstatus.end(),status)!=allowedstatus.end(),"Airplane's condition is not correct");
     Airplane::status = status;
     ENSURE(getStatus()==status,"setStatus Postcondition failed");
 }
 
 void Airplane::setPassenger(int passenger) {
     REQUIRE(ProperInitialized(),"Airplane wasn't initialized when calling setPassenger");
+    REQUIRE(passenger>=0,"passenger must be bigger than zero!");
+    REQUIRE(passenger<=getPassengerCapacity(),"passenger must be lesser than capacity!");
     Airplane::passenger = passenger;
     ENSURE(getPassenger()==passenger,"setPassenger postcondition failed");
 }
 
 void Airplane::setFuel(int fuel) {
     REQUIRE(ProperInitialized(),"Airplane wasn't initialized when calling setFuel");
+    REQUIRE(fuel>=0,"fuel must be bigger than zero!");
+    REQUIRE(fuel<=getFuelCapacity(),"fuel must be lesser than capacity!");
     Airplane::fuel = fuel;
     ENSURE(getFuel()==fuel,"setFuel postcondition failed");
 }
 
 void Airplane::setFuelCapacity(int fuel) {
     REQUIRE(ProperInitialized(),"Airplane wasn't initialized when calling setPassenger");
+    REQUIRE(fuel>=0,"fuelcapacity must be bigger than zero!");
+    REQUIRE(fuel>=getFuel(),"fuelcapacity must be bigger than fuel!");
     Airplane::fuelCapacity = fuel;
     ENSURE(getFuelCapacity()==fuel,"setFuelCapacity postcondition failed");
 }
@@ -152,7 +159,7 @@ void Airplane::setPermission(string descendingpermission) {
         //...
     }
     Airplane::permission = descendingpermission;
-    ENSURE(getPermission()==descendingpermission,"setFuelCapacity postcondition failed");
+    ENSURE(getPermission()==descendingpermission,"setPermission postcondition failed");
 }
 
 void Airplane::setDestination(Airport *destination) {
@@ -231,6 +238,7 @@ Airplane::Airplane(const string &status, const string &number, const string &cal
     checkprocedure="Just landed";
     actionDone=currentTime+(-1);
     doingNothing=true;
+    Airplane::fuel=fuelCapacity;
     ENSURE(ProperInitialized(),"this airplane object failed to Initialize properly");
 }
 

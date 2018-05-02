@@ -282,3 +282,41 @@ bool Airport::receiveSignal(Airplane *airplane, string signal) {
 
 
 
+
+
+
+void Airport::setName(const string &name) {
+    Airport::name = name;
+}
+
+void Airport::setIata(const string &iata) {
+    Airport::iata = iata;
+}
+
+void Airport::setCallsign(const string &callsign) {
+    Airport::callsign = callsign;
+}
+
+void Airport::setGates(const vector<Gate *> &gates) {
+    Airport::gates = gates;
+}
+
+void Airport::setPassengers(int passengers) {
+    Airport::passengers = passengers;
+}
+
+void Airport::setRunways(const vector<Runway *> &runways) {
+    Airport::runways = runways;
+}
+
+void Airport::setTaxipoints(const vector<Taxipoint *> &taxipoints) {
+    Airport::taxipoints = taxipoints;
+}
+
+void Airport::setTower(Signaltower *tower) {
+    Airport::tower = tower;
+}
+
+
+
+

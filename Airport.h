@@ -41,6 +41,26 @@ private:
     Airport* _InitCheck;
     Signaltower* tower;
     friend std::ostream& operator<<(std::ostream& output,Airport& airport);
+    friend class AirportDomeinTest;
+    //test purpose
+    void setName(const string &name);
+
+    void setIata(const string &iata);
+
+    void setCallsign(const string &callsign);
+
+    void setGates(const vector<Gate *> &gates);
+
+    void setPassengers(int passengers);
+
+    void setRunways(const vector<Runway *> &runways);
+
+    void setTaxipoints(const vector<Taxipoint *> &taxipoints);
+
+    void setTower(Signaltower *tower);
+    //test purpose
+    
+    friend Signaltower;
 
 public:
 
