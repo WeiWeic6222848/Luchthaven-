@@ -495,7 +495,6 @@ vector<Location*> Signaltower::makeInstructionToGate(Airplane *airplane) {
             Gate* freegate=airport->findFreeGates();
             if(freegate && airport->getGateFromAirplane(airplane)==NULL){
                 nextStop.push_back(freegate);
-                airport->parkAirplane(freegate,taxiingplane);
             }
             else if(airport->getGateFromAirplane(airplane)){
                 nextStop.push_back(airport->getGateFromAirplane(airplane));
@@ -770,6 +769,9 @@ void Signaltower::sendInstruction(Airplane *airplane, vector<Location *> Instruc
         }
         if(!adding){
             doingNothing=true;
+        }
+        if(Instruction[Instruction.size()-1]->isGate()){
+            Instruction[Instruction.size()-1]->setOnuse(true);
         }
         airplane->receiveInstruction(Instruction,adding);
     }

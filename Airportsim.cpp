@@ -344,7 +344,6 @@ Airportsim::Airportsim() {
 
  //future functions
 void Airportsim::Simulate() {
-
      REQUIRE(ProperInitialized(),"Airportsim object wasn't initialized when calling Simulate");
      ofstream file;
      for (unsigned int k = 0; k < Airports.size(); ++k) {
@@ -710,8 +709,14 @@ void Airportsim::taxiingToGatestep(Airplane &taxiingplane, Airport &airport) {
         outputfile.open(filename.c_str(),ios::app);
         vector<Location*> instruction=taxiingplane.getInstruction();
 
-        if(taxiingplane.getLocation()->isOnuse()&&taxiingplane.getLocation()->isGate()){
+        if(taxiingplane.getLocation()->isGate()){
             //only a gate location will be giving under this condition
+            for (unsigned int i = 0; i < airport.getGates().size(); ++i) {
+                if(airport.getGates()[i]->getName()==taxiingplane.getLocation()->getName()){
+                    airport.getGates()[i]->setCurrentPlane(&taxiingplane);
+                    break;
+                }
+            }
             outputfile<<taxiingplane.getCallsign()<<" is standing at Gate "<<taxiingplane.getLocation()->getName()<<endl;
             taxiingplane.setStatus("Standing at gate");
         }
@@ -925,7 +930,10 @@ void Airportsim::writeIni(Airport &airport) {
     }
     amountFigures+=airport.getGates().size();
     for(unsigned int i=0;i<airport.getGates().size();i++){
-        if(airport.getGates()[i]->isOnuse()){
+        if(airport.getGates()[i]->getCurrentPlane()!=NULL){
+            amountFigures+=6;
+        }
+        if(airport.getGates()[i]->getPlaneNearGate()!=NULL){
             amountFigures+=6;
         }
     }
@@ -1237,7 +1245,7 @@ void Airportsim::writeIni(Airport &airport) {
                           "diffuseReflection = (0.02745098, 0.968627451, 0.843137255)\n"
                           "\n";
         amountFigs++;
-        if(airport.getGates()[i]->isOnuse()){
+        if(airport.getGates()[i]->getCurrentPlane()!=NULL){
             int horizontalMovement=begingates+240*i;
             double scaleFactor=0.5;
             int zval=200;
@@ -1307,6 +1315,81 @@ void Airportsim::writeIni(Airport &airport) {
                               "rotateY = 0\n"
                               "rotateZ = 112\n"
                               "center = ("<<(220)*scaleFactor+720*airport.getRunways().size()<<", "<<(-330)*scaleFactor+horizontalMovement<<", "<<zval<<")\n"
+                              "color = (1, 1, 1)\n"
+                              "ambientReflection = (1, 1, 1)\n"
+                              "diffuseReflection = (0, 0, 0)\n\n";
+            amountFigs+=6;
+        }
+        if(airport.getGates()[i]->getPlaneNearGate()!=NULL){
+            int horizontalMovement=begingates+240*i;
+            double scaleFactor=0.5;
+            int zval=200;
+            outputfile<<"[Figure"<<amountFigs<<"]\n"
+                    "type = \"Cylinder\"\n"
+                    "height = 7\n"
+                    "n = 40\n"
+                    "scale = "<<60*scaleFactor<<"\n"
+                              "rotateX = 90\n"
+                              "rotateY = 0\n"
+                              "rotateZ = 45\n"
+                              "center = ("<<720*airport.getRunways().size()+0*scaleFactor-200<<", "<<(0)*scaleFactor+horizontalMovement<<", "<<zval<<")\n"
+                              "color = (1, 1, 1)\n"
+                              "ambientReflection = (1, 1, 1)\n"
+                              "diffuseReflection = (0, 0, 0)\n"
+                              "\n"
+                              "[Figure"<<1+amountFigs<<"]\n"
+                              "type = \"Cone\"\n"
+                              "height = 1.5\n"
+                              "n = 40\n"
+                              "scale = "<<60*scaleFactor<<"\n"
+                              "rotateX = 270\n"
+                              "rotateY = 0\n"
+                              "rotateZ = 45\n"
+                              "center = ("<<720*airport.getRunways().size()+0*scaleFactor-200<<", "<<0*scaleFactor+horizontalMovement<<", "<<zval<<")\n"
+                              "color = (1, 1, 1)\n"
+                              "ambientReflection = (1, 1, 1)\n"
+                              "diffuseReflection = (0, 0, 0)\n"
+                              "\n"
+                              "[Figure"<<2+amountFigs<<"]\n"
+                              "type = \"Tetrahedron\"\n"
+                              "scale = "<<60*scaleFactor<<"\n"
+                              "rotateX = 45\n"
+                              "rotateY = 0\n"
+                              "rotateZ = -10\n"
+                              "center = ("<<(50)*scaleFactor+720*airport.getRunways().size()-200<<", "<<(-180)*scaleFactor+horizontalMovement<<", "<<zval<<")\n"
+                              "color = (1, 1, 1)\n"
+                              "ambientReflection = (1, 1, 1)\n"
+                              "diffuseReflection = (0, 0, 0)\n"
+                              "\n"
+                              "[Figure"<<3+amountFigs<<"]\n"
+                              "type = \"Tetrahedron\"\n"
+                              "scale = "<<40*scaleFactor<<"\n"
+                              "rotateX = 50\n"
+                              "rotateY = 0\n"
+                              "rotateZ = -68\n"
+                              "center = ("<<(75)*scaleFactor+720*airport.getRunways().size()-200<<", "<<(-249)*scaleFactor+horizontalMovement<<", "<<zval<<")\n"
+                              "color = (1, 1, 1)\n"
+                              "ambientReflection = (1, 1, 1)\n"
+                              "diffuseReflection = (0, 0, 0)\n"
+                              "\n"
+                              "[Figure"<<4+amountFigs<<"]\n"
+                              "type = \"Cube\"\n"
+                              "scale = "<<60*scaleFactor<<"\n"
+                              "rotateX = 0\n"
+                              "rotateY = 0\n"
+                              "rotateZ = 79\n"
+                              "center = ("<<(28)*scaleFactor+720*airport.getRunways().size()-200<<", "<<(-302)*scaleFactor+horizontalMovement<<", "<<zval<<")\n"
+                              "color = (1, 1, 1)\n"
+                              "ambientReflection = (1, 1, 1)\n"
+                              "diffuseReflection = (0, 0, 0)\n"
+                              "\n"
+                              "[Figure"<<5+amountFigs<<"]\n"
+                              "type = \"Tetrahedron\"\n"
+                              "scale = "<<40*scaleFactor<<"\n"
+                              "rotateX = 50\n"
+                              "rotateY = 0\n"
+                              "rotateZ = 112\n"
+                              "center = ("<<(220)*scaleFactor+720*airport.getRunways().size()-200<<", "<<(-330)*scaleFactor+horizontalMovement<<", "<<zval<<")\n"
                               "color = (1, 1, 1)\n"
                               "ambientReflection = (1, 1, 1)\n"
                               "diffuseReflection = (0, 0, 0)\n\n";

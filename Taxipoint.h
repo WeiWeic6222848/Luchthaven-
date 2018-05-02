@@ -63,6 +63,10 @@ public:
 
     bool ProperInitialized()const;
 
+    /**
+     *     REQUIRE(ProperInitialized(),"Taxipoint must be initialized properly when calling removePlanesWaiting");
+     * @param aiplane
+     */
     void removePlanesWaiting(Airplane* aiplane);
 };
 

@@ -14,79 +14,14 @@
   <component name="ChangeListManager">
     <list default="true" id="a0199424-4a47-4ec9-b5e9-c608c8e0c004" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Airplane.cpp" afterPath="$PROJECT_DIR$/Airplane.cpp" />
       <change beforePath="$PROJECT_DIR$/Airportsim.cpp" afterPath="$PROJECT_DIR$/Airportsim.cpp" />
+      <change beforePath="$PROJECT_DIR$/Signaltower.cpp" afterPath="$PROJECT_DIR$/Signaltower.cpp" />
+      <change beforePath="$PROJECT_DIR$/Taxipoint.cpp" afterPath="$PROJECT_DIR$/Taxipoint.cpp" />
+      <change beforePath="$PROJECT_DIR$/Taxipoint.h" afterPath="$PROJECT_DIR$/Taxipoint.h" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Airport_simulator" afterPath="$PROJECT_DIR$/cmake-build-debug/Airport_simulator" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.9.4/CMakeCCompiler.cmake" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.9.4/CMakeCXXCompiler.cmake" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.9.4/CMakeDetermineCompilerABI_C.bin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.9.4/CMakeDetermineCompilerABI_CXX.bin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.9.4/CMakeSystem.cmake" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.9.4/CompilerIdC/CMakeCCompilerId.c" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.9.4/CompilerIdC/a.out" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.9.4/CompilerIdCXX/CMakeCXXCompilerId.cpp" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.9.4/CompilerIdCXX/a.out" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator.dir/Airplane.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator.dir/Airplane.cpp.o" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator.dir/Airport.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator.dir/Airport.cpp.o" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator.dir/AirportUtils.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator.dir/AirportUtils.cpp.o" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator.dir/Airportsim.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator.dir/Airportsim.cpp.o" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator.dir/AirportsimImporter.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator.dir/AirportsimImporter.cpp.o" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator.dir/CXX.includecache" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator.dir/CXX.includecache" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator.dir/DependInfo.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator.dir/DependInfo.cmake" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator.dir/DomeinTest.cpp.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator.dir/Gate.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator.dir/Gate.cpp.o" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator.dir/ImportTest.cpp.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator.dir/Location.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator.dir/Location.cpp.o" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator.dir/Runway.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator.dir/Runway.cpp.o" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator.dir/Signaltower.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator.dir/Signaltower.cpp.o" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator.dir/Taxipoint.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator.dir/Taxipoint.cpp.o" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator.dir/Time.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator.dir/Time.cpp.o" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator.dir/build.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator.dir/build.make" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator.dir/depend.internal" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator.dir/depend.internal" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator.dir/flags.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator.dir/flags.make" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator.dir/link.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator.dir/link.txt" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator.dir/main.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator.dir/main.cpp.o" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator.dir/output_system.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator.dir/output_system.cpp.o" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator.dir/tinystr.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator.dir/tinystr.cpp.o" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator.dir/tinyxml.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator.dir/tinyxml.cpp.o" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator.dir/tinyxmlerror.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator.dir/tinyxmlerror.cpp.o" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator.dir/tinyxmlparser.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator.dir/tinyxmlparser.cpp.o" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator_debug.dir/Airplane.cpp.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator_debug.dir/Airport.cpp.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator_debug.dir/AirportUtils.cpp.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator_debug.dir/Airportsim.cpp.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator_debug.dir/AirportsimImporter.cpp.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator_debug.dir/CXX.includecache" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator_debug.dir/DependInfo.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator_debug.dir/DependInfo.cmake" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator_debug.dir/Gate.cpp.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator_debug.dir/ImportTest.cpp.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator_debug.dir/Location.cpp.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator_debug.dir/Runway.cpp.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator_debug.dir/Signaltower.cpp.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator_debug.dir/Taxipoint.cpp.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator_debug.dir/Time.cpp.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator_debug.dir/build.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator_debug.dir/build.make" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator_debug.dir/depend.internal" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator_debug.dir/depend.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator_debug.dir/depend.make" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator_debug.dir/flags.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator_debug.dir/flags.make" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator_debug.dir/link.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator_debug.dir/link.txt" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator_debug.dir/output_system.cpp.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator_debug.dir/test.cpp.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator_debug.dir/tinystr.cpp.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator_debug.dir/tinyxml.cpp.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator_debug.dir/tinyxmlerror.cpp.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Airport_simulator_debug.dir/tinyxmlparser.cpp.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.bin" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.bin" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Luchthaven.cbp" afterPath="$PROJECT_DIR$/cmake-build-debug/Luchthaven.cbp" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -102,16 +37,6 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="input_test_4.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/input/input_test_4.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="738">
-              <caret line="41" column="29" lean-forward="false" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Airportsim.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Airportsim.h">
           <provider selected="true" editor-type-id="text-editor">
@@ -124,21 +49,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Runway.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Runway.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1494">
-              <caret line="83" column="13" lean-forward="false" selection-start-line="83" selection-start-column="13" selection-end-line="83" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Airportsim.cpp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Airportsim.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Airportsim.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="143">
-              <caret line="561" column="0" lean-forward="false" selection-start-line="561" selection-start-column="0" selection-end-line="561" selection-end-column="0" />
+            <state relative-caret-position="345">
+              <caret line="1334" column="93" lean-forward="false" selection-start-line="1334" selection-start-column="93" selection-end-line="1334" selection-end-column="93" />
               <folding />
             </state>
           </provider>
@@ -154,21 +69,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Signaltower.cpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Signaltower.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Signaltower.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="837">
-              <caret line="661" column="37" lean-forward="false" selection-start-line="661" selection-start-column="37" selection-end-line="661" selection-end-column="37" />
+            <state relative-caret-position="417">
+              <caret line="774" column="9" lean-forward="false" selection-start-line="774" selection-start-column="9" selection-end-line="774" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Airplane.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Airplane.cpp">
+      <file leaf-file-name="stl_vector.h" pinned="false" current-in-tab="false">
+        <entry file="file:///usr/include/c++/5/bits/stl_vector.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="791" column="27" lean-forward="false" selection-start-line="791" selection-start-column="27" selection-end-line="791" selection-end-column="27" />
+            <state relative-caret-position="173">
+              <caret line="319" column="0" lean-forward="false" selection-start-line="319" selection-start-column="0" selection-end-line="319" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -177,28 +92,48 @@
       <file leaf-file-name="Airplane.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Airplane.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="915">
+            <state relative-caret-position="6642">
               <caret line="391" column="14" lean-forward="false" selection-start-line="391" selection-start-column="14" selection-end-line="391" selection-end-column="14" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Airport.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Airport.cpp">
+      <file leaf-file-name="Gate.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Gate.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="377">
-              <caret line="227" column="0" lean-forward="false" selection-start-line="227" selection-start-column="0" selection-end-line="227" selection-end-column="0" />
+            <state relative-caret-position="342">
+              <caret line="32" column="1" lean-forward="false" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AirportsimImporter.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AirportsimImporter.cpp">
+      <file leaf-file-name="test.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="786">
-              <caret line="236" column="21" lean-forward="false" selection-start-line="236" selection-start-column="21" selection-end-line="236" selection-end-column="21" />
+            <state relative-caret-position="954">
+              <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Taxipoint.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Taxipoint.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="467">
+              <caret line="66" column="111" lean-forward="false" selection-start-line="66" selection-start-column="111" selection-end-line="66" selection-end-column="111" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Taxipoint.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Taxipoint.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="666">
+              <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -208,9 +143,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>leavingstep</find>
-      <find>gettype</find>
-      <find>getengine</find>
       <find>size</find>
       <find>fuelCapacity</find>
       <find>getfuel</find>
@@ -236,8 +168,11 @@
       <find>simulat</find>
       <find>taxiing</find>
       <find>cleared IL</find>
-      <find>i</find>
       <find>Cleared to Cross runway</find>
+      <find>gate</find>
+      <find>i</find>
+      <find>parkAirp</find>
+      <find>writeIni</find>
     </findStrings>
     <replaceStrings>
       <replace>runwayelement</replace>
@@ -291,8 +226,6 @@
         <option value="$PROJECT_DIR$/Location.h" />
         <option value="$PROJECT_DIR$/Runway.h" />
         <option value="$PROJECT_DIR$/Runway.cpp" />
-        <option value="$PROJECT_DIR$/Taxipoint.h" />
-        <option value="$PROJECT_DIR$/Taxipoint.cpp" />
         <option value="$PROJECT_DIR$/Gate.h" />
         <option value="$PROJECT_DIR$/Gate.cpp" />
         <option value="$PROJECT_DIR$/AirportsimImporter.h" />
@@ -310,8 +243,10 @@
         <option value="$PROJECT_DIR$/../Luchthaven/Airportsim.h" />
         <option value="$PROJECT_DIR$/../Luchthaven/Airportsim.cpp" />
         <option value="$PROJECT_DIR$/Airplane.cpp" />
-        <option value="$PROJECT_DIR$/Airportsim.cpp" />
+        <option value="$PROJECT_DIR$/Taxipoint.h" />
+        <option value="$PROJECT_DIR$/Taxipoint.cpp" />
         <option value="$PROJECT_DIR$/Signaltower.cpp" />
+        <option value="$PROJECT_DIR$/Airportsim.cpp" />
       </list>
     </option>
   </component>
@@ -321,11 +256,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="956" />
-    <option name="y" value="24" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1044" />
+    <option name="y" value="52" />
     <option name="width" value="964" />
-    <option name="height" value="1056" />
+    <option name="height" value="931" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -457,23 +392,23 @@
       <workItem from="1525208742814" duration="1906000" />
       <workItem from="1525269356346" duration="518000" />
       <workItem from="1525269944647" duration="369000" />
-      <workItem from="1525286284245" duration="1666000" />
+      <workItem from="1525286284245" duration="3396000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="216969000" />
+    <option name="totallyTimeSpent" value="218699000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-4" width="1855" height="1084" extended-state="7" />
+    <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12075472" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31390592" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31186095" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2965235" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25562373" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25562373" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -528,13 +463,8 @@
           <line>177</line>
           <option name="timeStamp" value="280" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Airportsim.cpp</url>
-          <line>561</line>
-          <option name="timeStamp" value="292" />
-        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="294" />
+      <option name="time" value="296" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="CMakeRunConfiguration">
@@ -629,13 +559,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="113" column="94" lean-forward="false" selection-start-line="113" selection-start-column="94" selection-end-line="113" selection-end-column="94" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/include/c++/7/bits/stl_vector.h" />
     <entry file="file:///usr/include/c++/7/bits/basic_string.h" />
     <entry file="file://$PROJECT_DIR$/README.md">
@@ -652,24 +575,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Taxipoint.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Location.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Taxipoint.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="25" column="28" lean-forward="false" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -703,19 +612,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/include/c++/5/bits/stl_vector.h" />
     <entry file="file://$PROJECT_DIR$/Signaltower.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
           <caret line="58" column="8" lean-forward="false" selection-start-line="58" selection-start-column="8" selection-end-line="58" selection-end-column="8" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Gate.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -795,14 +696,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Airplane.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="915">
-          <caret line="391" column="14" lean-forward="false" selection-start-line="391" selection-start-column="14" selection-end-line="391" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Airplane.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
@@ -821,6 +714,46 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Airplane.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6642">
+          <caret line="391" column="14" lean-forward="false" selection-start-line="391" selection-start-column="14" selection-end-line="391" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gate.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="32" column="1" lean-forward="false" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="954">
+          <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Taxipoint.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="467">
+          <caret line="66" column="111" lean-forward="false" selection-start-line="66" selection-start-column="111" selection-end-line="66" selection-end-column="111" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Taxipoint.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="666">
+          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/AirportUtils.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="173">
@@ -829,18 +762,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Airportsim.cpp">
+    <entry file="file:///usr/include/c++/5/bits/stl_vector.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="561" column="0" lean-forward="false" selection-start-line="561" selection-start-column="0" selection-end-line="561" selection-end-column="0" />
+        <state relative-caret-position="173">
+          <caret line="319" column="0" lean-forward="false" selection-start-line="319" selection-start-column="0" selection-end-line="319" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Signaltower.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="837">
-          <caret line="661" column="37" lean-forward="false" selection-start-line="661" selection-start-column="37" selection-end-line="661" selection-end-column="37" />
+        <state relative-caret-position="417">
+          <caret line="774" column="9" lean-forward="false" selection-start-line="774" selection-start-column="9" selection-end-line="774" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Airportsim.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="1334" column="93" lean-forward="false" selection-start-line="1334" selection-start-column="93" selection-end-line="1334" selection-end-column="93" />
           <folding />
         </state>
       </provider>

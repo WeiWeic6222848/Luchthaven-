@@ -46,6 +46,7 @@ bool Taxipoint::ProperInitialized() const {
 }
 
 void Taxipoint::removePlanesWaiting(Airplane *aiplane) {
+    //we don't really use it as a vector, it's more a counter of how much planes are on the taxipoint right now
     planesWaiting.pop_back();
 }
 
