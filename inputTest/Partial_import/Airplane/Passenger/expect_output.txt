@@ -1,0 +1,1 @@
+Airplane has a passenger attribute which isn't a interger or is an negative number

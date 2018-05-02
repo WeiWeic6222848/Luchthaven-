@@ -1,0 +1,163 @@
+
+<AirportSim>
+
+
+    <RUNWAY>
+
+        <name>11R</name>
+
+        <airport>ANR</airport>
+
+        <type>grass</type>
+
+        <length>1010</length>
+
+        <TAXIROUTE>
+
+            <taxipoint>Alpha</taxipoint>
+
+        </TAXIROUTE>
+
+    </RUNWAY>
+
+    <AIRPORT>
+
+        <name>Antwerp International Airport</name>
+
+        <iata>ANR</iata>
+
+        <callsign>Antwerp Tower</callsign>
+
+        <gates>1</gates>
+
+    </AIRPORT>
+
+    <RUNWAY>
+
+        <name>11L</name>
+
+        <airport>ANR</airport>
+
+        <type>asphalt</type>
+
+        <length>3510</length>
+
+        <TAXIROUTE>
+
+            <taxipoint>Alpha</taxipoint>
+
+            <crossing>11R</crossing>
+
+            <taxipoint>Bravo</taxipoint>
+
+        </TAXIROUTE>
+
+    </RUNWAY>
+
+    <AIRPLANE>
+
+        <number>BAW466</number>
+
+        <callsign>Speedbird 466</callsign>
+
+        <model>Boeing 747</model>
+
+        <type>airline</type>
+
+        <engine>jet</engine>
+
+        <size>large</size>
+
+        <status>Approaching</status>
+    </AIRPLANE>
+
+
+    <AIRPLANE>
+
+        <number>N11843</number>
+
+        <callsign>GOD</callsign>
+
+        <model>C 4</model>
+
+        <type>private</type>
+
+        <engine>jet</engine>
+
+        <size>medium</size>
+
+        <status>Approaching</status>
+
+    </AIRPLANE>
+
+    <AIRPLANE>
+        <number>N11848</number>
+
+        <callsign>Cessna 849</callsign>
+
+        <model>Cessna 345</model>
+
+        <type>private</type>
+
+        <engine>propeller</engine>
+
+        <size>small</size>
+
+        <status>Approaching</status>
+
+    </AIRPLANE>
+
+    <AIRPLANE>
+
+        <number>N1</number>
+
+        <callsign>Cessna 8</callsign>
+
+        <model>Cessna 345</model>
+
+        <type>private</type>
+
+        <engine>propeller</engine>
+
+        <size>small</size>
+
+        <status>Standing at gate</status>
+
+    </AIRPLANE>
+
+    <AIRPLANE>
+
+        <number>N12</number>
+
+        <callsign>Cessna 84</callsign>
+
+        <model>Cessna 345</model>
+
+        <type>private</type>
+
+        <engine>propeller</engine>
+
+        <size>small</size>
+
+        <status>Standing at gate</status>
+
+    </AIRPLANE>
+
+    <AIRPLANE>
+
+        <number>AA</number>
+
+        <callsign>Cessna </callsign>
+
+        <model>Cessna 345</model>
+
+        <type>private</type>
+
+        <engine>propeller</engine>
+
+        <size>small</size>
+
+        <status>Standing at gate</status>
+
+    </AIRPLANE>
+</AirportSim>

@@ -6,13 +6,16 @@
 #define LUCHTHAVEN_AIRPORT_H
 
 #include <vector>
-#include <map>
 #include "string"
 #include "Runway.h"
 #include "Signaltower.h"
 #include "Taxipoint.h"
 #include "Gate.h"
 #include "Time.h"
+#include <iostream>
+#include <limits>
+#include "algorithm"
+
 
 using namespace std;
 
@@ -37,142 +40,204 @@ private:
     vector<Taxipoint*> taxipoints;
     Airport* _InitCheck;
     Signaltower* tower;
-    Time currentTime;
-public:
-    const Time &getCurrentTime() const;
-
-    void setCurrentTime(const Time &currentTime);
-
-public:
-    Signaltower &getTower() ;
-
     friend std::ostream& operator<<(std::ostream& output,Airport& airport);
 
-/**
- * ENSURE(ProperInitialized(),"This airport object failed to Initialize properly");
- * @param name name of an airport
- * @param iata unique iata of an airport
- * @param callsign name of the airport tower
- * @param gates amount of gates of this airport, it will be numbered from one to this amount.
- * @param passengers passengers currently on airport
- */
+public:
+
+    //constructor
+    /**
+     *     ENSURE(ProperInitialized(),"This airport object failed to Initialize properly");
+     * @param name name of an airport
+     * @param iata unique iata of an airport
+     * @param callsign name of the airport tower
+     * @param gates amount of gates of this airport, it will be numbered from one to this amount.
+     * @param passengers passengers currently on airport
+     */
     Airport(const string &name, const string &iata, const string &callsign, int gates, int passengers);
 
-/**
- * REQUIRE(ProperInitialized(),"Airport wasn't initialized when calling addrunway");
- * ENSURE(find(runways.begin(),runways.end(),runway)!=runways.end(),"addrunway postcondition failed");
- * @param runway the pointer to a pre-initialized runway which will be added to addrunway
- */
-    void addRunway(Runway* runway);
 
-/**
- * REQUIRE(ProperInitialized(),"Airport wasn't initialized when calling getName");
- * @return the name of this airport
- */
+
+//all getters-----------------------------------------------------------------------------------------
+
+
+    /**
+     *     REQUIRE(ProperInitialized(),"Airport wasn't initialized when calling getName");
+     * @return the name of this airport
+     */
     const string &getName() const;
 
-/**
- * REQUIRE(ProperInitialized(),"Airport wasn't initialized when calling getIata");
- * @return the iata of this airport
- */
+
+    /**
+     *     REQUIRE(ProperInitialized(),"Airport wasn't initialized when calling getIata");
+     * @return the iata of this airport
+     */
     const string &getIata() const;
 
-/**
- * REQUIRE(ProperInitialized(),"Airport wasn't initialized when calling getCallsign");
- * @return the callsign of this airport
- */
+
+    /**
+     *     REQUIRE(ProperInitialized(),"Airport wasn't initialized when calling getCallsign");
+     * @return the callsign of this airport
+     */
     const string &getCallsign() const;
 
-/**
- * REQUIRE(ProperInitialized(),"Airport wasn't initialized when calling getPassenger");
- * @return the passengers of this airport;
- */
+
+    /**
+     *     REQUIRE(ProperInitialized(),"Airport wasn't initialized when calling getGates");
+     * @return all the gates information with the current airplane on the gate information
+     */
+    const vector<Gate *> &getGates() const;
+
+    /**
+     *     REQUIRE(ProperInitialized(),"Airport wasn't initialized when calling getPassenger");
+     * @return the passengers of this airport;
+     */
     int getPassengers() const;
 
-/**
- * REQUIRE(ProperInitialized(),"Airport wasn't initialized when calling getGates");
- * @return all the gates information with the current airplane on the gate information
- */
-    //const map<int, Airplane *> &getGates() const;
-
-/**
- * REQUIRE(ProperInitialized(),"Airport wasn't initialized when calling getRunways");
- * @return all the runways information
- */
+    /**
+     *     REQUIRE(ProperInitialized(),"Airport wasn't initialized when calling getRunways");
+     * @return all the runways information
+     */
     const vector<Runway *> &getRunways() const;
 
-/**
- * REQUIRE(ProperInitialized(),"Airport wasn't initialized when calling findfreerunway");
- * @return a runway pointer which doesn't have any airplanes
- */
-    Runway* findFreeRunway();
-
-/**
- * REQUIRE(ProperInitialized(),"Airport wasn't initialized when calling findfreegates");
- * @return a number of gate which doesn't have any airplanes
- */
-    Gate* findFreeGates() const;
-
-/**
- * REQUIRE(ProperInitialized(),"Airport wasn't initialized when calling parkAirplane");
- * REQUIRE(gate<gates.size()&&gate>=1,"The giving gate number must be valid");
- * REQUIRE(gates[gate]==NULL,"The giving gate must be empty");
- * ENSURE(gates[gate]==airplane,"parkAirplane postcondition failed");
- * @param gate the number of gate to park
- * @param airplane the airplane to park
- */
-    void parkAirplane(Gate* gate,Airplane* airplane);
-
-/**
- * REQUIRE(ProperInitialized(),"Airport wasn't initialized when calling destructor");
- */
-    virtual ~Airport();
-
-/**
- * REQUIRE(ProperInitialized(),"Airport wasn't initialized when calling cleanup");
- * ENSURE(runways.empty(),"cleanup postcondition failed");
- */
-    void cleanup();
-
-/**
- *
- * @return Boolean value of whether or not this object is being initialized and not being copied from other object;
- */
-    bool ProperInitialized() const;
-
-/**
- *
- * REQUIRE(plane->ProperInitialized(),"Airplane plane wasn't initialized when calling getGateFromAirplane");
- * REQUIRE(ProperInitialized(),"Airport wasn't initialized when calling getGateFromAirplane");
- * @param plane the plane to search
- * @return the gate which this plane is at
- */
-    Gate* getGateFromAirplane(Airplane* plane);
-
-/**
- * REQUIRE(ProperInitialized(),"Airport wasn't initialized when calling freeGate");
- * ENSURE(gates[gate]==NULL,"freeGate postcondition failed");
- * @param gate gate to free
- */
-    void freeGate(Gate*  gate);
-
-    Runway* findRunway (const string& name);
-
-    Taxipoint* findTaxipoint (const string& name);
-
-    Runway* findFreeRunway (Airplane* airplane,bool emergency=false);
-
-    void addTaxipoints(Taxipoint* taxipoint);
-
+    /**
+     *     REQUIRE(ProperInitialized(),"Airport wasn't initialized when calling getTaxipoints");
+     * @return
+     */
     const vector<Taxipoint*> &getTaxipoints() const;
 
-    bool receiveSignal(Airplane* airplane,string signal);
+    /**
+     * @return Boolean value of whether or not this object is being initialized and not being copied from other object;
+     */
+    bool ProperInitialized() const;
 
+
+    /**
+     *     REQUIRE(ProperInitialized(),"Airport wasn't initialized when calling getTower");
+     * @return
+     */
+    Signaltower &getTower() ;
+
+    /**
+     *     REQUIRE(ProperInitialized(),"Airport wasn't initialized when calling findfreegates");
+     * @return a number of gate which doesn't have any airplanes
+     */
+    Gate* findFreeGates() const;
+
+
+    /**
+     *     REQUIRE(plane->ProperInitialized(),"Airplane plane wasn't initialized when calling getGateFromAirplane");
+     *     REQUIRE(ProperInitialized(),"Airport wasn't initialized when calling getGateFromAirplane");
+     * @param plane the plane to search
+     * @return the gate which this plane is at
+     */
+    Gate* getGateFromAirplane(Airplane* plane);
+
+    /**
+     *     REQUIRE(ProperInitialized(),"Airport wasn't initialized when calling findfreerunway");
+     * @return a runway pointer which doesn't have any airplanes
+     */
+    Runway* findFreeRunway();
+
+
+    /**
+     *     REQUIRE(ProperInitialized(),"Airport wasn't initialized when calling findRunway");
+     * @param name
+     * @return
+     */
+    Runway* findRunway (const string& name);
+
+    /**
+     *     REQUIRE(ProperInitialized(),"Airport wasn't initialized when calling findFreeRunway");
+     *     REQUIRE(airplane->ProperInitialized(),"Airplane wasn't initialized when calling findFreeRunway");
+     * @param airplane
+     * @param emergency
+     * @return
+     */
+    Runway* findFreeRunway (Airplane* airplane,bool emergency=false);
+
+    /**
+     *     REQUIRE(ProperInitialized(),"Airport wasn't initialized when calling findTaxipoint");
+     * @param name
+     * @return
+     */
+    Taxipoint* findTaxipoint (const string& name);
+//all getters----------------------------------------------------------------------------------------------------
+
+
+
+//all setters/changers-------------------------------------------------------------------------------------------
+
+
+    /**
+     *     REQUIRE(ProperInitialized(),"Airport wasn't initialized when calling addPassenger");
+     * @param a
+     */
     void addPassenger(int a);
 
+    /**
+     *     REQUIRE(ProperInitialized(),"Airport wasn't initialized when calling removePassenger");
+     * @param a
+     */
     void removePassenger(int a);
 
-    const vector<Gate *> &getGates() const;
+    /**
+     *     REQUIRE(ProperInitialized(),"Airport wasn't initialized when calling freeGate");
+     *     ENSURE(gate->getCurrentPlane()==NULL&&!gate->isOnuse(),"freeGate postcondition failed");
+     * @param gate
+     */
+    void freeGate(Gate*  gate);
+
+    /**
+     *     REQUIRE(ProperInitialized(),"Airport wasn't initialized when calling addrunway");
+     *     ENSURE(find(runways.begin(),runways.end(),runway)!=runways.end(),"addrunway postcondition failed");
+     * @param runway the pointer to a pre-initialized runway which will be added to addrunway
+     */
+    void addRunway(Runway* runway);
+
+    /**
+     *     REQUIRE(ProperInitialized(),"Airport wasn't initialized when calling parkAirplane");
+     *     REQUIRE((unsigned int)stoi(gate->getName())<=gates.size(),"The giving gate number must be valid");
+     *     REQUIRE(gate->getCurrentPlane()==NULL,"The giving gate must be empty");
+     *     ENSURE(gate->getCurrentPlane()==airplane,"parkAirplane postcondition failed");
+     * @param gate the number of gate to park
+     * @param airplane the airplane to park
+     */
+    void parkAirplane(Gate* gate,Airplane* airplane);
+
+    /**
+     *     REQUIRE(ProperInitialized(),"Airport wasn't initialized when calling addTaxipoint");
+     *     REQUIRE(findTaxipoint(taxipoint->getName())==NULL,"The giving Taxipoint shouldn't be added already");
+     *     ENSURE(findTaxipoint(taxipoint->getName())!=NULL,"addTaxipoints postcondition failed");
+     * @param taxipoint
+     */
+    void addTaxipoints(Taxipoint* taxipoint);
+
+
+
+
+//destroyer
+    /**
+     *     REQUIRE(ProperInitialized(),"Airport wasn't initialized when calling destructor");
+     */
+    virtual ~Airport();
+
+    /**
+     *     REQUIRE(ProperInitialized(),"Airport wasn't initialized when calling cleanup");
+     *     ENSURE(runways.empty(),"cleanup postcondition failed");
+     */
+    void cleanup();
+
+
+//transmitter
+    /**
+     *     REQUIRE(ProperInitialized(),"Airport wasn't initialized when transmitting signal");
+     * @param airplane
+     * @param signal
+     * @return
+     */
+    bool receiveSignal(Airplane* airplane,string signal);
+
+
 };
 
 

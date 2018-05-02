@@ -1,0 +1,17 @@
+<AirportSim>
+
+    <AIRPORT>
+
+        <name>Antwerp International Airport</name>
+
+        <iata>ANR</iata>
+
+        <callsign>Antwerp Tower</callsign>
+
+        <gates>10</gates>
+
+        <passenger>10</passenger>
+
+    </AIRPORT>
+
+</AirportSim>

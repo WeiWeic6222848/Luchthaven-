@@ -5,20 +5,14 @@
 
 
 
-#include <fstream>
-#include <cstdlib>
-#include <sstream>
-#include "string"
+#include <sys/stat.h>
 #include "AirportUtils.h"
-#include "AirportsimImporter.h"
 using namespace std;
 
-/**
- *
- * @param filename filename to check wether or not exist
- * @return if the file exists
- */
-
+bool DirectoryExists(const std::string dirname) {
+    struct stat st;
+    return stat(dirname.c_str(), &st) == 0;
+}
 
 bool fileExist(const string&filename){
     ifstream a(filename.c_str());
@@ -40,6 +34,8 @@ int stoi(const string &value){
 }
 
 Esucces LoadAirport(char const* string, ostream& errStream, Airportsim& sim){
+    REQUIRE(fileExist(string),"input file doesnt exist when calling LoadAirport");
+    REQUIRE(sim.ProperInitialized(),"Airportsim must be initialized in order to load");
     return AirportsimImporter::importAirportsim(string,errStream,sim);
 }
 
@@ -92,9 +88,14 @@ Esucces LoadAirport(int argc, const char **argv, Airportsim &sim, bool testing) 
 }
 
 bool isRightAirplaneCombination(string type, string engine, string size) {
+    //soft requirement
+    //REQUIRE(type=="private"||type=="emergency"||type=="military"||type=="airline","airplane has a wrong type");
+    //REQUIRE(size=="small"||size=="medium"||size=="large","airplane has a wrong size");
+    //REQUIRE(engine=="jet"||engine=="propeller","airplane has a wrong engine type");
+
     if (engine=="propeller"){
         if(size=="small"){
-            return type=="emegenry"||type=="private";
+            return type=="emergency"||type=="private";
         }
         else if (size=="medium"){
             return type=="airline";
@@ -122,10 +123,12 @@ bool isRightAirplaneCombination(string type, string engine, string size) {
 }
 
 bool airplaneCanLandOnGrass(Airplane *airplane) {
+    REQUIRE(airplane->ProperInitialized(),"airplane must be initialized properly when calling airplane can load on grass");
     return airplane->getEngine()=="propeller"&&airplane->getSize()=="small";
 }
 
 int requiredLengthOfRunway(Airplane *airplane) {
+    REQUIRE(airplane->ProperInitialized(),"airplane must be initialized properly when calling airplane can load on grass");
     string size=airplane->getSize();
     int length=0;
     if(size=="small"){
@@ -156,3 +159,47 @@ string to_string(int integer) {
     return finalString;
 }
 
+bool FileCompare(const std::string leftFileName, const std::string rightFileName) {
+    REQUIRE(fileExist(leftFileName)&&fileExist(rightFileName),"Both file must exist when calling FileCompare");
+    ifstream leftFile, rightFile;
+    char leftRead, rightRead;
+    bool result;
+
+    // Open the two files.
+    leftFile.open(leftFileName.c_str());
+    if (!leftFile.is_open()) {
+        return false;
+    };
+    rightFile.open(rightFileName.c_str());
+    if (!rightFile.is_open()) {
+        leftFile.close();
+        return false;
+    };
+
+    result = true; // files exist and are open; assume equality unless a counterexamples shows up.
+    while (result && leftFile.good() && rightFile.good()) {
+        leftFile.get(leftRead);
+        rightFile.get(rightRead);
+        result = (leftRead == rightRead);
+    };
+    if (result) {
+        // last read was still equal; are we at the end of both files ?
+        result = (!leftFile.good()) && (!rightFile.good());
+    };
+
+    leftFile.close();
+    rightFile.close();
+    return result;
+}
+
+bool hasEmptyFields(TiXmlElement *element) {
+    if(element->FirstChildElement()==NULL&&element->GetText()==NULL){
+        return true;
+    }
+    for (TiXmlElement* childelement = element->FirstChildElement(); childelement!=NULL ; childelement=childelement->NextSiblingElement()) {
+        if(childelement->GetText()==NULL&&hasEmptyFields(childelement)){
+            return true;
+        }
+    }
+    return false;
+}

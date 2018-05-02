@@ -4,8 +4,8 @@
 
 #include "Airplane.h"
 #include "DesignByContract.h"
-#include "algorithm"
 #include "AirportUtils.h"
+
 //getters
 const string &Airplane::getStatus() const {
     REQUIRE(ProperInitialized(),"Airplane wasn't initialized when calling getStatus");
@@ -244,6 +244,7 @@ Airplane::Airplane(const string &status, const string &number, const string &cal
 //all signals
 bool Airplane::sendSignalApproaching() {
     REQUIRE(ProperInitialized(),"Airplane wasn't initialized when sending signal Approaching");
+    REQUIRE(getStatus()=="Approaching"&&getHeight()==10000,"Airplane can only contact tower if it's approaching at height 10000");
     if(isDoingNothing()){
         actionDone=currentTime++;
         doingNothing=false;
@@ -256,11 +257,14 @@ bool Airplane::sendSignalApproaching() {
         ENSURE(received==true,"Tower didnt receive the signal Approaching");
         return received;
     }
+    //ENSURE(actionDone>=currentTime,"airplane's action was skipped!");
     return false;
 }
 
 bool Airplane::sendSignalLeaving() {
     REQUIRE(ProperInitialized(),"Airplane wasn't initialized when sending signal Leaving");
+    REQUIRE(getStatus()=="Leaving"&&getPermission()!="Fly","Leaving signal should only be sent when airplane is leaving and already standing at runway");
+    REQUIRE(getLocation()==getDestinateRunway()&&getDestinateRunway()->getCurrentairplane()==this,"Leaving signal should only be sent when runway are set properly");
     if(isDoingNothing()){
         actionDone=currentTime++;
         doingNothing=false;
@@ -271,11 +275,14 @@ bool Airplane::sendSignalLeaving() {
         ENSURE(received==true,"Tower didnt receive the signal Leaving");
         return received;
     }
+    //ENSURE(actionDone>=currentTime,"airplane's action was skipped!");
     return false;
 }
 
 bool Airplane::sendSignalTaxiingtoGate() {
     REQUIRE(ProperInitialized(),"Airplane wasn't initialized when sending signal TaxiingtoGate");
+    REQUIRE(getLocation()->isRunway()&&getLocation()==getDestinateRunway(),"Airplane can only taxi to gate if it just landed on the runway");
+    REQUIRE(getStatus()=="Landed","Airplane can only taxi to gate if its just landed");
     if(isDoingNothing()){
         actionDone=currentTime++;
         doingNothing=false;
@@ -288,11 +295,15 @@ bool Airplane::sendSignalTaxiingtoGate() {
         ENSURE(received==true,"Tower didnt receive the signal ApproachingtoGate");
         return received;
     }
+    //ENSURE(actionDone>=currentTime,"airplane's action was skipped!");
     return false;
 }
 
 bool Airplane::sendSignalTaxiingtoRunway() {
     REQUIRE(ProperInitialized(),"Airplane wasn't initialized when sending signal TaxiingtoRunway");
+    REQUIRE(getCheckProcedure()=="Ready to leave","Airplane should only be able to taxi to runway after technical check");
+    REQUIRE(getStatus()=="Standing at gate","Airplane should only be able to taxi to runway if its at gate right now");
+    REQUIRE(getPermission()=="Push back","Airplane should only be able to taxi to runway after push back");
     if(isDoingNothing()){
         actionDone=currentTime++;
         doingNothing=false;
@@ -305,6 +316,7 @@ bool Airplane::sendSignalTaxiingtoRunway() {
         ENSURE(received==true,"Tower didnt receive the signal LeavingtoRunway");
         return received;
     }
+    //ENSURE(actionDone>=currentTime,"airplane's action was skipped!");
     return false;
 }
 
@@ -320,12 +332,16 @@ bool Airplane::sendSignalEmergency() {
         ENSURE(received==true,"Tower didnt receive the signal Emergency");
         return received;
     }
+    //ENSURE(actionDone>=currentTime,"airplane's action was skipped!");
     return false;
 }
 
 
 bool Airplane::sendSignalPushBack() {
     REQUIRE(ProperInitialized(),"Airplane wasn't initialized when sending signal PushBack");
+    REQUIRE(getCheckProcedure()=="Ready to leave","Airplane should only be able to push back after technical check");
+    REQUIRE(getPermission()=="IFR clearancy","Airplane shouldnt request push back when IFR are not cleared");
+    REQUIRE(getStatus()=="Standing at gate","Airplane shouldnt request push back if it's not at gate");
     if(isDoingNothing()){
         actionDone=currentTime++;
         doingNothing=false;
@@ -336,13 +352,17 @@ bool Airplane::sendSignalPushBack() {
         destination->getTower().getFile()<<"["<<currentTime<<"]"<<"[AIR]"<<endl;
         destination->getTower().getFile()<<destination->getCallsign()<<", "<<this->getCallsign()<<" at gate "<<this->getLocation()->getName()<<", requesting pushback"<<endl;
         bool received=destination->receiveSignal(this,"Push back");
+        ENSURE(received==true,"Tower didnt receive the signal Push back");
         return received;
     }
+    //ENSURE(actionDone>=currentTime,"airplane's action was skipped!");
     return false;
 }
 
 bool Airplane::sendSignalCrossingRunway() {
     REQUIRE(ProperInitialized(),"Airplane wasn't initialized when sending signal CrossingRunway");
+    REQUIRE(getLocation()->isRunway()&&getLocation()!=getDestinateRunway(),"Airplane must be at an runway that isn't its destination");
+    REQUIRE(getPermission()=="Taxiing","Airplane must have the permission to taxi");
     if(isDoingNothing()){
         actionDone=currentTime++;
         doingNothing=false;
@@ -355,11 +375,15 @@ bool Airplane::sendSignalCrossingRunway() {
         ENSURE(received==true,"Tower didnt receive the signal Crossing runway");
         return received;
     }
+    //ENSURE(actionDone>=currentTime,"airplane's action was skipped!");
     return false;
 }
 
 bool Airplane::sendSignalAtRunway() {
     REQUIRE(ProperInitialized(),"Airplane wasn't initialized when sending signal AtRunway");
+    REQUIRE(getLocation()->isRunway()&&getLocation()==getDestinateRunway(),"Airplane must be at its destinate runway");
+    REQUIRE(getStatus()=="Taxiing to runway","Airplane must be taxiing to runway");
+    REQUIRE(getPermission()=="Taxiing","Airplane must have the permission to taxi");
     if(isDoingNothing()){
         actionDone=currentTime++;
         doingNothing=false;
@@ -372,12 +396,16 @@ bool Airplane::sendSignalAtRunway() {
         ENSURE(received==true,"Tower didnt receive the signal At runway");
         return received;
     }
+    //ENSURE(actionDone>=currentTime,"airplane's action was skipped!");
     return false;
 }
 
 
 bool Airplane::sendSignalIFR() {
     REQUIRE(ProperInitialized(),"Airplane wasn't initialized when sending signal IFR");
+    REQUIRE(getLocation()->isGate()&&getLocation()->isOnuse(),"Airplane must be standing at gate while asking IFR clearancy");
+    REQUIRE(getStatus()=="Standing at gate","Airplane shouldnt request IFR clearancy if it's not at gate");
+    REQUIRE(getCheckProcedure()=="Ready to leave","Airplane should only be able to ask for IFR clearancy after technical check");
     if(isDoingNothing()){
         actionDone=currentTime++;
         doingNothing=false;
@@ -390,6 +418,7 @@ bool Airplane::sendSignalIFR() {
         ENSURE(received==true,"Tower didnt receive the signal IFR clearancy");
         return received;
     }
+    //ENSURE(actionDone>=currentTime,"airplane's action was skipped!");
     return false;
 }
 
@@ -407,6 +436,7 @@ bool Airplane::sendSignalIFR() {
 //receive signals
 bool Airplane::receiveSignal(string signal) {
     REQUIRE(ProperInitialized(),"Airplane wasn't initialized when receiving a normal signal");
+    REQUIRE(find(allowedReceiveSignal.begin(),allowedReceiveSignal.end(),signal)!=allowedReceiveSignal.end(),"Airplane has received a signal which it doesnt recongizes");
     if(signal=="Keep flying"){
         destination->getTower().getFile() << "[" << currentTime << "]" << "[AIR]" << endl;
         destination->getTower().getFile() << "Hold south on the one eighty radial, " << this->getCallsign() << endl;
@@ -451,25 +481,34 @@ bool Airplane::receiveSignal(string signal) {
         destination->getTower().getFile()<<"Pushback approved, "<<this->getCallsign()<<endl;
         permission="Push back";
     }
+    else{
+        cerr<<"Error signal"<<endl;
+        return false;
+    }
     doingNothing=true;
     //optimization possible
     if(signal=="Keep Flying"){
         doingNothing=false;
     }
-    return false;
+    return true;
 }
 
 
 
 bool Airplane::receiveLandingSignal(Runway *runway) {
     REQUIRE(ProperInitialized(),"Airplane wasn't initialized when receiving a landing signal");
+    REQUIRE(runway!=NULL,"Airplane has received a runway which is NULL, to land");
+    REQUIRE(getStatus()=="Approaching"&&height==3000&&getPermission()=="3000","Airplane should only gets a landing signal when its at height 3000 and approaching");
 
     setDestinateRunway(runway);
-    setPermission("0");
+    //setPermission("0");
+    permission="0";
 
     destination->getTower().getFile() << "[" << currentTime << "]" << "[AIR]" << endl;
     destination->getTower().getFile() << "Cleared ILS approach runway " << runway->getName() << ", " << this->getCallsign() << endl;
     doingNothing=true;
+
+    ENSURE(getPermission()=="0"&&isDoingNothing(),"receiveLandingSignal postcondition failed");
     return true;
 
 }
@@ -477,6 +516,8 @@ bool Airplane::receiveLandingSignal(Runway *runway) {
 
 bool Airplane::receiveInstruction(vector<Location *> Instruction, bool adding) {
     REQUIRE(ProperInitialized(),"Airplane wasn't initialized when receiving an instruction");
+    REQUIRE(Instruction.size()>1,"Airplane has received an instruction which has only one or less location");
+    REQUIRE(find(Instruction.begin(),Instruction.end(),location)!=getInstruction().end(),"Airplane must have a correct taxi instruction with its own location");
 
     string taxipoints;
     for (unsigned int j = 0; j < Instruction.size(); ++j) {
@@ -517,6 +558,8 @@ bool Airplane::receiveInstruction(vector<Location *> Instruction, bool adding) {
     }
     doingNothing=true;
     instruction=Instruction;
+
+    ENSURE((getPermission()=="Taxiing"||getPermission()=="Cleared to cross")&&isDoingNothing(),"receiveLandingSignal postcondition failed");
     return true;
 }
 
@@ -526,6 +569,10 @@ bool Airplane::receiveInstruction(vector<Location *> Instruction, bool adding) {
 
 
 
+void Airplane::timeRuns() {
+    REQUIRE(ProperInitialized(),"Airplane wasn't initialized when time flies");
+    currentTime=currentTime++;
+}
 
 
 
@@ -534,8 +581,12 @@ bool Airplane::receiveInstruction(vector<Location *> Instruction, bool adding) {
 
 
 void Airplane::progressCheck() {
+    REQUIRE(ProperInitialized(),"Airplane wasn't initialized when receiving doing the technical check");
+    REQUIRE(getStatus()=="Standing at gate","Airplane must be standing at gate while doing the technical check");
+
     if(checkprocedure=="Just landed"){
         if(isDoingNothing()){
+            permission="";//resetting the permission beacause airplane is currently checking
             /*
             int totalminute=0.5+passenger*1.0/2;
             actionDone=currentTime+totalminute;*/
@@ -551,6 +602,7 @@ void Airplane::progressCheck() {
             doingNothing=false;
         }
         if(actionDone==currentTime) {
+            doingNothing=true;
             checkprocedure = "Technical control";
         }
     }
@@ -610,14 +662,17 @@ void Airplane::progressCheck() {
 
 
 
-
 void Airplane::resetCheckProcedure() {
+    REQUIRE(ProperInitialized(),"Airplane wasn't initialized when resetting the technical check status");
     checkprocedure="Just landed";
+    ENSURE(getCheckProcedure()=="Just landed","reset checkprocedure failed");
 }
 
 
 bool Airplane::fall() {
-    REQUIRE(height >= 1000, "vliegtuig is te laag!");
+    REQUIRE(ProperInitialized(),"Airplane wasn't initialized when falling");
+    REQUIRE(getHeight() >= 1000, "airplane is too low to fall!! Its lower than 1000 meter");
+    REQUIRE(getStatus()=="Approaching"||getStatus()=="Emergency","Airplane can only fall if it's approaching or having emergency");
     if(isDoingNothing()){
         if(engine=="jet"){
             actionDone=currentTime++;
@@ -636,6 +691,9 @@ bool Airplane::fall() {
 }
 
 bool Airplane::rise() {
+    REQUIRE(ProperInitialized(),"Airplane wasn't initialized when rising");
+    REQUIRE(getStatus()=="Leaving","Airplane can only rise if it's leaving");
+    REQUIRE(getPermission()=="Fly","Airplane can only rise if it has the flying permission");
     //REQUIRE(signal)
     if(isDoingNothing()){
         if(engine=="jet"){
@@ -656,6 +714,11 @@ bool Airplane::rise() {
 
 
 bool Airplane::landing() {
+    REQUIRE(ProperInitialized(),"Airplane wasn't initialized when landing");
+    REQUIRE(getStatus()=="Approaching"||getStatus()=="Emergency","Airplane can only land if it's approaching");
+    REQUIRE(getPermission()=="0","Airplane can only land if it got the permission of landing");
+    REQUIRE(getDestinateRunway()!=NULL,"Airplane can only land if it knows which runway to land");
+
     if(isDoingNothing()){
         actionDone=currentTime+2;
         doingNothing=false;
@@ -669,6 +732,10 @@ bool Airplane::landing() {
 }
 
 bool Airplane::takeOff() {
+    REQUIRE(ProperInitialized(),"Airplane wasn't initialized when takingOff");
+    REQUIRE(getStatus()=="Leaving","Airplane can only takeOff if it is leaving");
+    REQUIRE(getPermission()=="Fly","Airplane can only takeOff if it has the fly permission");
+
     if(isDoingNothing()){
         if(engine=="jet"){
             actionDone=currentTime+2;
@@ -687,11 +754,12 @@ bool Airplane::takeOff() {
 
 
 
-void Airplane::timeRuns() {
-    currentTime=currentTime++;
-}
 
 bool Airplane::pushBack() {
+    REQUIRE(ProperInitialized(),"Airplane wasn't initialized when pushing back");
+    REQUIRE(getStatus()=="Standing at gate"&&getLocation()->isGate(),"Airplane can only push back if it is standing at an gate");
+    REQUIRE(getPermission()=="Push back","Airplane must get the permission to push back");
+
     if(isDoingNothing()){
         if(size=="small"){
             actionDone=currentTime+1;
@@ -713,18 +781,40 @@ bool Airplane::pushBack() {
 }
 
 bool Airplane::taxiing() {
+    REQUIRE(ProperInitialized(),"Airplane wasn't initialized when taxiing");
+    REQUIRE(getStatus()=="Taxiing to runway"||getStatus()=="Taxiing to gate","Airplane can only taxi if it is taxiing to a gate or a runway");
+    REQUIRE(getPermission()=="Taxiing","Airplane must get the permission to taxi");
+    REQUIRE(find(getInstruction().begin(),getInstruction().end(),location)!=getInstruction().end(),"Airplane must have a correct taxi instruction with its own location");
+    REQUIRE(find(getInstruction().begin(),getInstruction().end(),location)!=getInstruction().end()-1,"Airplane already finished taxi");
+
     if(isDoingNothing()){
         actionDone=currentTime+5;
         doingNothing=false;
+        if(location->isTaxipoint()){
+            location->setOnuse(true);
+        }
     }
     else if(actionDone==currentTime){
         doingNothing=true;
+
+        if(location->isTaxipoint()){
+            this->getDestination()->findTaxipoint(location->getName())->removePlanesWaiting(this);
+            if(this->getDestination()->findTaxipoint(location->getName())->getPlanesWaiting().size()==0){
+                location->setOnuse(false);
+            }
+        }
+
         return true;
+
     }
     return false;
 }
 
 bool Airplane::liningUp() {
+    REQUIRE(ProperInitialized(),"Airplane wasn't initialized when liningUp");
+    REQUIRE(getStatus()=="Taxiing to runway","Airplane can only taxi if it is taxiing to a runway");
+    REQUIRE(getLocation()->isRunway()&&getLocation()==getDestinateRunway(),"Airplane can only lineUp if it's at the destinate runway");
+    REQUIRE(getPermission()=="Line up"||getPermission()=="Fly","Airplane must get permission to line up");
     if(isDoingNothing()){
         actionDone=currentTime+1;
         doingNothing=false;
@@ -741,6 +831,11 @@ bool Airplane::liningUp() {
 }
 
 bool Airplane::crossingRunway() {
+    REQUIRE(ProperInitialized(),"Airplane wasn't initialized when crossing runway");
+    REQUIRE(getStatus()=="Taxiing to runway"||getStatus()=="Taxiing to gate","Airplane can only taxi if it is taxiing to a runway");
+    REQUIRE(getPermission()=="Cleared to cross","Airplane must get permission to cross runway");
+    REQUIRE(getLocation()->isRunway()&&getLocation()!=getDestinateRunway(),"Airplane shouldnt cross its destinate runway");
+
     if(isDoingNothing()){
         actionDone=currentTime+1;
         location->setCrossing(true);
@@ -748,7 +843,8 @@ bool Airplane::crossingRunway() {
     }
     else if(actionDone==currentTime){
         location->setCrossing(false);
-        permission="";
+        permission="Taxiing";
+        //the permission should be back to taxiing.
         doingNothing=true;
         return true;
     }

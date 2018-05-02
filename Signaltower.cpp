@@ -2,22 +2,24 @@
 // Created by c6222848 on 4/6/18.
 //
 
-#include <fstream>
 #include "Signaltower.h"
-#include "algorithm"
-#include "algorithm"
-
-static string allowedSignalprepare[]={"Approaching","Leaving","ApproachingtoGate","LeavingtoRunway","Emergency","Push back","IFR clearancy","Crossing runway","At runway"};
-static vector<string> allowedSignal(allowedSignalprepare, allowedSignalprepare+sizeof(allowedSignalprepare)/ sizeof(allowedSignalprepare[0]));
+#include "DesignByContract.h"
 
 Signaltower::Signaltower(Airport *airport) : airport(airport) {
 
+    REQUIRE(airport->ProperInitialized(),"airport must be initialized properly when calling constructor");
     string filename="../output/"+airport->getIata()+"_Tower.txt";
     doingNothing=true;
     file.open(filename.c_str(),ios::app);
+    _initCheck=this;
+    ENSURE(ProperInitialized(),"Signal tower object failed to initialize properly");
 }
 
 bool Signaltower::receiveSignal(Airplane *airplane, string signal) {
+    REQUIRE(ProperInitialized(),"Signal tower must be initialized properly when calling receiveSignal");
+    REQUIRE(airplane->ProperInitialized(),"Airplane must be initialized properly when calling receiveSignal");
+    REQUIRE(find(allowedSignal.begin(),allowedSignal.end(),signal)!=allowedSignal.end(),"Signal tower received a signal that it doesnt reconizes");
+
     if (signal=="Approaching"){
         approachingAirplanes.push_back(airplane);
         airplane->setPermission("10000");
@@ -139,6 +141,8 @@ bool Signaltower::receiveSignal(Airplane *airplane, string signal) {
 }
 
 vector<Airplane *> Signaltower::allflyingplanes() {
+
+    REQUIRE(ProperInitialized(),"Signal tower must be initialized properly when calling allflyingplanes");
     vector<Airplane*> allflying=approachingAirplanes;
     for (unsigned int i = 0; i < leavingAirplanes.size(); ++i) {
         allflying.push_back(leavingAirplanes[i]);
@@ -151,6 +155,8 @@ vector<Airplane *> Signaltower::allflyingplanes() {
 
 
 void Signaltower::regulateApproachingplanes() {
+
+    REQUIRE(ProperInitialized(),"Signal tower must be initialized properly when calling regulateApproachingplanes");
         bool buzyat3000 = false;
         bool buzyat5000 = false;
         vector<Airplane *> allflying = allflyingplanes();
@@ -161,7 +167,6 @@ void Signaltower::regulateApproachingplanes() {
                     approachingAirplanes[i]->getHeight() == 3000) {
                     Runway *freerunway = airport->findFreeRunway(approachingAirplanes[i]);
                     if (!freerunway->isOnuse()&&!freerunway->isCrossing()) {
-
                         if(!buzysendingsignal){
                             buzysendingsignal=true;
                             sendSignalPermissionLanding(approachingAirplanes[i], freerunway);
@@ -467,6 +472,9 @@ bool Signaltower::permissionLeavingGate(Airplane *airplane) {
 }
 
 vector<Location*> Signaltower::makeInstructionToGate(Airplane *airplane) {
+
+    REQUIRE(ProperInitialized(),"Signal tower must be initialized properly when calling makeInstructionToGate");
+    REQUIRE(airplane->ProperInitialized(),"airplane must be initialized properly when calling makeInstructionToGate");
     //overhaul
     vector<Location*> nextStop;
     Airplane* taxiingplane=airplane;
@@ -485,9 +493,17 @@ vector<Location*> Signaltower::makeInstructionToGate(Airplane *airplane) {
         }
         else{
             Gate* freegate=airport->findFreeGates();
-            if(freegate){
+            if(freegate && airport->getGateFromAirplane(airplane)==NULL){
                 nextStop.push_back(freegate);
                 airport->parkAirplane(freegate,taxiingplane);
+            }
+            else if(airport->getGateFromAirplane(airplane)){
+                nextStop.push_back(airport->getGateFromAirplane(airplane));
+            }
+            else{
+                nextStop.clear();
+                nextStop.push_back(planelocation);
+                nextStop.push_back(planelocation);
             }
         }
     }
@@ -495,7 +511,9 @@ vector<Location*> Signaltower::makeInstructionToGate(Airplane *airplane) {
 }
 
 vector<Location*> Signaltower::makeInstructionToRunway(Airplane *airplane) {
-    //overhaul
+
+    REQUIRE(ProperInitialized(),"Signal tower must be initialized properly when calling makeInstructionToRunway");
+    REQUIRE(airplane->ProperInitialized(),"airplane must be intialized properly when calling makeInstructionToRunway");
     vector<Location*> nextStop;
     Airplane* taxiingplane=airplane;
     Location* planelocation=taxiingplane->getLocation();
@@ -525,26 +543,38 @@ vector<Location*> Signaltower::makeInstructionToRunway(Airplane *airplane) {
 }
 
 const Time &Signaltower::getCurrentTime() const {
+    REQUIRE(ProperInitialized(),"Signal tower must be initialized properly when calling getCurrentTime");
     return currentTime;
 }
 
 void Signaltower::setCurrentTime(const Time &currentTime) {
+    REQUIRE(ProperInitialized(),"Signal tower must be initialized properly when calling setCurrentTime");
     Signaltower::currentTime = currentTime;
+    ENSURE(getCurrentTime()==currentTime,"setCurrentTime postcondition failed");
 }
 
 void Signaltower::timeRuns() {
+
+    REQUIRE(ProperInitialized(),"Signal tower must be initialized properly when calling timeRuns");
     currentTime=currentTime++;
 }
 
 bool Signaltower::isDoingNothing() {
+
+    REQUIRE(ProperInitialized(),"Signal tower must be initialized properly when calling isDoingNothing");
     return doingNothing;
 }
 
 ofstream &Signaltower::getFile() {
+
+    REQUIRE(ProperInitialized(),"Signal tower must be initialized properly when calling getFile");
     return file;
 }
 
 void Signaltower::sendSignalPermission5000(Airplane *airplane) {
+    REQUIRE(ProperInitialized(),"Signal tower must be initialized properly when calling sendSignalPermission5000");
+
+    REQUIRE(airplane->ProperInitialized(),"Airplane must be initialized properly when calling sendSignalPermission5000");
     if(isDoingNothing()){
         doingNothing=false;
     }
@@ -560,6 +590,9 @@ void Signaltower::sendSignalPermission5000(Airplane *airplane) {
 
 void Signaltower::sendSignalPermission3000(Airplane *airplane) {
 
+    REQUIRE(ProperInitialized(),"Signal tower must be initialized properly when calling sendSignalPermission3000");
+
+    REQUIRE(airplane->ProperInitialized(),"Airplane must be initialized properly when calling sendSignalPermission3000");
     if(isDoingNothing()){
         doingNothing=false;
     }
@@ -574,22 +607,29 @@ void Signaltower::sendSignalPermission3000(Airplane *airplane) {
 
 void Signaltower::sendSignalPermissionLanding(Airplane *airplane,Runway* runway) {
 
+    REQUIRE(ProperInitialized(),"Signal tower must be initialized properly when calling sendSignalPermissionLanding");
+
+    REQUIRE(airplane->ProperInitialized(),"Airplane must be initialized properly when calling sendSignalPermissionLanding");
     if(isDoingNothing()){
         doingNothing=false;
+        //you dont have to wait until the signal has been sent to let it be used;
     }
     else {
         file << "[" << currentTime << "]" << "[ATC]" << endl;
         file << airplane->getCallsign() << ", " << "cleared ILS approach runway "
              << runway->getName() << endl;
-        runway->setCurrentairplane(airplane);
 
         doingNothing = true;
+        runway->setCurrentairplane(airplane);
         airplane->receiveLandingSignal(runway);
     }
 
 }
 
 bool Signaltower::sendSignalWaiting(Airplane *airplane) {
+
+    REQUIRE(ProperInitialized(),"Signal tower must be initialized properly when calling sendSignalWaiting");
+    REQUIRE(airplane->ProperInitialized(),"Airplane must be initialized properly when calling sendSignalWaiting");
     if(find(incomingSignal.begin(),incomingSignal.end(),pair<Airplane*,string>(airplane,"Waiting"))==incomingSignal.end()){
         if(isDoingNothing()){
             doingNothing=false;
@@ -610,8 +650,8 @@ bool Signaltower::sendSignalWaiting(Airplane *airplane) {
 }
 
 void Signaltower::sendSignalClearedToCross(Airplane *airplane) {
-
-
+    REQUIRE(ProperInitialized(),"Signal tower must be initialized properly when calling sendSignalClearedToCross");
+    REQUIRE(airplane->ProperInitialized(),"Airplane must be initialized properly when calling sendSignalClearedToCross");
     if(isDoingNothing()){
         doingNothing=false;
     }
@@ -635,8 +675,11 @@ void Signaltower::sendSignalClearedToCross(Airplane *airplane) {
 }
 
 void Signaltower::sendSignalHoldPosition(Airplane *airplane) {
+    REQUIRE(ProperInitialized(),"Signal tower must be initialized properly when calling sendSignalHoldPosition");
+    REQUIRE(airplane->ProperInitialized(),"Airplane must be initialized properly when calling sendSignalHoldPosition");
 
     if(isDoingNothing()){
+
         doingNothing=false;
     }
     else {
@@ -649,6 +692,10 @@ void Signaltower::sendSignalHoldPosition(Airplane *airplane) {
 }
 
 void Signaltower::sendSignalLineup(Airplane *airplane, bool takeoff) {
+
+
+    REQUIRE(ProperInitialized(),"Signal tower must be initialized properly when calling sendSignalLineup");
+    REQUIRE(airplane->ProperInitialized(),"Airplane must be initialized properly when calling sendSignalLineup");
 
     if(isDoingNothing()){
         doingNothing=false;
@@ -679,6 +726,8 @@ void Signaltower::sendSignalLineup(Airplane *airplane, bool takeoff) {
 
 void Signaltower::sendInstruction(Airplane *airplane, vector<Location *> Instruction, bool adding){
 
+    REQUIRE(ProperInitialized(),"Signal tower must be initialized properly when calling sendInstruction");
+    REQUIRE(airplane->ProperInitialized(),"Airplane must be initialized properly when calling sendSignalInstruction");
     if(isDoingNothing()&&!adding){
         doingNothing=false;
     }
@@ -727,6 +776,10 @@ void Signaltower::sendInstruction(Airplane *airplane, vector<Location *> Instruc
 }
 
 void Signaltower::sendSignalIFRclear(Airplane *airplane) {
+
+    REQUIRE(ProperInitialized(),"Signal tower must be initialized properly when calling sendSignalIFRclear");
+    REQUIRE(airplane->ProperInitialized(),"Airplane must be initialized properly when calling sendSignalIFRclear");
+
     if(isDoingNothing()){
         doingNothing=false;
     }
@@ -743,6 +796,10 @@ void Signaltower::sendSignalIFRclear(Airplane *airplane) {
 }
 
 void Signaltower::sendSignalPushBack(Airplane *airplane,Runway* destinaterunway) {
+
+    REQUIRE(ProperInitialized(),"Signal tower must be initialized properly when calling sendSignalPushBack");
+    REQUIRE(airplane->ProperInitialized(),"Airplane must be initialized properly when calling sendSignalPushBack");
+
     if(isDoingNothing()){
         doingNothing=false;
     }
@@ -759,6 +816,8 @@ void Signaltower::sendSignalPushBack(Airplane *airplane,Runway* destinaterunway)
 }
 
 void Signaltower::regulateLeavingplanes() {
+
+    REQUIRE(ProperInitialized(),"Signal tower must be initialized properly when calling regulateLeavingplanes");
         vector<int> planestoremove;
         for (unsigned int i = 0; i < leavingAirplanes.size(); ++i) {
             if(!leavingAirplanes[i]->getLocation()->isCrossing()){
@@ -776,6 +835,8 @@ void Signaltower::regulateLeavingplanes() {
 }
 
 bool Signaltower::sendSignal() {
+
+    REQUIRE(ProperInitialized(),"Signal tower must be initialized properly when calling sendSignal");
         unsigned int index = 0;
     bool erase=false;
     while (index < incomingSignal.size()) {
@@ -872,5 +933,9 @@ bool Signaltower::sendSignal() {
         }
     }
         return true;
+}
+
+bool Signaltower::ProperInitialized() const{
+    return _initCheck==this;
 }
 

@@ -7,7 +7,7 @@
 
 
 
-Airport *Runway::location() const {
+Airport *Runway::getAirport() const {
     REQUIRE(ProperInitialized(),"Runway object wasn't initialized when calling Where");
     return where;
 }
@@ -28,7 +28,6 @@ void Runway::setCurrentairplane(Airplane *currentairplane) {
     }
     else{
         setOnuse(false);
-        airplanequeueing--;
     }
     ENSURE(getCurrentairplane()==currentairplane,"setCurrentairplane postcondition failed");
 }
@@ -40,23 +39,29 @@ bool Runway::ProperInitialized() const{
 
 
 Taxipoint *Runway::getTaxipoint() const {
+    REQUIRE(ProperInitialized(),"Runway object wasn't initialized when calling getTaxipoint");
     return taxipoint;
 }
 
 void Runway::setTaxipoint(Taxipoint *taxipoint) {
+    REQUIRE(ProperInitialized(),"Runway object wasn't initialized when calling setTaxipoint");
     Runway::taxipoint = taxipoint;
+    ENSURE(getTaxipoint()==taxipoint,"setTaxipoint postcondition failed");
 }
 
 Runwaytype Runway::getType() const {
+    REQUIRE(ProperInitialized(),"Runway object wasn't initialized when calling getType");
     return type;
 }
 
 int Runway::getLength() const {
+    REQUIRE(ProperInitialized(),"Runway object wasn't initialized when calling getLength");
     return length;
 }
 
 Runway::Runway(const string &name, Airport *where, string stringtype, int length) : Location(name), where(where),
                                                                                   length(length) {
+    REQUIRE((stringtype=="asphalt"||stringtype=="grass"),"Runwaytype were wrong");
     currentairplane= NULL;
     _InitCheck=this;
     if (stringtype=="asphalt"){
@@ -70,38 +75,50 @@ Runway::Runway(const string &name, Airport *where, string stringtype, int length
 }
 
 void Runway::planeQueued() {
+    REQUIRE(ProperInitialized(),"Runway object wasn't initialized when calling planeQueued");
     airplanequeueing++;
 }
 
 int Runway::getAirplanequeueing() const {
+    REQUIRE(ProperInitialized(),"Runway object wasn't initialized when calling getAirplanequeueing");
     return airplanequeueing;
 }
 
 Airplane *Runway::getPlaneAtEnd() const {
+    REQUIRE(ProperInitialized(),"Runway object wasn't initialized when calling getPlaneAtEnd");
     return planeAtEnd;
 }
 
 void Runway::setPlaneAtEnd(Airplane *planeAtEnd) {
+    REQUIRE(ProperInitialized(),"Runway object wasn't initialized when calling setPlaneAtEnd");
     Runway::planeAtEnd = planeAtEnd;
+    ENSURE(getPlaneAtEnd()==planeAtEnd,"setPlaneAtEnd postcondition failed");
 }
 
 Airplane *Runway::getPlaneAtbegin() const {
+    REQUIRE(ProperInitialized(),"Runway object wasn't initialized when calling getPlaneAtbegin");
     return planeAtbegin;
 }
 
 void Runway::setPlaneAtbegin(Airplane *planeAtbegin) {
+    REQUIRE(ProperInitialized(),"Runway object wasn't initialized when calling setPlaneAtbegin");
     Runway::planeAtbegin = planeAtbegin;
+    ENSURE(getPlaneAtbegin()==planeAtbegin,"setPlaneAtbegin postcondition failed");
+
 }
 
 bool Runway::isRunway() {
+    REQUIRE(ProperInitialized(),"Runway object wasn't initialized when calling isRunway");
     return true;
 }
 
 void Runway::planeLeaved() {
+    REQUIRE(ProperInitialized(),"Runway object wasn't initialized when calling planeLeaved");
     airplanequeueing--;
 }
 
 Runway::~Runway() {
+    REQUIRE(ProperInitialized(),"Runway object wasn't initialized when calling destructor");
 
 }
 
