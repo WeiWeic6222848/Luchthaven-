@@ -718,10 +718,15 @@ void Airportsim::taxiingToGatestep(Airplane &taxiingplane, Airport &airport) {
         else if(taxiingplane.getLocation()==taxiingplane.getDestinateRunway()){
             //first set after landing will be immidiate;
             taxiingplane.setLocation((find(instruction.begin(),instruction.end(),taxiingplane.getLocation())+1).operator*());
+            if(taxiingplane.getLocation()->isTaxipoint()){
+                taxiingplane.taxiing();
+                taxiingplane.getLocation()->setOnuse(true);
+                airport.findTaxipoint(taxiingplane.getLocation()->getName())->addPlanesWaiting(&taxiingplane);
+            }
             taxiingplane.getDestinateRunway()->setPlaneAtEnd(NULL);
             taxiingplane.setDestinateRunway(NULL);
         }
-        else if(!taxiingplane.getLocation()->isRunway()){
+        else if(!taxiingplane.getLocation()->isRunway()&&taxiingplane.getLocation()->isTaxipoint()){
             if(taxiingplane.taxiing()){
                 taxiingplane.setLocation((find(instruction.begin(),instruction.end(),taxiingplane.getLocation())+1).operator*());
             }
@@ -733,6 +738,7 @@ void Airportsim::taxiingToGatestep(Airplane &taxiingplane, Airport &airport) {
             if(taxiingplane.crossingRunway()){
                 taxiingplane.setLocation((find(instruction.begin(),instruction.end(),taxiingplane.getLocation())+1).operator*());
                 if(taxiingplane.getLocation()->isTaxipoint()){
+                    taxiingplane.taxiing();
                     taxiingplane.getLocation()->setOnuse(true);
                     airport.findTaxipoint(taxiingplane.getLocation()->getName())->addPlanesWaiting(&taxiingplane);
                 }
@@ -773,11 +779,12 @@ void Airportsim::taxiingToRunwaystep(Airplane &taxiingplane, Airport &airport) {
         else if(taxiingplane.getLocation()->isGate()){
             taxiingplane.setLocation((find(instruction.begin(), instruction.end(), taxiingplane.getLocation()) + 1).operator*());
             if(taxiingplane.getLocation()->isTaxipoint()){
+                taxiingplane.taxiing();
                 taxiingplane.getLocation()->setOnuse(true);
                 airport.findTaxipoint(taxiingplane.getLocation()->getName())->addPlanesWaiting(&taxiingplane);
             }
         }
-        else if (!taxiingplane.getLocation()->isRunway()) {
+        else if(taxiingplane.getLocation()->isTaxipoint()){
             if(taxiingplane.taxiing()){
                 taxiingplane.setLocation((find(instruction.begin(), instruction.end(), taxiingplane.getLocation()) + 1).operator*());
             }
@@ -789,6 +796,7 @@ void Airportsim::taxiingToRunwaystep(Airplane &taxiingplane, Airport &airport) {
             if(taxiingplane.crossingRunway()){
                 taxiingplane.setLocation((find(instruction.begin(), instruction.end(), taxiingplane.getLocation()) + 1).operator*());
                 if(taxiingplane.getLocation()->isTaxipoint()){
+                    taxiingplane.taxiing();
                     taxiingplane.getLocation()->setOnuse(true);
                     airport.findTaxipoint(taxiingplane.getLocation()->getName())->addPlanesWaiting(&taxiingplane);
                 }
@@ -996,7 +1004,7 @@ void Airportsim::writeIni(Airport &airport) {
                               "rotateX = 90\n"
                               "rotateY = 0\n"
                               "rotateZ = 45\n"
-                              "center = ("<<720*i+0*scaleFactor<<", "<<(0)*scaleFactor+horizontalMovement<<", "<<zval<<")\n"
+                              "center = ("<<720*(airport.getRunways().size()-1-i)+0*scaleFactor<<", "<<(0)*scaleFactor+horizontalMovement<<", "<<zval<<")\n"
                               "color = (1, 1, 1)\n"
                               "ambientReflection = (1, 1, 1)\n"
                               "diffuseReflection = (0, 0, 0)\n"
@@ -1009,7 +1017,7 @@ void Airportsim::writeIni(Airport &airport) {
                               "rotateX = 270\n"
                               "rotateY = 0\n"
                               "rotateZ = 45\n"
-                              "center = ("<<720*i+0*scaleFactor<<", "<<0*scaleFactor+horizontalMovement<<", "<<zval<<")\n"
+                              "center = ("<<720*(airport.getRunways().size()-1-i)+0*scaleFactor<<", "<<0*scaleFactor+horizontalMovement<<", "<<zval<<")\n"
                               "color = (1, 1, 1)\n"
                               "ambientReflection = (1, 1, 1)\n"
                               "diffuseReflection = (0, 0, 0)\n"
@@ -1020,7 +1028,7 @@ void Airportsim::writeIni(Airport &airport) {
                               "rotateX = 45\n"
                               "rotateY = 0\n"
                               "rotateZ = -10\n"
-                              "center = ("<<(50)*scaleFactor+720*i<<", "<<(-180)*scaleFactor+horizontalMovement<<", "<<zval<<")\n"
+                              "center = ("<<(50)*scaleFactor+720*(airport.getRunways().size()-1-i)<<", "<<(-180)*scaleFactor+horizontalMovement<<", "<<zval<<")\n"
                               "color = (1, 1, 1)\n"
                               "ambientReflection = (1, 1, 1)\n"
                               "diffuseReflection = (0, 0, 0)\n"
@@ -1031,7 +1039,7 @@ void Airportsim::writeIni(Airport &airport) {
                               "rotateX = 50\n"
                               "rotateY = 0\n"
                               "rotateZ = -68\n"
-                              "center = ("<<(75)*scaleFactor+720*i<<", "<<(-249)*scaleFactor+horizontalMovement<<", "<<zval<<")\n"
+                              "center = ("<<(75)*scaleFactor+720*(airport.getRunways().size()-1-i)<<", "<<(-249)*scaleFactor+horizontalMovement<<", "<<zval<<")\n"
                               "color = (1, 1, 1)\n"
                               "ambientReflection = (1, 1, 1)\n"
                               "diffuseReflection = (0, 0, 0)\n"
@@ -1042,7 +1050,7 @@ void Airportsim::writeIni(Airport &airport) {
                               "rotateX = 0\n"
                               "rotateY = 0\n"
                               "rotateZ = 79\n"
-                              "center = ("<<(28)*scaleFactor+720*i<<", "<<(-302)*scaleFactor+horizontalMovement<<", "<<zval<<")\n"
+                              "center = ("<<(28)*scaleFactor+720*(airport.getRunways().size()-1-i)<<", "<<(-302)*scaleFactor+horizontalMovement<<", "<<zval<<")\n"
                               "color = (1, 1, 1)\n"
                               "ambientReflection = (1, 1, 1)\n"
                               "diffuseReflection = (0, 0, 0)\n"
@@ -1053,12 +1061,11 @@ void Airportsim::writeIni(Airport &airport) {
                               "rotateX = 50\n"
                               "rotateY = 0\n"
                               "rotateZ = 112\n"
-                              "center = ("<<(220)*scaleFactor+720*i<<", "<<(-330)*scaleFactor+horizontalMovement<<", "<<zval<<")\n"
+                              "center = ("<<(220)*scaleFactor+720*(airport.getRunways().size()-1-i)<<", "<<(-330)*scaleFactor+horizontalMovement<<", "<<zval<<")\n"
                               "color = (1, 1, 1)\n"
                               "ambientReflection = (1, 1, 1)\n"
                               "diffuseReflection = (0, 0, 0)\n\n";
             amountFigs+=6;
-
         }
         if(airport.getRunways()[i]->isCrossing()){
             int horizontalMovement=0;
@@ -1072,7 +1079,7 @@ void Airportsim::writeIni(Airport &airport) {
                               "rotateX = 90\n"
                               "rotateY = 0\n"
                               "rotateZ = 45\n"
-                              "center = ("<<720*i+0*scaleFactor<<", "<<(0)*scaleFactor+horizontalMovement<<", "<<zval<<")\n"
+                              "center = ("<<720*(airport.getRunways().size()-1-i)+0*scaleFactor<<", "<<(0)*scaleFactor+horizontalMovement<<", "<<zval<<")\n"
                               "color = (1, 1, 1)\n"
                               "ambientReflection = (1, 1, 1)\n"
                               "diffuseReflection = (0, 0, 0)\n"
@@ -1085,7 +1092,7 @@ void Airportsim::writeIni(Airport &airport) {
                               "rotateX = 270\n"
                               "rotateY = 0\n"
                               "rotateZ = 45\n"
-                              "center = ("<<720*i+0*scaleFactor<<", "<<0*scaleFactor+horizontalMovement<<", "<<zval<<")\n"
+                              "center = ("<<720*(airport.getRunways().size()-1-i)+0*scaleFactor<<", "<<0*scaleFactor+horizontalMovement<<", "<<zval<<")\n"
                               "color = (1, 1, 1)\n"
                               "ambientReflection = (1, 1, 1)\n"
                               "diffuseReflection = (0, 0, 0)\n"
@@ -1096,7 +1103,7 @@ void Airportsim::writeIni(Airport &airport) {
                               "rotateX = 45\n"
                               "rotateY = 0\n"
                               "rotateZ = -10\n"
-                              "center = ("<<(50)*scaleFactor+720*i<<", "<<(-180)*scaleFactor+horizontalMovement<<", "<<zval<<")\n"
+                              "center = ("<<(50)*scaleFactor+720*(airport.getRunways().size()-1-i)<<", "<<(-180)*scaleFactor+horizontalMovement<<", "<<zval<<")\n"
                               "color = (1, 1, 1)\n"
                               "ambientReflection = (1, 1, 1)\n"
                               "diffuseReflection = (0, 0, 0)\n"
@@ -1107,7 +1114,7 @@ void Airportsim::writeIni(Airport &airport) {
                               "rotateX = 50\n"
                               "rotateY = 0\n"
                               "rotateZ = -68\n"
-                              "center = ("<<(75)*scaleFactor+720*i<<", "<<(-249)*scaleFactor+horizontalMovement<<", "<<zval<<")\n"
+                              "center = ("<<(75)*scaleFactor+720*(airport.getRunways().size()-1-i)<<", "<<(-249)*scaleFactor+horizontalMovement<<", "<<zval<<")\n"
                               "color = (1, 1, 1)\n"
                               "ambientReflection = (1, 1, 1)\n"
                               "diffuseReflection = (0, 0, 0)\n"
@@ -1118,7 +1125,7 @@ void Airportsim::writeIni(Airport &airport) {
                               "rotateX = 0\n"
                               "rotateY = 0\n"
                               "rotateZ = 79\n"
-                              "center = ("<<(28)*scaleFactor+720*i<<", "<<(-302)*scaleFactor+horizontalMovement<<", "<<zval<<")\n"
+                              "center = ("<<(28)*scaleFactor+720*(airport.getRunways().size()-1-i)<<", "<<(-302)*scaleFactor+horizontalMovement<<", "<<zval<<")\n"
                               "color = (1, 1, 1)\n"
                               "ambientReflection = (1, 1, 1)\n"
                               "diffuseReflection = (0, 0, 0)\n"
@@ -1129,7 +1136,7 @@ void Airportsim::writeIni(Airport &airport) {
                               "rotateX = 50\n"
                               "rotateY = 0\n"
                               "rotateZ = 112\n"
-                              "center = ("<<(220)*scaleFactor+720*i<<", "<<(-330)*scaleFactor+horizontalMovement<<", "<<zval<<")\n"
+                              "center = ("<<(220)*scaleFactor+720*(airport.getRunways().size()-1-i)<<", "<<(-330)*scaleFactor+horizontalMovement<<", "<<zval<<")\n"
                               "color = (1, 1, 1)\n"
                               "ambientReflection = (1, 1, 1)\n"
                               "diffuseReflection = (0, 0, 0)\n\n";
@@ -1149,7 +1156,7 @@ void Airportsim::writeIni(Airport &airport) {
                                   "rotateX = 90\n"
                                   "rotateY = 0\n"
                                   "rotateZ = 45\n"
-                                  "center = ("<<720*i+360+0*scaleFactor<<", "<<(0)*scaleFactor+horizontalMovement<<", "<<zval<<")\n"
+                                  "center = ("<<720*(airport.getRunways().size()-1-i)+360+0*scaleFactor<<", "<<(0)*scaleFactor+horizontalMovement<<", "<<zval<<")\n"
                                   "color = (1, 1, 1)\n"
                                   "ambientReflection = (1, 1, 1)\n"
                                   "diffuseReflection = (0, 0, 0)\n"
@@ -1162,7 +1169,7 @@ void Airportsim::writeIni(Airport &airport) {
                                   "rotateX = 270\n"
                                   "rotateY = 0\n"
                                   "rotateZ = 45\n"
-                                  "center = ("<<720*i+360+0*scaleFactor<<", "<<0*scaleFactor+horizontalMovement<<", "<<zval<<")\n"
+                                  "center = ("<<720*(airport.getRunways().size()-1-i)+360+0*scaleFactor<<", "<<0*scaleFactor+horizontalMovement<<", "<<zval<<")\n"
                                   "color = (1, 1, 1)\n"
                                   "ambientReflection = (1, 1, 1)\n"
                                   "diffuseReflection = (0, 0, 0)\n"
@@ -1173,7 +1180,7 @@ void Airportsim::writeIni(Airport &airport) {
                                   "rotateX = 45\n"
                                   "rotateY = 0\n"
                                   "rotateZ = -10\n"
-                                  "center = ("<<(50)*scaleFactor+720*i+360<<", "<<(-180)*scaleFactor+horizontalMovement<<", "<<zval<<")\n"
+                                  "center = ("<<(50)*scaleFactor+720*(airport.getRunways().size()-1-i)+360<<", "<<(-180)*scaleFactor+horizontalMovement<<", "<<zval<<")\n"
                                   "color = (1, 1, 1)\n"
                                   "ambientReflection = (1, 1, 1)\n"
                                   "diffuseReflection = (0, 0, 0)\n"
@@ -1184,7 +1191,7 @@ void Airportsim::writeIni(Airport &airport) {
                                   "rotateX = 50\n"
                                   "rotateY = 0\n"
                                   "rotateZ = -68\n"
-                                  "center = ("<<(75)*scaleFactor+720*i+360<<", "<<(-249)*scaleFactor+horizontalMovement<<", "<<zval<<")\n"
+                                  "center = ("<<(75)*scaleFactor+720*(airport.getRunways().size()-1-i)+360<<", "<<(-249)*scaleFactor+horizontalMovement<<", "<<zval<<")\n"
                                   "color = (1, 1, 1)\n"
                                   "ambientReflection = (1, 1, 1)\n"
                                   "diffuseReflection = (0, 0, 0)\n"
@@ -1195,7 +1202,7 @@ void Airportsim::writeIni(Airport &airport) {
                                   "rotateX = 0\n"
                                   "rotateY = 0\n"
                                   "rotateZ = 79\n"
-                                  "center = ("<<(28)*scaleFactor+720*i+360<<", "<<(-302)*scaleFactor+horizontalMovement<<", "<<zval<<")\n"
+                                  "center = ("<<(28)*scaleFactor+720*(airport.getRunways().size()-1-i)+360<<", "<<(-302)*scaleFactor+horizontalMovement<<", "<<zval<<")\n"
                                   "color = (1, 1, 1)\n"
                                   "ambientReflection = (1, 1, 1)\n"
                                   "diffuseReflection = (0, 0, 0)\n"
@@ -1206,7 +1213,7 @@ void Airportsim::writeIni(Airport &airport) {
                                   "rotateX = 50\n"
                                   "rotateY = 0\n"
                                   "rotateZ = 112\n"
-                                  "center = ("<<(220)*scaleFactor+720*i+360<<", "<<(-330)*scaleFactor+horizontalMovement<<", "<<zval<<")\n"
+                                  "center = ("<<(220)*scaleFactor+720*(airport.getRunways().size()-1-i)+360<<", "<<(-330)*scaleFactor+horizontalMovement<<", "<<zval<<")\n"
                                   "color = (1, 1, 1)\n"
                                   "ambientReflection = (1, 1, 1)\n"
                                   "diffuseReflection = (0, 0, 0)\n\n";

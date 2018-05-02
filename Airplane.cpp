@@ -790,9 +790,6 @@ bool Airplane::taxiing() {
     if(isDoingNothing()){
         actionDone=currentTime+5;
         doingNothing=false;
-        if(location->isTaxipoint()){
-            location->setOnuse(true);
-        }
     }
     else if(actionDone==currentTime){
         doingNothing=true;
