@@ -15,7 +15,7 @@ public:
  * ENSURE(fileExist("../output/Info.txt"),"writeToFile postcondition failed");
  * @param simulator the airsim to output
  */
-    void writeToFile(Airportsim& simulator);
+   static void writeToFile(Airportsim& simulator);
 };
 
 

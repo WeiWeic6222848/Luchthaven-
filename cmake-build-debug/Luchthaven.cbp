@@ -200,6 +200,9 @@
 			<Option target="Airport_simulator_debug"/>
 			<Option target="Airport_simulator"/>
 		</Unit>
+		<Unit filename="/home/tristan/CLionProjects/Luchthaven-/OutputTest.cpp">
+			<Option target="Airport_simulator_debug"/>
+		</Unit>
 		<Unit filename="/home/tristan/CLionProjects/Luchthaven-/Runway.cpp">
 			<Option target="Airport_simulator_debug"/>
 			<Option target="Airport_simulator"/>

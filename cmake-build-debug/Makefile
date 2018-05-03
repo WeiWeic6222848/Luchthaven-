@@ -400,6 +400,33 @@ Location.cpp.s:
 	$(MAKE) -f CMakeFiles/Airport_simulator.dir/build.make CMakeFiles/Airport_simulator.dir/Location.cpp.s
 .PHONY : Location.cpp.s
 
+OutputTest.o: OutputTest.cpp.o
+
+.PHONY : OutputTest.o
+
+# target to build an object file
+OutputTest.cpp.o:
+	$(MAKE) -f CMakeFiles/Airport_simulator_debug.dir/build.make CMakeFiles/Airport_simulator_debug.dir/OutputTest.cpp.o
+.PHONY : OutputTest.cpp.o
+
+OutputTest.i: OutputTest.cpp.i
+
+.PHONY : OutputTest.i
+
+# target to preprocess a source file
+OutputTest.cpp.i:
+	$(MAKE) -f CMakeFiles/Airport_simulator_debug.dir/build.make CMakeFiles/Airport_simulator_debug.dir/OutputTest.cpp.i
+.PHONY : OutputTest.cpp.i
+
+OutputTest.s: OutputTest.cpp.s
+
+.PHONY : OutputTest.s
+
+# target to generate assembly for a file
+OutputTest.cpp.s:
+	$(MAKE) -f CMakeFiles/Airport_simulator_debug.dir/build.make CMakeFiles/Airport_simulator_debug.dir/OutputTest.cpp.s
+.PHONY : OutputTest.cpp.s
+
 Runway.o: Runway.cpp.o
 
 .PHONY : Runway.o
@@ -761,6 +788,9 @@ help:
 	@echo "... Location.o"
 	@echo "... Location.i"
 	@echo "... Location.s"
+	@echo "... OutputTest.o"
+	@echo "... OutputTest.i"
+	@echo "... OutputTest.s"
 	@echo "... Runway.o"
 	@echo "... Runway.i"
 	@echo "... Runway.s"

@@ -1,0 +1,4 @@
+Airport: Antwerp International Airport (ANR)
+ -> gates: 10
+ -> runways: 2
+

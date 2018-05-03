@@ -18,6 +18,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Airport_simulator_debug.dir/Gate.cpp.o"
   "CMakeFiles/Airport_simulator_debug.dir/Time.cpp.o"
   "CMakeFiles/Airport_simulator_debug.dir/DomeinTest.cpp.o"
+  "CMakeFiles/Airport_simulator_debug.dir/OutputTest.cpp.o"
   "Airport_simulator_debug.pdb"
   "Airport_simulator_debug"
 )

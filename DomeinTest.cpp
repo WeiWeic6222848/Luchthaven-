@@ -31,7 +31,7 @@ protected:
 TEST_F(AirplaneDomeinTest,gettersTestPlane){
 
 
-    //setting
+    //settings
     string filename="../domeinTest/Airplane.xml";
 
     string number="BAW466";
@@ -44,7 +44,7 @@ TEST_F(AirplaneDomeinTest,gettersTestPlane){
     int passenger=10;
     int passengercapacity=10;
     int fuel=123;
-    //endofsetting
+    //endofsettings
 
     ofstream a;
 
@@ -115,7 +115,7 @@ TEST_F(AirplaneDomeinTest,gettersTestPlane){
 TEST_F(AirplaneDomeinTest,settersTestPlane) {
 
 
-    //setting
+    //settings
     string filename = "../domeinTest/Airplane.xml";
 
     string number = "BAW466";
@@ -126,7 +126,7 @@ TEST_F(AirplaneDomeinTest,settersTestPlane) {
     string size = "large";
     string status = "Approaching";
     int passengercapacity = 10;
-    //endofsetting
+    //endofsettings
 
     ofstream a;
 
@@ -164,14 +164,14 @@ TEST_F(AirplaneDomeinTest,settersTestPlane) {
 }
 
 TEST_F(AirplaneDomeinTest,gettersAirport) {
-    //setting
+    //settings
     string filename = "../domeinTest/Airport.xml";
     string name = "Antwerp International Airport";
     string iata = "ANR";
     string callsign = "Antwerp Tower";
     unsigned int gates = 10;
     unsigned int runways = 0;
-    //endofsetting
+    //endofsettings
 
     ofstream a;
 
@@ -185,13 +185,13 @@ TEST_F(AirplaneDomeinTest,gettersAirport) {
     EXPECT_TRUE(testsubject->getRunways().size()==runways);
 }
 TEST_F(AirplaneDomeinTest,settersAirport) {
-    //setting
+    //settings
     string filename = "../domeinTest/Airport.xml";
     string name = "Antwerp International Airport";
     string iata = "ANR";
     string callsign = "Antwerp Tower";
 
-    //endofsetting
+    //endofsettings
 
     ofstream a;
 
@@ -201,7 +201,7 @@ TEST_F(AirplaneDomeinTest,settersAirport) {
     EXPECT_TRUE(testsubject->getPassengers()==10);
 }
 TEST_F(AirplaneDomeinTest,gettersRunway) {
-    //setting
+    //settings
     string filename = "../domeinTest/Runway.xml";
     string name = "11R";
     string airport = "ANR";
@@ -210,7 +210,7 @@ TEST_F(AirplaneDomeinTest,gettersRunway) {
     string taxipoint = "Alpha";
     int airplanesqueing=0;
     Airplane* plane=NULL;
-    //endofsetting
+    //endofsettings
 
     ofstream a;
 
@@ -231,7 +231,7 @@ TEST_F(AirplaneDomeinTest,gettersRunway) {
 
 }
 TEST_F(AirplaneDomeinTest,settersRunway){
-    //setting
+    //settings
     string filename = "../domeinTest/Runway.xml";
     string name = "11R";
     string airport = "ANR";
@@ -239,7 +239,7 @@ TEST_F(AirplaneDomeinTest,settersRunway){
 
     Airplane* plane=NULL;
 
-    //endofsetting
+    //endofsettings
 
     ofstream a;
 
@@ -269,11 +269,11 @@ TEST_F(AirplaneDomeinTest,settersRunway){
 
 }
 TEST_F(AirplaneDomeinTest, testingGate){
-    //setting
+    //settings
     string filename = "../domeinTest/Airport.xml";
     unsigned int gates = 10;
     Airplane* plane=NULL;
-    //endofsetting
+    //endofsettings
 
     ofstream a;
 
@@ -289,10 +289,20 @@ TEST_F(AirplaneDomeinTest, testingGate){
         EXPECT_TRUE(testsubject[i]->getCurrentPlane()==plane);
     }
 }
+TEST_F(AirplaneDomeinTest, testingLocation){
+    //settings
+    string filename = "../domeinTest/Location.xml";
 
-    TEST_F(AirplaneDomeinTest,invalidInput){
 
-    /*
+    //endofsettings
+
+    ofstream a;
+    LoadAirport(filename.c_str(), a, simulator);
+
+}
+TEST_F(AirplaneDomeinTest,invalidInput){
+
+
     //setting
     string filename="../domeinTest/Airplane.xml";
 
@@ -314,40 +324,24 @@ TEST_F(AirplaneDomeinTest, testingGate){
     Airplane* testsubject=simulator.findAirplane(number);
 
 
-    EXPECT_NO_FATAL_FAILURE(testsubject->setStatus("qb"));
-    EXPECT_NO_FATAL_FAILURE(testsubject->setPassenger(passengercapacity+1));
-    EXPECT_NO_FATAL_FAILURE(testsubject->setFuel(fuel+1));
-    EXPECT_NO_FATAL_FAILURE(testsubject->setFuelCapacity(fuel-1));
-     */
+    EXPECT_DEATH(testsubject->setStatus("qb"),"");
+    EXPECT_DEATH(testsubject->setPassenger(passengercapacity+1),"");
+    EXPECT_DEATH(testsubject->setFuel(fuel+1),"");
+    EXPECT_DEATH(testsubject->setFuelCapacity(fuel-1),"");
+
 }
 
-TEST_F(AirplaneDomeinTest,){
-
-
-    //setting
-    string filename="../domeinTest/Airplane.xml";
-
-    string number="BAW466";
-    string callsign="Speedbird 466";
-    string model="Boeing 747";
-    string type="airline";
-    string engine="jet";
-    string size="large";
-    string status="Approaching";
-    //int passenger=10;
-    //int passengercapacity=10;
-    //int fuel=123;
-    //endofsetting
-
+TEST_F(AirplaneDomeinTest,gettersTaxpoint){
+    //settings
+    string filename = "../domeinTest/Runway.xml";
+    string name="Alpha";
+    //endofsettings
     ofstream a;
-
     LoadAirport(filename.c_str(),a,simulator);
-    //Airplane* testsubject=simulator.findAirplane(number);
+    Taxipoint* testsubject=simulator.getAirports()[0]->getTaxipoints()[0];
+    EXPECT_TRUE(testsubject->getName()==name);
+    EXPECT_TRUE(testsubject->getRoute().empty());
+    EXPECT_TRUE(testsubject->getPlanesWaiting().empty());
+    EXPECT_TRUE(testsubject->getRunwayonpoint()==simulator.getAirports()[0]->getRunways()[0]);
 
-    /*
-    EXPECT_NO_FATAL_FAILURE(testsubject->setStatus("qb"));
-    EXPECT_NO_FATAL_FAILURE(testsubject->setPassenger(passengercapacity+1));
-    EXPECT_NO_FATAL_FAILURE(testsubject->setFuel(fuel+1));
-    EXPECT_NO_FATAL_FAILURE(testsubject->setFuelCapacity(fuel-1));
-     */
 }

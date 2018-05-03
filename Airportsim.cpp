@@ -552,8 +552,12 @@ void Airportsim::Simulate() {
                  Airports[k]->getTower().regulateLeavingplanes();
              }
          }*/
-         //generateFloorPlan(*getAirports()[0]);
+         generateFloorPlan(*getAirports()[0]);
          createVisual(*getAirports()[0]);
+         timespec tim, tim2;
+         tim.tv_nsec=500000000L;
+         tim.tv_sec=0;
+         nanosleep(&tim,&tim2);
          for (unsigned int i = 0; i < airplanestoremove.size(); ++i) {
              AirplanesFlying.push_back((Airplanes.begin() + airplanestoremove[i] - i).operator*());
              Airplanes.erase(Airplanes.begin() + airplanestoremove[i] - i);

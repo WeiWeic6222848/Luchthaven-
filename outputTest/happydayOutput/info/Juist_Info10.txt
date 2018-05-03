@@ -1,0 +1,16 @@
+Airport: Antwerp International Airport (ANR)
+ -> gates: 10
+ -> runways: 2
+
+Airplane: Cessna 842 (A123)
+ -> model: Cessna 340
+ -> type: private
+ -> engine: propeller
+ -> size: small
+
+Airplane: Cessna 842 (A12)
+ -> model: Cessna 340
+ -> type: private
+ -> engine: propeller
+ -> size: small
+

@@ -16,7 +16,7 @@ link_directories(gtest/lib)
 set(RELEASE_SOURCE_FILES main.cpp tinystr.cpp tinystr.h tinyxml.cpp tinyxml.h tinyxmlerror.cpp Airportsim.cpp Airportsim.h Runway.cpp Runway.h Airplane.cpp Airplane.h Airport.cpp Airport.h tinyxmlparser.cpp DesignByContract.h output_system.cpp output_system.h AirportsimImporter.cpp AirportsimImporter.h AirportUtils.h AirportUtils.cpp Signaltower.cpp Signaltower.h Location.cpp Location.h Taxipoint.cpp Taxipoint.h Gate.cpp Gate.h Time.cpp Time.h)
 
 # Set source files for DEBUG target
-set(DEBUG_SOURCE_FILES test.cpp tinystr.cpp tinystr.h tinyxml.cpp tinyxml.h tinyxmlerror.cpp Airportsim.cpp Airportsim.h Runway.cpp Runway.h Airplane.cpp Airplane.h Airport.cpp Airport.h tinyxmlparser.cpp DesignByContract.h output_system.cpp output_system.h AirportsimImporter.cpp AirportsimImporter.h ImportTest.cpp AirportUtils.h AirportUtils.cpp Signaltower.cpp Signaltower.h Location.cpp Location.h Taxipoint.cpp Taxipoint.h Gate.cpp Gate.h Time.cpp Time.h ImportTest.cpp DomeinTest.cpp)
+set(DEBUG_SOURCE_FILES test.cpp tinystr.cpp tinystr.h tinyxml.cpp tinyxml.h tinyxmlerror.cpp Airportsim.cpp Airportsim.h Runway.cpp Runway.h Airplane.cpp Airplane.h Airport.cpp Airport.h tinyxmlparser.cpp DesignByContract.h output_system.cpp output_system.h AirportsimImporter.cpp AirportsimImporter.h ImportTest.cpp AirportUtils.h AirportUtils.cpp Signaltower.cpp Signaltower.h Location.cpp Location.h Taxipoint.cpp Taxipoint.h Gate.cpp Gate.h Time.cpp Time.h ImportTest.cpp DomeinTest.cpp OutputTest.cpp)
 
 # Create RELEASE target
 add_executable(Airport_simulator ${RELEASE_SOURCE_FILES})
