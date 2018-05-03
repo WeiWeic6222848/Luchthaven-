@@ -1,0 +1,8 @@
+output en domein test uitbreiden, contracten mogen geen lokale variabelen bevatten en niet onder een if
+
+doxygen is optioneel
+
+algemeen lokale vars enum invoegen want nu handmatig ingebracht
+sommige vectors naar queue
+
+go to veranderen in function calls
