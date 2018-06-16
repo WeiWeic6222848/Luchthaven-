@@ -614,7 +614,7 @@ void Airplane::progressCheck() {
             checkprocedure = "Technical control";
         }
     }
-    if(checkprocedure=="Technical control"){
+    else if(checkprocedure=="Technical control"){
         if(isDoingNothing()){
             if(size=="small"){
                 actionDone=currentTime++;

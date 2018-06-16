@@ -16,7 +16,7 @@
 using namespace std;
 
 
-static string allowedSignalprepare[]={"Approaching","Leaving","ApproachingtoGate","LeavingtoRunway","Emergency","Push back","IFR clearancy","Crossing runway","At runway"};
+static string allowedSignalprepare[]={"Approaching","Leaving","ApproachingtoGate","LeavingtoRunway","Emergency","Push back","IFR clearancy","Crossing runway","At runway","Descending","Rising"};
 static vector<string> allowedSignal(allowedSignalprepare, allowedSignalprepare+sizeof(allowedSignalprepare)/ sizeof(allowedSignalprepare[0]));
 
 
@@ -28,10 +28,13 @@ class Location;
 
 class Signaltower {
 private:
+    bool buzy3000;
+    bool buzy5000;
     vector<Airplane*> approachingAirplanes;
     vector<Airplane*> leavingAirplanes;
     vector<Airplane*> emergency;
     vector<pair<Airplane*,string> > incomingSignal;
+    pair<Airplane*,string> currentworkingsignal;
     vector<pair<Airplane*,string> > regulateSignal;
     Airport* airport;
     vector<Airplane*> allflyingplanes();
@@ -94,7 +97,14 @@ public:
      */
     bool sendSignal();
 
-
+    void regulateApproachingplane(Airplane* airplane);
+    
+    void regulateLeavingplane(Airplane* airplane);
+    
+    void parse_signal(Airplane* airplane,string stringsignal);
+    
+    
+    
 //unused, replaced by regulateleavingplanes;
     /**
      *

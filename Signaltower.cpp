@@ -12,6 +12,8 @@ Signaltower::Signaltower(Airport *airport) : airport(airport) {
     doingNothing=true;
     file.open(filename.c_str(),ios::app);
     _initCheck=this;
+    buzy3000=false;
+    buzy5000=false;
     ENSURE(ProperInitialized(),"Signal tower object failed to initialize properly");
 }
 
@@ -19,17 +21,15 @@ bool Signaltower::receiveSignal(Airplane *airplane, string signal) {
     REQUIRE(ProperInitialized(),"Signal tower must be initialized properly when calling receiveSignal");
     REQUIRE(airplane->ProperInitialized(),"Airplane must be initialized properly when calling receiveSignal");
     REQUIRE(find(allowedSignal.begin(),allowedSignal.end(),signal)!=allowedSignal.end(),"Signal tower received a signal that it doesnt reconizes");
-
     if (signal=="Approaching"){
         approachingAirplanes.push_back(airplane);
         airplane->setPermission("10000");
-        return true;
     }
     else if(signal=="Leaving"){
         leavingAirplanes.push_back(airplane);
-        return true;
     }
-    else if(find(allowedSignal.begin(),allowedSignal.end(),signal)!=allowedSignal.end()) {
+
+    if(find(allowedSignal.begin(),allowedSignal.end(),signal)!=allowedSignal.end()) {
         incomingSignal.push_back(pair<Airplane*,string>(airplane,signal));
         return true;
     }
@@ -184,8 +184,7 @@ void Signaltower::regulateApproachingplanes() {
                         //not breaking here, beacause we're also checking all planes that have landed on the ground(runway), and removing them
                         //to the next phase where the airplane needs to call the signal tower again.
                     }
-                } else if (approachingAirplanes[i]->getPermission() == "3000" &&
-                           approachingAirplanes[i]->getHeight() != 3000) {
+                } else if (approachingAirplanes[i]->getPermission() == "3000" && approachingAirplanes[i]->getHeight() != 3000) {
 
                     buzyat3000 = true;
                 } else if (approachingAirplanes[i]->getPermission() == "0" &&
@@ -489,7 +488,7 @@ vector<Location*> Signaltower::makeInstructionToGate(Airplane *airplane) {
             nextStop.push_back(nextLocation.operator*());
         }
         if(nextLocation!=planelocation->getRoute().begin()){
-            taxiingplane->setInstruction(nextStop);
+            //taxiingplane->setInstruction(nextStop);
         }
         else{
             Gate* freegate=airport->findFreeGates();
@@ -531,11 +530,11 @@ vector<Location*> Signaltower::makeInstructionToRunway(Airplane *airplane) {
 
         if(nextLocation!=destination->getRoute().end()){
             nextStop.push_back(nextLocation.operator*());
-            taxiingplane->setInstruction(nextStop);
+            //taxiingplane->setInstruction(nextStop);
         }
         else{
             nextStop.push_back(destination);
-            taxiingplane->setInstruction(nextStop);
+            //taxiingplane->setInstruction(nextStop);
         }
     }
     return nextStop;
@@ -578,6 +577,8 @@ void Signaltower::sendSignalPermission5000(Airplane *airplane) {
         doingNothing=false;
     }
     else {
+        buzy5000=true;
+
         file << "[" << currentTime << "]" << "[ATC]" << endl;
         file << airplane->getCallsign() << ", " << "radar contact" << ", "
              << "descend and maintain five thousand feet, squawk <squawk-code>." << endl;
@@ -596,6 +597,9 @@ void Signaltower::sendSignalPermission3000(Airplane *airplane) {
         doingNothing=false;
     }
     else {
+        buzy5000=false;
+        buzy3000=true;
+
         file << "[" << currentTime << "]" << "[ATC]" << endl;
         file << airplane->getCallsign() << ", " << "descend and maintain three thousand feet." << endl;
 
@@ -614,11 +618,14 @@ void Signaltower::sendSignalPermissionLanding(Airplane *airplane,Runway* runway)
         //you dont have to wait until the signal has been sent to let it be used;
     }
     else {
+        buzy3000=false;
+
         file << "[" << currentTime << "]" << "[ATC]" << endl;
         file << airplane->getCallsign() << ", " << "cleared ILS approach runway "
              << runway->getName() << endl;
 
         doingNothing = true;
+
         runway->setCurrentairplane(airplane);
         airplane->receiveLandingSignal(runway);
     }
@@ -636,11 +643,11 @@ bool Signaltower::sendSignalWaiting(Airplane *airplane) {
         else {
             file << "[" << currentTime << "]" << "[ATC]" << endl;
             file << airplane->getCallsign() << ", "
-                 << "hold south on the one eighty radial, expect further clearance at " << currentTime+incomingSignal.size()+1+1 << endl;
-            //currentTime+incomingSignal.size()+1+1
+                 << "hold south on the one eighty radial, expect further clearance at " << currentTime+incomingSignal.size() << endl;
+            //currentTime+incomingSignal.size()+1+1f
             //incomingsignal always goes first, +1 for the signal delay from tower to airport, and +1 for unexpected signals;
             doingNothing = true;
-            incomingSignal.push_back(pair<Airplane*,string>(airplane,"Waiting"));
+            //incomingSignal.push_back(pair<Airplane*,string>(airplane,"Waiting"));
             airplane->receiveSignal("Keep flying");
             return true;
         }
@@ -716,7 +723,7 @@ void Signaltower::sendSignalLineup(Airplane *airplane, bool takeoff) {
 
             airplane->getDestinateRunway()->setPlaneAtbegin(airplane);
 
-            leavingAirplanes.push_back(airplane);
+            incomingSignal.push_back(pair<Airplane*,string>(airplane,"Leaving"));
             airplane->receiveSignal("Line up");
         }
         doingNothing = true;
@@ -839,99 +846,25 @@ void Signaltower::regulateLeavingplanes() {
 bool Signaltower::sendSignal() {
 
     REQUIRE(ProperInitialized(),"Signal tower must be initialized properly when calling sendSignal");
-        unsigned int index = 0;
-    bool erase=false;
-    while (index < incomingSignal.size()) {
+    unsigned int index = 0;
+    if(!isDoingNothing()){
+        parse_signal(currentworkingsignal.first,currentworkingsignal.second);
+    }
+    else{
+        while (index < incomingSignal.size()) {
             pair<Airplane *, string> temp = incomingSignal[index];
             string stringSignal=temp.second;
             Airplane *airplane=temp.first;
-            if (stringSignal == "ApproachingtoGate") {
-                    airplane->setInstruction(vector<Location *>());
-                    vector<Location *> instruction = makeInstructionToGate(airplane);
-                    if (instruction.size() > 0) {
-                        sendInstruction(airplane, instruction);
-                        if(isDoingNothing()){
-                            erase=true;
-                        }
-                        break;
-                    }
-            } else if (stringSignal == "LeavingtoRunway") {
-                    if (airplane->getDestinateRunway() != NULL) {
-                        airplane->setInstruction(vector<Location *>());
-                        vector<Location *> instruction = makeInstructionToRunway(airplane);
-                        if (instruction.size() > 0) {
-                            sendInstruction(airplane, instruction);
-                            if(isDoingNothing()){
-                                erase=true;
-                            }
-                            break;
-                        }
-                    }
-            } else if (stringSignal == "Emergency") {
-                emergency.push_back(airplane);
-            } else if (stringSignal == "Push back") {
-                    Runway *destinaterunway = airport->findFreeRunway(airplane);
-                    Gate* gate=airport->getGateFromAirplane(airplane);
-                    if (destinaterunway&&gate->getPlaneNearGate()==NULL) {
-                        sendSignalPushBack(airplane, destinaterunway);
-                        if(isDoingNothing()){
-                            erase=true;
-                        }
-                        break;
-                    }
-            } else if (stringSignal == "IFR clearancy") {
-                //dont see a reason not to
-                    sendSignalIFRclear(airplane);
-                    if(isDoingNothing()){
-                        erase=true;
-                    }
-                    break;
+            parse_signal(airplane,stringSignal);
 
-            } else if (stringSignal == "Crossing runway") {
-                    Location *runwayToCross = airplane->getLocation();
-                    if (!runwayToCross->isOnuse() && !runwayToCross->isCrossing()) {
-                        sendSignalClearedToCross(airplane);
-                        if(isDoingNothing()){
-                            erase=true;
-                        }
-                        break;
-
-                    }
-
-            } else if (stringSignal == "At runway") {
-                    Runway *runway = airplane->getDestinateRunway();
-                    if (!runway->isCrossing() && !runway->isOnuse() && runway->getPlaneAtbegin() == NULL) {
-                        sendSignalLineup(airplane, true);
-                        if(isDoingNothing()){
-                            erase=true;
-                        }
-                        break;
-
-                    } else if (!runway->isOnuse() && runway->getPlaneAtbegin() == NULL) {
-                        sendSignalLineup(airplane, false);
-                        if(isDoingNothing()){
-                            erase=true;
-                        }
-                        break;
-
-                    }
-            }
-                else if(stringSignal == "Waiting"){
-                approachingAirplanes.push_back(airplane);
+            if(!isDoingNothing()){
                 incomingSignal.erase(incomingSignal.begin()+index);
-                index--;
+                currentworkingsignal=temp;
+                break;
             }
             else{
-                cerr << "error signal" << endl;
+                index++;
             }
-            index++;
-        }
-    if(erase){
-        if(!incomingSignal.empty()){
-            incomingSignal.erase(incomingSignal.begin()+index);
-        }
-        else if(incomingSignal.empty()){
-
         }
     }
         return true;
@@ -939,5 +872,110 @@ bool Signaltower::sendSignal() {
 
 bool Signaltower::ProperInitialized() const{
     return _initCheck==this;
+}
+
+void Signaltower::regulateApproachingplane(Airplane *airplane) {
+    if (airplane->getPermission() == "3000" && airplane->getHeight() == 3000) {
+        Runway *freerunway = airport->findFreeRunway(airplane);
+        if(freerunway==NULL){
+            cerr<<"This airplane can never land as there is no single runway suitable for it!!"<<endl;
+            throw ;
+        }
+        if (!freerunway->isOnuse()&&!freerunway->isCrossing()) {
+            sendSignalPermissionLanding(airplane, freerunway);
+        }
+        else{
+            sendSignalWaiting(airplane);
+        }
+    }
+    else if(airplane->getPermission()=="5000"&&airplane->getHeight()==5000){
+        if(!buzy3000){
+            sendSignalPermission3000(airplane);
+        }
+        else{
+            sendSignalWaiting(airplane);
+        }
+    }
+    else if(airplane->getPermission()=="10000"&&airplane->getHeight()==10000){
+        if(!buzy5000){
+            sendSignalPermission5000(airplane);
+        }
+        else{
+            sendSignalWaiting(airplane);
+        }
+    }
+    else{
+        return;
+    }
+    //loop back
+    if(airplane->getPermission()!="0"&&isDoingNothing()){
+        incomingSignal.push_back(pair<Airplane*,string>(airplane,"Approaching"));
+    }
+}
+
+void Signaltower::regulateLeavingplane(Airplane *airplane) {
+    if(!airplane->getLocation()->isCrossing()||!isDoingNothing()){
+        sendSignalLineup(airplane,true);
+    }
+    else{
+        incomingSignal.push_back(pair<Airplane*,string>(airplane,"Leaving"));
+    }
+}
+
+void Signaltower::parse_signal(Airplane *airplane, string stringSignal) {
+    if (stringSignal == "ApproachingtoGate") {
+        airplane->setInstruction(vector<Location *>());
+        vector<Location *> instruction = makeInstructionToGate(airplane);
+        if (instruction.size() > 0) {
+            sendInstruction(airplane, instruction);
+        }
+    } else if (stringSignal == "LeavingtoRunway") {
+        if (airplane->getDestinateRunway() != NULL) {
+            vector<Location *> instruction = makeInstructionToRunway(airplane);
+            if (instruction.size() > 0) {
+                sendInstruction(airplane, instruction);
+            }
+        }
+    } else if (stringSignal == "Emergency") {
+        emergency.push_back(airplane);
+    } else if (stringSignal == "Push back") {
+        Runway *destinaterunway = airport->findFreeRunway(airplane);
+        Gate* gate=airport->getGateFromAirplane(airplane);
+        if (destinaterunway&&gate->getPlaneNearGate()==NULL) {
+            sendSignalPushBack(airplane, destinaterunway);
+        }
+    } else if (stringSignal == "IFR clearancy") {
+        //dont see a reason not to
+        sendSignalIFRclear(airplane);
+
+    } else if (stringSignal == "Crossing runway") {
+        Location *runwayToCross = airplane->getLocation();
+        if (!runwayToCross->isOnuse() && !runwayToCross->isCrossing()) {
+            sendSignalClearedToCross(airplane);
+
+        }
+
+    } else if (stringSignal == "At runway") {
+        Runway *runway = airplane->getDestinateRunway();
+        if (!runway->isCrossing() && !runway->isOnuse() && runway->getPlaneAtbegin() == NULL) {
+            sendSignalLineup(airplane, true);
+
+        } else if (!runway->isOnuse() && runway->getPlaneAtbegin() == NULL) {
+            sendSignalLineup(airplane, false);
+
+        }
+    }
+    else if(stringSignal == "Waiting"){
+        approachingAirplanes.push_back(airplane);
+    }
+    else if(stringSignal == "Approaching"){
+        regulateApproachingplane(airplane);
+    }
+    else if(stringSignal == "Leaving"){
+        regulateLeavingplane(airplane);
+    }
+    else{
+        cerr << "error signal" << endl;
+    }
 }
 

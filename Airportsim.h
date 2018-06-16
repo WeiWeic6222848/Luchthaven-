@@ -189,6 +189,9 @@ public:
      */
     void Simulate();
 
+    void simulate_Onetime();
+
+private:
     /**
      *     REQUIRE(ProperInitialized(),"Airportsim object wasn't initialized when calling landingstep");
      *     REQUIRE(approaching.ProperInitialized(),"Airplane wasn't initialized when calling landingstep");
@@ -245,6 +248,7 @@ public:
     void writeIni(Airport& airport);
 
     void createVisual(Airport& airport);
+
 };
 
 

@@ -1,4 +1,4 @@
-# Install script for directory: /home/uauser/CLionProjects/Luchthaven-
+# Install script for directory: /home/c6222848/Luchthaven-
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/uauser/CLionProjects/Luchthaven-/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/c6222848/Luchthaven-/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

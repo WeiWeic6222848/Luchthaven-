@@ -366,7 +366,7 @@ void Airportsim::Simulate() {
      bool  alreadypushed=false;
      int chillingcounter=0;
 
-     int toweraction=0;
+     //int toweraction=0;
      while (!Airplanes.empty()){
          airplanestoremove.clear();
          string status;
@@ -426,7 +426,9 @@ void Airportsim::Simulate() {
          for (unsigned int k = 0; k < Airports.size(); ++k) {
              chillingcounter=0;
              do{
+                 Airports[k]->getTower().sendSignal();
                  chillingcounter++;
+                 /*
                  bool doingnothing=Airports[k]->getTower().isDoingNothing();
                  if(toweraction==1)goto one;
                  else if(toweraction==2)goto two;
@@ -466,7 +468,7 @@ void Airportsim::Simulate() {
                          toweraction=-1;
                          doingnothing=!doingnothing;
                      }
-                 }
+                 }*/
              }while(Airports[k]->getTower().isDoingNothing()&&chillingcounter<3);
 
              Airports[k]->getTower().timeRuns();
@@ -552,6 +554,7 @@ void Airportsim::Simulate() {
                  Airports[k]->getTower().regulateLeavingplanes();
              }
          }*/
+
          generateFloorPlan(*getAirports()[0]);
          createVisual(*getAirports()[0]);
          timespec tim, tim2;
@@ -626,7 +629,7 @@ void Airportsim::landingstep(Airplane &approaching, Airport &airport) {
             approaching.setStatus("Taxiing to gate");
         };
     }
-    if (approaching.getHeight()==10000&&approaching.getPermission()!="10000"){
+    else if (approaching.getHeight()==10000&&approaching.getPermission()!="10000"){
         if(approaching.isDoingNothing()){
             outputfile<<approaching.getCallsign()<<" is approaching "<<airport.getName()<<" at 10000 ft."<<endl;
         }
@@ -722,6 +725,8 @@ void Airportsim::taxiingToGatestep(Airplane &taxiingplane, Airport &airport) {
                 }
             }
             outputfile<<taxiingplane.getCallsign()<<" is standing at Gate "<<taxiingplane.getLocation()->getName()<<endl;
+            vector<Location*> empty;
+            taxiingplane.setInstruction(empty);
             taxiingplane.setStatus("Standing at gate");
         }
         else if(taxiingplane.getLocation()==taxiingplane.getDestinateRunway()){
@@ -1406,6 +1411,64 @@ void Airportsim::createVisual(Airport &airport) {
     writeIni(airport);
     string filename = "../Engine/./engine ../output/settings_2D_[" + airport.getIata() + "]"+".ini";
     system(filename.c_str());
+}
+
+void Airportsim::simulate_Onetime() {
+    vector<int> airplanestoremove;
+    bool  alreadypushed=false;
+    int chillingcounter=0;
+    string status;
+
+    for (unsigned int j = 0; j < Airplanes.size(); ++j) {
+        alreadypushed=false;
+        chillingcounter=0;
+        do{
+            status=Airplanes[j]->getStatus();
+            chillingcounter++;
+            if(status=="Approaching"||status=="Landed"){
+                landingstep(*Airplanes[j],*Airplanes[j]->getDestination());
+            }
+            else if(status=="Standing at gate"){
+                airplaneAtGatestep(*Airplanes[j],*Airplanes[j]->getDestination());
+            }
+            else if(status=="Taxiing to gate"){
+                taxiingToGatestep(*Airplanes[j],*Airplanes[j]->getDestination());
+            }
+            else if(status=="Leaving"){
+                leavingstep(*Airplanes[j],*Airplanes[j]->getDestination());
+            }
+            else if(status=="Taxiing to runway"){
+                taxiingToRunwaystep(*Airplanes[j],*Airplanes[j]->getDestination());
+            }
+            else if(status=="jobsdone"&&!alreadypushed){
+                airplanestoremove.push_back(j);
+                alreadypushed=true;
+            }
+        }while(Airplanes[j]->isDoingNothing()&&chillingcounter<3);
+        Airplanes[j]->timeRuns();
+    }
+    for (unsigned int k = 0; k < Airports.size(); ++k) {
+        chillingcounter=0;
+        do{
+            Airports[k]->getTower().sendSignal();
+            chillingcounter++;
+        }while(Airports[k]->getTower().isDoingNothing()&&chillingcounter<3);
+
+        Airports[k]->getTower().timeRuns();
+
+    }
+
+    //generateFloorPlan(*getAirports()[0]);
+    //createVisual(*getAirports()[0]);
+    //timespec tim, tim2;
+    //tim.tv_nsec=500000000L;
+    //tim.tv_sec=0;
+    //nanosleep(&tim,&tim2);
+    for (unsigned int i = 0; i < airplanestoremove.size(); ++i) {
+        AirplanesFlying.push_back((Airplanes.begin() + airplanestoremove[i] - i).operator*());
+        Airplanes.erase(Airplanes.begin() + airplanestoremove[i] - i);
+    }
+    currentTime=currentTime++;
 }
 
 

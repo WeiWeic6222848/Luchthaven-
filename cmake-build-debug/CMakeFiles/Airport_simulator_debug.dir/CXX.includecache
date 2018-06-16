@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -246,69 +246,69 @@ cxxabi.h
 acxx_demangle.h
 -
 
-/home/uauser/CLionProjects/Luchthaven-/Airplane.cpp
+/home/c6222848/Luchthaven-/Airplane.cpp
 Airplane.h
-/home/uauser/CLionProjects/Luchthaven-/Airplane.h
+/home/c6222848/Luchthaven-/Airplane.h
 DesignByContract.h
-/home/uauser/CLionProjects/Luchthaven-/DesignByContract.h
+/home/c6222848/Luchthaven-/DesignByContract.h
 AirportUtils.h
-/home/uauser/CLionProjects/Luchthaven-/AirportUtils.h
+/home/c6222848/Luchthaven-/AirportUtils.h
 
-/home/uauser/CLionProjects/Luchthaven-/Airplane.h
+/home/c6222848/Luchthaven-/Airplane.h
 string
-/home/uauser/CLionProjects/Luchthaven-/string
+/home/c6222848/Luchthaven-/string
 iostream
 -
 vector
 -
 list
-/home/uauser/CLionProjects/Luchthaven-/list
+/home/c6222848/Luchthaven-/list
 Airport.h
-/home/uauser/CLionProjects/Luchthaven-/Airport.h
+/home/c6222848/Luchthaven-/Airport.h
 Time.h
-/home/uauser/CLionProjects/Luchthaven-/Time.h
+/home/c6222848/Luchthaven-/Time.h
 algorithm
-/home/uauser/CLionProjects/Luchthaven-/algorithm
+/home/c6222848/Luchthaven-/algorithm
 
-/home/uauser/CLionProjects/Luchthaven-/Airport.cpp
+/home/c6222848/Luchthaven-/Airport.cpp
 Airport.h
-/home/uauser/CLionProjects/Luchthaven-/Airport.h
+/home/c6222848/Luchthaven-/Airport.h
 DesignByContract.h
-/home/uauser/CLionProjects/Luchthaven-/DesignByContract.h
+/home/c6222848/Luchthaven-/DesignByContract.h
 AirportUtils.h
-/home/uauser/CLionProjects/Luchthaven-/AirportUtils.h
+/home/c6222848/Luchthaven-/AirportUtils.h
 
-/home/uauser/CLionProjects/Luchthaven-/Airport.h
+/home/c6222848/Luchthaven-/Airport.h
 vector
 -
 string
-/home/uauser/CLionProjects/Luchthaven-/string
+/home/c6222848/Luchthaven-/string
 Runway.h
-/home/uauser/CLionProjects/Luchthaven-/Runway.h
+/home/c6222848/Luchthaven-/Runway.h
 Signaltower.h
-/home/uauser/CLionProjects/Luchthaven-/Signaltower.h
+/home/c6222848/Luchthaven-/Signaltower.h
 Taxipoint.h
-/home/uauser/CLionProjects/Luchthaven-/Taxipoint.h
+/home/c6222848/Luchthaven-/Taxipoint.h
 Gate.h
-/home/uauser/CLionProjects/Luchthaven-/Gate.h
+/home/c6222848/Luchthaven-/Gate.h
 Time.h
-/home/uauser/CLionProjects/Luchthaven-/Time.h
+/home/c6222848/Luchthaven-/Time.h
 iostream
 -
 limits
 -
 algorithm
-/home/uauser/CLionProjects/Luchthaven-/algorithm
+/home/c6222848/Luchthaven-/algorithm
 
-/home/uauser/CLionProjects/Luchthaven-/AirportUtils.cpp
+/home/c6222848/Luchthaven-/AirportUtils.cpp
 sys/stat.h
 -
 AirportUtils.h
-/home/uauser/CLionProjects/Luchthaven-/AirportUtils.h
+/home/c6222848/Luchthaven-/AirportUtils.h
 
-/home/uauser/CLionProjects/Luchthaven-/AirportUtils.h
+/home/c6222848/Luchthaven-/AirportUtils.h
 string
-/home/uauser/CLionProjects/Luchthaven-/string
+/home/c6222848/Luchthaven-/string
 fstream
 -
 cstdlib
@@ -316,49 +316,49 @@ cstdlib
 sstream
 -
 AirportsimImporter.h
-/home/uauser/CLionProjects/Luchthaven-/AirportsimImporter.h
+/home/c6222848/Luchthaven-/AirportsimImporter.h
 tinyxml.h
-/home/uauser/CLionProjects/Luchthaven-/tinyxml.h
+/home/c6222848/Luchthaven-/tinyxml.h
 
-/home/uauser/CLionProjects/Luchthaven-/Airportsim.cpp
+/home/c6222848/Luchthaven-/Airportsim.cpp
 Airportsim.h
-/home/uauser/CLionProjects/Luchthaven-/Airportsim.h
+/home/c6222848/Luchthaven-/Airportsim.h
 DesignByContract.h
-/home/uauser/CLionProjects/Luchthaven-/DesignByContract.h
+/home/c6222848/Luchthaven-/DesignByContract.h
 AirportUtils.h
-/home/uauser/CLionProjects/Luchthaven-/AirportUtils.h
+/home/c6222848/Luchthaven-/AirportUtils.h
 
-/home/uauser/CLionProjects/Luchthaven-/Airportsim.h
+/home/c6222848/Luchthaven-/Airportsim.h
 vector
-/home/uauser/CLionProjects/Luchthaven-/vector
+/home/c6222848/Luchthaven-/vector
 Airport.h
-/home/uauser/CLionProjects/Luchthaven-/Airport.h
+/home/c6222848/Luchthaven-/Airport.h
 iostream
 -
 cmath
 -
 
-/home/uauser/CLionProjects/Luchthaven-/AirportsimImporter.cpp
+/home/c6222848/Luchthaven-/AirportsimImporter.cpp
 DesignByContract.h
-/home/uauser/CLionProjects/Luchthaven-/DesignByContract.h
+/home/c6222848/Luchthaven-/DesignByContract.h
 AirportsimImporter.h
-/home/uauser/CLionProjects/Luchthaven-/AirportsimImporter.h
+/home/c6222848/Luchthaven-/AirportsimImporter.h
 AirportUtils.h
-/home/uauser/CLionProjects/Luchthaven-/AirportUtils.h
+/home/c6222848/Luchthaven-/AirportUtils.h
 
-/home/uauser/CLionProjects/Luchthaven-/AirportsimImporter.h
+/home/c6222848/Luchthaven-/AirportsimImporter.h
 ostream
 -
 Airportsim.h
-/home/uauser/CLionProjects/Luchthaven-/Airportsim.h
+/home/c6222848/Luchthaven-/Airportsim.h
 tinyxml.h
-/home/uauser/CLionProjects/Luchthaven-/tinyxml.h
+/home/c6222848/Luchthaven-/tinyxml.h
 
-/home/uauser/CLionProjects/Luchthaven-/DesignByContract.h
+/home/c6222848/Luchthaven-/DesignByContract.h
 assert.h
 -
 
-/home/uauser/CLionProjects/Luchthaven-/DomeinTest.cpp
+/home/c6222848/Luchthaven-/DomeinTest.cpp
 iostream
 -
 fstream
@@ -368,23 +368,23 @@ sys/stat.h
 gtest/gtest.h
 -
 DesignByContract.h
-/home/uauser/CLionProjects/Luchthaven-/DesignByContract.h
+/home/c6222848/Luchthaven-/DesignByContract.h
 Airportsim.h
-/home/uauser/CLionProjects/Luchthaven-/Airportsim.h
+/home/c6222848/Luchthaven-/Airportsim.h
 AirportUtils.h
-/home/uauser/CLionProjects/Luchthaven-/AirportUtils.h
+/home/c6222848/Luchthaven-/AirportUtils.h
 
-/home/uauser/CLionProjects/Luchthaven-/Gate.cpp
+/home/c6222848/Luchthaven-/Gate.cpp
 Gate.h
-/home/uauser/CLionProjects/Luchthaven-/Gate.h
+/home/c6222848/Luchthaven-/Gate.h
 DesignByContract.h
-/home/uauser/CLionProjects/Luchthaven-/DesignByContract.h
+/home/c6222848/Luchthaven-/DesignByContract.h
 
-/home/uauser/CLionProjects/Luchthaven-/Gate.h
+/home/c6222848/Luchthaven-/Gate.h
 Location.h
-/home/uauser/CLionProjects/Luchthaven-/Location.h
+/home/c6222848/Luchthaven-/Location.h
 
-/home/uauser/CLionProjects/Luchthaven-/ImportTest.cpp
+/home/c6222848/Luchthaven-/ImportTest.cpp
 iostream
 -
 fstream
@@ -394,29 +394,29 @@ sys/stat.h
 gtest/gtest.h
 -
 DesignByContract.h
-/home/uauser/CLionProjects/Luchthaven-/DesignByContract.h
+/home/c6222848/Luchthaven-/DesignByContract.h
 Airportsim.h
-/home/uauser/CLionProjects/Luchthaven-/Airportsim.h
+/home/c6222848/Luchthaven-/Airportsim.h
 AirportUtils.h
-/home/uauser/CLionProjects/Luchthaven-/AirportUtils.h
+/home/c6222848/Luchthaven-/AirportUtils.h
 AirportsimImporter.h
-/home/uauser/CLionProjects/Luchthaven-/AirportsimImporter.h
+/home/c6222848/Luchthaven-/AirportsimImporter.h
 
-/home/uauser/CLionProjects/Luchthaven-/Location.cpp
+/home/c6222848/Luchthaven-/Location.cpp
 Location.h
-/home/uauser/CLionProjects/Luchthaven-/Location.h
+/home/c6222848/Luchthaven-/Location.h
 DesignByContract.h
-/home/uauser/CLionProjects/Luchthaven-/DesignByContract.h
+/home/c6222848/Luchthaven-/DesignByContract.h
 
-/home/uauser/CLionProjects/Luchthaven-/Location.h
+/home/c6222848/Luchthaven-/Location.h
 vector
 -
 string
-/home/uauser/CLionProjects/Luchthaven-/string
+/home/c6222848/Luchthaven-/string
 algorithm
-/home/uauser/CLionProjects/Luchthaven-/algorithm
+/home/c6222848/Luchthaven-/algorithm
 
-/home/uauser/CLionProjects/Luchthaven-/OutputTest.cpp
+/home/c6222848/Luchthaven-/OutputTest.cpp
 iostream
 -
 fstream
@@ -426,111 +426,111 @@ sys/stat.h
 gtest/gtest.h
 -
 DesignByContract.h
-/home/uauser/CLionProjects/Luchthaven-/DesignByContract.h
+/home/c6222848/Luchthaven-/DesignByContract.h
 Airportsim.h
-/home/uauser/CLionProjects/Luchthaven-/Airportsim.h
+/home/c6222848/Luchthaven-/Airportsim.h
 AirportUtils.h
-/home/uauser/CLionProjects/Luchthaven-/AirportUtils.h
+/home/c6222848/Luchthaven-/AirportUtils.h
 output_system.h
-/home/uauser/CLionProjects/Luchthaven-/output_system.h
+/home/c6222848/Luchthaven-/output_system.h
 
-/home/uauser/CLionProjects/Luchthaven-/Runway.cpp
+/home/c6222848/Luchthaven-/Runway.cpp
 Runway.h
-/home/uauser/CLionProjects/Luchthaven-/Runway.h
+/home/c6222848/Luchthaven-/Runway.h
 DesignByContract.h
-/home/uauser/CLionProjects/Luchthaven-/DesignByContract.h
+/home/c6222848/Luchthaven-/DesignByContract.h
 
-/home/uauser/CLionProjects/Luchthaven-/Runway.h
+/home/c6222848/Luchthaven-/Runway.h
 string
-/home/uauser/CLionProjects/Luchthaven-/string
+/home/c6222848/Luchthaven-/string
 Airplane.h
-/home/uauser/CLionProjects/Luchthaven-/Airplane.h
+/home/c6222848/Luchthaven-/Airplane.h
 Location.h
-/home/uauser/CLionProjects/Luchthaven-/Location.h
+/home/c6222848/Luchthaven-/Location.h
 
-/home/uauser/CLionProjects/Luchthaven-/Signaltower.cpp
+/home/c6222848/Luchthaven-/Signaltower.cpp
 Signaltower.h
-/home/uauser/CLionProjects/Luchthaven-/Signaltower.h
+/home/c6222848/Luchthaven-/Signaltower.h
 DesignByContract.h
-/home/uauser/CLionProjects/Luchthaven-/DesignByContract.h
+/home/c6222848/Luchthaven-/DesignByContract.h
 
-/home/uauser/CLionProjects/Luchthaven-/Signaltower.h
+/home/c6222848/Luchthaven-/Signaltower.h
 Airplane.h
-/home/uauser/CLionProjects/Luchthaven-/Airplane.h
+/home/c6222848/Luchthaven-/Airplane.h
 vector
-/home/uauser/CLionProjects/Luchthaven-/vector
+/home/c6222848/Luchthaven-/vector
 Airport.h
-/home/uauser/CLionProjects/Luchthaven-/Airport.h
+/home/c6222848/Luchthaven-/Airport.h
 fstream
-/home/uauser/CLionProjects/Luchthaven-/fstream
+/home/c6222848/Luchthaven-/fstream
 Time.h
-/home/uauser/CLionProjects/Luchthaven-/Time.h
+/home/c6222848/Luchthaven-/Time.h
 string
-/home/uauser/CLionProjects/Luchthaven-/string
+/home/c6222848/Luchthaven-/string
 algorithm
-/home/uauser/CLionProjects/Luchthaven-/algorithm
+/home/c6222848/Luchthaven-/algorithm
 
-/home/uauser/CLionProjects/Luchthaven-/Taxipoint.cpp
+/home/c6222848/Luchthaven-/Taxipoint.cpp
 Taxipoint.h
-/home/uauser/CLionProjects/Luchthaven-/Taxipoint.h
+/home/c6222848/Luchthaven-/Taxipoint.h
 DesignByContract.h
-/home/uauser/CLionProjects/Luchthaven-/DesignByContract.h
+/home/c6222848/Luchthaven-/DesignByContract.h
 
-/home/uauser/CLionProjects/Luchthaven-/Taxipoint.h
+/home/c6222848/Luchthaven-/Taxipoint.h
 Runway.h
-/home/uauser/CLionProjects/Luchthaven-/Runway.h
+/home/c6222848/Luchthaven-/Runway.h
 Location.h
-/home/uauser/CLionProjects/Luchthaven-/Location.h
+/home/c6222848/Luchthaven-/Location.h
 algorithm
-/home/uauser/CLionProjects/Luchthaven-/algorithm
+/home/c6222848/Luchthaven-/algorithm
 
-/home/uauser/CLionProjects/Luchthaven-/Time.cpp
+/home/c6222848/Luchthaven-/Time.cpp
 Time.h
-/home/uauser/CLionProjects/Luchthaven-/Time.h
+/home/c6222848/Luchthaven-/Time.h
 string
-/home/uauser/CLionProjects/Luchthaven-/string
+/home/c6222848/Luchthaven-/string
 
-/home/uauser/CLionProjects/Luchthaven-/Time.h
+/home/c6222848/Luchthaven-/Time.h
 iostream
-/home/uauser/CLionProjects/Luchthaven-/iostream
+/home/c6222848/Luchthaven-/iostream
 DesignByContract.h
-/home/uauser/CLionProjects/Luchthaven-/DesignByContract.h
+/home/c6222848/Luchthaven-/DesignByContract.h
 
-/home/uauser/CLionProjects/Luchthaven-/output_system.cpp
+/home/c6222848/Luchthaven-/output_system.cpp
 output_system.h
-/home/uauser/CLionProjects/Luchthaven-/output_system.h
+/home/c6222848/Luchthaven-/output_system.h
 DesignByContract.h
-/home/uauser/CLionProjects/Luchthaven-/DesignByContract.h
+/home/c6222848/Luchthaven-/DesignByContract.h
 AirportUtils.h
-/home/uauser/CLionProjects/Luchthaven-/AirportUtils.h
+/home/c6222848/Luchthaven-/AirportUtils.h
 
-/home/uauser/CLionProjects/Luchthaven-/output_system.h
+/home/c6222848/Luchthaven-/output_system.h
 fstream
 -
 Airportsim.h
-/home/uauser/CLionProjects/Luchthaven-/Airportsim.h
+/home/c6222848/Luchthaven-/Airportsim.h
 
-/home/uauser/CLionProjects/Luchthaven-/test.cpp
+/home/c6222848/Luchthaven-/test.cpp
 fstream
 -
 gtest/gtest.h
-/home/uauser/CLionProjects/Luchthaven-/gtest/gtest.h
+/home/c6222848/Luchthaven-/gtest/gtest.h
 Airportsim.h
-/home/uauser/CLionProjects/Luchthaven-/Airportsim.h
+/home/c6222848/Luchthaven-/Airportsim.h
 AirportUtils.h
-/home/uauser/CLionProjects/Luchthaven-/AirportUtils.h
+/home/c6222848/Luchthaven-/AirportUtils.h
 
-/home/uauser/CLionProjects/Luchthaven-/tinystr.cpp
+/home/c6222848/Luchthaven-/tinystr.cpp
 tinystr.h
-/home/uauser/CLionProjects/Luchthaven-/tinystr.h
+/home/c6222848/Luchthaven-/tinystr.h
 
-/home/uauser/CLionProjects/Luchthaven-/tinystr.h
+/home/c6222848/Luchthaven-/tinystr.h
 assert.h
 -
 string.h
 -
 
-/home/uauser/CLionProjects/Luchthaven-/tinyxml.cpp
+/home/c6222848/Luchthaven-/tinyxml.cpp
 ctype.h
 -
 sstream
@@ -538,9 +538,9 @@ sstream
 iostream
 -
 tinyxml.h
-/home/uauser/CLionProjects/Luchthaven-/tinyxml.h
+/home/c6222848/Luchthaven-/tinyxml.h
 
-/home/uauser/CLionProjects/Luchthaven-/tinyxml.h
+/home/c6222848/Luchthaven-/tinyxml.h
 ctype.h
 -
 stdio.h
@@ -558,19 +558,19 @@ iostream
 sstream
 -
 tinystr.h
-/home/uauser/CLionProjects/Luchthaven-/tinystr.h
+/home/c6222848/Luchthaven-/tinystr.h
 
-/home/uauser/CLionProjects/Luchthaven-/tinyxmlerror.cpp
+/home/c6222848/Luchthaven-/tinyxmlerror.cpp
 tinyxml.h
-/home/uauser/CLionProjects/Luchthaven-/tinyxml.h
+/home/c6222848/Luchthaven-/tinyxml.h
 
-/home/uauser/CLionProjects/Luchthaven-/tinyxmlparser.cpp
+/home/c6222848/Luchthaven-/tinyxmlparser.cpp
 ctype.h
 -
 stddef.h
 -
 tinyxml.h
-/home/uauser/CLionProjects/Luchthaven-/tinyxml.h
+/home/c6222848/Luchthaven-/tinyxml.h
 windows.h
 -
 

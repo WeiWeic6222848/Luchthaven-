@@ -1,0 +1,54 @@
+<AirportSim>
+
+    <AIRPORT>
+
+        <name>Antwerp International Airport</name>
+
+        <iata>ANR</iata>
+
+        <callsign>Antwerp Tower</callsign>
+
+        <gates>10</gates>
+
+    </AIRPORT>
+
+    <RUNWAY>
+
+        <name>11R</name>
+
+        <airport>ANR</airport>
+
+        <type>asphalt</type>
+
+        <length>30000</length>
+
+        <TAXIROUTE>
+
+            <taxipoint>Alpha</taxipoint>
+
+        </TAXIROUTE>
+
+    </RUNWAY>
+
+    <RUNWAY>
+
+        <name>12R</name>
+
+        <airport>ANR</airport>
+
+        <type>asphalt</type>
+
+        <length>30000</length>
+
+        <TAXIROUTE>
+            <taxipoint>Alpha</taxipoint>
+
+            <crossing> 11R </crossing>
+
+            <taxipoint>Beta</taxipoint>
+
+
+        </TAXIROUTE>
+
+    </RUNWAY>
+</AirportSim>

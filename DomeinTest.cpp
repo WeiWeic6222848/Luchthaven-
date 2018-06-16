@@ -29,8 +29,6 @@ protected:
 };
 
 TEST_F(AirplaneDomeinTest,gettersTestPlane){
-
-
     //settings
     string filename="../domeinTest/Airplane.xml";
 
@@ -112,6 +110,8 @@ TEST_F(AirplaneDomeinTest,gettersTestPlane){
     abcd.push_back(&nextlocation);*/
 
 }
+
+
 TEST_F(AirplaneDomeinTest,settersTestPlane) {
 
 
@@ -300,6 +300,8 @@ TEST_F(AirplaneDomeinTest, testingLocation){
     LoadAirport(filename.c_str(), a, simulator);
 
 }
+
+
 TEST_F(AirplaneDomeinTest,invalidInput){
 
 
@@ -344,4 +346,670 @@ TEST_F(AirplaneDomeinTest,gettersTaxpoint){
     EXPECT_TRUE(testsubject->getPlanesWaiting().empty());
     EXPECT_TRUE(testsubject->getRunwayonpoint()==simulator.getAirports()[0]->getRunways()[0]);
 
+}
+
+
+TEST_F(AirplaneDomeinTest,SimulationGeneralTest) {
+    //settings
+    string filename = "../domeinTest/SimulationTest.xml";
+
+    string type="airline";
+    string engine="jet";
+    string size="large";
+    //endofsettings
+
+    ofstream a;
+
+    int fallingminute=0;
+    int takeoffminute= 2;
+    if(engine=="propeller"){
+        fallingminute = 2;
+        takeoffminute= 3;
+    }
+    else if(engine=="jet"){
+        fallingminute = 1;
+        takeoffminute= 2;
+    }
+    int landingminute = 2;
+    int taxiingminute = 5;
+    int crossingminute = 1;
+
+    LoadAirport(filename.c_str(), a, simulator);
+    Airplane *testsubject = new Airplane("Approaching","TestApproach_Subject_001","TAS001","TAS",type,engine,size,1,10,10,simulator.getAirports()[0]);
+    simulator.addAirplane(testsubject);
+    //made the test subject;
+
+    //subject contact air-controller
+    simulator.simulate_Onetime();
+    EXPECT_TRUE(!testsubject->isDoingNothing());
+    EXPECT_TRUE(testsubject->getHeight()==10000);
+    EXPECT_TRUE(testsubject->getPermission()=="");//permission is empty when aircontroller didnt get any messenge;
+
+    //air-controller gets subject's contact and try to contact subject
+    simulator.simulate_Onetime();
+    EXPECT_TRUE(!testsubject->isDoingNothing());//subject waiting for return signal and shouldnt be able to do anything atm;
+    EXPECT_TRUE(testsubject->getHeight()==10000);
+    EXPECT_TRUE(testsubject->getPermission()=="10000");//permission setted by aircontroller to control.
+
+    //subject gets air-controller messenge to fall;
+    simulator.simulate_Onetime();
+    EXPECT_TRUE(testsubject->isDoingNothing());
+    EXPECT_TRUE(testsubject->getHeight()==10000);
+    EXPECT_TRUE(testsubject->getPermission()=="5000");
+
+    //plane gets messenge, reacting;
+    simulator.simulate_Onetime();
+    EXPECT_TRUE(!testsubject->isDoingNothing());
+    EXPECT_TRUE(testsubject->getHeight()==10000);
+    EXPECT_TRUE(testsubject->getPermission()=="5000");
+
+    //after that plane knows he should continue falling, it's gonna be 2min each time;
+    for (int j = 0; j <5 ; ++j) {
+        for (int i = 0; i < fallingminute; ++i) {
+            EXPECT_TRUE(!testsubject->isDoingNothing());
+            simulator.simulate_Onetime();
+        }
+
+        EXPECT_TRUE(testsubject->getPermission()=="5000");
+        EXPECT_TRUE(testsubject->getHeight()==10000-1000*(j+1));
+    }
+
+    EXPECT_TRUE(testsubject->isDoingNothing());
+    EXPECT_TRUE(testsubject->getHeight()==5000);
+    EXPECT_TRUE(testsubject->getPermission()=="5000");
+    //airplane at 5000 meter standing still(potentially flying around but not falling)
+    // waiting for tower to react.
+    //tower should have detected it right away and start to contact airplane
+
+    //plane gets messenge, reacting;
+    simulator.simulate_Onetime();
+    EXPECT_TRUE(testsubject->isDoingNothing());//just got messenge shouldnt have moved yet.
+    EXPECT_TRUE(testsubject->getHeight()==5000);
+    EXPECT_TRUE(testsubject->getPermission()=="3000");
+
+
+    //plane starts moving again;
+    simulator.simulate_Onetime();
+    EXPECT_TRUE(!testsubject->isDoingNothing());
+    EXPECT_TRUE(testsubject->getHeight()==5000);
+    EXPECT_TRUE(testsubject->getPermission()=="3000");
+
+    for (int j = 0; j <2 ; ++j) {
+        for (int i = 0; i < fallingminute; ++i) {
+            EXPECT_TRUE(!testsubject->isDoingNothing());
+            simulator.simulate_Onetime();
+        }
+
+        EXPECT_TRUE(testsubject->getPermission()=="3000");
+        EXPECT_TRUE(testsubject->getHeight()==5000-1000*(j+1));
+    }
+
+    EXPECT_TRUE(testsubject->isDoingNothing());
+    EXPECT_TRUE(testsubject->getHeight()==3000);
+    EXPECT_TRUE(testsubject->getPermission()=="3000");
+    //airplane at 3000 meter standing still(potentially flying around but not falling)
+    // waiting for tower to react.
+    //tower should have detected it right away and start to contact airplane
+
+    //plane gets messenge, reacting;
+    simulator.simulate_Onetime();
+    EXPECT_TRUE(testsubject->isDoingNothing());//just got messenge shouldnt have moved yet.
+    EXPECT_TRUE(testsubject->getHeight()==3000);
+    EXPECT_TRUE(testsubject->getPermission()=="0");
+
+    //plane starts moving again;
+    simulator.simulate_Onetime();
+    EXPECT_TRUE(!testsubject->isDoingNothing());
+    EXPECT_TRUE(testsubject->getHeight()==3000);
+    EXPECT_TRUE(testsubject->getPermission()=="0");
+
+    for (int j = 0; j <3; ++j) {
+        for (int i = 0; i < fallingminute; ++i) {
+            EXPECT_TRUE(!testsubject->isDoingNothing());
+            simulator.simulate_Onetime();
+        }
+
+        EXPECT_TRUE(testsubject->getPermission()=="0");
+        EXPECT_TRUE(testsubject->getHeight()==3000-1000*(j+1));
+    }
+
+    //subject starts to land on the runway;
+    EXPECT_TRUE(!testsubject->isDoingNothing());
+    EXPECT_TRUE(testsubject->getHeight()==0);
+    EXPECT_TRUE(testsubject->getPermission()=="0");
+
+    for (int k = 0; k <landingminute ; ++k) {
+        simulator.simulate_Onetime();
+    }
+
+    //once landed, airplane going to send messenge to tower for taxiing.
+    EXPECT_TRUE(!testsubject->isDoingNothing());
+    EXPECT_TRUE(testsubject->getHeight()==0);
+    EXPECT_TRUE(testsubject->getPermission()=="0");
+    EXPECT_TRUE(testsubject->getStatus()=="Landed");
+
+    //tower gets messenge;
+    simulator.simulate_Onetime();
+    EXPECT_TRUE(!testsubject->isDoingNothing());
+    EXPECT_TRUE(testsubject->getHeight()==0);
+    EXPECT_TRUE(testsubject->getPermission()=="0");
+    EXPECT_TRUE(testsubject->getStatus()=="Landed");
+
+    //tower reacted, airplane gets messenge, airplane reacting;
+    //tower gives instruction right away.
+    simulator.simulate_Onetime();
+    EXPECT_TRUE(testsubject->isDoingNothing());
+    //atm airplane doesnt need to wait for another signal nor is it doing something.
+    //so isDoingNothing means -> airplane can now proceed to next move.
+    EXPECT_TRUE(testsubject->getHeight()==0);
+    EXPECT_TRUE(testsubject->getPermission()=="Taxiing");
+    EXPECT_TRUE(testsubject->getStatus()=="Landed");
+    EXPECT_TRUE(!testsubject->getInstruction().empty());
+    EXPECT_TRUE(testsubject->getLocation()==testsubject->getInstruction()[0]);
+
+
+
+
+
+
+
+
+
+
+
+
+    //proceed to taxiing to gate state.
+    //airplane change it's status, proceed to taxiing stage;
+    simulator.simulate_Onetime();
+    EXPECT_TRUE(!testsubject->isDoingNothing());//testsubject taxiing to taxipoint.
+    //EXPECT_TRUE(testsubject->getHeight()==0);
+    //height doesnt matter now
+    EXPECT_TRUE(testsubject->getPermission()=="Taxiing");
+    EXPECT_TRUE(testsubject->getStatus()=="Taxiing to gate");
+    EXPECT_TRUE(!testsubject->getInstruction().empty());
+    EXPECT_TRUE(testsubject->getLocation()==testsubject->getInstruction()[1]);
+
+
+    //testsubject goes on taxiing
+    //this should be a while loop.
+    while(!testsubject->getLocation()->isGate()){
+        int m=2;
+        //m=2, means that this is the third element on the instruction
+        //instruction contains:current location as first element(runway), adjesing taxipoint as second element, and the next runway/gate as 3rd element
+        //should always test on the case that m==2, and test the whole instruction at once;
+
+
+        for (int l = 0; l <taxiingminute ; ++l) {
+            EXPECT_TRUE(!testsubject->isDoingNothing());//testsubject taxiing in taxipoint
+            EXPECT_TRUE(testsubject->getLocation()->isTaxipoint());
+            simulator.simulate_Onetime();
+        }
+        //airplane is now at runway or a gate
+
+        //if the test subject is going to cross runway
+        if(testsubject->getLocation()->isRunway()){
+            //airplane at runway sending signal to cross runway last minute, and this minute it's finished
+            simulator.simulate_Onetime();
+            EXPECT_TRUE(testsubject->getPermission()=="Taxiing");
+            EXPECT_TRUE(testsubject->getStatus()=="Taxiing to gate");
+            EXPECT_TRUE(testsubject->getLocation()==testsubject->getInstruction()[m]);
+
+            //tower react to airplane, airplane receive messenge.
+            simulator.simulate_Onetime();
+            EXPECT_TRUE(testsubject->getPermission()=="Cleared to cross");//happy day scenario, tower gives permission right away.
+            EXPECT_TRUE(testsubject->getLocation()->isCrossing());
+
+            //airplane reacting.
+            simulator.simulate_Onetime();
+            EXPECT_TRUE(testsubject->getPermission()=="Cleared to cross");//happy day scenario, tower gives permission right away.
+            EXPECT_TRUE(testsubject->getLocation()->isCrossing());
+
+            for (int l = 0; l <crossingminute ; ++l) {
+                EXPECT_TRUE(!testsubject->isDoingNothing());//testsubject crossing runway.
+                EXPECT_TRUE(testsubject->getLocation()->isRunway());
+                simulator.simulate_Onetime();
+            }
+            EXPECT_TRUE(testsubject->getLocation()->isTaxipoint());
+            //a new cycle begins where airplane is taxiing at the next taxipoint.
+        }
+        else if(testsubject->getLocation()->isGate()){
+            //test subject reaches it's destination gate.
+
+            EXPECT_TRUE(testsubject->getPermission()=="");
+            EXPECT_TRUE(testsubject->getLocation()==testsubject->getInstruction()[m]);
+            EXPECT_TRUE(!testsubject->isDoingNothing());//testsubject done taxiing,starts with maintanance/unloading passenger;
+            EXPECT_TRUE(testsubject->getStatus()=="Standing at gate");
+            break;
+        }
+        else{
+            cerr<<"shouldnt happen"<<endl;
+            throw "death";
+        }
+    }
+
+
+
+
+
+
+
+
+
+    //proceed to at gate step;
+    EXPECT_TRUE(testsubject->getPermission()=="");
+    EXPECT_TRUE(testsubject->getStatus()=="Standing at gate");
+    EXPECT_TRUE(!testsubject->isDoingNothing());//testsubject done taxiing,starts with maintanance/unloading passenger;
+    EXPECT_TRUE(testsubject->getCheckProcedure()=="Just landed");
+
+    int passengerminute = 5;
+    int techcontroltime = 1;
+    int pushbackminute = 1;
+    if(testsubject->getSize()=="medium"){
+        passengerminute=10;
+        techcontroltime = 2;
+        pushbackminute = 2;
+    }else if(testsubject->getSize()=="large"){
+        passengerminute=15;
+        techcontroltime = 3;
+        pushbackminute = 3;
+    }
+    else if(testsubject->getSize()=="small"){
+        passengerminute=5;
+        techcontroltime= 1;
+        pushbackminute = 1;
+    }
+    else{
+        cerr<<"doesn't exist size"<<endl;
+        throw;
+    }
+
+    for (int n = 0; n <passengerminute ; ++n) {
+        EXPECT_TRUE(testsubject->getCheckProcedure()=="Just landed");
+        EXPECT_TRUE(!testsubject->isDoingNothing());//unloading passenger;
+        simulator.simulate_Onetime();
+    }
+
+    EXPECT_TRUE(testsubject->getCheckProcedure()=="Technical control");
+    EXPECT_TRUE(testsubject->getPassenger()==0);
+
+    for (int i1 = 0; i1 < techcontroltime ; ++i1) {
+
+        EXPECT_TRUE(testsubject->getCheckProcedure()=="Technical control");
+        EXPECT_TRUE(testsubject->getPassenger()==0);
+        EXPECT_TRUE(!testsubject->isDoingNothing());//tech control;
+        simulator.simulate_Onetime();
+    }
+
+
+    int fuelminute=testsubject->getFuelCapacity()*1.0/10000+0.9999;
+    EXPECT_TRUE(testsubject->getCheckProcedure()=="Refueling");
+    EXPECT_TRUE(testsubject->getPassenger()==0);
+
+    for (int k1 = 0; k1 <fuelminute ; ++k1) {
+        EXPECT_TRUE(testsubject->getCheckProcedure()=="Refueling");
+        EXPECT_TRUE(testsubject->getPassenger()==0);
+        simulator.simulate_Onetime();
+    }
+
+    EXPECT_TRUE(testsubject->getCheckProcedure()=="Boarding");
+    EXPECT_TRUE(testsubject->getPassenger()==0);
+    EXPECT_TRUE(testsubject->getFuelCapacity()==testsubject->getFuel());
+
+    for (int l1 = 0; l1 < passengerminute; ++l1) {
+        EXPECT_TRUE(testsubject->getCheckProcedure()=="Boarding");
+        EXPECT_TRUE(testsubject->getPassenger()==0);
+        EXPECT_TRUE(testsubject->getFuelCapacity()==testsubject->getFuel());
+        simulator.simulate_Onetime();
+    }
+
+    EXPECT_TRUE(testsubject->getCheckProcedure()=="Ready to leave");
+    EXPECT_TRUE(testsubject->getPassenger()==testsubject->getPassengerCapacity());
+    EXPECT_TRUE(testsubject->getFuelCapacity()==testsubject->getFuel());
+
+
+
+    Gate* planegate=testsubject->getDestination()->getGateFromAirplane(testsubject);
+    if(planegate==NULL){
+        cerr<<"???"<<endl;
+        throw;
+    }
+
+    //plane sended signal, tower received it.
+    simulator.simulate_Onetime();
+    EXPECT_TRUE(testsubject->getPermission()=="");
+    EXPECT_TRUE(testsubject->getStatus()=="Standing at gate");
+    EXPECT_TRUE(!testsubject->isDoingNothing());
+    EXPECT_TRUE(planegate->getCurrentPlane()==testsubject);
+
+    //tower sended signal back, happy day so IFR allowed
+    simulator.simulate_Onetime();
+    EXPECT_TRUE(testsubject->getPermission()=="IFR clearancy");
+    EXPECT_TRUE(testsubject->getLocation()==planegate);
+    EXPECT_TRUE(testsubject->getInstruction().empty());
+    EXPECT_TRUE(planegate->getCurrentPlane()==testsubject);
+
+    //airplane reacting
+    simulator.simulate_Onetime();
+    EXPECT_TRUE(testsubject->getPermission()=="IFR clearancy");
+    EXPECT_TRUE(testsubject->getLocation()==planegate);
+    EXPECT_TRUE(testsubject->getInstruction().empty());
+    EXPECT_TRUE(planegate->getCurrentPlane()==testsubject);
+
+    //airplane sending signal for pushback, tower received it.
+    simulator.simulate_Onetime();
+    EXPECT_TRUE(testsubject->getPermission()=="IFR clearancy");
+    EXPECT_TRUE(testsubject->getLocation()==planegate);
+    EXPECT_TRUE(testsubject->getInstruction().empty());
+    EXPECT_TRUE(planegate->getCurrentPlane()==testsubject);
+
+    //tower react to signal, airplane received it.
+    simulator.simulate_Onetime();
+    EXPECT_TRUE(testsubject->getPermission()=="Push back");
+    EXPECT_TRUE(testsubject->getLocation()==planegate);
+    EXPECT_TRUE(testsubject->getInstruction().empty());
+    EXPECT_TRUE(planegate->getCurrentPlane()==testsubject);
+
+    //airplane reacting;
+    simulator.simulate_Onetime();
+    EXPECT_TRUE(testsubject->getPermission()=="Push back");
+    EXPECT_TRUE(testsubject->getLocation()==planegate);
+    EXPECT_TRUE(testsubject->getInstruction().empty());
+    EXPECT_TRUE(planegate->getCurrentPlane()==testsubject);
+
+    for (int m1 = 0; m1 <pushbackminute ; ++m1) {
+        EXPECT_TRUE(planegate->isOnuse());
+        EXPECT_TRUE(testsubject->getPermission()=="Push back");
+        EXPECT_TRUE(testsubject->getLocation()==planegate);
+        EXPECT_TRUE(testsubject->getInstruction().empty());
+        EXPECT_TRUE(!testsubject->isDoingNothing());
+        EXPECT_TRUE(planegate->getCurrentPlane()==testsubject);
+        simulator.simulate_Onetime();
+    }
+
+    //plane has moved out of the way
+    EXPECT_TRUE(planegate->getPlaneNearGate()==testsubject);
+    EXPECT_TRUE(!planegate->isOnuse());
+
+    //plane sended taxi ready messenge, tower received it.
+    simulator.simulate_Onetime();
+    EXPECT_TRUE(testsubject->getPermission()=="Push back");
+    EXPECT_TRUE(testsubject->getInstruction().empty());
+    EXPECT_TRUE(planegate->getPlaneNearGate()==testsubject);
+    EXPECT_TRUE(!planegate->isOnuse());
+
+    //tower react to plane, plane received it.
+    simulator.simulate_Onetime();
+    EXPECT_TRUE(testsubject->getPermission()=="Taxiing");
+    EXPECT_TRUE(!testsubject->getInstruction().empty());
+    EXPECT_TRUE(testsubject->getLocation()==planegate);
+    EXPECT_TRUE(planegate->getPlaneNearGate()==testsubject);
+
+    //plane reacting&&moving to taxipoint(special case i just made in instant, it is possible to make it cost 1 minute)
+    simulator.simulate_Onetime();
+    EXPECT_TRUE(testsubject->getPermission()=="Taxiing");
+    EXPECT_TRUE(!testsubject->getInstruction().empty());
+    EXPECT_TRUE(testsubject->getLocation()!=planegate);
+    EXPECT_TRUE(testsubject->getLocation()->isTaxipoint());
+    EXPECT_TRUE(testsubject->getLocation()==testsubject->getInstruction()[1]);
+
+
+    //going to runway check, similair as going to gate check
+    while(testsubject->getLocation()!=testsubject->getDestinateRunway()){
+        int m=2;
+        //m=2, means that this is the third element on the instruction
+        //instruction contains:current location as first element(runway), adjesing taxipoint as second element, and the next runway/gate as 3rd element
+        //should always test on the case that m==2, and test the whole instruction at once;
+
+
+        for (int l = 0; l <taxiingminute ; ++l) {
+            EXPECT_TRUE(!testsubject->isDoingNothing());//testsubject taxiing in taxipoint
+            EXPECT_TRUE(testsubject->getLocation()->isTaxipoint());
+            simulator.simulate_Onetime();
+        }
+        //airplane is now at runway or a gate
+
+        //if the test subject is going to cross runway
+        if(testsubject->getLocation()->isRunway()&&testsubject->getLocation()!=testsubject->getDestinateRunway()){
+            //airplane at runway sending signal to cross runway last minute, and this minute it's finished
+            simulator.simulate_Onetime();
+            EXPECT_TRUE(testsubject->getPermission()=="Taxiing");
+            EXPECT_TRUE(testsubject->getStatus()=="Taxiing to runway");
+            EXPECT_TRUE(testsubject->getLocation()==testsubject->getInstruction()[m]);
+
+            //tower react to airplane, airplane receive messenge.
+            simulator.simulate_Onetime();
+            EXPECT_TRUE(testsubject->getPermission()=="Cleared to cross");//happy day scenario, tower gives permission right away.
+            EXPECT_TRUE(testsubject->getLocation()->isCrossing());
+
+            //airplane reacting.
+            simulator.simulate_Onetime();
+            EXPECT_TRUE(testsubject->getPermission()=="Cleared to cross");//happy day scenario, tower gives permission right away.
+            EXPECT_TRUE(testsubject->getLocation()->isCrossing());
+
+            for (int l = 0; l <crossingminute ; ++l) {
+                EXPECT_TRUE(!testsubject->isDoingNothing());//testsubject crossing runway.
+                EXPECT_TRUE(testsubject->getLocation()->isRunway());
+                simulator.simulate_Onetime();
+            }
+            EXPECT_TRUE(testsubject->getLocation()->isTaxipoint());
+            //a new cycle begins where airplane is taxiing at the next taxipoint.
+        }
+        else if(testsubject->getLocation()==testsubject->getDestinateRunway()){
+            //test subject reaches it's destination gate.
+
+            EXPECT_TRUE(testsubject->getPermission()=="Taxiing");
+            EXPECT_TRUE(testsubject->getLocation()==testsubject->getInstruction()[m]);
+            EXPECT_TRUE(!testsubject->isDoingNothing());//testsubject done taxiing,starts with maintanance/unloading passenger;
+            EXPECT_TRUE(testsubject->getStatus()=="Taxiing to runway");
+            break;
+        }
+        else{
+            cerr<<"shouldnt happen"<<endl;
+            throw "death";
+        }
+    }
+
+    //test subject now are sending to tower that it reached the destinated runway;
+    simulator.simulate_Onetime();
+    EXPECT_TRUE(testsubject->getPermission()=="Taxiing");
+
+
+    //tower shold react that airplane can fly;
+    simulator.simulate_Onetime();
+    EXPECT_TRUE(testsubject->getPermission()=="Fly");
+    EXPECT_TRUE(testsubject->getStatus()=="Taxiing to runway");
+    EXPECT_TRUE(testsubject->getDestinateRunway()->getCurrentairplane()==testsubject);
+    EXPECT_TRUE(testsubject->getDestinateRunway()->isOnuse());
+
+
+    //airplane reacts
+    simulator.simulate_Onetime();
+    EXPECT_TRUE(testsubject->getPermission()=="Fly");
+    EXPECT_TRUE(testsubject->getStatus()=="Taxiing to runway");
+    EXPECT_TRUE(testsubject->getDestinateRunway()->getCurrentairplane()==testsubject);
+    EXPECT_TRUE(testsubject->getDestinateRunway()->isOnuse());
+
+
+    //airplane lineup the runway;
+    int lineupminute=1;
+    for (int n1 = 0; n1 < lineupminute; ++n1) {
+        EXPECT_TRUE(testsubject->getDestinateRunway()->getPlaneAtbegin()==testsubject);
+        EXPECT_TRUE(testsubject->getPermission()=="Fly");
+        EXPECT_TRUE(testsubject->getDestinateRunway()->getCurrentairplane()==testsubject);
+        EXPECT_TRUE(testsubject->getDestinateRunway()->isOnuse());
+        simulator.simulate_Onetime();
+    }
+
+
+    //in this case, airplane can just leave without asking permission since permission is already gaved.
+    EXPECT_TRUE(testsubject->getStatus()=="Leaving");
+    EXPECT_TRUE(testsubject->getDestinateRunway()->getPlaneAtbegin()==NULL);//airplane starts taking off.
+    EXPECT_TRUE(testsubject->getDestinateRunway()->getCurrentairplane()==testsubject);
+    EXPECT_TRUE(testsubject->getDestinateRunway()->isOnuse());
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //proceeding to leaving procedures.
+    EXPECT_TRUE(testsubject->getStatus()=="Leaving");
+    EXPECT_TRUE(testsubject->getDestinateRunway()->getCurrentairplane()==testsubject);
+    EXPECT_TRUE(testsubject->getDestinateRunway()->isOnuse());
+
+
+    //airplane takeoff
+    Runway* destinaterunway=testsubject->getDestinateRunway();
+    for (int i2 = 0; i2 <takeoffminute ; ++i2) {
+        EXPECT_TRUE(testsubject->getDestinateRunway()->getCurrentairplane()==testsubject);
+        EXPECT_TRUE(testsubject->getDestinateRunway()->isOnuse());
+        simulator.simulate_Onetime();
+    }
+
+    EXPECT_TRUE(destinaterunway->getPlaneAtbegin()==NULL);
+    EXPECT_TRUE(testsubject->getDestinateRunway()==NULL);
+
+    //since falling==rising minute
+    EXPECT_TRUE(testsubject->getHeight()==0);
+    for (int k2 = 0; k2 <6 ; ++k2) {
+        for (int j2 = 0; j2 <fallingminute ; ++j2) {
+            simulator.simulate_Onetime();
+        }
+        EXPECT_TRUE(testsubject->getHeight()==(k2+1)*1000);
+    }
+
+    //plane left, it's higher than 5000
+    EXPECT_TRUE(testsubject->getStatus()=="jobsdone");
+
+    //end of test phew.
+}
+
+
+
+TEST_F(AirplaneDomeinTest,SimulationBuzy50003000Test) {
+    //settings
+    string filename = "../domeinTest/SimulationTest.xml";
+    //endofsettings
+
+    ofstream a;
+
+
+    int subject1fallingminute=1;
+    int subject2fallingminute=1;
+
+    LoadAirport(filename.c_str(), a, simulator);
+    Airplane *testsubject1 = new Airplane("Approaching","TestApproach_Subject_001","TAS001","TAS","airline","jet","large",1,10,10,simulator.getAirports()[0]);
+    simulator.addAirplane(testsubject1);
+
+
+    LoadAirport(filename.c_str(), a, simulator);
+    Airplane *testsubject2 = new Airplane("Approaching","TestApproach_Subject_001","TAS001","TAS","private","jet","small",1,10,10,simulator.getAirports()[0]);
+    simulator.addAirplane(testsubject2);
+
+
+    //both airplane contact tower
+    simulator.simulate_Onetime();
+    EXPECT_TRUE(testsubject1->getPermission()=="");
+    EXPECT_TRUE(testsubject2->getPermission()=="");
+
+    //tower try react to one of them
+    simulator.simulate_Onetime();
+    EXPECT_TRUE(testsubject1->getPermission()=="10000");
+    EXPECT_TRUE(testsubject2->getPermission()=="10000");
+
+    //one of them receive messenge;
+    simulator.simulate_Onetime();
+    EXPECT_TRUE(testsubject1->getPermission()=="5000");
+    EXPECT_TRUE(testsubject2->getPermission()=="10000");
+
+    //reacting to the messenge;
+    simulator.simulate_Onetime();
+    EXPECT_TRUE(testsubject1->getPermission()=="5000");
+    EXPECT_TRUE(testsubject2->getPermission()=="10000");
+
+    for (int i = 0; i <5 ; ++i) {
+        EXPECT_TRUE(testsubject1->getPermission()=="5000");
+        EXPECT_TRUE(testsubject2->getPermission()=="10000");
+        for (int j = 0; j <subject1fallingminute ; ++j) {
+            simulator.simulate_Onetime();
+        }
+        EXPECT_TRUE(testsubject1->getHeight()==10000-(i+1)*1000);
+        EXPECT_TRUE(testsubject2->getHeight()==10000);
+    }
+
+    //tower sended further instruction to subject1, to let him fall;
+    simulator.simulate_Onetime();
+    EXPECT_TRUE(testsubject1->getPermission()=="3000");
+    EXPECT_TRUE(testsubject2->getPermission()=="10000");
+
+    //subject1 reacts to tower, tower send further instruction to subject2.
+    simulator.simulate_Onetime();
+    EXPECT_TRUE(testsubject1->getPermission()=="3000");
+    EXPECT_TRUE(testsubject2->getPermission()=="5000");
+
+    int counter=0;
+    while(testsubject1->getHeight()!=3000){
+        counter++;
+        simulator.simulate_Onetime();
+        if(counter%subject1fallingminute==0){
+            EXPECT_TRUE(testsubject1->getHeight()==5000-counter/subject1fallingminute*1000);
+        }
+        if((counter-1)%subject1fallingminute==0){
+            EXPECT_TRUE(testsubject2->getHeight()==10000-(counter-1)/subject2fallingminute*1000);
+        }
+    }
+
+
+
+    //setup new cases for buzy3000
+    //keep all runways on use.
+    for (unsigned int k = 0; k <testsubject1->getDestination()->getRunways().size() ; ++k) {
+        testsubject1->getDestination()->getRunways()[k]->setOnuse(true);
+    }
+
+    //tower trying to get a runway for subject one but it failed;
+    simulator.simulate_Onetime();
+    EXPECT_TRUE(testsubject1->getPermission()=="3000");
+    EXPECT_TRUE(testsubject2->getPermission()=="5000");
+
+    //fastforawrd
+    while(testsubject2->getHeight()!=5000){
+        simulator.simulate_Onetime();
+    }
+
+    //tower trying to get 3000meter for subject2 but it's buzy
+    simulator.simulate_Onetime();
+    EXPECT_TRUE(testsubject1->getPermission()=="3000");
+    EXPECT_TRUE(testsubject2->getPermission()=="5000");
+    simulator.simulate_Onetime();
+    EXPECT_TRUE(testsubject1->getPermission()=="3000");
+    EXPECT_TRUE(testsubject2->getPermission()=="5000");
+    simulator.simulate_Onetime();
+    EXPECT_TRUE(testsubject1->getPermission()=="3000");
+    EXPECT_TRUE(testsubject2->getPermission()=="5000");
+
+    //3 times for sure;
+
+
+    //release all runways.
+    for (unsigned int k = 0; k <testsubject1->getDestination()->getRunways().size() ; ++k) {
+        testsubject1->getDestination()->getRunways()[k]->setOnuse(false);
+    }
+
+    //now tower should react to subject 1
+    simulator.simulate_Onetime();
+    EXPECT_TRUE(testsubject1->getPermission()=="0");
+    EXPECT_TRUE(testsubject2->getPermission()=="5000");
+
+    //then subject two
+    simulator.simulate_Onetime();
+    EXPECT_TRUE(testsubject1->getPermission()=="0");
+    EXPECT_TRUE(testsubject2->getPermission()=="3000");
 }

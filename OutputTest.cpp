@@ -55,6 +55,7 @@ TEST_F(AirplaneOutputTest, checkInfo){
 
     }
 }
+
 TEST_F(AirplaneOutputTest, checkFloormap){
     //settings
     for (int i = 1; i <= 13; ++i) {
