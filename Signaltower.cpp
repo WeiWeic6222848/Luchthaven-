@@ -685,7 +685,6 @@ void Signaltower::sendSignalHoldPosition(Airplane *airplane) {
     REQUIRE(airplane->ProperInitialized(),"Airplane must be initialized properly when calling sendSignalHoldPosition");
 
     if(isDoingNothing()){
-
         doingNothing=false;
     }
     else {
@@ -917,9 +916,6 @@ void Signaltower::regulateLeavingplane(Airplane *airplane) {
     if(!airplane->getLocation()->isCrossing()||!isDoingNothing()){
         sendSignalLineup(airplane,true);
     }
-    else{
-        incomingSignal.push_back(pair<Airplane*,string>(airplane,"Leaving"));
-    }
 }
 
 void Signaltower::parse_signal(Airplane *airplane, string stringSignal) {
@@ -962,7 +958,12 @@ void Signaltower::parse_signal(Airplane *airplane, string stringSignal) {
 
         } else if (!runway->isOnuse() && runway->getPlaneAtbegin() == NULL) {
             sendSignalLineup(airplane, false);
-
+        }
+        else{
+            if(!isDoingNothing()){
+                sendSignalHoldPosition(airplane);
+                incomingSignal.push_back(pair<Airplane*,string>(airplane,"At runway"));
+            }
         }
     }
     else if(stringSignal == "Waiting"){

@@ -1013,3 +1013,213 @@ TEST_F(AirplaneDomeinTest,SimulationBuzy50003000Test) {
     EXPECT_TRUE(testsubject1->getPermission()=="0");
     EXPECT_TRUE(testsubject2->getPermission()=="3000");
 }
+
+TEST_F(AirplaneDomeinTest,SimulationBotspreventieTest) {
+    //settings
+    string filename = "../domeinTest/SimulationTest.xml";
+    //endofsettings
+
+    ofstream a;
+
+
+
+    LoadAirport(filename.c_str(), a, simulator);
+    Airplane *testsubject1 = new Airplane("Standing at gate", "TestApproach_Subject_001", "TAS001", "TAS", "airline", "jet", "large", 1, 10, 10, simulator.getAirports()[0]);
+    simulator.addAirplane(testsubject1);
+
+    testsubject1->setLocation(testsubject1->getDestination()->findFreeGates());
+    testsubject1->setPermission("Taxiing");
+    testsubject1->setDestinateRunway(testsubject1->getDestination()->getRunways()[testsubject1->getDestination()->getRunways().size()-1]);
+    testsubject1->getDestination()->getTower().receiveSignal(testsubject1,"LeavingtoRunway");
+    testsubject1->getDestination()->getTower().sendSignal();
+    testsubject1->getDestination()->getTower().timeRuns();
+    testsubject1->getDestination()->getTower().sendSignal();
+    //let tower release a instruction immidiately;
+    testsubject1->setStatus("Taxiing to runway");
+
+    testsubject1->setLocation(testsubject1->getInstruction()[2]);//two is always the runway.
+
+    //test subject sending signal to cross runway;
+    simulator.simulate_Onetime();
+    EXPECT_TRUE(testsubject1->getPermission()=="Taxiing");
+
+    //tower received signal
+    simulator.simulate_Onetime();
+    EXPECT_TRUE(testsubject1->getPermission()=="Taxiing");
+
+    testsubject1->getInstruction()[2]->setCrossing(true);
+
+    //test subject received none beacause runway is crossing;
+    simulator.simulate_Onetime();
+    EXPECT_TRUE(testsubject1->getPermission()=="Taxiing");
+
+
+    simulator.simulate_Onetime();
+    EXPECT_TRUE(testsubject1->getLocation()->isRunway());
+    EXPECT_TRUE(testsubject1->getPermission()=="Taxiing");
+    simulator.simulate_Onetime();
+
+    EXPECT_TRUE(testsubject1->getLocation()->isRunway());
+    EXPECT_TRUE(testsubject1->getPermission()=="Taxiing");
+    simulator.simulate_Onetime();
+
+    EXPECT_TRUE(testsubject1->getLocation()->isRunway());
+    EXPECT_TRUE(testsubject1->getPermission()=="Taxiing");
+
+    //3time for sure
+    //release runway;
+    testsubject1->getInstruction()[2]->setCrossing(false);
+    //on the general test, its clear that the runway will be set on crossing true when it is crossing.
+    //and on use true when its landing/takingoff.
+
+
+    simulator.simulate_Onetime();
+    EXPECT_TRUE(testsubject1->getLocation()->isRunway());
+    EXPECT_TRUE(testsubject1->getPermission()=="Cleared to cross");
+
+
+}
+
+
+TEST_F(AirplaneDomeinTest,SimulationLineupTest) {
+    //settings
+    string filename = "../domeinTest/SimulationTest.xml";
+    //endofsettings
+
+    ofstream a;
+
+
+
+    LoadAirport(filename.c_str(), a, simulator);
+    Airplane *testsubject1 = new Airplane("Standing at gate", "TestApproach_Subject_001", "TAS001", "TAS", "airline", "jet", "large", 1, 10, 10, simulator.getAirports()[0]);
+    simulator.addAirplane(testsubject1);
+
+    testsubject1->setLocation(testsubject1->getDestination()->findFreeGates());
+    testsubject1->setPermission("Taxiing");
+    testsubject1->setDestinateRunway(testsubject1->getDestination()->getRunways()[0]);
+    testsubject1->getDestination()->getTower().receiveSignal(testsubject1,"LeavingtoRunway");
+    testsubject1->getDestination()->getTower().sendSignal();
+    testsubject1->getDestination()->getTower().timeRuns();
+    testsubject1->getDestination()->getTower().sendSignal();
+    //let tower release a instruction immidiately;
+    testsubject1->setStatus("Taxiing to runway");
+
+    testsubject1->setLocation(testsubject1->getInstruction()[2]);//two is always the runway,this case it's the destinated runway. beacause the first runway is always one with only one taxipoint.
+
+    //test subject sending signal to line up;
+    simulator.simulate_Onetime();
+    EXPECT_TRUE(testsubject1->getPermission()=="Taxiing");
+
+    //tower received signal
+    simulator.simulate_Onetime();
+    EXPECT_TRUE(testsubject1->getPermission()=="Taxiing");
+
+    //let the runway be crossing
+    testsubject1->getInstruction()[2]->setCrossing(true);
+
+    //then airplane should not be able to fly immidiately
+    simulator.simulate_Onetime();
+    EXPECT_TRUE(testsubject1->getLocation()->isRunway());
+    EXPECT_TRUE(testsubject1->getPermission()=="Line up");
+
+    simulator.simulate_Onetime();
+    EXPECT_TRUE(testsubject1->getLocation()->isRunway());
+    EXPECT_TRUE(testsubject1->getPermission()=="Line up");
+
+    simulator.simulate_Onetime();
+    EXPECT_TRUE(testsubject1->getLocation()->isRunway());
+    EXPECT_TRUE(testsubject1->getPermission()=="Line up");
+
+
+    simulator.simulate_Onetime();
+    EXPECT_TRUE(testsubject1->getLocation()->isRunway());
+    EXPECT_TRUE(testsubject1->getPermission()=="Line up");
+
+    simulator.simulate_Onetime();
+    EXPECT_TRUE(testsubject1->getLocation()->isRunway());
+    EXPECT_TRUE(testsubject1->getPermission()=="Line up");
+
+    EXPECT_TRUE(testsubject1->getDestinateRunway()->getPlaneAtbegin()==testsubject1);
+    //5times for lineup minute and test that it's consistent.
+    testsubject1->getInstruction()[2]->setCrossing(false);
+
+    EXPECT_TRUE(testsubject1->getDestination()->getTower().isDoingNothing());
+    simulator.simulate_Onetime();//tower sees runway is free, contacting airplane.
+    EXPECT_TRUE(!testsubject1->getDestination()->getTower().isDoingNothing());
+    simulator.simulate_Onetime();//airplane gets contact.
+    EXPECT_TRUE(testsubject1->getLocation()->isRunway());
+    EXPECT_TRUE(testsubject1->getPermission()=="Fly");
+
+}
+
+
+TEST_F(AirplaneDomeinTest,SimulationLineupTest2) {
+    //settings
+    string filename = "../domeinTest/SimulationTest.xml";
+    //endofsettings
+
+    ofstream a;
+
+
+
+    LoadAirport(filename.c_str(), a, simulator);
+    Airplane *testsubject1 = new Airplane("Standing at gate", "TestApproach_Subject_001", "TAS001", "TAS", "airline", "jet", "large", 1, 10, 10, simulator.getAirports()[0]);
+    simulator.addAirplane(testsubject1);
+
+    testsubject1->setLocation(testsubject1->getDestination()->findFreeGates());
+    testsubject1->setPermission("Taxiing");
+    testsubject1->setDestinateRunway(testsubject1->getDestination()->getRunways()[0]);
+    testsubject1->getDestination()->getTower().receiveSignal(testsubject1,"LeavingtoRunway");
+    testsubject1->getDestination()->getTower().sendSignal();
+    testsubject1->getDestination()->getTower().timeRuns();
+    testsubject1->getDestination()->getTower().sendSignal();
+    //let tower release a instruction immidiately;
+    testsubject1->setStatus("Taxiing to runway");
+
+    testsubject1->setLocation(testsubject1->getInstruction()[2]);//two is always the runway,this case it's the destinated runway. beacause the first runway is always one with only one taxipoint.
+
+    //test subject sending signal to line up;
+    simulator.simulate_Onetime();
+    EXPECT_TRUE(testsubject1->getPermission()=="Taxiing");
+
+    //tower received signal
+    simulator.simulate_Onetime();
+    EXPECT_TRUE(testsubject1->getPermission()=="Taxiing");
+
+    //let the runway be crossing
+    testsubject1->getDestinateRunway()->setPlaneAtbegin(testsubject1);//occupy the slot.
+
+    //then airplane should not be able to fly immidiately
+    simulator.simulate_Onetime();
+    EXPECT_TRUE(testsubject1->getLocation()->isRunway());
+    EXPECT_TRUE(testsubject1->getPermission()=="Taxiing");
+
+    simulator.simulate_Onetime();
+    EXPECT_TRUE(testsubject1->getLocation()->isRunway());
+    EXPECT_TRUE(testsubject1->getPermission()=="Taxiing");
+
+    simulator.simulate_Onetime();
+    EXPECT_TRUE(testsubject1->getLocation()->isRunway());
+    EXPECT_TRUE(testsubject1->getPermission()=="Taxiing");
+
+
+    simulator.simulate_Onetime();
+    EXPECT_TRUE(testsubject1->getLocation()->isRunway());
+    EXPECT_TRUE(testsubject1->getPermission()=="Taxiing");
+
+    simulator.simulate_Onetime();
+    EXPECT_TRUE(testsubject1->getLocation()->isRunway());
+    EXPECT_TRUE(testsubject1->getPermission()=="Taxiing");
+
+
+    EXPECT_TRUE(testsubject1->getDestinateRunway()->getPlaneAtbegin()==testsubject1);
+    //5times for lineup minute and test that it's consistent.
+    testsubject1->getDestinateRunway()->setPlaneAtbegin(NULL);//occupy the slot.
+
+    EXPECT_TRUE(testsubject1->getDestination()->getTower().isDoingNothing());
+    simulator.simulate_Onetime();//tower sees runway is free, contacting airplane.
+    EXPECT_TRUE(!testsubject1->getDestination()->getTower().isDoingNothing());
+    simulator.simulate_Onetime();//airplane gets contact.
+    EXPECT_TRUE(testsubject1->getLocation()->isRunway());
+    EXPECT_TRUE(testsubject1->getPermission()=="Fly");
+}
