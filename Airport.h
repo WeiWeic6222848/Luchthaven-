@@ -146,13 +146,6 @@ public:
     Gate* getGateFromAirplane(Airplane* plane);
 
     /**
-     *     REQUIRE(ProperInitialized(),"Airport wasn't initialized when calling findfreerunway");
-     * @return a runway pointer which doesn't have any airplanes
-     */
-    Runway* findFreeRunway();
-
-
-    /**
      *     REQUIRE(ProperInitialized(),"Airport wasn't initialized when calling findRunway");
      * @param name
      * @return
@@ -162,6 +155,7 @@ public:
     /**
      *     REQUIRE(ProperInitialized(),"Airport wasn't initialized when calling findFreeRunway");
      *     REQUIRE(airplane->ProperInitialized(),"Airplane wasn't initialized when calling findFreeRunway");
+     *     REQUIRE(isRightAirplaneCombination(airplane),"Airplane is not correct");
      * @param airplane
      * @param emergency
      * @return
@@ -202,7 +196,8 @@ public:
 
     /**
      *     REQUIRE(ProperInitialized(),"Airport wasn't initialized when calling addrunway");
-     *     ENSURE(find(runways.begin(),runways.end(),runway)!=runways.end(),"addrunway postcondition failed");
+     *     REQUIRE(findRunway(runway->getName())==NULL,"there is already a runway with the same name!!");
+     *     ENSURE(findRunway(runway->getName())!=NULL,"addrunway postcondition failed");
      * @param runway the pointer to a pre-initialized runway which will be added to addrunway
      */
     void addRunway(Runway* runway);
@@ -236,7 +231,7 @@ public:
 
     /**
      *     REQUIRE(ProperInitialized(),"Airport wasn't initialized when calling cleanup");
-     *     ENSURE(runways.empty(),"cleanup postcondition failed");
+     *     ENSURE(getRunways().empty(),"cleanup postcondition failed");
      */
     void cleanup();
 

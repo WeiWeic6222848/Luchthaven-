@@ -23,12 +23,16 @@ Airportsim::Airportsim(const string& filename) {
 
 void Airportsim::removeAirport(Airport* airport) {
     REQUIRE(ProperInitialized(),"Airportsim object wasn't initialized when calling removeairport");
+    Airport* todelete=NULL;
     for (unsigned int i = 0; i < Airports.size(); ++i) {
         if (airport==Airports[i]){
-            airport->cleanup();
+            todelete=airport;
             Airports.erase(Airports.begin()+i);
             break;
         }
+    }
+    if(todelete){
+        delete (todelete);
     }
     ENSURE(find(Airports.begin(),Airports.end(),airport)==Airports.end(),"removeairport postcondition failed");
 }
@@ -237,69 +241,6 @@ const vector<Airport*> &Airportsim::getAirports() const {
 const vector<Airplane*> &Airportsim::getAirplanes() const {
     REQUIRE(ProperInitialized(),"Airportsim object wasn't initialized when calling getAirplanes");
     return Allplanes;
-}
-void Airportsim::landing(Airplane& approaching,Airport& airport) {
-    REQUIRE(ProperInitialized(),"Airportsim object wasn't initialized when calling landing");
-    REQUIRE(approaching.getStatus()==Airplane::Approaching,"Airplane must has the status of Approaching when calling landing");
-    ofstream outputfile;
-    string filename="../output/"+approaching.getCallsign()+"_Landing.txt";
-    outputfile.open(filename.data(),ios::out);
-    outputfile<<approaching.getCallsign()<<" is approaching "<<airport.getName()<<" at 10.000 ft."<<endl;
-    Gate* gate=airport.findFreeGates();
-    Runway* runway=airport.findFreeRunway(&approaching);
-    while (approaching.getHeight()>1000){
-        approaching.fall();
-        outputfile<<approaching.getCallsign()<<" descended to "<<approaching.getHeight()<<" ft."<<endl;
-    }
-    approaching.fall();
-    outputfile<<approaching.getCallsign()<<" is landing at "<<airport.getName()<<" on runway "<<runway->getName()<<endl;
-    runway->setCurrentairplane(&approaching);
-    outputfile<<approaching.getCallsign()<<" has landed at "<<airport.getName()<<" on runway "<<runway->getName()<<endl;
-    airport.parkAirplane(gate,&approaching);
-    outputfile<<approaching.getCallsign()<<" is taxiing to Gate "<<gate->getName()<<endl;
-    runway->setCurrentairplane(NULL);
-    outputfile<<approaching.getCallsign()<<" is standing at Gate "<<gate->getName()<<endl;
-    approaching.setStatus(Airplane::Standing_at_gate);
-    outputfile.close();
-    ENSURE(fileExist(filename),"landing postcondition failed");
-}
-
-
-void Airportsim::takingOff(Airplane& leaving, Airport& airport){
-    REQUIRE(ProperInitialized(),"Airportsim object wasn't initialized when calling takingOff");
-    REQUIRE(leaving.getStatus()==Airplane::Standing_at_gate,"Airplane must has the status of Standing at gate when calling taking off");
-    ofstream outputfile;
-    string filename="../output/"+leaving.getCallsign()+"_TakingOff.txt";
-    outputfile.open(filename.data(),ios::out);
-    Gate* gate=airport.getGateFromAirplane(&leaving);
-    outputfile<<leaving.getCallsign()<<" is standing at Gate "<<gate->getName()<<endl;
-    Runway* runway=airport.findFreeRunway(&leaving);
-    runway->setCurrentairplane(&leaving);
-    airport.freeGate(gate);
-    outputfile<<leaving.getCallsign()<<" is taxiing to runway "<<runway->getName()<<endl;
-    outputfile<<leaving.getCallsign()<<" is taking off at "<<airport.getName()<<" on runway "<<runway->getName()<<endl;
-    for(int i=1;i<6;i++){
-        outputfile<<leaving.getCallsign()<<" ascended to "<<i<<".000 ft."<<endl;
-    }
-    runway->setCurrentairplane(NULL);
-    leaving.setStatus(Airplane::Approaching);
-    outputfile<<leaving.getCallsign()<<" has left "<<airport.getName();
-    outputfile.close();
-    ENSURE(fileExist(filename),"takingOff postcondition failed");
-}
-
-void Airportsim::airplaneAtGate(Airplane& plane,Airport& airport){
-    REQUIRE(ProperInitialized(),"Airportsim object wasn't initialized when calling AirplaneAtGate");
-    ofstream outputfile;
-    string filename="../output/"+plane.getCallsign()+"_AtGate.txt";
-    outputfile.open(filename.data(),ios::out);
-    if(plane.getStatus()==Airplane::Standing_at_gate){
-        outputfile<<plane.getPassenger()<<" passengers exited "<<plane.getCallsign()<<" at gate "<<airport.getGateFromAirplane(&plane)<<" of "<<airport.getName()<<endl;
-        outputfile<<plane.getCallsign()<<" has been checked for technical malfunctions"<<endl;
-        outputfile<<plane.getCallsign()<<" has been refueled"<<endl;
-        outputfile<<plane.getPassenger()<<" passengers boarded "<<plane.getCallsign()<<" at gate "<<airport.getGateFromAirplane(&plane)<<" of "<<airport.getName()<<endl;
-    }
-    ENSURE(fileExist(filename),"AirplaneAtGate postcondition failed");
 }
 
 bool Airportsim::ProperInitialized() const{
@@ -1410,12 +1351,14 @@ void Airportsim::writeIni(Airport &airport) {
     ENSURE(fileExist(filename.c_str()), "writeIni postcondition failed");
 }
 void Airportsim::createVisual(Airport &airport) {
+    REQUIRE(airport.ProperInitialized(), "airport wasn't initialized when calling createVisual");
     writeIni(airport);
     string filename = "../Engine/./engine ../output/settings_2D_[" + airport.getIata() + "]"+".ini";
     system(filename.c_str());
 }
 
 void Airportsim::simulate_Onetime() {
+    REQUIRE(ProperInitialized(),"Airportsim object wasn't initialized when calling simulate_Onetime");
     vector<int> airplanestoremove;
     bool  alreadypushed=false;
     int chillingcounter=0;

@@ -145,13 +145,6 @@ bool Signaltower::receiveSignal(Airplane *airplane, SignaltowerallowedSignal sig
     return false;
 }
 
-
-
-bool Signaltower::permissionLeavingGate(Airplane *airplane) {
-    //didn't see any condition
-    return true;
-}
-
 vector<Location*> Signaltower::makeInstructionToGate(Airplane *airplane) {
 
     REQUIRE(ProperInitialized(),"Signal tower must be initialized properly when calling makeInstructionToGate");
@@ -261,10 +254,10 @@ void Signaltower::sendSignalPermission5000(Airplane *airplane) {
     else {
         buzy5000=true;
         int basesquawkcode=getBasesqwakcode(airplane);
-        int squawkcode=basesquawkcode+rand()%778;
+        int squawkcode=basesquawkcode+generatevalidRandomcode();
 
-        while (!checkSquawkcodeunique(squawkcode)){
-            squawkcode=basesquawkcode+rand()%778;
+        while (!checkSquawkcodeunique(squawkcode)&&squawkcode!=7500&&squawkcode!=7600&&squawkcode!=7700){
+            squawkcode=basesquawkcode+generatevalidRandomcode();
         }
 
         file << "[" << currentTime << "]" << "[ATC]" << endl;
@@ -483,10 +476,10 @@ void Signaltower::sendSignalIFRclear(Airplane *airplane) {
     else {
         int basesquawkcode=getBasesqwakcode(airplane);
 
-        int squawkcode=basesquawkcode+rand()%778;
+        int squawkcode=basesquawkcode+generatevalidRandomcode();
 
-        while (!checkSquawkcodeunique(squawkcode)){
-            squawkcode=basesquawkcode+rand()%778;
+        while (!checkSquawkcodeunique(squawkcode)&&squawkcode!=7500&&squawkcode!=7600&&squawkcode!=7700){
+            squawkcode=basesquawkcode+generatevalidRandomcode();
         }
         file << "[" << currentTime << "]" << "[ATC]" << endl;
         file << airplane->getCallsign() << ", " << airport->getCallsign() << ", cleared to "
@@ -571,6 +564,8 @@ bool Signaltower::ProperInitialized() const{
 }
 
 void Signaltower::regulateApproachingplane(Airplane *airplane) {
+    REQUIRE(ProperInitialized(),"Signal tower must be initialized properly when calling regulateApproachingplane");
+    REQUIRE(airplane->ProperInitialized(),"Airplane must be initialized properly when calling regulateApproachingplane");
     if (airplane->getPermission() == Airplane::threeThousandPermission && airplane->getHeight() == 3000) {
         Runway *freerunway = airport->findFreeRunway(airplane);
         if(freerunway==NULL){
@@ -610,15 +605,16 @@ void Signaltower::regulateApproachingplane(Airplane *airplane) {
 }
 
 void Signaltower::regulateLeavingplane(Airplane *airplane) {
+    REQUIRE(ProperInitialized(),"Signal tower must be initialized properly when calling regulateLeavingplane");
+    REQUIRE(airplane->ProperInitialized(),"Airplane must be initialized properly when calling regulateLeavingplane");
     if(!airplane->getLocation()->isCrossing()||!isDoingNothing()){
         sendSignalLineup(airplane,true);
     }
 }
 
 void Signaltower::parse_signal(Airplane *airplane, SignaltowerallowedSignal stringSignal) {
-    if(allplaneknown.empty()){
-        cout<<"here";
-    }
+    REQUIRE(ProperInitialized(),"Signal tower must be initialized properly when calling parse_signal");
+    REQUIRE(airplane->ProperInitialized(),"Airplane must be initialized properly when calling parse_signal");
     if (stringSignal == ApproachingtoGate) {
         airplane->setInstruction(vector<Location *>());
         vector<Location *> instruction = makeInstructionToGate(airplane);

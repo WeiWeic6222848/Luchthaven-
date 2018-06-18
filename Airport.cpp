@@ -101,16 +101,6 @@ Gate* Airport::getGateFromAirplane(Airplane* plane){
     return NULL;
 }
 
-Runway *Airport::findFreeRunway(){
-    REQUIRE(ProperInitialized(),"Airport wasn't initialized when calling findfreerunway");
-    for (unsigned int i = 0; i < runways.size(); ++i) {
-        if(runways[i]->getCurrentairplane()==NULL){
-            return runways[i];
-        }
-    }
-    cout<<"all runways buzy"<<endl;
-    return NULL;
-}
 
 Runway *Airport::findRunway(const string&name) {
     REQUIRE(ProperInitialized(),"Airport wasn't initialized when calling findRunway");
@@ -126,6 +116,7 @@ Runway *Airport::findRunway(const string&name) {
 Runway *Airport::findFreeRunway(Airplane *airplane,bool emergency) {
     REQUIRE(ProperInitialized(),"Airport wasn't initialized when calling findFreeRunway");
     REQUIRE(airplane->ProperInitialized(),"Airplane wasn't initialized when calling findFreeRunway");
+    REQUIRE(isRightAirplaneCombination(airplane),"Airplane is not correct");
     bool grassallowed=airplaneCanLandOnGrass(airplane);
     int required=requiredLengthOfRunway(airplane);
     int queueingplane=2147483647;//initialize the number to max

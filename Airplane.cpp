@@ -263,7 +263,6 @@ bool Airplane::sendSignalApproaching() {
         destination->getTower().getFile()<<destination->getCallsign()<<", "<<this->getCallsign()<<", "<<"arriving at "<<destination->getName()<<endl;
         //doingNothing=true;
         bool received=destination->receiveSignal(this,Signaltower::Approaching);
-        ENSURE(received==true,"Tower didnt receive the signal Approaching");
         return received;
     }
     //ENSURE(actionDone>=currentTime,"airplane's action was skipped!");
@@ -281,7 +280,6 @@ bool Airplane::sendSignalLeaving() {
     else if(actionDone==currentTime) {
         //doingNothing=true;
         bool received=destination->receiveSignal(this,Signaltower::Leaving);
-        ENSURE(received==true,"Tower didnt receive the signal Leaving");
         return received;
     }
     //ENSURE(actionDone>=currentTime,"airplane's action was skipped!");
@@ -301,7 +299,6 @@ bool Airplane::sendSignalTaxiingtoGate() {
         destination->getTower().getFile()<<"["<<currentTime<<"]"<<"[AIR]"<<endl;
         destination->getTower().getFile()<<destination->getCallsign()<<", " <<this->getCallsign()<<", "<<"Runway " <<this->getLocation()->getName()<<" Vacated"<<endl;
         bool received=destination->receiveSignal(this,Signaltower::ApproachingtoGate);
-        ENSURE(received==true,"Tower didnt receive the signal ApproachingtoGate");
         return received;
     }
     //ENSURE(actionDone>=currentTime,"airplane's action was skipped!");
@@ -322,7 +319,6 @@ bool Airplane::sendSignalTaxiingtoRunway() {
         destination->getTower().getFile()<<"["<<currentTime<<"]"<<"[AIR]"<<endl;
         destination->getTower().getFile()<<this->getCallsign()<<" is ready to taxi."<<endl;
         bool received=destination->receiveSignal(this,Signaltower::LeavingtoRunway);
-        ENSURE(received==true,"Tower didnt receive the signal LeavingtoRunway");
         return received;
     }
     //ENSURE(actionDone>=currentTime,"airplane's action was skipped!");
@@ -331,6 +327,8 @@ bool Airplane::sendSignalTaxiingtoRunway() {
 
 bool Airplane::sendSignalEmergency() {
     REQUIRE(ProperInitialized(),"Airplane wasn't initialized when sending signal Emergency");
+    REQUIRE(getStatus()==Emergency,"Airplane shouldnt request emergency if it's not in emergency");
+    REQUIRE(getType()=="Emergency","Airplane shouldnt request emergency if it's not in emergency");
     if(isDoingNothing()){
         actionDone=currentTime++;
         doingNothing=false;
@@ -338,10 +336,8 @@ bool Airplane::sendSignalEmergency() {
     else if(actionDone==currentTime) {
         //doingNothing=true;
         bool received=destination->receiveSignal(this,Signaltower::Emergency);
-        ENSURE(received==true,"Tower didnt receive the signal Emergency");
         return received;
     }
-    //ENSURE(actionDone>=currentTime,"airplane's action was skipped!");
     return false;
 }
 
@@ -361,7 +357,6 @@ bool Airplane::sendSignalPushBack() {
         destination->getTower().getFile()<<"["<<currentTime<<"]"<<"[AIR]"<<endl;
         destination->getTower().getFile()<<destination->getCallsign()<<", "<<this->getCallsign()<<" at gate "<<this->getLocation()->getName()<<", requesting pushback"<<endl;
         bool received=destination->receiveSignal(this,Signaltower::Push_back);
-        ENSURE(received==true,"Tower didnt receive the signal Push back");
         return received;
     }
     //ENSURE(actionDone>=currentTime,"airplane's action was skipped!");
@@ -381,7 +376,6 @@ bool Airplane::sendSignalCrossingRunway() {
         destination->getTower().getFile()<<"["<<currentTime<<"]"<<"[AIR]"<<endl;
         destination->getTower().getFile()<<destination->getCallsign()<<", " <<this->getCallsign()<<", "<<"Hold short at " <<location->getName()<<endl;
         bool received=destination->receiveSignal(this,Signaltower::Crossing_runway);
-        ENSURE(received==true,"Tower didnt receive the signal Crossing runway");
         return received;
     }
     //ENSURE(actionDone>=currentTime,"airplane's action was skipped!");
@@ -402,7 +396,6 @@ bool Airplane::sendSignalAtRunway() {
         destination->getTower().getFile()<<"["<<currentTime<<"]"<<"[AIR]"<<endl;
         destination->getTower().getFile()<<destination->getCallsign()<<", "<<this->getCallsign()<<", holding short at "<<this->getLocation()->getName()<<endl;
         bool received=destination->receiveSignal(this,Signaltower::At_runway);
-        ENSURE(received==true,"Tower didnt receive the signal At runway");
         return received;
     }
     //ENSURE(actionDone>=currentTime,"airplane's action was skipped!");
@@ -424,7 +417,6 @@ bool Airplane::sendSignalIFR() {
         destination->getTower().getFile()<<"["<<currentTime<<"]"<<"[AIR]"<<endl;
         destination->getTower().getFile()<<destination->getCallsign()<<", "<<this->getCallsign()<<", requesting IFR clearancy to "<<this->getDestination()->getCallsign()<<endl;
         bool received=destination->receiveSignal(this,Signaltower::IFR_clearancy);
-        ENSURE(received==true,"Tower didnt receive the signal IFR clearancy");
         return received;
     }
     //ENSURE(actionDone>=currentTime,"airplane's action was skipped!");
@@ -498,6 +490,7 @@ bool Airplane::receiveSignal(AirplaneallowedSignal signal) {
     if(signal==Keep_flying){
         doingNothing=false;
     }
+    ENSURE(signal==Keep_flying||doingNothing==true,"receiveSignal postcondition failed");
     return true;
 }
 
@@ -736,6 +729,7 @@ bool Airplane::landing() {
         status=Landed;
         return true;
     }
+    ENSURE(!isDoingNothing()||status==Landed,"status must be landed when landing has been finished!");
     return false;
 }
 
@@ -792,6 +786,7 @@ bool Airplane::taxiing() {
     REQUIRE(ProperInitialized(),"Airplane wasn't initialized when taxiing");
     REQUIRE(getStatus()==Taxiing_to_runway||getStatus()==Taxiing_to_gate,"Airplane can only taxi if it is taxiing to a gate or a runway");
     REQUIRE(getPermission()==TaxiingPermission,"Airplane must get the permission to taxi");
+    REQUIRE(!getInstruction().empty(),"Airplane doesnt have any instruction yet!");
     REQUIRE(find(getInstruction().begin(),getInstruction().end(),location)!=getInstruction().end(),"Airplane must have a correct taxi instruction with its own location");
     REQUIRE(find(getInstruction().begin(),getInstruction().end(),location)!=getInstruction().end()-1,"Airplane already finished taxi");
 
@@ -832,6 +827,7 @@ bool Airplane::liningUp() {
         doingNothing=true;
         return true;
     }
+    ENSURE(!isDoingNothing()||getDestinateRunway()->getPlaneAtbegin()==this,"lining up postcondition failed");
     return false;
 }
 
@@ -853,23 +849,31 @@ bool Airplane::crossingRunway() {
         doingNothing=true;
         return true;
     }
+    ENSURE((isDoingNothing()&&!getLocation()->isCrossing())||(!isDoingNothing()&&getLocation()->isCrossing()),"crossingRunway postcondition failed");
     return false;
 }
 
 int Airplane::getSquawkcode() const {
+    REQUIRE(ProperInitialized(),"Airplane wasn't initialized when calling getSquawkcode");
     return squawkcode;
 }
 
 void Airplane::setSquawkcode(int squawkcode) {
+    REQUIRE(ProperInitialized(),"Airplane wasn't initialized when calling setSquawkcode");
+    REQUIRE(validSquawkcode(squawkcode),"the squawkcode that has been giving is not valid");
     Airplane::squawkcode = squawkcode;
+    ENSURE(getSquawkcode()==squawkcode,"setSquawkcode postcondition failed");
 }
 
 bool Airplane::receiveSquawkcode(int squawkcode) {
+    REQUIRE(ProperInitialized(),"Airplane wasn't initialized when calling receiveSquawkcode");
+    REQUIRE(validSquawkcode(squawkcode),"the squawkcode that has been giving is not valid");
     Airplane::squawkcode = squawkcode;
 
     destination->getTower().getFile()<< "squawking ";
 
     destination->getTower().getFile() <<    fillingintegergap(squawkcode,4)<< " ,"<<this->getCallsign()<<endl;
+    ENSURE(getSquawkcode()==squawkcode,"receiveSquawkcode postcondition failed");
     return false;
 }
 

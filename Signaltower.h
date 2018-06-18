@@ -75,7 +75,6 @@ public:
     /**
      *    REQUIRE(ProperInitialized(),"Signal tower must be initialized properly when calling receiveSignal");
      *    REQUIRE(airplane->ProperInitialized(),"Airplane must be initialized properly when calling receiveSignal");
-     *    REQUIRE(find(allowedSignal.begin(),allowedSignal.end(),signal)!=allowedSignal.end(),"Signal tower received a signal that it doesnt reconizes");
      * @param airplane
      * @param signal
      * @return
@@ -88,21 +87,30 @@ public:
      */
     bool sendSignal();
 
+    /**
+     *     REQUIRE(ProperInitialized(),"Signal tower must be initialized properly when calling regulateApproachingplane");
+     *     REQUIRE(airplane->ProperInitialized(),"Airplane must be initialized properly when calling regulateApproachingplane");
+     * @param airplane
+     */
     void regulateApproachingplane(Airplane* airplane);
-    
+
+    /**
+     *     REQUIRE(ProperInitialized(),"Signal tower must be initialized properly when calling regulateLeavingplane");
+     *     REQUIRE(airplane->ProperInitialized(),"Airplane must be initialized properly when calling regulateLeavingplane");
+     * @param airplane
+     */
     void regulateLeavingplane(Airplane* airplane);
-    
+
+    /**
+     *     REQUIRE(ProperInitialized(),"Signal tower must be initialized properly when calling parse_signal");
+     *     REQUIRE(airplane->ProperInitialized(),"Airplane must be initialized properly when calling parse_signal");
+     * @param airplane
+     * @param stringsignal
+     */
     void parse_signal(Airplane* airplane,SignaltowerallowedSignal stringsignal);
     
     
-    
-//unused, replaced by regulateleavingplanes;
-    /**
-     *
-     * @param airplane
-     * @return
-     */
-    bool permissionLeavingGate(Airplane* airplane);
+
 
     /**
      *    REQUIRE(ProperInitialized(),"Signal tower must be initialized properly when calling sendSignalPermission5000");
@@ -192,6 +200,10 @@ public:
      */
     bool isDoingNothing();
 
+    /**
+     *
+     * @return
+     */
     bool ProperInitialized() const;
 };
 
