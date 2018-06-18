@@ -312,9 +312,7 @@ void Airportsim::Simulate() {
      //int toweraction=0;
      while (!Airplanes.empty()){
          airplanestoremove.clear();
-         string status;
-         //while still plane with action = current time;
-         //loop through all those planes to get them something to do;
+         Airplane::Airplaneallowedstatus status;
 
          for (unsigned int j = 0; j < Airplanes.size(); ++j) {
              alreadypushed=false;
@@ -322,181 +320,38 @@ void Airportsim::Simulate() {
              do{
                  status=Airplanes[j]->getStatus();
                  chillingcounter++;
-                 if(status=="Approaching"||status=="Landed"){
+                 if(status==Airplane::Approaching||status==Airplane::Landed){
                      landingstep(*Airplanes[j],*Airplanes[j]->getDestination());
                  }
-                 else if(status=="Standing at gate"){
+                 else if(status==Airplane::Standing_at_gate){
                      airplaneAtGatestep(*Airplanes[j],*Airplanes[j]->getDestination());
                  }
-                 else if(status=="Taxiing to gate"){
+                 else if(status==Airplane::Taxiing_to_gate){
                      taxiingToGatestep(*Airplanes[j],*Airplanes[j]->getDestination());
                  }
-                 else if(status=="Leaving"){
+                 else if(status==Airplane::Leaving){
                      leavingstep(*Airplanes[j],*Airplanes[j]->getDestination());
                  }
-                 else if(status=="Taxiing to runway"){
+                 else if(status==Airplane::Taxiing_to_runway){
                      taxiingToRunwaystep(*Airplanes[j],*Airplanes[j]->getDestination());
                  }
-                 else if(status=="jobsdone"&&!alreadypushed){
+                 else if(status==Airplane::jobsdone&&!alreadypushed){
                      airplanestoremove.push_back(j);
                      alreadypushed=true;
                  }
              }while(Airplanes[j]->isDoingNothing()&&chillingcounter<3);
              Airplanes[j]->timeRuns();
-/*
-             if(Airplanes[j]->isDoingNothing()){
-                 //reruns code to get new job.
-                 if(status=="Approaching"){
-                     landingstep(*Airplanes[j],*Airplanes[j]->getDestination());
-                 }
-                 else if(status=="Standing at gate"){
-                     airplaneAtGatestep(*Airplanes[j],*Airplanes[j]->getDestination());
-                 }
-                 else if(status=="Taxiing to gate"){
-                     taxiingToGatestep(*Airplanes[j],*Airplanes[j]->getDestination());
-                 }
-                 else if(status=="Leaving"){
-                     leavingstep(*Airplanes[j],*Airplanes[j]->getDestination());
-                 }
-                 else if(status=="Taxiing to runway"){
-                     taxiingToRunwaystep(*Airplanes[j],*Airplanes[j]->getDestination());
-                 }
-                 else if(status=="jobsdone"&&!alreadypushed){
-                     airplanestoremove.push_back(j);
-                 }
-                 */
-             }
+         }
          for (unsigned int k = 0; k < Airports.size(); ++k) {
              chillingcounter=0;
              do{
                  Airports[k]->getTower().sendSignal();
                  chillingcounter++;
-                 /*
-                 bool doingnothing=Airports[k]->getTower().isDoingNothing();
-                 if(toweraction==1)goto one;
-                 else if(toweraction==2)goto two;
-                 else if(toweraction==3)goto three;
-             one:
-                 Airports[k]->getTower().regulateApproachingplanes();
-                 if(Airports[k]->getTower().isDoingNothing()!=doingnothing){
-                     if(doingnothing){
-                         toweraction=1;
-                         break;
-                     }
-                     else{
-                         toweraction=-1;
-                         doingnothing=!doingnothing;
-                     }
-                 }
-             two:
-                 Airports[k]->getTower().sendSignal();
-                 if(Airports[k]->getTower().isDoingNothing()!=doingnothing){
-                     if(doingnothing){
-                         toweraction=2;
-                         break;
-                     }
-                     else{
-                         toweraction=-1;
-                         doingnothing=!doingnothing;
-                     }
-                 }
-             three:
-                 Airports[k]->getTower().regulateLeavingplanes();
-                 if(Airports[k]->getTower().isDoingNothing()!=doingnothing){
-                     if(doingnothing){
-                         toweraction=3;
-                         break;
-                     }
-                     else{
-                         toweraction=-1;
-                         doingnothing=!doingnothing;
-                     }
-                 }*/
              }while(Airports[k]->getTower().isDoingNothing()&&chillingcounter<3);
 
              Airports[k]->getTower().timeRuns();
-             /*
-             bool doingsth=!Airports[k]->getTower().isDoingNothing();
-             if(doingsth){
-                     Airports[k]->getTower().sendSignal();
-                     if(Airports[k]->getTower().isDoingNothing()){
-                         goto HELP;
-                     }
-                     Airports[k]->getTower().regulateApproachingplanes();
-                     if(Airports[k]->getTower().isDoingNothing()){
-                         goto HELP;
-                     }
-                     Airports[k]->getTower().regulateLeavingplanes();
-             }
-             HELP:
-             if(Airports[k]->getTower().isDoingNothing()){
-                 chillingcounter=0;
-                 do{
-                     chillingcounter++;
-                     Airports[k]->getTower().sendSignal();
-                 }while(Airports[k]->getTower().isDoingNothing()&&chillingcounter<3);
-                 chillingcounter=0;
-                 if(!Airports[k]->getTower().isDoingNothing()){
-                     Airports[k]->getTower().timeRuns();
-                     continue;
-                 }
-                 do{
-                     chillingcounter++;
-                     Airports[k]->getTower().regulateApproachingplanes();
-                 }while(Airports[k]->getTower().isDoingNothing()&&chillingcounter<3);
-                 chillingcounter=0;
-                 if(!Airports[k]->getTower().isDoingNothing()){
-                     Airports[k]->getTower().timeRuns();
-                     continue;
-                 }
-                 do{
-                     chillingcounter++;
-                     Airports[k]->getTower().regulateLeavingplanes();
-                 }while(Airports[k]->getTower().isDoingNothing()&&chillingcounter<3);
-             }
 
-             Airports[k]->getTower().timeRuns();*/
-
-/*
-
-             if(Airports[k]->getTower().isDoingNothing()){
-
-                 Airports[k]->getTower().regulateApproachingplanes();
-                 Airports[k]->getTower().sendSignal();
-                 Airports[k]->getTower().regulateLeavingplanes();
-             }
-*/
          }
-
-
-/*
-     //rerun code for seeking jobs;
-         for (unsigned int j = 0; j < Airplanes.size(); ++j) {
-             if (Airplanes[j]->isDoingNothing()) {
-                 status = Airplanes[j]->getStatus();
-                 //reruns code to get new job.
-                 if (status == "Approaching") {
-                     landingstep(*Airplanes[j], *Airplanes[j]->getDestination());
-                 } else if (status == "Standing at gate") {
-                     airplaneAtGatestep(*Airplanes[j], *Airplanes[j]->getDestination());
-                 } else if (status == "Taxiing to gate") {
-                     taxiingToGatestep(*Airplanes[j], *Airplanes[j]->getDestination());
-                 } else if (status == "Leaving") {
-                     leavingstep(*Airplanes[j], *Airplanes[j]->getDestination());
-                 } else if (status == "Taxiing to runway") {
-                     taxiingToRunwaystep(*Airplanes[j], *Airplanes[j]->getDestination());
-                 } else if (status == "jobsdone" && !alreadypushed) {
-                     airplanestoremove.push_back(j);
-                 }
-             }
-         }
-         for (unsigned int k = 0; k < Airports.size(); ++k) {
-             if (Airports[k]->getTower().isDoingNothing()) {
-                 Airports[k]->getTower().regulateApproachingplanes();
-                 Airports[k]->getTower().sendSignal();
-                 Airports[k]->getTower().regulateLeavingplanes();
-             }
-         }*/
 
          generateFloorPlan(*getAirports()[0]);
          createVisual(*getAirports()[0]);
@@ -508,6 +363,11 @@ void Airportsim::Simulate() {
              AirplanesFlying.push_back((Airplanes.begin() + airplanestoremove[i] - i).operator*());
              Airplanes.erase(Airplanes.begin() + airplanestoremove[i] - i);
          }
+         for (unsigned int i=0;i<getAirplanes().size();i++){
+             Airplane* plane=getAirplanes()[i];
+             plane->fuelReduction();
+         }
+
          currentTime=currentTime++;
      }
 

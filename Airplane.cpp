@@ -328,7 +328,7 @@ bool Airplane::sendSignalTaxiingtoRunway() {
 bool Airplane::sendSignalEmergency() {
     REQUIRE(ProperInitialized(),"Airplane wasn't initialized when sending signal Emergency");
     REQUIRE(getStatus()==Emergency,"Airplane shouldnt request emergency if it's not in emergency");
-    REQUIRE(getType()=="Emergency","Airplane shouldnt request emergency if it's not in emergency");
+    //REQUIRE(getType()=="Emergency","Airplane shouldnt request emergency if it's not in emergency");
     if(isDoingNothing()){
         actionDone=currentTime++;
         doingNothing=false;
@@ -877,6 +877,42 @@ bool Airplane::receiveSquawkcode(int squawkcode) {
     return false;
 }
 
+void Airplane::fuelReduction() {
+    if((getStatus()==Leaving&&getPermission()==FlyPermission) || getStatus()==Approaching || getStatus() == Emergency){
+        if(fuel>0){
+            int reduction=0;
+            if(getSize()=="small"){
+                reduction+=10;
+            }
+            else if(getSize()=="medium"){
+                reduction+=50;
+            }
+            else if(getSize()=="large"){
+                reduction+=100;
+            }
+            if(getEngine()=="jet"){
+                reduction*=2.5;
+            }
+            fuel-=reduction;
+            if(fuel<=0){
+                setStatus(Emergency);
+            }
+        }
+        else{
+            if(getStatus()!=Emergency){
+                setStatus(Emergency);
+            }
+            sendSignalEmergency();
+            if(getHeight()>=3000){
+
+            }
+            else{
+
+            }
+
+        }
+    }
+}
 
 
 

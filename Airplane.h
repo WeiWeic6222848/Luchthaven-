@@ -335,8 +335,7 @@ public:
              const string &type, const string &engine, const string &size, int passenger, int fuel,
              int passengerCapacity, Airport *destination);
 
-
-
+    void fuelReduction();
 
 private:
     //all valid signals--------------------------------------------------------------------------
@@ -551,7 +550,6 @@ private:
      */
     bool crossingRunway();
     //all actions to be done by aieplane---------------------------------------------------------
-
 
 };
 

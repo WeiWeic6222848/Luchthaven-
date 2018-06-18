@@ -629,7 +629,13 @@ void Signaltower::parse_signal(Airplane *airplane, SignaltowerallowedSignal stri
             }
         }
     } else if (stringSignal == Emergency) {
-        //do nothing yet
+        if(airplane->getHeight()>=3000){
+            airport->findFreeRunway(airplane,true);
+        }
+        else{
+            file<<"";
+        }
+
     } else if (stringSignal == Push_back) {
         Runway *destinaterunway = airport->findFreeRunway(airplane);
         Gate* gate=airport->getGateFromAirplane(airplane);
