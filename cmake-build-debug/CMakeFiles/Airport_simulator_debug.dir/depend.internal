@@ -6,7 +6,6 @@ CMakeFiles/Airport_simulator_debug.dir/Airplane.cpp.o
  /home/c6222848/Luchthaven-/Airplane.h
  /home/c6222848/Luchthaven-/Airport.h
  /home/c6222848/Luchthaven-/AirportUtils.h
- /home/c6222848/Luchthaven-/Airportsim.h
  /home/c6222848/Luchthaven-/AirportsimImporter.h
  /home/c6222848/Luchthaven-/DesignByContract.h
  /home/c6222848/Luchthaven-/Gate.h
@@ -22,7 +21,6 @@ CMakeFiles/Airport_simulator_debug.dir/Airport.cpp.o
  /home/c6222848/Luchthaven-/Airport.cpp
  /home/c6222848/Luchthaven-/Airport.h
  /home/c6222848/Luchthaven-/AirportUtils.h
- /home/c6222848/Luchthaven-/Airportsim.h
  /home/c6222848/Luchthaven-/AirportsimImporter.h
  /home/c6222848/Luchthaven-/DesignByContract.h
  /home/c6222848/Luchthaven-/Gate.h
@@ -141,18 +139,13 @@ CMakeFiles/Airport_simulator_debug.dir/ImportTest.cpp.o
  ../gtest/include/gtest/internal/gtest-string.h
  ../gtest/include/gtest/internal/gtest-tuple.h
  ../gtest/include/gtest/internal/gtest-type-util.h
- /home/c6222848/Luchthaven-/Airplane.h
  /home/c6222848/Luchthaven-/Airport.h
  /home/c6222848/Luchthaven-/AirportUtils.h
  /home/c6222848/Luchthaven-/Airportsim.h
  /home/c6222848/Luchthaven-/AirportsimImporter.h
  /home/c6222848/Luchthaven-/DesignByContract.h
- /home/c6222848/Luchthaven-/Gate.h
  /home/c6222848/Luchthaven-/ImportTest.cpp
- /home/c6222848/Luchthaven-/Location.h
- /home/c6222848/Luchthaven-/Runway.h
  /home/c6222848/Luchthaven-/Signaltower.h
- /home/c6222848/Luchthaven-/Taxipoint.h
  /home/c6222848/Luchthaven-/Time.h
  /home/c6222848/Luchthaven-/tinystr.h
  /home/c6222848/Luchthaven-/tinyxml.h
@@ -180,36 +173,29 @@ CMakeFiles/Airport_simulator_debug.dir/OutputTest.cpp.o
  ../gtest/include/gtest/internal/gtest-string.h
  ../gtest/include/gtest/internal/gtest-tuple.h
  ../gtest/include/gtest/internal/gtest-type-util.h
- /home/c6222848/Luchthaven-/Airplane.h
  /home/c6222848/Luchthaven-/Airport.h
  /home/c6222848/Luchthaven-/AirportUtils.h
  /home/c6222848/Luchthaven-/Airportsim.h
  /home/c6222848/Luchthaven-/AirportsimImporter.h
  /home/c6222848/Luchthaven-/DesignByContract.h
- /home/c6222848/Luchthaven-/Gate.h
- /home/c6222848/Luchthaven-/Location.h
  /home/c6222848/Luchthaven-/OutputTest.cpp
- /home/c6222848/Luchthaven-/Runway.h
  /home/c6222848/Luchthaven-/Signaltower.h
- /home/c6222848/Luchthaven-/Taxipoint.h
  /home/c6222848/Luchthaven-/Time.h
  /home/c6222848/Luchthaven-/output_system.h
  /home/c6222848/Luchthaven-/tinystr.h
  /home/c6222848/Luchthaven-/tinyxml.h
 CMakeFiles/Airport_simulator_debug.dir/Runway.cpp.o
  /home/c6222848/Luchthaven-/Airplane.h
- /home/c6222848/Luchthaven-/Airport.h
  /home/c6222848/Luchthaven-/DesignByContract.h
- /home/c6222848/Luchthaven-/Gate.h
  /home/c6222848/Luchthaven-/Location.h
  /home/c6222848/Luchthaven-/Runway.cpp
  /home/c6222848/Luchthaven-/Runway.h
- /home/c6222848/Luchthaven-/Signaltower.h
- /home/c6222848/Luchthaven-/Taxipoint.h
  /home/c6222848/Luchthaven-/Time.h
 CMakeFiles/Airport_simulator_debug.dir/Signaltower.cpp.o
  /home/c6222848/Luchthaven-/Airplane.h
  /home/c6222848/Luchthaven-/Airport.h
+ /home/c6222848/Luchthaven-/AirportUtils.h
+ /home/c6222848/Luchthaven-/AirportsimImporter.h
  /home/c6222848/Luchthaven-/DesignByContract.h
  /home/c6222848/Luchthaven-/Gate.h
  /home/c6222848/Luchthaven-/Location.h
@@ -218,14 +204,13 @@ CMakeFiles/Airport_simulator_debug.dir/Signaltower.cpp.o
  /home/c6222848/Luchthaven-/Signaltower.h
  /home/c6222848/Luchthaven-/Taxipoint.h
  /home/c6222848/Luchthaven-/Time.h
+ /home/c6222848/Luchthaven-/tinystr.h
+ /home/c6222848/Luchthaven-/tinyxml.h
 CMakeFiles/Airport_simulator_debug.dir/Taxipoint.cpp.o
  /home/c6222848/Luchthaven-/Airplane.h
- /home/c6222848/Luchthaven-/Airport.h
  /home/c6222848/Luchthaven-/DesignByContract.h
- /home/c6222848/Luchthaven-/Gate.h
  /home/c6222848/Luchthaven-/Location.h
  /home/c6222848/Luchthaven-/Runway.h
- /home/c6222848/Luchthaven-/Signaltower.h
  /home/c6222848/Luchthaven-/Taxipoint.cpp
  /home/c6222848/Luchthaven-/Taxipoint.h
  /home/c6222848/Luchthaven-/Time.h
@@ -244,7 +229,6 @@ CMakeFiles/Airport_simulator_debug.dir/output_system.cpp.o
  /home/c6222848/Luchthaven-/Location.h
  /home/c6222848/Luchthaven-/Runway.h
  /home/c6222848/Luchthaven-/Signaltower.h
- /home/c6222848/Luchthaven-/Taxipoint.h
  /home/c6222848/Luchthaven-/Time.h
  /home/c6222848/Luchthaven-/output_system.cpp
  /home/c6222848/Luchthaven-/output_system.h
@@ -270,17 +254,12 @@ CMakeFiles/Airport_simulator_debug.dir/test.cpp.o
  ../gtest/include/gtest/internal/gtest-string.h
  ../gtest/include/gtest/internal/gtest-tuple.h
  ../gtest/include/gtest/internal/gtest-type-util.h
- /home/c6222848/Luchthaven-/Airplane.h
  /home/c6222848/Luchthaven-/Airport.h
  /home/c6222848/Luchthaven-/AirportUtils.h
  /home/c6222848/Luchthaven-/Airportsim.h
  /home/c6222848/Luchthaven-/AirportsimImporter.h
  /home/c6222848/Luchthaven-/DesignByContract.h
- /home/c6222848/Luchthaven-/Gate.h
- /home/c6222848/Luchthaven-/Location.h
- /home/c6222848/Luchthaven-/Runway.h
  /home/c6222848/Luchthaven-/Signaltower.h
- /home/c6222848/Luchthaven-/Taxipoint.h
  /home/c6222848/Luchthaven-/Time.h
  /home/c6222848/Luchthaven-/test.cpp
  /home/c6222848/Luchthaven-/tinystr.h

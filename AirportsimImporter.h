@@ -6,7 +6,6 @@
 #define LUCHTHAVEN_AIRPORTSIMIMPORTER_H
 
 #include <ostream>
-#include "Airportsim.h"
 #include "tinyxml.h"
 
 

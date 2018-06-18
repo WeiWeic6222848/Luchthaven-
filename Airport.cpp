@@ -6,6 +6,9 @@
 #include "Airport.h"
 #include "DesignByContract.h"
 #include "AirportUtils.h"
+#include "Runway.h"
+#include "Taxipoint.h"
+#include "Gate.h"
 
 //constructor
 Airport::Airport(const string &name, const string &iata, const string &callsign, int gates, int passengers) : name(name), iata(iata), callsign(callsign),  passengers(passengers)
@@ -274,7 +277,7 @@ std::ostream& operator<<(std::ostream& output,Airport& airport){
 
 
 
-bool Airport::receiveSignal(Airplane *airplane, string signal) {
+bool Airport::receiveSignal(Airplane *airplane, Signaltower::SignaltowerallowedSignal signal) {
     REQUIRE(ProperInitialized(),"Airport wasn't initialized when transmitting signal");
     return tower->receiveSignal(airplane,signal);
 }

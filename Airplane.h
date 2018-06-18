@@ -9,7 +9,6 @@
 #include <iostream>
 #include <vector>
 #include "list"
-#include "Airport.h"
 #include "Time.h"
 #include "algorithm"
 
@@ -23,16 +22,17 @@ class Signaltower;
 using namespace std;
 
 
-static string allowedstatusprepare[]={"Standing at gate","Approaching","Leaving","Taxiing to runway","Taxiing to gate","jobsdone","Landed"};
-static vector<string> allowedstatus(allowedstatusprepare, allowedstatusprepare+sizeof(allowedstatusprepare)/ sizeof(allowedstatusprepare[0]));
-static string allowedReceiveSignalprepare[]={"Keep flying","3000","5000","Cleared to cross","Hold position","Line up","Fly","IFR clearancy","Push back"};
-static vector<string> allowedReceiveSignal(allowedReceiveSignalprepare, allowedReceiveSignalprepare+sizeof(allowedReceiveSignalprepare)/ sizeof(allowedReceiveSignalprepare[0]));
-
-
 class Airplane {
+public:
+
+    enum Airplaneallowedstatus{Standing_at_gate,Approaching,Leaving,Taxiing_to_runway,Taxiing_to_gate,jobsdone,Landed,Emergency};
+    enum AirplaneallowedSignal{Keep_flying,threeThousand,fiveThousand,Cleared_to_cross,Hold_position,Line_up,Fly,IFR_clearancy,Push_back};
+    enum AirplaneallowedPermission{empty,tenThousandPermission,threeThousandPermission,fiveThousandPermission,LandingPermission,FlyPermission,LineupPermission,Push_backPermission,IFR_clearancyPermission,TaxiingPermission,Cleared_to_crossPermission};
+    enum AirplaneCheckProcedure{Just_landed,Technical_control,Refueling,Boarding,Ready_to_leave};
+
 private:
     Airplane* _initcheck=NULL;
-    string status;
+    Airplaneallowedstatus status;
     string number;
     string callsign;
     string model;
@@ -40,12 +40,13 @@ private:
     string engine;
     string size;
     int passenger;
+    int squawkcode;
 
     int fuel;
     int fuelCapacity;
     int height;
     int passengerCapacity;
-    string permission;
+    AirplaneallowedPermission permission;
     Airport* destination=NULL;
     Airport* nextDestination=NULL;//for flightplan. unused now
     Location* location=NULL;
@@ -54,7 +55,7 @@ private:
     Time actionDone;
     bool doingNothing;
     Runway* destinaterunway=NULL;
-    string checkprocedure;
+    AirplaneCheckProcedure checkprocedure;
 
     friend Airportsim;
     friend Airport;
@@ -62,13 +63,20 @@ private:
 
 public:
 
+    int getSquawkcode() const;
+
+    void setSquawkcode(int squawkcode);
+
+    bool receiveSquawkcode(int squawkcode);
+
     //all the getters------------------------------------------------------------------------
 
     /**
      *     REQUIRE(ProperInitialized(),"Airplane wasn't initialized when calling getStatus");
      * @return status
      */
-    const string &getStatus() const;
+    const Airplaneallowedstatus &getStatus() const;
+
 
     /**
      *     REQUIRE(ProperInitialized(),"Airplane wasn't initialized when calling getNumber");
@@ -142,7 +150,7 @@ public:
      *     REQUIRE(ProperInitialized(),"Airplane wasn't initialized when calling getPermission");
      * @return
      */
-    const string &getPermission() const;
+    const AirplaneallowedPermission &getPermission() const;
 
     /**
      *     REQUIRE(ProperInitialized(),"Airplane wasn't initialized when calling getDestination");
@@ -190,7 +198,7 @@ public:
      *     REQUIRE(ProperInitialized(),"Airplane wasn't initialized when calling getCheckProcedure");
      * @return
      */
-    const string &getCheckProcedure() const;
+    const AirplaneCheckProcedure &getCheckProcedure() const;
 
 
     /**
@@ -203,6 +211,8 @@ public:
 
 
 
+
+
     //all the setters------------------------------------------------------------------------
     /**
      *     REQUIRE(ProperInitialized(),"Airplane wasn't initialized when calling setStatus");
@@ -211,7 +221,7 @@ public:
      * @param status string with a certain restriction.
      * Status can only be either Flying, Approaching(landing), Standing at Gate, Just landed or Leaving.
      */
-    void setStatus(const string &status);
+    void setStatus(const Airplaneallowedstatus &status);
 
     /**
      *     REQUIRE(ProperInitialized(),"Airplane wasn't initialized when calling setPassenger");
@@ -245,7 +255,7 @@ public:
      *     ENSURE(getPermission()==descendingpermission,"setPermission postcondition failed");
      * @param descendingpermission
      */
-    void setPermission(string descendingpermission);//planning to remove this part
+    void setPermission(AirplaneallowedPermission descendingpermission);//planning to remove this part
 
     /**
      *     REQUIRE(ProperInitialized(),"Airplane wasn't initialized when calling setDestination");
@@ -315,7 +325,7 @@ public:
      * @param passengerCapacity
      * @param destination
      */
-    Airplane(const string &status, const string &number, const string &callsign, const string &model,
+    Airplane(const Airplaneallowedstatus &status, const string &number, const string &callsign, const string &model,
              const string &type, const string &engine, const string &size, int passenger, int fuel,
              int passengerCapacity, Airport *destination);
 
@@ -425,7 +435,7 @@ private:
      * @param signal
      * @return
      */
-    bool receiveSignal(string signal);
+    bool receiveSignal(AirplaneallowedSignal signal);
 
     /**
      *     REQUIRE(ProperInitialized(),"Airplane wasn't initialized when receiving a landing signal");

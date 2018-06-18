@@ -14,7 +14,6 @@
 
 using namespace std;
 
-
 class Airplane;
 
 /**
@@ -110,4 +109,8 @@ string to_string(int integer);
 bool FileCompare(const std::string leftFileName, const std::string rightFileName);
 
 bool hasEmptyFields(TiXmlElement* element);
+
+int getBasesqwakcode(Airplane* airplane);
+
+string fillingintegergap(int numer,int extendtodigit);
 #endif //LUCHTHAVEN_AIRPORTUTILS_H

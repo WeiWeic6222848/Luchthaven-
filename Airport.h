@@ -7,26 +7,19 @@
 
 #include <vector>
 #include "string"
-#include "Runway.h"
-#include "Signaltower.h"
-#include "Taxipoint.h"
-#include "Gate.h"
 #include "Time.h"
 #include <iostream>
 #include <limits>
 #include "algorithm"
+#include "Signaltower.h"
 
 
 using namespace std;
 
 class Airplane;
 class Runway;
-class Signaltower;
 class Taxipoint;
 class Gate;
-
-
-
 
 
 class Airport {
@@ -255,7 +248,7 @@ public:
      * @param signal
      * @return
      */
-    bool receiveSignal(Airplane* airplane,string signal);
+    bool receiveSignal(Airplane* airplane,Signaltower::SignaltowerallowedSignal signal);
 
 
 };

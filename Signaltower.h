@@ -6,18 +6,18 @@
 #define LUCHTHAVEN_SIGNALTOWER_H
 
 
-#include "Airplane.h"
 #include "vector"
-#include "Airport.h"
 #include "fstream"
 #include "Time.h"
 #include "string"
 #include "algorithm"
+
+
 using namespace std;
 
 
-static string allowedSignalprepare[]={"Approaching","Leaving","ApproachingtoGate","LeavingtoRunway","Emergency","Push back","IFR clearancy","Crossing runway","At runway","Descending","Rising"};
-static vector<string> allowedSignal(allowedSignalprepare, allowedSignalprepare+sizeof(allowedSignalprepare)/ sizeof(allowedSignalprepare[0]));
+//static string allowedSignalprepare[]={"Approaching","Leaving","ApproachingtoGate","LeavingtoRunway","Emergency","Push back","IFR clearancy","Crossing runway","At runway"};
+//static vector<string> allowedSignal(allowedSignalprepare, allowedSignalprepare+sizeof(allowedSignalprepare)/ sizeof(allowedSignalprepare[0]));
 
 
 class Airplane;
@@ -27,17 +27,17 @@ class Location;
 
 
 class Signaltower {
+public:
+    enum SignaltowerallowedSignal{Approaching,Leaving,ApproachingtoGate,LeavingtoRunway,Emergency,Push_back,IFR_clearancy,Crossing_runway,At_runway};
 private:
     bool buzy3000;
     bool buzy5000;
-    vector<Airplane*> approachingAirplanes;
-    vector<Airplane*> leavingAirplanes;
-    vector<Airplane*> emergency;
-    vector<pair<Airplane*,string> > incomingSignal;
-    pair<Airplane*,string> currentworkingsignal;
-    vector<pair<Airplane*,string> > regulateSignal;
+    vector<Airplane*> allplaneknown;
+    vector<Airplane*> leavingAirplanetempholder;//holder for fix.
+    //if squawk code must be unique even for the plane after departure, then ill fix it using this vector.
+    vector<pair<Airplane*,SignaltowerallowedSignal> > incomingSignal;
+    pair<Airplane*,SignaltowerallowedSignal> currentworkingsignal;
     Airport* airport;
-    vector<Airplane*> allflyingplanes();
     ofstream file;
     Time currentTime;
     bool doingNothing;
@@ -45,6 +45,7 @@ private:
     vector<Location*> makeInstructionToRunway(Airplane* airplane);
     Signaltower* _initCheck=NULL;
 public:
+    bool checkSquawkcodeunique(int code);
     /**
      *    REQUIRE(ProperInitialized(),"Signal tower must be initialized properly when calling getCurrentTime");
      * @return
@@ -79,17 +80,7 @@ public:
      * @param signal
      * @return
      */
-    bool receiveSignal(Airplane* airplane,string signal);
-
-    /**
-     *    REQUIRE(ProperInitialized(),"Signal tower must be initialized properly when calling regulateApproachingplanes");
-     */
-    void regulateApproachingplanes();
-
-    /**
-     *    REQUIRE(ProperInitialized(),"Signal tower must be initialized properly when calling regulateLeavingplanes");
-     */
-    void regulateLeavingplanes();
+    bool receiveSignal(Airplane* airplane,SignaltowerallowedSignal signal);
 
     /**
      *    REQUIRE(ProperInitialized(),"Signal tower must be initialized properly when calling sendSignal");
@@ -101,7 +92,7 @@ public:
     
     void regulateLeavingplane(Airplane* airplane);
     
-    void parse_signal(Airplane* airplane,string stringsignal);
+    void parse_signal(Airplane* airplane,SignaltowerallowedSignal stringsignal);
     
     
     

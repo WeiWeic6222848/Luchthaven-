@@ -5,7 +5,10 @@
 #include "DesignByContract.h"
 #include "AirportsimImporter.h"
 #include "AirportUtils.h"
-
+#include "Airportsim.h"
+#include "Runway.h"
+#include "Taxipoint.h"
+#include "Gate.h"
 
 
 
@@ -431,7 +434,11 @@ Esucces AirportsimImporter::readAirplane(TiXmlElement *airplaneelement, std::ost
             return PartialImport;
         }
     }
-    Airplane* a=new Airplane(status,number,callsign,model,type,engine,size,passenger,fuel,passengercapacity,airport);
+    Airplane::Airplaneallowedstatus temp=Airplane::Approaching;
+    if(status=="Standing at gate"){
+        temp=Airplane::Standing_at_gate;
+    }
+    Airplane* a=new Airplane(temp,number,callsign,model,type,engine,size,passenger,fuel,passengercapacity,airport);
     sim.addAirplane(a);
 
     if (status=="Standing at gate"){

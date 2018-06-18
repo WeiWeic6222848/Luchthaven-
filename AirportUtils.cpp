@@ -7,6 +7,12 @@
 
 #include <sys/stat.h>
 #include "AirportUtils.h"
+#include "DesignByContract.h"
+#include "Airportsim.h"
+#include "Runway.h"
+#include "Taxipoint.h"
+#include "Gate.h"
+
 using namespace std;
 
 bool DirectoryExists(const std::string dirname) {
@@ -202,4 +208,50 @@ bool hasEmptyFields(TiXmlElement *element) {
         }
     }
     return false;
+}
+
+int getBasesqwakcode(Airplane *airplane) {
+    REQUIRE(isRightAirplaneCombination(airplane->getType(),airplane->getEngine(),airplane->getSize()),"wrong");
+    string engine=airplane->getEngine();
+    string size=airplane->getSize();
+    string type=airplane->getType();
+    int basecode=0;
+    if(type=="private"){
+        if(size=="medium"){
+            return basecode+1000;
+        }
+    }
+    else if(type=="airline"){
+        basecode+=2000;
+        if(engine=="jet"){
+            basecode+=1000;
+        }
+        if(size=="large"){
+            basecode+=1000;
+        }
+        return basecode;
+    }
+    else if(type=="military"){
+        basecode+=5000;
+        return basecode;
+    }
+    else if(type=="emergency"){
+        basecode+=6000;
+        return basecode;
+    }
+    return 0;
+}
+
+string fillingintegergap(int numer, int extendtodigit) {
+    string a="";
+    for (int i = extendtodigit-1; i >0 ; --i) {
+        if(numer<pow(10,i)){
+            a+="0";
+        }
+        else{
+            break;
+        }
+    }
+    a+=to_string(numer);
+    return a;
 }

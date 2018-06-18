@@ -6,7 +6,8 @@
 #define LUCHTHAVEN_OUTPUT_SYSTEM_H
 
 #include <fstream>
-#include "Airportsim.h"
+
+class Airportsim;
 
 class output_system {
 public:
