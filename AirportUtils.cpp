@@ -7,6 +7,12 @@
 
 #include <sys/stat.h>
 #include "AirportUtils.h"
+#include "DesignByContract.h"
+#include "Airportsim.h"
+#include "Runway.h"
+#include "Taxipoint.h"
+#include "Gate.h"
+
 using namespace std;
 
 bool DirectoryExists(const std::string dirname) {
@@ -202,4 +208,110 @@ bool hasEmptyFields(TiXmlElement *element) {
         }
     }
     return false;
+}
+
+int getBasesqwakcode(Airplane *airplane) {
+    REQUIRE(airplane->ProperInitialized(),"Airplane must be initialized when calling getBasesqwakcode");
+    REQUIRE(isRightAirplaneCombination(airplane),"airplane must be the right combination!");
+    string engine=airplane->getEngine();
+    string size=airplane->getSize();
+    string type=airplane->getType();
+    int basecode=0;
+    if(type=="private"){
+        if(size=="medium"){
+            return basecode+1000;
+        }
+    }
+    else if(type=="airline"){
+        basecode+=2000;
+        if(engine=="jet"){
+            basecode+=1000;
+        }
+        if(size=="large"){
+            basecode+=1000;
+        }
+        return basecode;
+    }
+    else if(type=="military"){
+        basecode+=5000;
+        return basecode;
+    }
+    else if(type=="emergency"){
+        basecode+=6000;
+        return basecode;
+    }
+    return 0;
+}
+
+string fillingintegergap(int numer, int extendtodigit) {
+    REQUIRE(extendtodigit>0,"you must enter a positive digit to extend!");
+    string a="";
+    for (int i = extendtodigit-1; i >0 ; --i) {
+        if(numer<pow(10,i)){
+            a+="0";
+        }
+        else{
+            break;
+        }
+    }
+    a+=to_string(numer);
+    return a;
+}
+
+bool validSquawkcode(int code) {
+    if(code>7777){
+        return false;
+    }
+    else if(code<0){
+        return false;
+    }
+    while(code>0){
+        int lastdigit=code-code/10*10;
+        if(lastdigit>7){
+            return false;
+        }
+        code=code/10;
+    }
+    return true;
+}
+
+int generatevalidRandomcode() {
+    int hunderd=rand()%8;
+    int ten=rand()%8;
+    int one=rand()%8;
+    return hunderd*100+ten*10+one;
+}
+
+bool isRightAirplaneCombination(Airplane *airplane) {
+    REQUIRE(airplane->ProperInitialized(),"Airplane must be initialized when calling isRightAirplaneCombination!");
+    string engine=airplane->getEngine();
+    string size=airplane->getSize();
+    string type=airplane->getType();
+    if (engine=="propeller"){
+        if(size=="small"){
+            return type=="emergency"||type=="private";
+        }
+        else if (size=="medium"){
+            return type=="airline";
+        }
+        else if (size=="large"){
+            return type=="military";
+        }
+        return false;
+    }
+    else if (engine=="jet"){
+        if(size=="small"){
+            return type=="military"||type=="private";
+        }
+        else if (size=="medium"){
+            return type=="airline"||type=="private";
+        }
+        else if (size=="large"){
+            return type=="airline";
+        }
+        return false;
+    }
+    else{
+        return false;
+    }
 }

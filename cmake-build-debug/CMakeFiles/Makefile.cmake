@@ -7,6 +7,7 @@ set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 # The top level Makefile was generated from the following files:
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
+<<<<<<< HEAD
   "../CMakeLists.txt"
   "CMakeFiles/3.9.4/CMakeCCompiler.cmake"
   "CMakeFiles/3.9.4/CMakeCXXCompiler.cmake"
@@ -97,6 +98,31 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/opt/clion-2017.3/bin/cmake/share/cmake-3.9/Modules/Platform/Linux.cmake"
   "/opt/clion-2017.3/bin/cmake/share/cmake-3.9/Modules/Platform/UnixPaths.cmake"
   "/opt/clion-2017.3/bin/cmake/share/cmake-3.9/Modules/ProcessorCount.cmake"
+=======
+  "/home/c6222848/Downloads/clion-2017.3.3/bin/cmake/share/cmake-3.9/Modules/CMakeCInformation.cmake"
+  "/home/c6222848/Downloads/clion-2017.3.3/bin/cmake/share/cmake-3.9/Modules/CMakeCXXInformation.cmake"
+  "/home/c6222848/Downloads/clion-2017.3.3/bin/cmake/share/cmake-3.9/Modules/CMakeCommonLanguageInclude.cmake"
+  "/home/c6222848/Downloads/clion-2017.3.3/bin/cmake/share/cmake-3.9/Modules/CMakeExtraGeneratorDetermineCompilerMacrosAndIncludeDirs.cmake"
+  "/home/c6222848/Downloads/clion-2017.3.3/bin/cmake/share/cmake-3.9/Modules/CMakeFindCodeBlocks.cmake"
+  "/home/c6222848/Downloads/clion-2017.3.3/bin/cmake/share/cmake-3.9/Modules/CMakeGenericSystem.cmake"
+  "/home/c6222848/Downloads/clion-2017.3.3/bin/cmake/share/cmake-3.9/Modules/CMakeLanguageInformation.cmake"
+  "/home/c6222848/Downloads/clion-2017.3.3/bin/cmake/share/cmake-3.9/Modules/CMakeSystemSpecificInformation.cmake"
+  "/home/c6222848/Downloads/clion-2017.3.3/bin/cmake/share/cmake-3.9/Modules/CMakeSystemSpecificInitialize.cmake"
+  "/home/c6222848/Downloads/clion-2017.3.3/bin/cmake/share/cmake-3.9/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
+  "/home/c6222848/Downloads/clion-2017.3.3/bin/cmake/share/cmake-3.9/Modules/Compiler/GNU-C.cmake"
+  "/home/c6222848/Downloads/clion-2017.3.3/bin/cmake/share/cmake-3.9/Modules/Compiler/GNU-CXX.cmake"
+  "/home/c6222848/Downloads/clion-2017.3.3/bin/cmake/share/cmake-3.9/Modules/Compiler/GNU.cmake"
+  "/home/c6222848/Downloads/clion-2017.3.3/bin/cmake/share/cmake-3.9/Modules/Platform/Linux-GNU-C.cmake"
+  "/home/c6222848/Downloads/clion-2017.3.3/bin/cmake/share/cmake-3.9/Modules/Platform/Linux-GNU-CXX.cmake"
+  "/home/c6222848/Downloads/clion-2017.3.3/bin/cmake/share/cmake-3.9/Modules/Platform/Linux-GNU.cmake"
+  "/home/c6222848/Downloads/clion-2017.3.3/bin/cmake/share/cmake-3.9/Modules/Platform/Linux.cmake"
+  "/home/c6222848/Downloads/clion-2017.3.3/bin/cmake/share/cmake-3.9/Modules/Platform/UnixPaths.cmake"
+  "/home/c6222848/Downloads/clion-2017.3.3/bin/cmake/share/cmake-3.9/Modules/ProcessorCount.cmake"
+  "../CMakeLists.txt"
+  "CMakeFiles/3.9.6/CMakeCCompiler.cmake"
+  "CMakeFiles/3.9.6/CMakeCXXCompiler.cmake"
+  "CMakeFiles/3.9.6/CMakeSystem.cmake"
+>>>>>>> ebe923f1eb2bb9c944d2f50863e96a29b720c962
   )
 
 # The corresponding makefile is:
@@ -107,11 +133,14 @@ set(CMAKE_MAKEFILE_OUTPUTS
 
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
+<<<<<<< HEAD
   "CMakeFiles/3.9.4/CMakeSystem.cmake"
   "CMakeFiles/3.9.4/CMakeCCompiler.cmake"
   "CMakeFiles/3.9.4/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.9.4/CMakeCCompiler.cmake"
   "CMakeFiles/3.9.4/CMakeCXXCompiler.cmake"
+=======
+>>>>>>> ebe923f1eb2bb9c944d2f50863e96a29b720c962
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 

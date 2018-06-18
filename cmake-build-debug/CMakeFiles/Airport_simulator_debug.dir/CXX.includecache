@@ -252,7 +252,19 @@ Airplane.h
 DesignByContract.h
 /home/tristan/CLionProjects/Luchthaven-/DesignByContract.h
 AirportUtils.h
+<<<<<<< HEAD
 /home/tristan/CLionProjects/Luchthaven-/AirportUtils.h
+=======
+/home/c6222848/Luchthaven-/AirportUtils.h
+Airport.h
+/home/c6222848/Luchthaven-/Airport.h
+Runway.h
+/home/c6222848/Luchthaven-/Runway.h
+Taxipoint.h
+/home/c6222848/Luchthaven-/Taxipoint.h
+Gate.h
+/home/c6222848/Luchthaven-/Gate.h
+>>>>>>> ebe923f1eb2bb9c944d2f50863e96a29b720c962
 
 /home/tristan/CLionProjects/Luchthaven-/Airplane.h
 string
@@ -262,9 +274,13 @@ iostream
 vector
 -
 list
+<<<<<<< HEAD
 /home/tristan/CLionProjects/Luchthaven-/list
 Airport.h
 /home/tristan/CLionProjects/Luchthaven-/Airport.h
+=======
+/home/c6222848/Luchthaven-/list
+>>>>>>> ebe923f1eb2bb9c944d2f50863e96a29b720c962
 Time.h
 /home/tristan/CLionProjects/Luchthaven-/Time.h
 algorithm
@@ -276,6 +292,7 @@ Airport.h
 DesignByContract.h
 /home/tristan/CLionProjects/Luchthaven-/DesignByContract.h
 AirportUtils.h
+<<<<<<< HEAD
 /home/tristan/CLionProjects/Luchthaven-/AirportUtils.h
 
 /home/tristan/CLionProjects/Luchthaven-/Airport.h
@@ -287,10 +304,25 @@ Runway.h
 /home/tristan/CLionProjects/Luchthaven-/Runway.h
 Signaltower.h
 /home/tristan/CLionProjects/Luchthaven-/Signaltower.h
+=======
+/home/c6222848/Luchthaven-/AirportUtils.h
+Runway.h
+/home/c6222848/Luchthaven-/Runway.h
+>>>>>>> ebe923f1eb2bb9c944d2f50863e96a29b720c962
 Taxipoint.h
 /home/tristan/CLionProjects/Luchthaven-/Taxipoint.h
 Gate.h
+<<<<<<< HEAD
 /home/tristan/CLionProjects/Luchthaven-/Gate.h
+=======
+/home/c6222848/Luchthaven-/Gate.h
+
+/home/c6222848/Luchthaven-/Airport.h
+vector
+-
+string
+/home/c6222848/Luchthaven-/string
+>>>>>>> ebe923f1eb2bb9c944d2f50863e96a29b720c962
 Time.h
 /home/tristan/CLionProjects/Luchthaven-/Time.h
 iostream
@@ -298,13 +330,33 @@ iostream
 limits
 -
 algorithm
+<<<<<<< HEAD
 /home/tristan/CLionProjects/Luchthaven-/algorithm
+=======
+/home/c6222848/Luchthaven-/algorithm
+Signaltower.h
+/home/c6222848/Luchthaven-/Signaltower.h
+>>>>>>> ebe923f1eb2bb9c944d2f50863e96a29b720c962
 
 /home/tristan/CLionProjects/Luchthaven-/AirportUtils.cpp
 sys/stat.h
 -
 AirportUtils.h
+<<<<<<< HEAD
 /home/tristan/CLionProjects/Luchthaven-/AirportUtils.h
+=======
+/home/c6222848/Luchthaven-/AirportUtils.h
+DesignByContract.h
+/home/c6222848/Luchthaven-/DesignByContract.h
+Airportsim.h
+/home/c6222848/Luchthaven-/Airportsim.h
+Runway.h
+/home/c6222848/Luchthaven-/Runway.h
+Taxipoint.h
+/home/c6222848/Luchthaven-/Taxipoint.h
+Gate.h
+/home/c6222848/Luchthaven-/Gate.h
+>>>>>>> ebe923f1eb2bb9c944d2f50863e96a29b720c962
 
 /home/tristan/CLionProjects/Luchthaven-/AirportUtils.h
 string
@@ -326,7 +378,17 @@ Airportsim.h
 DesignByContract.h
 /home/tristan/CLionProjects/Luchthaven-/DesignByContract.h
 AirportUtils.h
+<<<<<<< HEAD
 /home/tristan/CLionProjects/Luchthaven-/AirportUtils.h
+=======
+/home/c6222848/Luchthaven-/AirportUtils.h
+Runway.h
+/home/c6222848/Luchthaven-/Runway.h
+Taxipoint.h
+/home/c6222848/Luchthaven-/Taxipoint.h
+Gate.h
+/home/c6222848/Luchthaven-/Gate.h
+>>>>>>> ebe923f1eb2bb9c944d2f50863e96a29b720c962
 
 /home/tristan/CLionProjects/Luchthaven-/Airportsim.h
 vector
@@ -344,13 +406,28 @@ DesignByContract.h
 AirportsimImporter.h
 /home/tristan/CLionProjects/Luchthaven-/AirportsimImporter.h
 AirportUtils.h
+<<<<<<< HEAD
 /home/tristan/CLionProjects/Luchthaven-/AirportUtils.h
+=======
+/home/c6222848/Luchthaven-/AirportUtils.h
+Airportsim.h
+/home/c6222848/Luchthaven-/Airportsim.h
+Runway.h
+/home/c6222848/Luchthaven-/Runway.h
+Taxipoint.h
+/home/c6222848/Luchthaven-/Taxipoint.h
+Gate.h
+/home/c6222848/Luchthaven-/Gate.h
+>>>>>>> ebe923f1eb2bb9c944d2f50863e96a29b720c962
 
 /home/tristan/CLionProjects/Luchthaven-/AirportsimImporter.h
 ostream
 -
+<<<<<<< HEAD
 Airportsim.h
 /home/tristan/CLionProjects/Luchthaven-/Airportsim.h
+=======
+>>>>>>> ebe923f1eb2bb9c944d2f50863e96a29b720c962
 tinyxml.h
 /home/tristan/CLionProjects/Luchthaven-/tinyxml.h
 
@@ -372,7 +449,19 @@ DesignByContract.h
 Airportsim.h
 /home/tristan/CLionProjects/Luchthaven-/Airportsim.h
 AirportUtils.h
+<<<<<<< HEAD
 /home/tristan/CLionProjects/Luchthaven-/AirportUtils.h
+=======
+/home/c6222848/Luchthaven-/AirportUtils.h
+Runway.h
+/home/c6222848/Luchthaven-/Runway.h
+Taxipoint.h
+/home/c6222848/Luchthaven-/Taxipoint.h
+Gate.h
+/home/c6222848/Luchthaven-/Gate.h
+Airplane.h
+/home/c6222848/Luchthaven-/Airplane.h
+>>>>>>> ebe923f1eb2bb9c944d2f50863e96a29b720c962
 
 /home/tristan/CLionProjects/Luchthaven-/Gate.cpp
 Gate.h
@@ -438,7 +527,15 @@ output_system.h
 Runway.h
 /home/tristan/CLionProjects/Luchthaven-/Runway.h
 DesignByContract.h
+<<<<<<< HEAD
 /home/tristan/CLionProjects/Luchthaven-/DesignByContract.h
+=======
+/home/c6222848/Luchthaven-/DesignByContract.h
+Airport.h
+/home/c6222848/Luchthaven-/Airport.h
+Taxipoint.h
+/home/c6222848/Luchthaven-/Taxipoint.h
+>>>>>>> ebe923f1eb2bb9c944d2f50863e96a29b720c962
 
 /home/tristan/CLionProjects/Luchthaven-/Runway.h
 string
@@ -452,6 +549,7 @@ Location.h
 Signaltower.h
 /home/tristan/CLionProjects/Luchthaven-/Signaltower.h
 DesignByContract.h
+<<<<<<< HEAD
 /home/tristan/CLionProjects/Luchthaven-/DesignByContract.h
 
 /home/tristan/CLionProjects/Luchthaven-/Signaltower.h
@@ -461,6 +559,25 @@ vector
 /home/tristan/CLionProjects/Luchthaven-/vector
 Airport.h
 /home/tristan/CLionProjects/Luchthaven-/Airport.h
+=======
+/home/c6222848/Luchthaven-/DesignByContract.h
+AirportUtils.h
+/home/c6222848/Luchthaven-/AirportUtils.h
+Airport.h
+/home/c6222848/Luchthaven-/Airport.h
+Airplane.h
+/home/c6222848/Luchthaven-/Airplane.h
+Runway.h
+/home/c6222848/Luchthaven-/Runway.h
+Taxipoint.h
+/home/c6222848/Luchthaven-/Taxipoint.h
+Gate.h
+/home/c6222848/Luchthaven-/Gate.h
+
+/home/c6222848/Luchthaven-/Signaltower.h
+vector
+/home/c6222848/Luchthaven-/vector
+>>>>>>> ebe923f1eb2bb9c944d2f50863e96a29b720c962
 fstream
 /home/tristan/CLionProjects/Luchthaven-/fstream
 Time.h
@@ -502,13 +619,26 @@ output_system.h
 DesignByContract.h
 /home/tristan/CLionProjects/Luchthaven-/DesignByContract.h
 AirportUtils.h
+<<<<<<< HEAD
 /home/tristan/CLionProjects/Luchthaven-/AirportUtils.h
+=======
+/home/c6222848/Luchthaven-/AirportUtils.h
+Runway.h
+/home/c6222848/Luchthaven-/Runway.h
+Gate.h
+/home/c6222848/Luchthaven-/Gate.h
+Airportsim.h
+/home/c6222848/Luchthaven-/Airportsim.h
+>>>>>>> ebe923f1eb2bb9c944d2f50863e96a29b720c962
 
 /home/tristan/CLionProjects/Luchthaven-/output_system.h
 fstream
 -
+<<<<<<< HEAD
 Airportsim.h
 /home/tristan/CLionProjects/Luchthaven-/Airportsim.h
+=======
+>>>>>>> ebe923f1eb2bb9c944d2f50863e96a29b720c962
 
 /home/tristan/CLionProjects/Luchthaven-/test.cpp
 fstream

@@ -139,40 +139,6 @@ public:
 
 
 
-    //unused codes from the past----------------------
-    /**
-     *     REQUIRE(ProperInitialized(),"Airportsim object wasn't initialized when calling landing");
-     *     REQUIRE(aproaching.getStatus()=="Approaching","Airplane must has the status of Approaching when calling landing");
-     *     ENSURE(fileExist(filename),"landing postcondition failed");
-     * @param aproaching the landing airplane
-     * @param airport the airport to land
-     */
-    void landing(Airplane& approaching, Airport& airport);
-
-    /**
-     *     REQUIRE(ProperInitialized(),"Airportsim object wasn't initialized when calling takingOff");
-     *     REQUIRE(aproaching.getStatus()=="Standing at gate","Airplane must has the status of Standing at gate when calling taking off");
-     *     ENSURE(fileExist(filename),"takingOff postcondition failed");
-     * @param aproaching the leaving airplane
-     * @param airport the airport to leave
-     */
-    void takingOff(Airplane& leaving, Airport& airport);
-
-    /**
-    *      REQUIRE(ProperInitialized(),"Airportsim object wasn't initialized when calling AirplaneAtGate");
-    *      ENSURE(fileExist(filename),"AirplaneAtGate postcondition failed");
-    * @param plane plane to get prepared
-    * @param airport where is this airplane standing.
-    */
-    void airplaneAtGate(Airplane& plane,Airport& airport);
-
-    //unused codes from the past----------------------
-
-
-
-
-
-
 
 
 
@@ -189,6 +155,9 @@ public:
      */
     void Simulate();
 
+    /**
+     *     REQUIRE(ProperInitialized(),"Airportsim object wasn't initialized when calling simulate_Onetime");
+     */
     void simulate_Onetime();
 
 private:
@@ -196,7 +165,7 @@ private:
      *     REQUIRE(ProperInitialized(),"Airportsim object wasn't initialized when calling landingstep");
      *     REQUIRE(approaching.ProperInitialized(),"Airplane wasn't initialized when calling landingstep");
      *     REQUIRE(airport.ProperInitialized(),"Airport wasn't initialized when calling landingstep");
-     *     REQUIRE(approaching.getStatus()=="Approaching"||approaching.getStatus()=="Landed","Airplane must has the status of Approaching when calling landingstep");
+     *     REQUIRE(approaching.getStatus()==Airplane::Approaching||approaching.getStatus()==Airplane::Landed,"Airplane must has the status of Approaching when calling landingstep");
      *
      * @param approaching
      * @param airport
@@ -207,7 +176,7 @@ private:
      *     REQUIRE(ProperInitialized(),"Airportsim object wasn't initialized when calling airplaneAtGatestep");
      *     REQUIRE(plane.ProperInitialized(),"Airplane wasn't initialized when calling airplaneAtGatestep");
      *     REQUIRE(airport.ProperInitialized(),"Airport wasn't initialized when calling airplaneAtGatestep");
-     *     REQUIRE(plane.getStatus()=="Standing at gate","Airplane must has the status of Standing at gate when calling airplaneAtGatestep");
+     *     REQUIRE(plane.getStatus()==Airplane::Standing_at_gate,"Airplane must has the status of Standing at gate when calling airplaneAtGate");
      * @param plane
      * @param airport
      */
@@ -217,7 +186,7 @@ private:
      *     REQUIRE(ProperInitialized(),"Airportsim object wasn't initialized when calling taxiingToGatestep");
      *     REQUIRE(taxiingplane.ProperInitialized(),"Airplane wasn't initialized when calling taxiingToGatestep");
      *     REQUIRE(airport.ProperInitialized(),"Airport wasn't initialized when calling taxiingToGatestep");
-     *     REQUIRE(taxiingplane.getStatus()=="Taxiing to gate","Airplane must has the status of Taxiing to gate when calling taxiingToGatestep");
+     *     REQUIRE(taxiingplane.getStatus()==Airplane::Taxiing_to_gate,"Airplane must has the status of Taxiing to gate when calling taxiingToGatestep");
      * @param taxiingplane
      * @param airport
      */
@@ -227,7 +196,7 @@ private:
      *     REQUIRE(ProperInitialized(),"Airportsim object wasn't initialized when calling taxiingToRunwaystep");
      *     REQUIRE(taxiingplane.ProperInitialized(),"Airplane wasn't initialized when calling taxiingToRunwaystep");
      *     REQUIRE(airport.ProperInitialized(),"Airport wasn't initialized when calling taxiingToRunwaystep");
-     *     REQUIRE(taxiingplane.getStatus()=="Taxiing to runway","Airplane must has the status of Taxiing to runway when calling taxiingToRunwaystep");
+     *     REQUIRE(taxiingplane.getStatus()==Airplane::Taxiing_to_runway,"Airplane must has the status of Taxiing to runway when calling taxiingToRunwaystep");
      * @param taxiingplane
      * @param airport
      */
@@ -237,16 +206,28 @@ private:
      *     REQUIRE(ProperInitialized(),"Airportsim object wasn't initialized when calling leavingstep");
      *     REQUIRE(leaving.ProperInitialized(),"Airplane wasn't initialized when calling leavingstep");
      *     REQUIRE(airport.ProperInitialized(),"Airport wasn't initialized when calling leavingstep");
-     *     REQUIRE(leaving.getStatus()=="Leaving","Airplane must has the status of Leaving when calling leavingstep");
+     *     REQUIRE(leaving.getStatus()==Airplane::Leaving,"Airplane must has the status of Leaving when calling leavingstep");
      * @param leaving
      * @param airport
      */
     void leavingstep(Airplane& leaving, Airport& airport);
 
+    /**
+     *     REQUIRE(vlieghaven.ProperInitialized(), "airport wasn't initialized when calling generateFloorPlan");
+     * @param vlieghaven
+     */
     void generateFloorPlan(Airport& vlieghaven);
 
+    /**
+     *     REQUIRE(airport.ProperInitialized(), "airport wasn't initialized when calling writeIni");
+     * @param airport
+     */
     void writeIni(Airport& airport);
 
+    /**
+     *     REQUIRE(airport.ProperInitialized(), "airport wasn't initialized when calling createVisual");
+     * @param airport
+     */
     void createVisual(Airport& airport);
 
 };

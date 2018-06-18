@@ -4,6 +4,8 @@
 
 #include "Runway.h"
 #include "DesignByContract.h"
+#include "Airport.h"
+#include "Taxipoint.h"
 
 
 
@@ -30,6 +32,7 @@ void Runway::setCurrentairplane(Airplane *currentairplane) {
         setOnuse(false);
     }
     ENSURE(getCurrentairplane()==currentairplane,"setCurrentairplane postcondition failed");
+    ENSURE((currentairplane==NULL&&!isOnuse())||(currentairplane!=NULL&&isOnuse()),"setCurrentairplane postcondition failed");
 }
 
 
@@ -45,6 +48,7 @@ Taxipoint *Runway::getTaxipoint() const {
 
 void Runway::setTaxipoint(Taxipoint *taxipoint) {
     REQUIRE(ProperInitialized(),"Runway object wasn't initialized when calling setTaxipoint");
+    REQUIRE(getAirport()->findTaxipoint(taxipoint->getName())!=NULL,"the taxipoint must be in the same airport as runway!");
     Runway::taxipoint = taxipoint;
     ENSURE(getTaxipoint()==taxipoint,"setTaxipoint postcondition failed");
 }

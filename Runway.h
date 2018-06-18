@@ -40,20 +40,21 @@ public:
     Runway(const string &name, Airport *where, string stringtype, int length);
 
     /**
-     * REQUIRE(ProperInitialized(),"Runway object wasn't initialized when calling Where");
+     *    REQUIRE(ProperInitialized(),"Runway object wasn't initialized when calling Where");
      * @return the pointer to where this runway is at
      */
     Airport *getAirport() const;
 
     /**
-     * REQUIRE(ProperInitialized(),"Runway object wasn't initialized when calling getCurrentairplane");
+     *    REQUIRE(ProperInitialized(),"Runway object wasn't initialized when calling getCurrentairplane");
      * @return the pointer to the airplane on this runway
      */
     Airplane *getCurrentairplane() const;
 
     /**
-     * REQUIRE(ProperInitialized(),"Runway object wasn't initialized when calling setCurrentairplane");
-     * ENSURE(getCurrentairplane()==currentairplane,"setCurrentairplane postcondition failed");
+     *    REQUIRE(ProperInitialized(),"Runway object wasn't initialized when calling setCurrentairplane");
+     *    ENSURE(getCurrentairplane()==currentairplane,"setCurrentairplane postcondition failed");
+     *    ENSURE((currentairplane==NULL&&!isOnuse())||(currentairplane!=NULL&&isOnuse()),"setCurrentairplane postcondition failed");
      * @param currentairplane the airplane to be set on this runway
      */
     void setCurrentairplane(Airplane *currentairplane);
@@ -73,6 +74,7 @@ public:
 
     /**
      *    REQUIRE(ProperInitialized(),"Runway object wasn't initialized when calling setTaxipoint");
+     *    REQUIRE(getAirport()->findTaxipoint(taxipoint->getName())!=NULL,"the taxipoint must be in the same airport as runway!");
      *    ENSURE(getTaxipoint()==taxipoint,"setTaxipoint postcondition failed");
      * @param taxipoint
      */

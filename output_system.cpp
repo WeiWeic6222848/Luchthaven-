@@ -5,6 +5,9 @@
 #include "output_system.h"
 #include "DesignByContract.h"
 #include "AirportUtils.h"
+#include "Runway.h"
+#include "Gate.h"
+#include "Airportsim.h"
 
 
 void output_system::writeToFile(Airportsim &simulator) {

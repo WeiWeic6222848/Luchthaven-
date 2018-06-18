@@ -14,7 +14,6 @@
 
 using namespace std;
 
-
 class Airplane;
 
 /**
@@ -48,8 +47,7 @@ int stoi(const string&value);
 Esucces LoadAirport(char const* string, ostream& errStream, Airportsim& sim);
 
 /**
- *  REQUIRE(sim.ProperInitialized(),"Airportsim must be initialized in order to load");
-
+ *     REQUIRE(sim.ProperInitialized(),"Airportsim must be initialized in order to load");
  * @param argc
  * @param argv
  * @param errStream
@@ -59,7 +57,7 @@ Esucces LoadAirport(char const* string, ostream& errStream, Airportsim& sim);
 Esucces LoadAirport(int argc,char const* argv[],ostream& errStream,Airportsim& sim);
 
 /**
- *  REQUIRE(sim.ProperInitialized(),"Airportsim must be initialized in order to load");
+ *     REQUIRE(sim.ProperInitialized(),"Airportsim must be initialized in order to load");
  * @param argc
  * @param argv
  * @param sim
@@ -79,6 +77,13 @@ Esucces LoadAirport(int argc,char const* argv[],Airportsim& sim,bool testing=fal
  * @return
  */
 bool isRightAirplaneCombination(string type, string engine, string size);
+
+/**
+ *     REQUIRE(airplane->ProperInitialized(),"Airplane must be initialized when calling isRightAirplaneCombination!");
+ * @param airplane
+ * @return
+ */
+bool isRightAirplaneCombination(Airplane* airplane);
 
 /**
  * REQUIRE(airplane->ProperInitialized(),"airplane must be initialized properly when calling airplane can load on grass")
@@ -109,5 +114,39 @@ string to_string(int integer);
  */
 bool FileCompare(const std::string leftFileName, const std::string rightFileName);
 
+/**
+ *
+ * @param element
+ * @return
+ */
 bool hasEmptyFields(TiXmlElement* element);
+
+/**
+ *    REQUIRE(airplane->ProperInitialized(),"Airplane must be initialized when calling getBasesqwakcode");
+ *    REQUIRE(isRightAirplaneCombination(airplane),"airplane must be the right combination!");
+ * @param airplane
+ * @return
+ */
+int getBasesqwakcode(Airplane* airplane);
+
+/**
+ *    REQUIRE(extendtodigit>0,"you must enter a positive digit to extend!");
+ * @param numer
+ * @param extendtodigit
+ * @return
+ */
+string fillingintegergap(int numer,int extendtodigit);
+
+/**
+ *
+ * @param code
+ * @return
+ */
+bool validSquawkcode(int code);
+
+/**
+ *
+ * @return
+ */
+int generatevalidRandomcode();
 #endif //LUCHTHAVEN_AIRPORTUTILS_H
