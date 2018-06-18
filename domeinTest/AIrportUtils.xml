@@ -8,7 +8,9 @@
 
         <callsign>Antwerp Tower</callsign>
 
-        <gates>10</gates>
+        <gates>1</gates>
+
+        <passenger>10</passenger>
 
     </AIRPORT>
 
@@ -18,9 +20,9 @@
 
         <airport>ANR</airport>
 
-        <type>grass</type>
+        <type>asphalt</type>
 
-        <length>1010</length>
+        <length>1510</length>
 
         <TAXIROUTE>
 
@@ -30,19 +32,31 @@
 
     </RUNWAY>
 
+    <RUNWAY>
+
+        <name>12R</name>
+
+        <airport>ANR</airport>
+
+        <type>asphalt</type>
+
+        <length>1010</length>
+
+    </RUNWAY>
+
     <AIRPLANE>
 
-        <number>BAW466</number>
+        <number>N11842</number>
 
-        <callsign>Speedbird 466</callsign>
+        <callsign>Cessna 842</callsign>
 
-        <model>Boeing 747</model>
+        <model>Cessna 340</model>
 
-        <type>airline</type>
+        <type>private</type>
 
-        <engine>jet</engine>
+        <engine>propeller</engine>
 
-        <size>large</size>
+        <size>small</size>
 
         <status>Approaching</status>
 
@@ -50,7 +64,6 @@
 
         <passengercapacity>10</passengercapacity>
 
-        <fuel>123</fuel>
-
     </AIRPLANE>
+
 </AirportSim>

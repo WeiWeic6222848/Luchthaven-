@@ -172,7 +172,7 @@ TEST_F(AirplaneDomeinTest,gettersAirport) {
     string iata = "ANR";
     string callsign = "Antwerp Tower";
     unsigned int gates = 10;
-    unsigned int runways = 0;
+    unsigned int runways = 1;
     //endofsettings
 
     ofstream a;
@@ -186,6 +186,7 @@ TEST_F(AirplaneDomeinTest,gettersAirport) {
     EXPECT_TRUE(testsubject->getGates().size()==gates);
     EXPECT_TRUE(testsubject->getRunways().size()==runways);
 }
+
 TEST_F(AirplaneDomeinTest,settersAirport) {
     //settings
     string filename = "../domeinTest/Airport.xml";
@@ -202,6 +203,7 @@ TEST_F(AirplaneDomeinTest,settersAirport) {
     testsubject->addPassenger(10)
     EXPECT_TRUE(testsubject->getPassengers()==10);
 }
+
 TEST_F(AirplaneDomeinTest,gettersRunway) {
     //settings
     string filename = "../domeinTest/Runway.xml";
@@ -270,6 +272,35 @@ TEST_F(AirplaneDomeinTest,settersRunway){
     EXPECT_TRUE(testsubject->isCrossing());
 
 }
+
+TEST_F(AirplaneDomeinTest, testingRunwayQueue){
+    //settings
+    string filename = "../domeinTest/Runway.xml";
+    string name = "11R";
+    string airport = "ANR";
+    string taxipoint = "Alpha";
+
+    Airplane* plane=NULL;
+
+    //endofsettings
+
+    ofstream a;
+
+    LoadAirport(filename.c_str(), a, simulator);
+    plane = simulator.getAirplanes()[0];
+    string callsign = plane->getCallsign();
+    Runway *testsubject = simulator.getAirports()[0]->getRunways()[0];
+
+    EXPECT_TRUE(testsubject->ProperInitialized());
+    EXPECT_TRUE(testsubject->getAirplanequeueing()==0);
+    testsubject->planeQueued()
+    EXPECT_TRUE(testsubject->getAirplanequeueing()==1);
+    testsubject->planeLeaved();
+    EXPECT_TRUE(testsubject->getAirplanequeueing()==0);
+
+
+}
+
 TEST_F(AirplaneDomeinTest, testingGate){
     //settings
     string filename = "../domeinTest/Airport.xml";
@@ -291,6 +322,8 @@ TEST_F(AirplaneDomeinTest, testingGate){
         EXPECT_TRUE(testsubject[i]->getCurrentPlane()==plane);
     }
 }
+
+
 TEST_F(AirplaneDomeinTest, testingLocation){
     //settings
     string filename = "../domeinTest/Location.xml";
@@ -303,6 +336,95 @@ TEST_F(AirplaneDomeinTest, testingLocation){
 
 }
 
+TEST_F(AirplaneDomeinTest, gettersAirportsim){
+    //settings
+    string filename = "../domeinTest/Airportsim.xml";
+    string nameAirport="Antwerp International Airport";
+    string iataAirport="ANR";
+    string callsignAirplane="Speedbird 466";
+    string numberAirplane="BAW466";
+    //endofsettings
+    ofstream a;
+
+    LoadAirport(filename.c_str(), a, simulator);
+    EXPECT_TRUE(simulator.ProperInitialized());
+
+    EXPECT_EQ(nameAirport,simulator.getAirports().front()->getName());
+    EXPECT_EQ(nameAirport,simulator.findAirport(iataAirport)->getName());
+    EXPECT_EQ(callsignAirplane,simulator.getAirplanes().front()->getCallsign());
+    EXPECT_EQ(callsignAirplane,simulator.findAirplane(numberAirplane)->getCallsign());
+    //simulator.findRunway()
+    EXPECT_EQ(Time(12,0),simulator.getCurrentTime());
+}
+
+TEST_F(AirplaneDomeinTest, settersAirportsim){
+    //settings
+    string filename = "../domeinTest/Airportsim.xml";
+
+    Airplane::Airplaneallowedstatus statusPlane = Airplane::Approaching;
+    string numberPlane = "N11843";
+    string callsignPlane = "GOD";
+
+    string nameAirport = "Brussels Airport";
+    string iataAirport = "BRU";
+    string callsignAirport = "Brussel tower";
+    Airport* airport = new Airport(nameAirport,iataAirport,callsignAirport,10,50000);
+    //endofsettings
+    ofstream a;
+
+    LoadAirport(filename.c_str(), a, simulator);
+    Airplane* plane=new Airplane(statusPlane,numberPlane,callsignPlane,"C 4","private","jet","medium",20,10000,80,simulator.getAirports().front());
+
+    EXPECT_TRUE(simulator.ProperInitialized());
+
+    simulator.addAirport(airport);
+    EXPECT_EQ((unsigned)2,simulator.getAirports().size());
+    EXPECT_EQ(iataAirport,simulator.getAirports().back()->getIata());
+    simulator.removeAirport(airport);
+    EXPECT_EQ((unsigned)1,simulator.getAirports().size());
+
+    simulator.addAirplane(plane);
+    EXPECT_EQ((unsigned)2,simulator.getAirplanes().size());
+    EXPECT_EQ(numberPlane,simulator.getAirplanes().back()->getNumber());
+}
+
+TEST_F(AirplaneDomeinTest, AirportUtils){
+    //settings
+    string filename = "../domeinTest/AIrportUtils.xml";
+    //endofsettings
+    ofstream a;
+
+    LoadAirport(filename.c_str(), a, simulator);
+    Airplane* plane = simulator.getAirplanes().front();
+
+    EXPECT_TRUE(isRightAirplaneCombination("private","jet","small"));
+    EXPECT_TRUE(isRightAirplaneCombination("private","propeller","small"));
+    EXPECT_TRUE(isRightAirplaneCombination("private","jet","medium"));
+    EXPECT_TRUE(isRightAirplaneCombination("airline","propeller","medium"));
+    EXPECT_TRUE(isRightAirplaneCombination("airline","jet","medium"));
+    EXPECT_TRUE(isRightAirplaneCombination("airline","jet","large"));
+    EXPECT_TRUE(isRightAirplaneCombination("military","jet","small"));
+    EXPECT_TRUE(isRightAirplaneCombination("military","propeller","large"));
+    EXPECT_TRUE(isRightAirplaneCombination("emergency","propeller","small"));
+
+    EXPECT_TRUE(isRightAirplaneCombination(plane->getType(),plane->getEngine(),plane->getSize()));
+
+    EXPECT_FALSE(isRightAirplaneCombination("private","propeller","medium"));
+    EXPECT_FALSE(isRightAirplaneCombination("airline","propeller","small"));
+    EXPECT_FALSE(isRightAirplaneCombination("military","propeller","medium"));
+    EXPECT_FALSE(isRightAirplaneCombination("emergency","propeller","medium"));
+    EXPECT_FALSE(isRightAirplaneCombination("emergency","propeller","large"));
+    EXPECT_FALSE(isRightAirplaneCombination("emergency","jet","small"));
+    EXPECT_FALSE(isRightAirplaneCombination("trol","berg","brug"));
+
+    Airplane* testplane = new Airplane(Airplane::Approaching,"N11843","GOD","C 4","private","jet","medium",20,10000,80,simulator.getAirports().front());
+    EXPECT_TRUE(airplaneCanLandOnGrass(plane));
+    EXPECT_FALSE(airplaneCanLandOnGrass(testplane));
+
+    EXPECT_EQ(2000,requiredLengthOfRunway(testplane));
+    EXPECT_EQ(500,requiredLengthOfRunway(plane));
+
+}
 
 TEST_F(AirplaneDomeinTest,invalidInput){
 

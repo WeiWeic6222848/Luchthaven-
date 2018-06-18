@@ -185,10 +185,13 @@ CMakeFiles/Airport_simulator_debug.dir/OutputTest.cpp.o: ../tinystr.h
 CMakeFiles/Airport_simulator_debug.dir/OutputTest.cpp.o: ../tinyxml.h
 
 CMakeFiles/Airport_simulator_debug.dir/Runway.cpp.o: ../Airplane.h
+CMakeFiles/Airport_simulator_debug.dir/Runway.cpp.o: ../Airport.h
 CMakeFiles/Airport_simulator_debug.dir/Runway.cpp.o: ../DesignByContract.h
 CMakeFiles/Airport_simulator_debug.dir/Runway.cpp.o: ../Location.h
 CMakeFiles/Airport_simulator_debug.dir/Runway.cpp.o: ../Runway.cpp
 CMakeFiles/Airport_simulator_debug.dir/Runway.cpp.o: ../Runway.h
+CMakeFiles/Airport_simulator_debug.dir/Runway.cpp.o: ../Signaltower.h
+CMakeFiles/Airport_simulator_debug.dir/Runway.cpp.o: ../Taxipoint.h
 CMakeFiles/Airport_simulator_debug.dir/Runway.cpp.o: ../Time.h
 
 CMakeFiles/Airport_simulator_debug.dir/Signaltower.cpp.o: ../Airplane.h

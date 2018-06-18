@@ -9,4 +9,22 @@
         <gates>10</gates>
 
     </AIRPORT>
+
+    <RUNWAY>
+
+        <name>11R</name>
+
+        <airport>ANR</airport>
+
+        <type>grass</type>
+
+        <length>1010</length>
+
+        <TAXIROUTE>
+
+            <taxipoint>Alpha</taxipoint>
+
+        </TAXIROUTE>
+
+    </RUNWAY>
 </AirportSim>
