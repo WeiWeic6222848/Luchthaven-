@@ -46,8 +46,15 @@ private:
     int fuelCapacity;
     int height;
     int passengerCapacity;
+
+
+
     AirplaneallowedPermission permission;
     Airport* destination=NULL;
+    string des;
+    int departure;
+    int arrival;
+    int interval;
     Airport* nextDestination=NULL;//for flightplan. unused now
     Location* location=NULL;
     vector<Location*> instruction;
@@ -333,7 +340,7 @@ public:
      */
     Airplane(const Airplaneallowedstatus &status, const string &number, const string &callsign, const string &model,
              const string &type, const string &engine, const string &size, int passenger, int fuel,
-             int passengerCapacity, Airport *destination);
+             int passengerCapacity, Airport *destination, const string &des="",int departure=0, int arrival=0, int interval=0);
 
     void fuelReduction();
 

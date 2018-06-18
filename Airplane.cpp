@@ -221,11 +221,11 @@ std::ostream& operator<<(std::ostream& output,Airplane& airplane){
 //constructor
 Airplane::Airplane(const Airplaneallowedstatus &status, const string &number, const string &callsign, const string &model,
                    const string &type, const string &engine, const string &size, int passenger, int fuel,
-                   int passengerCapacity, Airport *destination) : number(number), callsign(callsign),
+                   int passengerCapacity, Airport *destination, const string &des,int departure, int arrival, int interval) : number(number), callsign(callsign),
                                                                   model(model), type(type), engine(engine), size(size),
                                                                   passenger(passenger), fuelCapacity(fuel),
                                                                   passengerCapacity(passengerCapacity),
-                                                                  destination(destination) {
+                                                                  destination(destination),des(des),departure(departure),arrival(arrival),interval(interval) {
     Airplane::status=status;
     _initcheck=this;
     if (status==Approaching){
@@ -913,11 +913,5 @@ void Airplane::fuelReduction() {
         }
     }
 }
-
-
-
-
-
-
 
 

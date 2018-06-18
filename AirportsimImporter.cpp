@@ -438,7 +438,30 @@ Esucces AirportsimImporter::readAirplane(TiXmlElement *airplaneelement, std::ost
     if(status=="Standing at gate"){
         temp=Airplane::Standing_at_gate;
     }
-    Airplane* a=new Airplane(temp,number,callsign,model,type,engine,size,passenger,fuel,passengercapacity,airport);
+    bool flightplan;
+    string destination;
+    int departure;
+    int arrival;
+    int interval;
+    if(airplaneelement->FirstChildElement("FLIGHTPLAN")){
+        TiXmlElement* planElement = airplaneelement->FirstChildElement("FLIGHTPLAN");
+        destination = planElement->FirstChildElement("destination")->GetText();
+        departure = stoi(planElement->FirstChildElement("departure")->GetText());
+        arrival = stoi(planElement->FirstChildElement("arrival")->GetText());
+        interval = stoi(planElement->FirstChildElement("interval")->GetText());
+        flightplan=true;
+    }
+    else{
+        errStream<<"plane has no flightplan, when tried to import from .xml file";
+        flightplan=false;
+    }
+    Airplane* a;
+    if(!flightplan){
+        a =new Airplane(temp,number,callsign,model,type,engine,size,passenger,fuel,passengercapacity,airport);
+    }
+    else {
+        a =new Airplane(temp,number,callsign,model,type,engine,size,passenger,fuel,passengercapacity,airport,destination,departure,arrival,interval);
+    }
     sim.addAirplane(a);
 
     if (status=="Standing at gate"){
@@ -458,6 +481,5 @@ Esucces AirportsimImporter::readAirplane(TiXmlElement *airplaneelement, std::ost
 
     return Success;
 }
-
 
 

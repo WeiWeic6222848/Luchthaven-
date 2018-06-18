@@ -12,12 +12,18 @@
 <length>1510</length>
 </RUNWAY>
 <AIRPLANE>
-<number>N11842</number>
-<callsign>Cessna 842</callsign>
-<model>Cessna 340</model>
+    <number>N11842</number>
+    <callsign>Cessna 842</callsign>
+    <model>Cessna 340</model>
     <type>private</type>
     <engine>propeller</engine>
     <size>small</size>
     <status>Approaching</status>
+    <FLIGHTPLAN>
+        <destination>LCY</destination>
+        <departure>15</departure>
+        <arrival>45</arrival>
+        <interval>1</interval>
+    </FLIGHTPLAN>
 </AIRPLANE>
 </AirportSim>

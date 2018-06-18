@@ -59,6 +59,7 @@ public:
      */
     static Esucces readAirplane(TiXmlElement* airplaneelement,std::ostream& errStream,Airportsim& sim,Airport*& airport);
 
+    static Esucces readFlightPlan(TiXmlElement* airplaneelement,std::ostream& errStream,Airportsim& sim,Airport*& airport);
 };
 
 

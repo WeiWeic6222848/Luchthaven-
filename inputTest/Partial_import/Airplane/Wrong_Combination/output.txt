@@ -1,1 +1,1 @@
-Airplane with has a invalid combination of engine, size and type, check specification for more information
+plane has no flightplan, when tried to import from .xml fileAirplane with has a invalid combination of engine, size and type, check specification for more information

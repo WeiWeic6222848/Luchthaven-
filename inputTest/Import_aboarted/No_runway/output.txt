@@ -1,1 +1,1 @@
-Airport has no runway or a wrong amount of runway.
+plane has no flightplan, when tried to import from .xml fileAirport has no runway or a wrong amount of runway.

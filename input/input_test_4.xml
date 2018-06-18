@@ -61,6 +61,12 @@
         <engine>jet</engine>
         <size>large</size>
         <status>Approaching</status>
+        <FLIGHTPLAN>
+            <destination>LCY</destination>
+            <departure>15</departure>
+            <arrival>45</arrival>
+            <interval>1</interval>
+        </FLIGHTPLAN>
     </AIRPLANE>
 <AIRPLANE>
     <number>N11843</number>
@@ -70,6 +76,12 @@
     <engine>jet</engine>
     <size>medium</size>
     <status>Approaching</status>
+    <FLIGHTPLAN>
+        <destination>LCY</destination>
+        <departure>15</departure>
+        <arrival>45</arrival>
+        <interval>1</interval>
+    </FLIGHTPLAN>
 </AIRPLANE>
 
     <AIRPLANE>
@@ -80,6 +92,12 @@
         <engine>propeller</engine>
         <size>small</size>
         <status>Approaching</status>
+        <FLIGHTPLAN>
+            <destination>LCY</destination>
+            <departure>15</departure>
+            <arrival>45</arrival>
+            <interval>1</interval>
+        </FLIGHTPLAN>
     </AIRPLANE>
 
     <AIRPLANE>
@@ -90,6 +108,12 @@
         <engine>propeller</engine>
         <size>small</size>
         <status>Standing at gate</status>
+        <FLIGHTPLAN>
+            <destination>LCY</destination>
+            <departure>15</departure>
+            <arrival>45</arrival>
+            <interval>1</interval>
+        </FLIGHTPLAN>
     </AIRPLANE>
 
     <AIRPLANE>
@@ -100,6 +124,12 @@
         <engine>propeller</engine>
         <size>small</size>
         <status>Standing at gate</status>
+        <FLIGHTPLAN>
+            <destination>LCY</destination>
+            <departure>15</departure>
+            <arrival>45</arrival>
+            <interval>1</interval>
+        </FLIGHTPLAN>
     </AIRPLANE>
 
     <AIRPLANE>
@@ -110,5 +140,11 @@
         <engine>propeller</engine>
         <size>small</size>
         <status>Standing at gate</status>
+        <FLIGHTPLAN>
+            <destination>LCY</destination>
+            <departure>15</departure>
+            <arrival>45</arrival>
+            <interval>1</interval>
+        </FLIGHTPLAN>
     </AIRPLANE>
 </AirportSim>

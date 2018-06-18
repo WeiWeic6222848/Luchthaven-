@@ -1,1 +1,1 @@
-Airplane has a passengercapacity attribute which isn't a interger or is an negative number
+plane has no flightplan, when tried to import from .xml fileAirplane has a passengercapacity attribute which isn't a interger or is an negative number
