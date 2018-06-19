@@ -205,6 +205,12 @@ public:
      * @return
      */
     bool ProperInitialized() const;
+    /**
+     *
+     * @param airplane
+     * @param runway
+     */
+    void sendSignalEmergency(Airplane* airplane,Runway* runway = NULL);
 };
 
 

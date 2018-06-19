@@ -26,7 +26,7 @@ class Airplane {
 public:
 
     enum Airplaneallowedstatus{Standing_at_gate,Approaching,Leaving,Taxiing_to_runway,Taxiing_to_gate,jobsdone,Landed,Emergency};
-    enum AirplaneallowedSignal{Keep_flying,threeThousand,fiveThousand,Cleared_to_cross,Hold_position,Line_up,Fly,IFR_clearancy,Push_back};
+    enum AirplaneallowedSignal{Keep_flying,threeThousand,fiveThousand,Cleared_to_cross,Hold_position,Line_up,Fly,IFR_clearancy,Push_back,EmergencySignal};
     enum AirplaneallowedPermission{empty,tenThousandPermission,threeThousandPermission,fiveThousandPermission,LandingPermission,FlyPermission,LineupPermission,Push_backPermission,IFR_clearancyPermission,TaxiingPermission,Cleared_to_crossPermission};
     enum AirplaneCheckProcedure{Just_landed,Technical_control,Refueling,Boarding,Ready_to_leave};
 

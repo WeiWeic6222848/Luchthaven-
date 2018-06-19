@@ -335,6 +335,9 @@ void Airportsim::Simulate() {
                  else if(status==Airplane::Taxiing_to_runway){
                      taxiingToRunwaystep(*Airplanes[j],*Airplanes[j]->getDestination());
                  }
+                 else if(status==Airplane::Emergency){
+                     emergencyLanding(*Airplanes[j],*Airplanes[j]->getDestination());
+                 }
                  else if(status==Airplane::jobsdone&&!alreadypushed){
                      airplanestoremove.push_back(j);
                      alreadypushed=true;
@@ -440,7 +443,45 @@ void Airportsim::landingstep(Airplane &approaching, Airport &airport) {
         //initial contact;
     }
 }
+void Airportsim::emergencyLanding(Airplane& airplane,Airport& airport){
+    REQUIRE(ProperInitialized(),"Airportsim object wasn't initialized when calling emergencyLanding");
+    REQUIRE(airplane.ProperInitialized(),"Airplane wasn't initialized when calling emergencyLanding");
+    REQUIRE(airport.ProperInitialized(),"Airport wasn't initialized when calling emergencyLanding");
+    REQUIRE(airplane.getStatus()==Airplane::Emergency,"Airplane must has the status of Emergency when calling emergencyLanding");
 
+    ofstream outputfile;
+    string filename="../output/"+airport.getCallsign()+".txt";
+    outputfile.open(filename.c_str(),ios::app);
+
+    if(airplane.getDestinateRunway()!=NULL){
+        if(airplane.getHeight()==0){
+            if(airplane.getLocation()==airplane.getDestinateRunway()){
+                airplane.progressCheck();
+            }
+            else{
+                airplane.landing();
+                if(airplane.isDoingNothing()){
+                    airplane.setLocation(airplane.getDestinateRunway());
+                }
+            }
+        }
+        else{
+            airplane.fall();
+            if(airplane.isDoingNothing()){
+                outputfile<<airplane.getCallsign()<<" descended to "<<airplane.getHeight()<<" ft."<<endl;
+            }
+        }
+    }
+    else{
+        if(airplane.getHeight()==0){
+            airplane.setStatus(Airplane::jobsdone);
+            return;
+        }
+        else{
+            airplane.fall();
+        }
+    }
+}
 void Airportsim::airplaneAtGatestep(Airplane &plane, Airport &airport) {
     REQUIRE(ProperInitialized(),"Airportsim object wasn't initialized when calling airplaneAtGatestep");
     REQUIRE(plane.ProperInitialized(),"Airplane wasn't initialized when calling airplaneAtGatestep");

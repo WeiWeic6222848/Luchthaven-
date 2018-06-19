@@ -316,7 +316,7 @@ bool Airplane::sendSignalTaxiingtoRunway() {
     }
     else if(actionDone==currentTime) {
         //doingNothing=true;
-        destination->getTower().getFile()<<"["<<currentTime<<"]"<<"[AIR]"<<endl;
+        destination->getTower().getFile()<<"["<<currentTime<<"]"<<"["<<getCallsign()<<"]"<<endl;
         destination->getTower().getFile()<<this->getCallsign()<<" is ready to taxi."<<endl;
         bool received=destination->receiveSignal(this,Signaltower::LeavingtoRunway);
         return received;
@@ -327,14 +327,24 @@ bool Airplane::sendSignalTaxiingtoRunway() {
 
 bool Airplane::sendSignalEmergency() {
     REQUIRE(ProperInitialized(),"Airplane wasn't initialized when sending signal Emergency");
-    REQUIRE(getStatus()==Emergency,"Airplane shouldnt request emergency if it's not in emergency");
+    //REQUIRE(getStatus()==Emergency,"Airplane shouldnt request emergency if it's not in emergency");
     //REQUIRE(getType()=="Emergency","Airplane shouldnt request emergency if it's not in emergency");
     if(isDoingNothing()){
-        actionDone=currentTime++;
+        actionDone=currentTime;
         doingNothing=false;
     }
     else if(actionDone==currentTime) {
-        //doingNothing=true;
+        doingNothing=false;
+        if(getHeight()>=3000){
+            ostream& stream = destination->getTower().getFile();
+            stream<<"["<<currentTime<<"]"<<"["<<getCallsign()<<"]"<<endl;
+            stream<<"Mayday mayday mayday, "<<destination->getCallsign()<<", "<<getCallsign()<<", out of fuel, request immediate landing, "<<getPassenger()<<" persons on board."<<endl;
+        }
+        else{
+            ostream& stream = destination->getTower().getFile();
+            stream<<"["<<currentTime<<"]"<<"["<<getCallsign()<<"]"<<endl;
+            stream<<"Mayday mayday mayday, "<<destination->getCallsign()<<", "<<getCallsign()<<", out of fuel, performing emergency landing, "<<getPassenger()<<" persons on board."<<endl;
+        }
         bool received=destination->receiveSignal(this,Signaltower::Emergency);
         return received;
     }
@@ -481,6 +491,10 @@ bool Airplane::receiveSignal(AirplaneallowedSignal signal) {
         destination->getTower().getFile()<<"Pushback approved, "<<this->getCallsign()<<endl;
         permission=Push_backPermission;
     }
+    else if(signal==EmergencySignal){
+        setStatus(Emergency);
+        doingNothing=true;
+    }
     else{
         cerr<<"Error signal"<<endl;
         return false;
@@ -583,7 +597,7 @@ void Airplane::timeRuns() {
 
 void Airplane::progressCheck() {
     REQUIRE(ProperInitialized(),"Airplane wasn't initialized when receiving doing the technical check");
-    REQUIRE(getStatus()==Standing_at_gate,"Airplane must be standing at gate while doing the technical check");
+    REQUIRE(getStatus()==Standing_at_gate||getStatus()==Emergency,"Airplane must be standing at gate/Emergency while doing the technical check");
 
     if(checkprocedure==Just_landed){
         if(isDoingNothing()){
@@ -636,6 +650,11 @@ void Airplane::progressCheck() {
             checkprocedure=Boarding;
         }
     }
+    else if(getStatus()==Emergency){
+        setStatus(Landed);
+        //resetCheckProcedure();
+        sendSignalTaxiingtoGate();
+    }
     else if(checkprocedure==Boarding){
         if(isDoingNothing()){/*
             int totalminute=0.5+passenger*1.0/2;
@@ -672,19 +691,28 @@ void Airplane::resetCheckProcedure() {
 
 bool Airplane::fall() {
     REQUIRE(ProperInitialized(),"Airplane wasn't initialized when falling");
-    REQUIRE(getHeight() >= 1000, "airplane is too low to fall!! Its lower than 1000 meter");
     REQUIRE(getStatus()==Approaching||getStatus()==Emergency,"Airplane can only fall if it's approaching or having emergency");
+    REQUIRE((getHeight() >= 1000&& getStatus()==Approaching) || (getHeight()>=500 && getStatus()==Emergency), "airplane is too low to fall!! Its lower than 1000 meter");
     if(isDoingNothing()){
-        if(engine=="jet"){
+        if(getStatus()==Emergency){
+            actionDone=currentTime++;
+        }
+        else if(engine=="jet"){
             actionDone=currentTime++;
         }
         else if(engine=="propeller"){
             actionDone=currentTime+2;
         }
+
         doingNothing=false;
     }
     else if(actionDone==currentTime){
-        height -= 1000;
+        if(getStatus()==Emergency){
+            height -=500;
+        }
+        else{
+            height -= 1000;
+        }
         doingNothing=true;
         return true;
     }
@@ -726,10 +754,12 @@ bool Airplane::landing() {
     }
     else if(actionDone==currentTime){
         doingNothing=true;
-        status=Landed;
+        if(getStatus()==Approaching){
+            status=Landed;
+        }
         return true;
     }
-    ENSURE(!isDoingNothing()||status==Landed,"status must be landed when landing has been finished!");
+    ENSURE(!isDoingNothing()||status==Landed||status==Emergency,"status must be landed/Emergency when landing has been finished!");
     return false;
 }
 
@@ -895,21 +925,15 @@ void Airplane::fuelReduction() {
             }
             fuel-=reduction;
             if(fuel<=0){
-                setStatus(Emergency);
+                setSquawkcode(7700);
+                sendSignalEmergency();
             }
         }
         else{
             if(getStatus()!=Emergency){
-                setStatus(Emergency);
+                setSquawkcode(7700);
+                sendSignalEmergency();
             }
-            sendSignalEmergency();
-            if(getHeight()>=3000){
-
-            }
-            else{
-
-            }
-
         }
     }
 }

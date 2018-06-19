@@ -505,7 +505,7 @@ void Signaltower::sendSignalPushBack(Airplane *airplane,Runway* destinaterunway)
         doingNothing=false;
     }
     else {
-        file << "[" << currentTime << "]" << "[ATC]" << endl;
+        file << "[" << currentTime << "]" << "["<<airport->getIata()<<"]" << endl;
         file << airplane->getCallsign() << ", " << airport->getCallsign() << ", pushback approved." << endl;
 
         airplane->setDestinateRunway(destinaterunway);
@@ -630,11 +630,14 @@ void Signaltower::parse_signal(Airplane *airplane, SignaltowerallowedSignal stri
         }
     } else if (stringSignal == Emergency) {
         if(airplane->getHeight()>=3000){
-            airport->findFreeRunway(airplane,true);
+            Runway* runway=airport->findFreeRunway(airplane,true);
+
+            sendSignalEmergency(airplane,runway);
         }
         else{
-            file<<"";
+            sendSignalEmergency(airplane);
         }
+
 
     } else if (stringSignal == Push_back) {
         Runway *destinaterunway = airport->findFreeRunway(airplane);
@@ -689,3 +692,29 @@ bool Signaltower::checkSquawkcodeunique(int code) {
     return true;
 }
 
+void Signaltower::sendSignalEmergency(Airplane *airplane, Runway *runway) {
+    REQUIRE(ProperInitialized(),"Signal tower must be initialized properly when calling sendSignalEmergency");
+    REQUIRE(airplane->ProperInitialized(),"Airplane must be initialized properly when calling sendSignalEmergency");
+
+    if(isDoingNothing()){
+        doingNothing=false;
+    }
+    else {
+        if(airplane->getHeight()>=3000){
+            file << "[" << currentTime << "]" << "["<<airport->getIata()<<"]" << endl;
+            file << airplane->getCallsign() << ", roger mayday, squawk seven seven zero zero, cleared ILS landing runway " <<runway->getName()<< endl;
+            airplane->setDestinateRunway(runway);
+            airplane->setPermission(Airplane::LandingPermission);
+            runway->planeQueued();
+        }
+        else{
+            file << "[" << currentTime << "]" << "["<<airport->getIata()<<"]" << endl;
+            file << airplane->getCallsign() << ", roger mayday, squawk seven seven zero zero, emergency personal on standby, good luck! "<< endl;
+            airplane->setDestinateRunway(NULL);
+
+        }
+
+        doingNothing = true;
+        airplane->receiveSignal(Airplane::EmergencySignal);
+    }
+}

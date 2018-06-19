@@ -147,4 +147,20 @@
             <interval>1</interval>
         </FLIGHTPLAN>
     </AIRPLANE>
+    <AIRPLANE>
+        <number>AB</number>
+        <callsign>Cesna </callsign>
+        <model>Cessna 345</model>
+        <type>private</type>
+        <engine>propeller</engine>
+        <size>small</size>
+        <status>Approaching</status>
+        <fuel>10</fuel>
+        <FLIGHTPLAN>
+            <destination>LCY</destination>
+            <departure>15</departure>
+            <arrival>45</arrival>
+            <interval>1</interval>
+        </FLIGHTPLAN>
+    </AIRPLANE>
 </AirportSim>

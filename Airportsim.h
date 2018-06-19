@@ -171,7 +171,12 @@ private:
      * @param airport
      */
     void landingstep(Airplane& approaching, Airport& airport);
-
+    /**
+     *
+     * @param airplane
+     * @param airport
+     */
+    void emergencyLanding(Airplane& airplane,Airport& airport);
     /**
      *     REQUIRE(ProperInitialized(),"Airportsim object wasn't initialized when calling airplaneAtGatestep");
      *     REQUIRE(plane.ProperInitialized(),"Airplane wasn't initialized when calling airplaneAtGatestep");

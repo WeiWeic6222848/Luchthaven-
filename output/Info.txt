@@ -1,9 +1,45 @@
 Airport: Antwerp International Airport (ANR)
- -> gates: 1
+ -> gates: 10
  -> runways: 2
 
-Airplane: Cessna 842 (N11842)
- -> model: Cessna 340
+Airplane: Speedbird 466 (BAW466)
+ -> model: Boeing 747
+ -> type: airline
+ -> engine: jet
+ -> size: large
+
+Airplane: GOD (N11843)
+ -> model: C 4
+ -> type: private
+ -> engine: jet
+ -> size: medium
+
+Airplane: Cessna 849 (N11848)
+ -> model: Cessna 345
+ -> type: private
+ -> engine: propeller
+ -> size: small
+
+Airplane: Cessna 8 (N1)
+ -> model: Cessna 345
+ -> type: private
+ -> engine: propeller
+ -> size: small
+
+Airplane: Cessna 84 (N12)
+ -> model: Cessna 345
+ -> type: private
+ -> engine: propeller
+ -> size: small
+
+Airplane: Cessna (AA)
+ -> model: Cessna 345
+ -> type: private
+ -> engine: propeller
+ -> size: small
+
+Airplane: Cesna (AB)
+ -> model: Cessna 345
  -> type: private
  -> engine: propeller
  -> size: small
