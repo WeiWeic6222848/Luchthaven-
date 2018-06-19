@@ -128,13 +128,13 @@ Runway *Airport::findFreeRunway(Airplane *airplane,bool emergency) {
         //emergency is not done
         for (unsigned int i = 0; i < runways.size(); ++i) {
             if(!emergency){
-                if(/*!(runways[i]->isCrossing())&&!(runways[i]->isOnuse())&&*/runways[i]->getType()==grass&&runways[i]->getLength()>=required&&runways[i]->getAirplanequeueing()<=queueingplane){
+                if(runways[i]->isEmergency()&&(runways[i]->getType()!=grass&&runways[i]->getLength()>=required&&runways[i]->getAirplanequeueing()<=queueingplane)){
                     queueingplane=runways[i]->getAirplanequeueing();
                     leastplane.push_back(runways[i]);
                 }
             }
             else{
-                if(/*!(runways[i]->isCrossing())&&!(runways[i]->isOnuse())&&*/runways[i]->getType()==grass&&runways[i]->getLength()>=required&&runways[i]->getAirplanequeueing()<=queueingplane){
+                if(!(runways[i]->isEmergency())&&(runways[i]->getType()!=grass&&runways[i]->getLength()>=required&&runways[i]->getAirplanequeueing()<=queueingplane)){
                     queueingplane=runways[i]->getAirplanequeueing();
                     leastplane.push_back(runways[i]);
                 }
@@ -144,20 +144,20 @@ Runway *Airport::findFreeRunway(Airplane *airplane,bool emergency) {
     for (unsigned int i = 0; i < runways.size(); ++i) {
         if(!emergency){
 
-            if(/*!(runways[i]->isCrossing())&&!(runways[i]->isOnuse())&&*/runways[i]->getType()!=grass&&runways[i]->getLength()>=required&&runways[i]->getAirplanequeueing()<=queueingplane){
+            if(!(runways[i]->isEmergency())&&(runways[i]->getType()!=grass&&runways[i]->getLength()>=required&&runways[i]->getAirplanequeueing()<=queueingplane)){
                 queueingplane=runways[i]->getAirplanequeueing();
                 leastplane.push_back(runways[i]);
             }
         }
         else{
-            if(/*!(runways[i]->isCrossing())&&!(runways[i]->isOnuse())&&*/runways[i]->getType()!=grass&&runways[i]->getLength()>=required&&runways[i]->getAirplanequeueing()<=queueingplane){
+            if(!(runways[i]->isEmergency())&&(runways[i]->getType()!=grass&&runways[i]->getLength()>=required&&runways[i]->getAirplanequeueing()<=queueingplane)){
                 queueingplane=runways[i]->getAirplanequeueing();
                 leastplane.push_back(runways[i]);
             }
         }
     }
     if (leastplane.empty()){
-        cout<<"no free runway are suitable for this plane"<<endl;
+        //cout<<"no free runway are suitable for this plane"<<endl;
         return NULL;
     }
     else{

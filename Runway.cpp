@@ -75,6 +75,7 @@ Runway::Runway(const string &name, Airport *where, string stringtype, int length
         type=grass;
     }
     airplanequeueing=0;
+    emergency=false;
     ENSURE(ProperInitialized(),"Runway object failed to initialize properly");
 }
 
@@ -124,5 +125,13 @@ void Runway::planeLeaved() {
 Runway::~Runway() {
     REQUIRE(ProperInitialized(),"Runway object wasn't initialized when calling destructor");
 
+}
+
+bool Runway::isEmergency() const {
+    return emergency;
+}
+
+void Runway::setEmergency(bool emergency) {
+    Runway::emergency = emergency;
 }
 

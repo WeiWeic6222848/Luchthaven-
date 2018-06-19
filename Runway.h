@@ -27,6 +27,7 @@ class Runway: public Location {
     int length;
     Taxipoint* taxipoint=NULL;
     int airplanequeueing;
+    bool emergency;
 public:
 
     /**
@@ -146,6 +147,10 @@ public:
      *    REQUIRE(ProperInitialized(),"Runway object wasn't initialized when calling destructor");
      */
     virtual ~Runway();
+
+    bool isEmergency() const;
+
+    void setEmergency(bool emergency);
 };
 
 

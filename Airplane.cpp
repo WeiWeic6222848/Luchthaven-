@@ -623,6 +623,8 @@ void Airplane::progressCheck() {
     }
     else if(checkprocedure==Technical_control){
         if(isDoingNothing()){
+            permission=empty;//resetting the permission beacause airplane is currently checking
+
             if(size=="small"){
                 actionDone=currentTime++;
             }
@@ -641,6 +643,8 @@ void Airplane::progressCheck() {
     }
     else if(checkprocedure==Refueling){
         if(isDoingNothing()){
+            permission=empty;//resetting the permission beacause airplane is currently checking
+
             int totalminue=fuelCapacity*1.0/10000+0.9999;
             actionDone=currentTime+totalminue;
             doingNothing=false;
@@ -652,6 +656,9 @@ void Airplane::progressCheck() {
     }
     else if(getStatus()==Emergency){
         setStatus(Landed);
+        destinaterunway->setOnuse(false);
+        destinaterunway->setPlaneAtEnd(this);
+        destinaterunway->setEmergency(false);
         //resetCheckProcedure();
         sendSignalTaxiingtoGate();
     }
@@ -668,6 +675,7 @@ void Airplane::progressCheck() {
             else if(size=="large"){
                 actionDone=currentTime+15;
             }
+            permission=empty;//resetting the permission beacause airplane is currently checking
             doingNothing=false;
         }
         if(actionDone==currentTime) {
@@ -676,6 +684,7 @@ void Airplane::progressCheck() {
         }
     }
     else if(checkprocedure==Ready_to_leave){
+        permission=empty;//resetting the permission beacause airplane is currently checking
         checkprocedure=Ready_to_leave;
     }
 }

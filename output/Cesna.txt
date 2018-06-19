@@ -1,1 +1,7 @@
 Cesna is approaching Antwerp International Airport at 10000 ft.
+Cesna is taxiing to Gates 
+Cesna is standing at Gate 1
+10 passengers boarded Cesna at gate 1 of Antwerp International Airport
+Cesna is standing at Gate 1
+Cesna is taxiing to runway 11L
+Cesna is taking off at Antwerp International Airport on runway 11L

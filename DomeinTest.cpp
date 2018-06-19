@@ -1491,6 +1491,7 @@ TEST_F(AirplaneDomeinTest,flightPlanNotFound){
     int departure = 0;
     int arrival = 0;
     int interval = 0;
+
     //end of settings
     ofstream a;
     LoadAirport(filename.c_str(),a,simulator);

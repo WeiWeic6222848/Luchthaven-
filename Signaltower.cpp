@@ -536,7 +536,13 @@ bool Signaltower::sendSignal() {
         while (index < incomingSignal.size()) {//make sure everything is searched
             SignaltowerallowedSignal Signal=priority.second;
             Airplane *airplane=priority.first;
-            parse_signal(airplane,Signal);
+            if (Signal!=Approaching||(Signal==Approaching&&airplane->getStatus()!=Airplane::Emergency)){
+                parse_signal(airplane,Signal);
+            }
+            else if(Signal==Approaching&&airplane->getStatus()==Airplane::Emergency){
+                incomingSignal.erase(find(incomingSignal.begin(),incomingSignal.end(),priority));
+                index--;
+            }
 
             if(!isDoingNothing()){
                 incomingSignal.erase(find(incomingSignal.begin(),incomingSignal.end(),priority));
@@ -566,13 +572,12 @@ bool Signaltower::ProperInitialized() const{
 void Signaltower::regulateApproachingplane(Airplane *airplane) {
     REQUIRE(ProperInitialized(),"Signal tower must be initialized properly when calling regulateApproachingplane");
     REQUIRE(airplane->ProperInitialized(),"Airplane must be initialized properly when calling regulateApproachingplane");
-    if (airplane->getPermission() == Airplane::threeThousandPermission && airplane->getHeight() == 3000) {
+    else if (airplane->getPermission() == Airplane::threeThousandPermission && airplane->getHeight() == 3000) {
         Runway *freerunway = airport->findFreeRunway(airplane);
         if(freerunway==NULL){
-            cerr<<"This airplane can never land as there is no single runway suitable for it!!"<<endl;
-            throw ;
+            sendSignalWaiting(airplane);
         }
-        if (!freerunway->isOnuse()&&!freerunway->isCrossing()) {
+        else if (!freerunway->isOnuse()&&!freerunway->isCrossing()) {
             sendSignalPermissionLanding(airplane, freerunway);
         }
         else{
@@ -631,8 +636,12 @@ void Signaltower::parse_signal(Airplane *airplane, SignaltowerallowedSignal stri
     } else if (stringSignal == Emergency) {
         if(airplane->getHeight()>=3000){
             Runway* runway=airport->findFreeRunway(airplane,true);
-
-            sendSignalEmergency(airplane,runway);
+            if(runway!=NULL){
+                sendSignalEmergency(airplane,runway);
+            }
+            else{
+                sendSignalEmergency(airplane);
+            }
         }
         else{
             sendSignalEmergency(airplane);
@@ -700,12 +709,13 @@ void Signaltower::sendSignalEmergency(Airplane *airplane, Runway *runway) {
         doingNothing=false;
     }
     else {
-        if(airplane->getHeight()>=3000){
+        if(airplane->getHeight()>=3000&&runway!=NULL){
             file << "[" << currentTime << "]" << "["<<airport->getIata()<<"]" << endl;
             file << airplane->getCallsign() << ", roger mayday, squawk seven seven zero zero, cleared ILS landing runway " <<runway->getName()<< endl;
             airplane->setDestinateRunway(runway);
             airplane->setPermission(Airplane::LandingPermission);
             runway->planeQueued();
+            runway->setEmergency(true);
         }
         else{
             file << "[" << currentTime << "]" << "["<<airport->getIata()<<"]" << endl;

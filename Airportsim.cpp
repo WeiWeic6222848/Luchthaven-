@@ -207,7 +207,6 @@ Airport* Airportsim::findAirport(const string &iata) {
             return Airports[j];
         }
     }
-    cerr<<"no airport found with iata "+iata;
     return NULL;
 }
 
@@ -218,7 +217,6 @@ Airplane *Airportsim::findAirplane(const string &number) {
             return Airplanes[j];
         }
     }
-    cerr<<"no airplane found with number "+number;
     return NULL;
 }
 
@@ -226,7 +224,6 @@ Runway *Airportsim::findRunway(const string &number, const string &iata) {
     REQUIRE(ProperInitialized(),"Airportsim object wasn't initialized when calling findrunway");
     Airport* air=findAirport(iata);
     if (air==NULL){
-        cerr<<"cannot find the giving airport with iata "+iata;
         return NULL;
     }
     return air->findRunway(number);
@@ -356,12 +353,12 @@ void Airportsim::Simulate() {
 
          }
 
-         generateFloorPlan(*getAirports()[0]);
-         createVisual(*getAirports()[0]);
-         timespec tim, tim2;
-         tim.tv_nsec=500000000L;
-         tim.tv_sec=0;
-         nanosleep(&tim,&tim2);
+         //generateFloorPlan(*getAirports()[0]);
+         //createVisual(*getAirports()[0]);
+         //timespec tim, tim2;
+         //tim.tv_nsec=500000000L;
+         //tim.tv_sec=0;
+         //nanosleep(&tim,&tim2);
          for (unsigned int i = 0; i < airplanestoremove.size(); ++i) {
              AirplanesFlying.push_back((Airplanes.begin() + airplanestoremove[i] - i).operator*());
              Airplanes.erase(Airplanes.begin() + airplanestoremove[i] - i);
@@ -479,6 +476,9 @@ void Airportsim::emergencyLanding(Airplane& airplane,Airport& airport){
         }
         else{
             airplane.fall();
+            if(airplane.isDoingNothing()){
+                outputfile<<airplane.getCallsign()<<" descended to "<<airplane.getHeight()<<" ft."<<endl;
+            }
         }
     }
 }
