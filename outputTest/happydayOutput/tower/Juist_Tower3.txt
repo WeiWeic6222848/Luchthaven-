@@ -1,0 +1,33 @@
+[ 12:13 ][AIR]
+Antwerp Tower, Cessna 842, requesting IFR clearancy to Antwerp Tower
+[ 12:14 ][ATC]
+Cessna 842, Antwerp Tower, cleared to Antwerp Tower , maintain five thousand, expect flight level one zero zero - ten minutes afterdeparture, squawk 0241 .
+[ 12:15 ][AIR]
+Cleared to Antwerp Tower , initial altitude five thousand, expecting one zero zero in ten,squawking 0241 ,Cessna 842
+[ 12:16 ][AIR]
+Antwerp Tower, Cessna 842 at gate 1, requesting pushback
+[ 12:17 ][ANR]
+Cessna 842, Antwerp Tower, pushback approved.
+[ 12:18 ][AIR]
+Pushback approved, Cessna 842
+[ 12:20 ][Cessna 842]
+Cessna 842 is ready to taxi.
+[ 12:21 ][ATC]
+Cessna 842, Taxi to runway 12R via Alpha.
+[ 12:22 ][AIR]
+Taxi to runway 12R via Alpha, Cessna 842
+[ 12:28 ][AIR]
+Antwerp Tower, Cessna 842, holding short at 12R
+[ 12:29 ][ATC]
+Cessna 842, runway 12R cleared for take-off.
+[ 12:30 ][AIR]
+runway 12R cleared for take-off, Cessna 842
+airplane Cessna 842 left 12:34 
+[ 12:35 ][AIR]
+Antwerp Tower, Speedbird 466, requesting IFR clearancy to Antwerp Tower
+[ 12:36 ][ATC]
+Speedbird 466, Antwerp Tower, cleared to Antwerp Tower , maintain five thousand, expect flight level one zero zero - ten minutes afterdeparture, squawk 4154 .
+[ 12:37 ][AIR]
+Cleared to Antwerp Tower , initial altitude five thousand, expecting one zero zero in ten,squawking 4154 ,Speedbird 466
+[ 12:38 ][AIR]
+Antwerp Tower, Speedbird 466 at gate 2, requesting pushback

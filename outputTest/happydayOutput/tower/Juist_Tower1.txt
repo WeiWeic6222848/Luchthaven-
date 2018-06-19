@@ -1,0 +1,45 @@
+[ 12:01 ][AIR]
+Antwerp Tower, Cessna 842, arriving at Antwerp International Airport
+[ 12:02 ][ATC]
+Cessna 842, radar contact, descend and maintain five thousand feet, squawk 0634 .
+[ 12:03 ][AIR]
+Descend and maintain five thousand feet, squawking 0634 ,Cessna 842
+[ 12:14 ][ATC]
+Cessna 842, descend and maintain three thousand feet.
+[ 12:15 ][AIR]
+Descend and maintain three thousand feet, Cessna 842
+[ 12:20 ][ATC]
+Cessna 842, cleared ILS approach runway 11R
+[ 12:21 ][AIR]
+Cleared ILS approach runway 11R, Cessna 842
+[ 12:30 ][AIR]
+Antwerp Tower, Cessna 842, Runway 11R Vacated
+[ 12:31 ][ATC]
+Cessna 842, Taxi to gate 1 via Alpha.
+[ 12:32 ][AIR]
+Taxi to gate 1 via Alpha, Cessna 842
+[ 12:50 ][AIR]
+Antwerp Tower, Cessna 842, requesting IFR clearancy to Antwerp Tower
+[ 12:51 ][ATC]
+Cessna 842, Antwerp Tower, cleared to Antwerp Tower , maintain five thousand, expect flight level one zero zero - ten minutes afterdeparture, squawk 0416 .
+[ 12:52 ][AIR]
+Cleared to Antwerp Tower , initial altitude five thousand, expecting one zero zero in ten,squawking 0416 ,Cessna 842
+[ 12:53 ][AIR]
+Antwerp Tower, Cessna 842 at gate 1, requesting pushback
+[ 12:54 ][ANR]
+Cessna 842, Antwerp Tower, pushback approved.
+[ 12:55 ][AIR]
+Pushback approved, Cessna 842
+[ 12:57 ][Cessna 842]
+Cessna 842 is ready to taxi.
+[ 12:58 ][ATC]
+Cessna 842, Taxi to runway 11R via Alpha.
+[ 12:59 ][AIR]
+Taxi to runway 11R via Alpha, Cessna 842
+[ 13:05 ][AIR]
+Antwerp Tower, Cessna 842, holding short at 11R
+[ 13:06 ][ATC]
+Cessna 842, runway 11R cleared for take-off.
+[ 13:07 ][AIR]
+runway 11R cleared for take-off, Cessna 842
+airplane Cessna 842 left 13:11 

@@ -1,0 +1,57 @@
+[ 12:01 ][AIR]
+Antwerp Tower, Cessna 842, arriving at Antwerp International Airport
+[ 12:02 ][ATC]
+Cessna 842, radar contact, descend and maintain five thousand feet, squawk 0720 .
+[ 12:03 ][AIR]
+Descend and maintain five thousand feet, squawking 0720 ,Cessna 842
+[ 12:14 ][ATC]
+Cessna 842, descend and maintain three thousand feet.
+[ 12:15 ][AIR]
+Descend and maintain three thousand feet, Cessna 842
+[ 12:20 ][ATC]
+Cessna 842, cleared ILS approach runway 12R
+[ 12:21 ][AIR]
+Cleared ILS approach runway 12R, Cessna 842
+[ 12:30 ][AIR]
+Antwerp Tower, Cessna 842, Runway 12R Vacated
+[ 12:31 ][ATC]
+Cessna 842, Taxi to holdpoint 11R via Bravo.
+[ 12:32 ][AIR]
+Taxi to holdpoint 11R via Bravo, Cessna 842
+[ 12:38 ][AIR]
+Antwerp Tower, Cessna 842, Hold short at 11R
+[ 12:39 ][ATC]
+Cessna 842, Cleared to Cross runway 11R, Taxi to gate 1 via Alpha.
+[ 12:40 ][AIR]
+Cleared to Cross runway 11R, Cessna 842, Taxi to gate 1 via Alpha.
+[ 12:59 ][AIR]
+Antwerp Tower, Cessna 842, requesting IFR clearancy to Antwerp Tower
+[ 13:00 ][ATC]
+Cessna 842, Antwerp Tower, cleared to Antwerp Tower , maintain five thousand, expect flight level one zero zero - ten minutes afterdeparture, squawk 0467 .
+[ 13:01 ][AIR]
+Cleared to Antwerp Tower , initial altitude five thousand, expecting one zero zero in ten,squawking 0467 ,Cessna 842
+[ 13:02 ][AIR]
+Antwerp Tower, Cessna 842 at gate 1, requesting pushback
+[ 13:03 ][ANR]
+Cessna 842, Antwerp Tower, pushback approved.
+[ 13:04 ][AIR]
+Pushback approved, Cessna 842
+[ 13:06 ][Cessna 842]
+Cessna 842 is ready to taxi.
+[ 13:07 ][ATC]
+Cessna 842, Taxi to holdpoint 11R via Alpha.
+[ 13:08 ][AIR]
+Taxi to holdpoint 11R via Alpha, Cessna 842
+[ 13:14 ][AIR]
+Antwerp Tower, Cessna 842, Hold short at 11R
+[ 13:15 ][ATC]
+Cessna 842, Cleared to Cross runway 11R, Taxi to runway 12R via Bravo.
+[ 13:16 ][AIR]
+Cleared to Cross runway 11R, Cessna 842, Taxi to runway 12R via Bravo.
+[ 13:23 ][AIR]
+Antwerp Tower, Cessna 842, holding short at 12R
+[ 13:24 ][ATC]
+Cessna 842, runway 12R cleared for take-off.
+[ 13:25 ][AIR]
+runway 12R cleared for take-off, Cessna 842
+airplane Cessna 842 left 13:29 

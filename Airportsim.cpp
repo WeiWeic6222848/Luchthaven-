@@ -374,7 +374,7 @@ void Airportsim::Simulate() {
 
          }
 
-         generateFloorPlan(*getAirports()[0]);
+         generateFloorPlan(*getAirports().front());
          //createVisual(*getAirports()[0]);
          //timespec tim, tim2;
          //tim.tv_nsec=500000000L;
