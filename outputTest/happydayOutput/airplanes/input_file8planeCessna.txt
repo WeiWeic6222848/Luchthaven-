@@ -1,4 +1,4 @@
-10 passengers exited Cessna at gate 3 of Antwerp International Airport
+0 passengers exited Cessna at gate 3 of Antwerp International Airport
 Cessna has been checked for technical malfunctions
 Cessna has been refueled
 45 passengers boarded Cessna at gate 3 of Antwerp International Airport

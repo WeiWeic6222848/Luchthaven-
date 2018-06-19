@@ -12,7 +12,7 @@ Cessna 842 is landing at Antwerp International Airport on runway 12R
 Cessna 842 has landed at Antwerp International Airport on runway 12R
 Cessna 842 is taxiing to Gates 
 Cessna 842 is standing at Gate 1
-10 passengers exited Cessna 842 at gate 1 of Antwerp International Airport
+0 passengers exited Cessna 842 at gate 1 of Antwerp International Airport
 Cessna 842 has been checked for technical malfunctions
 Cessna 842 has been refueled
 10 passengers boarded Cessna 842 at gate 1 of Antwerp International Airport
