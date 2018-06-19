@@ -1384,3 +1384,21 @@ TEST_F(AirplaneDomeinTest,flightPlanImport){
     EXPECT_EQ(interval,plane->getInterval());
 
 }
+TEST_F(AirplaneDomeinTest,flightPlanNotFound){
+
+    //settings
+    string filename = "../domeinTest/flightPlanNotFound.xml";
+    string des="";
+    int departure = 0;
+    int arrival = 0;
+    int interval = 0;
+    //end of settings
+    ofstream a;
+    LoadAirport(filename.c_str(),a,simulator);
+    Airplane* plane = simulator.getAirplanes().front();
+    EXPECT_EQ(des,plane->getDes());
+    EXPECT_EQ(departure,plane->getDeparture());
+    EXPECT_EQ(arrival,plane->getArrival());
+    EXPECT_EQ(interval,plane->getInterval());
+
+}
