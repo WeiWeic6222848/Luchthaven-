@@ -162,7 +162,6 @@ TEST_F(AirplaneDomeinTest,settersTestPlane) {
     EXPECT_TRUE(testsubject->getFuel()==1);
     testsubject->setFuelCapacity(1);
     EXPECT_TRUE(testsubject->getFuelCapacity()==1);
-
 }
 
 TEST_F(AirplaneDomeinTest,gettersAirport) {
@@ -171,6 +170,8 @@ TEST_F(AirplaneDomeinTest,gettersAirport) {
     string name = "Antwerp International Airport";
     string iata = "ANR";
     string callsign = "Antwerp Tower";
+    string runwayname = "11R";
+    string taxipointname="Alpha";
     unsigned int gates = 10;
     unsigned int runways = 1;
     //endofsettings
@@ -180,11 +181,26 @@ TEST_F(AirplaneDomeinTest,gettersAirport) {
     LoadAirport(filename.c_str(), a, simulator);
     Airport *testsubject = simulator.getAirports()[0];
 
+    EXPECT_TRUE(testsubject->ProperInitialized());
     EXPECT_TRUE(testsubject->getName()==name);
     EXPECT_TRUE(testsubject->getIata()==iata);
     EXPECT_TRUE(testsubject->getCallsign()==callsign);
     EXPECT_TRUE(testsubject->getGates().size()==gates);
     EXPECT_TRUE(testsubject->getRunways().size()==runways);
+
+
+    EXPECT_TRUE(testsubject->findFreeGates()!=NULL);
+    for (unsigned int i = 0; i <testsubject->getGates().size() ; ++i) {
+        testsubject->getGates()[i]->setOnuse(true);
+    }
+    EXPECT_TRUE(testsubject->findFreeGates()==NULL);
+
+    EXPECT_TRUE(testsubject->findTaxipoint("123456")==NULL);
+    EXPECT_TRUE(testsubject->findTaxipoint(taxipointname)!=NULL);
+    EXPECT_TRUE(testsubject->findRunway(runwayname)!=NULL);
+    EXPECT_TRUE(testsubject->findRunway("123456")==NULL);
+    EXPECT_TRUE(testsubject->findTaxipoint("")==NULL);
+    EXPECT_TRUE(testsubject->findRunway("")==NULL);
 }
 
 TEST_F(AirplaneDomeinTest,settersAirport) {
@@ -193,6 +209,9 @@ TEST_F(AirplaneDomeinTest,settersAirport) {
     string name = "Antwerp International Airport";
     string iata = "ANR";
     string callsign = "Antwerp Tower";
+    int passenger = 0;
+    unsigned int runways = 1;
+
 
     //endofsettings
 
@@ -200,8 +219,36 @@ TEST_F(AirplaneDomeinTest,settersAirport) {
 
     LoadAirport(filename.c_str(), a, simulator);
     Airport *testsubject = simulator.getAirports()[0];
+
+    EXPECT_TRUE(testsubject->getPassengers()==passenger);
     testsubject->addPassenger(10)
-    EXPECT_TRUE(testsubject->getPassengers()==10);
+    EXPECT_TRUE(testsubject->getPassengers()==passenger+10);
+    testsubject->removePassenger(10);
+    EXPECT_TRUE(testsubject->getPassengers()==passenger);
+
+    Airplane* tempair=new Airplane(Airplane::Approaching,"123","123","123","private","jet","small",1,1,1,testsubject);
+    EXPECT_TRUE(testsubject->getGateFromAirplane(tempair)==NULL);
+    testsubject->parkAirplane(testsubject->getGates()[0],tempair);
+    EXPECT_TRUE(testsubject->getGates()[0]->isOnuse());
+    EXPECT_TRUE(testsubject->getGateFromAirplane(tempair)!=NULL);
+    EXPECT_TRUE(testsubject->getGateFromAirplane(tempair)==testsubject->getGates()[0]);
+
+    testsubject->freeGate(testsubject->getGates()[0]);
+    EXPECT_TRUE(testsubject->getGateFromAirplane(tempair)==NULL);
+    EXPECT_TRUE(!testsubject->getGates()[0]->isOnuse());
+
+    delete(tempair);
+
+    EXPECT_TRUE(testsubject->getTaxipoints().size()==1);
+    EXPECT_TRUE(testsubject->findTaxipoint("123")==NULL);
+    testsubject->addTaxipoints(new Taxipoint("123",testsubject->getRunways()[0]));
+    EXPECT_TRUE(testsubject->findTaxipoint("123")!=NULL);
+    EXPECT_TRUE(testsubject->getTaxipoints().size()==2);
+
+    EXPECT_TRUE(testsubject->findRunway("123")==NULL);
+    testsubject->addRunway(new Runway("123",testsubject,"asphalt",10000));
+    EXPECT_TRUE(testsubject->findRunway("123")!=NULL);
+    EXPECT_TRUE(testsubject->getRunways().size()==runways+1);
 }
 
 TEST_F(AirplaneDomeinTest,gettersRunway) {
@@ -213,6 +260,7 @@ TEST_F(AirplaneDomeinTest,gettersRunway) {
     int length = 1010;
     string taxipoint = "Alpha";
     int airplanesqueing=0;
+    unsigned int routesize=1;
     Airplane* plane=NULL;
     //endofsettings
 
@@ -220,6 +268,7 @@ TEST_F(AirplaneDomeinTest,gettersRunway) {
 
     LoadAirport(filename.c_str(), a, simulator);
     Runway *testsubject = simulator.getAirports()[0]->getRunways()[0];
+
 
     EXPECT_TRUE(testsubject->getName()==name);
     EXPECT_TRUE(testsubject->getTaxipoint()->getName()==taxipoint);
@@ -232,8 +281,16 @@ TEST_F(AirplaneDomeinTest,gettersRunway) {
     EXPECT_TRUE(testsubject->getLength()==length);
     EXPECT_TRUE(testsubject->getType()==type);
 
+    EXPECT_TRUE(!testsubject->isOnuse());
+    EXPECT_TRUE(testsubject->ProperInitialized());
+    EXPECT_TRUE(!testsubject->isCrossing());
+    EXPECT_TRUE(!testsubject->isTaxipoint());
+    EXPECT_TRUE(!testsubject->isGate());
+    EXPECT_TRUE(testsubject->isRunway());
+    EXPECT_TRUE(testsubject->getRoute().size()==routesize);
 
 }
+
 TEST_F(AirplaneDomeinTest,settersRunway){
     //settings
     string filename = "../domeinTest/Runway.xml";
@@ -256,12 +313,15 @@ TEST_F(AirplaneDomeinTest,settersRunway){
     testsubject->setOnuse(true);
     EXPECT_TRUE(testsubject->isOnuse());
 
+    EXPECT_TRUE(testsubject->getCurrentairplane()==NULL);
     testsubject->setCurrentairplane(plane);
     EXPECT_TRUE(testsubject->getCurrentairplane()->getCallsign()==callsign);
 
+    EXPECT_TRUE(testsubject->getPlaneAtbegin()==NULL);
     testsubject->setPlaneAtbegin(plane)
     EXPECT_TRUE(testsubject->getPlaneAtbegin()->getCallsign()==callsign);
 
+    EXPECT_TRUE(testsubject->getPlaneAtEnd()==NULL);
     testsubject->setPlaneAtEnd(plane)
     EXPECT_TRUE(testsubject->getPlaneAtEnd()->getCallsign()==callsign);
 
@@ -270,6 +330,20 @@ TEST_F(AirplaneDomeinTest,settersRunway){
     EXPECT_FALSE(testsubject->isCrossing());
     testsubject->setCrossing(true)
     EXPECT_TRUE(testsubject->isCrossing());
+
+    Taxipoint* temptaxi=new Taxipoint("123",testsubject);
+    testsubject->getAirport()->addTaxipoints(temptaxi);
+
+    EXPECT_FALSE(testsubject->getTaxipoint()->getName()=="123");
+    testsubject->setTaxipoint(temptaxi);
+    EXPECT_TRUE(testsubject->getTaxipoint()->getName()=="123");
+
+    unsigned int routesize=testsubject->getRoute().size();
+    EXPECT_FALSE(testsubject->getRoute().size()==routesize+1);
+    EXPECT_FALSE(testsubject->getRoute().back()==temptaxi);
+    testsubject->addCrossingToRoute(temptaxi);
+    EXPECT_TRUE(testsubject->getRoute().size()==routesize+1);
+    EXPECT_TRUE(testsubject->getRoute().back()==temptaxi);
 
 }
 TEST_F(AirplaneDomeinTest, testingRunwayQueue){
@@ -316,9 +390,14 @@ TEST_F(AirplaneDomeinTest, testingGate){
     for (unsigned int i = 0; i < testsubject.size(); ++i) {
         EXPECT_FALSE(testsubject[i]->isOnuse());
         EXPECT_FALSE(testsubject[i]->isTaxipoint());
+        EXPECT_FALSE(testsubject[i]->isCrossing());
         EXPECT_TRUE(testsubject[i]->isGate());
         EXPECT_TRUE(testsubject[i]->ProperInitialized());
         EXPECT_TRUE(testsubject[i]->getCurrentPlane()==plane);
+        EXPECT_TRUE(testsubject[i]->getRoute().empty());
+        EXPECT_TRUE(testsubject[i]->getName()==to_string(i+1));
+        EXPECT_TRUE(testsubject[i]->getCurrentPlane()==NULL);
+        EXPECT_TRUE(testsubject[i]->getPlaneNearGate()==NULL);
     }
 }
 
@@ -411,6 +490,13 @@ TEST_F(AirplaneDomeinTest, gettersAirportsim){
     EXPECT_EQ(callsignAirplane,simulator.findAirplane(numberAirplane)->getCallsign());
     //simulator.findRunway()
     EXPECT_EQ(Time(12,0),simulator.getCurrentTime());
+
+    EXPECT_TRUE(simulator.findAirplane(numberAirplane)!=NULL);
+    EXPECT_TRUE(simulator.findAirplane("123")==NULL);
+    EXPECT_TRUE(simulator.findAirport(iataAirport)!=NULL);
+    EXPECT_TRUE(simulator.findAirport("123")==NULL);
+    EXPECT_TRUE(simulator.findRunway(simulator.getAirports()[0]->getRunways()[0]->getName(),simulator.getAirports()[0]->getIata())!=NULL);
+    EXPECT_TRUE(simulator.findRunway("123","123")==NULL);
 }
 
 TEST_F(AirplaneDomeinTest, settersAirportsim){
@@ -442,7 +528,10 @@ TEST_F(AirplaneDomeinTest, settersAirportsim){
     simulator.addAirplane(plane);
     EXPECT_EQ((unsigned)2,simulator.getAirplanes().size());
     EXPECT_EQ(numberPlane,simulator.getAirplanes().back()->getNumber());
-}
+
+    EXPECT_FALSE(simulator.getCurrentTime()==Time(12,50));
+    simulator.setCurrentTime(Time(12,50));
+    EXPECT_TRUE(simulator.getCurrentTime()==Time(12,50));}
 
 
 
@@ -467,12 +556,20 @@ TEST_F(AirplaneDomeinTest,invalidInput){
     ofstream a;
 
     LoadAirport(filename.c_str(),a,simulator);
-    Airplane* testsubject=simulator.findAirplane(number);
+    Airplane* testsubjectAirplane=simulator.findAirplane(number);
+    Airport* testsubjectAirport=testsubjectAirplane->getDestination();
+    Runway* testsubjectRunway=testsubjectAirport->getRunways()[0];
 
 
-    EXPECT_DEATH(testsubject->setPassenger(passengercapacity+1),"");
-    EXPECT_DEATH(testsubject->setFuel(fuel+1),"");
-    EXPECT_DEATH(testsubject->setFuelCapacity(fuel-1),"");
+    EXPECT_DEATH(testsubjectAirplane->setPassenger(passengercapacity+1),"");
+    EXPECT_DEATH(testsubjectAirplane->setFuel(fuel+1),"");
+    EXPECT_DEATH(testsubjectAirplane->setFuelCapacity(fuel-1),"");
+    EXPECT_DEATH(testsubjectAirport->getGateFromAirplane(NULL),"");
+    EXPECT_DEATH(testsubjectAirport->findFreeRunway(NULL),"");
+    EXPECT_DEATH(testsubjectRunway->addCrossingToRoute(NULL),"");
+    EXPECT_DEATH(airplaneCanLandOnGrass(NULL),"");
+    EXPECT_DEATH(requiredLengthOfRunway(NULL),"");
+    EXPECT_DEATH(getBasesqwakcode(NULL),"");
 
 }
 
@@ -1366,6 +1463,7 @@ TEST_F(AirplaneDomeinTest,SimulationLineupTest2) {
     EXPECT_TRUE(testsubject1->getLocation()->isRunway());
     EXPECT_TRUE(testsubject1->getPermission()==Airplane::FlyPermission);
 }
+
 TEST_F(AirplaneDomeinTest,flightPlanImport){
 
     //settings
@@ -1384,6 +1482,7 @@ TEST_F(AirplaneDomeinTest,flightPlanImport){
     EXPECT_EQ(interval,plane->getInterval());
 
 }
+
 TEST_F(AirplaneDomeinTest,flightPlanNotFound){
 
     //settings
@@ -1400,5 +1499,4 @@ TEST_F(AirplaneDomeinTest,flightPlanNotFound){
     EXPECT_EQ(departure,plane->getDeparture());
     EXPECT_EQ(arrival,plane->getArrival());
     EXPECT_EQ(interval,plane->getInterval());
-
 }

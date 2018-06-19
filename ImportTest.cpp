@@ -52,9 +52,7 @@ TEST_F(AirportSimImportTest, InputHappyDay) {
         outputfile.open(outputfilename.c_str());
         Airportsim testsim;//reinitialize the airportsim everytime;
         importResult=LoadAirport(filename.c_str(),outputfile,testsim);
-        for(unsigned int i=0;i<testsim.getAirplanes().size();i++){
-            expectoutput<<"plane has no flightplan, when tried to import from .xml file"<<endl;
-        }
+
         EXPECT_TRUE(importResult==Success);
         EXPECT_TRUE(FileCompare(expectoutputfilename,outputfilename));
         expectoutput.close();
@@ -763,6 +761,38 @@ TEST_F(AirportSimImportTest,flightPlanImport){
         importResult=LoadAirport(filename.c_str(),outputfile,testsim);
         EXPECT_TRUE(importResult==Success);
         //EXPECT_TRUE(FileCompare(expectoutputfilename,outputfilename));
+        expectoutput.close();
+        outputfile.close();
+    }
+}
+
+TEST_F(AirportSimImportTest, Inputplan) {
+    REQUIRE(DirectoryExists("../inputTest/Happyday"),"Happy day folder must exist");
+
+    //settings
+    int numberOfFiles=13;
+    string expectoutputfilename="../inputTest/No_Flightplan/expect_output.txt";
+    string outputfilename="../inputTest/No_Flightplan/output.txt";
+    string inputfilenameprefix="../inputTest/No_Flightplan/input_test_";
+    string inputfilenamepostfix=".xml";
+    //end of settings
+
+    ofstream outputfile;
+    Esucces importResult;
+    ofstream expectoutput;
+
+    for (int i = 1; i <= numberOfFiles; ++i) {
+        string filename=inputfilenameprefix+to_string(i)+=inputfilenamepostfix;
+        expectoutput.open(expectoutputfilename.c_str());
+        //expectoutput<<"plane has no flightplan, when tried to import from .xml file"<<endl;
+        outputfile.open(outputfilename.c_str());
+        Airportsim testsim;//reinitialize the airportsim everytime;
+        importResult=LoadAirport(filename.c_str(),outputfile,testsim);
+        for(unsigned int i=0;i<testsim.getAirplanes().size();i++){
+            expectoutput<<"plane has no flightplan, when tried to import from .xml file"<<endl;
+        }
+        EXPECT_TRUE(importResult==Success);
+        EXPECT_TRUE(FileCompare(expectoutputfilename,outputfilename));
         expectoutput.close();
         outputfile.close();
     }

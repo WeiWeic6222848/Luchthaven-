@@ -63,7 +63,12 @@
         <passenger>10</passenger>
 
         <passengercapacity>10</passengercapacity>
-
+        <FLIGHTPLAN>
+            <destination>LCY</destination>
+            <departure>15</departure>
+            <arrival>45</arrival>
+            <interval>1</interval>
+        </FLIGHTPLAN>
     </AIRPLANE>
 
 </AirportSim>

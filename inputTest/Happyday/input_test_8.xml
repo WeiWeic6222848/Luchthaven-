@@ -68,6 +68,12 @@
         <size>large</size>
 
         <status>Approaching</status>
+        <FLIGHTPLAN>
+            <destination>LCY</destination>
+            <departure>15</departure>
+            <arrival>45</arrival>
+            <interval>1</interval>
+        </FLIGHTPLAN>
     </AIRPLANE>
 
 
@@ -86,7 +92,12 @@
         <size>medium</size>
 
         <status>Approaching</status>
-
+        <FLIGHTPLAN>
+            <destination>LCY</destination>
+            <departure>15</departure>
+            <arrival>45</arrival>
+            <interval>1</interval>
+        </FLIGHTPLAN>
     </AIRPLANE>
 
     <AIRPLANE>
@@ -107,7 +118,12 @@
         <passenger>60</passenger>
 
         <fuel>10000</fuel>
-
+        <FLIGHTPLAN>
+            <destination>LCY</destination>
+            <departure>15</departure>
+            <arrival>45</arrival>
+            <interval>1</interval>
+        </FLIGHTPLAN>
     </AIRPLANE>
 
     <AIRPLANE>
@@ -127,7 +143,12 @@
         <status>Standing at gate</status>
 
         <passenger>45</passenger>
-
+        <FLIGHTPLAN>
+            <destination>LCY</destination>
+            <departure>15</departure>
+            <arrival>45</arrival>
+            <interval>1</interval>
+        </FLIGHTPLAN>
     </AIRPLANE>
 
     <AIRPLANE>
@@ -149,7 +170,12 @@
         <passenger>80</passenger>
 
         <fuel>10000</fuel>
-
+        <FLIGHTPLAN>
+            <destination>LCY</destination>
+            <departure>15</departure>
+            <arrival>45</arrival>
+            <interval>1</interval>
+        </FLIGHTPLAN>
     </AIRPLANE>
 
     <AIRPLANE>
@@ -171,6 +197,11 @@
         <fuel>10000</fuel>
 
         <passengercapacity>45</passengercapacity>
-
+        <FLIGHTPLAN>
+            <destination>LCY</destination>
+            <departure>15</departure>
+            <arrival>45</arrival>
+            <interval>1</interval>
+        </FLIGHTPLAN>
     </AIRPLANE>
 </AirportSim>

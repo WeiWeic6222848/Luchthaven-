@@ -1,2 +1,1 @@
-plane has no flightplan, when tried to import from .xml file
 Airplane with has a invalid combination of engine, size and type, check specification for more information

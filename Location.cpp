@@ -38,7 +38,7 @@ void Location::setCrossing(bool crossing) {
 }
 
 void Location::addCrossingToRoute(Location *location) {
-
+    REQUIRE(location!=NULL,"Location can't be NULL");
     REQUIRE(ProperInitialized(),"Location must be initialized when calling addCrossingToRoute");
     route.push_back(location);
     ENSURE(find(route.begin(),route.end(),location)!=route.end(),"addCrossingToRoute postcondition failed");
