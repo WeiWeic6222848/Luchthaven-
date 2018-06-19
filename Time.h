@@ -61,6 +61,10 @@ public:
     bool operator==(const Time &rhs) const;
 
     bool operator!=(const Time &rhs) const;
+
+    int getHour() const;
+
+    int getMinute() const;
 };
 
 

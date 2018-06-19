@@ -284,6 +284,8 @@ Airportsim::Airportsim() {
 
  //future functions
 void Airportsim::Simulate() {
+     //currentTime=startingtime;
+     Time endingTime=currentTime+360;
      REQUIRE(ProperInitialized(),"Airportsim object wasn't initialized when calling Simulate");
      ofstream file;
      for (unsigned int k = 0; k < Airports.size(); ++k) {
@@ -307,10 +309,21 @@ void Airportsim::Simulate() {
      int chillingcounter=0;
 
      //int toweraction=0;
-     while (!Airplanes.empty()){
+     while (currentTime<=endingTime){
          airplanestoremove.clear();
          Airplane::Airplaneallowedstatus status;
-
+         for(unsigned int i = 0;i<AirplanesFlying.size();i++){
+             Airplane* plane=AirplanesFlying[i];
+             if(plane->flightPlanActivated()){
+                 if(currentTime.getMinute()==plane->getArrival()&&(currentTime.getHour()-plane->getCurrentTime().getHour())==plane->getInterval()){
+                     plane->setStatus(Airplane::Approaching);
+                     plane->setHeight(10000);
+                     plane->setCurrentTime(currentTime);
+                     AirplanesFlying.erase(find(AirplanesFlying.begin(),AirplanesFlying.end(),plane));
+                     Airplanes.push_back(plane);
+                 }
+             }
+         }
          for (unsigned int j = 0; j < Airplanes.size(); ++j) {
              alreadypushed=false;
              chillingcounter=0;
@@ -539,12 +552,24 @@ void Airportsim::airplaneAtGatestep(Airplane &plane, Airport &airport) {
                 plane.sendSignalTaxiingtoRunway();
             }
             else if(plane.getPermission()==Airplane::TaxiingPermission){
-                plane.resetCheckProcedure();
-                //ask permission, if there is a runway available just go there.
-                plane.setStatus(Airplane::Taxiing_to_runway);
-                gate->setPlaneNearGate(NULL);
-                outputfile<<plane.getCallsign()<<" is standing at Gate "<<gate->getName()<<endl;
-                outputfile<<plane.getCallsign()<<" is taxiing to runway "<<plane.getDestinateRunway()->getName()<<endl;//add here
+                if(plane.flightPlanActivated()){
+                    if(currentTime.getMinute()==plane.getDeparture()){
+                        plane.resetCheckProcedure();
+                        //ask permission, if there is a runway available just go there.
+                        plane.setStatus(Airplane::Taxiing_to_runway);
+                        gate->setPlaneNearGate(NULL);
+                        outputfile<<plane.getCallsign()<<" is standing at Gate "<<gate->getName()<<endl;
+                        outputfile<<plane.getCallsign()<<" is taxiing to runway "<<plane.getDestinateRunway()->getName()<<endl;//add here
+                    }
+                }
+                else{
+                    plane.resetCheckProcedure();
+                    //ask permission, if there is a runway available just go there.
+                    plane.setStatus(Airplane::Taxiing_to_runway);
+                    gate->setPlaneNearGate(NULL);
+                    outputfile<<plane.getCallsign()<<" is standing at Gate "<<gate->getName()<<endl;
+                    outputfile<<plane.getCallsign()<<" is taxiing to runway "<<plane.getDestinateRunway()->getName()<<endl;//add here
+                }
             }
         }
     }

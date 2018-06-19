@@ -966,5 +966,16 @@ int Airplane::getInterval() const {
     REQUIRE(ProperInitialized(),"Airplane wasn't initialized when calling getInterval");
     return interval;
 }
+bool Airplane::flightPlanActivated(){
+    REQUIRE(ProperInitialized(),"Airplane wasn't initalized when calling flightPlanActivated");
+    return!(getDes()==""&&getInterval()==0);
+}
 
+void Airplane::setHeight(int height) {
+    Airplane::height = height;
+}
+
+void Airplane::setCurrentTime(const Time &currentTime) {
+    Airplane::currentTime = currentTime;
+}
 

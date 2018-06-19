@@ -11,3 +11,30 @@ Cessna ascended to 3000 ft.
 Cessna ascended to 4000 ft.
 Cessna ascended to 5000 ft.
 Cessna has left Antwerp International Airport
+Cessna is approaching Antwerp International Airport at 10000 ft.
+Cessna descended to 9000 ft.
+Cessna descended to 8000 ft.
+Cessna descended to 7000 ft.
+Cessna descended to 6000 ft.
+Cessna descended to 5000 ft.
+Cessna descended to 4000 ft.
+Cessna descended to 3000 ft.
+Cessna descended to 2000 ft.
+Cessna descended to 1000 ft.
+Cessna is landing at Antwerp International Airport on runway 11L
+Cessna has landed at Antwerp International Airport on runway 11L
+Cessna is taxiing to Gates 
+Cessna is standing at Gate 2
+10 passengers exited Cessna at gate 2 of Antwerp International Airport
+Cessna has been checked for technical malfunctions
+Cessna has been refueled
+10 passengers boarded Cessna at gate 2 of Antwerp International Airport
+Cessna is standing at Gate 2
+Cessna is taxiing to runway 11L
+Cessna is taking off at Antwerp International Airport on runway 11L
+Cessna ascended to 1000 ft.
+Cessna ascended to 2000 ft.
+Cessna ascended to 3000 ft.
+Cessna ascended to 4000 ft.
+Cessna ascended to 5000 ft.
+Cessna has left Antwerp International Airport

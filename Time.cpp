@@ -52,3 +52,11 @@ bool Time::operator>=(const Time &rhs) const {
 }
 
 Time::Time(int hour, int minute) : hour(hour), minute(minute) {}
+
+int Time::getHour() const {
+    return hour;
+}
+
+int Time::getMinute() const {
+    return minute;
+}

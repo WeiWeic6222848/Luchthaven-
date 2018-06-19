@@ -25,3 +25,30 @@ GOD ascended to 3000 ft.
 GOD ascended to 4000 ft.
 GOD ascended to 5000 ft.
 GOD has left Antwerp International Airport
+GOD is approaching Antwerp International Airport at 10000 ft.
+GOD descended to 9000 ft.
+GOD descended to 8000 ft.
+GOD descended to 7000 ft.
+GOD descended to 6000 ft.
+GOD descended to 5000 ft.
+GOD descended to 4000 ft.
+GOD descended to 3000 ft.
+GOD descended to 2000 ft.
+GOD descended to 1000 ft.
+GOD is landing at Antwerp International Airport on runway 11L
+GOD has landed at Antwerp International Airport on runway 11L
+GOD is taxiing to Gates 
+GOD is standing at Gate 1
+10 passengers exited GOD at gate 1 of Antwerp International Airport
+GOD has been checked for technical malfunctions
+GOD has been refueled
+10 passengers boarded GOD at gate 1 of Antwerp International Airport
+GOD is standing at Gate 1
+GOD is taxiing to runway 11L
+GOD is taking off at Antwerp International Airport on runway 11L
+GOD ascended to 1000 ft.
+GOD ascended to 2000 ft.
+GOD ascended to 3000 ft.
+GOD ascended to 4000 ft.
+GOD ascended to 5000 ft.
+GOD has left Antwerp International Airport

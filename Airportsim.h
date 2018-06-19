@@ -9,6 +9,10 @@
 #include "Airport.h"
 #include <iostream>
 #include <cmath>
+//variables:
+//Time startingtime=Time(12,0);
+//int duration=180;
+//end variables
 
 class AirportsimImporter;
 class Airport;

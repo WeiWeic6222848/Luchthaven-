@@ -580,8 +580,17 @@ private:
      * @return
      */
     bool crossingRunway();
+    /**
+     *      REQUIRE(ProperInitialized(),"Airplane wasn't initalized when calling flightPlanActivated");
+     * @return
+     */
+    bool flightPlanActivated();
     //all actions to be done by aieplane---------------------------------------------------------
 
+public:
+    void setHeight(int height);
+
+    void setCurrentTime(const Time &currentTime);
 };
 
 
