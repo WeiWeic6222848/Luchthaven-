@@ -9,27 +9,27 @@ Speedbird 466, radar contact, descend and maintain five thousand feet, squawk 41
 [ 12:03 ][AIR]
 Descend and maintain five thousand feet, squawking 4102 ,Speedbird 466
 [ 12:03 ][ATC]
-GOD, hold south on the one eighty radial, expect further clearance at  12:05 
+GOD, hold south on the one eighty radial, expect further clearance at  12:06 
 [ 12:04 ][AIR]
 Hold south on the one eighty radial, GOD
 [ 12:04 ][ATC]
-Cessna 849, hold south on the one eighty radial, expect further clearance at  12:06 
+Cessna 849, hold south on the one eighty radial, expect further clearance at  12:07 
 [ 12:05 ][AIR]
 Hold south on the one eighty radial, Cessna 849
 [ 12:05 ][ATC]
-GOD, hold south on the one eighty radial, expect further clearance at  12:07 
+GOD, hold south on the one eighty radial, expect further clearance at  12:08 
 [ 12:06 ][AIR]
 Hold south on the one eighty radial, GOD
 [ 12:06 ][ATC]
-Cessna 849, hold south on the one eighty radial, expect further clearance at  12:08 
+Cessna 849, hold south on the one eighty radial, expect further clearance at  12:09 
 [ 12:07 ][AIR]
 Hold south on the one eighty radial, Cessna 849
 [ 12:07 ][ATC]
-GOD, hold south on the one eighty radial, expect further clearance at  12:09 
+GOD, hold south on the one eighty radial, expect further clearance at  12:10 
 [ 12:08 ][AIR]
 Hold south on the one eighty radial, GOD
 [ 12:08 ][ATC]
-Cessna 849, hold south on the one eighty radial, expect further clearance at  12:10 
+Cessna 849, hold south on the one eighty radial, expect further clearance at  12:11 
 [ 12:09 ][AIR]
 Hold south on the one eighty radial, Cessna 849
 [ 12:09 ][ATC]
@@ -41,11 +41,11 @@ GOD, radar contact, descend and maintain five thousand feet, squawk 1636 .
 [ 12:11 ][AIR]
 Descend and maintain five thousand feet, squawking 1636 ,GOD
 [ 12:11 ][ATC]
-Cessna 849, hold south on the one eighty radial, expect further clearance at  12:13 
+Cessna 849, hold south on the one eighty radial, expect further clearance at  12:14 
 [ 12:12 ][AIR]
 Hold south on the one eighty radial, Cessna 849
 [ 12:12 ][ATC]
-Cessna 849, hold south on the one eighty radial, expect further clearance at  12:14 
+Cessna 849, hold south on the one eighty radial, expect further clearance at  12:15 
 [ 12:13 ][AIR]
 Hold south on the one eighty radial, Cessna 849
 [ 12:13 ][AIR]
@@ -173,7 +173,7 @@ Cleared to Cross runway 11R, Cessna 84, Taxi to runway 11L via Bravo.
 [ 12:43 ][AIR]
 Antwerp Tower, Cessna 8, holding short at 11L
 [ 12:45 ][ATC]
-Cessna 849, hold south on the one eighty radial, expect further clearance at  12:46 
+Cessna 849, hold south on the one eighty radial, expect further clearance at  12:47 
 [ 12:46 ][AIR]
 Hold south on the one eighty radial, Cessna 849
 airplane Cessna left 12:46 
@@ -182,17 +182,17 @@ Cessna 8, runway 11L cleared for take-off.
 [ 12:48 ][AIR]
 runway 11L cleared for take-off, Cessna 8
 [ 12:48 ][ATC]
-Cessna 849, hold south on the one eighty radial, expect further clearance at  12:48 
+Cessna 849, hold south on the one eighty radial, expect further clearance at  12:49 
 [ 12:49 ][AIR]
 Hold south on the one eighty radial, Cessna 849
 [ 12:49 ][ATC]
-Cessna 849, hold south on the one eighty radial, expect further clearance at  12:49 
+Cessna 849, hold south on the one eighty radial, expect further clearance at  12:50 
 [ 12:50 ][AIR]
 Hold south on the one eighty radial, Cessna 849
 [ 12:50 ][AIR]
 Antwerp Tower, Cessna 84, holding short at 11L
 [ 12:50 ][ATC]
-Cessna 849, hold south on the one eighty radial, expect further clearance at  12:51 
+Cessna 849, hold south on the one eighty radial, expect further clearance at  12:52 
 [ 12:51 ][AIR]
 Hold south on the one eighty radial, Cessna 849
 airplane Cessna 8 left 12:52 
@@ -201,19 +201,19 @@ Cessna 84, runway 11L cleared for take-off.
 [ 12:54 ][AIR]
 runway 11L cleared for take-off, Cessna 84
 [ 12:54 ][ATC]
-Cessna 849, hold south on the one eighty radial, expect further clearance at  12:54 
+Cessna 849, hold south on the one eighty radial, expect further clearance at  12:55 
 [ 12:55 ][AIR]
 Hold south on the one eighty radial, Cessna 849
 [ 12:55 ][ATC]
-Cessna 849, hold south on the one eighty radial, expect further clearance at  12:55 
+Cessna 849, hold south on the one eighty radial, expect further clearance at  12:56 
 [ 12:56 ][AIR]
 Hold south on the one eighty radial, Cessna 849
 [ 12:56 ][ATC]
-Cessna 849, hold south on the one eighty radial, expect further clearance at  12:56 
+Cessna 849, hold south on the one eighty radial, expect further clearance at  12:57 
 [ 12:57 ][AIR]
 Hold south on the one eighty radial, Cessna 849
 [ 12:57 ][ATC]
-Cessna 849, hold south on the one eighty radial, expect further clearance at  12:57 
+Cessna 849, hold south on the one eighty radial, expect further clearance at  12:58 
 [ 12:58 ][AIR]
 Hold south on the one eighty radial, Cessna 849
 airplane Cessna 84 left 12:58 

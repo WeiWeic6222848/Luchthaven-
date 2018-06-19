@@ -7,47 +7,47 @@ Cessna 842, radar contact, descend and maintain five thousand feet, squawk 0052 
 [ 12:03 ][AIR]
 Descend and maintain five thousand feet, squawking 0052 ,Cessna 842
 [ 12:03 ][ATC]
-Cessna 842, hold south on the one eighty radial, expect further clearance at  12:04 
+Cessna 842, hold south on the one eighty radial, expect further clearance at  12:05 
 [ 12:04 ][AIR]
 Hold south on the one eighty radial, Cessna 842
 [ 12:04 ][ATC]
-Cessna 842, hold south on the one eighty radial, expect further clearance at  12:05 
+Cessna 842, hold south on the one eighty radial, expect further clearance at  12:06 
 [ 12:05 ][AIR]
 Hold south on the one eighty radial, Cessna 842
 [ 12:05 ][ATC]
-Cessna 842, hold south on the one eighty radial, expect further clearance at  12:06 
+Cessna 842, hold south on the one eighty radial, expect further clearance at  12:07 
 [ 12:06 ][AIR]
 Hold south on the one eighty radial, Cessna 842
 [ 12:06 ][ATC]
-Cessna 842, hold south on the one eighty radial, expect further clearance at  12:07 
+Cessna 842, hold south on the one eighty radial, expect further clearance at  12:08 
 [ 12:07 ][AIR]
 Hold south on the one eighty radial, Cessna 842
 [ 12:07 ][ATC]
-Cessna 842, hold south on the one eighty radial, expect further clearance at  12:08 
+Cessna 842, hold south on the one eighty radial, expect further clearance at  12:09 
 [ 12:08 ][AIR]
 Hold south on the one eighty radial, Cessna 842
 [ 12:08 ][ATC]
-Cessna 842, hold south on the one eighty radial, expect further clearance at  12:09 
+Cessna 842, hold south on the one eighty radial, expect further clearance at  12:10 
 [ 12:09 ][AIR]
 Hold south on the one eighty radial, Cessna 842
 [ 12:09 ][ATC]
-Cessna 842, hold south on the one eighty radial, expect further clearance at  12:10 
+Cessna 842, hold south on the one eighty radial, expect further clearance at  12:11 
 [ 12:10 ][AIR]
 Hold south on the one eighty radial, Cessna 842
 [ 12:10 ][ATC]
-Cessna 842, hold south on the one eighty radial, expect further clearance at  12:11 
+Cessna 842, hold south on the one eighty radial, expect further clearance at  12:12 
 [ 12:11 ][AIR]
 Hold south on the one eighty radial, Cessna 842
 [ 12:11 ][ATC]
-Cessna 842, hold south on the one eighty radial, expect further clearance at  12:12 
+Cessna 842, hold south on the one eighty radial, expect further clearance at  12:13 
 [ 12:12 ][AIR]
 Hold south on the one eighty radial, Cessna 842
 [ 12:12 ][ATC]
-Cessna 842, hold south on the one eighty radial, expect further clearance at  12:13 
+Cessna 842, hold south on the one eighty radial, expect further clearance at  12:14 
 [ 12:13 ][AIR]
 Hold south on the one eighty radial, Cessna 842
 [ 12:13 ][ATC]
-Cessna 842, hold south on the one eighty radial, expect further clearance at  12:14 
+Cessna 842, hold south on the one eighty radial, expect further clearance at  12:15 
 [ 12:14 ][AIR]
 Hold south on the one eighty radial, Cessna 842
 [ 12:14 ][ATC]

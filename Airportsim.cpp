@@ -639,7 +639,7 @@ void Airportsim::writeIni(Airport &airport) {
     ofstream outputfile;
     string filename = "../output/settings_2D_[" + airport.getIata() + "]"+".ini";
     outputfile.open(filename.c_str(), ios::out);
-    outputfile<<"[General]\n"<<"type = \"LightedZBuffering\"\n"<<"size = 1024\n"<<"backgroundcolor = (0, 1, 0)\n";
+    outputfile<<"[General]\n"<<"type = \"LightedZBuffering\"\n"<<"size = 1024\n"<<"backgroundcolor = (96, 128, 56)\n";
     int amountFigures=airport.getRunways().size()*amountFigs;
     for(unsigned int i=0;i<airport.getRunways().size();i++){
         if(airport.getRunways()[i]->isOnuse()){

@@ -160,7 +160,7 @@ TEST_F(AirplaneOutputTest,checkSettingsGrafficsImpression){
         while(getline(actual,temp)){
             write<<temp<<endl;
         }
-  */
+*/
         REQUIRE(fileExist(happydayFilename.c_str()),"happyday output not found");
 
 
