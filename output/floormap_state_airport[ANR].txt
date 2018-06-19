@@ -3,1753 +3,1753 @@
 TPB | 
 11R | ==========
 TPA | 
-Gates [VVV       ]
+Gates [ V        ]
  12:01 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [VVV       ]
+Gates [ V        ]
  12:02 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [VVV       ]
+Gates [ V        ]
  12:03 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [VVV       ]
+Gates [ V        ]
  12:04 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [VVV       ]
+Gates [ V        ]
  12:05 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [VVV       ]
+Gates [ V        ]
  12:06 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [VVV       ]
+Gates [ V        ]
  12:07 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [VVV       ]
+Gates [ V        ]
  12:08 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [VVV       ]
+Gates [ V        ]
  12:09 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [VVV       ]
+Gates [ V        ]
  12:10 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [VVV       ]
+Gates [ V        ]
  12:11 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [VVV       ]
+Gates [ V        ]
  12:12 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [VVV       ]
+Gates [ V        ]
  12:13 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [VVV       ]
+Gates [ V        ]
  12:14 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [VVV       ]
+Gates [ V        ]
  12:15 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [VVV       ]
+Gates [ V        ]
  12:16 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [VVV       ]
+Gates [ V        ]
  12:17 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [VVV       ]
+Gates [ V        ]
  12:18 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [VVV       ]
+Gates [ V        ]
  12:19 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [VVV       ]
+Gates [ V        ]
  12:20 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [V V       ]
+Gates [ V        ]
  12:21 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [  V       ]
+Gates [ V        ]
  12:22 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  12:23 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  12:24 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  12:25 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  12:26 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  12:27 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  12:28 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  12:29 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  12:30 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  12:31 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  12:32 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  12:33 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  12:34 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  12:35 
-11L | =========V
+11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  12:36 
-11L | =========V
+11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  12:37 
-11L | =========V
+11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  12:38 
 11L | ==========
-TPB | V
+TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  12:39 
 11L | ==========
-TPB | V
+TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  12:40 
 11L | ==========
-TPB | V
+TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  12:41 
 11L | ==========
-TPB | V
-11R | ==========
-TPA | 
-Gates [          ]
- 12:42 
-11L | =========V
-TPB | V
-11R | ==========
-TPA | 
-Gates [          ]
- 12:43 
-11L | =========V
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
+ 12:42 
+11L | ==========
+TPB | 
+11R | ==========
+TPA | 
+Gates [ V        ]
+ 12:43 
+11L | ==========
+TPB | 
+11R | ==========
+TPA | 
+Gates [ V        ]
  12:44 
 11L | ==========
-TPB | V
+TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  12:45 
 11L | ==========
-TPB | V
+TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  12:46 
 11L | ==========
-TPB | V
+TPB | 
 11R | ==========
 TPA | 
-Gates [V         ]
+Gates [ V        ]
  12:47 
 11L | ==========
-TPB | V
+TPB | 
 11R | ==========
 TPA | 
-Gates [V         ]
+Gates [ V        ]
  12:48 
 11L | ==========
-TPB | V
+TPB | 
 11R | ==========
-TPA | V
-Gates [V         ]
+TPA | 
+Gates [ V        ]
  12:49 
-11L | ====V=====
+11L | ==========
 TPB | 
 11R | ==========
-TPA | V
-Gates [V         ]
+TPA | 
+Gates [ V        ]
  12:50 
-11L | ====V=====
+11L | ==========
 TPB | 
 11R | ==========
-TPA | V
-Gates [V         ]
+TPA | 
+Gates [ V        ]
  12:51 
-11L | =========V
+11L | ==========
 TPB | 
 11R | ==========
-TPA | V
-Gates [VV        ]
+TPA | 
+Gates [ V        ]
  12:52 
-11L | =========V
+11L | ==========
 TPB | 
 11R | ==========
-TPA | V
-Gates [VV        ]
+TPA | 
+Gates [ V        ]
  12:53 
-11L | =========V
+11L | ==========
 TPB | 
 11R | ==========
-TPA | V
-Gates [VV        ]
+TPA | 
+Gates [ V        ]
  12:54 
 11L | ==========
-TPB | V
+TPB | 
 11R | ==========
-TPA | V
-Gates [VV        ]
+TPA | 
+Gates [ V        ]
  12:55 
 11L | ==========
-TPB | V
+TPB | 
 11R | ==========
-TPA | V
-Gates [VV        ]
+TPA | 
+Gates [ V        ]
  12:56 
 11L | ==========
-TPB | V
+TPB | 
 11R | ==========
-TPA | V
-Gates [VV        ]
+TPA | 
+Gates [ V        ]
  12:57 
 11L | ==========
-TPB | V
+TPB | 
 11R | ==========
-TPA | V
-Gates [VV        ]
+TPA | 
+Gates [ V        ]
  12:58 
 11L | ==========
-TPB | VV
+TPB | 
 11R | ==========
 TPA | 
-Gates [VV        ]
+Gates [ V        ]
  12:59 
 11L | ==========
-TPB | V
+TPB | 
 11R | ==========
 TPA | 
-Gates [VV        ]
+Gates [ V        ]
  13:00 
 11L | ==========
-TPB | V
+TPB | 
 11R | ==========
 TPA | 
-Gates [VV        ]
+Gates [ V        ]
  13:01 
 11L | ==========
-TPB | V
+TPB | 
 11R | ==========
 TPA | 
-Gates [VVV       ]
+Gates [ V        ]
  13:02 
 11L | ==========
-TPB | V
+TPB | 
 11R | ==========
 TPA | 
-Gates [VVV       ]
+Gates [ V        ]
  13:03 
 11L | ==========
 TPB | 
 11R | ==========
-TPA | V
-Gates [VVV       ]
+TPA | 
+Gates [ V        ]
  13:04 
 11L | ==========
 TPB | 
 11R | ==========
-TPA | V
-Gates [VVV       ]
+TPA | 
+Gates [ V        ]
  13:05 
 11L | ==========
 TPB | 
 11R | ==========
-TPA | V
-Gates [VVVV      ]
+TPA | 
+Gates [ V        ]
  13:06 
 11L | ==========
 TPB | 
 11R | ==========
-TPA | V
-Gates [VVVV      ]
+TPA | 
+Gates [ V        ]
  13:07 
 11L | ==========
 TPB | 
 11R | ==========
-TPA | VV
-Gates [VVVV      ]
+TPA | 
+Gates [ V        ]
  13:08 
 11L | ==========
 TPB | 
 11R | ==========
-TPA | V
-Gates [VVVV      ]
+TPA | 
+Gates [ V        ]
  13:09 
 11L | ==========
 TPB | 
 11R | ==========
-TPA | V
-Gates [VVVV      ]
+TPA | 
+Gates [ V        ]
  13:10 
 11L | ==========
 TPB | 
 11R | ==========
-TPA | V
-Gates [VVVV      ]
+TPA | 
+Gates [ V        ]
  13:11 
 11L | ==========
 TPB | 
 11R | ==========
-TPA | V
-Gates [VVVV      ]
+TPA | 
+Gates [ V        ]
  13:12 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [VVVV      ]
+Gates [ V        ]
  13:13 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [VVVV      ]
+Gates [ V        ]
  13:14 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [VVVV      ]
+Gates [ V        ]
  13:15 
 11L | ==========
 TPB | 
 11R | ==========
-TPA | VVV
-Gates [VVVV      ]
+TPA | 
+Gates [ V        ]
  13:16 
 11L | ==========
 TPB | 
 11R | ==========
-TPA | VVV
-Gates [VVVV      ]
+TPA | 
+Gates [ V        ]
  13:17 
 11L | ==========
 TPB | 
 11R | ==========
-TPA | VVV
-Gates [VVVV      ]
+TPA | 
+Gates [ V        ]
  13:18 
 11L | ==========
 TPB | 
 11R | ==========
-TPA | VVV
-Gates [ VVV      ]
+TPA | 
+Gates [ V        ]
  13:19 
 11L | ==========
 TPB | 
 11R | ==========
-TPA | VVV
-Gates [ VVV      ]
+TPA | 
+Gates [ V        ]
  13:20 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [ VVV      ]
+Gates [ V        ]
  13:21 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [ VVV      ]
+Gates [ V        ]
  13:22 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [ VVV      ]
+Gates [ V        ]
  13:23 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [ VVV      ]
+Gates [ V        ]
  13:24 
 11L | ==========
-TPB | V
-11R | ==========
-TPA | 
-Gates [ VVV      ]
- 13:25 
-11L | ==========
-TPB | V
-11R | ==========
-TPA | 
-Gates [ VVV      ]
- 13:26 
-11L | ==========
-TPB | V
-11R | ==========
-TPA | 
-Gates [ VVV      ]
- 13:27 
-11L | ==========
-TPB | VV
-11R | ==========
-TPA | 
-Gates [ VVV      ]
- 13:28 
-11L | ==========
-TPB | VV
-11R | ==========
-TPA | 
-Gates [ V V      ]
- 13:29 
-11L | ==========
-TPB | V
-11R | ==========
-TPA | 
-Gates [ V V      ]
- 13:30 
-11L | ==========
-TPB | VV
-11R | ==========
-TPA | 
-Gates [ V V      ]
- 13:31 
-11L | V=========
-TPB | VV
-11R | ==========
-TPA | 
-Gates [ V V      ]
- 13:32 
-11L | V=========
-TPB | V
-11R | ==========
-TPA | 
-Gates [ V V      ]
- 13:33 
-11L | ====V=====
-TPB | V
-11R | ==========
-TPA | 
-Gates [ V V      ]
- 13:34 
-11L | ====V=====
-TPB | V
-11R | ==========
-TPA | 
-Gates [ V V      ]
- 13:35 
-11L | ====V=====
 TPB | 
 11R | ==========
 TPA | 
-Gates [ V V      ]
+Gates [ V        ]
+ 13:25 
+11L | ==========
+TPB | 
+11R | ==========
+TPA | 
+Gates [ V        ]
+ 13:26 
+11L | ==========
+TPB | 
+11R | ==========
+TPA | 
+Gates [ V        ]
+ 13:27 
+11L | ==========
+TPB | 
+11R | ==========
+TPA | 
+Gates [ V        ]
+ 13:28 
+11L | ==========
+TPB | 
+11R | ==========
+TPA | 
+Gates [ V        ]
+ 13:29 
+11L | ==========
+TPB | 
+11R | ==========
+TPA | 
+Gates [ V        ]
+ 13:30 
+11L | ==========
+TPB | 
+11R | ==========
+TPA | 
+Gates [ V        ]
+ 13:31 
+11L | ==========
+TPB | 
+11R | ==========
+TPA | 
+Gates [ V        ]
+ 13:32 
+11L | ==========
+TPB | 
+11R | ==========
+TPA | 
+Gates [ V        ]
+ 13:33 
+11L | ==========
+TPB | 
+11R | ==========
+TPA | 
+Gates [ V        ]
+ 13:34 
+11L | ==========
+TPB | 
+11R | ==========
+TPA | 
+Gates [ V        ]
+ 13:35 
+11L | ==========
+TPB | 
+11R | ==========
+TPA | 
+Gates [ V        ]
  13:36 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [ V V      ]
+Gates [ V        ]
  13:37 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [ V V      ]
+Gates [ V        ]
  13:38 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [ V V      ]
+Gates [ V        ]
  13:39 
-11L | V=========
+11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [ V V      ]
+Gates [ V        ]
  13:40 
-11L | V=========
+11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [ V V      ]
+Gates [ V        ]
  13:41 
-11L | ====V=====
+11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [   V      ]
+Gates [ V        ]
  13:42 
-11L | ====V=====
+11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [   V      ]
+Gates [ V        ]
  13:43 
-11L | ====V=====
+11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [   V      ]
+Gates [ V        ]
  13:44 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  13:45 
-11L | V=========
+11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  13:46 
-11L | V=========
+11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  13:47 
-11L | ====V=====
+11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  13:48 
-11L | ====V=====
+11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  13:49 
-11L | ====V=====
+11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  13:50 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  13:51 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  13:52 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  13:53 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  13:54 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  13:55 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  13:56 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  13:57 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  13:58 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  13:59 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  14:00 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  14:01 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  14:02 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  14:03 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  14:04 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  14:05 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  14:06 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  14:07 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  14:08 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  14:09 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  14:10 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  14:11 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  14:12 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  14:13 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  14:14 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  14:15 
 11L | ==========
 TPB | 
 11R | ==========
-TPA | VVVV
-Gates [          ]
+TPA | 
+Gates [ V        ]
  14:16 
 11L | ==========
 TPB | 
 11R | ==========
-TPA | VVVV
-Gates [          ]
+TPA | 
+Gates [ V        ]
  14:17 
 11L | ==========
 TPB | 
 11R | ==========
-TPA | VVVV
-Gates [          ]
+TPA | 
+Gates [ V        ]
  14:18 
 11L | ==========
 TPB | 
 11R | ==========
-TPA | VVVV
-Gates [          ]
+TPA | 
+Gates [ V        ]
  14:19 
 11L | ==========
 TPB | 
 11R | ==========
-TPA | VVVV
-Gates [          ]
+TPA | 
+Gates [ V        ]
  14:20 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  14:21 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  14:22 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  14:23 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  14:24 
 11L | ==========
-TPB | V
-11R | ==========
-TPA | 
-Gates [          ]
- 14:25 
-11L | ==========
-TPB | V
-11R | ==========
-TPA | 
-Gates [          ]
- 14:26 
-11L | ==========
-TPB | V
-11R | ==========
-TPA | 
-Gates [          ]
- 14:27 
-11L | ==========
-TPB | VV
-11R | ==========
-TPA | 
-Gates [          ]
- 14:28 
-11L | ==========
-TPB | VV
-11R | ==========
-TPA | 
-Gates [          ]
- 14:29 
-11L | ==========
-TPB | V
-11R | ==========
-TPA | 
-Gates [          ]
- 14:30 
-11L | ==========
-TPB | VV
-11R | ==========
-TPA | 
-Gates [          ]
- 14:31 
-11L | V=========
-TPB | VV
-11R | ==========
-TPA | 
-Gates [          ]
- 14:32 
-11L | V=========
-TPB | V
-11R | ==========
-TPA | 
-Gates [          ]
- 14:33 
-11L | ====V=====
-TPB | V
-11R | ==========
-TPA | 
-Gates [          ]
- 14:34 
-11L | ====V=====
-TPB | VV
-11R | ==========
-TPA | 
-Gates [          ]
- 14:35 
-11L | ==========
-TPB | V
-11R | ==========
-TPA | 
-Gates [          ]
- 14:36 
-11L | V=========
-TPB | V
-11R | ==========
-TPA | 
-Gates [          ]
- 14:37 
-11L | V=========
-TPB | V
-11R | ==========
-TPA | 
-Gates [          ]
- 14:38 
-11L | ====V=====
-TPB | V
-11R | ==========
-TPA | 
-Gates [          ]
- 14:39 
-11L | ====V=====
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
+ 14:25 
+11L | ==========
+TPB | 
+11R | ==========
+TPA | 
+Gates [ V        ]
+ 14:26 
+11L | ==========
+TPB | 
+11R | ==========
+TPA | 
+Gates [ V        ]
+ 14:27 
+11L | ==========
+TPB | 
+11R | ==========
+TPA | 
+Gates [ V        ]
+ 14:28 
+11L | ==========
+TPB | 
+11R | ==========
+TPA | 
+Gates [ V        ]
+ 14:29 
+11L | ==========
+TPB | 
+11R | ==========
+TPA | 
+Gates [ V        ]
+ 14:30 
+11L | ==========
+TPB | 
+11R | ==========
+TPA | 
+Gates [ V        ]
+ 14:31 
+11L | ==========
+TPB | 
+11R | ==========
+TPA | 
+Gates [ V        ]
+ 14:32 
+11L | ==========
+TPB | 
+11R | ==========
+TPA | 
+Gates [ V        ]
+ 14:33 
+11L | ==========
+TPB | 
+11R | ==========
+TPA | 
+Gates [ V        ]
+ 14:34 
+11L | ==========
+TPB | 
+11R | ==========
+TPA | 
+Gates [ V        ]
+ 14:35 
+11L | ==========
+TPB | 
+11R | ==========
+TPA | 
+Gates [ V        ]
+ 14:36 
+11L | ==========
+TPB | 
+11R | ==========
+TPA | 
+Gates [ V        ]
+ 14:37 
+11L | ==========
+TPB | 
+11R | ==========
+TPA | 
+Gates [ V        ]
+ 14:38 
+11L | ==========
+TPB | 
+11R | ==========
+TPA | 
+Gates [ V        ]
+ 14:39 
+11L | ==========
+TPB | 
+11R | ==========
+TPA | 
+Gates [ V        ]
  14:40 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  14:41 
-11L | V=========
+11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  14:42 
-11L | V=========
+11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  14:43 
-11L | ====V=====
+11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  14:44 
-11L | ====V=====
+11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  14:45 
-11L | ====V=====
+11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  14:46 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  14:47 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  14:48 
-11L | V=========
+11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  14:49 
-11L | V=========
+11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  14:50 
-11L | ====V=====
+11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  14:51 
-11L | ====V=====
+11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  14:52 
-11L | ====V=====
+11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  14:53 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  14:54 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  14:55 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  14:56 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  14:57 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  14:58 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  14:59 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  15:00 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  15:01 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  15:02 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  15:03 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  15:04 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  15:05 
-11L | ====V=====
+11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  15:06 
-11L | ====V=====
+11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  15:07 
-11L | ====V=====
+11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  15:08 
-11L | ====V=====
+11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  15:09 
-11L | ====V=====
+11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  15:10 
-11L | ====V=====
+11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  15:11 
-11L | ====V=====
+11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  15:12 
-11L | ====V=====
+11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  15:13 
-11L | ====V=====
+11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  15:14 
-11L | =========V
+11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  15:15 
-11L | =========V
+11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  15:16 
-11L | =========V
+11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  15:17 
 11L | ==========
-TPB | V
+TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  15:18 
 11L | ==========
-TPB | V
+TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  15:19 
 11L | ==========
-TPB | V
+TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  15:20 
 11L | ==========
-TPB | V
+TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  15:21 
 11L | ==========
-TPB | V
+TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  15:22 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  15:23 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  15:24 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [V         ]
+Gates [ V        ]
  15:25 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [V         ]
+Gates [ V        ]
  15:26 
 11L | ==========
 TPB | 
 11R | ==========
-TPA | V
-Gates [V         ]
+TPA | 
+Gates [ V        ]
  15:27 
 11L | ==========
 TPB | 
 11R | ==========
-TPA | V
-Gates [V         ]
+TPA | 
+Gates [ V        ]
  15:28 
 11L | ==========
 TPB | 
 11R | ==========
-TPA | V
-Gates [V         ]
+TPA | 
+Gates [ V        ]
  15:29 
 11L | ==========
 TPB | 
 11R | ==========
-TPA | V
-Gates [V         ]
+TPA | 
+Gates [ V        ]
  15:30 
 11L | ==========
 TPB | 
 11R | ==========
-TPA | V
-Gates [V         ]
+TPA | 
+Gates [ V        ]
  15:31 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [V         ]
+Gates [ V        ]
  15:32 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [V         ]
+Gates [ V        ]
  15:33 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [V         ]
+Gates [ V        ]
  15:34 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [V         ]
+Gates [ V        ]
  15:35 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [V         ]
+Gates [ V        ]
  15:36 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [V         ]
+Gates [ V        ]
  15:37 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [V         ]
+Gates [ V        ]
  15:38 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [V         ]
+Gates [ V        ]
  15:39 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [V         ]
+Gates [ V        ]
  15:40 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [V         ]
+Gates [ V        ]
  15:41 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [V         ]
+Gates [ V        ]
  15:42 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [V         ]
+Gates [ V        ]
  15:43 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [V         ]
+Gates [ V        ]
  15:44 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [V         ]
+Gates [ V        ]
  15:45 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [V         ]
+Gates [ V        ]
  15:46 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [V         ]
+Gates [ V        ]
  15:47 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [V         ]
+Gates [ V        ]
  15:48 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [V         ]
+Gates [ V        ]
  15:49 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [V         ]
+Gates [ V        ]
  15:50 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  15:51 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  15:52 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  15:53 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  15:54 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  15:55 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  15:56 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  15:57 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  15:58 
-11L | ====V=====
+11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  15:59 
-11L | ====V=====
+11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  16:00 
-11L | ====V=====
+11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  16:01 
-11L | ====V=====
+11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  16:02 
-11L | ====V=====
+11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  16:03 
-11L | ====V=====
+11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  16:04 
-11L | =========V
+11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  16:05 
-11L | =========V
+11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  16:06 
-11L | =========V
+11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  16:07 
 11L | ==========
-TPB | V
+TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  16:08 
 11L | ==========
-TPB | V
+TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  16:09 
 11L | ==========
-TPB | V
+TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  16:10 
 11L | ==========
-TPB | V
+TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  16:11 
 11L | ==========
-TPB | V
+TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  16:12 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  16:13 
-11L | ====V=====
+11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  16:14 
-11L | ====V=====
+11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [V         ]
+Gates [ V        ]
  16:15 
-11L | ====V=====
+11L | ==========
 TPB | 
 11R | ==========
-TPA | V
-Gates [V         ]
+TPA | 
+Gates [ V        ]
  16:16 
-11L | ====V=====
+11L | ==========
 TPB | 
 11R | ==========
-TPA | VV
-Gates [V         ]
+TPA | 
+Gates [ V        ]
  16:17 
-11L | ====V=====
+11L | ==========
 TPB | 
 11R | ==========
-TPA | VV
-Gates [V         ]
+TPA | 
+Gates [ V        ]
  16:18 
-11L | ====V=====
+11L | ==========
 TPB | 
 11R | ==========
-TPA | VV
-Gates [V         ]
+TPA | 
+Gates [ V        ]
  16:19 
-11L | ====V=====
+11L | ==========
 TPB | 
 11R | ==========
-TPA | VV
-Gates [V         ]
+TPA | 
+Gates [ V        ]
  16:20 
-11L | ====V=====
+11L | ==========
 TPB | 
 11R | ==========
-TPA | V
-Gates [V         ]
+TPA | 
+Gates [ V        ]
  16:21 
-11L | ====V=====
+11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [V         ]
+Gates [ V        ]
  16:22 
-11L | =========V
+11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [V         ]
+Gates [ V        ]
  16:23 
-11L | =========V
+11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [V         ]
+Gates [ V        ]
  16:24 
-11L | =========V
-TPB | V
+11L | ==========
+TPB | 
 11R | ==========
 TPA | 
-Gates [V         ]
+Gates [ V        ]
  16:25 
 11L | ==========
-TPB | VV
+TPB | 
 11R | ==========
 TPA | 
-Gates [V         ]
+Gates [ V        ]
  16:26 
 11L | ==========
-TPB | VV
+TPB | 
 11R | ==========
 TPA | 
-Gates [V         ]
+Gates [ V        ]
  16:27 
 11L | ==========
-TPB | VV
+TPB | 
 11R | ==========
 TPA | 
-Gates [V         ]
+Gates [ V        ]
  16:28 
 11L | ==========
-TPB | VV
+TPB | 
 11R | ==========
 TPA | 
-Gates [V         ]
+Gates [ V        ]
  16:29 
 11L | ==========
-TPB | V
+TPB | 
 11R | ==========
 TPA | 
-Gates [V         ]
+Gates [ V        ]
  16:30 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [V         ]
+Gates [ V        ]
  16:31 
-11L | V=========
+11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [V         ]
+Gates [ V        ]
  16:32 
-11L | V=========
+11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [VV        ]
+Gates [ V        ]
  16:33 
-11L | ====V=====
+11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [VV        ]
+Gates [ V        ]
  16:34 
-11L | ====V=====
+11L | ==========
 TPB | 
 11R | ==========
-TPA | V
-Gates [VV        ]
+TPA | 
+Gates [ V        ]
  16:35 
-11L | ====V=====
+11L | ==========
 TPB | 
 11R | ==========
-TPA | V
-Gates [VV        ]
+TPA | 
+Gates [ V        ]
  16:36 
 11L | ==========
 TPB | 
 11R | ==========
-TPA | V
-Gates [VV        ]
+TPA | 
+Gates [ V        ]
  16:37 
 11L | ==========
 TPB | 
 11R | ==========
-TPA | V
-Gates [VV        ]
+TPA | 
+Gates [ V        ]
  16:38 
 11L | ==========
 TPB | 
 11R | ==========
-TPA | V
-Gates [VV        ]
+TPA | 
+Gates [ V        ]
  16:39 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [VV        ]
+Gates [ V        ]
  16:40 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [VV        ]
+Gates [ V        ]
  16:41 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [VV        ]
+Gates [ V        ]
  16:42 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [VV        ]
+Gates [ V        ]
  16:43 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [VV        ]
+Gates [ V        ]
  16:44 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [VV        ]
+Gates [ V        ]
  16:45 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [VV        ]
+Gates [ V        ]
  16:46 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [VV        ]
+Gates [ V        ]
  16:47 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [VV        ]
+Gates [ V        ]
  16:48 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [VV        ]
+Gates [ V        ]
  16:49 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [VV        ]
+Gates [ V        ]
  16:50 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [VV        ]
+Gates [ V        ]
  16:51 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [VV        ]
+Gates [ V        ]
  16:52 
 11L | ==========
 TPB | 
@@ -1791,376 +1791,376 @@ Gates [ V        ]
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  16:59 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  17:00 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  17:01 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  17:02 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  17:03 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  17:04 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  17:05 
-11L | ====V=====
+11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  17:06 
-11L | ====V=====
+11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  17:07 
-11L | ====V=====
+11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  17:08 
-11L | ====V=====
+11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  17:09 
-11L | ====V=====
+11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  17:10 
-11L | ====V=====
+11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  17:11 
-11L | ====V=====
+11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  17:12 
-11L | ====V=====
+11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  17:13 
-11L | ====V=====
+11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  17:14 
-11L | =========V
+11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  17:15 
-11L | =========V
+11L | ==========
 TPB | 
 11R | ==========
-TPA | VV
-Gates [          ]
+TPA | 
+Gates [ V        ]
  17:16 
-11L | =========V
+11L | ==========
 TPB | 
 11R | ==========
-TPA | VV
-Gates [          ]
+TPA | 
+Gates [ V        ]
  17:17 
 11L | ==========
-TPB | V
+TPB | 
 11R | ==========
-TPA | VV
-Gates [          ]
+TPA | 
+Gates [ V        ]
  17:18 
 11L | ==========
-TPB | V
+TPB | 
 11R | ==========
-TPA | VV
-Gates [          ]
+TPA | 
+Gates [ V        ]
  17:19 
 11L | ==========
-TPB | V
+TPB | 
 11R | ==========
-TPA | VV
-Gates [          ]
+TPA | 
+Gates [ V        ]
  17:20 
 11L | ==========
-TPB | V
+TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  17:21 
 11L | ==========
-TPB | V
+TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  17:22 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  17:23 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  17:24 
 11L | ==========
-TPB | V
+TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  17:25 
 11L | ==========
-TPB | V
+TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  17:26 
 11L | ==========
-TPB | V
+TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  17:27 
 11L | ==========
-TPB | VV
+TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  17:28 
 11L | ==========
-TPB | VV
+TPB | 
 11R | ==========
 TPA | 
-Gates [V         ]
+Gates [ V        ]
  17:29 
 11L | ==========
-TPB | V
+TPB | 
 11R | ==========
 TPA | 
-Gates [V         ]
+Gates [ V        ]
  17:30 
 11L | ==========
-TPB | V
+TPB | 
 11R | ==========
-TPA | V
-Gates [V         ]
+TPA | 
+Gates [ V        ]
  17:31 
-11L | V=========
-TPB | V
+11L | ==========
+TPB | 
 11R | ==========
-TPA | V
-Gates [V         ]
+TPA | 
+Gates [ V        ]
  17:32 
-11L | V=========
+11L | ==========
 TPB | 
 11R | ==========
-TPA | V
-Gates [V         ]
+TPA | 
+Gates [ V        ]
  17:33 
-11L | ====V=====
+11L | ==========
 TPB | 
 11R | ==========
-TPA | V
-Gates [V         ]
+TPA | 
+Gates [ V        ]
  17:34 
-11L | ====V=====
+11L | ==========
 TPB | 
 11R | ==========
-TPA | V
-Gates [V         ]
+TPA | 
+Gates [ V        ]
  17:35 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [V         ]
+Gates [ V        ]
  17:36 
-11L | V=========
+11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [V         ]
+Gates [ V        ]
  17:37 
-11L | V=========
+11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [V         ]
+Gates [ V        ]
  17:38 
-11L | ====V=====
+11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [V         ]
+Gates [ V        ]
  17:39 
-11L | ====V=====
+11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [V         ]
+Gates [ V        ]
  17:40 
-11L | ====V=====
+11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [V         ]
+Gates [ V        ]
  17:41 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [V         ]
+Gates [ V        ]
  17:42 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [V         ]
+Gates [ V        ]
  17:43 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [V         ]
+Gates [ V        ]
  17:44 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [V         ]
+Gates [ V        ]
  17:45 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [V         ]
+Gates [ V        ]
  17:46 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [V         ]
+Gates [ V        ]
  17:47 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [V         ]
+Gates [ V        ]
  17:48 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [V         ]
+Gates [ V        ]
  17:49 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [V         ]
+Gates [ V        ]
  17:50 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [V         ]
+Gates [ V        ]
  17:51 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [V         ]
+Gates [ V        ]
  17:52 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [V         ]
+Gates [ V        ]
  17:53 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [V         ]
+Gates [ V        ]
  17:54 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  17:55 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  17:56 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  17:57 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  17:58 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  17:59 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]
  18:00 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [          ]
+Gates [ V        ]

@@ -416,7 +416,6 @@ void Airportsim::landingstep(Airplane &approaching, Airport &airport) {
             outputfile<<approaching.getCallsign()<<" descended to "<<approaching.getHeight()<<" ft."<<endl;
         }
     }
-
     else if(approaching.getHeight()>=1000&&approaching.getPermission()==Airplane::LandingPermission){
         //on getting permission landing, a runway will be on use
         approaching.fall();
@@ -424,9 +423,6 @@ void Airportsim::landingstep(Airplane &approaching, Airport &airport) {
             outputfile<<approaching.getCallsign()<<" descended to "<<approaching.getHeight()<<" ft."<<endl;
         }
     }
-
-
-
     else if (approaching.getHeight()==0&&approaching.getStatus()!=Airplane::Landed){
         if(approaching.isDoingNothing()){
             outputfile<<approaching.getCallsign()<<" is landing at "<<airport.getName()<<" on runway "<<approaching.getDestinateRunway()->getName()<<endl;
@@ -1306,6 +1302,9 @@ void Airportsim::simulate_Onetime() {
             chillingcounter++;
             if(status==Airplane::Approaching||status==Airplane::Landed){
                 landingstep(*Airplanes[j],*Airplanes[j]->getDestination());
+            }
+            else if(status==Airplane::Emergency){
+                emergencyLanding(*Airplanes[j],*Airplanes[j]->getDestination());
             }
             else if(status==Airplane::Standing_at_gate){
                 airplaneAtGatestep(*Airplanes[j],*Airplanes[j]->getDestination());

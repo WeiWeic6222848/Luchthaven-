@@ -345,6 +345,7 @@ bool Airplane::sendSignalEmergency() {
             stream<<"["<<currentTime<<"]"<<"["<<getCallsign()<<"]"<<endl;
             stream<<"Mayday mayday mayday, "<<destination->getCallsign()<<", "<<getCallsign()<<", out of fuel, performing emergency landing, "<<getPassenger()<<" persons on board."<<endl;
         }
+        setSquawkcode(7700);
         bool received=destination->receiveSignal(this,Signaltower::Emergency);
         return received;
     }
@@ -661,6 +662,7 @@ void Airplane::progressCheck() {
         destinaterunway->setOnuse(false);
         destinaterunway->setPlaneAtEnd(this);
         destinaterunway->setEmergency(false);
+
         //resetCheckProcedure();
         sendSignalTaxiingtoGate();
     }

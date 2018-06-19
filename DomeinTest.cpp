@@ -1503,3 +1503,119 @@ TEST_F(AirplaneDomeinTest,flightPlanNotFound){
     EXPECT_EQ(arrival,plane->getArrival());
     EXPECT_EQ(interval,plane->getInterval());
 }
+
+
+TEST_F(AirplaneDomeinTest,EmergencyoutoffuelTest) {
+    //settings
+    string filename = "../domeinTest/SimulationTest.xml";
+    //endofsettings
+
+    ofstream a;
+
+
+    int subjectfuelusage=250;
+    int landingminute=2;
+    int passengerminut=15;
+    int techcheck=3;
+
+    LoadAirport(filename.c_str(), a, simulator);
+    Airplane *testsubject1 = new Airplane(Airplane::Approaching, "TestApproach_Subject_001", "TAS001", "TAS", "airline", "jet", "large", 1, 1000, 100, simulator.getAirports()[0]);
+    simulator.addAirplane(testsubject1);
+
+    int refuel=testsubject1->getFuelCapacity()*1.0/10000+0.9999;
+
+    int currentfuel=testsubject1->getFuel();
+    EXPECT_FALSE(testsubject1->getFuel()==currentfuel-subjectfuelusage);
+    simulator.simulate_Onetime();
+    EXPECT_TRUE(testsubject1->getFuel()==currentfuel-subjectfuelusage);
+
+    currentfuel=testsubject1->getFuel();
+    EXPECT_FALSE(testsubject1->getFuel()==currentfuel-subjectfuelusage);
+    simulator.simulate_Onetime();
+    EXPECT_TRUE(testsubject1->getFuel()==currentfuel-subjectfuelusage);
+    currentfuel=testsubject1->getFuel();
+    EXPECT_FALSE(testsubject1->getFuel()==currentfuel-subjectfuelusage);
+    simulator.simulate_Onetime();
+    EXPECT_TRUE(testsubject1->getFuel()==currentfuel-subjectfuelusage);
+    currentfuel=testsubject1->getFuel();
+    EXPECT_FALSE(testsubject1->getFuel()==currentfuel-subjectfuelusage);
+    simulator.simulate_Onetime();
+    EXPECT_TRUE(testsubject1->getFuel()==currentfuel-subjectfuelusage);
+    EXPECT_TRUE(testsubject1->getFuel()==0);
+    //fuel=0;
+
+
+    //send messenge
+    simulator.simulate_Onetime();
+    EXPECT_TRUE(testsubject1->getSquawkcode()==7700);
+
+    //receive messenge
+    simulator.simulate_Onetime();
+    EXPECT_TRUE(testsubject1->getStatus()==Airplane::Emergency);
+    EXPECT_TRUE(testsubject1->getDestinateRunway()!=NULL);
+    EXPECT_TRUE(testsubject1->getDestinateRunway()->isEmergency());
+
+    while (testsubject1->getHeight()!=0){
+        simulator.simulate_Onetime();
+        EXPECT_TRUE(testsubject1->getStatus()==Airplane::Emergency);
+        EXPECT_TRUE(testsubject1->getPermission()==Airplane::LandingPermission);
+        EXPECT_TRUE(testsubject1->getDestinateRunway()!=NULL);
+    }
+
+
+    EXPECT_TRUE(testsubject1->getDestinateRunway()->isEmergency());
+    //landing
+    for (int i = 0; i <landingminute ; ++i) {
+        EXPECT_TRUE(testsubject1->getStatus()==Airplane::Emergency);
+        EXPECT_TRUE(testsubject1->getPermission()==Airplane::LandingPermission);
+        EXPECT_TRUE(testsubject1->getDestinateRunway()!=NULL);
+        simulator.simulate_Onetime();
+    }
+
+    EXPECT_TRUE(testsubject1->getDestinateRunway()->isEmergency());
+    //landed
+    EXPECT_TRUE(testsubject1->getStatus()==Airplane::Emergency);
+    EXPECT_TRUE(testsubject1->getPermission()==Airplane::empty);
+    EXPECT_TRUE(testsubject1->getDestinateRunway()!=NULL);
+
+    for (int j = 0; j <passengerminut ; ++j) {
+        EXPECT_TRUE(testsubject1->getStatus()==Airplane::Emergency);
+        EXPECT_TRUE(testsubject1->getPermission()==Airplane::empty);
+        EXPECT_TRUE(testsubject1->getCheckProcedure()==Airplane::Just_landed);
+        EXPECT_TRUE(testsubject1->getDestinateRunway()!=NULL);
+        simulator.simulate_Onetime();
+    }
+    //passenger done
+    EXPECT_TRUE(testsubject1->getPassenger()==0);
+
+
+    EXPECT_TRUE(testsubject1->getDestinateRunway()->isEmergency());
+    for (int j = 0; j <techcheck ; ++j) {
+        EXPECT_TRUE(testsubject1->getStatus()==Airplane::Emergency);
+        EXPECT_TRUE(testsubject1->getPermission()==Airplane::empty);
+        EXPECT_TRUE(testsubject1->getCheckProcedure()==Airplane::Technical_control);
+        EXPECT_TRUE(testsubject1->getDestinateRunway()!=NULL);
+        simulator.simulate_Onetime();
+    }
+
+    EXPECT_TRUE(testsubject1->getDestinateRunway()->isEmergency());
+    //tech-check done
+    EXPECT_TRUE(testsubject1->getCheckProcedure()==Airplane::Refueling);
+    for (int j = 0; j <refuel ; ++j) {
+        EXPECT_TRUE(testsubject1->getStatus()==Airplane::Emergency);
+        EXPECT_TRUE(testsubject1->getPermission()==Airplane::empty);
+        EXPECT_TRUE(testsubject1->getCheckProcedure()==Airplane::Refueling);
+        EXPECT_TRUE(testsubject1->getDestinateRunway()!=NULL);
+        simulator.simulate_Onetime();
+    }
+    //refuel done
+    //all check done
+    EXPECT_TRUE(testsubject1->getFuel()==testsubject1->getFuelCapacity());
+
+    EXPECT_TRUE(!testsubject1->getDestinateRunway()->isEmergency());
+    EXPECT_TRUE(testsubject1->getStatus()==Airplane::Landed);
+    EXPECT_TRUE(testsubject1->getPermission()==Airplane::empty);
+    EXPECT_TRUE(testsubject1->getCheckProcedure()==Airplane::Boarding);//it will start boarding directly
+    EXPECT_TRUE(testsubject1->getDestinateRunway()!=NULL);
+
+}
