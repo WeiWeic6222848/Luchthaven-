@@ -1366,3 +1366,21 @@ TEST_F(AirplaneDomeinTest,SimulationLineupTest2) {
     EXPECT_TRUE(testsubject1->getLocation()->isRunway());
     EXPECT_TRUE(testsubject1->getPermission()==Airplane::FlyPermission);
 }
+TEST_F(AirplaneDomeinTest,flightPlanImport){
+
+    //settings
+    string filename = "../domeinTest/flightPlan.xml";
+    string des="LCY";
+    int departure = 15;
+    int arrival = 45;
+    int interval = 1;
+    //end of settings
+    ofstream a;
+    LoadAirport(filename.c_str(),a,simulator);
+    Airplane* plane = simulator.getAirplanes().front();
+    EXPECT_EQ(des,plane->getDes());
+    EXPECT_EQ(departure,plane->getDeparture());
+    EXPECT_EQ(arrival,plane->getArrival());
+    EXPECT_EQ(interval,plane->getInterval());
+
+}

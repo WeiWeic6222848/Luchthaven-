@@ -1,1 +1,0 @@
-plane has no flightplan, when tried to import from .xml file

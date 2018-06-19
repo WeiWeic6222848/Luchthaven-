@@ -1,1 +1,2 @@
 Runway has a length which is not an integer, skipping this element
+plane has no flightplan, when tried to import from .xml file

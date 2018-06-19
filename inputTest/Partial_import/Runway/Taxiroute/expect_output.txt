@@ -1,1 +1,2 @@
 unable to read Taxiroute
+plane has no flightplan, when tried to import from .xml file

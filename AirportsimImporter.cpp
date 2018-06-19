@@ -452,7 +452,7 @@ Esucces AirportsimImporter::readAirplane(TiXmlElement *airplaneelement, std::ost
         flightplan=true;
     }
     else{
-        errStream<<"plane has no flightplan, when tried to import from .xml file";
+        errStream<<"plane has no flightplan, when tried to import from .xml file"<<endl;
         flightplan=false;
     }
     Airplane* a;

@@ -1,1 +1,2 @@
-plane has no flightplan, when tried to import from .xml fileAirplane has a fuel attribute which isn't a interger
+plane has no flightplan, when tried to import from .xml file
+Airplane has a fuel attribute which isn't a interger

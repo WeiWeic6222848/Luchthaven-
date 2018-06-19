@@ -914,4 +914,24 @@ void Airplane::fuelReduction() {
     }
 }
 
+const string &Airplane::getDes() const {
+    REQUIRE(ProperInitialized(),"Airplane wasn't initialized when calling getDes");
+    return des;
+}
+
+int Airplane::getDeparture() const {
+    REQUIRE(ProperInitialized(),"Airplane wasn't initialized when calling getDeparture");
+    return departure;
+}
+
+int Airplane::getArrival() const {
+    REQUIRE(ProperInitialized(),"Airplane wasn't initialized when calling getArrival");
+    return arrival;
+}
+
+int Airplane::getInterval() const {
+    REQUIRE(ProperInitialized(),"Airplane wasn't initialized when calling getInterval");
+    return interval;
+}
+
 

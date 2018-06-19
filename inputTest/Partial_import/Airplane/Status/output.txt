@@ -1,1 +1,2 @@
-plane has no flightplan, when tried to import from .xml fileAirplane status is not correct
+plane has no flightplan, when tried to import from .xml file
+Airplane status is not correct

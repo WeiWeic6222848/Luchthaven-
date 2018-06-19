@@ -1,1 +1,6 @@
-plane has no flightplan, when tried to import from .xml fileplane has no flightplan, when tried to import from .xml fileplane has no flightplan, when tried to import from .xml fileplane has no flightplan, when tried to import from .xml fileplane has no flightplan, when tried to import from .xml fileairport has more airplanes at gates than it's gate
+plane has no flightplan, when tried to import from .xml file
+plane has no flightplan, when tried to import from .xml file
+plane has no flightplan, when tried to import from .xml file
+plane has no flightplan, when tried to import from .xml file
+plane has no flightplan, when tried to import from .xml file
+airport has more airplanes at gates than it's gate

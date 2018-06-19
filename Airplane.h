@@ -215,6 +215,30 @@ public:
      */
     bool ProperInitialized() const;
 
+    /**
+     *      REQUIRE(ProperInitialized(),"Airplane wasn't initialized when calling getDes");
+     * @return
+     */
+    const string &getDes() const;
+
+    /**
+     *      REQUIRE(ProperInitialized(),"Airplane wasn't initialized when calling getDeparture")
+     * @return
+     */
+    int getDeparture() const;
+
+    /**
+     *      REQUIRE(ProperInitialized(),"Airplane wasn't initialized when calling getArrival")
+     * @return
+     */
+    int getArrival() const;
+
+    /**
+     *      REQUIRE(ProperInitialized(),"Airplane wasn't initialized when calling getInterval")
+     * @return
+     */
+    int getInterval() const;
+
     //all the getters------------------------------------------------------------------------
 
 

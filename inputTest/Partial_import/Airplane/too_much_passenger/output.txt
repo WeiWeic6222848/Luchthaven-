@@ -1,1 +1,2 @@
-plane has no flightplan, when tried to import from .xml fileAirplane has more passenger than it's capacity.
+plane has no flightplan, when tried to import from .xml file
+Airplane has more passenger than it's capacity.

@@ -1,1 +1,2 @@
-plane has no flightplan, when tried to import from .xml fileairport is added on a earlier source, skipping
+plane has no flightplan, when tried to import from .xml file
+airport is added on a earlier source, skipping

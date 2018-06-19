@@ -48,10 +48,13 @@ TEST_F(AirportSimImportTest, InputHappyDay) {
     for (int i = 1; i <= numberOfFiles; ++i) {
         string filename=inputfilenameprefix+to_string(i)+=inputfilenamepostfix;
         expectoutput.open(expectoutputfilename.c_str());
-        //expectoutput<<filename+" read no error"<<endl;
+        //expectoutput<<"plane has no flightplan, when tried to import from .xml file"<<endl;
         outputfile.open(outputfilename.c_str());
         Airportsim testsim;//reinitialize the airportsim everytime;
         importResult=LoadAirport(filename.c_str(),outputfile,testsim);
+        for(unsigned int i=0;i<testsim.getAirplanes().size();i++){
+            expectoutput<<"plane has no flightplan, when tried to import from .xml file"<<endl;
+        }
         EXPECT_TRUE(importResult==Success);
         EXPECT_TRUE(FileCompare(expectoutputfilename,outputfilename));
         expectoutput.close();
@@ -85,6 +88,9 @@ TEST_F(AirportSimImportTest,InputPartialImportRunwayLength) {
 
         string filename=inputfilenameprefix+to_string(j)+=inputfilenamepostfix;
         importResult=LoadAirport(filename.c_str(),outputfile,testsim);
+        for(unsigned int i=0;i<testsim.getAirplanes().size();i++){
+            expectoutput<<"plane has no flightplan, when tried to import from .xml file"<<endl;
+        }
         EXPECT_TRUE(importResult==PartialImport);
         EXPECT_TRUE(FileCompare(expectoutputfilename,outputfilename));
         expectoutput.close();
@@ -117,6 +123,9 @@ TEST_F(AirportSimImportTest,InputPartialImportRunwayName) {
 
         string filename=inputfilenameprefix+to_string(j)+=inputfilenamepostfix;
         importResult=LoadAirport(filename.c_str(),outputfile,testsim);
+        for(unsigned int i=0;i<testsim.getAirplanes().size();i++){
+            expectoutput<<"plane has no flightplan, when tried to import from .xml file"<<endl;
+        }
         EXPECT_TRUE(importResult==PartialImport);
         EXPECT_TRUE(FileCompare(expectoutputfilename,outputfilename));
         expectoutput.close();
@@ -182,6 +191,9 @@ TEST_F(AirportSimImportTest,InputPartialImportRunwayType) {
 
         string filename=inputfilenameprefix+to_string(j)+=inputfilenamepostfix;
         importResult=LoadAirport(filename.c_str(),outputfile,testsim);
+        for(unsigned int i=0;i<testsim.getAirplanes().size();i++){
+            expectoutput<<"plane has no flightplan, when tried to import from .xml file"<<endl;
+        }
         EXPECT_TRUE(importResult==PartialImport);
         EXPECT_TRUE(FileCompare(expectoutputfilename,outputfilename));
         expectoutput.close();
@@ -215,6 +227,9 @@ TEST_F(AirportSimImportTest,InputPartialImportRunwayTaxiroute) {
 
         string filename=inputfilenameprefix+to_string(j)+=inputfilenamepostfix;
         importResult=LoadAirport(filename.c_str(),outputfile,testsim);
+        for(unsigned int i=0;i<testsim.getAirplanes().size();i++){
+            expectoutput<<"plane has no flightplan, when tried to import from .xml file"<<endl;
+        }
         EXPECT_TRUE(importResult==PartialImport);
         EXPECT_TRUE(FileCompare(expectoutputfilename,outputfilename));
         expectoutput.close();
@@ -724,7 +739,34 @@ TEST_F(AirportSimImportTest,InputImportAbortedAirportTooMuchAirplane) {
         outputfile.close();
     }
 }
+TEST_F(AirportSimImportTest,flightPlanImport){
+    REQUIRE(DirectoryExists("../inputTest/Happyday"),"Happy day folder must exist");
+    //settings
+    int numberOfFilesLength=1;
+    string expectoutputfilename="../inputTest/Happyday/expect_output.txt";
+    string outputfilename="../inputTest/Happyday/output.txt";
+    string inputfilenameprefix="../inputTest/Happyday/input_test_";
+    string inputfilenamepostfix=".xml";
+    //end of settings
 
+
+    ofstream outputfile;
+    Esucces importResult;
+    ofstream expectoutput;
+
+    for(unsigned int i=14;i<(unsigned)14+numberOfFilesLength;i++){
+        string filename=inputfilenameprefix+to_string(i)+=inputfilenamepostfix;
+        expectoutput.open(expectoutputfilename.c_str());
+        //expectoutput<<"plane has no flightplan, when tried to import from .xml file"<<endl;
+        outputfile.open(outputfilename.c_str());
+        Airportsim testsim;//reinitialize the airportsim everytime;
+        importResult=LoadAirport(filename.c_str(),outputfile,testsim);
+        EXPECT_TRUE(importResult==Success);
+        //EXPECT_TRUE(FileCompare(expectoutputfilename,outputfilename));
+        expectoutput.close();
+        outputfile.close();
+    }
+}
 
 /*
 TEST_F(AirportSimImportTest, InputPartialImportRunway) {
