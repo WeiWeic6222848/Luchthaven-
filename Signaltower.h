@@ -28,7 +28,7 @@ class Location;
 
 class Signaltower {
 public:
-    enum SignaltowerallowedSignal{Approaching,Leaving,ApproachingtoGate,LeavingtoRunway,Emergency,Push_back,IFR_clearancy,Crossing_runway,At_runway};
+    enum SignaltowerallowedSignal{Approaching,Leaving,ApproachingtoGate,LeavingtoRunway,Emergency,Push_back,IFR_clearancy,Crossing_runway,At_runway,Waiting};
 private:
     bool buzy3000;
     bool buzy5000;

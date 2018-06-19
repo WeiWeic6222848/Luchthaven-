@@ -153,7 +153,7 @@ TEST_F(AirplaneDomeinTest,settersTestPlane) {
     Runway temp1("123",simulator.getAirports()[0],"asphalt",100);
     testsubject->setDestinateRunway(&temp1);
     EXPECT_TRUE(testsubject->getDestinateRunway()==&temp1);
-    Airport temp2("123","123","123",10,10);
+    Airport temp2("123","123","123",100000,100000);
     testsubject->setDestination(&temp2);
     EXPECT_TRUE(testsubject->getDestination()==&temp2);
     testsubject->setNextDestination(&temp2);
@@ -615,7 +615,7 @@ TEST_F(AirplaneDomeinTest,SimulationGeneralTest) {
     int crossingminute = 1;
 
     LoadAirport(filename.c_str(), a, simulator);
-    Airplane *testsubject = new Airplane(Airplane::Approaching,"TestApproach_Subject_001","TAS001","TAS",type,engine,size,1,10,10,simulator.getAirports()[0]);
+    Airplane *testsubject = new Airplane(Airplane::Approaching,"TestApproach_Subject_001","TAS001","TAS",type,engine,size,1,100000,100000,simulator.getAirports()[0]);
     simulator.addAirplane(testsubject);
     //made the test subject;
 
@@ -1145,12 +1145,12 @@ TEST_F(AirplaneDomeinTest,SimulationBuzy50003000Test) {
     int subject2fallingminute=1;
 
     LoadAirport(filename.c_str(), a, simulator);
-    Airplane *testsubject1 = new Airplane(Airplane::Approaching,"TestApproach_Subject_001","TAS001","TAS","airline","jet","large",1,10,10,simulator.getAirports()[0]);
+    Airplane *testsubject1 = new Airplane(Airplane::Approaching,"TestApproach_Subject_001","TAS001","TAS","airline","jet","large",1,100000,100000,simulator.getAirports()[0]);
     simulator.addAirplane(testsubject1);
 
 
     LoadAirport(filename.c_str(), a, simulator);
-    Airplane *testsubject2 = new Airplane(Airplane::Approaching,"TestApproach_Subject_001","TAS001","TAS","private","jet","small",1,10,10,simulator.getAirports()[0]);
+    Airplane *testsubject2 = new Airplane(Airplane::Approaching,"TestApproach_Subject_001","TAS001","TAS","private","jet","small",1,100000,100000,simulator.getAirports()[0]);
     simulator.addAirplane(testsubject2);
 
 
@@ -1234,8 +1234,10 @@ TEST_F(AirplaneDomeinTest,SimulationBuzy50003000Test) {
     simulator.simulate_Onetime();
     EXPECT_TRUE(testsubject1->getPermission()==Airplane::threeThousandPermission);
     EXPECT_TRUE(testsubject2->getPermission()==Airplane::fiveThousandPermission);
-
-    //3 times for sure;
+    simulator.simulate_Onetime();
+    EXPECT_TRUE(testsubject1->getPermission()==Airplane::threeThousandPermission);
+    EXPECT_TRUE(testsubject2->getPermission()==Airplane::fiveThousandPermission);
+    //4 times for sure;
 
 
     //release all runways.

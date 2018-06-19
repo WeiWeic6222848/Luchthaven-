@@ -11,12 +11,12 @@ GOD descended to 1000 ft.
 GOD is landing at Antwerp International Airport on runway 11L
 GOD has landed at Antwerp International Airport on runway 11L
 GOD is taxiing to Gates 
-GOD is standing at Gate 3
-10 passengers exited GOD at gate 3 of Antwerp International Airport
+GOD is standing at Gate 4
+0 passengers exited GOD at gate 4 of Antwerp International Airport
 GOD has been checked for technical malfunctions
 GOD has been refueled
-10 passengers boarded GOD at gate 3 of Antwerp International Airport
-GOD is standing at Gate 3
+10 passengers boarded GOD at gate 4 of Antwerp International Airport
+GOD is standing at Gate 4
 GOD is taxiing to runway 11L
 GOD is taking off at Antwerp International Airport on runway 11L
 GOD ascended to 1000 ft.
@@ -39,7 +39,7 @@ GOD is landing at Antwerp International Airport on runway 11L
 GOD has landed at Antwerp International Airport on runway 11L
 GOD is taxiing to Gates 
 GOD is standing at Gate 1
-10 passengers exited GOD at gate 1 of Antwerp International Airport
+0 passengers exited GOD at gate 1 of Antwerp International Airport
 GOD has been checked for technical malfunctions
 GOD has been refueled
 10 passengers boarded GOD at gate 1 of Antwerp International Airport

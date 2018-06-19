@@ -199,219 +199,219 @@ Gates [VV        ]
  12:33 
 11L | ==========
 TPB | 
-11R | ====V=====
+11R | ==========
 TPA | V
 Gates [VV        ]
  12:34 
 11L | ==========
 TPB | 
-11R | ====V=====
+11R | ==========
 TPA | V
 Gates [VV        ]
  12:35 
 11L | ==========
 TPB | 
-11R | ====V=====
+11R | ==========
 TPA | V
 Gates [VV        ]
  12:36 
 11L | ==========
 TPB | 
-11R | ====V=====
+11R | ==========
 TPA | V
 Gates [VV        ]
  12:37 
 11L | ==========
 TPB | 
-11R | ====V=====
+11R | ==========
 TPA | 
 Gates [VV        ]
  12:38 
 11L | ==========
 TPB | 
-11R | ====V=====
+11R | ==========
 TPA | 
 Gates [VV        ]
  12:39 
 11L | ==========
 TPB | 
-11R | ====V=====
+11R | ==========
 TPA | 
 Gates [VV        ]
  12:40 
 11L | ==========
 TPB | 
-11R | ====V=====
+11R | ==========
 TPA | 
 Gates [VV        ]
  12:41 
 11L | ==========
 TPB | 
-11R | ====V=====
+11R | ==========
 TPA | 
 Gates [VV        ]
  12:42 
 11L | ==========
 TPB | 
-11R | =========V
+11R | ==========
 TPA | 
 Gates [VV        ]
  12:43 
 11L | ==========
 TPB | 
-11R | =========V
+11R | ==========
 TPA | 
 Gates [VV        ]
  12:44 
 11L | ==========
 TPB | 
-11R | =========V
+11R | ==========
 TPA | 
-Gates [VVV       ]
+Gates [VV        ]
  12:45 
 11L | ==========
 TPB | 
 11R | ==========
-TPA | V
-Gates [VVV       ]
+TPA | 
+Gates [VV        ]
  12:46 
 11L | ==========
 TPB | 
 11R | ==========
-TPA | V
-Gates [VVV       ]
+TPA | 
+Gates [VV        ]
  12:47 
 11L | ==========
 TPB | 
 11R | ==========
-TPA | V
-Gates [VVV       ]
+TPA | 
+Gates [VV        ]
  12:48 
 11L | ==========
 TPB | 
 11R | ==========
-TPA | V
-Gates [VVV       ]
+TPA | 
+Gates [VV        ]
  12:49 
 11L | ==========
 TPB | 
 11R | ==========
-TPA | V
-Gates [VVV       ]
+TPA | 
+Gates [VV        ]
  12:50 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [VVV       ]
+Gates [VV        ]
  12:51 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [VVV       ]
+Gates [VV        ]
  12:52 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [VVV       ]
+Gates [VV        ]
  12:53 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [VVV       ]
+Gates [VV        ]
  12:54 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [VVV       ]
+Gates [VV        ]
  12:55 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [VVV       ]
+Gates [VV        ]
  12:56 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [ VV       ]
+Gates [ V        ]
  12:57 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [ VV       ]
+Gates [ V        ]
  12:58 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [ VV       ]
+Gates [ V        ]
  12:59 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | V
-Gates [ VV       ]
+Gates [ V        ]
  13:00 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | V
-Gates [ VV       ]
+Gates [ V        ]
  13:01 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | V
-Gates [ VV       ]
+Gates [ V        ]
  13:02 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | V
-Gates [ VV       ]
+Gates [ V        ]
  13:03 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | V
-Gates [ VV       ]
+Gates [ V        ]
  13:04 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [ VV       ]
+Gates [ V        ]
  13:05 
 11L | ==========
 TPB | 
 11R | ==========
 TPA | 
-Gates [ VV       ]
+Gates [ V        ]
  13:06 
 11L | ==========
 TPB | 
 11R | V=========
 TPA | 
-Gates [ VV       ]
+Gates [ V        ]
  13:07 
 11L | ==========
 TPB | 
 11R | V=========
 TPA | 
-Gates [ VV       ]
+Gates [ V        ]
  13:08 
 11L | ==========
 TPB | 
 11R | ====V=====
 TPA | 
-Gates [ VV       ]
+Gates [ V        ]
  13:09 
 11L | ==========
 TPB | 
@@ -434,31 +434,31 @@ Gates [ V        ]
 11L | ==========
 TPB | 
 11R | ==========
-TPA | V
+TPA | 
 Gates [ V        ]
  13:13 
 11L | ==========
 TPB | 
 11R | ==========
-TPA | V
+TPA | 
 Gates [ V        ]
  13:14 
 11L | ==========
 TPB | 
 11R | ==========
-TPA | V
+TPA | 
 Gates [ V        ]
  13:15 
 11L | ==========
 TPB | 
 11R | ==========
-TPA | V
+TPA | 
 Gates [ V        ]
  13:16 
 11L | ==========
 TPB | 
 11R | ==========
-TPA | V
+TPA | 
 Gates [ V        ]
  13:17 
 11L | ==========
@@ -475,31 +475,31 @@ Gates [ V        ]
  13:19 
 11L | ==========
 TPB | 
-11R | V=========
+11R | ==========
 TPA | 
 Gates [ V        ]
  13:20 
 11L | ==========
 TPB | 
-11R | V=========
+11R | ==========
 TPA | 
 Gates [ V        ]
  13:21 
 11L | ==========
 TPB | 
-11R | ====V=====
+11R | ==========
 TPA | 
 Gates [ V        ]
  13:22 
 11L | ==========
 TPB | 
-11R | ====V=====
+11R | ==========
 TPA | 
 Gates [ V        ]
  13:23 
 11L | ==========
 TPB | 
-11R | ====V=====
+11R | ==========
 TPA | 
 Gates [ V        ]
  13:24 

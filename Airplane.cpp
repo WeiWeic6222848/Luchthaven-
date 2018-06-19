@@ -617,6 +617,7 @@ void Airplane::progressCheck() {
             doingNothing=false;
         }
         if(actionDone==currentTime) {
+            passenger=0;
             doingNothing=true;
             checkprocedure = Technical_control;
         }
@@ -650,6 +651,7 @@ void Airplane::progressCheck() {
             doingNothing=false;
         }
         if(actionDone==currentTime) {
+            setFuel(fuelCapacity);
             doingNothing=true;
             checkprocedure=Boarding;
         }
@@ -933,16 +935,6 @@ void Airplane::fuelReduction() {
                 reduction*=2.5;
             }
             fuel-=reduction;
-            if(fuel<=0){
-                setSquawkcode(7700);
-                sendSignalEmergency();
-            }
-        }
-        else{
-            if(getStatus()!=Emergency){
-                setSquawkcode(7700);
-                sendSignalEmergency();
-            }
         }
     }
 }

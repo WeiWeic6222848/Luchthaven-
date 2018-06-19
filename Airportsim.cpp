@@ -328,9 +328,15 @@ void Airportsim::Simulate() {
          for (unsigned int j = 0; j < Airplanes.size(); ++j) {
              alreadypushed=false;
              chillingcounter=0;
+
              do{
                  status=Airplanes[j]->getStatus();
                  chillingcounter++;
+
+                 if(status==Airplane::Approaching&&Airplanes[j]->getFuel()<=0&&Airplanes[j]->getDestinateRunway()==NULL){
+                     Airplanes[j]->sendSignalEmergency();
+                     continue;
+                 }
                  if(status==Airplane::Approaching||status==Airplane::Landed){
                      landingstep(*Airplanes[j],*Airplanes[j]->getDestination());
                  }
@@ -354,6 +360,7 @@ void Airportsim::Simulate() {
                      alreadypushed=true;
                  }
              }while(Airplanes[j]->isDoingNothing()&&chillingcounter<3);
+             Airplanes[j]->fuelReduction();
              Airplanes[j]->timeRuns();
          }
          for (unsigned int k = 0; k < Airports.size(); ++k) {
@@ -376,10 +383,6 @@ void Airportsim::Simulate() {
          for (unsigned int i = 0; i < airplanestoremove.size(); ++i) {
              AirplanesFlying.push_back((Airplanes.begin() + airplanestoremove[i] - i).operator*());
              Airplanes.erase(Airplanes.begin() + airplanestoremove[i] - i);
-         }
-         for (unsigned int i=0;i<getAirplanes().size();i++){
-             Airplane* plane=getAirplanes()[i];
-             plane->fuelReduction();
          }
 
          currentTime=currentTime++;
@@ -1295,6 +1298,10 @@ void Airportsim::simulate_Onetime() {
         alreadypushed=false;
         chillingcounter=0;
         do{
+            if(status==Airplane::Approaching&&Airplanes[j]->getFuel()<=0&&Airplanes[j]->getDestinateRunway()==NULL){
+                Airplanes[j]->sendSignalEmergency();
+                continue;
+            }
             status=Airplanes[j]->getStatus();
             chillingcounter++;
             if(status==Airplane::Approaching||status==Airplane::Landed){
@@ -1317,6 +1324,7 @@ void Airportsim::simulate_Onetime() {
                 alreadypushed=true;
             }
         }while(Airplanes[j]->isDoingNothing()&&chillingcounter<3);
+        Airplanes[j]->fuelReduction();
         Airplanes[j]->timeRuns();
     }
     for (unsigned int k = 0; k < Airports.size(); ++k) {

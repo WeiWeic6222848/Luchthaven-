@@ -66,6 +66,7 @@ TEST_F(AirplaneOutputTest, checkFloormap){
         string happydayFilename = "../outputTest/happydayOutput/floormap/Juist_Floormap"+to_string(i)+".txt";
         string actualOutputFilename = "../output/floormap_state_airport["+simulator.getAirports().front()->getIata()+"].txt";
         REQUIRE(fileExist(actualOutputFilename),"info.txt file does not exists");
+
         /*
         ofstream write;
         ifstream actual;
@@ -74,8 +75,8 @@ TEST_F(AirplaneOutputTest, checkFloormap){
         write.open(happydayFilename.c_str(),ios::out);
         while(getline(actual,temp)){
             write<<temp<<endl;
-        }
-         */
+        }*/
+
         REQUIRE(fileExist(happydayFilename.c_str()),"happyday output not found");
 
 

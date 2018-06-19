@@ -5,3 +5,9 @@ Cesna is standing at Gate 1
 Cesna is standing at Gate 1
 Cesna is taxiing to runway 11L
 Cesna is taking off at Antwerp International Airport on runway 11L
+Cesna ascended to 1000 ft.
+Cesna ascended to 2000 ft.
+Cesna ascended to 3000 ft.
+Cesna ascended to 4000 ft.
+Cesna ascended to 5000 ft.
+Cesna has left Antwerp International Airport
