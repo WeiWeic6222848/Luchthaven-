@@ -42,6 +42,16 @@
 
         <length>1010</length>
 
+        <TAXIROUTE>
+
+            <taxipoint>Alpha</taxipoint>
+
+            <crossing>11R</crossing>
+
+            <taxipoint>Bravo</taxipoint>
+
+        </TAXIROUTE>
+
     </RUNWAY>
 
     <AIRPLANE>

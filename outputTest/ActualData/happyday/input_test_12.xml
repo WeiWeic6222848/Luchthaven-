@@ -24,6 +24,12 @@
 
         <length>1510</length>
 
+        <TAXIROUTE>
+
+            <taxipoint>Alpha</taxipoint>
+
+        </TAXIROUTE>
+
     </RUNWAY>
 
     <RUNWAY>
@@ -35,6 +41,16 @@
         <type>asphalt</type>
 
         <length>1010</length>
+
+        <TAXIROUTE>
+
+            <taxipoint>Alpha</taxipoint>
+
+            <crossing>11R</crossing>
+
+            <taxipoint>Bravo</taxipoint>
+
+        </TAXIROUTE>
 
     </RUNWAY>
 

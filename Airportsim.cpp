@@ -285,6 +285,7 @@ Airportsim::Airportsim() {
  //future functions
 void Airportsim::Simulate() {
      //currentTime=startingtime;
+     currentTime=Time(12,0);
      Time endingTime=currentTime+360;
      REQUIRE(ProperInitialized(),"Airportsim object wasn't initialized when calling Simulate");
      ofstream file;

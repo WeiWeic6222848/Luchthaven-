@@ -39,7 +39,7 @@ TEST_F(AirplaneOutputTest, checkInfo){
         string happydayFilename = "../outputTest/happydayOutput/info/Juist_Info"+to_string(i)+".txt";
         string actualOutputFilename = "../output/Info.txt";
         REQUIRE(fileExist(actualOutputFilename),"info.txt file does not exists");
-
+        /*
         ofstream write;
         ifstream actual;
         string temp;
@@ -48,7 +48,7 @@ TEST_F(AirplaneOutputTest, checkInfo){
         while(getline(actual,temp)){
             write<<temp<<endl;
         }
-
+         */
         REQUIRE(fileExist(happydayFilename.c_str()),"happyday output not found");
 
 
@@ -62,10 +62,11 @@ TEST_F(AirplaneOutputTest, checkFloormap){
         string filename = "../outputTest/ActualData/happyday/input_test_"+to_string(i)+".xml";
         ofstream a;
         LoadAirport(filename.c_str(), a, simulator);
+        simulator.Simulate();
         string happydayFilename = "../outputTest/happydayOutput/floormap/Juist_Floormap"+to_string(i)+".txt";
         string actualOutputFilename = "../output/floormap_state_airport["+simulator.getAirports().front()->getIata()+"].txt";
         REQUIRE(fileExist(actualOutputFilename),"info.txt file does not exists");
-
+        /*
         ofstream write;
         ifstream actual;
         string temp;
@@ -74,7 +75,7 @@ TEST_F(AirplaneOutputTest, checkFloormap){
         while(getline(actual,temp)){
             write<<temp<<endl;
         }
-
+         */
         REQUIRE(fileExist(happydayFilename.c_str()),"happyday output not found");
 
 

@@ -22,6 +22,12 @@
 
         <length>1510</length>
 
+        <TAXIROUTE>
+
+            <taxipoint>Alpha</taxipoint>
+
+        </TAXIROUTE>
+
     </RUNWAY>
 
     <AIRPLANE>
