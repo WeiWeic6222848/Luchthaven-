@@ -225,8 +225,10 @@ private:
      *     REQUIRE(vlieghaven.ProperInitialized(), "airport wasn't initialized when calling generateFloorPlan");
      * @param vlieghaven
      */
+public:
     void generateFloorPlan(Airport& vlieghaven);
 
+private:
     /**
      *     REQUIRE(airport.ProperInitialized(), "airport wasn't initialized when calling writeIni");
      * @param airport

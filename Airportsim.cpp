@@ -257,8 +257,8 @@ Airportsim::~Airportsim() {
     for (unsigned int i = 0; i < Airports.size(); ++i) {
         delete Airports[i];
     }
-    for (unsigned int j = 0; j < Airplanes.size(); ++j) {
-        delete Airplanes[j];
+    for (unsigned int j = 0; j < Allplanes.size(); ++j) {
+        delete Allplanes[j];
     }
 }
 
@@ -366,7 +366,7 @@ void Airportsim::Simulate() {
 
          }
 
-         //generateFloorPlan(*getAirports()[0]);
+         generateFloorPlan(*getAirports()[0]);
          //createVisual(*getAirports()[0]);
          //timespec tim, tim2;
          //tim.tv_nsec=500000000L;
@@ -1329,7 +1329,7 @@ void Airportsim::simulate_Onetime() {
 
     }
 
-    //generateFloorPlan(*getAirports()[0]);
+    generateFloorPlan(*getAirports()[0]);
     //createVisual(*getAirports()[0]);
     //timespec tim, tim2;
     //tim.tv_nsec=500000000L;

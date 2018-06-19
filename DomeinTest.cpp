@@ -468,7 +468,7 @@ TEST_F(AirplaneDomeinTest, AirportUtils){
 
     EXPECT_EQ(2000,requiredLengthOfRunway(testplane));
     EXPECT_EQ(500,requiredLengthOfRunway(plane));
-
+    delete (testplane);
 }
 
 TEST_F(AirplaneDomeinTest, gettersAirportsim){

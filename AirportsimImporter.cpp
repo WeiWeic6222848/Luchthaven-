@@ -241,6 +241,7 @@ Esucces AirportsimImporter::readRunway(TiXmlElement *runwayelement, std::ostream
                     else{
                         errStream<<"unable to read Taxiroute"<<endl;
                         delete(runway);
+                        delete(pointofthisrunway);
                         return PartialImport;
                     }
                 }
@@ -248,6 +249,7 @@ Esucces AirportsimImporter::readRunway(TiXmlElement *runwayelement, std::ostream
                     //errStream<<"Empty name"<<endl;
                     errStream<<"unable to read Taxiroute"<<endl;
                     delete(runway);
+                    delete(pointofthisrunway);
                     return PartialImport;
                 }
             }
@@ -255,6 +257,7 @@ Esucces AirportsimImporter::readRunway(TiXmlElement *runwayelement, std::ostream
                 //errStream<<"TAXIROUTE of runway doesn't contain any taxipoint or it doesnt ends with taxipoint!"<<endl;
                 errStream<<"unable to read Taxiroute"<<endl;
                 delete(runway);
+                delete(pointofthisrunway);
                 return PartialImport;
             }
             if (routeelement->FirstChildElement()->GetText()!=pointofthisrunway->getName()){
@@ -273,12 +276,14 @@ Esucces AirportsimImporter::readRunway(TiXmlElement *runwayelement, std::ostream
                                     else{
                                         errStream<<"unable to read Taxiroute"<<endl;
                                         delete(runway);
+                                        delete(pointofthisrunway);
                                         return PartialImport;
                                     }
                                 }
                                 else{
                                     errStream<<"unable to read Taxiroute"<<endl;
                                     delete(runway);
+                                    delete(pointofthisrunway);
                                     return PartialImport;
                                 }
                             }
@@ -286,6 +291,7 @@ Esucces AirportsimImporter::readRunway(TiXmlElement *runwayelement, std::ostream
                                 //errStream<<"Runway contains an unknown runway in the taxi route! "<< endl;
                                 errStream<<"unable to read Taxiroute"<<endl;
                                 delete(runway);
+                                delete(pointofthisrunway);
                                 return PartialImport;
                             }
                         }
@@ -301,12 +307,14 @@ Esucces AirportsimImporter::readRunway(TiXmlElement *runwayelement, std::ostream
                                     else{
                                         errStream<<"unable to read Taxiroute"<<endl;
                                         delete(runway);
+                                        delete(pointofthisrunway);
                                         return PartialImport;
                                     }
                                 }
                                 else{
                                     errStream<<"unable to read Taxiroute"<<endl;
                                     delete(runway);
+                                    delete(pointofthisrunway);
                                     return PartialImport;
                                 }
                             }
@@ -314,12 +322,14 @@ Esucces AirportsimImporter::readRunway(TiXmlElement *runwayelement, std::ostream
                                 //errStream<<"Runway contains an unreachable taxipoint in the taxi route! "<< endl;
                                 errStream<<"unable to read Taxiroute"<<endl;
                                 delete(runway);
+                                delete(pointofthisrunway);
                                 return PartialImport;
                             }
                         }
                         else{
                             errStream<<"unable to read Taxiroute"<<endl;
                             delete(runway);
+                            delete(pointofthisrunway);
                             return PartialImport;
                         }
                     }
@@ -327,6 +337,7 @@ Esucces AirportsimImporter::readRunway(TiXmlElement *runwayelement, std::ostream
                         //empty name
                         errStream<<"unable to read Taxiroute"<<endl;
                         delete(runway);
+                        delete(pointofthisrunway);
                         return PartialImport;
                     }
                 }

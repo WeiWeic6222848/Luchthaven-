@@ -241,6 +241,13 @@ Airport::~Airport() {
     for (unsigned int i = 0; i < runways.size(); ++i) {
         delete(runways[i]);
     }
+    for (unsigned int j = 0; j < taxipoints.size(); ++j) {
+        delete(taxipoints[j]);
+    }
+    for (unsigned int i = 0; i < gates.size(); ++i) {
+        delete(gates[i]);
+    }
+    delete(tower);
 }
 
 void Airport::cleanup() {
