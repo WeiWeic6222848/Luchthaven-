@@ -12,7 +12,7 @@ GOD is landing at Antwerp International Airport on runway 11L
 GOD has landed at Antwerp International Airport on runway 11L
 GOD is taxiing to Gates 
 GOD is standing at Gate 2
-10 passengers exited GOD at gate 2 of Antwerp International Airport
+0 passengers exited GOD at gate 2 of Antwerp International Airport
 GOD has been checked for technical malfunctions
 GOD has been refueled
 10 passengers boarded GOD at gate 2 of Antwerp International Airport
