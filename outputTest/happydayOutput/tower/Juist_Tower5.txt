@@ -5,9 +5,9 @@ Antwerp Tower, GOD, arriving at Antwerp International Airport
 [ 12:01 ][AIR]
 Antwerp Tower, Cessna 849, arriving at Antwerp International Airport
 [ 12:02 ][ATC]
-Speedbird 466, radar contact, descend and maintain five thousand feet, squawk 4403 .
+Speedbird 466, radar contact, descend and maintain five thousand feet, squawk 4140 .
 [ 12:03 ][AIR]
-Descend and maintain five thousand feet, squawking 4403 ,Speedbird 466
+Descend and maintain five thousand feet, squawking 4140 ,Speedbird 466
 [ 12:03 ][ATC]
 GOD, hold south on the one eighty radial, expect further clearance at  12:05 
 [ 12:04 ][AIR]
@@ -37,9 +37,9 @@ Speedbird 466, descend and maintain three thousand feet.
 [ 12:10 ][AIR]
 Descend and maintain three thousand feet, Speedbird 466
 [ 12:10 ][ATC]
-GOD, radar contact, descend and maintain five thousand feet, squawk 1327 .
+GOD, radar contact, descend and maintain five thousand feet, squawk 1224 .
 [ 12:11 ][AIR]
-Descend and maintain five thousand feet, squawking 1327 ,GOD
+Descend and maintain five thousand feet, squawking 1224 ,GOD
 [ 12:11 ][ATC]
 Cessna 849, hold south on the one eighty radial, expect further clearance at  12:13 
 [ 12:12 ][AIR]
@@ -59,19 +59,19 @@ Speedbird 466, cleared ILS approach runway 11L
 [ 12:14 ][AIR]
 Cleared ILS approach runway 11L, Speedbird 466
 [ 12:14 ][ATC]
-Cessna 8, Antwerp Tower, cleared to Antwerp Tower , maintain five thousand, expect flight level one zero zero - ten minutes afterdeparture, squawk 0444 .
+Cessna 8, Antwerp Tower, cleared to Antwerp Tower , maintain five thousand, expect flight level one zero zero - ten minutes afterdeparture, squawk 0560 .
 [ 12:15 ][AIR]
-Cleared to Antwerp Tower , initial altitude five thousand, expecting one zero zero in ten,squawking 0444 ,Cessna 8
+Cleared to Antwerp Tower , initial altitude five thousand, expecting one zero zero in ten,squawking 0560 ,Cessna 8
 [ 12:15 ][ATC]
-Cessna 84, Antwerp Tower, cleared to Antwerp Tower , maintain five thousand, expect flight level one zero zero - ten minutes afterdeparture, squawk 0034 .
+Cessna 84, Antwerp Tower, cleared to Antwerp Tower , maintain five thousand, expect flight level one zero zero - ten minutes afterdeparture, squawk 0044 .
 [ 12:16 ][AIR]
-Cleared to Antwerp Tower , initial altitude five thousand, expecting one zero zero in ten,squawking 0034 ,Cessna 84
+Cleared to Antwerp Tower , initial altitude five thousand, expecting one zero zero in ten,squawking 0044 ,Cessna 84
 [ 12:16 ][AIR]
 Antwerp Tower, Cessna 8 at gate 1, requesting pushback
 [ 12:16 ][ATC]
-Cessna, Antwerp Tower, cleared to Antwerp Tower , maintain five thousand, expect flight level one zero zero - ten minutes afterdeparture, squawk 0226 .
+Cessna, Antwerp Tower, cleared to Antwerp Tower , maintain five thousand, expect flight level one zero zero - ten minutes afterdeparture, squawk 0336 .
 [ 12:17 ][AIR]
-Cleared to Antwerp Tower , initial altitude five thousand, expecting one zero zero in ten,squawking 0226 ,Cessna
+Cleared to Antwerp Tower , initial altitude five thousand, expecting one zero zero in ten,squawking 0336 ,Cessna
 [ 12:17 ][AIR]
 Antwerp Tower, Cessna 84 at gate 2, requesting pushback
 [ 12:17 ][ATC]
@@ -121,9 +121,9 @@ Cessna 84, Taxi to holdpoint 11R via Alpha.
 [ 12:26 ][AIR]
 Taxi to holdpoint 11R via Alpha, Cessna 84
 [ 12:26 ][ATC]
-Cessna 849, radar contact, descend and maintain five thousand feet, squawk 0332 .
+Cessna 849, radar contact, descend and maintain five thousand feet, squawk 0475 .
 [ 12:27 ][AIR]
-Descend and maintain five thousand feet, squawking 0332 ,Cessna 849
+Descend and maintain five thousand feet, squawking 0475 ,Cessna 849
 [ 12:28 ][AIR]
 Antwerp Tower, Speedbird 466, Hold short at 11R
 [ 12:29 ][AIR]
@@ -230,17 +230,17 @@ Cessna 849, Taxi to holdpoint 11R via Bravo.
 [ 13:10 ][AIR]
 Taxi to holdpoint 11R via Bravo, Cessna 849
 [ 13:10 ][ATC]
-GOD, Antwerp Tower, cleared to Antwerp Tower , maintain five thousand, expect flight level one zero zero - ten minutes afterdeparture, squawk 1223 .
+GOD, Antwerp Tower, cleared to Antwerp Tower , maintain five thousand, expect flight level one zero zero - ten minutes afterdeparture, squawk 1312 .
 [ 13:11 ][AIR]
-Cleared to Antwerp Tower , initial altitude five thousand, expecting one zero zero in ten,squawking 1223 ,GOD
+Cleared to Antwerp Tower , initial altitude five thousand, expecting one zero zero in ten,squawking 1312 ,GOD
 [ 13:11 ][AIR]
 Antwerp Tower, Speedbird 466, requesting IFR clearancy to Antwerp Tower
 [ 13:12 ][AIR]
 Antwerp Tower, GOD at gate 2, requesting pushback
 [ 13:12 ][ATC]
-Speedbird 466, Antwerp Tower, cleared to Antwerp Tower , maintain five thousand, expect flight level one zero zero - ten minutes afterdeparture, squawk 4116 .
+Speedbird 466, Antwerp Tower, cleared to Antwerp Tower , maintain five thousand, expect flight level one zero zero - ten minutes afterdeparture, squawk 4564 .
 [ 13:13 ][AIR]
-Cleared to Antwerp Tower , initial altitude five thousand, expecting one zero zero in ten,squawking 4116 ,Speedbird 466
+Cleared to Antwerp Tower , initial altitude five thousand, expecting one zero zero in ten,squawking 4564 ,Speedbird 466
 [ 13:13 ][ANR]
 GOD, Antwerp Tower, pushback approved.
 [ 13:14 ][AIR]
@@ -292,9 +292,9 @@ Antwerp Tower, Speedbird 466, holding short at 11L
 [ 13:37 ][AIR]
 Antwerp Tower, Cessna 849, requesting IFR clearancy to Antwerp Tower
 [ 13:38 ][ATC]
-Cessna 849, Antwerp Tower, cleared to Antwerp Tower , maintain five thousand, expect flight level one zero zero - ten minutes afterdeparture, squawk 0544 .
+Cessna 849, Antwerp Tower, cleared to Antwerp Tower , maintain five thousand, expect flight level one zero zero - ten minutes afterdeparture, squawk 0375 .
 [ 13:39 ][AIR]
-Cleared to Antwerp Tower , initial altitude five thousand, expecting one zero zero in ten,squawking 0544 ,Cessna 849
+Cleared to Antwerp Tower , initial altitude five thousand, expecting one zero zero in ten,squawking 0375 ,Cessna 849
 airplane GOD left 13:39 
 [ 13:40 ][AIR]
 Antwerp Tower, Cessna 849 at gate 2, requesting pushback

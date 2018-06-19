@@ -37,110 +37,6 @@ bool Signaltower::receiveSignal(Airplane *airplane, SignaltowerallowedSignal sig
 
     incomingSignal.push_back(pair<Airplane*,SignaltowerallowedSignal >(airplane,signal));
     return true;
-
-    //else error, below.
-    /*
-    else if(signal=="ApproachingtoGate"){
-
-        if(isDoingNothing()){
-            airplane->setInstruction(vector<Location*>());
-            vector<Location*> instruction=makeInstructionToGate(airplane);
-            if(instruction.size()>0){
-                sendInstruction(airplane,instruction);
-            }
-        }
-        else{
-            incomingSignal.push_back(pair<Airplane*,string>(airplane,signal));
-        }
-
-        else{
-            sendSignalHoldPosition(airplane);
-        }
-        return true;
-    }
-    else if(signal=="LeavingtoRunway"){
-        if(isDoingNothing()){
-            if(airplane->getDestinateRunway()!=NULL){
-                airplane->setInstruction(vector<Location*>());
-                vector<Location*> instruction=makeInstructionToRunway(airplane);
-                if(instruction.size()>0){
-                    sendInstruction(airplane,instruction);
-                }
-
-                else{
-                    sendSignalHoldPosition(airplane);
-                }
-                return true;
-            }
-        }
-        else{
-            incomingSignal.push_back(pair<Airplane*,string>(airplane,signal));
-        }
-        return false;
-    }
-    else if(signal=="Emergency"){
-        emergency.push_back(airplane);
-        return true;
-    }
-    else if(signal=="Push back"){
-        if(isDoingNothing()) {
-            Runway *destinaterunway = airport->findFreeRunway(airplane);
-            if (destinaterunway) {
-                sendSignalPushBack(airplane, destinaterunway);
-                return true;
-            }
-        }
-        else{
-            incomingSignal.push_back(pair<Airplane*,string>(airplane,signal));
-        }
-        return false;
-    }
-    else if(signal=="IFR clearancy"){
-        //dont see a reason not to
-        if(isDoingNothing()){
-            sendSignalIFRclear(airplane);
-        }
-        else{
-            incomingSignal.push_back(pair<Airplane*,string>(airplane,signal));
-        }
-        return true;
-    }
-    else if(signal=="Crossing runway"){
-        if(isDoingNothing()) {
-            Location *runwayToCross = airplane->getLocation();
-            if (!runwayToCross->isOnuse() && !runwayToCross->isCrossing()) {
-                sendSignalClearedToCross(airplane);
-                return true;
-            }
-        }
-        else{
-            incomingSignal.push_back(pair<Airplane*,string>(airplane,signal));
-        }
-        return false;
-
-    }
-    else if(signal=="At runway"){
-        if(isDoingNothing()){
-            Runway* runway=airplane->getDestinateRunway();
-            if(!runway->isCrossing()&&!runway->isOnuse()&&runway->getPlaneAtbegin()==NULL){
-                sendSignalLineup(airplane,true);
-                return true;
-            }
-            else if(!runway->isOnuse()&&runway->getPlaneAtbegin()==NULL){
-                sendSignalLineup(airplane,false);
-                return true;
-            }
-
-            else{
-                sendSignalHoldPosition(airplane);
-                return false;
-            }
-        }
-        else{
-            incomingSignal.push_back(pair<Airplane*,string>(airplane,signal));
-        }
-        return false;
-    }*/
     cerr<<"error signal"<<endl;
     return false;
 }
@@ -327,9 +223,7 @@ bool Signaltower::sendSignalWaiting(Airplane *airplane) {
     else {
         file << "[" << currentTime << "]" << "[ATC]" << endl;
         file << airplane->getCallsign() << ", "
-             << "hold south on the one eighty radial, expect further clearance at " << currentTime+incomingSignal.size() << endl;
-        //currentTime+incomingSignal.size()+1+1f
-        //incomingsignal always goes first, +1 for the signal delay from tower to airport, and +1 for unexpected signals;
+             << "hold south on the one eighty radial, expect further clearance at " << currentTime+incomingSignal.size()+1 << endl;
         doingNothing = true;
         incomingSignal.push_back(pair<Airplane*,SignaltowerallowedSignal >(airplane,Waiting));
         airplane->receiveSignal(Airplane::Keep_flying);

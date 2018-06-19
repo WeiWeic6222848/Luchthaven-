@@ -15,6 +15,7 @@
 #include "Gate.h"
 #include "Airplane.h"
 
+
 class AirplaneDomeinTest: public ::testing::Test{
 protected:
     friend class Airport;
@@ -1504,7 +1505,18 @@ TEST_F(AirplaneDomeinTest,flightPlanNotFound){
     EXPECT_EQ(interval,plane->getInterval());
 }
 
+TEST_F(AirplaneDomeinTest,Utiltest) {
+    EXPECT_TRUE(to_string(123)=="123");
+    EXPECT_TRUE(to_string(0)=="0");
+    EXPECT_TRUE(to_string(-1)=="-1");
 
+    EXPECT_TRUE(fillingintegergap(123,4)=="0123");
+    EXPECT_TRUE(fillingintegergap(0,4)=="0000");
+    EXPECT_TRUE(validSquawkcode(generatevalidRandomcode()));
+
+    EXPECT_DEATH(fillingintegergap(0,0),"");
+
+}
 TEST_F(AirplaneDomeinTest,EmergencyoutoffuelTest) {
     //settings
     string filename = "../domeinTest/SimulationTest.xml";

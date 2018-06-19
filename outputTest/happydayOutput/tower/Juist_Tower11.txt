@@ -1,9 +1,9 @@
 [ 12:01 ][AIR]
 Antwerp Tower, Cessna 842, arriving at Antwerp International Airport
 [ 12:02 ][ATC]
-Cessna 842, radar contact, descend and maintain five thousand feet, squawk 0260 .
+Cessna 842, radar contact, descend and maintain five thousand feet, squawk 0107 .
 [ 12:03 ][AIR]
-Descend and maintain five thousand feet, squawking 0260 ,Cessna 842
+Descend and maintain five thousand feet, squawking 0107 ,Cessna 842
 [ 12:14 ][ATC]
 Cessna 842, descend and maintain three thousand feet.
 [ 12:15 ][AIR]
@@ -27,9 +27,9 @@ Cleared to Cross runway 11R, Cessna 842, Taxi to gate 1 via Alpha.
 [ 12:59 ][AIR]
 Antwerp Tower, Cessna 842, requesting IFR clearancy to Antwerp Tower
 [ 13:00 ][ATC]
-Cessna 842, Antwerp Tower, cleared to Antwerp Tower , maintain five thousand, expect flight level one zero zero - ten minutes afterdeparture, squawk 0533 .
+Cessna 842, Antwerp Tower, cleared to Antwerp Tower , maintain five thousand, expect flight level one zero zero - ten minutes afterdeparture, squawk 0550 .
 [ 13:01 ][AIR]
-Cleared to Antwerp Tower , initial altitude five thousand, expecting one zero zero in ten,squawking 0533 ,Cessna 842
+Cleared to Antwerp Tower , initial altitude five thousand, expecting one zero zero in ten,squawking 0550 ,Cessna 842
 [ 13:02 ][AIR]
 Antwerp Tower, Cessna 842 at gate 1, requesting pushback
 [ 13:03 ][ANR]

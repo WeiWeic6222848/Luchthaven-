@@ -62,12 +62,13 @@ TEST_F(AirplaneOutputTest, checkFloormap){
     for (int i = 1; i <= 13; ++i) {
         string filename = "../outputTest/ActualData/happyday/input_test_"+to_string(i)+".xml";
         ofstream a;
-        LoadAirport(filename.c_str(), a, simulator);
-        simulator.Simulate();
+        Airportsim sim;
+        LoadAirport(filename.c_str(), a, sim);
+        sim.Simulate();
         string happydayFilename = "../outputTest/happydayOutput/floormap/Juist_Floormap"+to_string(i)+".txt";
-        string actualOutputFilename = "../output/floormap_state_airport["+simulator.getAirports().front()->getIata()+"].txt";
+        string actualOutputFilename = "../output/floormap_state_airport["+sim.getAirports().front()->getIata()+"].txt";
         REQUIRE(fileExist(actualOutputFilename),"floormpap_state_airport.txt file does not exists");
-        /*
+/*
         ofstream write;
         ifstream actual;
         string temp;
@@ -76,7 +77,7 @@ TEST_F(AirplaneOutputTest, checkFloormap){
         while(getline(actual,temp)){
             write<<temp<<endl;
         }
-         */
+*/
         REQUIRE(fileExist(happydayFilename.c_str()),"happyday output not found");
 
 
@@ -94,7 +95,7 @@ TEST_F(AirplaneOutputTest, checkTower){
         string happydayFilename = "../outputTest/happydayOutput/tower/Juist_Tower"+to_string(i)+".txt";
         string actualOutputFilename = "../output/"+sim.getAirports().front()->getIata()+"_Tower.txt";
         REQUIRE(fileExist(actualOutputFilename),"Tower.txt file does not exists");
-        /*
+/*
         ofstream write;
         ifstream actual;
         string temp;
@@ -103,7 +104,7 @@ TEST_F(AirplaneOutputTest, checkTower){
         while(getline(actual,temp)){
             write<<temp<<endl;
         }
-         */
+*/
         REQUIRE(fileExist(happydayFilename.c_str()),"happyday output not found");
 
 
@@ -123,7 +124,7 @@ TEST_F(AirplaneOutputTest,checkAirplaneOutput){
             string happydayFilename = "../outputTest/happydayOutput/airplanes/input_file"+to_string(i)+"plane"+plane->getCallsign()+".txt";
             string actualOutputFilename = "../output/"+plane->getCallsign()+".txt";
             REQUIRE(fileExist(actualOutputFilename),"Plane.txt file does not exists");
-            /*
+/*
             ofstream write;
             ifstream actual;
             string temp;
@@ -132,7 +133,7 @@ TEST_F(AirplaneOutputTest,checkAirplaneOutput){
             while(getline(actual,temp)){
                 write<<temp<<endl;
             }
-             */
+*/
             REQUIRE(fileExist(happydayFilename.c_str()),"happyday output not found");
 
 
@@ -150,7 +151,7 @@ TEST_F(AirplaneOutputTest,checkSettingsGrafficsImpression){
         string happydayFilename = "../outputTest/happydayOutput/settings/Juist_setting"+to_string(i)+".ini";
         string actualOutputFilename = "../output/settings_2D_["+sim.getAirports().front()->getIata()+"].ini";
         REQUIRE(fileExist(actualOutputFilename),"Settings.ini file does not exists");
-        /*
+/*
         ofstream write;
         ifstream actual;
         string temp;
@@ -159,7 +160,7 @@ TEST_F(AirplaneOutputTest,checkSettingsGrafficsImpression){
         while(getline(actual,temp)){
             write<<temp<<endl;
         }
-         */
+  */
         REQUIRE(fileExist(happydayFilename.c_str()),"happyday output not found");
 
 

@@ -587,7 +587,7 @@ private:
     bool flightPlanActivated();
     //all actions to be done by aieplane---------------------------------------------------------
 
-public:
+private:
     void setHeight(int height);
 
     void setCurrentTime(const Time &currentTime);
